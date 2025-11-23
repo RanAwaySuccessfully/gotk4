@@ -211,10 +211,26 @@ func (repos *Repositories) Add(pkg string) error {
 		return fmt.Errorf("failed to get gir files for %q: %w", pkg, err)
 	}
 
+	filter := func(r *Repository) bool {
+		doesPackageMatch := false
+
+		for _, xmlPkg := range r.Packages {
+			if xmlPkg.Name == pkg {
+				doesPackageMatch = true
+			}
+		}
+
+		return doesPackageMatch
+	}
+
 	for _, gir := range girs {
 		repo, err := ParseRepository(gir)
 		if err != nil {
 			return fmt.Errorf("failed to parse file %q: %w", gir, err)
+		}
+
+		if !filter(repo) {
+			continue
 		}
 
 		if err := repos.add(*repo, pkg, gir); err != nil {

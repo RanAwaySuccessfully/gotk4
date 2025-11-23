@@ -38,7 +38,7 @@ func VarValues(varname string, pkgs ...string) (map[string]string, error) {
 		// getting the dev package's suffix would be to
 		// inspect the "includedirs" variable and trim off the
 		// "/include(/.*)?$" suffix.
-		"--define-prefix",
+		//"--define-prefix",
 		// main
 		"--variable=" + varname, "--"}, pkgs...)
 	var stdout strings.Builder

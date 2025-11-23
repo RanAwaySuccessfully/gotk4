@@ -92,12 +92,16 @@ var Packages = []genmain.Package{
 		"cairo-1",
 	}},
 	{Name: "gdk-pixbuf-2.0"},
-	{Name: "graphene-1.0"},
+	{Name: "graphene-gobject-1.0"},
 	{Name: "atk"},
 	{Name: "pango", Namespaces: []string{
 		"Pango-1",
 		"PangoCairo-1",
 	}},
+	{Name: "gtk4-wayland"},
+	{Name: "gtk4-x11"},
+	{Name: "gdk-x11-3.0"},
+	{Name: "gdk-3.0"},
 	{Name: "gtk4"},     // includes Gdk
 	{Name: "gtk+-3.0"}, // includes Gdk
 }
@@ -221,7 +225,7 @@ var Preprocessors = []Preprocessor{
 
 		userDataIx := slices.IndexFunc(
 			callback.Parameters.Parameters,
-			func(p gir.Parameter) bool { return p.Name == "data" },
+			func(p gir.Parameter) bool { return (p.Name == "data") || (p.Name == "user_data") },
 		)
 
 		userData := &callback.Parameters.Parameters[userDataIx]
