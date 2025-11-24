@@ -167,7 +167,6 @@ import (
 // extern void _gotk4_gtk4_SpinButton_ConnectWrapped(gpointer, guintptr);
 // extern void _gotk4_gtk4_SpinButton_ConnectValueChanged(gpointer, guintptr);
 // extern void _gotk4_gtk4_SpinButton_ConnectChangeValue(gpointer, GtkScrollType, guintptr);
-// extern void _gotk4_gtk4_SpinButton_ConnectActivate(gpointer, guintptr);
 // extern void _gotk4_gtk4_Sorter_ConnectChanged(gpointer, GtkSorterChange, guintptr);
 // extern void _gotk4_gtk4_SignalListItemFactory_ConnectUnbind(gpointer, GObject*, guintptr);
 // extern void _gotk4_gtk4_SignalListItemFactory_ConnectTeardown(gpointer, GObject*, guintptr);
@@ -176,7 +175,6 @@ import (
 // extern void _gotk4_gtk4_ShortcutsWindow_ConnectSearch(gpointer, guintptr);
 // extern void _gotk4_gtk4_ShortcutsWindow_ConnectClose(gpointer, guintptr);
 // extern void _gotk4_gtk4_SelectionModel_ConnectSelectionChanged(gpointer, guint, guint, guintptr);
-// extern void _gotk4_gtk4_SectionModel_ConnectSectionsChanged(gpointer, guint, guint, guintptr);
 // extern void _gotk4_gtk4_SearchEntry_ConnectStopSearch(gpointer, guintptr);
 // extern void _gotk4_gtk4_SearchEntry_ConnectSearchStarted(gpointer, guintptr);
 // extern void _gotk4_gtk4_SearchEntry_ConnectSearchChanged(gpointer, guintptr);
@@ -291,7 +289,6 @@ import (
 // extern void _gotk4_gtk4_IMContextClass_focus_out(GtkIMContext*);
 // extern void _gotk4_gtk4_IMContextClass_focus_in(GtkIMContext*);
 // extern void _gotk4_gtk4_IMContextClass_commit(GtkIMContext*, char*);
-// extern void _gotk4_gtk4_IMContextClass_activate_osk(GtkIMContext*);
 // extern void _gotk4_gtk4_GridView_ConnectActivate(gpointer, guint, guintptr);
 // extern void _gotk4_gtk4_Gesture_ConnectUpdate(gpointer, GdkEventSequence*, guintptr);
 // extern void _gotk4_gtk4_Gesture_ConnectSequenceStateChanged(gpointer, GdkEventSequence*, GtkEventSequenceState, guintptr);
@@ -318,7 +315,6 @@ import (
 // extern void _gotk4_gtk4_GLArea_ConnectResize(gpointer, gint, gint, guintptr);
 // extern void _gotk4_gtk4_GLAreaClass_resize(GtkGLArea*, int, int);
 // extern void _gotk4_gtk4_FrameClass_compute_child_allocation(GtkFrame*, GtkAllocation*);
-// extern void _gotk4_gtk4_FontDialogButton_ConnectActivate(gpointer, guintptr);
 // extern void _gotk4_gtk4_FontChooser_ConnectFontActivated(gpointer, gchar*, guintptr);
 // extern void _gotk4_gtk4_FontButton_ConnectFontSet(gpointer, guintptr);
 // extern void _gotk4_gtk4_FontButton_ConnectActivate(gpointer, guintptr);
@@ -391,7 +387,6 @@ import (
 // extern void _gotk4_gtk4_ComboBoxClass_changed(GtkComboBox*);
 // extern void _gotk4_gtk4_ComboBoxClass_activate(GtkComboBox*);
 // extern void _gotk4_gtk4_ColumnView_ConnectActivate(gpointer, guint, guintptr);
-// extern void _gotk4_gtk4_ColorDialogButton_ConnectActivate(gpointer, guintptr);
 // extern void _gotk4_gtk4_ColorChooser_ConnectColorActivated(gpointer, GdkRGBA*, guintptr);
 // extern void _gotk4_gtk4_ColorButton_ConnectColorSet(gpointer, guintptr);
 // extern void _gotk4_gtk4_ColorButton_ConnectActivate(gpointer, guintptr);
@@ -556,7 +551,6 @@ import (
 // extern gboolean _gotk4_gtk4_IMContextClass_get_surrounding(GtkIMContext*, char**, int*);
 // extern gboolean _gotk4_gtk4_IMContextClass_filter_keypress(GtkIMContext*, GdkEvent*);
 // extern gboolean _gotk4_gtk4_IMContextClass_delete_surrounding(GtkIMContext*, int, int);
-// extern gboolean _gotk4_gtk4_IMContextClass_activate_osk_with_event(GtkIMContext*, GdkEvent*);
 // extern gboolean _gotk4_gtk4_GLArea_ConnectRender(gpointer, GdkGLContext*, guintptr);
 // extern gboolean _gotk4_gtk4_GLAreaClass_render(GtkGLArea*, GdkGLContext*);
 // extern gboolean _gotk4_gtk4_FontFilterFunc(PangoFontFamily*, PangoFontFace*, gpointer);
@@ -610,12 +604,6 @@ import (
 // extern GdkContentProvider* _gotk4_gtk4_DragSource_ConnectPrepare(gpointer, gdouble, gdouble, guintptr);
 // extern GObject* _gotk4_gtk4_PrintOperation_ConnectCreateCustomWidget(gpointer, guintptr);
 // extern GListModel* _gotk4_gtk4_TreeListModelCreateModelFunc(gpointer, gpointer);
-// GBytes* _gotk4_gtk4_AccessibleText_virtual_get_contents(void* fnptr, GtkAccessibleText* arg0, unsigned int arg1, unsigned int arg2) {
-//   return ((GBytes* (*)(GtkAccessibleText*, unsigned int, unsigned int))(fnptr))(arg0, arg1, arg2);
-// };
-// GBytes* _gotk4_gtk4_AccessibleText_virtual_get_contents_at(void* fnptr, GtkAccessibleText* arg0, unsigned int arg1, GtkAccessibleTextGranularity arg2, unsigned int* arg3, unsigned int* arg4) {
-//   return ((GBytes* (*)(GtkAccessibleText*, unsigned int, GtkAccessibleTextGranularity, unsigned int*, unsigned int*))(fnptr))(arg0, arg1, arg2, arg3, arg4);
-// };
 // GList* _gotk4_gtk4_CellLayout_virtual_get_cells(void* fnptr, GtkCellLayout* arg0) {
 //   return ((GList* (*)(GtkCellLayout*))(fnptr))(arg0);
 // };
@@ -636,18 +624,6 @@ import (
 // };
 // GdkContentProvider* _gotk4_gtk4_TreeDragSource_virtual_drag_data_get(void* fnptr, GtkTreeDragSource* arg0, GtkTreePath* arg1) {
 //   return ((GdkContentProvider* (*)(GtkTreeDragSource*, GtkTreePath*))(fnptr))(arg0, arg1);
-// };
-// GtkATContext* _gotk4_gtk4_Accessible_virtual_get_at_context(void* fnptr, GtkAccessible* arg0) {
-//   return ((GtkATContext* (*)(GtkAccessible*))(fnptr))(arg0);
-// };
-// GtkAccessible* _gotk4_gtk4_Accessible_virtual_get_accessible_parent(void* fnptr, GtkAccessible* arg0) {
-//   return ((GtkAccessible* (*)(GtkAccessible*))(fnptr))(arg0);
-// };
-// GtkAccessible* _gotk4_gtk4_Accessible_virtual_get_first_accessible_child(void* fnptr, GtkAccessible* arg0) {
-//   return ((GtkAccessible* (*)(GtkAccessible*))(fnptr))(arg0);
-// };
-// GtkAccessible* _gotk4_gtk4_Accessible_virtual_get_next_accessible_sibling(void* fnptr, GtkAccessible* arg0) {
-//   return ((GtkAccessible* (*)(GtkAccessible*))(fnptr))(arg0);
 // };
 // GtkBitset* _gotk4_gtk4_SelectionModel_virtual_get_selection_in_range(void* fnptr, GtkSelectionModel* arg0, guint arg1, guint arg2) {
 //   return ((GtkBitset* (*)(GtkSelectionModel*, guint, guint))(fnptr))(arg0, arg1, arg2);
@@ -727,21 +703,6 @@ import (
 // char* _gotk4_gtk4_EntryBuffer_virtual_get_text(void* fnptr, GtkEntryBuffer* arg0, gsize* arg1) {
 //   return ((char* (*)(GtkEntryBuffer*, gsize*))(fnptr))(arg0, arg1);
 // };
-// gboolean _gotk4_gtk4_AccessibleRange_virtual_set_current_value(void* fnptr, GtkAccessibleRange* arg0, double arg1) {
-//   return ((gboolean (*)(GtkAccessibleRange*, double))(fnptr))(arg0, arg1);
-// };
-// gboolean _gotk4_gtk4_AccessibleText_virtual_get_attributes(void* fnptr, GtkAccessibleText* arg0, unsigned int arg1, gsize* arg2, GtkAccessibleTextRange** arg3, char*** arg4, char*** arg5) {
-//   return ((gboolean (*)(GtkAccessibleText*, unsigned int, gsize*, GtkAccessibleTextRange**, char***, char***))(fnptr))(arg0, arg1, arg2, arg3, arg4, arg5);
-// };
-// gboolean _gotk4_gtk4_AccessibleText_virtual_get_selection(void* fnptr, GtkAccessibleText* arg0, gsize* arg1, GtkAccessibleTextRange** arg2) {
-//   return ((gboolean (*)(GtkAccessibleText*, gsize*, GtkAccessibleTextRange**))(fnptr))(arg0, arg1, arg2);
-// };
-// gboolean _gotk4_gtk4_Accessible_virtual_get_bounds(void* fnptr, GtkAccessible* arg0, int* arg1, int* arg2, int* arg3, int* arg4) {
-//   return ((gboolean (*)(GtkAccessible*, int*, int*, int*, int*))(fnptr))(arg0, arg1, arg2, arg3, arg4);
-// };
-// gboolean _gotk4_gtk4_Accessible_virtual_get_platform_state(void* fnptr, GtkAccessible* arg0, GtkAccessiblePlatformState arg1) {
-//   return ((gboolean (*)(GtkAccessible*, GtkAccessiblePlatformState))(fnptr))(arg0, arg1);
-// };
 // gboolean _gotk4_gtk4_Buildable_virtual_custom_tag_start(void* fnptr, GtkBuildable* arg0, GtkBuilder* arg1, GObject* arg2, char* arg3, GtkBuildableParser* arg4, gpointer* arg5) {
 //   return ((gboolean (*)(GtkBuildable*, GtkBuilder*, GObject*, char*, GtkBuildableParser*, gpointer*))(fnptr))(arg0, arg1, arg2, arg3, arg4, arg5);
 // };
@@ -765,9 +726,6 @@ import (
 // };
 // gboolean _gotk4_gtk4_GLArea_virtual_render(void* fnptr, GtkGLArea* arg0, GdkGLContext* arg1) {
 //   return ((gboolean (*)(GtkGLArea*, GdkGLContext*))(fnptr))(arg0, arg1);
-// };
-// gboolean _gotk4_gtk4_IMContext_virtual_activate_osk_with_event(void* fnptr, GtkIMContext* arg0, GdkEvent* arg1) {
-//   return ((gboolean (*)(GtkIMContext*, GdkEvent*))(fnptr))(arg0, arg1);
 // };
 // gboolean _gotk4_gtk4_IMContext_virtual_delete_surrounding(void* fnptr, GtkIMContext* arg0, int arg1, int arg2) {
 //   return ((gboolean (*)(GtkIMContext*, int, int))(fnptr))(arg0, arg1, arg2);
@@ -945,12 +903,6 @@ import (
 // };
 // int _gotk4_gtk4_TreeModel_virtual_iter_n_children(void* fnptr, GtkTreeModel* arg0, GtkTreeIter* arg1) {
 //   return ((int (*)(GtkTreeModel*, GtkTreeIter*))(fnptr))(arg0, arg1);
-// };
-// unsigned int _gotk4_gtk4_AccessibleText_virtual_get_caret_position(void* fnptr, GtkAccessibleText* arg0) {
-//   return ((unsigned int (*)(GtkAccessibleText*))(fnptr))(arg0);
-// };
-// void _gotk4_gtk4_AccessibleText_virtual_get_default_attributes(void* fnptr, GtkAccessibleText* arg0, char*** arg1, char*** arg2) {
-//   ((void (*)(GtkAccessibleText*, char***, char***))(fnptr))(arg0, arg1, arg2);
 // };
 // void _gotk4_gtk4_Actionable_virtual_set_action_name(void* fnptr, GtkActionable* arg0, char* arg1) {
 //   ((void (*)(GtkActionable*, char*))(fnptr))(arg0, arg1);
@@ -1165,9 +1117,6 @@ import (
 // void _gotk4_gtk4_GLArea_virtual_resize(void* fnptr, GtkGLArea* arg0, int arg1, int arg2) {
 //   ((void (*)(GtkGLArea*, int, int))(fnptr))(arg0, arg1, arg2);
 // };
-// void _gotk4_gtk4_IMContext_virtual_activate_osk(void* fnptr, GtkIMContext* arg0) {
-//   ((void (*)(GtkIMContext*))(fnptr))(arg0);
-// };
 // void _gotk4_gtk4_IMContext_virtual_commit(void* fnptr, GtkIMContext* arg0, char* arg1) {
 //   ((void (*)(GtkIMContext*, char*))(fnptr))(arg0, arg1);
 // };
@@ -1314,9 +1263,6 @@ import (
 // };
 // void _gotk4_gtk4_Scale_virtual_get_layout_offsets(void* fnptr, GtkScale* arg0, int* arg1, int* arg2) {
 //   ((void (*)(GtkScale*, int*, int*))(fnptr))(arg0, arg1, arg2);
-// };
-// void _gotk4_gtk4_SectionModel_virtual_get_section(void* fnptr, GtkSectionModel* arg0, guint arg1, guint* arg2, guint* arg3) {
-//   ((void (*)(GtkSectionModel*, guint, guint*, guint*))(fnptr))(arg0, arg1, arg2, arg3);
 // };
 // void _gotk4_gtk4_ShortcutManager_virtual_add_controller(void* fnptr, GtkShortcutManager* arg0, GtkShortcutController* arg1) {
 //   ((void (*)(GtkShortcutManager*, GtkShortcutController*))(fnptr))(arg0, arg1);
@@ -1523,445 +1469,411 @@ import "C"
 
 // GType values.
 var (
-	GTypeAccessibleAnnouncementPriority = coreglib.Type(C.gtk_accessible_announcement_priority_get_type())
-	GTypeAccessibleAutocomplete         = coreglib.Type(C.gtk_accessible_autocomplete_get_type())
-	GTypeAccessibleInvalidState         = coreglib.Type(C.gtk_accessible_invalid_state_get_type())
-	GTypeAccessiblePlatformState        = coreglib.Type(C.gtk_accessible_platform_state_get_type())
-	GTypeAccessibleProperty             = coreglib.Type(C.gtk_accessible_property_get_type())
-	GTypeAccessibleRelation             = coreglib.Type(C.gtk_accessible_relation_get_type())
-	GTypeAccessibleRole                 = coreglib.Type(C.gtk_accessible_role_get_type())
-	GTypeAccessibleSort                 = coreglib.Type(C.gtk_accessible_sort_get_type())
-	GTypeAccessibleState                = coreglib.Type(C.gtk_accessible_state_get_type())
-	GTypeAccessibleTextContentChange    = coreglib.Type(C.gtk_accessible_text_content_change_get_type())
-	GTypeAccessibleTextGranularity      = coreglib.Type(C.gtk_accessible_text_granularity_get_type())
-	GTypeAccessibleTristate             = coreglib.Type(C.gtk_accessible_tristate_get_type())
-	GTypeAlign                          = coreglib.Type(C.gtk_align_get_type())
-	GTypeArrowType                      = coreglib.Type(C.gtk_arrow_type_get_type())
-	GTypeAssistantPageType              = coreglib.Type(C.gtk_assistant_page_type_get_type())
-	GTypeBaselinePosition               = coreglib.Type(C.gtk_baseline_position_get_type())
-	GTypeBorderStyle                    = coreglib.Type(C.gtk_border_style_get_type())
-	GTypeBuilderError                   = coreglib.Type(C.gtk_builder_error_get_type())
-	GTypeButtonsType                    = coreglib.Type(C.gtk_buttons_type_get_type())
-	GTypeCellRendererAccelMode          = coreglib.Type(C.gtk_cell_renderer_accel_mode_get_type())
-	GTypeCellRendererMode               = coreglib.Type(C.gtk_cell_renderer_mode_get_type())
-	GTypeCollation                      = coreglib.Type(C.gtk_collation_get_type())
-	GTypeConstraintAttribute            = coreglib.Type(C.gtk_constraint_attribute_get_type())
-	GTypeConstraintRelation             = coreglib.Type(C.gtk_constraint_relation_get_type())
-	GTypeConstraintStrength             = coreglib.Type(C.gtk_constraint_strength_get_type())
-	GTypeConstraintVflParserError       = coreglib.Type(C.gtk_constraint_vfl_parser_error_get_type())
-	GTypeContentFit                     = coreglib.Type(C.gtk_content_fit_get_type())
-	GTypeCornerType                     = coreglib.Type(C.gtk_corner_type_get_type())
-	GTypeDeleteType                     = coreglib.Type(C.gtk_delete_type_get_type())
-	GTypeDialogError                    = coreglib.Type(C.gtk_dialog_error_get_type())
-	GTypeDirectionType                  = coreglib.Type(C.gtk_direction_type_get_type())
-	GTypeEditableProperties             = coreglib.Type(C.gtk_editable_properties_get_type())
-	GTypeEntryIconPosition              = coreglib.Type(C.gtk_entry_icon_position_get_type())
-	GTypeEventSequenceState             = coreglib.Type(C.gtk_event_sequence_state_get_type())
-	GTypeFileChooserAction              = coreglib.Type(C.gtk_file_chooser_action_get_type())
-	GTypeFileChooserError               = coreglib.Type(C.gtk_file_chooser_error_get_type())
-	GTypeFilterChange                   = coreglib.Type(C.gtk_filter_change_get_type())
-	GTypeFilterMatch                    = coreglib.Type(C.gtk_filter_match_get_type())
-	GTypeFontLevel                      = coreglib.Type(C.gtk_font_level_get_type())
-	GTypeGraphicsOffloadEnabled         = coreglib.Type(C.gtk_graphics_offload_enabled_get_type())
-	GTypeIconSize                       = coreglib.Type(C.gtk_icon_size_get_type())
-	GTypeIconThemeError                 = coreglib.Type(C.gtk_icon_theme_error_get_type())
-	GTypeIconViewDropPosition           = coreglib.Type(C.gtk_icon_view_drop_position_get_type())
-	GTypeImageType                      = coreglib.Type(C.gtk_image_type_get_type())
-	GTypeInputPurpose                   = coreglib.Type(C.gtk_input_purpose_get_type())
-	GTypeInscriptionOverflow            = coreglib.Type(C.gtk_inscription_overflow_get_type())
-	GTypeJustification                  = coreglib.Type(C.gtk_justification_get_type())
-	GTypeLevelBarMode                   = coreglib.Type(C.gtk_level_bar_mode_get_type())
-	GTypeLicense                        = coreglib.Type(C.gtk_license_get_type())
-	GTypeListTabBehavior                = coreglib.Type(C.gtk_list_tab_behavior_get_type())
-	GTypeMessageType                    = coreglib.Type(C.gtk_message_type_get_type())
-	GTypeMovementStep                   = coreglib.Type(C.gtk_movement_step_get_type())
-	GTypeNaturalWrapMode                = coreglib.Type(C.gtk_natural_wrap_mode_get_type())
-	GTypeNotebookTab                    = coreglib.Type(C.gtk_notebook_tab_get_type())
-	GTypeNumberUpLayout                 = coreglib.Type(C.gtk_number_up_layout_get_type())
-	GTypeOrdering                       = coreglib.Type(C.gtk_ordering_get_type())
-	GTypeOrientation                    = coreglib.Type(C.gtk_orientation_get_type())
-	GTypeOverflow                       = coreglib.Type(C.gtk_overflow_get_type())
-	GTypePackType                       = coreglib.Type(C.gtk_pack_type_get_type())
-	GTypePadActionType                  = coreglib.Type(C.gtk_pad_action_type_get_type())
-	GTypePageOrientation                = coreglib.Type(C.gtk_page_orientation_get_type())
-	GTypePageSet                        = coreglib.Type(C.gtk_page_set_get_type())
-	GTypePanDirection                   = coreglib.Type(C.gtk_pan_direction_get_type())
-	GTypePolicyType                     = coreglib.Type(C.gtk_policy_type_get_type())
-	GTypePositionType                   = coreglib.Type(C.gtk_position_type_get_type())
-	GTypePrintDuplex                    = coreglib.Type(C.gtk_print_duplex_get_type())
-	GTypePrintError                     = coreglib.Type(C.gtk_print_error_get_type())
-	GTypePrintOperationAction           = coreglib.Type(C.gtk_print_operation_action_get_type())
-	GTypePrintOperationResult           = coreglib.Type(C.gtk_print_operation_result_get_type())
-	GTypePrintPages                     = coreglib.Type(C.gtk_print_pages_get_type())
-	GTypePrintQuality                   = coreglib.Type(C.gtk_print_quality_get_type())
-	GTypePrintStatus                    = coreglib.Type(C.gtk_print_status_get_type())
-	GTypePropagationLimit               = coreglib.Type(C.gtk_propagation_limit_get_type())
-	GTypePropagationPhase               = coreglib.Type(C.gtk_propagation_phase_get_type())
-	GTypeRecentManagerError             = coreglib.Type(C.gtk_recent_manager_error_get_type())
-	GTypeResponseType                   = coreglib.Type(C.gtk_response_type_get_type())
-	GTypeRevealerTransitionType         = coreglib.Type(C.gtk_revealer_transition_type_get_type())
-	GTypeScrollStep                     = coreglib.Type(C.gtk_scroll_step_get_type())
-	GTypeScrollType                     = coreglib.Type(C.gtk_scroll_type_get_type())
-	GTypeScrollablePolicy               = coreglib.Type(C.gtk_scrollable_policy_get_type())
-	GTypeSelectionMode                  = coreglib.Type(C.gtk_selection_mode_get_type())
-	GTypeSensitivityType                = coreglib.Type(C.gtk_sensitivity_type_get_type())
-	GTypeShortcutScope                  = coreglib.Type(C.gtk_shortcut_scope_get_type())
-	GTypeShortcutType                   = coreglib.Type(C.gtk_shortcut_type_get_type())
-	GTypeSizeGroupMode                  = coreglib.Type(C.gtk_size_group_mode_get_type())
-	GTypeSizeRequestMode                = coreglib.Type(C.gtk_size_request_mode_get_type())
-	GTypeSortType                       = coreglib.Type(C.gtk_sort_type_get_type())
-	GTypeSorterChange                   = coreglib.Type(C.gtk_sorter_change_get_type())
-	GTypeSorterOrder                    = coreglib.Type(C.gtk_sorter_order_get_type())
-	GTypeSpinButtonUpdatePolicy         = coreglib.Type(C.gtk_spin_button_update_policy_get_type())
-	GTypeSpinType                       = coreglib.Type(C.gtk_spin_type_get_type())
-	GTypeStackTransitionType            = coreglib.Type(C.gtk_stack_transition_type_get_type())
-	GTypeStringFilterMatchMode          = coreglib.Type(C.gtk_string_filter_match_mode_get_type())
-	GTypeSymbolicColor                  = coreglib.Type(C.gtk_symbolic_color_get_type())
-	GTypeSystemSetting                  = coreglib.Type(C.gtk_system_setting_get_type())
-	GTypeTextDirection                  = coreglib.Type(C.gtk_text_direction_get_type())
-	GTypeTextExtendSelection            = coreglib.Type(C.gtk_text_extend_selection_get_type())
-	GTypeTextViewLayer                  = coreglib.Type(C.gtk_text_view_layer_get_type())
-	GTypeTextWindowType                 = coreglib.Type(C.gtk_text_window_type_get_type())
-	GTypeTreeViewColumnSizing           = coreglib.Type(C.gtk_tree_view_column_sizing_get_type())
-	GTypeTreeViewDropPosition           = coreglib.Type(C.gtk_tree_view_drop_position_get_type())
-	GTypeTreeViewGridLines              = coreglib.Type(C.gtk_tree_view_grid_lines_get_type())
-	GTypeUnit                           = coreglib.Type(C.gtk_unit_get_type())
-	GTypeWrapMode                       = coreglib.Type(C.gtk_wrap_mode_get_type())
-	GTypeApplicationInhibitFlags        = coreglib.Type(C.gtk_application_inhibit_flags_get_type())
-	GTypeBuilderClosureFlags            = coreglib.Type(C.gtk_builder_closure_flags_get_type())
-	GTypeCellRendererState              = coreglib.Type(C.gtk_cell_renderer_state_get_type())
-	GTypeDebugFlags                     = coreglib.Type(C.gtk_debug_flags_get_type())
-	GTypeDialogFlags                    = coreglib.Type(C.gtk_dialog_flags_get_type())
-	GTypeEventControllerScrollFlags     = coreglib.Type(C.gtk_event_controller_scroll_flags_get_type())
-	GTypeFontChooserLevel               = coreglib.Type(C.gtk_font_chooser_level_get_type())
-	GTypeIconLookupFlags                = coreglib.Type(C.gtk_icon_lookup_flags_get_type())
-	GTypeInputHints                     = coreglib.Type(C.gtk_input_hints_get_type())
-	GTypeListScrollFlags                = coreglib.Type(C.gtk_list_scroll_flags_get_type())
-	GTypePickFlags                      = coreglib.Type(C.gtk_pick_flags_get_type())
-	GTypePopoverMenuFlags               = coreglib.Type(C.gtk_popover_menu_flags_get_type())
-	GTypeShortcutActionFlags            = coreglib.Type(C.gtk_shortcut_action_flags_get_type())
-	GTypeStateFlags                     = coreglib.Type(C.gtk_state_flags_get_type())
-	GTypeStyleContextPrintFlags         = coreglib.Type(C.gtk_style_context_print_flags_get_type())
-	GTypeTextSearchFlags                = coreglib.Type(C.gtk_text_search_flags_get_type())
-	GTypeTreeModelFlags                 = coreglib.Type(C.gtk_tree_model_flags_get_type())
-	GTypeAccessible                     = coreglib.Type(C.gtk_accessible_get_type())
-	GTypeAccessibleRange                = coreglib.Type(C.gtk_accessible_range_get_type())
-	GTypeAccessibleText                 = coreglib.Type(C.gtk_accessible_text_get_type())
-	GTypeActionable                     = coreglib.Type(C.gtk_actionable_get_type())
-	GTypeAppChooser                     = coreglib.Type(C.gtk_app_chooser_get_type())
-	GTypeBuildable                      = coreglib.Type(C.gtk_buildable_get_type())
-	GTypeBuilderScope                   = coreglib.Type(C.gtk_builder_scope_get_type())
-	GTypeCellEditable                   = coreglib.Type(C.gtk_cell_editable_get_type())
-	GTypeCellLayout                     = coreglib.Type(C.gtk_cell_layout_get_type())
-	GTypeColorChooser                   = coreglib.Type(C.gtk_color_chooser_get_type())
-	GTypeConstraintTarget               = coreglib.Type(C.gtk_constraint_target_get_type())
-	GTypeEditableTextWidget             = coreglib.Type(C.gtk_editable_get_type())
-	GTypeFileChooser                    = coreglib.Type(C.gtk_file_chooser_get_type())
-	GTypeFontChooser                    = coreglib.Type(C.gtk_font_chooser_get_type())
-	GTypeNativeSurface                  = coreglib.Type(C.gtk_native_get_type())
-	GTypeOrientable                     = coreglib.Type(C.gtk_orientable_get_type())
-	GTypePrintOperationPreview          = coreglib.Type(C.gtk_print_operation_preview_get_type())
-	GTypeRoot                           = coreglib.Type(C.gtk_root_get_type())
-	GTypeScrollable                     = coreglib.Type(C.gtk_scrollable_get_type())
-	GTypeSectionModel                   = coreglib.Type(C.gtk_section_model_get_type())
-	GTypeSelectionModel                 = coreglib.Type(C.gtk_selection_model_get_type())
-	GTypeShortcutManager                = coreglib.Type(C.gtk_shortcut_manager_get_type())
-	GTypeStyleProvider                  = coreglib.Type(C.gtk_style_provider_get_type())
-	GTypeSymbolicPaintable              = coreglib.Type(C.gtk_symbolic_paintable_get_type())
-	GTypeTreeDragDest                   = coreglib.Type(C.gtk_tree_drag_dest_get_type())
-	GTypeTreeDragSource                 = coreglib.Type(C.gtk_tree_drag_source_get_type())
-	GTypeTreeModel                      = coreglib.Type(C.gtk_tree_model_get_type())
-	GTypeTreeSortable                   = coreglib.Type(C.gtk_tree_sortable_get_type())
-	GTypeATContext                      = coreglib.Type(C.gtk_at_context_get_type())
-	GTypeAboutDialog                    = coreglib.Type(C.gtk_about_dialog_get_type())
-	GTypeActionBar                      = coreglib.Type(C.gtk_action_bar_get_type())
-	GTypeActivateAction                 = coreglib.Type(C.gtk_activate_action_get_type())
-	GTypeAdjustment                     = coreglib.Type(C.gtk_adjustment_get_type())
-	GTypeAlertDialog                    = coreglib.Type(C.gtk_alert_dialog_get_type())
-	GTypeAlternativeTrigger             = coreglib.Type(C.gtk_alternative_trigger_get_type())
-	GTypeAnyFilter                      = coreglib.Type(C.gtk_any_filter_get_type())
-	GTypeAppChooserButton               = coreglib.Type(C.gtk_app_chooser_button_get_type())
-	GTypeAppChooserDialog               = coreglib.Type(C.gtk_app_chooser_dialog_get_type())
-	GTypeAppChooserWidget               = coreglib.Type(C.gtk_app_chooser_widget_get_type())
-	GTypeApplication                    = coreglib.Type(C.gtk_application_get_type())
-	GTypeApplicationWindow              = coreglib.Type(C.gtk_application_window_get_type())
-	GTypeAspectFrame                    = coreglib.Type(C.gtk_aspect_frame_get_type())
-	GTypeAssistant                      = coreglib.Type(C.gtk_assistant_get_type())
-	GTypeAssistantPage                  = coreglib.Type(C.gtk_assistant_page_get_type())
-	GTypeBinLayout                      = coreglib.Type(C.gtk_bin_layout_get_type())
-	GTypeBookmarkList                   = coreglib.Type(C.gtk_bookmark_list_get_type())
-	GTypeBoolFilter                     = coreglib.Type(C.gtk_bool_filter_get_type())
-	GTypeBox                            = coreglib.Type(C.gtk_box_get_type())
-	GTypeBoxLayout                      = coreglib.Type(C.gtk_box_layout_get_type())
-	GTypeBuilder                        = coreglib.Type(C.gtk_builder_get_type())
-	GTypeBuilderCScope                  = coreglib.Type(C.gtk_builder_cscope_get_type())
-	GTypeBuilderListItemFactory         = coreglib.Type(C.gtk_builder_list_item_factory_get_type())
-	GTypeButton                         = coreglib.Type(C.gtk_button_get_type())
-	GTypeCClosureExpression             = coreglib.Type(C.gtk_cclosure_expression_get_type())
-	GTypeCalendar                       = coreglib.Type(C.gtk_calendar_get_type())
-	GTypeCallbackAction                 = coreglib.Type(C.gtk_callback_action_get_type())
-	GTypeCellArea                       = coreglib.Type(C.gtk_cell_area_get_type())
-	GTypeCellAreaBox                    = coreglib.Type(C.gtk_cell_area_box_get_type())
-	GTypeCellAreaContext                = coreglib.Type(C.gtk_cell_area_context_get_type())
-	GTypeCellRenderer                   = coreglib.Type(C.gtk_cell_renderer_get_type())
-	GTypeCellRendererAccel              = coreglib.Type(C.gtk_cell_renderer_accel_get_type())
-	GTypeCellRendererCombo              = coreglib.Type(C.gtk_cell_renderer_combo_get_type())
-	GTypeCellRendererPixbuf             = coreglib.Type(C.gtk_cell_renderer_pixbuf_get_type())
-	GTypeCellRendererProgress           = coreglib.Type(C.gtk_cell_renderer_progress_get_type())
-	GTypeCellRendererSpin               = coreglib.Type(C.gtk_cell_renderer_spin_get_type())
-	GTypeCellRendererSpinner            = coreglib.Type(C.gtk_cell_renderer_spinner_get_type())
-	GTypeCellRendererText               = coreglib.Type(C.gtk_cell_renderer_text_get_type())
-	GTypeCellRendererToggle             = coreglib.Type(C.gtk_cell_renderer_toggle_get_type())
-	GTypeCellView                       = coreglib.Type(C.gtk_cell_view_get_type())
-	GTypeCenterBox                      = coreglib.Type(C.gtk_center_box_get_type())
-	GTypeCenterLayout                   = coreglib.Type(C.gtk_center_layout_get_type())
-	GTypeCheckButton                    = coreglib.Type(C.gtk_check_button_get_type())
-	GTypeClosureExpression              = coreglib.Type(C.gtk_closure_expression_get_type())
-	GTypeColorButton                    = coreglib.Type(C.gtk_color_button_get_type())
-	GTypeColorChooserDialog             = coreglib.Type(C.gtk_color_chooser_dialog_get_type())
-	GTypeColorChooserWidget             = coreglib.Type(C.gtk_color_chooser_widget_get_type())
-	GTypeColorDialog                    = coreglib.Type(C.gtk_color_dialog_get_type())
-	GTypeColorDialogButton              = coreglib.Type(C.gtk_color_dialog_button_get_type())
-	GTypeColumnView                     = coreglib.Type(C.gtk_column_view_get_type())
-	GTypeColumnViewCell                 = coreglib.Type(C.gtk_column_view_cell_get_type())
-	GTypeColumnViewColumn               = coreglib.Type(C.gtk_column_view_column_get_type())
-	GTypeColumnViewRow                  = coreglib.Type(C.gtk_column_view_row_get_type())
-	GTypeColumnViewSorter               = coreglib.Type(C.gtk_column_view_sorter_get_type())
-	GTypeComboBox                       = coreglib.Type(C.gtk_combo_box_get_type())
-	GTypeComboBoxText                   = coreglib.Type(C.gtk_combo_box_text_get_type())
-	GTypeConstantExpression             = coreglib.Type(C.gtk_constant_expression_get_type())
-	GTypeConstraint                     = coreglib.Type(C.gtk_constraint_get_type())
-	GTypeConstraintGuide                = coreglib.Type(C.gtk_constraint_guide_get_type())
-	GTypeConstraintLayout               = coreglib.Type(C.gtk_constraint_layout_get_type())
-	GTypeConstraintLayoutChild          = coreglib.Type(C.gtk_constraint_layout_child_get_type())
-	GTypeCSSProvider                    = coreglib.Type(C.gtk_css_provider_get_type())
-	GTypeCustomFilter                   = coreglib.Type(C.gtk_custom_filter_get_type())
-	GTypeCustomLayout                   = coreglib.Type(C.gtk_custom_layout_get_type())
-	GTypeCustomSorter                   = coreglib.Type(C.gtk_custom_sorter_get_type())
-	GTypeDialog                         = coreglib.Type(C.gtk_dialog_get_type())
-	GTypeDirectoryList                  = coreglib.Type(C.gtk_directory_list_get_type())
-	GTypeDragIcon                       = coreglib.Type(C.gtk_drag_icon_get_type())
-	GTypeDragSource                     = coreglib.Type(C.gtk_drag_source_get_type())
-	GTypeDrawingArea                    = coreglib.Type(C.gtk_drawing_area_get_type())
-	GTypeDropControllerMotion           = coreglib.Type(C.gtk_drop_controller_motion_get_type())
-	GTypeDropDown                       = coreglib.Type(C.gtk_drop_down_get_type())
-	GTypeDropTarget                     = coreglib.Type(C.gtk_drop_target_get_type())
-	GTypeDropTargetAsync                = coreglib.Type(C.gtk_drop_target_async_get_type())
-	GTypeEditableLabel                  = coreglib.Type(C.gtk_editable_label_get_type())
-	GTypeEmojiChooser                   = coreglib.Type(C.gtk_emoji_chooser_get_type())
-	GTypeEntry                          = coreglib.Type(C.gtk_entry_get_type())
-	GTypeEntryBuffer                    = coreglib.Type(C.gtk_entry_buffer_get_type())
-	GTypeEntryCompletion                = coreglib.Type(C.gtk_entry_completion_get_type())
-	GTypeEventController                = coreglib.Type(C.gtk_event_controller_get_type())
-	GTypeEventControllerFocus           = coreglib.Type(C.gtk_event_controller_focus_get_type())
-	GTypeEventControllerKey             = coreglib.Type(C.gtk_event_controller_key_get_type())
-	GTypeEventControllerLegacy          = coreglib.Type(C.gtk_event_controller_legacy_get_type())
-	GTypeEventControllerMotion          = coreglib.Type(C.gtk_event_controller_motion_get_type())
-	GTypeEventControllerScroll          = coreglib.Type(C.gtk_event_controller_scroll_get_type())
-	GTypeEveryFilter                    = coreglib.Type(C.gtk_every_filter_get_type())
-	GTypeExpander                       = coreglib.Type(C.gtk_expander_get_type())
-	GTypeExpression                     = coreglib.Type(C.gtk_expression_get_type())
-	GTypeFileChooserDialog              = coreglib.Type(C.gtk_file_chooser_dialog_get_type())
-	GTypeFileChooserNative              = coreglib.Type(C.gtk_file_chooser_native_get_type())
-	GTypeFileChooserWidget              = coreglib.Type(C.gtk_file_chooser_widget_get_type())
-	GTypeFileDialog                     = coreglib.Type(C.gtk_file_dialog_get_type())
-	GTypeFileFilter                     = coreglib.Type(C.gtk_file_filter_get_type())
-	GTypeFileLauncher                   = coreglib.Type(C.gtk_file_launcher_get_type())
-	GTypeFilter                         = coreglib.Type(C.gtk_filter_get_type())
-	GTypeFilterListModel                = coreglib.Type(C.gtk_filter_list_model_get_type())
-	GTypeFixed                          = coreglib.Type(C.gtk_fixed_get_type())
-	GTypeFixedLayout                    = coreglib.Type(C.gtk_fixed_layout_get_type())
-	GTypeFixedLayoutChild               = coreglib.Type(C.gtk_fixed_layout_child_get_type())
-	GTypeFlattenListModel               = coreglib.Type(C.gtk_flatten_list_model_get_type())
-	GTypeFlowBox                        = coreglib.Type(C.gtk_flow_box_get_type())
-	GTypeFlowBoxChild                   = coreglib.Type(C.gtk_flow_box_child_get_type())
-	GTypeFontButton                     = coreglib.Type(C.gtk_font_button_get_type())
-	GTypeFontChooserDialog              = coreglib.Type(C.gtk_font_chooser_dialog_get_type())
-	GTypeFontChooserWidget              = coreglib.Type(C.gtk_font_chooser_widget_get_type())
-	GTypeFontDialog                     = coreglib.Type(C.gtk_font_dialog_get_type())
-	GTypeFontDialogButton               = coreglib.Type(C.gtk_font_dialog_button_get_type())
-	GTypeFrame                          = coreglib.Type(C.gtk_frame_get_type())
-	GTypeGLArea                         = coreglib.Type(C.gtk_gl_area_get_type())
-	GTypeGesture                        = coreglib.Type(C.gtk_gesture_get_type())
-	GTypeGestureClick                   = coreglib.Type(C.gtk_gesture_click_get_type())
-	GTypeGestureDrag                    = coreglib.Type(C.gtk_gesture_drag_get_type())
-	GTypeGestureLongPress               = coreglib.Type(C.gtk_gesture_long_press_get_type())
-	GTypeGesturePan                     = coreglib.Type(C.gtk_gesture_pan_get_type())
-	GTypeGestureRotate                  = coreglib.Type(C.gtk_gesture_rotate_get_type())
-	GTypeGestureSingle                  = coreglib.Type(C.gtk_gesture_single_get_type())
-	GTypeGestureStylus                  = coreglib.Type(C.gtk_gesture_stylus_get_type())
-	GTypeGestureSwipe                   = coreglib.Type(C.gtk_gesture_swipe_get_type())
-	GTypeGestureZoom                    = coreglib.Type(C.gtk_gesture_zoom_get_type())
-	GTypeGraphicsOffload                = coreglib.Type(C.gtk_graphics_offload_get_type())
-	GTypeGrid                           = coreglib.Type(C.gtk_grid_get_type())
-	GTypeGridLayout                     = coreglib.Type(C.gtk_grid_layout_get_type())
-	GTypeGridLayoutChild                = coreglib.Type(C.gtk_grid_layout_child_get_type())
-	GTypeGridView                       = coreglib.Type(C.gtk_grid_view_get_type())
-	GTypeHeaderBar                      = coreglib.Type(C.gtk_header_bar_get_type())
-	GTypeIMContext                      = coreglib.Type(C.gtk_im_context_get_type())
-	GTypeIMContextSimple                = coreglib.Type(C.gtk_im_context_simple_get_type())
-	GTypeIMMulticontext                 = coreglib.Type(C.gtk_im_multicontext_get_type())
-	GTypeIconPaintable                  = coreglib.Type(C.gtk_icon_paintable_get_type())
-	GTypeIconTheme                      = coreglib.Type(C.gtk_icon_theme_get_type())
-	GTypeIconView                       = coreglib.Type(C.gtk_icon_view_get_type())
-	GTypeImage                          = coreglib.Type(C.gtk_image_get_type())
-	GTypeInfoBar                        = coreglib.Type(C.gtk_info_bar_get_type())
-	GTypeInscription                    = coreglib.Type(C.gtk_inscription_get_type())
-	GTypeKeyvalTrigger                  = coreglib.Type(C.gtk_keyval_trigger_get_type())
-	GTypeLabel                          = coreglib.Type(C.gtk_label_get_type())
-	GTypeLayoutChild                    = coreglib.Type(C.gtk_layout_child_get_type())
-	GTypeLayoutManager                  = coreglib.Type(C.gtk_layout_manager_get_type())
-	GTypeLevelBar                       = coreglib.Type(C.gtk_level_bar_get_type())
-	GTypeLinkButton                     = coreglib.Type(C.gtk_link_button_get_type())
-	GTypeListBase                       = coreglib.Type(C.gtk_list_base_get_type())
-	GTypeListBox                        = coreglib.Type(C.gtk_list_box_get_type())
-	GTypeListBoxRow                     = coreglib.Type(C.gtk_list_box_row_get_type())
-	GTypeListHeader                     = coreglib.Type(C.gtk_list_header_get_type())
-	GTypeListItem                       = coreglib.Type(C.gtk_list_item_get_type())
-	GTypeListItemFactory                = coreglib.Type(C.gtk_list_item_factory_get_type())
-	GTypeListStore                      = coreglib.Type(C.gtk_list_store_get_type())
-	GTypeListView                       = coreglib.Type(C.gtk_list_view_get_type())
-	GTypeLockButton                     = coreglib.Type(C.gtk_lock_button_get_type())
-	GTypeMapListModel                   = coreglib.Type(C.gtk_map_list_model_get_type())
-	GTypeMediaControls                  = coreglib.Type(C.gtk_media_controls_get_type())
-	GTypeMediaFile                      = coreglib.Type(C.gtk_media_file_get_type())
-	GTypeMediaStream                    = coreglib.Type(C.gtk_media_stream_get_type())
-	GTypeMenuButton                     = coreglib.Type(C.gtk_menu_button_get_type())
-	GTypeMessageDialog                  = coreglib.Type(C.gtk_message_dialog_get_type())
-	GTypeMnemonicAction                 = coreglib.Type(C.gtk_mnemonic_action_get_type())
-	GTypeMnemonicTrigger                = coreglib.Type(C.gtk_mnemonic_trigger_get_type())
-	GTypeMountOperation                 = coreglib.Type(C.gtk_mount_operation_get_type())
-	GTypeMultiFilter                    = coreglib.Type(C.gtk_multi_filter_get_type())
-	GTypeMultiSelection                 = coreglib.Type(C.gtk_multi_selection_get_type())
-	GTypeMultiSorter                    = coreglib.Type(C.gtk_multi_sorter_get_type())
-	GTypeNamedAction                    = coreglib.Type(C.gtk_named_action_get_type())
-	GTypeNativeDialog                   = coreglib.Type(C.gtk_native_dialog_get_type())
-	GTypeNeverTrigger                   = coreglib.Type(C.gtk_never_trigger_get_type())
-	GTypeNoSelection                    = coreglib.Type(C.gtk_no_selection_get_type())
-	GTypeNotebook                       = coreglib.Type(C.gtk_notebook_get_type())
-	GTypeNotebookPage                   = coreglib.Type(C.gtk_notebook_page_get_type())
-	GTypeNothingAction                  = coreglib.Type(C.gtk_nothing_action_get_type())
-	GTypeNumericSorter                  = coreglib.Type(C.gtk_numeric_sorter_get_type())
-	GTypeObjectExpression               = coreglib.Type(C.gtk_object_expression_get_type())
-	GTypeOverlay                        = coreglib.Type(C.gtk_overlay_get_type())
-	GTypeOverlayLayout                  = coreglib.Type(C.gtk_overlay_layout_get_type())
-	GTypeOverlayLayoutChild             = coreglib.Type(C.gtk_overlay_layout_child_get_type())
-	GTypePadController                  = coreglib.Type(C.gtk_pad_controller_get_type())
-	GTypePageSetup                      = coreglib.Type(C.gtk_page_setup_get_type())
-	GTypePaned                          = coreglib.Type(C.gtk_paned_get_type())
-	GTypePasswordEntry                  = coreglib.Type(C.gtk_password_entry_get_type())
-	GTypePasswordEntryBuffer            = coreglib.Type(C.gtk_password_entry_buffer_get_type())
-	GTypePicture                        = coreglib.Type(C.gtk_picture_get_type())
-	GTypePopover                        = coreglib.Type(C.gtk_popover_get_type())
-	GTypePopoverMenu                    = coreglib.Type(C.gtk_popover_menu_get_type())
-	GTypePopoverMenuBar                 = coreglib.Type(C.gtk_popover_menu_bar_get_type())
-	GTypePrintContext                   = coreglib.Type(C.gtk_print_context_get_type())
-	GTypePrintDialog                    = coreglib.Type(C.gtk_print_dialog_get_type())
-	GTypePrintOperation                 = coreglib.Type(C.gtk_print_operation_get_type())
-	GTypePrintSettings                  = coreglib.Type(C.gtk_print_settings_get_type())
-	GTypeProgressBar                    = coreglib.Type(C.gtk_progress_bar_get_type())
-	GTypePropertyExpression             = coreglib.Type(C.gtk_property_expression_get_type())
-	GTypeRange                          = coreglib.Type(C.gtk_range_get_type())
-	GTypeRecentManager                  = coreglib.Type(C.gtk_recent_manager_get_type())
-	GTypeRevealer                       = coreglib.Type(C.gtk_revealer_get_type())
-	GTypeScale                          = coreglib.Type(C.gtk_scale_get_type())
-	GTypeScaleButton                    = coreglib.Type(C.gtk_scale_button_get_type())
-	GTypeScrollbar                      = coreglib.Type(C.gtk_scrollbar_get_type())
-	GTypeScrolledWindow                 = coreglib.Type(C.gtk_scrolled_window_get_type())
-	GTypeSearchBar                      = coreglib.Type(C.gtk_search_bar_get_type())
-	GTypeSearchEntry                    = coreglib.Type(C.gtk_search_entry_get_type())
-	GTypeSelectionFilterModel           = coreglib.Type(C.gtk_selection_filter_model_get_type())
-	GTypeSeparator                      = coreglib.Type(C.gtk_separator_get_type())
-	GTypeSettings                       = coreglib.Type(C.gtk_settings_get_type())
-	GTypeShortcut                       = coreglib.Type(C.gtk_shortcut_get_type())
-	GTypeShortcutAction                 = coreglib.Type(C.gtk_shortcut_action_get_type())
-	GTypeShortcutController             = coreglib.Type(C.gtk_shortcut_controller_get_type())
-	GTypeShortcutLabel                  = coreglib.Type(C.gtk_shortcut_label_get_type())
-	GTypeShortcutTrigger                = coreglib.Type(C.gtk_shortcut_trigger_get_type())
-	GTypeShortcutsGroup                 = coreglib.Type(C.gtk_shortcuts_group_get_type())
-	GTypeShortcutsSection               = coreglib.Type(C.gtk_shortcuts_section_get_type())
-	GTypeShortcutsShortcut              = coreglib.Type(C.gtk_shortcuts_shortcut_get_type())
-	GTypeShortcutsWindow                = coreglib.Type(C.gtk_shortcuts_window_get_type())
-	GTypeSignalAction                   = coreglib.Type(C.gtk_signal_action_get_type())
-	GTypeSignalListItemFactory          = coreglib.Type(C.gtk_signal_list_item_factory_get_type())
-	GTypeSingleSelection                = coreglib.Type(C.gtk_single_selection_get_type())
-	GTypeSizeGroup                      = coreglib.Type(C.gtk_size_group_get_type())
-	GTypeSliceListModel                 = coreglib.Type(C.gtk_slice_list_model_get_type())
-	GTypeSnapshot                       = coreglib.Type(C.gtk_snapshot_get_type())
-	GTypeSortListModel                  = coreglib.Type(C.gtk_sort_list_model_get_type())
-	GTypeSorter                         = coreglib.Type(C.gtk_sorter_get_type())
-	GTypeSpinButton                     = coreglib.Type(C.gtk_spin_button_get_type())
-	GTypeSpinner                        = coreglib.Type(C.gtk_spinner_get_type())
-	GTypeStack                          = coreglib.Type(C.gtk_stack_get_type())
-	GTypeStackPage                      = coreglib.Type(C.gtk_stack_page_get_type())
-	GTypeStackSidebar                   = coreglib.Type(C.gtk_stack_sidebar_get_type())
-	GTypeStackSwitcher                  = coreglib.Type(C.gtk_stack_switcher_get_type())
-	GTypeStatusbar                      = coreglib.Type(C.gtk_statusbar_get_type())
-	GTypeStringFilter                   = coreglib.Type(C.gtk_string_filter_get_type())
-	GTypeStringList                     = coreglib.Type(C.gtk_string_list_get_type())
-	GTypeStringObject                   = coreglib.Type(C.gtk_string_object_get_type())
-	GTypeStringSorter                   = coreglib.Type(C.gtk_string_sorter_get_type())
-	GTypeStyleContext                   = coreglib.Type(C.gtk_style_context_get_type())
-	GTypeSwitch                         = coreglib.Type(C.gtk_switch_get_type())
-	GTypeText                           = coreglib.Type(C.gtk_text_get_type())
-	GTypeTextBuffer                     = coreglib.Type(C.gtk_text_buffer_get_type())
-	GTypeTextChildAnchor                = coreglib.Type(C.gtk_text_child_anchor_get_type())
-	GTypeTextMark                       = coreglib.Type(C.gtk_text_mark_get_type())
-	GTypeTextTag                        = coreglib.Type(C.gtk_text_tag_get_type())
-	GTypeTextTagTable                   = coreglib.Type(C.gtk_text_tag_table_get_type())
-	GTypeTextView                       = coreglib.Type(C.gtk_text_view_get_type())
-	GTypeToggleButton                   = coreglib.Type(C.gtk_toggle_button_get_type())
-	GTypeTooltip                        = coreglib.Type(C.gtk_tooltip_get_type())
-	GTypeTreeExpander                   = coreglib.Type(C.gtk_tree_expander_get_type())
-	GTypeTreeListModel                  = coreglib.Type(C.gtk_tree_list_model_get_type())
-	GTypeTreeListRow                    = coreglib.Type(C.gtk_tree_list_row_get_type())
-	GTypeTreeListRowSorter              = coreglib.Type(C.gtk_tree_list_row_sorter_get_type())
-	GTypeTreeModelFilter                = coreglib.Type(C.gtk_tree_model_filter_get_type())
-	GTypeTreeModelSort                  = coreglib.Type(C.gtk_tree_model_sort_get_type())
-	GTypeTreeSelection                  = coreglib.Type(C.gtk_tree_selection_get_type())
-	GTypeTreeStore                      = coreglib.Type(C.gtk_tree_store_get_type())
-	GTypeTreeView                       = coreglib.Type(C.gtk_tree_view_get_type())
-	GTypeTreeViewColumn                 = coreglib.Type(C.gtk_tree_view_column_get_type())
-	GTypeURILauncher                    = coreglib.Type(C.gtk_uri_launcher_get_type())
-	GTypeVideo                          = coreglib.Type(C.gtk_video_get_type())
-	GTypeViewport                       = coreglib.Type(C.gtk_viewport_get_type())
-	GTypeVolumeButton                   = coreglib.Type(C.gtk_volume_button_get_type())
-	GTypeWidget                         = coreglib.Type(C.gtk_widget_get_type())
-	GTypeWidgetPaintable                = coreglib.Type(C.gtk_widget_paintable_get_type())
-	GTypeWindow                         = coreglib.Type(C.gtk_window_get_type())
-	GTypeWindowControls                 = coreglib.Type(C.gtk_window_controls_get_type())
-	GTypeWindowGroup                    = coreglib.Type(C.gtk_window_group_get_type())
-	GTypeWindowHandle                   = coreglib.Type(C.gtk_window_handle_get_type())
-	GTypeAccessibleList                 = coreglib.Type(C.gtk_accessible_list_get_type())
-	GTypeBitset                         = coreglib.Type(C.gtk_bitset_get_type())
-	GTypeBitsetIter                     = coreglib.Type(C.gtk_bitset_iter_get_type())
-	GTypeBorder                         = coreglib.Type(C.gtk_border_get_type())
-	GTypeCSSSection                     = coreglib.Type(C.gtk_css_section_get_type())
-	GTypeExpressionWatch                = coreglib.Type(C.gtk_expression_watch_get_type())
-	GTypePaperSize                      = coreglib.Type(C.gtk_paper_size_get_type())
-	GTypePrintSetup                     = coreglib.Type(C.gtk_print_setup_get_type())
-	GTypeRecentInfo                     = coreglib.Type(C.gtk_recent_info_get_type())
-	GTypeRequisition                    = coreglib.Type(C.gtk_requisition_get_type())
-	GTypeScrollInfo                     = coreglib.Type(C.gtk_scroll_info_get_type())
-	GTypeTextIter                       = coreglib.Type(C.gtk_text_iter_get_type())
-	GTypeTreeIter                       = coreglib.Type(C.gtk_tree_iter_get_type())
-	GTypeTreePath                       = coreglib.Type(C.gtk_tree_path_get_type())
-	GTypeTreeRowReference               = coreglib.Type(C.gtk_tree_row_reference_get_type())
+	GTypeAccessibleAutocomplete     = coreglib.Type(C.gtk_accessible_autocomplete_get_type())
+	GTypeAccessibleInvalidState     = coreglib.Type(C.gtk_accessible_invalid_state_get_type())
+	GTypeAccessibleProperty         = coreglib.Type(C.gtk_accessible_property_get_type())
+	GTypeAccessibleRelation         = coreglib.Type(C.gtk_accessible_relation_get_type())
+	GTypeAccessibleRole             = coreglib.Type(C.gtk_accessible_role_get_type())
+	GTypeAccessibleSort             = coreglib.Type(C.gtk_accessible_sort_get_type())
+	GTypeAccessibleState            = coreglib.Type(C.gtk_accessible_state_get_type())
+	GTypeAccessibleTristate         = coreglib.Type(C.gtk_accessible_tristate_get_type())
+	GTypeAlign                      = coreglib.Type(C.gtk_align_get_type())
+	GTypeArrowType                  = coreglib.Type(C.gtk_arrow_type_get_type())
+	GTypeAssistantPageType          = coreglib.Type(C.gtk_assistant_page_type_get_type())
+	GTypeBaselinePosition           = coreglib.Type(C.gtk_baseline_position_get_type())
+	GTypeBorderStyle                = coreglib.Type(C.gtk_border_style_get_type())
+	GTypeBuilderError               = coreglib.Type(C.gtk_builder_error_get_type())
+	GTypeButtonsType                = coreglib.Type(C.gtk_buttons_type_get_type())
+	GTypeCellRendererAccelMode      = coreglib.Type(C.gtk_cell_renderer_accel_mode_get_type())
+	GTypeCellRendererMode           = coreglib.Type(C.gtk_cell_renderer_mode_get_type())
+	GTypeConstraintAttribute        = coreglib.Type(C.gtk_constraint_attribute_get_type())
+	GTypeConstraintRelation         = coreglib.Type(C.gtk_constraint_relation_get_type())
+	GTypeConstraintStrength         = coreglib.Type(C.gtk_constraint_strength_get_type())
+	GTypeConstraintVflParserError   = coreglib.Type(C.gtk_constraint_vfl_parser_error_get_type())
+	GTypeContentFit                 = coreglib.Type(C.gtk_content_fit_get_type())
+	GTypeCornerType                 = coreglib.Type(C.gtk_corner_type_get_type())
+	GTypeDeleteType                 = coreglib.Type(C.gtk_delete_type_get_type())
+	GTypeDirectionType              = coreglib.Type(C.gtk_direction_type_get_type())
+	GTypeEditableProperties         = coreglib.Type(C.gtk_editable_properties_get_type())
+	GTypeEntryIconPosition          = coreglib.Type(C.gtk_entry_icon_position_get_type())
+	GTypeEventSequenceState         = coreglib.Type(C.gtk_event_sequence_state_get_type())
+	GTypeFileChooserAction          = coreglib.Type(C.gtk_file_chooser_action_get_type())
+	GTypeFileChooserError           = coreglib.Type(C.gtk_file_chooser_error_get_type())
+	GTypeFilterChange               = coreglib.Type(C.gtk_filter_change_get_type())
+	GTypeFilterMatch                = coreglib.Type(C.gtk_filter_match_get_type())
+	GTypeIconSize                   = coreglib.Type(C.gtk_icon_size_get_type())
+	GTypeIconThemeError             = coreglib.Type(C.gtk_icon_theme_error_get_type())
+	GTypeIconViewDropPosition       = coreglib.Type(C.gtk_icon_view_drop_position_get_type())
+	GTypeImageType                  = coreglib.Type(C.gtk_image_type_get_type())
+	GTypeInputPurpose               = coreglib.Type(C.gtk_input_purpose_get_type())
+	GTypeInscriptionOverflow        = coreglib.Type(C.gtk_inscription_overflow_get_type())
+	GTypeJustification              = coreglib.Type(C.gtk_justification_get_type())
+	GTypeLevelBarMode               = coreglib.Type(C.gtk_level_bar_mode_get_type())
+	GTypeLicense                    = coreglib.Type(C.gtk_license_get_type())
+	GTypeMessageType                = coreglib.Type(C.gtk_message_type_get_type())
+	GTypeMovementStep               = coreglib.Type(C.gtk_movement_step_get_type())
+	GTypeNaturalWrapMode            = coreglib.Type(C.gtk_natural_wrap_mode_get_type())
+	GTypeNotebookTab                = coreglib.Type(C.gtk_notebook_tab_get_type())
+	GTypeNumberUpLayout             = coreglib.Type(C.gtk_number_up_layout_get_type())
+	GTypeOrdering                   = coreglib.Type(C.gtk_ordering_get_type())
+	GTypeOrientation                = coreglib.Type(C.gtk_orientation_get_type())
+	GTypeOverflow                   = coreglib.Type(C.gtk_overflow_get_type())
+	GTypePackType                   = coreglib.Type(C.gtk_pack_type_get_type())
+	GTypePadActionType              = coreglib.Type(C.gtk_pad_action_type_get_type())
+	GTypePageOrientation            = coreglib.Type(C.gtk_page_orientation_get_type())
+	GTypePageSet                    = coreglib.Type(C.gtk_page_set_get_type())
+	GTypePanDirection               = coreglib.Type(C.gtk_pan_direction_get_type())
+	GTypePolicyType                 = coreglib.Type(C.gtk_policy_type_get_type())
+	GTypePositionType               = coreglib.Type(C.gtk_position_type_get_type())
+	GTypePrintDuplex                = coreglib.Type(C.gtk_print_duplex_get_type())
+	GTypePrintError                 = coreglib.Type(C.gtk_print_error_get_type())
+	GTypePrintOperationAction       = coreglib.Type(C.gtk_print_operation_action_get_type())
+	GTypePrintOperationResult       = coreglib.Type(C.gtk_print_operation_result_get_type())
+	GTypePrintPages                 = coreglib.Type(C.gtk_print_pages_get_type())
+	GTypePrintQuality               = coreglib.Type(C.gtk_print_quality_get_type())
+	GTypePrintStatus                = coreglib.Type(C.gtk_print_status_get_type())
+	GTypePropagationLimit           = coreglib.Type(C.gtk_propagation_limit_get_type())
+	GTypePropagationPhase           = coreglib.Type(C.gtk_propagation_phase_get_type())
+	GTypeRecentManagerError         = coreglib.Type(C.gtk_recent_manager_error_get_type())
+	GTypeResponseType               = coreglib.Type(C.gtk_response_type_get_type())
+	GTypeRevealerTransitionType     = coreglib.Type(C.gtk_revealer_transition_type_get_type())
+	GTypeScrollStep                 = coreglib.Type(C.gtk_scroll_step_get_type())
+	GTypeScrollType                 = coreglib.Type(C.gtk_scroll_type_get_type())
+	GTypeScrollablePolicy           = coreglib.Type(C.gtk_scrollable_policy_get_type())
+	GTypeSelectionMode              = coreglib.Type(C.gtk_selection_mode_get_type())
+	GTypeSensitivityType            = coreglib.Type(C.gtk_sensitivity_type_get_type())
+	GTypeShortcutScope              = coreglib.Type(C.gtk_shortcut_scope_get_type())
+	GTypeShortcutType               = coreglib.Type(C.gtk_shortcut_type_get_type())
+	GTypeSizeGroupMode              = coreglib.Type(C.gtk_size_group_mode_get_type())
+	GTypeSizeRequestMode            = coreglib.Type(C.gtk_size_request_mode_get_type())
+	GTypeSortType                   = coreglib.Type(C.gtk_sort_type_get_type())
+	GTypeSorterChange               = coreglib.Type(C.gtk_sorter_change_get_type())
+	GTypeSorterOrder                = coreglib.Type(C.gtk_sorter_order_get_type())
+	GTypeSpinButtonUpdatePolicy     = coreglib.Type(C.gtk_spin_button_update_policy_get_type())
+	GTypeSpinType                   = coreglib.Type(C.gtk_spin_type_get_type())
+	GTypeStackTransitionType        = coreglib.Type(C.gtk_stack_transition_type_get_type())
+	GTypeStringFilterMatchMode      = coreglib.Type(C.gtk_string_filter_match_mode_get_type())
+	GTypeSymbolicColor              = coreglib.Type(C.gtk_symbolic_color_get_type())
+	GTypeSystemSetting              = coreglib.Type(C.gtk_system_setting_get_type())
+	GTypeTextDirection              = coreglib.Type(C.gtk_text_direction_get_type())
+	GTypeTextExtendSelection        = coreglib.Type(C.gtk_text_extend_selection_get_type())
+	GTypeTextViewLayer              = coreglib.Type(C.gtk_text_view_layer_get_type())
+	GTypeTextWindowType             = coreglib.Type(C.gtk_text_window_type_get_type())
+	GTypeTreeViewColumnSizing       = coreglib.Type(C.gtk_tree_view_column_sizing_get_type())
+	GTypeTreeViewDropPosition       = coreglib.Type(C.gtk_tree_view_drop_position_get_type())
+	GTypeTreeViewGridLines          = coreglib.Type(C.gtk_tree_view_grid_lines_get_type())
+	GTypeUnit                       = coreglib.Type(C.gtk_unit_get_type())
+	GTypeWrapMode                   = coreglib.Type(C.gtk_wrap_mode_get_type())
+	GTypeApplicationInhibitFlags    = coreglib.Type(C.gtk_application_inhibit_flags_get_type())
+	GTypeBuilderClosureFlags        = coreglib.Type(C.gtk_builder_closure_flags_get_type())
+	GTypeCellRendererState          = coreglib.Type(C.gtk_cell_renderer_state_get_type())
+	GTypeDebugFlags                 = coreglib.Type(C.gtk_debug_flags_get_type())
+	GTypeDialogFlags                = coreglib.Type(C.gtk_dialog_flags_get_type())
+	GTypeEventControllerScrollFlags = coreglib.Type(C.gtk_event_controller_scroll_flags_get_type())
+	GTypeFontChooserLevel           = coreglib.Type(C.gtk_font_chooser_level_get_type())
+	GTypeIconLookupFlags            = coreglib.Type(C.gtk_icon_lookup_flags_get_type())
+	GTypeInputHints                 = coreglib.Type(C.gtk_input_hints_get_type())
+	GTypePickFlags                  = coreglib.Type(C.gtk_pick_flags_get_type())
+	GTypePopoverMenuFlags           = coreglib.Type(C.gtk_popover_menu_flags_get_type())
+	GTypeShortcutActionFlags        = coreglib.Type(C.gtk_shortcut_action_flags_get_type())
+	GTypeStateFlags                 = coreglib.Type(C.gtk_state_flags_get_type())
+	GTypeStyleContextPrintFlags     = coreglib.Type(C.gtk_style_context_print_flags_get_type())
+	GTypeTextSearchFlags            = coreglib.Type(C.gtk_text_search_flags_get_type())
+	GTypeTreeModelFlags             = coreglib.Type(C.gtk_tree_model_flags_get_type())
+	GTypeAccessible                 = coreglib.Type(C.gtk_accessible_get_type())
+	GTypeActionable                 = coreglib.Type(C.gtk_actionable_get_type())
+	GTypeAppChooser                 = coreglib.Type(C.gtk_app_chooser_get_type())
+	GTypeBuildable                  = coreglib.Type(C.gtk_buildable_get_type())
+	GTypeBuilderScope               = coreglib.Type(C.gtk_builder_scope_get_type())
+	GTypeCellEditable               = coreglib.Type(C.gtk_cell_editable_get_type())
+	GTypeCellLayout                 = coreglib.Type(C.gtk_cell_layout_get_type())
+	GTypeColorChooser               = coreglib.Type(C.gtk_color_chooser_get_type())
+	GTypeConstraintTarget           = coreglib.Type(C.gtk_constraint_target_get_type())
+	GTypeEditableTextWidget         = coreglib.Type(C.gtk_editable_get_type())
+	GTypeFileChooser                = coreglib.Type(C.gtk_file_chooser_get_type())
+	GTypeFontChooser                = coreglib.Type(C.gtk_font_chooser_get_type())
+	GTypeNativeSurface              = coreglib.Type(C.gtk_native_get_type())
+	GTypeOrientable                 = coreglib.Type(C.gtk_orientable_get_type())
+	GTypePrintOperationPreview      = coreglib.Type(C.gtk_print_operation_preview_get_type())
+	GTypeRoot                       = coreglib.Type(C.gtk_root_get_type())
+	GTypeScrollable                 = coreglib.Type(C.gtk_scrollable_get_type())
+	GTypeSelectionModel             = coreglib.Type(C.gtk_selection_model_get_type())
+	GTypeShortcutManager            = coreglib.Type(C.gtk_shortcut_manager_get_type())
+	GTypeStyleProvider              = coreglib.Type(C.gtk_style_provider_get_type())
+	GTypeSymbolicPaintable          = coreglib.Type(C.gtk_symbolic_paintable_get_type())
+	GTypeTreeDragDest               = coreglib.Type(C.gtk_tree_drag_dest_get_type())
+	GTypeTreeDragSource             = coreglib.Type(C.gtk_tree_drag_source_get_type())
+	GTypeTreeModel                  = coreglib.Type(C.gtk_tree_model_get_type())
+	GTypeTreeSortable               = coreglib.Type(C.gtk_tree_sortable_get_type())
+	GTypeATContext                  = coreglib.Type(C.gtk_at_context_get_type())
+	GTypeAboutDialog                = coreglib.Type(C.gtk_about_dialog_get_type())
+	GTypeActionBar                  = coreglib.Type(C.gtk_action_bar_get_type())
+	GTypeActivateAction             = coreglib.Type(C.gtk_activate_action_get_type())
+	GTypeAdjustment                 = coreglib.Type(C.gtk_adjustment_get_type())
+	GTypeAlternativeTrigger         = coreglib.Type(C.gtk_alternative_trigger_get_type())
+	GTypeAnyFilter                  = coreglib.Type(C.gtk_any_filter_get_type())
+	GTypeAppChooserButton           = coreglib.Type(C.gtk_app_chooser_button_get_type())
+	GTypeAppChooserDialog           = coreglib.Type(C.gtk_app_chooser_dialog_get_type())
+	GTypeAppChooserWidget           = coreglib.Type(C.gtk_app_chooser_widget_get_type())
+	GTypeApplication                = coreglib.Type(C.gtk_application_get_type())
+	GTypeApplicationWindow          = coreglib.Type(C.gtk_application_window_get_type())
+	GTypeAspectFrame                = coreglib.Type(C.gtk_aspect_frame_get_type())
+	GTypeAssistant                  = coreglib.Type(C.gtk_assistant_get_type())
+	GTypeAssistantPage              = coreglib.Type(C.gtk_assistant_page_get_type())
+	GTypeBinLayout                  = coreglib.Type(C.gtk_bin_layout_get_type())
+	GTypeBookmarkList               = coreglib.Type(C.gtk_bookmark_list_get_type())
+	GTypeBoolFilter                 = coreglib.Type(C.gtk_bool_filter_get_type())
+	GTypeBox                        = coreglib.Type(C.gtk_box_get_type())
+	GTypeBoxLayout                  = coreglib.Type(C.gtk_box_layout_get_type())
+	GTypeBuilder                    = coreglib.Type(C.gtk_builder_get_type())
+	GTypeBuilderCScope              = coreglib.Type(C.gtk_builder_cscope_get_type())
+	GTypeBuilderListItemFactory     = coreglib.Type(C.gtk_builder_list_item_factory_get_type())
+	GTypeButton                     = coreglib.Type(C.gtk_button_get_type())
+	GTypeCClosureExpression         = coreglib.Type(C.gtk_cclosure_expression_get_type())
+	GTypeCalendar                   = coreglib.Type(C.gtk_calendar_get_type())
+	GTypeCallbackAction             = coreglib.Type(C.gtk_callback_action_get_type())
+	GTypeCellArea                   = coreglib.Type(C.gtk_cell_area_get_type())
+	GTypeCellAreaBox                = coreglib.Type(C.gtk_cell_area_box_get_type())
+	GTypeCellAreaContext            = coreglib.Type(C.gtk_cell_area_context_get_type())
+	GTypeCellRenderer               = coreglib.Type(C.gtk_cell_renderer_get_type())
+	GTypeCellRendererAccel          = coreglib.Type(C.gtk_cell_renderer_accel_get_type())
+	GTypeCellRendererCombo          = coreglib.Type(C.gtk_cell_renderer_combo_get_type())
+	GTypeCellRendererPixbuf         = coreglib.Type(C.gtk_cell_renderer_pixbuf_get_type())
+	GTypeCellRendererProgress       = coreglib.Type(C.gtk_cell_renderer_progress_get_type())
+	GTypeCellRendererSpin           = coreglib.Type(C.gtk_cell_renderer_spin_get_type())
+	GTypeCellRendererSpinner        = coreglib.Type(C.gtk_cell_renderer_spinner_get_type())
+	GTypeCellRendererText           = coreglib.Type(C.gtk_cell_renderer_text_get_type())
+	GTypeCellRendererToggle         = coreglib.Type(C.gtk_cell_renderer_toggle_get_type())
+	GTypeCellView                   = coreglib.Type(C.gtk_cell_view_get_type())
+	GTypeCenterBox                  = coreglib.Type(C.gtk_center_box_get_type())
+	GTypeCenterLayout               = coreglib.Type(C.gtk_center_layout_get_type())
+	GTypeCheckButton                = coreglib.Type(C.gtk_check_button_get_type())
+	GTypeClosureExpression          = coreglib.Type(C.gtk_closure_expression_get_type())
+	GTypeColorButton                = coreglib.Type(C.gtk_color_button_get_type())
+	GTypeColorChooserDialog         = coreglib.Type(C.gtk_color_chooser_dialog_get_type())
+	GTypeColorChooserWidget         = coreglib.Type(C.gtk_color_chooser_widget_get_type())
+	GTypeColumnView                 = coreglib.Type(C.gtk_column_view_get_type())
+	GTypeColumnViewColumn           = coreglib.Type(C.gtk_column_view_column_get_type())
+	GTypeComboBox                   = coreglib.Type(C.gtk_combo_box_get_type())
+	GTypeComboBoxText               = coreglib.Type(C.gtk_combo_box_text_get_type())
+	GTypeConstantExpression         = coreglib.Type(C.gtk_constant_expression_get_type())
+	GTypeConstraint                 = coreglib.Type(C.gtk_constraint_get_type())
+	GTypeConstraintGuide            = coreglib.Type(C.gtk_constraint_guide_get_type())
+	GTypeConstraintLayout           = coreglib.Type(C.gtk_constraint_layout_get_type())
+	GTypeConstraintLayoutChild      = coreglib.Type(C.gtk_constraint_layout_child_get_type())
+	GTypeCSSProvider                = coreglib.Type(C.gtk_css_provider_get_type())
+	GTypeCustomFilter               = coreglib.Type(C.gtk_custom_filter_get_type())
+	GTypeCustomLayout               = coreglib.Type(C.gtk_custom_layout_get_type())
+	GTypeCustomSorter               = coreglib.Type(C.gtk_custom_sorter_get_type())
+	GTypeDialog                     = coreglib.Type(C.gtk_dialog_get_type())
+	GTypeDirectoryList              = coreglib.Type(C.gtk_directory_list_get_type())
+	GTypeDragIcon                   = coreglib.Type(C.gtk_drag_icon_get_type())
+	GTypeDragSource                 = coreglib.Type(C.gtk_drag_source_get_type())
+	GTypeDrawingArea                = coreglib.Type(C.gtk_drawing_area_get_type())
+	GTypeDropControllerMotion       = coreglib.Type(C.gtk_drop_controller_motion_get_type())
+	GTypeDropDown                   = coreglib.Type(C.gtk_drop_down_get_type())
+	GTypeDropTarget                 = coreglib.Type(C.gtk_drop_target_get_type())
+	GTypeDropTargetAsync            = coreglib.Type(C.gtk_drop_target_async_get_type())
+	GTypeEditableLabel              = coreglib.Type(C.gtk_editable_label_get_type())
+	GTypeEmojiChooser               = coreglib.Type(C.gtk_emoji_chooser_get_type())
+	GTypeEntry                      = coreglib.Type(C.gtk_entry_get_type())
+	GTypeEntryBuffer                = coreglib.Type(C.gtk_entry_buffer_get_type())
+	GTypeEntryCompletion            = coreglib.Type(C.gtk_entry_completion_get_type())
+	GTypeEventController            = coreglib.Type(C.gtk_event_controller_get_type())
+	GTypeEventControllerFocus       = coreglib.Type(C.gtk_event_controller_focus_get_type())
+	GTypeEventControllerKey         = coreglib.Type(C.gtk_event_controller_key_get_type())
+	GTypeEventControllerLegacy      = coreglib.Type(C.gtk_event_controller_legacy_get_type())
+	GTypeEventControllerMotion      = coreglib.Type(C.gtk_event_controller_motion_get_type())
+	GTypeEventControllerScroll      = coreglib.Type(C.gtk_event_controller_scroll_get_type())
+	GTypeEveryFilter                = coreglib.Type(C.gtk_every_filter_get_type())
+	GTypeExpander                   = coreglib.Type(C.gtk_expander_get_type())
+	GTypeExpression                 = coreglib.Type(C.gtk_expression_get_type())
+	GTypeFileChooserDialog          = coreglib.Type(C.gtk_file_chooser_dialog_get_type())
+	GTypeFileChooserNative          = coreglib.Type(C.gtk_file_chooser_native_get_type())
+	GTypeFileChooserWidget          = coreglib.Type(C.gtk_file_chooser_widget_get_type())
+	GTypeFileFilter                 = coreglib.Type(C.gtk_file_filter_get_type())
+	GTypeFilter                     = coreglib.Type(C.gtk_filter_get_type())
+	GTypeFilterListModel            = coreglib.Type(C.gtk_filter_list_model_get_type())
+	GTypeFixed                      = coreglib.Type(C.gtk_fixed_get_type())
+	GTypeFixedLayout                = coreglib.Type(C.gtk_fixed_layout_get_type())
+	GTypeFixedLayoutChild           = coreglib.Type(C.gtk_fixed_layout_child_get_type())
+	GTypeFlattenListModel           = coreglib.Type(C.gtk_flatten_list_model_get_type())
+	GTypeFlowBox                    = coreglib.Type(C.gtk_flow_box_get_type())
+	GTypeFlowBoxChild               = coreglib.Type(C.gtk_flow_box_child_get_type())
+	GTypeFontButton                 = coreglib.Type(C.gtk_font_button_get_type())
+	GTypeFontChooserDialog          = coreglib.Type(C.gtk_font_chooser_dialog_get_type())
+	GTypeFontChooserWidget          = coreglib.Type(C.gtk_font_chooser_widget_get_type())
+	GTypeFrame                      = coreglib.Type(C.gtk_frame_get_type())
+	GTypeGLArea                     = coreglib.Type(C.gtk_gl_area_get_type())
+	GTypeGesture                    = coreglib.Type(C.gtk_gesture_get_type())
+	GTypeGestureClick               = coreglib.Type(C.gtk_gesture_click_get_type())
+	GTypeGestureDrag                = coreglib.Type(C.gtk_gesture_drag_get_type())
+	GTypeGestureLongPress           = coreglib.Type(C.gtk_gesture_long_press_get_type())
+	GTypeGesturePan                 = coreglib.Type(C.gtk_gesture_pan_get_type())
+	GTypeGestureRotate              = coreglib.Type(C.gtk_gesture_rotate_get_type())
+	GTypeGestureSingle              = coreglib.Type(C.gtk_gesture_single_get_type())
+	GTypeGestureStylus              = coreglib.Type(C.gtk_gesture_stylus_get_type())
+	GTypeGestureSwipe               = coreglib.Type(C.gtk_gesture_swipe_get_type())
+	GTypeGestureZoom                = coreglib.Type(C.gtk_gesture_zoom_get_type())
+	GTypeGrid                       = coreglib.Type(C.gtk_grid_get_type())
+	GTypeGridLayout                 = coreglib.Type(C.gtk_grid_layout_get_type())
+	GTypeGridLayoutChild            = coreglib.Type(C.gtk_grid_layout_child_get_type())
+	GTypeGridView                   = coreglib.Type(C.gtk_grid_view_get_type())
+	GTypeHeaderBar                  = coreglib.Type(C.gtk_header_bar_get_type())
+	GTypeIMContext                  = coreglib.Type(C.gtk_im_context_get_type())
+	GTypeIMContextSimple            = coreglib.Type(C.gtk_im_context_simple_get_type())
+	GTypeIMMulticontext             = coreglib.Type(C.gtk_im_multicontext_get_type())
+	GTypeIconPaintable              = coreglib.Type(C.gtk_icon_paintable_get_type())
+	GTypeIconTheme                  = coreglib.Type(C.gtk_icon_theme_get_type())
+	GTypeIconView                   = coreglib.Type(C.gtk_icon_view_get_type())
+	GTypeImage                      = coreglib.Type(C.gtk_image_get_type())
+	GTypeInfoBar                    = coreglib.Type(C.gtk_info_bar_get_type())
+	GTypeInscription                = coreglib.Type(C.gtk_inscription_get_type())
+	GTypeKeyvalTrigger              = coreglib.Type(C.gtk_keyval_trigger_get_type())
+	GTypeLabel                      = coreglib.Type(C.gtk_label_get_type())
+	GTypeLayoutChild                = coreglib.Type(C.gtk_layout_child_get_type())
+	GTypeLayoutManager              = coreglib.Type(C.gtk_layout_manager_get_type())
+	GTypeLevelBar                   = coreglib.Type(C.gtk_level_bar_get_type())
+	GTypeLinkButton                 = coreglib.Type(C.gtk_link_button_get_type())
+	GTypeListBase                   = coreglib.Type(C.gtk_list_base_get_type())
+	GTypeListBox                    = coreglib.Type(C.gtk_list_box_get_type())
+	GTypeListBoxRow                 = coreglib.Type(C.gtk_list_box_row_get_type())
+	GTypeListItem                   = coreglib.Type(C.gtk_list_item_get_type())
+	GTypeListItemFactory            = coreglib.Type(C.gtk_list_item_factory_get_type())
+	GTypeListStore                  = coreglib.Type(C.gtk_list_store_get_type())
+	GTypeListView                   = coreglib.Type(C.gtk_list_view_get_type())
+	GTypeLockButton                 = coreglib.Type(C.gtk_lock_button_get_type())
+	GTypeMapListModel               = coreglib.Type(C.gtk_map_list_model_get_type())
+	GTypeMediaControls              = coreglib.Type(C.gtk_media_controls_get_type())
+	GTypeMediaFile                  = coreglib.Type(C.gtk_media_file_get_type())
+	GTypeMediaStream                = coreglib.Type(C.gtk_media_stream_get_type())
+	GTypeMenuButton                 = coreglib.Type(C.gtk_menu_button_get_type())
+	GTypeMessageDialog              = coreglib.Type(C.gtk_message_dialog_get_type())
+	GTypeMnemonicAction             = coreglib.Type(C.gtk_mnemonic_action_get_type())
+	GTypeMnemonicTrigger            = coreglib.Type(C.gtk_mnemonic_trigger_get_type())
+	GTypeMountOperation             = coreglib.Type(C.gtk_mount_operation_get_type())
+	GTypeMultiFilter                = coreglib.Type(C.gtk_multi_filter_get_type())
+	GTypeMultiSelection             = coreglib.Type(C.gtk_multi_selection_get_type())
+	GTypeMultiSorter                = coreglib.Type(C.gtk_multi_sorter_get_type())
+	GTypeNamedAction                = coreglib.Type(C.gtk_named_action_get_type())
+	GTypeNativeDialog               = coreglib.Type(C.gtk_native_dialog_get_type())
+	GTypeNeverTrigger               = coreglib.Type(C.gtk_never_trigger_get_type())
+	GTypeNoSelection                = coreglib.Type(C.gtk_no_selection_get_type())
+	GTypeNotebook                   = coreglib.Type(C.gtk_notebook_get_type())
+	GTypeNotebookPage               = coreglib.Type(C.gtk_notebook_page_get_type())
+	GTypeNothingAction              = coreglib.Type(C.gtk_nothing_action_get_type())
+	GTypeNumericSorter              = coreglib.Type(C.gtk_numeric_sorter_get_type())
+	GTypeObjectExpression           = coreglib.Type(C.gtk_object_expression_get_type())
+	GTypeOverlay                    = coreglib.Type(C.gtk_overlay_get_type())
+	GTypeOverlayLayout              = coreglib.Type(C.gtk_overlay_layout_get_type())
+	GTypeOverlayLayoutChild         = coreglib.Type(C.gtk_overlay_layout_child_get_type())
+	GTypePadController              = coreglib.Type(C.gtk_pad_controller_get_type())
+	GTypePageSetup                  = coreglib.Type(C.gtk_page_setup_get_type())
+	GTypePaned                      = coreglib.Type(C.gtk_paned_get_type())
+	GTypePasswordEntry              = coreglib.Type(C.gtk_password_entry_get_type())
+	GTypePasswordEntryBuffer        = coreglib.Type(C.gtk_password_entry_buffer_get_type())
+	GTypePicture                    = coreglib.Type(C.gtk_picture_get_type())
+	GTypePopover                    = coreglib.Type(C.gtk_popover_get_type())
+	GTypePopoverMenu                = coreglib.Type(C.gtk_popover_menu_get_type())
+	GTypePopoverMenuBar             = coreglib.Type(C.gtk_popover_menu_bar_get_type())
+	GTypePrintContext               = coreglib.Type(C.gtk_print_context_get_type())
+	GTypePrintOperation             = coreglib.Type(C.gtk_print_operation_get_type())
+	GTypePrintSettings              = coreglib.Type(C.gtk_print_settings_get_type())
+	GTypeProgressBar                = coreglib.Type(C.gtk_progress_bar_get_type())
+	GTypePropertyExpression         = coreglib.Type(C.gtk_property_expression_get_type())
+	GTypeRange                      = coreglib.Type(C.gtk_range_get_type())
+	GTypeRecentManager              = coreglib.Type(C.gtk_recent_manager_get_type())
+	GTypeRevealer                   = coreglib.Type(C.gtk_revealer_get_type())
+	GTypeScale                      = coreglib.Type(C.gtk_scale_get_type())
+	GTypeScaleButton                = coreglib.Type(C.gtk_scale_button_get_type())
+	GTypeScrollbar                  = coreglib.Type(C.gtk_scrollbar_get_type())
+	GTypeScrolledWindow             = coreglib.Type(C.gtk_scrolled_window_get_type())
+	GTypeSearchBar                  = coreglib.Type(C.gtk_search_bar_get_type())
+	GTypeSearchEntry                = coreglib.Type(C.gtk_search_entry_get_type())
+	GTypeSelectionFilterModel       = coreglib.Type(C.gtk_selection_filter_model_get_type())
+	GTypeSeparator                  = coreglib.Type(C.gtk_separator_get_type())
+	GTypeSettings                   = coreglib.Type(C.gtk_settings_get_type())
+	GTypeShortcut                   = coreglib.Type(C.gtk_shortcut_get_type())
+	GTypeShortcutAction             = coreglib.Type(C.gtk_shortcut_action_get_type())
+	GTypeShortcutController         = coreglib.Type(C.gtk_shortcut_controller_get_type())
+	GTypeShortcutLabel              = coreglib.Type(C.gtk_shortcut_label_get_type())
+	GTypeShortcutTrigger            = coreglib.Type(C.gtk_shortcut_trigger_get_type())
+	GTypeShortcutsGroup             = coreglib.Type(C.gtk_shortcuts_group_get_type())
+	GTypeShortcutsSection           = coreglib.Type(C.gtk_shortcuts_section_get_type())
+	GTypeShortcutsShortcut          = coreglib.Type(C.gtk_shortcuts_shortcut_get_type())
+	GTypeShortcutsWindow            = coreglib.Type(C.gtk_shortcuts_window_get_type())
+	GTypeSignalAction               = coreglib.Type(C.gtk_signal_action_get_type())
+	GTypeSignalListItemFactory      = coreglib.Type(C.gtk_signal_list_item_factory_get_type())
+	GTypeSingleSelection            = coreglib.Type(C.gtk_single_selection_get_type())
+	GTypeSizeGroup                  = coreglib.Type(C.gtk_size_group_get_type())
+	GTypeSliceListModel             = coreglib.Type(C.gtk_slice_list_model_get_type())
+	GTypeSnapshot                   = coreglib.Type(C.gtk_snapshot_get_type())
+	GTypeSortListModel              = coreglib.Type(C.gtk_sort_list_model_get_type())
+	GTypeSorter                     = coreglib.Type(C.gtk_sorter_get_type())
+	GTypeSpinButton                 = coreglib.Type(C.gtk_spin_button_get_type())
+	GTypeSpinner                    = coreglib.Type(C.gtk_spinner_get_type())
+	GTypeStack                      = coreglib.Type(C.gtk_stack_get_type())
+	GTypeStackPage                  = coreglib.Type(C.gtk_stack_page_get_type())
+	GTypeStackSidebar               = coreglib.Type(C.gtk_stack_sidebar_get_type())
+	GTypeStackSwitcher              = coreglib.Type(C.gtk_stack_switcher_get_type())
+	GTypeStatusbar                  = coreglib.Type(C.gtk_statusbar_get_type())
+	GTypeStringFilter               = coreglib.Type(C.gtk_string_filter_get_type())
+	GTypeStringList                 = coreglib.Type(C.gtk_string_list_get_type())
+	GTypeStringObject               = coreglib.Type(C.gtk_string_object_get_type())
+	GTypeStringSorter               = coreglib.Type(C.gtk_string_sorter_get_type())
+	GTypeStyleContext               = coreglib.Type(C.gtk_style_context_get_type())
+	GTypeSwitch                     = coreglib.Type(C.gtk_switch_get_type())
+	GTypeText                       = coreglib.Type(C.gtk_text_get_type())
+	GTypeTextBuffer                 = coreglib.Type(C.gtk_text_buffer_get_type())
+	GTypeTextChildAnchor            = coreglib.Type(C.gtk_text_child_anchor_get_type())
+	GTypeTextMark                   = coreglib.Type(C.gtk_text_mark_get_type())
+	GTypeTextTag                    = coreglib.Type(C.gtk_text_tag_get_type())
+	GTypeTextTagTable               = coreglib.Type(C.gtk_text_tag_table_get_type())
+	GTypeTextView                   = coreglib.Type(C.gtk_text_view_get_type())
+	GTypeToggleButton               = coreglib.Type(C.gtk_toggle_button_get_type())
+	GTypeTooltip                    = coreglib.Type(C.gtk_tooltip_get_type())
+	GTypeTreeExpander               = coreglib.Type(C.gtk_tree_expander_get_type())
+	GTypeTreeListModel              = coreglib.Type(C.gtk_tree_list_model_get_type())
+	GTypeTreeListRow                = coreglib.Type(C.gtk_tree_list_row_get_type())
+	GTypeTreeListRowSorter          = coreglib.Type(C.gtk_tree_list_row_sorter_get_type())
+	GTypeTreeModelFilter            = coreglib.Type(C.gtk_tree_model_filter_get_type())
+	GTypeTreeModelSort              = coreglib.Type(C.gtk_tree_model_sort_get_type())
+	GTypeTreeSelection              = coreglib.Type(C.gtk_tree_selection_get_type())
+	GTypeTreeStore                  = coreglib.Type(C.gtk_tree_store_get_type())
+	GTypeTreeView                   = coreglib.Type(C.gtk_tree_view_get_type())
+	GTypeTreeViewColumn             = coreglib.Type(C.gtk_tree_view_column_get_type())
+	GTypeVideo                      = coreglib.Type(C.gtk_video_get_type())
+	GTypeViewport                   = coreglib.Type(C.gtk_viewport_get_type())
+	GTypeVolumeButton               = coreglib.Type(C.gtk_volume_button_get_type())
+	GTypeWidget                     = coreglib.Type(C.gtk_widget_get_type())
+	GTypeWidgetPaintable            = coreglib.Type(C.gtk_widget_paintable_get_type())
+	GTypeWindow                     = coreglib.Type(C.gtk_window_get_type())
+	GTypeWindowControls             = coreglib.Type(C.gtk_window_controls_get_type())
+	GTypeWindowGroup                = coreglib.Type(C.gtk_window_group_get_type())
+	GTypeWindowHandle               = coreglib.Type(C.gtk_window_handle_get_type())
+	GTypeBitset                     = coreglib.Type(C.gtk_bitset_get_type())
+	GTypeBitsetIter                 = coreglib.Type(C.gtk_bitset_iter_get_type())
+	GTypeBorder                     = coreglib.Type(C.gtk_border_get_type())
+	GTypeCSSSection                 = coreglib.Type(C.gtk_css_section_get_type())
+	GTypeExpressionWatch            = coreglib.Type(C.gtk_expression_watch_get_type())
+	GTypePaperSize                  = coreglib.Type(C.gtk_paper_size_get_type())
+	GTypeRecentInfo                 = coreglib.Type(C.gtk_recent_info_get_type())
+	GTypeRequisition                = coreglib.Type(C.gtk_requisition_get_type())
+	GTypeTextIter                   = coreglib.Type(C.gtk_text_iter_get_type())
+	GTypeTreeIter                   = coreglib.Type(C.gtk_tree_iter_get_type())
+	GTypeTreePath                   = coreglib.Type(C.gtk_tree_path_get_type())
+	GTypeTreeRowReference           = coreglib.Type(C.gtk_tree_row_reference_get_type())
 )
 
 func init() {
 	coreglib.RegisterGValueMarshalers([]coreglib.TypeMarshaler{
-		coreglib.TypeMarshaler{T: GTypeAccessibleAnnouncementPriority, F: marshalAccessibleAnnouncementPriority},
 		coreglib.TypeMarshaler{T: GTypeAccessibleAutocomplete, F: marshalAccessibleAutocomplete},
 		coreglib.TypeMarshaler{T: GTypeAccessibleInvalidState, F: marshalAccessibleInvalidState},
-		coreglib.TypeMarshaler{T: GTypeAccessiblePlatformState, F: marshalAccessiblePlatformState},
 		coreglib.TypeMarshaler{T: GTypeAccessibleProperty, F: marshalAccessibleProperty},
 		coreglib.TypeMarshaler{T: GTypeAccessibleRelation, F: marshalAccessibleRelation},
 		coreglib.TypeMarshaler{T: GTypeAccessibleRole, F: marshalAccessibleRole},
 		coreglib.TypeMarshaler{T: GTypeAccessibleSort, F: marshalAccessibleSort},
 		coreglib.TypeMarshaler{T: GTypeAccessibleState, F: marshalAccessibleState},
-		coreglib.TypeMarshaler{T: GTypeAccessibleTextContentChange, F: marshalAccessibleTextContentChange},
-		coreglib.TypeMarshaler{T: GTypeAccessibleTextGranularity, F: marshalAccessibleTextGranularity},
 		coreglib.TypeMarshaler{T: GTypeAccessibleTristate, F: marshalAccessibleTristate},
 		coreglib.TypeMarshaler{T: GTypeAlign, F: marshalAlign},
 		coreglib.TypeMarshaler{T: GTypeArrowType, F: marshalArrowType},
@@ -1972,7 +1884,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeButtonsType, F: marshalButtonsType},
 		coreglib.TypeMarshaler{T: GTypeCellRendererAccelMode, F: marshalCellRendererAccelMode},
 		coreglib.TypeMarshaler{T: GTypeCellRendererMode, F: marshalCellRendererMode},
-		coreglib.TypeMarshaler{T: GTypeCollation, F: marshalCollation},
 		coreglib.TypeMarshaler{T: GTypeConstraintAttribute, F: marshalConstraintAttribute},
 		coreglib.TypeMarshaler{T: GTypeConstraintRelation, F: marshalConstraintRelation},
 		coreglib.TypeMarshaler{T: GTypeConstraintStrength, F: marshalConstraintStrength},
@@ -1980,7 +1891,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeContentFit, F: marshalContentFit},
 		coreglib.TypeMarshaler{T: GTypeCornerType, F: marshalCornerType},
 		coreglib.TypeMarshaler{T: GTypeDeleteType, F: marshalDeleteType},
-		coreglib.TypeMarshaler{T: GTypeDialogError, F: marshalDialogError},
 		coreglib.TypeMarshaler{T: GTypeDirectionType, F: marshalDirectionType},
 		coreglib.TypeMarshaler{T: GTypeEditableProperties, F: marshalEditableProperties},
 		coreglib.TypeMarshaler{T: GTypeEntryIconPosition, F: marshalEntryIconPosition},
@@ -1989,8 +1899,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeFileChooserError, F: marshalFileChooserError},
 		coreglib.TypeMarshaler{T: GTypeFilterChange, F: marshalFilterChange},
 		coreglib.TypeMarshaler{T: GTypeFilterMatch, F: marshalFilterMatch},
-		coreglib.TypeMarshaler{T: GTypeFontLevel, F: marshalFontLevel},
-		coreglib.TypeMarshaler{T: GTypeGraphicsOffloadEnabled, F: marshalGraphicsOffloadEnabled},
 		coreglib.TypeMarshaler{T: GTypeIconSize, F: marshalIconSize},
 		coreglib.TypeMarshaler{T: GTypeIconThemeError, F: marshalIconThemeError},
 		coreglib.TypeMarshaler{T: GTypeIconViewDropPosition, F: marshalIconViewDropPosition},
@@ -2000,7 +1908,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeJustification, F: marshalJustification},
 		coreglib.TypeMarshaler{T: GTypeLevelBarMode, F: marshalLevelBarMode},
 		coreglib.TypeMarshaler{T: GTypeLicense, F: marshalLicense},
-		coreglib.TypeMarshaler{T: GTypeListTabBehavior, F: marshalListTabBehavior},
 		coreglib.TypeMarshaler{T: GTypeMessageType, F: marshalMessageType},
 		coreglib.TypeMarshaler{T: GTypeMovementStep, F: marshalMovementStep},
 		coreglib.TypeMarshaler{T: GTypeNaturalWrapMode, F: marshalNaturalWrapMode},
@@ -2064,7 +1971,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeFontChooserLevel, F: marshalFontChooserLevel},
 		coreglib.TypeMarshaler{T: GTypeIconLookupFlags, F: marshalIconLookupFlags},
 		coreglib.TypeMarshaler{T: GTypeInputHints, F: marshalInputHints},
-		coreglib.TypeMarshaler{T: GTypeListScrollFlags, F: marshalListScrollFlags},
 		coreglib.TypeMarshaler{T: GTypePickFlags, F: marshalPickFlags},
 		coreglib.TypeMarshaler{T: GTypePopoverMenuFlags, F: marshalPopoverMenuFlags},
 		coreglib.TypeMarshaler{T: GTypeShortcutActionFlags, F: marshalShortcutActionFlags},
@@ -2073,8 +1979,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeTextSearchFlags, F: marshalTextSearchFlags},
 		coreglib.TypeMarshaler{T: GTypeTreeModelFlags, F: marshalTreeModelFlags},
 		coreglib.TypeMarshaler{T: GTypeAccessible, F: marshalAccessible},
-		coreglib.TypeMarshaler{T: GTypeAccessibleRange, F: marshalAccessibleRange},
-		coreglib.TypeMarshaler{T: GTypeAccessibleText, F: marshalAccessibleText},
 		coreglib.TypeMarshaler{T: GTypeActionable, F: marshalActionable},
 		coreglib.TypeMarshaler{T: GTypeAppChooser, F: marshalAppChooser},
 		coreglib.TypeMarshaler{T: GTypeBuildable, F: marshalBuildable},
@@ -2091,7 +1995,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypePrintOperationPreview, F: marshalPrintOperationPreview},
 		coreglib.TypeMarshaler{T: GTypeRoot, F: marshalRoot},
 		coreglib.TypeMarshaler{T: GTypeScrollable, F: marshalScrollable},
-		coreglib.TypeMarshaler{T: GTypeSectionModel, F: marshalSectionModel},
 		coreglib.TypeMarshaler{T: GTypeSelectionModel, F: marshalSelectionModel},
 		coreglib.TypeMarshaler{T: GTypeShortcutManager, F: marshalShortcutManager},
 		coreglib.TypeMarshaler{T: GTypeStyleProvider, F: marshalStyleProvider},
@@ -2105,7 +2008,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeActionBar, F: marshalActionBar},
 		coreglib.TypeMarshaler{T: GTypeActivateAction, F: marshalActivateAction},
 		coreglib.TypeMarshaler{T: GTypeAdjustment, F: marshalAdjustment},
-		coreglib.TypeMarshaler{T: GTypeAlertDialog, F: marshalAlertDialog},
 		coreglib.TypeMarshaler{T: GTypeAlternativeTrigger, F: marshalAlternativeTrigger},
 		coreglib.TypeMarshaler{T: GTypeAnyFilter, F: marshalAnyFilter},
 		coreglib.TypeMarshaler{T: GTypeAppChooserButton, F: marshalAppChooserButton},
@@ -2148,13 +2050,8 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeColorButton, F: marshalColorButton},
 		coreglib.TypeMarshaler{T: GTypeColorChooserDialog, F: marshalColorChooserDialog},
 		coreglib.TypeMarshaler{T: GTypeColorChooserWidget, F: marshalColorChooserWidget},
-		coreglib.TypeMarshaler{T: GTypeColorDialog, F: marshalColorDialog},
-		coreglib.TypeMarshaler{T: GTypeColorDialogButton, F: marshalColorDialogButton},
 		coreglib.TypeMarshaler{T: GTypeColumnView, F: marshalColumnView},
-		coreglib.TypeMarshaler{T: GTypeColumnViewCell, F: marshalColumnViewCell},
 		coreglib.TypeMarshaler{T: GTypeColumnViewColumn, F: marshalColumnViewColumn},
-		coreglib.TypeMarshaler{T: GTypeColumnViewRow, F: marshalColumnViewRow},
-		coreglib.TypeMarshaler{T: GTypeColumnViewSorter, F: marshalColumnViewSorter},
 		coreglib.TypeMarshaler{T: GTypeComboBox, F: marshalComboBox},
 		coreglib.TypeMarshaler{T: GTypeComboBoxText, F: marshalComboBoxText},
 		coreglib.TypeMarshaler{T: GTypeConstantExpression, F: marshalConstantExpression},
@@ -2192,9 +2089,7 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeFileChooserDialog, F: marshalFileChooserDialog},
 		coreglib.TypeMarshaler{T: GTypeFileChooserNative, F: marshalFileChooserNative},
 		coreglib.TypeMarshaler{T: GTypeFileChooserWidget, F: marshalFileChooserWidget},
-		coreglib.TypeMarshaler{T: GTypeFileDialog, F: marshalFileDialog},
 		coreglib.TypeMarshaler{T: GTypeFileFilter, F: marshalFileFilter},
-		coreglib.TypeMarshaler{T: GTypeFileLauncher, F: marshalFileLauncher},
 		coreglib.TypeMarshaler{T: GTypeFilter, F: marshalFilter},
 		coreglib.TypeMarshaler{T: GTypeFilterListModel, F: marshalFilterListModel},
 		coreglib.TypeMarshaler{T: GTypeFixed, F: marshalFixed},
@@ -2206,8 +2101,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeFontButton, F: marshalFontButton},
 		coreglib.TypeMarshaler{T: GTypeFontChooserDialog, F: marshalFontChooserDialog},
 		coreglib.TypeMarshaler{T: GTypeFontChooserWidget, F: marshalFontChooserWidget},
-		coreglib.TypeMarshaler{T: GTypeFontDialog, F: marshalFontDialog},
-		coreglib.TypeMarshaler{T: GTypeFontDialogButton, F: marshalFontDialogButton},
 		coreglib.TypeMarshaler{T: GTypeFrame, F: marshalFrame},
 		coreglib.TypeMarshaler{T: GTypeGLArea, F: marshalGLArea},
 		coreglib.TypeMarshaler{T: GTypeGesture, F: marshalGesture},
@@ -2220,7 +2113,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeGestureStylus, F: marshalGestureStylus},
 		coreglib.TypeMarshaler{T: GTypeGestureSwipe, F: marshalGestureSwipe},
 		coreglib.TypeMarshaler{T: GTypeGestureZoom, F: marshalGestureZoom},
-		coreglib.TypeMarshaler{T: GTypeGraphicsOffload, F: marshalGraphicsOffload},
 		coreglib.TypeMarshaler{T: GTypeGrid, F: marshalGrid},
 		coreglib.TypeMarshaler{T: GTypeGridLayout, F: marshalGridLayout},
 		coreglib.TypeMarshaler{T: GTypeGridLayoutChild, F: marshalGridLayoutChild},
@@ -2244,7 +2136,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeListBase, F: marshalListBase},
 		coreglib.TypeMarshaler{T: GTypeListBox, F: marshalListBox},
 		coreglib.TypeMarshaler{T: GTypeListBoxRow, F: marshalListBoxRow},
-		coreglib.TypeMarshaler{T: GTypeListHeader, F: marshalListHeader},
 		coreglib.TypeMarshaler{T: GTypeListItem, F: marshalListItem},
 		coreglib.TypeMarshaler{T: GTypeListItemFactory, F: marshalListItemFactory},
 		coreglib.TypeMarshaler{T: GTypeListStore, F: marshalListStore},
@@ -2284,7 +2175,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypePopoverMenu, F: marshalPopoverMenu},
 		coreglib.TypeMarshaler{T: GTypePopoverMenuBar, F: marshalPopoverMenuBar},
 		coreglib.TypeMarshaler{T: GTypePrintContext, F: marshalPrintContext},
-		coreglib.TypeMarshaler{T: GTypePrintDialog, F: marshalPrintDialog},
 		coreglib.TypeMarshaler{T: GTypePrintOperation, F: marshalPrintOperation},
 		coreglib.TypeMarshaler{T: GTypePrintSettings, F: marshalPrintSettings},
 		coreglib.TypeMarshaler{T: GTypeProgressBar, F: marshalProgressBar},
@@ -2350,7 +2240,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeTreeStore, F: marshalTreeStore},
 		coreglib.TypeMarshaler{T: GTypeTreeView, F: marshalTreeView},
 		coreglib.TypeMarshaler{T: GTypeTreeViewColumn, F: marshalTreeViewColumn},
-		coreglib.TypeMarshaler{T: GTypeURILauncher, F: marshalURILauncher},
 		coreglib.TypeMarshaler{T: GTypeVideo, F: marshalVideo},
 		coreglib.TypeMarshaler{T: GTypeViewport, F: marshalViewport},
 		coreglib.TypeMarshaler{T: GTypeVolumeButton, F: marshalVolumeButton},
@@ -2360,206 +2249,20 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeWindowControls, F: marshalWindowControls},
 		coreglib.TypeMarshaler{T: GTypeWindowGroup, F: marshalWindowGroup},
 		coreglib.TypeMarshaler{T: GTypeWindowHandle, F: marshalWindowHandle},
-		coreglib.TypeMarshaler{T: GTypeAccessibleList, F: marshalAccessibleList},
 		coreglib.TypeMarshaler{T: GTypeBitset, F: marshalBitset},
 		coreglib.TypeMarshaler{T: GTypeBitsetIter, F: marshalBitsetIter},
 		coreglib.TypeMarshaler{T: GTypeBorder, F: marshalBorder},
 		coreglib.TypeMarshaler{T: GTypeCSSSection, F: marshalCSSSection},
 		coreglib.TypeMarshaler{T: GTypeExpressionWatch, F: marshalExpressionWatch},
 		coreglib.TypeMarshaler{T: GTypePaperSize, F: marshalPaperSize},
-		coreglib.TypeMarshaler{T: GTypePrintSetup, F: marshalPrintSetup},
 		coreglib.TypeMarshaler{T: GTypeRecentInfo, F: marshalRecentInfo},
 		coreglib.TypeMarshaler{T: GTypeRequisition, F: marshalRequisition},
-		coreglib.TypeMarshaler{T: GTypeScrollInfo, F: marshalScrollInfo},
 		coreglib.TypeMarshaler{T: GTypeTextIter, F: marshalTextIter},
 		coreglib.TypeMarshaler{T: GTypeTreeIter, F: marshalTreeIter},
 		coreglib.TypeMarshaler{T: GTypeTreePath, F: marshalTreePath},
 		coreglib.TypeMarshaler{T: GTypeTreeRowReference, F: marshalTreeRowReference},
 	})
 }
-
-// ACCESSIBLE_ATTRIBUTE_BACKGROUND: attribute for the background color,
-// expressed as an RGB value encoded in a string using the format:
-// {r8},{g8},{b8}.
-const ACCESSIBLE_ATTRIBUTE_BACKGROUND = "bg-color"
-
-// ACCESSIBLE_ATTRIBUTE_FAMILY: attribute for the font family name.
-const ACCESSIBLE_ATTRIBUTE_FAMILY = "family-name"
-
-// ACCESSIBLE_ATTRIBUTE_FOREGROUND: attribute for the foreground color,
-// expressed as an RGB value encoded in a string using the format:
-// {r8},{g8},{b8}.
-const ACCESSIBLE_ATTRIBUTE_FOREGROUND = "fg-color"
-
-// ACCESSIBLE_ATTRIBUTE_OVERLINE: attribute for the overline style.
-//
-// Possible values are:
-//
-// - gtk.ACCESSIBLEATTRIBUTEOVERLINENONE
-//
-// - gtk.ACCESSIBLEATTRIBUTEOVERLINESINGLE.
-const ACCESSIBLE_ATTRIBUTE_OVERLINE = "overline"
-
-// ACCESSIBLE_ATTRIBUTE_OVERLINE_NONE: "none" overline value for
-// gtk.ACCESSIBLEATTRIBUTEOVERLINE.
-const ACCESSIBLE_ATTRIBUTE_OVERLINE_NONE = "none"
-
-// ACCESSIBLE_ATTRIBUTE_OVERLINE_SINGLE: "single" overline value for
-// gtk.ACCESSIBLEATTRIBUTEOVERLINE.
-const ACCESSIBLE_ATTRIBUTE_OVERLINE_SINGLE = "single"
-
-// ACCESSIBLE_ATTRIBUTE_SIZE: attribute for the font size, expressed in points.
-const ACCESSIBLE_ATTRIBUTE_SIZE = "size"
-
-// ACCESSIBLE_ATTRIBUTE_STRETCH: attribute for the font stretch type.
-//
-// Possible values are:
-//
-// - gtk.ACCESSIBLEATTRIBUTESTRETCHULTRACONDENSED
-//
-// - gtk.ACCESSIBLEATTRIBUTESTRETCHEXTRACONDENSED
-//
-// - gtk.ACCESSIBLEATTRIBUTESTRETCHCONDENSED
-//
-// - gtk.ACCESSIBLEATTRIBUTESTRETCHSEMICONDENSED.
-const ACCESSIBLE_ATTRIBUTE_STRETCH = "stretch"
-
-// ACCESSIBLE_ATTRIBUTE_STRETCH_CONDENSED: "condensed" stretch value for
-// gtk.ACCESSIBLEATTRIBUTESTRETCH.
-const ACCESSIBLE_ATTRIBUTE_STRETCH_CONDENSED = "condensed"
-
-// ACCESSIBLE_ATTRIBUTE_STRETCH_EXPANDED: "expanded" stretch value for
-// gtk.ACCESSIBLEATTRIBUTESTRETCH.
-const ACCESSIBLE_ATTRIBUTE_STRETCH_EXPANDED = "expanded"
-
-// ACCESSIBLE_ATTRIBUTE_STRETCH_EXTRA_CONDENSED: "extra condensed" stretch value
-// for gtk.ACCESSIBLEATTRIBUTESTRETCH.
-const ACCESSIBLE_ATTRIBUTE_STRETCH_EXTRA_CONDENSED = "extra_condensed"
-
-// ACCESSIBLE_ATTRIBUTE_STRETCH_EXTRA_EXPANDED: "extra expanded" stretch value
-// for gtk.ACCESSIBLEATTRIBUTESTRETCH.
-const ACCESSIBLE_ATTRIBUTE_STRETCH_EXTRA_EXPANDED = "extra_expanded"
-
-// ACCESSIBLE_ATTRIBUTE_STRETCH_NORMAL: "normal" stretch value for
-// gtk.ACCESSIBLEATTRIBUTESTRETCH.
-const ACCESSIBLE_ATTRIBUTE_STRETCH_NORMAL = "normal"
-
-// ACCESSIBLE_ATTRIBUTE_STRETCH_SEMI_CONDENSED: "semi condensed" stretch value
-// for gtk.ACCESSIBLEATTRIBUTESTRETCH.
-const ACCESSIBLE_ATTRIBUTE_STRETCH_SEMI_CONDENSED = "semi_condensed"
-
-// ACCESSIBLE_ATTRIBUTE_STRETCH_SEMI_EXPANDED: "semi expanded" stretch value for
-// gtk.ACCESSIBLEATTRIBUTESTRETCH.
-const ACCESSIBLE_ATTRIBUTE_STRETCH_SEMI_EXPANDED = "semi_expanded"
-
-// ACCESSIBLE_ATTRIBUTE_STRETCH_ULTRA_CONDENSED: "ultra condensed" stretch value
-// for gtk.ACCESSIBLEATTRIBUTESTRETCH.
-const ACCESSIBLE_ATTRIBUTE_STRETCH_ULTRA_CONDENSED = "ultra_condensed"
-
-// ACCESSIBLE_ATTRIBUTE_STRETCH_ULTRA_EXPANDED: "ultra expanded" stretch value
-// for gtk.ACCESSIBLEATTRIBUTESTRETCH.
-const ACCESSIBLE_ATTRIBUTE_STRETCH_ULTRA_EXPANDED = "ultra_expanded"
-
-// ACCESSIBLE_ATTRIBUTE_STRIKETHROUGH: attribute for strikethrough text.
-//
-// Possible values are true or false.
-const ACCESSIBLE_ATTRIBUTE_STRIKETHROUGH = "strikethrough"
-
-// ACCESSIBLE_ATTRIBUTE_STYLE: attribute for the font style.
-//
-// Possible values are:
-//
-// - gtk.ACCESSIBLEATTRIBUTESTYLENORMAL
-//
-// - gtk.ACCESSIBLEATTRIBUTESTYLEOBLIQUE
-//
-// - gtk.ACCESSIBLEATTRIBUTESTYLEITALIC.
-const ACCESSIBLE_ATTRIBUTE_STYLE = "style"
-
-// ACCESSIBLE_ATTRIBUTE_STYLE_ITALIC: "italic" style value for
-// gtk.ACCESSIBLEATTRIBUTESTYLE.
-const ACCESSIBLE_ATTRIBUTE_STYLE_ITALIC = "italic"
-
-// ACCESSIBLE_ATTRIBUTE_STYLE_NORMAL: "normal" style value for
-// gtk.ACCESSIBLEATTRIBUTESTYLE.
-const ACCESSIBLE_ATTRIBUTE_STYLE_NORMAL = "normal"
-
-// ACCESSIBLE_ATTRIBUTE_STYLE_OBLIQUE: "oblique" style value for
-// gtk.ACCESSIBLEATTRIBUTESTYLE.
-const ACCESSIBLE_ATTRIBUTE_STYLE_OBLIQUE = "oblique"
-
-// ACCESSIBLE_ATTRIBUTE_UNDERLINE: attribute for the underline style.
-//
-// Possible values are:
-//
-// - gtk.ACCESSIBLEATTRIBUTEUNDERLINENONE
-//
-// - gtk.ACCESSIBLEATTRIBUTEUNDERLINESINGLE
-//
-// - gtk.ACCESSIBLEATTRIBUTEUNDERLINEDOUBLE
-//
-// - gtk.ACCESSIBLEATTRIBUTEUNDERLINEERROR.
-const ACCESSIBLE_ATTRIBUTE_UNDERLINE = "underline"
-
-// ACCESSIBLE_ATTRIBUTE_UNDERLINE_DOUBLE: "double" underline value for
-// gtk.ACCESSIBLEATTRIBUTEUNDERLINE.
-const ACCESSIBLE_ATTRIBUTE_UNDERLINE_DOUBLE = "double"
-
-// ACCESSIBLE_ATTRIBUTE_UNDERLINE_ERROR: "error" underline value for
-// gtk.ACCESSIBLEATTRIBUTEUNDERLINE.
-const ACCESSIBLE_ATTRIBUTE_UNDERLINE_ERROR = "error"
-
-// ACCESSIBLE_ATTRIBUTE_UNDERLINE_NONE: "none" underline value for
-// gtk.ACCESSIBLEATTRIBUTEUNDERLINE.
-const ACCESSIBLE_ATTRIBUTE_UNDERLINE_NONE = "none"
-
-// ACCESSIBLE_ATTRIBUTE_UNDERLINE_SINGLE: "single" underline value for
-// gtk.ACCESSIBLEATTRIBUTEUNDERLINE.
-const ACCESSIBLE_ATTRIBUTE_UNDERLINE_SINGLE = "single"
-
-// ACCESSIBLE_ATTRIBUTE_VARIANT: attribute for the font variant.
-//
-// Possible values are:
-//
-// - gtk.ACCESSIBLEATTRIBUTEVARIANTSMALLCAPS
-//
-// - gtk.ACCESSIBLEATTRIBUTEVARIANTALLSMALLCAPS
-//
-// - gtk.ACCESSIBLEATTRIBUTEVARIANTPETITECAPS
-//
-// - gtk.ACCESSIBLEATTRIBUTEVARIANTALLPETITECAPS
-//
-// - gtk.ACCESSIBLEATTRIBUTEVARIANTUNICASE
-//
-// - gtk.ACCESSIBLEATTRIBUTEVARIANTTITLECAPS.
-const ACCESSIBLE_ATTRIBUTE_VARIANT = "variant"
-
-// ACCESSIBLE_ATTRIBUTE_VARIANT_ALL_PETITE_CAPS: "all petite caps" variant value
-// for gtk.ACCESSIBLEATTRIBUTEVARIANT.
-const ACCESSIBLE_ATTRIBUTE_VARIANT_ALL_PETITE_CAPS = "all-petite-caps"
-
-// ACCESSIBLE_ATTRIBUTE_VARIANT_ALL_SMALL_CAPS: "all small caps" variant value
-// for gtk.ACCESSIBLEATTRIBUTEVARIANT.
-const ACCESSIBLE_ATTRIBUTE_VARIANT_ALL_SMALL_CAPS = "all-small-caps"
-
-// ACCESSIBLE_ATTRIBUTE_VARIANT_PETITE_CAPS: "petite caps" variant value for
-// gtk.ACCESSIBLEATTRIBUTEVARIANT.
-const ACCESSIBLE_ATTRIBUTE_VARIANT_PETITE_CAPS = "petite-caps"
-
-// ACCESSIBLE_ATTRIBUTE_VARIANT_SMALL_CAPS: "small caps" variant value for
-// gtk.ACCESSIBLEATTRIBUTEVARIANT.
-const ACCESSIBLE_ATTRIBUTE_VARIANT_SMALL_CAPS = "small-caps"
-
-// ACCESSIBLE_ATTRIBUTE_VARIANT_TITLE_CAPS: "title caps" variant value for
-// gtk.ACCESSIBLEATTRIBUTEVARIANT.
-const ACCESSIBLE_ATTRIBUTE_VARIANT_TITLE_CAPS = "title-caps"
-
-// ACCESSIBLE_ATTRIBUTE_VARIANT_UNICASE: "unicase" variant value for
-// gtk.ACCESSIBLEATTRIBUTEVARIANT.
-const ACCESSIBLE_ATTRIBUTE_VARIANT_UNICASE = "unicase"
-
-// ACCESSIBLE_ATTRIBUTE_WEIGHT: attribute for the font weight.
-const ACCESSIBLE_ATTRIBUTE_WEIGHT = "weight"
 
 // ACCESSIBLE_VALUE_UNDEFINED: undefined value. The accessible attribute is
 // either unset, or its value is undefined.
@@ -2568,7 +2271,7 @@ const ACCESSIBLE_VALUE_UNDEFINED = -1
 // BINARY_AGE: like get_binary_age, but from the headers used at application
 // compile time, rather than from the library linked against at application run
 // time.
-const BINARY_AGE = 1404
+const BINARY_AGE = 803
 const IM_MODULE_EXTENSION_POINT_NAME = "gtk-im-module"
 
 // INPUT_ERROR: constant to return from a signal handler for the ::input signal
@@ -2580,7 +2283,7 @@ const INPUT_ERROR = -1
 // INTERFACE_AGE: like get_interface_age, but from the headers used at
 // application compile time, rather than from the library linked against at
 // application run time.
-const INTERFACE_AGE = 4
+const INTERFACE_AGE = 3
 
 // INVALID_LIST_POSITION: value used to refer to a guaranteed invalid position
 // in a GListModel.
@@ -2614,12 +2317,12 @@ const MEDIA_FILE_EXTENSION_POINT_NAME = "gtk-media-file"
 // MICRO_VERSION: like get_micro_version, but from the headers used at
 // application compile time, rather than from the library linked against at
 // application run time.
-const MICRO_VERSION = 4
+const MICRO_VERSION = 3
 
 // MINOR_VERSION: like get_minor_version, but from the headers used at
 // application compile time, rather than from the library linked against at
 // application run time.
-const MINOR_VERSION = 14
+const MINOR_VERSION = 8
 
 // PAPER_NAME_A3: name for the A3 paper size.
 const PAPER_NAME_A3 = "iso_a3"
@@ -2745,33 +2448,6 @@ const TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID = -2
 // parent.
 type Allocation = gdk.Rectangle
 
-// AccessibleAnnouncementPriority: priority of an accessibility announcement.
-type AccessibleAnnouncementPriority C.gint
-
-const (
-	AccessibleAnnouncementPriorityLow AccessibleAnnouncementPriority = iota
-	AccessibleAnnouncementPriorityMedium
-	AccessibleAnnouncementPriorityHigh
-)
-
-func marshalAccessibleAnnouncementPriority(p uintptr) (interface{}, error) {
-	return AccessibleAnnouncementPriority(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for AccessibleAnnouncementPriority.
-func (a AccessibleAnnouncementPriority) String() string {
-	switch a {
-	case AccessibleAnnouncementPriorityLow:
-		return "Low"
-	case AccessibleAnnouncementPriorityMedium:
-		return "Medium"
-	case AccessibleAnnouncementPriorityHigh:
-		return "High"
-	default:
-		return fmt.Sprintf("AccessibleAnnouncementPriority(%d)", a)
-	}
-}
-
 // AccessibleAutocomplete: possible values for the
 // GTK_ACCESSIBLE_PROPERTY_AUTOCOMPLETE accessible property.
 type AccessibleAutocomplete C.gint
@@ -2850,37 +2526,6 @@ func (a AccessibleInvalidState) String() string {
 		return "Spelling"
 	default:
 		return fmt.Sprintf("AccessibleInvalidState(%d)", a)
-	}
-}
-
-// AccessiblePlatformState various platform states which can be queried using
-// gtk.Accessible.GetPlatformState().
-type AccessiblePlatformState C.gint
-
-const (
-	// AccessiblePlatformStateFocusable: whether the accessible can be focused.
-	AccessiblePlatformStateFocusable AccessiblePlatformState = iota
-	// AccessiblePlatformStateFocused: whether the accessible has focus.
-	AccessiblePlatformStateFocused
-	// AccessiblePlatformStateActive: whether the accessible is active.
-	AccessiblePlatformStateActive
-)
-
-func marshalAccessiblePlatformState(p uintptr) (interface{}, error) {
-	return AccessiblePlatformState(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for AccessiblePlatformState.
-func (a AccessiblePlatformState) String() string {
-	switch a {
-	case AccessiblePlatformStateFocusable:
-		return "Focusable"
-	case AccessiblePlatformStateFocused:
-		return "Focused"
-	case AccessiblePlatformStateActive:
-		return "Active"
-	default:
-		return fmt.Sprintf("AccessiblePlatformState(%d)", a)
 	}
 }
 
@@ -3194,23 +2839,20 @@ const (
 	// the current processing of an application in order to prompt the user to
 	// enter information or require a response.
 	AccessibleRoleDialog
-	// AccessibleRoleDocument: content that assistive technology users may want
-	// to browse in a reading mode.
+	// AccessibleRoleDocument: unused.
 	AccessibleRoleDocument
 	// AccessibleRoleFeed: unused.
 	AccessibleRoleFeed
 	// AccessibleRoleForm: unused.
 	AccessibleRoleForm
-	// AccessibleRoleGeneric nameless container that has no semantic meaning of
-	// its own. This is the role that GTK uses by default for widgets.
+	// AccessibleRoleGeneric: unused.
 	AccessibleRoleGeneric
 	// AccessibleRoleGrid: grid of items.
 	AccessibleRoleGrid
 	// AccessibleRoleGridCell: item in a grid or tree grid.
 	AccessibleRoleGridCell
-	// AccessibleRoleGroup: element that groups multiple related widgets.
-	// GTK uses this role for various containers, like gtk.HeaderBar or
-	// gtk.Notebook.
+	// AccessibleRoleGroup: element that groups multiple widgets. GTK uses this
+	// role for various containers, like box, viewport, and headerbar.
 	AccessibleRoleGroup
 	// AccessibleRoleHeading: unused.
 	AccessibleRoleHeading
@@ -3256,17 +2898,15 @@ const (
 	AccessibleRoleMenuItemRadio
 	// AccessibleRoleNavigation: unused.
 	AccessibleRoleNavigation
-	// AccessibleRoleNone: element that is not represented to
-	// accessibility technologies. This role is synonymous to
-	// GTK_ACCESSIBLE_ROLE_PRESENTATION.
+	// AccessibleRoleNone: element that is not represented to accessibility
+	// technologies.
 	AccessibleRoleNone
 	// AccessibleRoleNote: unused.
 	AccessibleRoleNote
 	// AccessibleRoleOption: unused.
 	AccessibleRoleOption
-	// AccessibleRolePresentation: element that is not represented
-	// to accessibility technologies. This role is synonymous to
-	// GTK_ACCESSIBLE_ROLE_NONE.
+	// AccessibleRolePresentation: element that is not represented to
+	// accessibility technologies.
 	AccessibleRolePresentation
 	// AccessibleRoleProgressBar: element that displays the progress status for
 	// tasks that take a long time.
@@ -3342,32 +2982,11 @@ const (
 	AccessibleRoleTreeGrid
 	// AccessibleRoleTreeItem: unused.
 	AccessibleRoleTreeItem
-	// AccessibleRoleWidget: abstract role for interactive components of a
-	// graphical user interface.
+	// AccessibleRoleWidget: interactive component of a graphical user
+	// interface. This is the role that GTK uses by default for widgets.
 	AccessibleRoleWidget
-	// AccessibleRoleWindow: abstract role for windows.
+	// AccessibleRoleWindow: application window.
 	AccessibleRoleWindow
-	// AccessibleRoleToggleButton: type of push button which stays pressed until
-	// depressed by a second activation.
-	AccessibleRoleToggleButton
-	// AccessibleRoleApplication: toplevel element of a graphical user
-	// interface.
-	//
-	// This is the role that GTK uses by default for windows.
-	AccessibleRoleApplication
-	// AccessibleRoleParagraph: paragraph of content.
-	AccessibleRoleParagraph
-	// AccessibleRoleBlockQuote: section of content that is quoted from another
-	// source.
-	AccessibleRoleBlockQuote
-	// AccessibleRoleArticle: section of a page that consists of a composition
-	// that forms an independent part of a document, page, or site.
-	AccessibleRoleArticle
-	// AccessibleRoleComment: comment contains content expressing reaction to
-	// other content.
-	AccessibleRoleComment
-	// AccessibleRoleTerminal: virtual terminal.
-	AccessibleRoleTerminal
 )
 
 func marshalAccessibleRole(p uintptr) (interface{}, error) {
@@ -3533,20 +3152,6 @@ func (a AccessibleRole) String() string {
 		return "Widget"
 	case AccessibleRoleWindow:
 		return "Window"
-	case AccessibleRoleToggleButton:
-		return "ToggleButton"
-	case AccessibleRoleApplication:
-		return "Application"
-	case AccessibleRoleParagraph:
-		return "Paragraph"
-	case AccessibleRoleBlockQuote:
-		return "BlockQuote"
-	case AccessibleRoleArticle:
-		return "Article"
-	case AccessibleRoleComment:
-		return "Comment"
-	case AccessibleRoleTerminal:
-		return "Terminal"
 	default:
 		return fmt.Sprintf("AccessibleRole(%d)", a)
 	}
@@ -3620,9 +3225,6 @@ const (
 	// AccessibleStateSelected: “selected” state; set when a widget is selected.
 	// Value type: boolean or undefined.
 	AccessibleStateSelected
-	// AccessibleStateVisited indicates that a widget with the
-	// GTK_ACCESSIBLE_ROLE_LINK has been visited. Value type: boolean.
-	AccessibleStateVisited
 )
 
 func marshalAccessibleState(p uintptr) (interface{}, error) {
@@ -3648,8 +3250,6 @@ func (a AccessibleState) String() string {
 		return "Pressed"
 	case AccessibleStateSelected:
 		return "Selected"
-	case AccessibleStateVisited:
-		return "Visited"
 	default:
 		return fmt.Sprintf("AccessibleState(%d)", a)
 	}
@@ -3669,82 +3269,6 @@ func AccessibleStateInitValue(state AccessibleState, value *coreglib.Value) {
 	C.gtk_accessible_state_init_value(_arg1, _arg2)
 	runtime.KeepAlive(state)
 	runtime.KeepAlive(value)
-}
-
-// AccessibleTextContentChange: type of contents change operation.
-type AccessibleTextContentChange C.gint
-
-const (
-	// AccessibleTextContentChangeInsert contents change as the result of an
-	// insert operation.
-	AccessibleTextContentChangeInsert AccessibleTextContentChange = iota
-	// AccessibleTextContentChangeRemove contents change as the result of a
-	// remove operation.
-	AccessibleTextContentChangeRemove
-)
-
-func marshalAccessibleTextContentChange(p uintptr) (interface{}, error) {
-	return AccessibleTextContentChange(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for AccessibleTextContentChange.
-func (a AccessibleTextContentChange) String() string {
-	switch a {
-	case AccessibleTextContentChangeInsert:
-		return "Insert"
-	case AccessibleTextContentChangeRemove:
-		return "Remove"
-	default:
-		return fmt.Sprintf("AccessibleTextContentChange(%d)", a)
-	}
-}
-
-// AccessibleTextGranularity: granularity for queries about the text contents of
-// a gtk.AccessibleText implementation.
-type AccessibleTextGranularity C.gint
-
-const (
-	// AccessibleTextGranularityCharacter: use the boundary between characters
-	// (including non-printing characters).
-	AccessibleTextGranularityCharacter AccessibleTextGranularity = iota
-	// AccessibleTextGranularityWord: use the boundary between words, starting
-	// from the beginning of the current word and ending at the beginning of the
-	// next word.
-	AccessibleTextGranularityWord
-	// AccessibleTextGranularitySentence: use the boundary between sentences,
-	// starting from the beginning of the current sentence and ending at the
-	// beginning of the next sentence.
-	AccessibleTextGranularitySentence
-	// AccessibleTextGranularityLine: use the boundary between lines, starting
-	// from the beginning of the current line and ending at the beginning of the
-	// next line.
-	AccessibleTextGranularityLine
-	// AccessibleTextGranularityParagraph: use the boundary between paragraphs,
-	// starting from the beginning of the current paragraph and ending at the
-	// beginning of the next paragraph.
-	AccessibleTextGranularityParagraph
-)
-
-func marshalAccessibleTextGranularity(p uintptr) (interface{}, error) {
-	return AccessibleTextGranularity(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for AccessibleTextGranularity.
-func (a AccessibleTextGranularity) String() string {
-	switch a {
-	case AccessibleTextGranularityCharacter:
-		return "Character"
-	case AccessibleTextGranularityWord:
-		return "Word"
-	case AccessibleTextGranularitySentence:
-		return "Sentence"
-	case AccessibleTextGranularityLine:
-		return "Line"
-	case AccessibleTextGranularityParagraph:
-		return "Paragraph"
-	default:
-		return fmt.Sprintf("AccessibleTextGranularity(%d)", a)
-	}
 }
 
 // AccessibleTristate: possible values for the GTK_ACCESSIBLE_STATE_PRESSED
@@ -3792,29 +3316,24 @@ func (a AccessibleTristate) String() string {
 // Note that in horizontal context GTK_ALIGN_START and GTK_ALIGN_END are
 // interpreted relative to text direction.
 //
-// Baseline support is optional for containers and widgets, and is
-// only available for vertical alignment. GTK_ALIGN_BASELINE_CENTER and
-// GTK_ALIGN_BASELINE_FILL are treated similar to GTK_ALIGN_CENTER and
-// GTK_ALIGN_FILL`, except that it positions the widget to line up the
-// baselines, where that is supported.
+// GTK_ALIGN_BASELINE support is optional for containers and widgets, and it is
+// only supported for vertical alignment. When it's not supported by a child or
+// a container it is treated as GTK_ALIGN_FILL.
 type Align C.gint
 
 const (
 	// AlignFill: stretch to fill all space if possible, center if no meaningful
 	// way to stretch.
-	AlignFill Align = 0
+	AlignFill Align = iota
 	// AlignStart: snap to left or top side, leaving space on right or bottom.
-	AlignStart Align = 1
+	AlignStart
 	// AlignEnd: snap to right or bottom side, leaving space on left or top.
-	AlignEnd Align = 2
+	AlignEnd
 	// AlignCenter: center natural width of widget inside the allocation.
-	AlignCenter Align = 3
-	// AlignBaselineFill: different name for GTK_ALIGN_BASELINE.
-	AlignBaselineFill Align = 4
-	// AlignBaseline: align the widget according to the baseline.
-	AlignBaseline Align = 4
-	// AlignBaselineCenter: stretch to fill all space, but align the baseline.
-	AlignBaselineCenter Align = 5
+	AlignCenter
+	// AlignBaseline: align the widget according to the baseline. See
+	// gtk.Widget.
+	AlignBaseline
 )
 
 func marshalAlign(p uintptr) (interface{}, error) {
@@ -3832,10 +3351,8 @@ func (a Align) String() string {
 		return "End"
 	case AlignCenter:
 		return "Center"
-	case AlignBaselineFill:
-		return "BaselineFill"
-	case AlignBaselineCenter:
-		return "BaselineCenter"
+	case AlignBaseline:
+		return "Baseline"
 	default:
 		return fmt.Sprintf("Align(%d)", a)
 	}
@@ -4244,40 +3761,6 @@ func (c CellRendererMode) String() string {
 	}
 }
 
-// Collation describes how a gtk.StringSorter turns strings into sort keys to
-// compare them.
-//
-// Note that the result of sorting will in general depend on the current locale
-// unless the mode is GTK_COLLATION_NONE.
-type Collation C.gint
-
-const (
-	// CollationNone: don't do any collation.
-	CollationNone Collation = iota
-	// CollationUnicode: use glib.UTF8CollateKey().
-	CollationUnicode
-	// CollationFilename: use glib.UTF8CollateKeyForFilename().
-	CollationFilename
-)
-
-func marshalCollation(p uintptr) (interface{}, error) {
-	return Collation(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for Collation.
-func (c Collation) String() string {
-	switch c {
-	case CollationNone:
-		return "None"
-	case CollationUnicode:
-		return "Unicode"
-	case CollationFilename:
-		return "Filename"
-	default:
-		return fmt.Sprintf("Collation(%d)", c)
-	}
-}
-
 // ConstraintAttribute: widget attributes that can be used when creating a
 // constraint.
 type ConstraintAttribute C.gint
@@ -4681,52 +4164,6 @@ func (d DeleteType) String() string {
 	}
 }
 
-// DialogError: error codes in the GTK_DIALOG_ERROR domain that can be returned
-// by async dialog functions.
-type DialogError C.gint
-
-const (
-	// DialogErrorFailed: generic error condition for when an operation fails
-	// and no more specific code is applicable.
-	DialogErrorFailed DialogError = iota
-	// DialogErrorCancelled: async function call was cancelled via its
-	// GCancellable.
-	DialogErrorCancelled
-	// DialogErrorDismissed: operation was cancelled by the user (via a Cancel
-	// or Close button).
-	DialogErrorDismissed
-)
-
-func marshalDialogError(p uintptr) (interface{}, error) {
-	return DialogError(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for DialogError.
-func (d DialogError) String() string {
-	switch d {
-	case DialogErrorFailed:
-		return "Failed"
-	case DialogErrorCancelled:
-		return "Cancelled"
-	case DialogErrorDismissed:
-		return "Dismissed"
-	default:
-		return fmt.Sprintf("DialogError(%d)", d)
-	}
-}
-
-func DialogErrorQuark() glib.Quark {
-	var _cret C.GQuark // in
-
-	_cret = C.gtk_dialog_error_quark()
-
-	var _quark glib.Quark // out
-
-	_quark = glib.Quark(_cret)
-
-	return _quark
-}
-
 // DirectionType focus movement types.
 type DirectionType C.gint
 
@@ -5045,70 +4482,6 @@ func (f FilterMatch) String() string {
 		return "All"
 	default:
 		return fmt.Sprintf("FilterMatch(%d)", f)
-	}
-}
-
-// FontLevel: level of granularity for the font selection.
-//
-// Depending on this value, the PangoFontDescription that is returned by
-// gtk.FontDialogButton.GetFontDesc() will have more or less fields set.
-type FontLevel C.gint
-
-const (
-	// FontLevelFamily: select a font family.
-	FontLevelFamily FontLevel = iota
-	// FontLevelFace: select a font face (i.e. a family and a style).
-	FontLevelFace
-	// FontLevelFont: select a font (i.e. a face with a size, and possibly font
-	// variations).
-	FontLevelFont
-	// FontLevelFeatures: select a font and font features.
-	FontLevelFeatures
-)
-
-func marshalFontLevel(p uintptr) (interface{}, error) {
-	return FontLevel(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for FontLevel.
-func (f FontLevel) String() string {
-	switch f {
-	case FontLevelFamily:
-		return "Family"
-	case FontLevelFace:
-		return "Face"
-	case FontLevelFont:
-		return "Font"
-	case FontLevelFeatures:
-		return "Features"
-	default:
-		return fmt.Sprintf("FontLevel(%d)", f)
-	}
-}
-
-// GraphicsOffloadEnabled represents the state of graphics offlodading.
-type GraphicsOffloadEnabled C.gint
-
-const (
-	// GraphicsOffloadEnabledType graphics offloading is enabled.
-	GraphicsOffloadEnabledType GraphicsOffloadEnabled = iota
-	// GraphicsOffloadDisabledType graphics offloading is disabled.
-	GraphicsOffloadDisabledType
-)
-
-func marshalGraphicsOffloadEnabled(p uintptr) (interface{}, error) {
-	return GraphicsOffloadEnabled(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for GraphicsOffloadEnabled.
-func (g GraphicsOffloadEnabled) String() string {
-	switch g {
-	case GraphicsOffloadEnabledType:
-		return "Enabled"
-	case GraphicsOffloadDisabledType:
-		return "Disabled"
-	default:
-		return fmt.Sprintf("GraphicsOffloadEnabled(%d)", g)
 	}
 }
 
@@ -5493,8 +4866,6 @@ const (
 	LicenseApache20
 	// LicenseMPL20: mozilla Public License, version 2.0.
 	LicenseMPL20
-	// License0BSD: zero-Clause BSD license.
-	License0BSD
 )
 
 func marshalLicense(p uintptr) (interface{}, error) {
@@ -5540,47 +4911,8 @@ func (l License) String() string {
 		return "Apache20"
 	case LicenseMPL20:
 		return "MPL20"
-	case License0BSD:
-		return "0BSD"
 	default:
 		return fmt.Sprintf("License(%d)", l)
-	}
-}
-
-// ListTabBehavior: used to configure the focus behavior in the
-// GTK_DIR_TAB_FORWARD and GTK_DIR_TAB_BACKWARD direction, like the
-// <kbd>Tab</kbd> key in a gtk.ListView.
-type ListTabBehavior C.gint
-
-const (
-	// ListTabAll: cycle through all focusable items of the list.
-	ListTabAll ListTabBehavior = iota
-	// ListTabItem: cycle through a single list element, then move focus out
-	// of the list. Moving focus between items needs to be done with the arrow
-	// keys.
-	ListTabItem
-	// ListTabCell: cycle only through a single cell, then move focus out of the
-	// list. Moving focus between cells needs to be done with the arrow keys.
-	// This is only relevant for cell-based widgets like ColumnView, otherwise
-	// it behaves like GTK_LIST_TAB_ITEM.
-	ListTabCell
-)
-
-func marshalListTabBehavior(p uintptr) (interface{}, error) {
-	return ListTabBehavior(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for ListTabBehavior.
-func (l ListTabBehavior) String() string {
-	switch l {
-	case ListTabAll:
-		return "All"
-	case ListTabItem:
-		return "Item"
-	case ListTabCell:
-		return "Cell"
-	default:
-		return fmt.Sprintf("ListTabBehavior(%d)", l)
 	}
 }
 
@@ -5827,6 +5159,32 @@ func (o Ordering) String() string {
 	default:
 		return fmt.Sprintf("Ordering(%d)", o)
 	}
+}
+
+// OrderingFromCmpfunc converts the result of a GCompareFunc like strcmp() to a
+// GtkOrdering value.
+//
+// The function takes the following parameters:
+//
+//   - cmpfuncResult: result of a comparison function.
+//
+// The function returns the following values:
+//
+//   - ordering: corresponding GtkOrdering.
+func OrderingFromCmpfunc(cmpfuncResult int) Ordering {
+	var _arg1 C.int         // out
+	var _cret C.GtkOrdering // in
+
+	_arg1 = C.int(cmpfuncResult)
+
+	_cret = C.gtk_ordering_from_cmpfunc(_arg1)
+	runtime.KeepAlive(cmpfuncResult)
+
+	var _ordering Ordering // out
+
+	_ordering = Ordering(_cret)
+
+	return _ordering
 }
 
 // Orientation represents the orientation of widgets and other objects.
@@ -7995,6 +7353,8 @@ const (
 	DebugNoCSSCache DebugFlags = 0b1000000000
 	// DebugInteractive: open the GTK inspector.
 	DebugInteractive DebugFlags = 0b10000000000
+	// DebugTouchscreen: pretend the pointer is a touchscreen.
+	DebugTouchscreen DebugFlags = 0b100000000000
 	// DebugActions: information about actions and menu models.
 	DebugActions DebugFlags = 0b1000000000000
 	// DebugLayout: information from layout managers.
@@ -8007,9 +7367,8 @@ const (
 	DebugBuilderObjects DebugFlags = 0b10000000000000000
 	// DebugA11Y: information about accessibility state changes.
 	DebugA11Y DebugFlags = 0b100000000000000000
-	// DebugIconfallback: information about icon fallback.
-	DebugIconfallback DebugFlags = 0b1000000000000000000
-	// DebugInvertTextDir inverts the default text-direction.
+	// DebugIconfallback: information about icon fallback. Since: 4.2.
+	DebugIconfallback  DebugFlags = 0b1000000000000000000
 	DebugInvertTextDir DebugFlags = 0b10000000000000000000
 )
 
@@ -8053,6 +7412,8 @@ func (d DebugFlags) String() string {
 			builder.WriteString("NoCSSCache|")
 		case DebugInteractive:
 			builder.WriteString("Interactive|")
+		case DebugTouchscreen:
+			builder.WriteString("Touchscreen|")
 		case DebugActions:
 			builder.WriteString("Actions|")
 		case DebugLayout:
@@ -8424,58 +7785,6 @@ func (i InputHints) Has(other InputHints) bool {
 	return (i & other) == other
 }
 
-// ListScrollFlags: list of actions to perform when scrolling to items in a list
-// widget.
-type ListScrollFlags C.guint
-
-const (
-	// ListScrollNone: don't do anything extra.
-	ListScrollNone ListScrollFlags = 0b0
-	// ListScrollFocus focus the target item.
-	ListScrollFocus ListScrollFlags = 0b1
-	// ListScrollSelect: select the target item and unselect all other items.
-	ListScrollSelect ListScrollFlags = 0b10
-)
-
-func marshalListScrollFlags(p uintptr) (interface{}, error) {
-	return ListScrollFlags(coreglib.ValueFromNative(unsafe.Pointer(p)).Flags()), nil
-}
-
-// String returns the names in string for ListScrollFlags.
-func (l ListScrollFlags) String() string {
-	if l == 0 {
-		return "ListScrollFlags(0)"
-	}
-
-	var builder strings.Builder
-	builder.Grow(47)
-
-	for l != 0 {
-		next := l & (l - 1)
-		bit := l - next
-
-		switch bit {
-		case ListScrollNone:
-			builder.WriteString("None|")
-		case ListScrollFocus:
-			builder.WriteString("Focus|")
-		case ListScrollSelect:
-			builder.WriteString("Select|")
-		default:
-			builder.WriteString(fmt.Sprintf("ListScrollFlags(0b%b)|", bit))
-		}
-
-		l = next
-	}
-
-	return strings.TrimSuffix(builder.String(), "|")
-}
-
-// Has returns true if l contains other.
-func (l ListScrollFlags) Has(other ListScrollFlags) bool {
-	return (l & other) == other
-}
-
 // PickFlags flags that influence the behavior of widget.Pick.
 type PickFlags C.guint
 
@@ -8528,15 +7837,13 @@ func (p PickFlags) Has(other PickFlags) bool {
 	return (p & other) == other
 }
 
-// PopoverMenuFlags flags that affect how gtk.PopoverMenu widgets built from a
-// gio.MenuModel are created and displayed.
+// PopoverMenuFlags flags that affect how popover menus are created from a menu
+// model.
 type PopoverMenuFlags C.guint
 
 const (
-	// PopoverMenuSliding submenus are presented as sliding submenus that
-	// replace the main menu.
-	PopoverMenuSliding PopoverMenuFlags = 0b0
-	// PopoverMenuNested submenus are presented as traditional, nested popovers.
+	// PopoverMenuNested: create submenus as nested popovers. Without this flag,
+	// submenus are created as sliding pages that replace the main menu.
 	PopoverMenuNested PopoverMenuFlags = 0b1
 )
 
@@ -8551,15 +7858,13 @@ func (p PopoverMenuFlags) String() string {
 	}
 
 	var builder strings.Builder
-	builder.Grow(36)
+	builder.Grow(17)
 
 	for p != 0 {
 		next := p & (p - 1)
 		bit := p - next
 
 		switch bit {
-		case PopoverMenuSliding:
-			builder.WriteString("Sliding|")
 		case PopoverMenuNested:
 			builder.WriteString("Nested|")
 		default:
@@ -8854,8 +8159,6 @@ func (t TextSearchFlags) Has(other TextSearchFlags) bool {
 // They are returned by gtk.TreeModel.GetFlags(), and must be static
 // for the lifetime of the object. A more complete description of
 // GTK_TREE_MODEL_ITERS_PERSIST can be found in the overview of this section.
-//
-// Deprecated: since version 4.10.
 type TreeModelFlags C.guint
 
 const (
@@ -9573,7 +8876,7 @@ func CSSParserWarningQuark() glib.Quark {
 	return _quark
 }
 
-// DisableSetlocale prevents gtk.Init() and gtk.InitCheck() from automatically
+// DisableSetlocale prevents gtk_init and gtk_init_check from automatically
 // calling setlocale (LC_ALL, "").
 //
 // You would want to use this function if you wanted to set the locale for your
@@ -9682,7 +8985,7 @@ func GetDebugFlags() DebugFlags {
 //
 // The function returns the following values:
 //
-//   - language: default language.
+//   - language: default language as a PangoLanguage.
 func GetDefaultLanguage() *pango.Language {
 	var _cret *C.PangoLanguage // in
 
@@ -9735,12 +9038,13 @@ func GetInterfaceAge() uint {
 //	update_locale (const char *new_locale)
 //	{
 //	  setlocale (LC_ALL, new_locale);
-//	  gtk_widget_set_default_direction (gtk_get_locale_direction ());
+//	  GtkTextDirection direction = gtk_get_locale_direction ();
+//	  gtk_widget_set_default_direction (direction);
 //	}.
 //
 // The function returns the following values:
 //
-//   - textDirection: direction of the current locale.
+//   - textDirection: GtkTextDirection of the current locale.
 func GetLocaleDirection() TextDirection {
 	var _cret C.GtkTextDirection // in
 
@@ -9872,14 +9176,12 @@ func HSVToRGB(h, s, v float32) (r, g, b float32) {
 // Init: call this function before using any other GTK functions in your GUI
 // applications. It will initialize everything needed to operate the toolkit.
 //
-// If you are using GtkApplication, you usually don't have to call this
-// function; the GApplication::startup handler does it for you. Though,
-// if you are using GApplication methods that will be invoked before startup,
-// such as local_command_line, you may need to initialize stuff explicitly.
+// If you are using GtkApplication, you don't have to call gtk_init() or
+// gtk_init_check(); the GApplication::startup handler does it for you.
 //
 // This function will terminate your program if it was unable to initialize the
 // windowing system for some reason. If you want your program to fall back to a
-// textual interface, call gtk.InitCheck() instead.
+// textual interface you want to call gtk_init_check() instead.
 //
 // GTK calls signal (SIGPIPE, SIG_IGN) during initialization, to ignore SIGPIPE
 // signals, since these are almost never wanted in graphical applications.
@@ -9915,9 +9217,8 @@ func InitCheck() bool {
 	return _ok
 }
 
-// IsInitialized: use this function to check if GTK has been initialized.
-//
-// See gtk.Init().
+// IsInitialized: use this function to check if GTK has been initialized with
+// gtk_init() or gtk_init_check().
 //
 // The function returns the following values:
 //
@@ -10019,8 +9320,6 @@ func PrintRunPageSetupDialogAsync(parent *Window, pageSetup *PageSetup, settings
 // RenderActivity renders an activity indicator (such as in GtkSpinner). The
 // state GTK_STATE_FLAG_CHECKED determines whether there is activity going on.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: GtkStyleContext.
@@ -10057,9 +9356,7 @@ func RenderActivity(context *StyleContext, cr *cairo.Context, x, y, width, heigh
 //
 // Typical arrow rendering at 0, 1⁄2 π;, π; and 3⁄2 π:
 //
-// ! (arrows.png)
-//
-// Deprecated: since version 4.10.
+// ! (arrows.png).
 //
 // The function takes the following parameters:
 //
@@ -10099,9 +9396,7 @@ func RenderArrow(context *StyleContext, cr *cairo.Context, angle, x, y, size flo
 // Typical background rendering, showing the effect of background-image,
 // border-width and border-radius:
 //
-// ! (background.png)
-//
-// Deprecated: since version 4.10.
+// ! (background.png).
 //
 // The function takes the following parameters:
 //
@@ -10143,9 +9438,7 @@ func RenderBackground(context *StyleContext, cr *cairo.Context, x, y, width, hei
 //
 // Typical checkmark rendering:
 //
-// ! (checks.png)
-//
-// Deprecated: since version 4.10.
+// ! (checks.png).
 //
 // The function takes the following parameters:
 //
@@ -10185,9 +9478,7 @@ func RenderCheck(context *StyleContext, cr *cairo.Context, x, y, width, height f
 //
 // Typical expander rendering:
 //
-// ! (expanders.png)
-//
-// Deprecated: since version 4.10.
+// ! (expanders.png).
 //
 // The function takes the following parameters:
 //
@@ -10226,9 +9517,7 @@ func RenderExpander(context *StyleContext, cr *cairo.Context, x, y, width, heigh
 //
 // Typical focus rendering:
 //
-// ! (focus.png)
-//
-// Deprecated: since version 4.10.
+// ! (focus.png).
 //
 // The function takes the following parameters:
 //
@@ -10268,9 +9557,7 @@ func RenderFocus(context *StyleContext, cr *cairo.Context, x, y, width, height f
 // Examples of frame rendering, showing the effect of border-image,
 // border-color, border-width, border-radius and junctions:
 //
-// ! (frames.png)
-//
-// Deprecated: since version 4.10.
+// ! (frames.png).
 //
 // The function takes the following parameters:
 //
@@ -10309,9 +9596,7 @@ func RenderFrame(context *StyleContext, cr *cairo.Context, x, y, width, height f
 //
 // Handles rendered for the paned and grip classes:
 //
-// ! (handles.png)
-//
-// Deprecated: since version 4.10.
+// ! (handles.png).
 //
 // The function takes the following parameters:
 //
@@ -10351,8 +9636,6 @@ func RenderHandle(context *StyleContext, cr *cairo.Context, x, y, width, height 
 // of scaling factors, which may not be appropriate when drawing on displays
 // with high pixel densities.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: GtkStyleContext.
@@ -10381,9 +9664,7 @@ func RenderIcon(context *StyleContext, cr *cairo.Context, texture gdk.Texturer, 
 	runtime.KeepAlive(y)
 }
 
-// RenderLayout renders layout on the coordinates x, y
-//
-// Deprecated: since version 4.10.
+// RenderLayout renders layout on the coordinates x, y.
 //
 // The function takes the following parameters:
 //
@@ -10414,8 +9695,6 @@ func RenderLayout(context *StyleContext, cr *cairo.Context, x, y float64, layout
 }
 
 // RenderLine renders a line from (x0, y0) to (x1, y1).
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -10455,9 +9734,7 @@ func RenderLine(context *StyleContext, cr *cairo.Context, x0, y0, x1, y1 float64
 //
 // Typical option mark rendering:
 //
-// ! (options.png)
-//
-// Deprecated: since version 4.10.
+// ! (options.png).
 //
 // The function takes the following parameters:
 //
@@ -10552,9 +9829,6 @@ func SetDebugFlags(flags DebugFlags) {
 // ShowURI: this function launches the default application for showing a given
 // uri, or shows an error dialog if that fails.
 //
-// Deprecated: Use gtk.FileLauncher.Launch() or gtk.URILauncher.Launch()
-// instead.
-//
 // The function takes the following parameters:
 //
 //   - parent (optional) window.
@@ -10586,9 +9860,6 @@ func ShowURI(parent *Window, uri string, timestamp uint32) {
 //
 // This is the recommended call to be used as it passes information necessary
 // for sandbox helpers to parent their dialogs properly.
-//
-// Deprecated: Use gtk.FileLauncher.Launch() or gtk.URILauncher.Launch()
-// instead.
 //
 // The function takes the following parameters:
 //
@@ -10631,9 +9902,6 @@ func ShowURIFull(ctx context.Context, parent *Window, uri string, timestamp uint
 
 // ShowURIFullFinish finishes the gtk_show_uri() call and returns the result of
 // the operation.
-//
-// Deprecated: Use gtk.FileLauncher.LaunchFinish() or
-// gtk.URILauncher.LaunchFinish() instead.
 //
 // The function takes the following parameters:
 //
@@ -10856,7 +10124,7 @@ func TestListAllTypes() []coreglib.Type {
 
 // TestRegisterAllTypes: force registration of all core GTK object types.
 //
-// This allows to refer to any of those object types via g_type_from_name()
+// This allowes to refer to any of those object types via g_type_from_name()
 // after calling this function.
 func TestRegisterAllTypes() {
 	C.gtk_test_register_all_types()
@@ -10885,8 +10153,6 @@ func TestWidgetWaitForDraw(widget Widgetter) {
 
 // TreeCreateRowDragContent creates a content provider for dragging path from
 // tree_model.
-//
-// Deprecated: Use list models instead.
 //
 // The function takes the following parameters:
 //
@@ -10924,8 +10190,6 @@ func TreeCreateRowDragContent(treeModel TreeModeller, path *TreePath) *gdk.Conte
 // GTK_TYPE_TREE_ROW_DATA.
 //
 // The returned path must be freed with gtk_tree_path_free().
-//
-// Deprecated: Use list models instead.
 //
 // The function takes the following parameters:
 //
@@ -11112,18 +10376,6 @@ func ValueTakeExpression(value *coreglib.Value, expression Expressioner) {
 // if a GtkWidget visibility changes, the GTK_ACCESSIBLE_STATE_HIDDEN state will
 // also change to reflect the gtk.Widget:visible property.
 //
-// Every accessible implementation is part of a tree of accessible objects.
-// Normally, this tree corresponds to the widget tree, but can be
-// customized by reimplementing the gtk.Accessible.GetAccessibleParent(),
-// gtk.Accessible.GetFirstAccessibleChild() and
-// gtk.Accessible.GetNextAccessibleSibling() virtual functions. Note that you
-// can not create a top-level accessible object as of now, which means that
-// you must always have a parent accessible object. Also note that when an
-// accessible object does not correspond to a widget, and it has children,
-// whose implementation you don't control, it is necessary to ensure the correct
-// shape of the a11y tree by calling gtk.Accessible.SetAccessibleParent() and
-// updating the sibling by gtk.Accessible.UpdateNextAccessibleSibling().
-//
 // Accessible wraps an interface. This means the user can get the
 // underlying type by calling Cast().
 type Accessible struct {
@@ -11139,36 +10391,15 @@ var (
 type Accessibler interface {
 	coreglib.Objector
 
-	// Announce requests the user's screen reader to announce the given message.
-	Announce(message string, priority AccessibleAnnouncementPriority)
-	// AccessibleParent retrieves the accessible parent for an accessible
-	// object.
-	AccessibleParent() *Accessible
-	// AccessibleRole retrieves the accessible role of an accessible object.
-	AccessibleRole() AccessibleRole
-	// AtContext retrieves the accessible implementation for the given
+	// AccessibleRole retrieves the GtkAccessibleRole for the given
 	// GtkAccessible.
-	AtContext() ATContexter
-	// Bounds queries the coordinates and dimensions of this accessible.
-	Bounds() (x, y, width, height int, ok bool)
-	// FirstAccessibleChild retrieves the first accessible child of an
-	// accessible object.
-	FirstAccessibleChild() *Accessible
-	// NextAccessibleSibling retrieves the next accessible sibling of an
-	// accessible object.
-	NextAccessibleSibling() *Accessible
-	// PlatformState: query a platform state, such as focus.
-	PlatformState(state AccessiblePlatformState) bool
+	AccessibleRole() AccessibleRole
 	// ResetProperty resets the accessible property to its default value.
 	ResetProperty(property AccessibleProperty)
 	// ResetRelation resets the accessible relation to its default value.
 	ResetRelation(relation AccessibleRelation)
 	// ResetState resets the accessible state to its default value.
 	ResetState(state AccessibleState)
-	// SetAccessibleParent sets the parent and sibling of an accessible object.
-	SetAccessibleParent(parent, nextSibling Accessibler)
-	// UpdateNextAccessibleSibling updates the next accessible sibling of self.
-	UpdateNextAccessibleSibling(newSibling Accessibler)
 	// UpdateProperty updates an array of accessible properties.
 	UpdateProperty(properties []AccessibleProperty, values []coreglib.Value)
 	// UpdateRelation updates an array of accessible relations.
@@ -11189,65 +10420,11 @@ func marshalAccessible(p uintptr) (interface{}, error) {
 	return wrapAccessible(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
 }
 
-// Announce requests the user's screen reader to announce the given message.
-//
-// This kind of notification is useful for messages that either have only
-// a visual representation or that are not exposed visually at all, e.g.
-// a notification about a successful operation.
-//
-// Also, by using this API, you can ensure that the message does not interrupts
-// the user's current screen reader output.
-//
-// The function takes the following parameters:
-//
-//   - message: string to announce.
-//   - priority of the announcement.
-func (self *Accessible) Announce(message string, priority AccessibleAnnouncementPriority) {
-	var _arg0 *C.GtkAccessible                    // out
-	var _arg1 *C.char                             // out
-	var _arg2 C.GtkAccessibleAnnouncementPriority // out
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(message)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = C.GtkAccessibleAnnouncementPriority(priority)
-
-	C.gtk_accessible_announce(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(message)
-	runtime.KeepAlive(priority)
-}
-
-// AccessibleParent retrieves the accessible parent for an accessible object.
-//
-// This function returns NULL for top level widgets.
+// AccessibleRole retrieves the GtkAccessibleRole for the given GtkAccessible.
 //
 // The function returns the following values:
 //
-//   - accessible (optional) parent.
-func (self *Accessible) AccessibleParent() *Accessible {
-	var _arg0 *C.GtkAccessible // out
-	var _cret *C.GtkAccessible // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_accessible_get_accessible_parent(_arg0)
-	runtime.KeepAlive(self)
-
-	var _accessible *Accessible // out
-
-	if _cret != nil {
-		_accessible = wrapAccessible(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-	}
-
-	return _accessible
-}
-
-// AccessibleRole retrieves the accessible role of an accessible object.
-//
-// The function returns the following values:
-//
-//   - accessibleRole: accessible role.
+//   - accessibleRole: GtkAccessibleRole.
 func (self *Accessible) AccessibleRole() AccessibleRole {
 	var _arg0 *C.GtkAccessible    // out
 	var _cret C.GtkAccessibleRole // in
@@ -11262,170 +10439,6 @@ func (self *Accessible) AccessibleRole() AccessibleRole {
 	_accessibleRole = AccessibleRole(_cret)
 
 	return _accessibleRole
-}
-
-// AtContext retrieves the accessible implementation for the given
-// GtkAccessible.
-//
-// The function returns the following values:
-//
-//   - atContext: accessible implementation object.
-func (self *Accessible) AtContext() ATContexter {
-	var _arg0 *C.GtkAccessible // out
-	var _cret *C.GtkATContext  // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_accessible_get_at_context(_arg0)
-	runtime.KeepAlive(self)
-
-	var _atContext ATContexter // out
-
-	{
-		objptr := unsafe.Pointer(_cret)
-		if objptr == nil {
-			panic("object of type gtk.ATContexter is nil")
-		}
-
-		object := coreglib.AssumeOwnership(objptr)
-		casted := object.WalkCast(func(obj coreglib.Objector) bool {
-			_, ok := obj.(ATContexter)
-			return ok
-		})
-		rv, ok := casted.(ATContexter)
-		if !ok {
-			panic("no marshaler for " + object.TypeFromInstance().String() + " matching gtk.ATContexter")
-		}
-		_atContext = rv
-	}
-
-	return _atContext
-}
-
-// Bounds queries the coordinates and dimensions of this accessible
-//
-// This functionality can be overridden by GtkAccessible implementations, e.g.
-// to get the bounds from an ignored child widget.
-//
-// The function returns the following values:
-//
-//   - x coordinate of the top left corner of the accessible.
-//   - y coordinate of the top left corner of the widget.
-//   - width of the accessible object.
-//   - height of the accessible object.
-//   - ok: true if the bounds are valid, and false otherwise.
-func (self *Accessible) Bounds() (x, y, width, height int, ok bool) {
-	var _arg0 *C.GtkAccessible // out
-	var _arg1 C.int            // in
-	var _arg2 C.int            // in
-	var _arg3 C.int            // in
-	var _arg4 C.int            // in
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_accessible_get_bounds(_arg0, &_arg1, &_arg2, &_arg3, &_arg4)
-	runtime.KeepAlive(self)
-
-	var _x int      // out
-	var _y int      // out
-	var _width int  // out
-	var _height int // out
-	var _ok bool    // out
-
-	_x = int(_arg1)
-	_y = int(_arg2)
-	_width = int(_arg3)
-	_height = int(_arg4)
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _x, _y, _width, _height, _ok
-}
-
-// FirstAccessibleChild retrieves the first accessible child of an accessible
-// object.
-//
-// The function returns the following values:
-//
-//   - accessible (optional): first accessible child.
-func (self *Accessible) FirstAccessibleChild() *Accessible {
-	var _arg0 *C.GtkAccessible // out
-	var _cret *C.GtkAccessible // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_accessible_get_first_accessible_child(_arg0)
-	runtime.KeepAlive(self)
-
-	var _accessible *Accessible // out
-
-	if _cret != nil {
-		_accessible = wrapAccessible(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-	}
-
-	return _accessible
-}
-
-// NextAccessibleSibling retrieves the next accessible sibling of an accessible
-// object.
-//
-// The function returns the following values:
-//
-//   - accessible (optional): next accessible sibling.
-func (self *Accessible) NextAccessibleSibling() *Accessible {
-	var _arg0 *C.GtkAccessible // out
-	var _cret *C.GtkAccessible // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_accessible_get_next_accessible_sibling(_arg0)
-	runtime.KeepAlive(self)
-
-	var _accessible *Accessible // out
-
-	if _cret != nil {
-		_accessible = wrapAccessible(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-	}
-
-	return _accessible
-}
-
-// PlatformState: query a platform state, such as focus.
-//
-// See gtk_accessible_platform_changed().
-//
-// This functionality can be overridden by GtkAccessible implementations,
-// e.g. to get platform state from an ignored child widget, as is the case for
-// GtkText wrappers.
-//
-// The function takes the following parameters:
-//
-//   - state: platform state to query.
-//
-// The function returns the following values:
-//
-//   - ok: value of state for the accessible.
-func (self *Accessible) PlatformState(state AccessiblePlatformState) bool {
-	var _arg0 *C.GtkAccessible             // out
-	var _arg1 C.GtkAccessiblePlatformState // out
-	var _cret C.gboolean                   // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkAccessiblePlatformState(state)
-
-	_cret = C.gtk_accessible_get_platform_state(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(state)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
 }
 
 // ResetProperty resets the accessible property to its default value.
@@ -11477,61 +10490,6 @@ func (self *Accessible) ResetState(state AccessibleState) {
 	C.gtk_accessible_reset_state(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(state)
-}
-
-// SetAccessibleParent sets the parent and sibling of an accessible object.
-//
-// This function is meant to be used by accessible implementations that are
-// not part of the widget hierarchy, and but act as a logical bridge between
-// widgets. For instance, if a widget creates an object that holds metadata
-// for each child, and you want that object to implement the GtkAccessible
-// interface, you will use this function to ensure that the parent of each child
-// widget is the metadata object, and the parent of each metadata object is the
-// container widget.
-//
-// The function takes the following parameters:
-//
-//   - parent (optional) accessible object.
-//   - nextSibling (optional): sibling accessible object.
-func (self *Accessible) SetAccessibleParent(parent, nextSibling Accessibler) {
-	var _arg0 *C.GtkAccessible // out
-	var _arg1 *C.GtkAccessible // out
-	var _arg2 *C.GtkAccessible // out
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if parent != nil {
-		_arg1 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if nextSibling != nil {
-		_arg2 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(nextSibling).Native()))
-	}
-
-	C.gtk_accessible_set_accessible_parent(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(nextSibling)
-}
-
-// UpdateNextAccessibleSibling updates the next accessible sibling of self.
-//
-// That might be useful when a new child of a custom GtkAccessible is created,
-// and it needs to be linked to a previous child.
-//
-// The function takes the following parameters:
-//
-//   - newSibling (optional): new next accessible sibling to set.
-func (self *Accessible) UpdateNextAccessibleSibling(newSibling Accessibler) {
-	var _arg0 *C.GtkAccessible // out
-	var _arg1 *C.GtkAccessible // out
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if newSibling != nil {
-		_arg1 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(newSibling).Native()))
-	}
-
-	C.gtk_accessible_update_next_accessible_sibling(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(newSibling)
 }
 
 // UpdateProperty updates an array of accessible properties.
@@ -11648,774 +10606,7 @@ func (self *Accessible) UpdateState(states []AccessibleState, values []coreglib.
 	runtime.KeepAlive(values)
 }
 
-// accessibleParent retrieves the accessible parent for an accessible object.
-//
-// This function returns NULL for top level widgets.
-//
-// The function returns the following values:
-//
-//   - accessible (optional) parent.
-func (self *Accessible) accessibleParent() *Accessible {
-	gclass := (*C.GtkAccessibleInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_accessible_parent
-
-	var _arg0 *C.GtkAccessible // out
-	var _cret *C.GtkAccessible // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C._gotk4_gtk4_Accessible_virtual_get_accessible_parent(unsafe.Pointer(fnarg), _arg0)
-	runtime.KeepAlive(self)
-
-	var _accessible *Accessible // out
-
-	if _cret != nil {
-		_accessible = wrapAccessible(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-	}
-
-	return _accessible
-}
-
-// atContext retrieves the accessible implementation for the given
-// GtkAccessible.
-//
-// The function returns the following values:
-//
-//   - atContext (optional): accessible implementation object.
-func (self *Accessible) atContext() ATContexter {
-	gclass := (*C.GtkAccessibleInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_at_context
-
-	var _arg0 *C.GtkAccessible // out
-	var _cret *C.GtkATContext  // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C._gotk4_gtk4_Accessible_virtual_get_at_context(unsafe.Pointer(fnarg), _arg0)
-	runtime.KeepAlive(self)
-
-	var _atContext ATContexter // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.AssumeOwnership(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(ATContexter)
-				return ok
-			})
-			rv, ok := casted.(ATContexter)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gtk.ATContexter")
-			}
-			_atContext = rv
-		}
-	}
-
-	return _atContext
-}
-
-// Bounds queries the coordinates and dimensions of this accessible
-//
-// This functionality can be overridden by GtkAccessible implementations, e.g.
-// to get the bounds from an ignored child widget.
-//
-// The function returns the following values:
-//
-//   - x coordinate of the top left corner of the accessible.
-//   - y coordinate of the top left corner of the widget.
-//   - width of the accessible object.
-//   - height of the accessible object.
-//   - ok: true if the bounds are valid, and false otherwise.
-func (self *Accessible) bounds() (x, y, width, height int, ok bool) {
-	gclass := (*C.GtkAccessibleInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_bounds
-
-	var _arg0 *C.GtkAccessible // out
-	var _arg1 C.int            // in
-	var _arg2 C.int            // in
-	var _arg3 C.int            // in
-	var _arg4 C.int            // in
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C._gotk4_gtk4_Accessible_virtual_get_bounds(unsafe.Pointer(fnarg), _arg0, &_arg1, &_arg2, &_arg3, &_arg4)
-	runtime.KeepAlive(self)
-
-	var _x int      // out
-	var _y int      // out
-	var _width int  // out
-	var _height int // out
-	var _ok bool    // out
-
-	_x = int(_arg1)
-	_y = int(_arg2)
-	_width = int(_arg3)
-	_height = int(_arg4)
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _x, _y, _width, _height, _ok
-}
-
-// firstAccessibleChild retrieves the first accessible child of an accessible
-// object.
-//
-// The function returns the following values:
-//
-//   - accessible (optional): first accessible child.
-func (self *Accessible) firstAccessibleChild() *Accessible {
-	gclass := (*C.GtkAccessibleInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_first_accessible_child
-
-	var _arg0 *C.GtkAccessible // out
-	var _cret *C.GtkAccessible // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C._gotk4_gtk4_Accessible_virtual_get_first_accessible_child(unsafe.Pointer(fnarg), _arg0)
-	runtime.KeepAlive(self)
-
-	var _accessible *Accessible // out
-
-	if _cret != nil {
-		_accessible = wrapAccessible(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-	}
-
-	return _accessible
-}
-
-// nextAccessibleSibling retrieves the next accessible sibling of an accessible
-// object.
-//
-// The function returns the following values:
-//
-//   - accessible (optional): next accessible sibling.
-func (self *Accessible) nextAccessibleSibling() *Accessible {
-	gclass := (*C.GtkAccessibleInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_next_accessible_sibling
-
-	var _arg0 *C.GtkAccessible // out
-	var _cret *C.GtkAccessible // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C._gotk4_gtk4_Accessible_virtual_get_next_accessible_sibling(unsafe.Pointer(fnarg), _arg0)
-	runtime.KeepAlive(self)
-
-	var _accessible *Accessible // out
-
-	if _cret != nil {
-		_accessible = wrapAccessible(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-	}
-
-	return _accessible
-}
-
-// platformState: query a platform state, such as focus.
-//
-// See gtk_accessible_platform_changed().
-//
-// This functionality can be overridden by GtkAccessible implementations,
-// e.g. to get platform state from an ignored child widget, as is the case for
-// GtkText wrappers.
-//
-// The function takes the following parameters:
-//
-//   - state: platform state to query.
-//
-// The function returns the following values:
-//
-//   - ok: value of state for the accessible.
-func (self *Accessible) platformState(state AccessiblePlatformState) bool {
-	gclass := (*C.GtkAccessibleInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_platform_state
-
-	var _arg0 *C.GtkAccessible             // out
-	var _arg1 C.GtkAccessiblePlatformState // out
-	var _cret C.gboolean                   // in
-
-	_arg0 = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkAccessiblePlatformState(state)
-
-	_cret = C._gotk4_gtk4_Accessible_virtual_get_platform_state(unsafe.Pointer(fnarg), _arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(state)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// AccessibleRange: this interface describes ranged controls, e.g. controls
-// which have a single value within an allowed range and that can optionally be
-// changed by the user.
-//
-// This interface is expected to be implemented by controls using the following
-// roles:
-//
-// - GTK_ACCESSIBLE_ROLE_METER
-//
-// - GTK_ACCESSIBLE_ROLE_PROGRESS_BAR
-//
-// - GTK_ACCESSIBLE_ROLE_SCROLLBAR
-//
-// - GTK_ACCESSIBLE_ROLE_SLIDER
-//
-// - GTK_ACCESSIBLE_ROLE_SPIN_BUTTON
-//
-// If that is not the case, a warning will be issued at run time.
-//
-// In addition to this interface, its implementers are expected to provide the
-// correct values for the following properties:
-//
-// - GTK_ACCESSIBLE_PROPERTY_VALUE_MAX
-//
-// - GTK_ACCESSIBLE_PROPERTY_VALUE_MIN
-//
-// - GTK_ACCESSIBLE_PROPERTY_VALUE_NOW
-//
-// - GTK_ACCESSIBLE_PROPERTY_VALUE_TEXT.
-//
-// AccessibleRange wraps an interface. This means the user can get the
-// underlying type by calling Cast().
-type AccessibleRange struct {
-	_ [0]func() // equal guard
-	Accessible
-}
-
-var ()
-
-// AccessibleRanger describes AccessibleRange's interface methods.
-type AccessibleRanger interface {
-	coreglib.Objector
-
-	baseAccessibleRange() *AccessibleRange
-}
-
-var _ AccessibleRanger = (*AccessibleRange)(nil)
-
-func wrapAccessibleRange(obj *coreglib.Object) *AccessibleRange {
-	return &AccessibleRange{
-		Accessible: Accessible{
-			Object: obj,
-		},
-	}
-}
-
-func marshalAccessibleRange(p uintptr) (interface{}, error) {
-	return wrapAccessibleRange(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-func (v *AccessibleRange) baseAccessibleRange() *AccessibleRange {
-	return v
-}
-
-// BaseAccessibleRange returns the underlying base object.
-func BaseAccessibleRange(obj AccessibleRanger) *AccessibleRange {
-	return obj.baseAccessibleRange()
-}
-
-// setCurrentValue sets the current value of the accessible range.
-//
-// This operation should behave similarly as if the user performed the action.
-//
-// The function takes the following parameters:
-//
-//   - value to set.
-//
-// The function returns the following values:
-//
-//   - ok: true if the operation was performed, false otherwise.
-func (self *AccessibleRange) setCurrentValue(value float64) bool {
-	gclass := (*C.GtkAccessibleRangeInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.set_current_value
-
-	var _arg0 *C.GtkAccessibleRange // out
-	var _arg1 C.double              // out
-	var _cret C.gboolean            // in
-
-	_arg0 = (*C.GtkAccessibleRange)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.double(value)
-
-	_cret = C._gotk4_gtk4_AccessibleRange_virtual_set_current_value(unsafe.Pointer(fnarg), _arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(value)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// AccessibleText: interface for accessible objects containing formatted text.
-//
-// The GtkAccessibleText interfaces is meant to be implemented by accessible
-// objects that have text formatted with attributes, or non-trivial text
-// contents.
-//
-// You should use the gtk.AccessibleProperty.LABEL or the
-// gtk.AccessibleProperty.DESCRIPTION properties for accessible objects
-// containing simple, unformatted text.
-//
-// AccessibleText wraps an interface. This means the user can get the
-// underlying type by calling Cast().
-type AccessibleText struct {
-	_ [0]func() // equal guard
-	Accessible
-}
-
-var ()
-
-// AccessibleTexter describes AccessibleText's interface methods.
-type AccessibleTexter interface {
-	coreglib.Objector
-
-	// UpdateCaretPosition updates the position of the caret.
-	UpdateCaretPosition()
-	// UpdateContents notifies assistive technologies of a change in contents.
-	UpdateContents(change AccessibleTextContentChange, start, end uint)
-	// UpdateSelectionBound updates the boundary of the selection.
-	UpdateSelectionBound()
-}
-
-var _ AccessibleTexter = (*AccessibleText)(nil)
-
-func wrapAccessibleText(obj *coreglib.Object) *AccessibleText {
-	return &AccessibleText{
-		Accessible: Accessible{
-			Object: obj,
-		},
-	}
-}
-
-func marshalAccessibleText(p uintptr) (interface{}, error) {
-	return wrapAccessibleText(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// UpdateCaretPosition updates the position of the caret.
-//
-// Implementations of the GtkAccessibleText interface should call this function
-// every time the caret has moved, in order to notify assistive technologies.
-func (self *AccessibleText) UpdateCaretPosition() {
-	var _arg0 *C.GtkAccessibleText // out
-
-	_arg0 = (*C.GtkAccessibleText)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	C.gtk_accessible_text_update_caret_position(_arg0)
-	runtime.KeepAlive(self)
-}
-
-// UpdateContents notifies assistive technologies of a change in contents.
-//
-// Implementations of the GtkAccessibleText interface should call this function
-// every time their contents change as the result of an operation, like an
-// insertion or a removal.
-//
-// Note: If the change is a deletion, this function must be called *before*
-// removing the contents, if it is an insertion, it must be called *after*
-// inserting the new contents.
-//
-// The function takes the following parameters:
-//
-//   - change: type of change in the contents.
-//   - start: starting offset of the change, in characters.
-//   - end offset of the change, in characters.
-func (self *AccessibleText) UpdateContents(change AccessibleTextContentChange, start, end uint) {
-	var _arg0 *C.GtkAccessibleText             // out
-	var _arg1 C.GtkAccessibleTextContentChange // out
-	var _arg2 C.uint                           // out
-	var _arg3 C.uint                           // out
-
-	_arg0 = (*C.GtkAccessibleText)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkAccessibleTextContentChange(change)
-	_arg2 = C.uint(start)
-	_arg3 = C.uint(end)
-
-	C.gtk_accessible_text_update_contents(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(change)
-	runtime.KeepAlive(start)
-	runtime.KeepAlive(end)
-}
-
-// UpdateSelectionBound updates the boundary of the selection.
-//
-// Implementations of the GtkAccessibleText interface should call this
-// function every time the selection has moved, in order to notify assistive
-// technologies.
-func (self *AccessibleText) UpdateSelectionBound() {
-	var _arg0 *C.GtkAccessibleText // out
-
-	_arg0 = (*C.GtkAccessibleText)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	C.gtk_accessible_text_update_selection_bound(_arg0)
-	runtime.KeepAlive(self)
-}
-
-// Attributes retrieves the text attributes inside the accessible object.
-//
-// Each attribute is composed by:
-//
-// - a range
-//
-// - a name
-//
-// - a value
-//
-// It is left to the implementation to determine the serialization format of the
-// value to a string.
-//
-// GTK provides support for various text attribute names and values, but
-// implementations of this interface are free to add their own attributes.
-//
-// If this function returns true, n_ranges will be set to a value greater
-// than or equal to one, ranges will be set to a newly allocated array of
-// [struct#Gtk.AccessibleTextRange].
-//
-// The function takes the following parameters:
-//
-//   - offset: offset, in characters.
-//
-// The function returns the following values:
-//
-//   - ranges (optional) of the attributes inside the accessible object.
-//   - attributeNames (optional): the names of the attributes inside the
-//     accessible object.
-//   - attributeValues (optional): the values of the attributes inside the
-//     accessible object.
-//   - ok: true if the accessible object has at least an attribute, and false
-//     otherwise.
-func (self *AccessibleText) attributes(offset uint) (ranges []AccessibleTextRange, attributeNames, attributeValues []string, ok bool) {
-	gclass := (*C.GtkAccessibleTextInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_attributes
-
-	var _arg0 *C.GtkAccessibleText      // out
-	var _arg1 C.uint                    // out
-	var _arg3 *C.GtkAccessibleTextRange // in
-	var _arg2 C.gsize                   // in
-	var _arg4 **C.char                  // in
-	var _arg5 **C.char                  // in
-	var _cret C.gboolean                // in
-
-	_arg0 = (*C.GtkAccessibleText)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(offset)
-
-	_cret = C._gotk4_gtk4_AccessibleText_virtual_get_attributes(unsafe.Pointer(fnarg), _arg0, _arg1, &_arg2, &_arg3, &_arg4, &_arg5)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(offset)
-
-	var _ranges []AccessibleTextRange // out
-	var _attributeNames []string      // out
-	var _attributeValues []string     // out
-	var _ok bool                      // out
-
-	if _arg3 != nil {
-		defer C.free(unsafe.Pointer(_arg3))
-		{
-			src := unsafe.Slice((*C.GtkAccessibleTextRange)(_arg3), _arg2)
-			_ranges = make([]AccessibleTextRange, _arg2)
-			for i := 0; i < int(_arg2); i++ {
-				_ranges[i] = *(*AccessibleTextRange)(gextras.NewStructNative(unsafe.Pointer((&src[i]))))
-			}
-		}
-	}
-	if _arg4 != nil {
-		defer C.free(unsafe.Pointer(_arg4))
-		{
-			var i int
-			var z *C.char
-			for p := _arg4; *p != z; p = &unsafe.Slice(p, 2)[1] {
-				i++
-			}
-
-			src := unsafe.Slice(_arg4, i)
-			_attributeNames = make([]string, i)
-			for i := range src {
-				_attributeNames[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
-				defer C.free(unsafe.Pointer(src[i]))
-			}
-		}
-	}
-	if _arg5 != nil {
-		defer C.free(unsafe.Pointer(_arg5))
-		{
-			var i int
-			var z *C.char
-			for p := _arg5; *p != z; p = &unsafe.Slice(p, 2)[1] {
-				i++
-			}
-
-			src := unsafe.Slice(_arg5, i)
-			_attributeValues = make([]string, i)
-			for i := range src {
-				_attributeValues[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
-				defer C.free(unsafe.Pointer(src[i]))
-			}
-		}
-	}
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ranges, _attributeNames, _attributeValues, _ok
-}
-
-// caretPosition retrieves the position of the caret inside the accessible
-// object.
-//
-// The function returns the following values:
-//
-//   - guint: position of the caret, in characters.
-func (self *AccessibleText) caretPosition() uint {
-	gclass := (*C.GtkAccessibleTextInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_caret_position
-
-	var _arg0 *C.GtkAccessibleText // out
-	var _cret C.uint               // in
-
-	_arg0 = (*C.GtkAccessibleText)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C._gotk4_gtk4_AccessibleText_virtual_get_caret_position(unsafe.Pointer(fnarg), _arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// Contents: retrieve the current contents of the accessible object within the
-// given range.
-//
-// If end is G_MAXUINT, the end of the range is the full content of the
-// accessible object.
-//
-// The function takes the following parameters:
-//
-//   - start: beginning of the range, in characters.
-//   - end of the range, in characters.
-//
-// The function returns the following values:
-//
-//   - bytes: requested slice of the contents of the accessible object,
-//     as UTF-8. Note that the slice does not have to be NUL-terminated.
-func (self *AccessibleText) contents(start, end uint) *glib.Bytes {
-	gclass := (*C.GtkAccessibleTextInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_contents
-
-	var _arg0 *C.GtkAccessibleText // out
-	var _arg1 C.uint               // out
-	var _arg2 C.uint               // out
-	var _cret *C.GBytes            // in
-
-	_arg0 = (*C.GtkAccessibleText)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(start)
-	_arg2 = C.uint(end)
-
-	_cret = C._gotk4_gtk4_AccessibleText_virtual_get_contents(unsafe.Pointer(fnarg), _arg0, _arg1, _arg2)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(start)
-	runtime.KeepAlive(end)
-
-	var _bytes *glib.Bytes // out
-
-	_bytes = (*glib.Bytes)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_bytes)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_bytes_unref((*C.GBytes)(intern.C))
-		},
-	)
-
-	return _bytes
-}
-
-// contentsAt: retrieve the current contents of the accessible object starting
-// from the given offset, and using the given granularity.
-//
-// The start and end values contain the boundaries of the text.
-//
-// The function takes the following parameters:
-//
-//   - offset: offset, in characters.
-//   - granularity of the query.
-//
-// The function returns the following values:
-//
-//   - start of the range, in characters.
-//   - end of the range, in characters.
-//   - bytes: requested slice of the contents of the accessible object,
-//     as UTF-8. Note that the slice does not have to be NUL-terminated.
-func (self *AccessibleText) contentsAt(offset uint, granularity AccessibleTextGranularity) (start, end uint, bytes *glib.Bytes) {
-	gclass := (*C.GtkAccessibleTextInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_contents_at
-
-	var _arg0 *C.GtkAccessibleText           // out
-	var _arg1 C.uint                         // out
-	var _arg2 C.GtkAccessibleTextGranularity // out
-	var _arg3 C.uint                         // in
-	var _arg4 C.uint                         // in
-	var _cret *C.GBytes                      // in
-
-	_arg0 = (*C.GtkAccessibleText)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(offset)
-	_arg2 = C.GtkAccessibleTextGranularity(granularity)
-
-	_cret = C._gotk4_gtk4_AccessibleText_virtual_get_contents_at(unsafe.Pointer(fnarg), _arg0, _arg1, _arg2, &_arg3, &_arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(offset)
-	runtime.KeepAlive(granularity)
-
-	var _start uint        // out
-	var _end uint          // out
-	var _bytes *glib.Bytes // out
-
-	_start = uint(_arg3)
-	_end = uint(_arg4)
-	_bytes = (*glib.Bytes)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_bytes)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_bytes_unref((*C.GBytes)(intern.C))
-		},
-	)
-
-	return _start, _end, _bytes
-}
-
-// defaultAttributes retrieves the default text attributes inside the accessible
-// object.
-//
-// Each attribute is composed by:
-//
-// - a name
-//
-// - a value
-//
-// It is left to the implementation to determine the serialization format of the
-// value to a string.
-//
-// GTK provides support for various text attribute names and values, but
-// implementations of this interface are free to add their own attributes.
-//
-// The function returns the following values:
-//
-//   - attributeNames (optional): the names of the default attributes inside the
-//     accessible object.
-//   - attributeValues (optional): the values of the default attributes inside
-//     the accessible object.
-func (self *AccessibleText) defaultAttributes() (attributeNames, attributeValues []string) {
-	gclass := (*C.GtkAccessibleTextInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_default_attributes
-
-	var _arg0 *C.GtkAccessibleText // out
-	var _arg1 **C.char             // in
-	var _arg2 **C.char             // in
-
-	_arg0 = (*C.GtkAccessibleText)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	C._gotk4_gtk4_AccessibleText_virtual_get_default_attributes(unsafe.Pointer(fnarg), _arg0, &_arg1, &_arg2)
-	runtime.KeepAlive(self)
-
-	var _attributeNames []string  // out
-	var _attributeValues []string // out
-
-	if _arg1 != nil {
-		defer C.free(unsafe.Pointer(_arg1))
-		{
-			var i int
-			var z *C.char
-			for p := _arg1; *p != z; p = &unsafe.Slice(p, 2)[1] {
-				i++
-			}
-
-			src := unsafe.Slice(_arg1, i)
-			_attributeNames = make([]string, i)
-			for i := range src {
-				_attributeNames[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
-				defer C.free(unsafe.Pointer(src[i]))
-			}
-		}
-	}
-	if _arg2 != nil {
-		defer C.free(unsafe.Pointer(_arg2))
-		{
-			var i int
-			var z *C.char
-			for p := _arg2; *p != z; p = &unsafe.Slice(p, 2)[1] {
-				i++
-			}
-
-			src := unsafe.Slice(_arg2, i)
-			_attributeValues = make([]string, i)
-			for i := range src {
-				_attributeValues[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
-				defer C.free(unsafe.Pointer(src[i]))
-			}
-		}
-	}
-
-	return _attributeNames, _attributeValues
-}
-
-// Selection retrieves the selection ranges in the accessible object.
-//
-// If this function returns true, n_ranges will be set to a value greater
-// than or equal to one, and ranges will be set to a newly allocated array of
-// [struct#Gtk.AccessibleTextRange].
-//
-// The function returns the following values:
-//
-//   - ranges (optional): selection ranges.
-//   - ok: true if there is at least a selection inside the accessible object,
-//     and false otherwise.
-func (self *AccessibleText) selection() ([]AccessibleTextRange, bool) {
-	gclass := (*C.GtkAccessibleTextInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_selection
-
-	var _arg0 *C.GtkAccessibleText      // out
-	var _arg2 *C.GtkAccessibleTextRange // in
-	var _arg1 C.gsize                   // in
-	var _cret C.gboolean                // in
-
-	_arg0 = (*C.GtkAccessibleText)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C._gotk4_gtk4_AccessibleText_virtual_get_selection(unsafe.Pointer(fnarg), _arg0, &_arg1, &_arg2)
-	runtime.KeepAlive(self)
-
-	var _ranges []AccessibleTextRange // out
-	var _ok bool                      // out
-
-	if _arg2 != nil {
-		defer C.free(unsafe.Pointer(_arg2))
-		{
-			src := unsafe.Slice((*C.GtkAccessibleTextRange)(_arg2), _arg1)
-			_ranges = make([]AccessibleTextRange, _arg1)
-			for i := 0; i < int(_arg1); i++ {
-				_ranges[i] = *(*AccessibleTextRange)(gextras.NewStructNative(unsafe.Pointer((&src[i]))))
-			}
-		}
-	}
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ranges, _ok
-}
-
-// Actionable: GtkActionable interface provides a convenient way of associating
+// Actionable: GtkActionable interface provides a convenient way of asscociating
 // widgets with actions.
 //
 // It primarily consists of two properties: gtk.Actionable:action-name and
@@ -12773,9 +10964,6 @@ func (actionable *Actionable) setActionTargetValue(targetValue *glib.Variant) {
 // To obtain the application that has been selected in a GtkAppChooser,
 // use gtk.AppChooser.GetAppInfo().
 //
-// Deprecated: The application selection widgets should be implemented according
-// to the design of each platform and/or application requiring them.
-//
 // AppChooser wraps an interface. This means the user can get the
 // underlying type by calling Cast().
 type AppChooser struct {
@@ -12828,8 +11016,6 @@ func marshalAppChooser(p uintptr) (interface{}, error) {
 
 // AppInfo returns the currently selected application.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - appInfo (optional): GAppInfo for the currently selected application.
@@ -12859,8 +11045,6 @@ func (self *AppChooser) AppInfo() *gio.AppInfo {
 // ContentType returns the content type for which the GtkAppChooser shows
 // applications.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - utf8: content type of self. Free with g_free().
@@ -12882,8 +11066,6 @@ func (self *AppChooser) ContentType() string {
 }
 
 // Refresh reloads the list of applications.
-//
-// Deprecated: This widget will be removed in GTK 5.
 func (self *AppChooser) Refresh() {
 	var _arg0 *C.GtkAppChooser // out
 
@@ -13121,7 +11303,6 @@ func (buildable *Buildable) customTagStart(builder *Builder, child *coreglib.Obj
 	return _parser, _data, _ok
 }
 
-// iD: getter corresponding to set_id. Implement this if you implement set_id.
 func (buildable *Buildable) iD() string {
 	gclass := (*C.GtkBuildableIface)(coreglib.PeekParentClass(buildable))
 	fnarg := gclass.get_id
@@ -13178,10 +11359,6 @@ func (buildable *Buildable) internalChild(builder *Builder, childname string) *c
 	return _object
 }
 
-// parserFinished: called when a builder finishes the parsing of a UI
-// definition. It is normally not necessary to implement this, unless you need
-// to perform special cleanup actions. GtkWindow sets the GtkWidget:visible
-// property here.
 func (buildable *Buildable) parserFinished(builder *Builder) {
 	gclass := (*C.GtkBuildableIface)(coreglib.PeekParentClass(buildable))
 	fnarg := gclass.parser_finished
@@ -13197,11 +11374,6 @@ func (buildable *Buildable) parserFinished(builder *Builder) {
 	runtime.KeepAlive(builder)
 }
 
-// setBuildableProperty sets a property of a buildable object. It is normally
-// not necessary to implement this, g_object_set_property() is used by default.
-// GtkWindow implements this to delay showing itself (i.e. setting the
-// gtk.Widget:visible property) until the whole interface is created.
-//
 // The function takes the following parameters:
 //
 //   - builder
@@ -13229,10 +11401,6 @@ func (buildable *Buildable) setBuildableProperty(builder *Builder, name string, 
 	runtime.KeepAlive(value)
 }
 
-// setID stores the id attribute given in the GtkBuilder UI definition.
-// GtkWidget stores the name as object data. Implement this method if your
-// object has some notion of “ID” and it makes sense to map the XML id attribute
-// to it.
 func (buildable *Buildable) setID(id string) {
 	gclass := (*C.GtkBuildableIface)(coreglib.PeekParentClass(buildable))
 	fnarg := gclass.set_id
@@ -13263,10 +11431,6 @@ func (buildable *Buildable) setID(id string) {
 //
 // By default, GTK will use its own implementation of GtkBuilderScope for the C
 // language which can be created via gtk.BuilderCScope.New.
-//
-// If you implement GtkBuilderScope for a language binding, you may want to
-// (partially) derive from or fall back to a gtk.BuilderCScope, as that class
-// implements support for automatic lookups from C symbols.
 //
 // BuilderScope wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -13307,12 +11471,6 @@ func BaseBuilderScope(obj BuilderScoper) *BuilderScope {
 	return obj.baseBuilderScope()
 }
 
-// typeFromFunction: try to lookup a GType via the given function name,
-// specified explicitly in a GtkBuilder file, like via the "type-func" attribute
-// in the <object> tag. This function is very rarely used. The C implementation
-// will use dlsym() and call the resulting function as a GTypeFunc. The default
-// implementation will fail and just return G_TYPE_INVALID.
-//
 // The function takes the following parameters:
 //
 //   - builder
@@ -13343,12 +11501,6 @@ func (self *BuilderScope) typeFromFunction(builder *Builder, functionName string
 	return _gType
 }
 
-// typeFromName: try to lookup a GType via the its name. See
-// gtk_builder_get_type_from_name() for more details. The C implementation will
-// use g_type_from_name() and if that fails try to guess the correct function
-// name for registering the type and then use dlsym() to load it. The default
-// implementation just tries g_type_from_name() and otherwise fails.
-//
 // The function takes the following parameters:
 //
 //   - builder
@@ -13384,9 +11536,6 @@ func (self *BuilderScope) typeFromName(builder *Builder, typeName string) coregl
 // The GtkCellEditable interface must be implemented for widgets to be usable
 // to edit the contents of a GtkTreeView cell. It provides a way to specify how
 // temporary widgets should be configured for editing, get the new value, etc.
-//
-// Deprecated: List views use widgets for displaying their contents. See
-// gtk.Editable for editable text widgets.
 //
 // CellEditable wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -13476,8 +11625,6 @@ func (cellEditable *CellEditable) ConnectRemoveWidget(f func()) coreglib.SignalH
 }
 
 // EditingDone emits the GtkCellEditable::editing-done signal.
-//
-// Deprecated: since version 4.10.
 func (cellEditable *CellEditable) EditingDone() {
 	var _arg0 *C.GtkCellEditable // out
 
@@ -13488,8 +11635,6 @@ func (cellEditable *CellEditable) EditingDone() {
 }
 
 // RemoveWidget emits the GtkCellEditable::remove-widget signal.
-//
-// Deprecated: since version 4.10.
 func (cellEditable *CellEditable) RemoveWidget() {
 	var _arg0 *C.GtkCellEditable // out
 
@@ -13529,8 +11674,6 @@ func (cellEditable *CellEditable) StartEditing(event gdk.Eventer) {
 }
 
 // editingDone emits the GtkCellEditable::editing-done signal.
-//
-// Deprecated: since version 4.10.
 func (cellEditable *CellEditable) editingDone() {
 	gclass := (*C.GtkCellEditableIface)(coreglib.PeekParentClass(cellEditable))
 	fnarg := gclass.editing_done
@@ -13544,8 +11687,6 @@ func (cellEditable *CellEditable) editingDone() {
 }
 
 // removeWidget emits the GtkCellEditable::remove-widget signal.
-//
-// Deprecated: since version 4.10.
 func (cellEditable *CellEditable) removeWidget() {
 	gclass := (*C.GtkCellEditableIface)(coreglib.PeekParentClass(cellEditable))
 	fnarg := gclass.remove_widget
@@ -13688,9 +11829,6 @@ func (cellEditable *CellEditable) startEditing(event gdk.Eventer) {
 // alternative cell areas, you can do so by moving the problematic calls out of
 // init() and into a constructor() for your class.
 //
-// Deprecated: List views use widgets to display their contents. See
-// gtk.LayoutManager for layout manager delegate objects.
-//
 // CellLayout wraps an interface. This means the user can get the
 // underlying type by calling Cast().
 type CellLayout struct {
@@ -13750,8 +11888,6 @@ func marshalCellLayout(p uintptr) (interface{}, error) {
 // GtkCellRendererText get its values from column 2. In this context "attribute"
 // and "property" are used interchangeably.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - cell: GtkCellRenderer.
@@ -13778,8 +11914,6 @@ func (cellLayout *CellLayout) AddAttribute(cell CellRendererer, attribute string
 
 // Clear unsets all the mappings on all renderers on cell_layout and removes all
 // renderers from cell_layout.
-//
-// Deprecated: since version 4.10.
 func (cellLayout *CellLayout) Clear() {
 	var _arg0 *C.GtkCellLayout // out
 
@@ -13791,8 +11925,6 @@ func (cellLayout *CellLayout) Clear() {
 
 // ClearAttributes clears all existing attributes previously set with
 // gtk_cell_layout_set_attributes().
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -13811,8 +11943,6 @@ func (cellLayout *CellLayout) ClearAttributes(cell CellRendererer) {
 
 // Area returns the underlying GtkCellArea which might be cell_layout if called
 // on a GtkCellArea or might be NULL if no GtkCellArea is used by cell_layout.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -13849,8 +11979,6 @@ func (cellLayout *CellLayout) Area() CellAreaer {
 }
 
 // Cells returns the cell renderers which have been added to cell_layout.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -13901,8 +12029,6 @@ func (cellLayout *CellLayout) Cells() []CellRendererer {
 //
 // Note that reusing the same cell renderer is not supported.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - cell: GtkCellRenderer.
@@ -13930,8 +12056,6 @@ func (cellLayout *CellLayout) PackEnd(cell CellRendererer, expand bool) {
 //
 // Note that reusing the same cell renderer is not supported.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - cell: GtkCellRenderer.
@@ -13957,8 +12081,6 @@ func (cellLayout *CellLayout) PackStart(cell CellRendererer, expand bool) {
 //
 // Note that cell has already to be packed into cell_layout for this to function
 // properly.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -13986,8 +12108,6 @@ func (cellLayout *CellLayout) Reorder(cell CellRendererer, position int) {
 // as appropriate.
 //
 // func may be NULL to remove a previously set function.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -14022,8 +12142,6 @@ func (cellLayout *CellLayout) SetCellDataFunc(cell CellRendererer, fn CellLayout
 // GtkCellRendererText get its values from column 2. In this context "attribute"
 // and "property" are used interchangeably.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - cell: GtkCellRenderer.
@@ -14053,8 +12171,6 @@ func (cellLayout *CellLayout) addAttribute(cell CellRendererer, attribute string
 
 // Clear unsets all the mappings on all renderers on cell_layout and removes all
 // renderers from cell_layout.
-//
-// Deprecated: since version 4.10.
 func (cellLayout *CellLayout) clear() {
 	gclass := (*C.GtkCellLayoutIface)(coreglib.PeekParentClass(cellLayout))
 	fnarg := gclass.clear
@@ -14069,8 +12185,6 @@ func (cellLayout *CellLayout) clear() {
 
 // clearAttributes clears all existing attributes previously set with
 // gtk_cell_layout_set_attributes().
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -14092,8 +12206,6 @@ func (cellLayout *CellLayout) clearAttributes(cell CellRendererer) {
 
 // Area returns the underlying GtkCellArea which might be cell_layout if called
 // on a GtkCellArea or might be NULL if no GtkCellArea is used by cell_layout.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -14133,8 +12245,6 @@ func (cellLayout *CellLayout) area() CellAreaer {
 }
 
 // Cells returns the cell renderers which have been added to cell_layout.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -14188,8 +12298,6 @@ func (cellLayout *CellLayout) cells() []CellRendererer {
 //
 // Note that reusing the same cell renderer is not supported.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - cell: GtkCellRenderer.
@@ -14220,8 +12328,6 @@ func (cellLayout *CellLayout) packEnd(cell CellRendererer, expand bool) {
 //
 // Note that reusing the same cell renderer is not supported.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - cell: GtkCellRenderer.
@@ -14250,8 +12356,6 @@ func (cellLayout *CellLayout) packStart(cell CellRendererer, expand bool) {
 //
 // Note that cell has already to be packed into cell_layout for this to function
 // properly.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -14282,8 +12386,6 @@ func (cellLayout *CellLayout) reorder(cell CellRendererer, position int) {
 // as appropriate.
 //
 // func may be NULL to remove a previously set function.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -14321,9 +12423,6 @@ func (cellLayout *CellLayout) setCellDataFunc(cell CellRendererer, fn CellLayout
 //
 // In GTK, the main widgets that implement this interface are
 // gtk.ColorChooserWidget, gtk.ColorChooserDialog and gtk.ColorButton.
-//
-// Deprecated: Use gtk.ColorDialog and gtk.ColorDialogButton instead of widgets
-// implementing GtkColorChooser.
 //
 // ColorChooser wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -14396,8 +12495,6 @@ func (chooser *ColorChooser) ConnectColorActivated(f func(color *gdk.RGBA)) core
 //
 // If colors is NULL, removes all previously added palettes.
 //
-// Deprecated: Use gtk.ColorDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - orientation: GTK_ORIENTATION_HORIZONTAL if the palette should be
@@ -14433,8 +12530,6 @@ func (chooser *ColorChooser) AddPalette(orientation Orientation, colorsPerLine i
 
 // RGBA gets the currently-selected color.
 //
-// Deprecated: Use gtk.ColorDialog instead.
-//
 // The function returns the following values:
 //
 //   - color: GdkRGBA to fill in with the current color.
@@ -14455,8 +12550,6 @@ func (chooser *ColorChooser) RGBA() *gdk.RGBA {
 }
 
 // UseAlpha returns whether the color chooser shows the alpha channel.
-//
-// Deprecated: Use gtk.ColorDialog instead.
 //
 // The function returns the following values:
 //
@@ -14481,8 +12574,6 @@ func (chooser *ColorChooser) UseAlpha() bool {
 
 // SetRGBA sets the color.
 //
-// Deprecated: Use gtk.ColorDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - color: new color.
@@ -14500,8 +12591,6 @@ func (chooser *ColorChooser) SetRGBA(color *gdk.RGBA) {
 
 // SetUseAlpha sets whether or not the color chooser should use the alpha
 // channel.
-//
-// Deprecated: Use gtk.ColorDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -14536,8 +12625,6 @@ func (chooser *ColorChooser) SetUseAlpha(useAlpha bool) {
 // default color palette from the color chooser.
 //
 // If colors is NULL, removes all previously added palettes.
-//
-// Deprecated: Use gtk.ColorDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -14592,8 +12679,6 @@ func (chooser *ColorChooser) colorActivated(color *gdk.RGBA) {
 
 // rgbA gets the currently-selected color.
 //
-// Deprecated: Use gtk.ColorDialog instead.
-//
 // The function returns the following values:
 //
 //   - color: GdkRGBA to fill in with the current color.
@@ -14617,8 +12702,6 @@ func (chooser *ColorChooser) rgbA() *gdk.RGBA {
 }
 
 // setRGBA sets the color.
-//
-// Deprecated: Use gtk.ColorDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -14815,9 +12898,6 @@ var (
 type EditableTextWidgetter interface {
 	coreglib.Objector
 
-	// DelegateGetAccessiblePlatformState retrieves the accessible platform
-	// state from the editable delegate.
-	DelegateGetAccessiblePlatformState(state AccessiblePlatformState) bool
 	// DeleteSelection deletes the currently selected text of the editable.
 	DeleteSelection()
 	// DeleteText deletes a sequence of characters.
@@ -14927,52 +13007,6 @@ func (editable *EditableTextWidget) ConnectChanged(f func()) coreglib.SignalHand
 // gtk.Editable.DeleteText().
 func (editable *EditableTextWidget) ConnectDeleteText(f func(startPos, endPos int)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(editable, "delete-text", false, unsafe.Pointer(C._gotk4_gtk4_EditableTextWidget_ConnectDeleteText), f)
-}
-
-// DelegateGetAccessiblePlatformState retrieves the accessible platform state
-// from the editable delegate.
-//
-// This is an helper function to retrieve the accessible state for GtkEditable
-// interface implementations using a delegate pattern.
-//
-// You should call this function in your editable widget implementation of the
-// gtk.Accessible.GetPlatformState() virtual function, for instance:
-//
-//	static void
-//	accessible_interface_init (GtkAccessibleInterface *iface)
-//	{
-//	  iface->get_platform_state = your_editable_get_accessible_platform_state;
-//	}
-//
-//	static gboolean
-//	your_editable_get_accessible_platform_state (GtkAccessible *accessible,
-//	                                             GtkAccessiblePlatformState state)
-//	{
-//	  return gtk_editable_delegate_get_accessible_platform_state (GTK_EDITABLE (accessible), state);
-//	}.
-//
-// The function takes the following parameters:
-//
-//   - state: what kind of accessible state to retrieve.
-func (editable *EditableTextWidget) DelegateGetAccessiblePlatformState(state AccessiblePlatformState) bool {
-	var _arg0 *C.GtkEditable               // out
-	var _arg1 C.GtkAccessiblePlatformState // out
-	var _cret C.gboolean                   // in
-
-	_arg0 = (*C.GtkEditable)(unsafe.Pointer(coreglib.InternObject(editable).Native()))
-	_arg1 = C.GtkAccessiblePlatformState(state)
-
-	_cret = C.gtk_editable_delegate_get_accessible_platform_state(_arg0, _arg1)
-	runtime.KeepAlive(editable)
-	runtime.KeepAlive(state)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
 }
 
 // DeleteSelection deletes the currently selected text of the editable.
@@ -15717,8 +13751,6 @@ func (editable *EditableTextWidget) setSelectionBounds(startPos, endPos int) {
 // rendered as a check button with the given label; if a choice has options,
 // it will be rendered as a combo box.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // FileChooser wraps an interface. This means the user can get the
 // underlying type by calling Cast().
 type FileChooser struct {
@@ -15818,8 +13850,6 @@ func marshalFileChooser(p uintptr) (interface{}, error) {
 // before the dialog is shown, and you can obtain the user-selected value in the
 // gtk.Dialog::response signal handler using gtk.FileChooser.GetChoice().
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - id for the added choice.
@@ -15884,8 +13914,6 @@ func (chooser *FileChooser) AddChoice(id, label string, options, optionLabels []
 // Note that the chooser takes ownership of the filter if it is floating,
 // so you have to ref and sink it if you want to keep a reference.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - filter: GtkFileFilter.
@@ -15903,8 +13931,6 @@ func (chooser *FileChooser) AddFilter(filter *FileFilter) {
 
 // AddShortcutFolder adds a folder to be displayed with the shortcut folders in
 // a file chooser.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -15932,8 +13958,6 @@ func (chooser *FileChooser) AddShortcutFolder(folder gio.Filer) error {
 
 // Action gets the type of operation that the file chooser is performing.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function returns the following values:
 //
 //   - fileChooserAction: action that the file selector is performing.
@@ -15954,8 +13978,6 @@ func (chooser *FileChooser) Action() FileChooserAction {
 }
 
 // Choice gets the currently selected option in the 'choice' with the given ID.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -15988,8 +14010,6 @@ func (chooser *FileChooser) Choice(id string) string {
 
 // CreateFolders gets whether file chooser will offer to create new folders.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the Create Folder button should be displayed.
@@ -16012,8 +14032,6 @@ func (chooser *FileChooser) CreateFolders() bool {
 }
 
 // CurrentFolder gets the current folder of chooser as GFile.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function returns the following values:
 //
@@ -16046,8 +14064,6 @@ func (chooser *FileChooser) CurrentFolder() *gio.File {
 //
 // This is meant to be used in save dialogs, to get the currently typed filename
 // when the file itself does not exist yet.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function returns the following values:
 //
@@ -16082,8 +14098,6 @@ func (chooser *FileChooser) CurrentName() string {
 // If the file chooser is in folder mode, this function returns the selected
 // folder.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function returns the following values:
 //
 //   - file (optional): selected GFile. You own the returned file; use
@@ -16114,8 +14128,6 @@ func (chooser *FileChooser) File() *gio.File {
 // Files lists all the selected files and subfolders in the current folder of
 // chooser as GFile.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function returns the following values:
 //
 //   - listModel: list model containing a GFile for each selected file
@@ -16143,8 +14155,6 @@ func (chooser *FileChooser) Files() *gio.ListModel {
 }
 
 // Filter gets the current filter.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function returns the following values:
 //
@@ -16175,8 +14185,6 @@ func (chooser *FileChooser) Filter() *FileFilter {
 // You should not modify the returned list model. Future changes to chooser may
 // or may not affect the returned model.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function returns the following values:
 //
 //   - listModel: GListModel containing the current set of user-selectable
@@ -16205,8 +14213,6 @@ func (chooser *FileChooser) Filters() *gio.ListModel {
 // SelectMultiple gets whether multiple files can be selected in the file
 // chooser.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if multiple files can be selected.
@@ -16232,8 +14238,6 @@ func (chooser *FileChooser) SelectMultiple() bool {
 //
 // You should not modify the returned list model. Future changes to chooser may
 // or may not affect the returned model.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function returns the following values:
 //
@@ -16262,8 +14266,6 @@ func (chooser *FileChooser) ShortcutFolders() *gio.ListModel {
 // RemoveChoice removes a 'choice' that has been added with
 // gtk_file_chooser_add_choice().
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - id: ID of the choice to remove.
@@ -16283,8 +14285,6 @@ func (chooser *FileChooser) RemoveChoice(id string) {
 // RemoveFilter removes filter from the list of filters that the user can select
 // between.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - filter: GtkFileFilter.
@@ -16302,8 +14302,6 @@ func (chooser *FileChooser) RemoveFilter(filter *FileFilter) {
 
 // RemoveShortcutFolder removes a folder from the shortcut folders in a file
 // chooser.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -16337,8 +14335,6 @@ func (chooser *FileChooser) RemoveShortcutFolder(folder gio.Filer) error {
 // the action is GTK_FILE_CHOOSER_ACTION_SAVE but not if the action is
 // GTK_FILE_CHOOSER_ACTION_OPEN.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - action that the file selector is performing.
@@ -16358,8 +14354,6 @@ func (chooser *FileChooser) SetAction(action FileChooserAction) {
 // gtk_file_chooser_add_choice().
 //
 // For a boolean choice, the possible options are "true" and "false".
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -16387,8 +14381,6 @@ func (chooser *FileChooser) SetChoice(id, option string) {
 // This is only relevant if the action is not set to be
 // GTK_FILE_CHOOSER_ACTION_OPEN.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - createFolders: TRUE if the Create Folder button should be displayed.
@@ -16407,8 +14399,6 @@ func (chooser *FileChooser) SetCreateFolders(createFolders bool) {
 }
 
 // SetCurrentFolder sets the current folder for chooser from a GFile.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -16449,8 +14439,6 @@ func (chooser *FileChooser) SetCurrentFolder(file gio.Filer) error {
 //
 // Please see the documentation for those functions for an example of using
 // gtk.FileChooser.SetCurrentName() as well.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -16507,9 +14495,7 @@ func (chooser *FileChooser) SetCurrentName(name string) {
 //	      // the user edited an existing document
 //	      gtk_file_chooser_set_file (chooser, existing_file, NULL);
 //	    }
-//	}
-//
-// Deprecated: Use gtk.FileDialog instead.
+//	}.
 //
 // The function takes the following parameters:
 //
@@ -16545,8 +14531,6 @@ func (chooser *FileChooser) SetFile(file gio.Filer) error {
 // want to restrict the displayed set of files without letting the user change
 // it.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - filter: GtkFileFilter.
@@ -16567,8 +14551,6 @@ func (chooser *FileChooser) SetFilter(filter *FileFilter) {
 //
 // This is only relevant if the action is set to be GTK_FILE_CHOOSER_ACTION_OPEN
 // or GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -16592,8 +14574,6 @@ func (chooser *FileChooser) SetSelectMultiple(selectMultiple bool) {
 //
 // In GTK, the main objects that implement this interface are
 // gtk.FontChooserWidget, gtk.FontChooserDialog and gtk.FontButton.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // FontChooser wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -16688,8 +14668,6 @@ func (fontchooser *FontChooser) ConnectFontActivated(f func(fontname string)) co
 // Use pango.FontDescription.Equal() if you want to compare two font
 // descriptions.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - utf8 (optional): string with the name of the current font.
@@ -16722,8 +14700,6 @@ func (fontchooser *FontChooser) Font() string {
 // Use pango.FontDescription.Equal() if you want to compare two font
 // descriptions.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - fontDescription (optional): PangoFontDescription for the current font.
@@ -16755,8 +14731,6 @@ func (fontchooser *FontChooser) FontDesc() *pango.FontDescription {
 // (i.e. family, slant, weight, width, etc).
 //
 // If the selected font is not installed, returns NULL.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function returns the following values:
 //
@@ -16798,8 +14772,6 @@ func (fontchooser *FontChooser) FontFace() pango.FontFacer {
 // Font families are a collection of font faces.
 //
 // If the selected font is not installed, returns NULL.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function returns the following values:
 //
@@ -16843,8 +14815,6 @@ func (fontchooser *FontChooser) FontFamily() pango.FontFamilier {
 // (https://www.w3.org/TR/css-fonts-4/#font-rend-desc). It can be passed to
 // pango.AttrFontFeatures().New.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - utf8: currently selected font features.
@@ -16867,8 +14837,6 @@ func (fontchooser *FontChooser) FontFeatures() string {
 
 // FontMap gets the custom font map of this font chooser widget, or NULL if it
 // does not have one.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function returns the following values:
 //
@@ -16906,8 +14874,6 @@ func (fontchooser *FontChooser) FontMap() pango.FontMapper {
 
 // FontSize: selected font size.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - gint: n integer representing the selected font size, or -1 if no font
@@ -16929,8 +14895,6 @@ func (fontchooser *FontChooser) FontSize() int {
 }
 
 // Language gets the language that is used for font features.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function returns the following values:
 //
@@ -16954,8 +14918,6 @@ func (fontchooser *FontChooser) Language() string {
 
 // Level returns the current level of granularity for selecting fonts.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - fontChooserLevel: current granularity level.
@@ -16976,8 +14938,6 @@ func (fontchooser *FontChooser) Level() FontChooserLevel {
 }
 
 // PreviewText gets the text displayed in the preview area.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function returns the following values:
 //
@@ -17000,8 +14960,6 @@ func (fontchooser *FontChooser) PreviewText() string {
 }
 
 // ShowPreviewEntry returns whether the preview entry is shown or not.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function returns the following values:
 //
@@ -17027,8 +14985,6 @@ func (fontchooser *FontChooser) ShowPreviewEntry() bool {
 // SetFilterFunc adds a filter function that decides which fonts to display in
 // the font chooser.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function takes the following parameters:
 //
 //   - filter (optional): GtkFontFilterFunc.
@@ -17052,8 +15008,6 @@ func (fontchooser *FontChooser) SetFilterFunc(filter FontFilterFunc) {
 
 // SetFont sets the currently-selected font.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function takes the following parameters:
 //
 //   - fontname: font name like “Helvetica 12” or “Times Bold 18”.
@@ -17071,8 +15025,6 @@ func (fontchooser *FontChooser) SetFont(fontname string) {
 }
 
 // SetFontDesc sets the currently-selected font from font_desc.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function takes the following parameters:
 //
@@ -17109,9 +15061,7 @@ func (fontchooser *FontChooser) SetFontDesc(fontDesc *pango.FontDescription) {
 // font if it is present in the font map they use:
 //
 //	context = gtk_widget_get_pango_context (label);
-//	pango_context_set_font_map (context, fontmap);
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
+//	pango_context_set_font_map (context, fontmap);.
 //
 // The function takes the following parameters:
 //
@@ -17132,8 +15082,6 @@ func (fontchooser *FontChooser) SetFontMap(fontmap pango.FontMapper) {
 
 // SetLanguage sets the language to use for font features.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function takes the following parameters:
 //
 //   - language: language.
@@ -17151,8 +15099,6 @@ func (fontchooser *FontChooser) SetLanguage(language string) {
 }
 
 // SetLevel sets the desired level of granularity for selecting fonts.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function takes the following parameters:
 //
@@ -17173,8 +15119,6 @@ func (fontchooser *FontChooser) SetLevel(level FontChooserLevel) {
 //
 // The text is used to show how the selected font looks.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function takes the following parameters:
 //
 //   - text to display in the preview area.
@@ -17192,8 +15136,6 @@ func (fontchooser *FontChooser) SetPreviewText(text string) {
 }
 
 // SetShowPreviewEntry shows or hides the editable preview entry.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function takes the following parameters:
 //
@@ -17232,8 +15174,6 @@ func (chooser *FontChooser) fontActivated(fontname string) {
 // (i.e. family, slant, weight, width, etc).
 //
 // If the selected font is not installed, returns NULL.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function returns the following values:
 //
@@ -17279,8 +15219,6 @@ func (fontchooser *FontChooser) fontFace() pango.FontFacer {
 //
 // If the selected font is not installed, returns NULL.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - fontFamily (optional): PangoFontFamily representing the selected font
@@ -17322,8 +15260,6 @@ func (fontchooser *FontChooser) fontFamily() pango.FontFamilier {
 // fontMap gets the custom font map of this font chooser widget, or NULL if it
 // does not have one.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - fontMap (optional): PangoFontMap.
@@ -17363,8 +15299,6 @@ func (fontchooser *FontChooser) fontMap() pango.FontMapper {
 
 // fontSize: selected font size.
 //
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - gint: n integer representing the selected font size, or -1 if no font
@@ -17390,8 +15324,6 @@ func (fontchooser *FontChooser) fontSize() int {
 
 // setFilterFunc adds a filter function that decides which fonts to display in
 // the font chooser.
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
 //
 // The function takes the following parameters:
 //
@@ -17437,9 +15369,7 @@ func (fontchooser *FontChooser) setFilterFunc(filter FontFilterFunc) {
 // font if it is present in the font map they use:
 //
 //	context = gtk_widget_get_pango_context (label);
-//	pango_context_set_font_map (context, fontmap);
-//
-// Deprecated: Use gtk.FontDialog and gtk.FontDialogButton instead.
+//	pango_context_set_font_map (context, fontmap);.
 //
 // The function takes the following parameters:
 //
@@ -17535,7 +15465,7 @@ func marshalNativeSurface(p uintptr) (interface{}, error) {
 //
 // The function returns the following values:
 //
-//   - renderer (optional) for self.
+//   - renderer for self.
 func (self *NativeSurface) Renderer() gsk.Rendererer {
 	var _arg0 *C.GtkNative   // out
 	var _cret *C.GskRenderer // in
@@ -17547,21 +15477,22 @@ func (self *NativeSurface) Renderer() gsk.Rendererer {
 
 	var _renderer gsk.Rendererer // out
 
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.Take(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(gsk.Rendererer)
-				return ok
-			})
-			rv, ok := casted.(gsk.Rendererer)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gsk.Rendererer")
-			}
-			_renderer = rv
+	{
+		objptr := unsafe.Pointer(_cret)
+		if objptr == nil {
+			panic("object of type gsk.Rendererer is nil")
 		}
+
+		object := coreglib.Take(objptr)
+		casted := object.WalkCast(func(obj coreglib.Objector) bool {
+			_, ok := obj.(gsk.Rendererer)
+			return ok
+		})
+		rv, ok := casted.(gsk.Rendererer)
+		if !ok {
+			panic("no marshaler for " + object.TypeFromInstance().String() + " matching gsk.Rendererer")
+		}
+		_renderer = rv
 	}
 
 	return _renderer
@@ -17571,7 +15502,7 @@ func (self *NativeSurface) Renderer() gsk.Rendererer {
 //
 // The function returns the following values:
 //
-//   - surface (optional) of self.
+//   - surface of self.
 func (self *NativeSurface) Surface() gdk.Surfacer {
 	var _arg0 *C.GtkNative  // out
 	var _cret *C.GdkSurface // in
@@ -17583,21 +15514,22 @@ func (self *NativeSurface) Surface() gdk.Surfacer {
 
 	var _surface gdk.Surfacer // out
 
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.Take(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(gdk.Surfacer)
-				return ok
-			})
-			rv, ok := casted.(gdk.Surfacer)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gdk.Surfacer")
-			}
-			_surface = rv
+	{
+		objptr := unsafe.Pointer(_cret)
+		if objptr == nil {
+			panic("object of type gdk.Surfacer is nil")
 		}
+
+		object := coreglib.Take(objptr)
+		casted := object.WalkCast(func(obj coreglib.Objector) bool {
+			_, ok := obj.(gdk.Surfacer)
+			return ok
+		})
+		rv, ok := casted.(gdk.Surfacer)
+		if !ok {
+			panic("no marshaler for " + object.TypeFromInstance().String() + " matching gdk.Surfacer")
+		}
+		_surface = rv
 	}
 
 	return _surface
@@ -17691,12 +15623,6 @@ type OrientableOverrider interface {
 //
 // GtkOrientable is more flexible in that it allows the orientation to be
 // changed at runtime, allowing the widgets to “flip”.
-//
-// # CSS nodes
-//
-// GtkWidget types implementing the GtkOrientable interface will automatically
-// acquire the horizontal or vertical CSS class depending on the value of the
-// gtk.Orientable:orientation property.
 //
 // Orientable wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -18488,166 +16414,6 @@ func (scrollable *Scrollable) border() (*Border, bool) {
 	return _border, _ok
 }
 
-// SectionModel: GtkSectionModel is an interface that adds support for sections
-// to list models.
-//
-// A GtkSectionModel groups successive items into so-called sections.
-// List widgets like GtkListView and GtkGridView then allow displaying section
-// headers for these sections by installing a header factory.
-//
-// Many GTK list models support sections inherently, or they pass through the
-// sections of a model they are wrapping.
-//
-// When the section groupings of a model change, the model will
-// emit the gtk.SectionModel::sections-changed signal by calling the
-// gtk.SectionModel.SectionsChanged() function. All sections in the given range
-// then need to be queried again. The gio.ListModel::items-changed signal has
-// the same effect, all sections in that range are invalidated, too.
-//
-// SectionModel wraps an interface. This means the user can get the
-// underlying type by calling Cast().
-type SectionModel struct {
-	_ [0]func() // equal guard
-	gio.ListModel
-}
-
-var ()
-
-// SectionModeller describes SectionModel's interface methods.
-type SectionModeller interface {
-	coreglib.Objector
-
-	// Section: query the section that covers the given position.
-	Section(position uint) (outStart, outEnd uint)
-	SectionsChanged(position, nItems uint)
-
-	// Sections-changed is emitted when the start-of-section state of some of
-	// the items in model changes.
-	ConnectSectionsChanged(func(position, nItems uint)) coreglib.SignalHandle
-}
-
-var _ SectionModeller = (*SectionModel)(nil)
-
-func wrapSectionModel(obj *coreglib.Object) *SectionModel {
-	return &SectionModel{
-		ListModel: gio.ListModel{
-			Object: obj,
-		},
-	}
-}
-
-func marshalSectionModel(p uintptr) (interface{}, error) {
-	return wrapSectionModel(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// ConnectSectionsChanged is emitted when the start-of-section state of some of
-// the items in model changes.
-//
-// Note that this signal does not specify the new section state of the items,
-// they need to be queried manually. It is also not necessary for a model to
-// change the section state of any of the items in the section model, though it
-// would be rather useless to emit such a signal.
-//
-// The gio.ListModel::items-changed implies the effect of the
-// gtk.SectionModel::sections-changed signal for all the items it covers.
-func (self *SectionModel) ConnectSectionsChanged(f func(position, nItems uint)) coreglib.SignalHandle {
-	return coreglib.ConnectGeneratedClosure(self, "sections-changed", false, unsafe.Pointer(C._gotk4_gtk4_SectionModel_ConnectSectionsChanged), f)
-}
-
-// Section: query the section that covers the given position. The number of
-// items in the section can be computed by out_end - out_start.
-//
-// If the position is larger than the number of items, a single range from
-// n_items to G_MAXUINT will be returned.
-//
-// The function takes the following parameters:
-//
-//   - position of the item to query.
-//
-// The function returns the following values:
-//
-//   - outStart: position of the first item in the section.
-//   - outEnd: position of the first item not part of the section anymore.
-func (self *SectionModel) Section(position uint) (outStart, outEnd uint) {
-	var _arg0 *C.GtkSectionModel // out
-	var _arg1 C.guint            // out
-	var _arg2 C.guint            // in
-	var _arg3 C.guint            // in
-
-	_arg0 = (*C.GtkSectionModel)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.guint(position)
-
-	C.gtk_section_model_get_section(_arg0, _arg1, &_arg2, &_arg3)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(position)
-
-	var _outStart uint // out
-	var _outEnd uint   // out
-
-	_outStart = uint(_arg2)
-	_outEnd = uint(_arg3)
-
-	return _outStart, _outEnd
-}
-
-// The function takes the following parameters:
-//
-//   - position
-//   - nItems
-func (self *SectionModel) SectionsChanged(position, nItems uint) {
-	var _arg0 *C.GtkSectionModel // out
-	var _arg1 C.guint            // out
-	var _arg2 C.guint            // out
-
-	_arg0 = (*C.GtkSectionModel)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.guint(position)
-	_arg2 = C.guint(nItems)
-
-	C.gtk_section_model_sections_changed(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(position)
-	runtime.KeepAlive(nItems)
-}
-
-// Section: query the section that covers the given position. The number of
-// items in the section can be computed by out_end - out_start.
-//
-// If the position is larger than the number of items, a single range from
-// n_items to G_MAXUINT will be returned.
-//
-// The function takes the following parameters:
-//
-//   - position of the item to query.
-//
-// The function returns the following values:
-//
-//   - outStart: position of the first item in the section.
-//   - outEnd: position of the first item not part of the section anymore.
-func (self *SectionModel) section(position uint) (outStart, outEnd uint) {
-	gclass := (*C.GtkSectionModelInterface)(coreglib.PeekParentClass(self))
-	fnarg := gclass.get_section
-
-	var _arg0 *C.GtkSectionModel // out
-	var _arg1 C.guint            // out
-	var _arg2 C.guint            // in
-	var _arg3 C.guint            // in
-
-	_arg0 = (*C.GtkSectionModel)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.guint(position)
-
-	C._gotk4_gtk4_SectionModel_virtual_get_section(unsafe.Pointer(fnarg), _arg0, _arg1, &_arg2, &_arg3)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(position)
-
-	var _outStart uint // out
-	var _outEnd uint   // out
-
-	_outStart = uint(_arg2)
-	_outEnd = uint(_arg3)
-
-	return _outStart, _outEnd
-}
-
 // SelectionModel: GtkSelectionModel is an interface that add support for
 // selection to list models.
 //
@@ -18797,7 +16563,7 @@ func (model *SelectionModel) Selection() *Bitset {
 //
 // The function takes the following parameters:
 //
-//   - position: start of the queried range.
+//   - position: start of the queired range.
 //   - nItems: number of items in the queried range.
 //
 // The function returns the following values:
@@ -18966,7 +16732,7 @@ func (model *SelectionModel) SelectRange(position, nItems uint, unselectRest boo
 
 // SelectionChanged: helper function for implementations of GtkSelectionModel.
 //
-// Call this when the selection changes to emit the
+// Call this when a the selection changes to emit the
 // gtk.SelectionModel::selection-changed signal.
 //
 // The function takes the following parameters:
@@ -19150,7 +16916,7 @@ func (model *SelectionModel) UnselectRange(position, nItems uint) bool {
 //
 // The function takes the following parameters:
 //
-//   - position: start of the queried range.
+//   - position: start of the queired range.
 //   - nItems: number of items in the queried range.
 //
 // The function returns the following values:
@@ -19550,7 +17316,6 @@ func BaseShortcutManager(obj ShortcutManagerer) *ShortcutManager {
 	return obj.baseShortcutManager()
 }
 
-// addController: add a GtkShortcutController to be managed.
 func (self *ShortcutManager) addController(controller *ShortcutController) {
 	gclass := (*C.GtkShortcutManagerInterface)(coreglib.PeekParentClass(self))
 	fnarg := gclass.add_controller
@@ -19566,8 +17331,6 @@ func (self *ShortcutManager) addController(controller *ShortcutController) {
 	runtime.KeepAlive(controller)
 }
 
-// removeController: remove a GtkShortcutController that had previously been
-// added.
 func (self *ShortcutManager) removeController(controller *ShortcutController) {
 	gclass := (*C.GtkShortcutManagerInterface)(coreglib.PeekParentClass(self))
 	fnarg := gclass.remove_controller
@@ -19765,9 +17528,6 @@ func (paintable *SymbolicPaintable) snapshotSymbolic(snapshot gdk.Snapshotter, w
 
 // TreeDragDest: interface for Drag-and-Drop destinations in GtkTreeView.
 //
-// Deprecated: List views use widgets to display their contents. You can use
-// gtk.DropTarget to implement a drop destination.
-//
 // TreeDragDest wraps an interface. This means the user can get the
 // underlying type by calling Cast().
 type TreeDragDest struct {
@@ -19807,9 +17567,7 @@ func marshalTreeDragDest(p uintptr) (interface{}, error) {
 // dest, deriving the contents of the row from value. If dest is outside the
 // tree so that inserting before it is impossible, FALSE will be returned. Also,
 // FALSE may be returned if the new row is not created for some model-specific
-// reason. Should robustly handle a dest no longer found in the model!
-//
-// Deprecated: Use list models instead.
+// reason. Should robustly handle a dest no longer found in the model!.
 //
 // The function takes the following parameters:
 //
@@ -19849,8 +17607,6 @@ func (dragDest *TreeDragDest) DragDataReceived(dest *TreePath, value *coreglib.V
 // will almost certainly be FALSE if the parent of dest_path doesn’t exist,
 // though.
 //
-// Deprecated: Use list models instead.
-//
 // The function takes the following parameters:
 //
 //   - destPath: destination row.
@@ -19887,9 +17643,7 @@ func (dragDest *TreeDragDest) RowDropPossible(destPath *TreePath, value *coregli
 // dest, deriving the contents of the row from value. If dest is outside the
 // tree so that inserting before it is impossible, FALSE will be returned. Also,
 // FALSE may be returned if the new row is not created for some model-specific
-// reason. Should robustly handle a dest no longer found in the model!
-//
-// Deprecated: Use list models instead.
+// reason. Should robustly handle a dest no longer found in the model!.
 //
 // The function takes the following parameters:
 //
@@ -19932,8 +17686,6 @@ func (dragDest *TreeDragDest) dragDataReceived(dest *TreePath, value *coreglib.V
 // will almost certainly be FALSE if the parent of dest_path doesn’t exist,
 // though.
 //
-// Deprecated: Use list models instead.
-//
 // The function takes the following parameters:
 //
 //   - destPath: destination row.
@@ -19970,9 +17722,6 @@ func (dragDest *TreeDragDest) rowDropPossible(destPath *TreePath, value *coregli
 }
 
 // TreeDragSource: interface for Drag-and-Drop destinations in GtkTreeView.
-//
-// Deprecated: List views use widgets to display their contents. You can use
-// gtk.DragSource to implement a drag source.
 //
 // TreeDragSource wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -20015,9 +17764,7 @@ func marshalTreeDragSource(p uintptr) (interface{}, error) {
 // DragDataDelete asks the GtkTreeDragSource to delete the row at path, because
 // it was moved somewhere else via drag-and-drop. Returns FALSE if the deletion
 // fails because path no longer exists, or for some model-specific reason.
-// Should robustly handle a path no longer found in the model!
-//
-// Deprecated: Use list models instead.
+// Should robustly handle a path no longer found in the model!.
 //
 // The function takes the following parameters:
 //
@@ -20049,9 +17796,7 @@ func (dragSource *TreeDragSource) DragDataDelete(path *TreePath) bool {
 
 // DragDataGet asks the GtkTreeDragSource to return a GdkContentProvider
 // representing the row at path. Should robustly handle a path no longer found
-// in the model!
-//
-// Deprecated: Use list models instead.
+// in the model!.
 //
 // The function takes the following parameters:
 //
@@ -20090,8 +17835,6 @@ func (dragSource *TreeDragSource) DragDataGet(path *TreePath) *gdk.ContentProvid
 // used as the source of a DND operation. If the source doesn’t implement this
 // interface, the row is assumed draggable.
 //
-// Deprecated: Use list models instead.
-//
 // The function takes the following parameters:
 //
 //   - path: row on which user is initiating a drag.
@@ -20123,9 +17866,7 @@ func (dragSource *TreeDragSource) RowDraggable(path *TreePath) bool {
 // dragDataDelete asks the GtkTreeDragSource to delete the row at path, because
 // it was moved somewhere else via drag-and-drop. Returns FALSE if the deletion
 // fails because path no longer exists, or for some model-specific reason.
-// Should robustly handle a path no longer found in the model!
-//
-// Deprecated: Use list models instead.
+// Should robustly handle a path no longer found in the model!.
 //
 // The function takes the following parameters:
 //
@@ -20160,9 +17901,7 @@ func (dragSource *TreeDragSource) dragDataDelete(path *TreePath) bool {
 
 // dragDataGet asks the GtkTreeDragSource to return a GdkContentProvider
 // representing the row at path. Should robustly handle a path no longer found
-// in the model!
-//
-// Deprecated: Use list models instead.
+// in the model!.
 //
 // The function takes the following parameters:
 //
@@ -20203,8 +17942,6 @@ func (dragSource *TreeDragSource) dragDataGet(path *TreePath) *gdk.ContentProvid
 // rowDraggable asks the GtkTreeDragSource whether a particular row can be
 // used as the source of a DND operation. If the source doesn’t implement this
 // interface, the row is assumed draggable.
-//
-// Deprecated: Use list models instead.
 //
 // The function takes the following parameters:
 //
@@ -20419,8 +18156,6 @@ func (dragSource *TreeDragSource) rowDraggable(path *TreePath) bool {
 // however, signals must be emitted at all times (however the root level is
 // always referenced when any view is attached).
 //
-// Deprecated: Use gio.ListModel instead.
-//
 // TreeModel wraps an interface. This means the user can get the
 // underlying type by calling Cast().
 type TreeModel struct {
@@ -20563,8 +18298,6 @@ func (childModel *TreeModel) ConnectRowsReordered(f func(path *TreePath, iter *T
 // NewFilter creates a new GtkTreeModel, with child_model as the child_model and
 // root as the virtual root.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - root (optional): GtkTreePath.
@@ -20598,8 +18331,6 @@ func (childModel *TreeModel) NewFilter(root *TreePath) *TreeModel {
 // If func returns TRUE, then the tree ceases to be walked, and
 // gtk_tree_model_foreach() returns.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - fn: function to be called on each row.
@@ -20619,8 +18350,6 @@ func (model *TreeModel) ForEach(fn TreeModelForEachFunc) {
 }
 
 // ColumnType returns the type of the column.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -20653,8 +18382,6 @@ func (treeModel *TreeModel) ColumnType(index_ int) coreglib.Type {
 // The flags are a bitwise combination of GtkTreeModelFlags. The flags supported
 // should not change during the lifetime of the tree_model.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - treeModelFlags flags supported by this interface.
@@ -20678,8 +18405,6 @@ func (treeModel *TreeModel) Flags() TreeModelFlags {
 //
 // If path does not exist, iter is set to an invalid iterator and FALSE is
 // returned.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -20718,8 +18443,6 @@ func (treeModel *TreeModel) Iter(path *TreePath) (*TreeIter, bool) {
 //
 // Returns FALSE if the tree is empty, TRUE otherwise.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - iter: uninitialized GtkTreeIter.
@@ -20749,8 +18472,6 @@ func (treeModel *TreeModel) IterFirst() (*TreeIter, bool) {
 // if it exists.
 //
 // Otherwise, iter is left invalid and FALSE is returned.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -20787,8 +18508,6 @@ func (treeModel *TreeModel) IterFromString(pathString string) (*TreeIter, bool) 
 
 // NColumns returns the number of columns supported by tree_model.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - gint: number of columns.
@@ -20811,8 +18530,6 @@ func (treeModel *TreeModel) NColumns() int {
 // Path returns a newly-created GtkTreePath referenced by iter.
 //
 // This path should be freed with gtk_tree_path_free().
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -20851,8 +18568,6 @@ func (treeModel *TreeModel) Path(iter *TreeIter) *TreePath {
 // This string is a “:” separated list of numbers. For example, “4:10:0:3” would
 // be an acceptable return value for this string.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter: GtkTreeIter.
@@ -20886,8 +18601,6 @@ func (treeModel *TreeModel) StringFromIter(iter *TreeIter) string {
 //
 // When done with value, g_value_unset() needs to be called to free any
 // allocated memory.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -20925,9 +18638,7 @@ func (treeModel *TreeModel) Value(iter *TreeIter, column int) coreglib.Value {
 // parent will remain a valid node after this function has been called.
 //
 // If parent is NULL returns the first node, equivalent to
-// gtk_tree_model_get_iter_first (tree_model, iter);
-//
-// Deprecated: since version 4.10.
+// gtk_tree_model_get_iter_first (tree_model, iter);.
 //
 // The function takes the following parameters:
 //
@@ -20965,8 +18676,6 @@ func (treeModel *TreeModel) IterChildren(parent *TreeIter) (*TreeIter, bool) {
 
 // IterHasChild returns TRUE if iter has children, FALSE otherwise.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter: GtkTreeIter to test for children.
@@ -21000,8 +18709,6 @@ func (treeModel *TreeModel) IterHasChild(iter *TreeIter) bool {
 // As a special case, if iter is NULL, then the number of toplevel nodes is
 // returned.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter (optional): GtkTreeIter.
@@ -21033,8 +18740,6 @@ func (treeModel *TreeModel) IterNChildren(iter *TreeIter) int {
 // IterNext sets iter to point to the node following it at the current level.
 //
 // If there is no next iter, FALSE is returned and iter is set to be invalid.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21070,8 +18775,6 @@ func (treeModel *TreeModel) IterNext(iter *TreeIter) bool {
 // to an invalid iterator and FALSE is returned. parent will remain a valid node
 // after this function has been called. As a special case, if parent is NULL,
 // then the n-th root node is set.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21120,8 +18823,6 @@ func (treeModel *TreeModel) IterNthChild(parent *TreeIter, n int) (*TreeIter, bo
 // iter will be initialized before the lookup is performed, so child and iter
 // cannot point to the same memory location.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - child: GtkTreeIter.
@@ -21158,8 +18859,6 @@ func (treeModel *TreeModel) IterParent(child *TreeIter) (*TreeIter, bool) {
 //
 // If there is no previous iter, FALSE is returned and iter is set to be
 // invalid.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21205,8 +18904,6 @@ func (treeModel *TreeModel) IterPrevious(iter *TreeIter) bool {
 // A model should be expected to be able to get an iter independent of its
 // reffed state.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter: GtkTreeIter.
@@ -21225,8 +18922,6 @@ func (treeModel *TreeModel) RefNode(iter *TreeIter) {
 // RowChanged emits the ::row-changed signal on tree_model.
 //
 // See gtk.TreeModel::row-changed.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21258,8 +18953,6 @@ func (treeModel *TreeModel) RowChanged(path *TreePath, iter *TreeIter) {
 // Nodes that are deleted are not unreffed, this means that any outstanding
 // references on the deleted node should not be released.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - path: GtkTreePath pointing to the previous location of the deleted row.
@@ -21280,8 +18973,6 @@ func (treeModel *TreeModel) RowDeleted(path *TreePath) {
 // See gtk.TreeModel::row-has-child-toggled.
 //
 // This should be called by models after the child state of a node changes.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21305,8 +18996,6 @@ func (treeModel *TreeModel) RowHasChildToggled(path *TreePath, iter *TreeIter) {
 // RowInserted emits the ::row-inserted signal on tree_model.
 //
 // See gtk.TreeModel::row-inserted.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21332,8 +19021,6 @@ func (treeModel *TreeModel) RowInserted(path *TreePath, iter *TreeIter) {
 // See gtk.TreeModel::rows-reordered.
 //
 // This should be called by models when their rows have been reordered.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21380,8 +19067,6 @@ func (treeModel *TreeModel) RowsReordered(path *TreePath, iter *TreeIter, newOrd
 //
 // Please note that nodes that are deleted are not unreffed.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter: GtkTreeIter.
@@ -21398,8 +19083,6 @@ func (treeModel *TreeModel) UnrefNode(iter *TreeIter) {
 }
 
 // columnType returns the type of the column.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21435,8 +19118,6 @@ func (treeModel *TreeModel) columnType(index_ int) coreglib.Type {
 // The flags are a bitwise combination of GtkTreeModelFlags. The flags supported
 // should not change during the lifetime of the tree_model.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - treeModelFlags flags supported by this interface.
@@ -21463,8 +19144,6 @@ func (treeModel *TreeModel) flags() TreeModelFlags {
 //
 // If path does not exist, iter is set to an invalid iterator and FALSE is
 // returned.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21503,8 +19182,6 @@ func (treeModel *TreeModel) iter(path *TreePath) (*TreeIter, bool) {
 
 // nColumns returns the number of columns supported by tree_model.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - gint: number of columns.
@@ -21530,8 +19207,6 @@ func (treeModel *TreeModel) nColumns() int {
 // Path returns a newly-created GtkTreePath referenced by iter.
 //
 // This path should be freed with gtk_tree_path_free().
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21573,8 +19248,6 @@ func (treeModel *TreeModel) path(iter *TreeIter) *TreePath {
 // When done with value, g_value_unset() needs to be called to free any
 // allocated memory.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter: GtkTreeIter.
@@ -21614,9 +19287,7 @@ func (treeModel *TreeModel) value(iter *TreeIter, column int) coreglib.Value {
 // parent will remain a valid node after this function has been called.
 //
 // If parent is NULL returns the first node, equivalent to
-// gtk_tree_model_get_iter_first (tree_model, iter);
-//
-// Deprecated: since version 4.10.
+// gtk_tree_model_get_iter_first (tree_model, iter);.
 //
 // The function takes the following parameters:
 //
@@ -21657,8 +19328,6 @@ func (treeModel *TreeModel) iterChildren(parent *TreeIter) (*TreeIter, bool) {
 
 // iterHasChild returns TRUE if iter has children, FALSE otherwise.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter: GtkTreeIter to test for children.
@@ -21695,8 +19364,6 @@ func (treeModel *TreeModel) iterHasChild(iter *TreeIter) bool {
 // As a special case, if iter is NULL, then the number of toplevel nodes is
 // returned.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter (optional): GtkTreeIter.
@@ -21731,8 +19398,6 @@ func (treeModel *TreeModel) iterNChildren(iter *TreeIter) int {
 // iterNext sets iter to point to the node following it at the current level.
 //
 // If there is no next iter, FALSE is returned and iter is set to be invalid.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21771,8 +19436,6 @@ func (treeModel *TreeModel) iterNext(iter *TreeIter) bool {
 // to an invalid iterator and FALSE is returned. parent will remain a valid node
 // after this function has been called. As a special case, if parent is NULL,
 // then the n-th root node is set.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21824,8 +19487,6 @@ func (treeModel *TreeModel) iterNthChild(parent *TreeIter, n int) (*TreeIter, bo
 // iter will be initialized before the lookup is performed, so child and iter
 // cannot point to the same memory location.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - child: GtkTreeIter.
@@ -21865,8 +19526,6 @@ func (treeModel *TreeModel) iterParent(child *TreeIter) (*TreeIter, bool) {
 //
 // If there is no previous iter, FALSE is returned and iter is set to be
 // invalid.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21915,8 +19574,6 @@ func (treeModel *TreeModel) iterPrevious(iter *TreeIter) bool {
 // A model should be expected to be able to get an iter independent of its
 // reffed state.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter: GtkTreeIter.
@@ -21938,8 +19595,6 @@ func (treeModel *TreeModel) refNode(iter *TreeIter) {
 // rowChanged emits the ::row-changed signal on tree_model.
 //
 // See gtk.TreeModel::row-changed.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -21974,8 +19629,6 @@ func (treeModel *TreeModel) rowChanged(path *TreePath, iter *TreeIter) {
 // Nodes that are deleted are not unreffed, this means that any outstanding
 // references on the deleted node should not be released.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - path: GtkTreePath pointing to the previous location of the deleted row.
@@ -21999,8 +19652,6 @@ func (treeModel *TreeModel) rowDeleted(path *TreePath) {
 // See gtk.TreeModel::row-has-child-toggled.
 //
 // This should be called by models after the child state of a node changes.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -22027,8 +19678,6 @@ func (treeModel *TreeModel) rowHasChildToggled(path *TreePath, iter *TreeIter) {
 // rowInserted emits the ::row-inserted signal on tree_model.
 //
 // See gtk.TreeModel::row-inserted.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -22060,8 +19709,6 @@ func (treeModel *TreeModel) rowInserted(path *TreePath, iter *TreeIter) {
 //
 // Please note that nodes that are deleted are not unreffed.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter: GtkTreeIter.
@@ -22085,9 +19732,6 @@ func (treeModel *TreeModel) unrefNode(iter *TreeIter) {
 // GtkTreeSortable is an interface to be implemented by tree models which
 // support sorting. The GtkTreeView uses the methods provided by this interface
 // to sort the model.
-//
-// Deprecated: There is no replacement for this interface. You should use
-// gtk.SortListModel to wrap your list model instead.
 //
 // TreeSortable wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -22150,8 +19794,6 @@ func (sortable *TreeSortable) ConnectSortColumnChanged(f func()) coreglib.Signal
 // sort_column_id is GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID or
 // GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - sortColumnId: sort column id to be filled in.
@@ -22185,8 +19827,6 @@ func (sortable *TreeSortable) SortColumnID() (int, SortType, bool) {
 // This is used primarily by GtkTreeViewColumns in order to determine if a model
 // can go back to the default state, or not.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE, if the model has a default sort function.
@@ -22218,8 +19858,6 @@ func (sortable *TreeSortable) HasDefaultSortFunc() bool {
 // default state. In this case, when the current sort column id of sortable is
 // GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID, the model will be unsorted.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - sortFunc: comparison function.
@@ -22247,9 +19885,7 @@ func (sortable *TreeSortable) SetDefaultSortFunc(sortFunc TreeIterCompareFunc) {
 // - GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID: the default sort function will be
 // used, if it is set
 //
-// - GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID: no sorting will occur
-//
-// Deprecated: since version 4.10.
+// - GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID: no sorting will occur.
 //
 // The function takes the following parameters:
 //
@@ -22273,8 +19909,6 @@ func (sortable *TreeSortable) SetSortColumnID(sortColumnId int, order SortType) 
 // SetSortFunc sets the comparison function used when sorting to be sort_func.
 // If the current sort column id of sortable is the same as sort_column_id,
 // then the model will sort using this function.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -22301,8 +19935,6 @@ func (sortable *TreeSortable) SetSortFunc(sortColumnId int, sortFunc TreeIterCom
 
 // SortColumnChanged emits a GtkTreeSortable::sort-column-changed signal on
 // sortable.
-//
-// Deprecated: since version 4.10.
 func (sortable *TreeSortable) SortColumnChanged() {
 	var _arg0 *C.GtkTreeSortable // out
 
@@ -22316,8 +19948,6 @@ func (sortable *TreeSortable) SortColumnChanged() {
 // current sort column and the order. It returns TRUE unless the
 // sort_column_id is GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID or
 // GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -22355,8 +19985,6 @@ func (sortable *TreeSortable) sortColumnID() (int, SortType, bool) {
 // This is used primarily by GtkTreeViewColumns in order to determine if a model
 // can go back to the default state, or not.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE, if the model has a default sort function.
@@ -22391,8 +20019,6 @@ func (sortable *TreeSortable) hasDefaultSortFunc() bool {
 // default state. In this case, when the current sort column id of sortable is
 // GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID, the model will be unsorted.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - sortFunc: comparison function.
@@ -22423,9 +20049,7 @@ func (sortable *TreeSortable) setDefaultSortFunc(sortFunc TreeIterCompareFunc) {
 // - GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID: the default sort function will be
 // used, if it is set
 //
-// - GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID: no sorting will occur
-//
-// Deprecated: since version 4.10.
+// - GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID: no sorting will occur.
 //
 // The function takes the following parameters:
 //
@@ -22452,8 +20076,6 @@ func (sortable *TreeSortable) setSortColumnID(sortColumnId int, order SortType) 
 // setSortFunc sets the comparison function used when sorting to be sort_func.
 // If the current sort column id of sortable is the same as sort_column_id,
 // then the model will sort using this function.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -22483,8 +20105,6 @@ func (sortable *TreeSortable) setSortFunc(sortColumnId int, sortFunc TreeIterCom
 
 // sortColumnChanged emits a GtkTreeSortable::sort-column-changed signal on
 // sortable.
-//
-// Deprecated: since version 4.10.
 func (sortable *TreeSortable) sortColumnChanged() {
 	gclass := (*C.GtkTreeSortableIface)(coreglib.PeekParentClass(sortable))
 	fnarg := gclass.sort_column_changed
@@ -22641,10 +20261,10 @@ func (self *ATContext) AccessibleRole() AccessibleRole {
 //
 // !An example GtkAboutDialog (aboutdialog.png)
 //
-// About dialogs often contain links and email addresses.
-// GtkAboutDialog displays these as clickable links. By default, it calls
-// gtk.FileLauncher.Launch() when a user clicks one. The behaviour can be
-// overridden with the gtk.AboutDialog::activate-link signal.
+// About dialogs often contain links and email addresses. GtkAboutDialog
+// displays these as clickable links. By default, it calls gtk.ShowURI()
+// when a user clicks one. The behaviour can be overridden with the
+// gtk.AboutDialog::activate-link signal.
 //
 // To specify a person with an email address, use a string like Edgar Allan Poe
 // <edgarpoe.com>. To specify a website with a title, use a string like GTK team
@@ -22736,7 +20356,7 @@ func marshalAboutDialog(p uintptr) (interface{}, error) {
 // ConnectActivateLink is emitted every time a URL is activated.
 //
 // Applications may connect to it to override the default behaviour, which is to
-// call gtk.FileLauncher.Launch().
+// call gtk.ShowURI().
 func (about *AboutDialog) ConnectActivateLink(f func(uri string) (ok bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(about, "activate-link", false, unsafe.Pointer(C._gotk4_gtk4_AboutDialog_ConnectActivateLink), f)
 }
@@ -23872,7 +21492,7 @@ func defaultAdjustmentOverrides(v *Adjustment) AdjustmentOverrides {
 
 // Adjustment: GtkAdjustment is a model for a numeric value.
 //
-// The GtkAdjustment has an associated lower and upper bound. It also contains
+// The `GtkAdjustment has an associated lower and upper bound. It also contains
 // step and page increments, and a page size.
 //
 // Adjustments are used within several GTK widgets, including gtk.SpinButton,
@@ -24358,424 +21978,6 @@ func (adjustment *Adjustment) valueChanged() {
 	runtime.KeepAlive(adjustment)
 }
 
-// AlertDialogOverrides contains methods that are overridable.
-type AlertDialogOverrides struct {
-}
-
-func defaultAlertDialogOverrides(v *AlertDialog) AlertDialogOverrides {
-	return AlertDialogOverrides{}
-}
-
-// AlertDialog: GtkAlertDialog object collects the arguments that are needed to
-// present a message to the user.
-//
-// The message is shown with the gtk.AlertDialog.Choose() function. This API
-// follows the GIO async pattern, and the result can be obtained by calling
-// gtk.AlertDialog.ChooseFinish().
-//
-// If you don't need to wait for a button to be clicked, you can use
-// gtk.AlertDialog.Show().
-type AlertDialog struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*AlertDialog)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*AlertDialog, *AlertDialogClass, AlertDialogOverrides](
-		GTypeAlertDialog,
-		initAlertDialogClass,
-		wrapAlertDialog,
-		defaultAlertDialogOverrides,
-	)
-}
-
-func initAlertDialogClass(gclass unsafe.Pointer, overrides AlertDialogOverrides, classInitFunc func(*AlertDialogClass)) {
-	if classInitFunc != nil {
-		class := (*AlertDialogClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapAlertDialog(obj *coreglib.Object) *AlertDialog {
-	return &AlertDialog{
-		Object: obj,
-	}
-}
-
-func marshalAlertDialog(p uintptr) (interface{}, error) {
-	return wrapAlertDialog(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// Choose: this function shows the alert to the user.
-//
-// The callback will be called when the alert is dismissed. It should call
-// gtk.AlertDialog.ChooseFinish() to obtain the result.
-//
-// It is ok to pass NULL for the callback if the alert does not have more than
-// one button. A simpler API for this case is gtk.AlertDialog.Show().
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - callback (optional) to call when the operation is complete.
-func (self *AlertDialog) Choose(ctx context.Context, parent *Window, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkAlertDialog     // out
-	var _arg2 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg3 C.GAsyncReadyCallback // out
-	var _arg4 C.gpointer
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg2 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if callback != nil {
-		_arg3 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg4 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_alert_dialog_choose(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(callback)
-}
-
-// ChooseFinish finishes the gtk.AlertDialog.Choose() call and returns the index
-// of the button that was clicked.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - gint: index of the button that was clicked, or -1 if the dialog was
-//     cancelled and gtk.AlertDialog:cancel-button is not set.
-func (self *AlertDialog) ChooseFinish(result gio.AsyncResulter) (int, error) {
-	var _arg0 *C.GtkAlertDialog // out
-	var _arg1 *C.GAsyncResult   // out
-	var _cret C.int             // in
-	var _cerr *C.GError         // in
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_alert_dialog_choose_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _gint int    // out
-	var _goerr error // out
-
-	_gint = int(_cret)
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _gint, _goerr
-}
-
-// Buttons returns the button labels for the alert.
-//
-// The function returns the following values:
-//
-//   - utf8s (optional): button labels.
-func (self *AlertDialog) Buttons() []string {
-	var _arg0 *C.GtkAlertDialog // out
-	var _cret **C.char          // in
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_alert_dialog_get_buttons(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8s []string // out
-
-	if _cret != nil {
-		{
-			var i int
-			var z *C.char
-			for p := _cret; *p != z; p = &unsafe.Slice(p, 2)[1] {
-				i++
-			}
-
-			src := unsafe.Slice(_cret, i)
-			_utf8s = make([]string, i)
-			for i := range src {
-				_utf8s[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
-			}
-		}
-	}
-
-	return _utf8s
-}
-
-// CancelButton returns the index of the cancel button.
-//
-// The function returns the following values:
-//
-//   - gint: index of the cancel button, or -1.
-func (self *AlertDialog) CancelButton() int {
-	var _arg0 *C.GtkAlertDialog // out
-	var _cret C.int             // in
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_alert_dialog_get_cancel_button(_arg0)
-	runtime.KeepAlive(self)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
-}
-
-// DefaultButton returns the index of the default button.
-//
-// The function returns the following values:
-//
-//   - gint: index of the default button, or -1.
-func (self *AlertDialog) DefaultButton() int {
-	var _arg0 *C.GtkAlertDialog // out
-	var _cret C.int             // in
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_alert_dialog_get_default_button(_arg0)
-	runtime.KeepAlive(self)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
-}
-
-// Detail returns the detail text that will be shown in the alert.
-//
-// The function returns the following values:
-//
-//   - utf8: detail text.
-func (self *AlertDialog) Detail() string {
-	var _arg0 *C.GtkAlertDialog // out
-	var _cret *C.char           // in
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_alert_dialog_get_detail(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// Message returns the message that will be shown in the alert.
-//
-// The function returns the following values:
-//
-//   - utf8: message.
-func (self *AlertDialog) Message() string {
-	var _arg0 *C.GtkAlertDialog // out
-	var _cret *C.char           // in
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_alert_dialog_get_message(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// Modal returns whether the alert blocks interaction with the parent window
-// while it is presented.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the alert is modal.
-func (self *AlertDialog) Modal() bool {
-	var _arg0 *C.GtkAlertDialog // out
-	var _cret C.gboolean        // in
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_alert_dialog_get_modal(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// SetButtons sets the button labels for the alert.
-//
-// The function takes the following parameters:
-//
-//   - labels: new button labels.
-func (self *AlertDialog) SetButtons(labels []string) {
-	var _arg0 *C.GtkAlertDialog // out
-	var _arg1 **C.char          // out
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		_arg1 = (**C.char)(C.calloc(C.size_t((len(labels) + 1)), C.size_t(unsafe.Sizeof(uint(0)))))
-		defer C.free(unsafe.Pointer(_arg1))
-		{
-			out := unsafe.Slice(_arg1, len(labels)+1)
-			var zero *C.char
-			out[len(labels)] = zero
-			for i := range labels {
-				out[i] = (*C.char)(unsafe.Pointer(C.CString(labels[i])))
-				defer C.free(unsafe.Pointer(out[i]))
-			}
-		}
-	}
-
-	C.gtk_alert_dialog_set_buttons(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(labels)
-}
-
-// SetCancelButton sets the index of the cancel button.
-//
-// See gtk.AlertDialog:cancel-button for details of how this value is used.
-//
-// The function takes the following parameters:
-//
-//   - button: new cancel button.
-func (self *AlertDialog) SetCancelButton(button int) {
-	var _arg0 *C.GtkAlertDialog // out
-	var _arg1 C.int             // out
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.int(button)
-
-	C.gtk_alert_dialog_set_cancel_button(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(button)
-}
-
-// SetDefaultButton sets the index of the default button.
-//
-// See gtk.AlertDialog:default-button for details of how this value is used.
-//
-// The function takes the following parameters:
-//
-//   - button: new default button.
-func (self *AlertDialog) SetDefaultButton(button int) {
-	var _arg0 *C.GtkAlertDialog // out
-	var _arg1 C.int             // out
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.int(button)
-
-	C.gtk_alert_dialog_set_default_button(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(button)
-}
-
-// SetDetail sets the detail text that will be shown in the alert.
-//
-// The function takes the following parameters:
-//
-//   - detail: new detail text.
-func (self *AlertDialog) SetDetail(detail string) {
-	var _arg0 *C.GtkAlertDialog // out
-	var _arg1 *C.char           // out
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(detail)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_alert_dialog_set_detail(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(detail)
-}
-
-// SetMessage sets the message that will be shown in the alert.
-//
-// The function takes the following parameters:
-//
-//   - message: new message.
-func (self *AlertDialog) SetMessage(message string) {
-	var _arg0 *C.GtkAlertDialog // out
-	var _arg1 *C.char           // out
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(message)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_alert_dialog_set_message(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(message)
-}
-
-// SetModal sets whether the alert blocks interaction with the parent window
-// while it is presented.
-//
-// The function takes the following parameters:
-//
-//   - modal: new value.
-func (self *AlertDialog) SetModal(modal bool) {
-	var _arg0 *C.GtkAlertDialog // out
-	var _arg1 C.gboolean        // out
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if modal {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_alert_dialog_set_modal(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(modal)
-}
-
-// Show the alert to the user.
-//
-// This function is a simple version of gtk.AlertDialog.Choose() intended for
-// dialogs with a single button. If you want to cancel the dialog or if the
-// alert has more than one button, you should use that function instead and
-// provide it with a #GCancellable or callback respectively.
-//
-// The function takes the following parameters:
-//
-//   - parent (optional) GtkWindow.
-func (self *AlertDialog) Show(parent *Window) {
-	var _arg0 *C.GtkAlertDialog // out
-	var _arg1 *C.GtkWindow      // out
-
-	_arg0 = (*C.GtkAlertDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-
-	C.gtk_alert_dialog_show(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(parent)
-}
-
 // AlternativeTrigger: GtkShortcutTrigger that combines two triggers.
 //
 // The GtkAlternativeTrigger triggers when either of two trigger.
@@ -24998,9 +22200,6 @@ func NewAnyFilter() *AnyFilter {
 // # CSS nodes
 //
 // GtkAppChooserButton has a single CSS node with the name “appchooserbutton”.
-//
-// Deprecated: The application selection widgets should be implemented according
-// to the design of each platform and/or application requiring them.
 type AppChooserButton struct {
 	_ [0]func() // equal guard
 	Widget
@@ -25079,8 +22278,6 @@ func (self *AppChooserButton) ConnectCustomItemActivated(f func(itemName string)
 // NewAppChooserButton creates a new GtkAppChooserButton for applications that
 // can handle content of the given type.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - contentType: content type to show applications for.
@@ -25114,8 +22311,6 @@ func NewAppChooserButton(contentType string) *AppChooserButton {
 //
 // See also gtk.AppChooserButton.AppendSeparator().
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - name of the custom item.
@@ -25143,8 +22338,6 @@ func (self *AppChooserButton) AppendCustomItem(name, label string, icon gio.Icon
 
 // AppendSeparator appends a separator to the list of applications that is shown
 // in the popup.
-//
-// Deprecated: This widget will be removed in GTK 5.
 func (self *AppChooserButton) AppendSeparator() {
 	var _arg0 *C.GtkAppChooserButton // out
 
@@ -25155,8 +22348,6 @@ func (self *AppChooserButton) AppendSeparator() {
 }
 
 // Heading returns the text to display at the top of the dialog.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -25182,8 +22373,6 @@ func (self *AppChooserButton) Heading() string {
 
 // Modal gets whether the dialog is modal.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the dialog is modal.
@@ -25208,8 +22397,6 @@ func (self *AppChooserButton) Modal() bool {
 // ShowDefaultItem returns whether the dropdown menu should show the default
 // application at the top.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - ok: value of gtk.AppChooserButton:show-default-item.
@@ -25233,8 +22420,6 @@ func (self *AppChooserButton) ShowDefaultItem() bool {
 
 // ShowDialogItem returns whether the dropdown menu shows an item for a
 // GtkAppChooserDialog.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -25263,8 +22448,6 @@ func (self *AppChooserButton) ShowDialogItem() bool {
 //
 // Use gtk.AppChooser.Refresh() to bring the selection to its initial state.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - name of the custom item.
@@ -25285,8 +22468,6 @@ func (self *AppChooserButton) SetActiveCustomItem(name string) {
 //
 // If the heading is not set, the dialog displays a default text.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - heading: string containing Pango markup.
@@ -25304,8 +22485,6 @@ func (self *AppChooserButton) SetHeading(heading string) {
 }
 
 // SetModal sets whether the dialog should be modal.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -25327,8 +22506,6 @@ func (self *AppChooserButton) SetModal(modal bool) {
 // SetShowDefaultItem sets whether the dropdown menu of this button should show
 // the default application for the given content type at top.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - setting: new value for gtk.AppChooserButton:show-default-item.
@@ -25348,8 +22525,6 @@ func (self *AppChooserButton) SetShowDefaultItem(setting bool) {
 
 // SetShowDialogItem sets whether the dropdown menu of this button should show
 // an entry to trigger a GtkAppChooserDialog.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -25380,14 +22555,6 @@ func (self *AppChooserButton) SetShowDialogItem(setting bool) {
 //
 // To set the heading that is shown above the GtkAppChooserWidget, use
 // gtk.AppChooserDialog.SetHeading().
-//
-// # CSS nodes
-//
-// GtkAppChooserDialog has a single CSS node with the name window and style
-// class .appchooser.
-//
-// Deprecated: The application selection widgets should be implemented according
-// to the design of each platform and/or application requiring them.
 type AppChooserDialog struct {
 	_ [0]func() // equal guard
 	Dialog
@@ -25474,8 +22641,6 @@ func marshalAppChooserDialog(p uintptr) (interface{}, error) {
 //
 // The dialog will show applications that can open the file.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - parent (optional): GtkWindow.
@@ -25514,8 +22679,6 @@ func NewAppChooserDialog(parent *Window, flags DialogFlags, file gio.Filer) *App
 //
 // The dialog will show applications that can open the content type.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - parent (optional): GtkWindow.
@@ -25552,8 +22715,6 @@ func NewAppChooserDialogForContentType(parent *Window, flags DialogFlags, conten
 
 // Heading returns the text to display at the top of the dialog.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - utf8 (optional): text to display at the top of the dialog, or NULL,
@@ -25577,8 +22738,6 @@ func (self *AppChooserDialog) Heading() string {
 }
 
 // Widget returns the GtkAppChooserWidget of this dialog.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -25619,8 +22778,6 @@ func (self *AppChooserDialog) Widget() Widgetter {
 //
 // If the heading is not set, the dialog displays a default text.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - heading: string containing Pango markup.
@@ -25657,9 +22814,6 @@ func (self *AppChooserDialog) SetHeading(heading string) {
 // # CSS nodes
 //
 // GtkAppChooserWidget has a single CSS node with name appchooser.
-//
-// Deprecated: The application selection widgets should be implemented according
-// to the design of each platform and/or application requiring them.
 type AppChooserWidget struct {
 	_ [0]func() // equal guard
 	Widget
@@ -25734,8 +22888,6 @@ func (self *AppChooserWidget) ConnectApplicationSelected(f func(application gio.
 // NewAppChooserWidget creates a new GtkAppChooserWidget for applications that
 // can handle content of the given type.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - contentType: content type to show applications for.
@@ -25763,8 +22915,6 @@ func NewAppChooserWidget(contentType string) *AppChooserWidget {
 // DefaultText returns the text that is shown if there are not applications that
 // can handle the content type.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - utf8 (optional): value of gtk.AppChooserWidget:default-text.
@@ -25788,8 +22938,6 @@ func (self *AppChooserWidget) DefaultText() string {
 
 // ShowAll gets whether the app chooser should show all applications in a flat
 // list.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -25815,8 +22963,6 @@ func (self *AppChooserWidget) ShowAll() bool {
 // ShowDefault gets whether the app chooser should show the default handler for
 // the content type in a separate section.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - ok: value of gtk.AppChooserWidget:show-default.
@@ -25840,8 +22986,6 @@ func (self *AppChooserWidget) ShowDefault() bool {
 
 // ShowFallback gets whether the app chooser should show related applications
 // for the content type in a separate section.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -25867,8 +23011,6 @@ func (self *AppChooserWidget) ShowFallback() bool {
 // ShowOther gets whether the app chooser should show applications which are
 // unrelated to the content type.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - ok: value of gtk.AppChooserWidget:show-other.
@@ -25892,8 +23034,6 @@ func (self *AppChooserWidget) ShowOther() bool {
 
 // ShowRecommended gets whether the app chooser should show recommended
 // applications for the content type in a separate section.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -25919,8 +23059,6 @@ func (self *AppChooserWidget) ShowRecommended() bool {
 // SetDefaultText sets the text that is shown if there are not applications that
 // can handle the content type.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - text: new value for gtk.AppChooserWidget:default-text.
@@ -25939,8 +23077,6 @@ func (self *AppChooserWidget) SetDefaultText(text string) {
 
 // SetShowAll sets whether the app chooser should show all applications in a
 // flat list.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -25962,8 +23098,6 @@ func (self *AppChooserWidget) SetShowAll(setting bool) {
 // SetShowDefault sets whether the app chooser should show the default handler
 // for the content type in a separate section.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - setting: new value for gtk.AppChooserWidget:show-default.
@@ -25983,8 +23117,6 @@ func (self *AppChooserWidget) SetShowDefault(setting bool) {
 
 // SetShowFallback sets whether the app chooser should show related applications
 // for the content type in a separate section.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -26006,8 +23138,6 @@ func (self *AppChooserWidget) SetShowFallback(setting bool) {
 // SetShowOther sets whether the app chooser should show applications which are
 // unrelated to the content type.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - setting: new value for gtk.AppChooserWidget:show-other.
@@ -26028,8 +23158,6 @@ func (self *AppChooserWidget) SetShowOther(setting bool) {
 // SetShowRecommended sets whether the app chooser should show recommended
 // applications for the content type in a separate section.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - setting: new value for gtk.AppChooserWidget:show-recommended.
@@ -26049,12 +23177,7 @@ func (self *AppChooserWidget) SetShowRecommended(setting bool) {
 
 // ApplicationOverrides contains methods that are overridable.
 type ApplicationOverrides struct {
-	// WindowAdded: signal emitted when a GtkWindow is added to application
-	// through gtk_application_add_window().
-	WindowAdded func(window *Window)
-	// WindowRemoved: signal emitted when a GtkWindow is removed from
-	// application, either as a side-effect of being destroyed or explicitly
-	// through gtk_application_remove_window().
+	WindowAdded   func(window *Window)
 	WindowRemoved func(window *Window)
 }
 
@@ -26087,10 +23210,6 @@ func defaultApplicationOverrides(v *Application) ApplicationOverrides {
 // is taken as the application's menubar. Additional menus (most interesting
 // submenus) can be named and accessed via gtk.Application.GetMenuByID() which
 // allows for dynamic population of a part of the menu structure.
-//
-// Note that automatic resource loading uses the resource base path that is set
-// at construction time and will not work if the resource base path is changed
-// at a later time.
 //
 // It is also possible to provide the menubar manually using
 // gtk.Application.SetMenubar().
@@ -26792,8 +23911,6 @@ func (application *Application) Uninhibit(cookie uint) {
 	runtime.KeepAlive(cookie)
 }
 
-// windowAdded: signal emitted when a GtkWindow is added to application through
-// gtk_application_add_window().
 func (application *Application) windowAdded(window *Window) {
 	gclass := (*C.GtkApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.window_added
@@ -26809,9 +23926,6 @@ func (application *Application) windowAdded(window *Window) {
 	runtime.KeepAlive(window)
 }
 
-// windowRemoved: signal emitted when a GtkWindow is removed from application,
-// either as a side-effect of being destroyed or explicitly through
-// gtk_application_remove_window().
 func (application *Application) windowRemoved(window *Window) {
 	gclass := (*C.GtkApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.window_removed
@@ -27136,13 +24250,6 @@ func (window *ApplicationWindow) SetShowMenubar(showMenubar bool) {
 // # CSS nodes
 //
 // GtkAspectFrame uses a CSS node with name frame.
-//
-// # Accessibility
-//
-// Until GTK 4.10, GtkAspectFrame used the GTK_ACCESSIBLE_ROLE_GROUP role.
-//
-// Starting from GTK 4.12, GtkAspectFrame uses the GTK_ACCESSIBLE_ROLE_GENERIC
-// role.
 type AspectFrame struct {
 	_ [0]func() // equal guard
 	Widget
@@ -27222,7 +24329,7 @@ func NewAspectFrame(xalign, yalign, ratio float32, obeyChild bool) *AspectFrame 
 //
 // The function returns the following values:
 //
-//   - widget (optional): child widget of self.
+//   - widget (optional): child widget of self@.
 func (self *AspectFrame) Child() Widgetter {
 	var _arg0 *C.GtkAspectFrame // out
 	var _cret *C.GtkWidget      // in
@@ -27368,7 +24475,7 @@ func (self *AspectFrame) SetChild(child Widgetter) {
 // The function takes the following parameters:
 //
 //   - obeyChild: if TRUE, ratio is ignored, and the aspect ratio is taken from
-//     the requisition of the child.
+//     the requistion of the child.
 func (self *AspectFrame) SetObeyChild(obeyChild bool) {
 	var _arg0 *C.GtkAspectFrame // out
 	var _arg1 C.gboolean        // out
@@ -27473,8 +24580,6 @@ func (self *AspectFrame) SetYAlign(yalign float32) {
 //
 // GtkAssistant has a single CSS node with the name window and style class
 // .assistant.
-//
-// Deprecated: This widget will be removed in GTK 5.
 type Assistant struct {
 	_ [0]func() // equal guard
 	Window
@@ -27576,8 +24681,6 @@ func (assistant *Assistant) ConnectPrepare(f func(page Widgetter)) coreglib.Sign
 
 // NewAssistant creates a new GtkAssistant.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - assistant: newly created GtkAssistant.
@@ -27595,8 +24698,6 @@ func NewAssistant() *Assistant {
 
 // AddActionWidget adds a widget to the action area of a GtkAssistant.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - child: GtkWidget.
@@ -27613,8 +24714,6 @@ func (assistant *Assistant) AddActionWidget(child Widgetter) {
 }
 
 // AppendPage appends a page to the assistant.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -27651,8 +24750,6 @@ func (assistant *Assistant) AppendPage(page Widgetter) int {
 // deemed permanent and cannot be modified or undone. For example, showing a
 // progress page to track a long-running, unreversible operation after the user
 // has clicked apply on a confirmation page.
-//
-// Deprecated: This widget will be removed in GTK 5.
 func (assistant *Assistant) Commit() {
 	var _arg0 *C.GtkAssistant // out
 
@@ -27663,8 +24760,6 @@ func (assistant *Assistant) Commit() {
 }
 
 // CurrentPage returns the page number of the current page.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -27686,9 +24781,7 @@ func (assistant *Assistant) CurrentPage() int {
 	return _gint
 }
 
-// NPages returns the number of pages in the assistant
-//
-// Deprecated: This widget will be removed in GTK 5.
+// NPages returns the number of pages in the assistant.
 //
 // The function returns the following values:
 //
@@ -27710,8 +24803,6 @@ func (assistant *Assistant) NPages() int {
 }
 
 // NthPage returns the child widget contained in page number page_num.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -27756,8 +24847,6 @@ func (assistant *Assistant) NthPage(pageNum int) Widgetter {
 
 // Page returns the GtkAssistantPage object for child.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - child of assistant.
@@ -27785,8 +24874,6 @@ func (assistant *Assistant) Page(child Widgetter) *AssistantPage {
 }
 
 // PageComplete gets whether page is complete.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -27818,8 +24905,6 @@ func (assistant *Assistant) PageComplete(page Widgetter) bool {
 
 // PageTitle gets the title for page.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - page of assistant.
@@ -27847,8 +24932,6 @@ func (assistant *Assistant) PageTitle(page Widgetter) string {
 }
 
 // PageType gets the page type of page.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -27878,8 +24961,6 @@ func (assistant *Assistant) PageType(page Widgetter) AssistantPageType {
 
 // Pages gets a list model of the assistant pages.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - listModel: list model of the pages.
@@ -27905,8 +24986,6 @@ func (assistant *Assistant) Pages() *gio.ListModel {
 }
 
 // InsertPage inserts a page in the assistant at a given position.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -27945,8 +25024,6 @@ func (assistant *Assistant) InsertPage(page Widgetter, position int) int {
 //
 // This function is for use when creating pages of the GTK_ASSISTANT_PAGE_CUSTOM
 // type.
-//
-// Deprecated: This widget will be removed in GTK 5.
 func (assistant *Assistant) NextPage() {
 	var _arg0 *C.GtkAssistant // out
 
@@ -27957,8 +25034,6 @@ func (assistant *Assistant) NextPage() {
 }
 
 // PrependPage prepends a page to the assistant.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -27993,8 +25068,6 @@ func (assistant *Assistant) PrependPage(page Widgetter) int {
 //
 // This function is for use when creating pages of the GTK_ASSISTANT_PAGE_CUSTOM
 // type.
-//
-// Deprecated: This widget will be removed in GTK 5.
 func (assistant *Assistant) PreviousPage() {
 	var _arg0 *C.GtkAssistant // out
 
@@ -28005,8 +25078,6 @@ func (assistant *Assistant) PreviousPage() {
 }
 
 // RemoveActionWidget removes a widget from the action area of a GtkAssistant.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -28024,8 +25095,6 @@ func (assistant *Assistant) RemoveActionWidget(child Widgetter) {
 }
 
 // RemovePage removes the page_num’s page from assistant.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -28046,8 +25115,6 @@ func (assistant *Assistant) RemovePage(pageNum int) {
 //
 // Note that this will only be necessary in custom buttons, as the assistant
 // flow can be set with gtk_assistant_set_forward_page_func().
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -28072,8 +25139,6 @@ func (assistant *Assistant) SetCurrentPage(pageNum int) {
 // user presses the forward button. Setting page_func to NULL will make the
 // assistant to use the default forward function, which just goes to the next
 // visible page.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -28102,8 +25167,6 @@ func (assistant *Assistant) SetForwardPageFunc(pageFunc AssistantPageFunc) {
 // This will make assistant update the buttons state to be able to continue the
 // task.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - page of assistant.
@@ -28130,8 +25193,6 @@ func (assistant *Assistant) SetPageComplete(page Widgetter, complete bool) {
 // The title is displayed in the header area of the assistant when page is the
 // current page.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - page of assistant.
@@ -28155,8 +25216,6 @@ func (assistant *Assistant) SetPageTitle(page Widgetter, title string) {
 // SetPageType sets the page type for page.
 //
 // The page type determines the page behavior in the assistant.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -28186,8 +25245,6 @@ func (assistant *Assistant) SetPageType(page Widgetter, typ AssistantPageType) {
 // One situation where it can be necessary to call this function is when
 // changing a value on the current page affects the future page flow of the
 // assistant.
-//
-// Deprecated: This widget will be removed in GTK 5.
 func (assistant *Assistant) UpdateButtonsState() {
 	var _arg0 *C.GtkAssistant // out
 
@@ -28198,8 +25255,6 @@ func (assistant *Assistant) UpdateButtonsState() {
 }
 
 // AssistantPage: GtkAssistantPage is an auxiliary object used by `GtkAssistant.
-//
-// Deprecated: This object will be removed in GTK 5.
 type AssistantPage struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -28220,8 +25275,6 @@ func marshalAssistantPage(p uintptr) (interface{}, error) {
 }
 
 // Child returns the child to which page belongs.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -28766,9 +25819,7 @@ func defaultBoxOverrides(v *Box) BoxOverrides {
 //
 // # Accessibility
 //
-// Until GTK 4.10, GtkBox used the GTK_ACCESSIBLE_ROLE_GROUP role.
-//
-// Starting from GTK 4.12, GtkBox uses the GTK_ACCESSIBLE_ROLE_GENERIC role.
+// GtkBox uses the GTK_ACCESSIBLE_ROLE_GROUP role.
 type Box struct {
 	_ [0]func() // equal guard
 	Widget
@@ -28870,27 +25921,6 @@ func (box *Box) Append(child Widgetter) {
 	C.gtk_box_append(_arg0, _arg1)
 	runtime.KeepAlive(box)
 	runtime.KeepAlive(child)
-}
-
-// BaselineChild gets the value set by gtk_box_set_baseline_child().
-//
-// The function returns the following values:
-//
-//   - gint: baseline child.
-func (box *Box) BaselineChild() int {
-	var _arg0 *C.GtkBox // out
-	var _cret C.int     // in
-
-	_arg0 = (*C.GtkBox)(unsafe.Pointer(coreglib.InternObject(box).Native()))
-
-	_cret = C.gtk_box_get_baseline_child(_arg0)
-	runtime.KeepAlive(box)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
 }
 
 // BaselinePosition gets the value set by gtk_box_set_baseline_position().
@@ -29048,25 +26078,6 @@ func (box *Box) ReorderChildAfter(child, sibling Widgetter) {
 	runtime.KeepAlive(sibling)
 }
 
-// SetBaselineChild sets the baseline child of a box.
-//
-// This affects only vertical boxes.
-//
-// The function takes the following parameters:
-//
-//   - child: child, or -1.
-func (box *Box) SetBaselineChild(child int) {
-	var _arg0 *C.GtkBox // out
-	var _arg1 C.int     // out
-
-	_arg0 = (*C.GtkBox)(unsafe.Pointer(coreglib.InternObject(box).Native()))
-	_arg1 = C.int(child)
-
-	C.gtk_box_set_baseline_child(_arg0, _arg1)
-	runtime.KeepAlive(box)
-	runtime.KeepAlive(child)
-}
-
 // SetBaselinePosition sets the baseline position of a box.
 //
 // This affects only horizontal boxes with at least one baseline aligned child.
@@ -29218,28 +26229,6 @@ func NewBoxLayout(orientation Orientation) *BoxLayout {
 	return _boxLayout
 }
 
-// BaselineChild gets the value set by gtk_box_layout_set_baseline_child().
-//
-// The function returns the following values:
-//
-//   - gint: index of the child that determines the baseline in vertical layout,
-//     or -1.
-func (boxLayout *BoxLayout) BaselineChild() int {
-	var _arg0 *C.GtkBoxLayout // out
-	var _cret C.int           // in
-
-	_arg0 = (*C.GtkBoxLayout)(unsafe.Pointer(coreglib.InternObject(boxLayout).Native()))
-
-	_cret = C.gtk_box_layout_get_baseline_child(_arg0)
-	runtime.KeepAlive(boxLayout)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
-}
-
 // BaselinePosition gets the value set by
 // gtk_box_layout_set_baseline_position().
 //
@@ -29304,24 +26293,6 @@ func (boxLayout *BoxLayout) Spacing() uint {
 	_guint = uint(_cret)
 
 	return _guint
-}
-
-// SetBaselineChild sets the index of the child that determines the baseline in
-// vertical layout.
-//
-// The function takes the following parameters:
-//
-//   - child position, or -1.
-func (boxLayout *BoxLayout) SetBaselineChild(child int) {
-	var _arg0 *C.GtkBoxLayout // out
-	var _arg1 C.int           // out
-
-	_arg0 = (*C.GtkBoxLayout)(unsafe.Pointer(coreglib.InternObject(boxLayout).Native()))
-	_arg1 = C.int(child)
-
-	C.gtk_box_layout_set_baseline_child(_arg0, _arg1)
-	runtime.KeepAlive(boxLayout)
-	runtime.KeepAlive(child)
 }
 
 // SetBaselinePosition sets the baseline position of a box layout.
@@ -29419,49 +26390,30 @@ func (boxLayout *BoxLayout) SetSpacing(spacing uint) {
 // in XML format. We refer to these descriptions as “GtkBuilder UI definitions”
 // or just “UI definitions” if the context is clear.
 //
-// # Structure of UI definitions
-//
-// UI definition files are always encoded in UTF-8.
-//
 // The toplevel element is <interface>. It optionally takes a “domain”
 // attribute, which will make the builder look for translated strings using
 // dgettext() in the domain specified. This can also be done by calling
-// gtk.Builder.SetTranslationDomain() on the builder. For example:
+// gtk.Builder.SetTranslationDomain() on the builder.
 //
-//	<?xml version="1.0" encoding="UTF-8">
-//	<interface domain="your-app">
-//	  ...
-//	</interface>
-//
-// # Requirements
+// Objects are described by <object> elements, which can contain <property>
+// elements to set properties, <signal> elements which connect signals to
+// handlers, and <child> elements, which describe child objects (most often
+// widgets inside a container, but also e.g. actions in an action group,
+// or columns in a tree model). A <child> element contains an <object> element
+// which describes the child object.
 //
 // The target toolkit version(s) are described by <requires> elements,
 // the “lib” attribute specifies the widget library in question (currently the
 // only supported value is “gtk”) and the “version” attribute specifies the
 // target version in the form “<major>.<minor>”. GtkBuilder will error out if
-// the version requirements are not met. For example:
-//
-//	<?xml version="1.0" encoding="UTF-8">
-//	<interface domain="your-app">
-//	  <requires lib="gtk" version="4.0" />
-//	</interface>
-//
-// # Objects
-//
-// Objects are defined as children of the <interface> element.
-//
-// Objects are described by <object> elements, which can contain <property>
-// elements to set properties, <signal> elements which connect signals to
-// handlers, and <child> elements, which describe child objects.
+// the version requirements are not met.
 //
 // Typically, the specific kind of object represented by an <object> element
 // is specified by the “class” attribute. If the type has not been loaded yet,
 // GTK tries to find the get_type() function from the class name by applying
 // heuristics. This works in most cases, but if necessary, it is possible to
 // specify the name of the get_type() function explicitly with the "type-func"
-// attribute. If your UI definition is referencing internal types, you should
-// make sure to call g_type_ensure() for each object type before parsing the UI
-// definition.
+// attribute.
 //
 // Objects may be given a name with the “id” attribute, which allows the
 // application to retrieve them from the builder with gtk.Builder.GetObject().
@@ -29469,143 +26421,42 @@ func (boxLayout *BoxLayout) SetSpacing(spacing uint) {
 // of the UI definition. GTK reserves ids starting and ending with ___ (three
 // consecutive underscores) for its own purposes.
 //
-// # Properties
-//
 // Setting properties of objects is pretty straightforward with the <property>
 // element: the “name” attribute specifies the name of the property, and the
-// content of the element specifies the value:
-//
-//	<object class="GtkButton">
-//	  <property name="label">Hello, world</property>
-//	</object>
-//
-// If the “translatable” attribute is set to a true value, GTK uses gettext()
-// (or dgettext() if the builder has a translation domain set) to find a
-// translation for the value. This happens before the value is parsed, so it can
-// be used for properties of any type, but it is probably most useful for string
-// properties. It is also possible to specify a context to disambiguate short
-// strings, and comments which may help the translators:
-//
-//	<object class="GtkButton">
-//	  <property name="label" translatable="yes" context="button">Hello, world</property>
-//	</object>
+// content of the element specifies the value. If the “translatable” attribute
+// is set to a true value, GTK uses gettext() (or dgettext() if the builder has
+// a translation domain set) to find a translation for the value. This happens
+// before the value is parsed, so it can be used for properties of any type,
+// but it is probably most useful for string properties. It is also possible to
+// specify a context to disambiguate short strings, and comments which may help
+// the translators.
 //
 // GtkBuilder can parse textual representations for the most common property
-// types:
+// types: characters, strings, integers, floating-point numbers, booleans
+// (strings like “TRUE”, “t”, “yes”, “y”, “1” are interpreted as TRUE, strings
+// like “FALSE”, “f”, “no”, “n”, “0” are interpreted as FALSE), enumerations
+// (can be specified by their name, nick or integer value), flags (can be
+// specified by their name, nick, integer value, optionally combined with “|”,
+// e.g. “GTK_INPUT_HINT_EMOJI|GTK_INPUT_HINT_LOWERCASE”) and colors (in a format
+// understood by gdk.RGBA.Parse()).
 //
-// - characters
-//
-// - strings
-//
-// - integers
-//
-// - floating-point numbers
-//
-// - booleans (strings like “TRUE”, “t”, “yes”, “y”, “1” are interpreted as true
-// values, strings like “FALSE”, “f”, “no”, “n”, “0” are interpreted as false
-// values)
-//
-// - enumeration types (can be specified by their full C identifier their short
-// name used when registering the enumeration type, or their integer value)
-//
-// - flag types (can be specified by their C identifier, short name,
-// integer value, and optionally combined with “|” for bitwise OR, e.g.
-// “GTK_INPUT_HINT_EMOJI|GTK_INPUT_HINT_LOWERCASE”, or “emoji|lowercase”)
-//
-// - colors (in a format understood by gdk.RGBA.Parse())
-//
-// - GVariant (can be specified in the format understood by
-// glib.Variant().Parse)
-//
-// - pixbufs (can be specified as a filename of an image file to load)
+// GVariants can be specified in the format understood by g_variant_parse(),
+// and pixbufs can be specified as a filename of an image file to load.
 //
 // Objects can be referred to by their name and by default refer to
 // objects declared in the local XML fragment and objects exposed via
 // gtk.Builder.ExposeObject(). In general, GtkBuilder allows forward references
-// to objects declared in the local XML; an object doesn’t have to be
+// to objects — declared in the local XML; an object doesn’t have to be
 // constructed before it can be referred to. The exception to this rule is
 // that an object has to be constructed before it can be used as the value of a
 // construct-only property.
 //
-// # Child objects
-//
-// Many widgets have properties for child widgets, such as gtk.Expander:child.
-// In this case, the preferred way to specify the child widget in a ui file is
-// to simply set the property:
-//
-//	<object class="GtkExpander">
-//	  <property name="child">
-//	    <object class="GtkLabel">
-//	    ...
-//	    </object>
-//	  </property>
-//	</object>
-//
-// Generic containers that can contain an arbitrary number of children,
-// such as gtk.Box instead use the <child> element. A <child> element
-// contains an <object> element which describes the child object. Most often,
-// child objects are widgets inside a container, but they can also be, e.g.,
-// actions in an action group, or columns in a tree model.
-//
-// Any object type that implements the gtk.Buildable interface can specify how
-// children may be added to it. Since many objects and widgets that are included
-// with GTK already implement the GtkBuildable interface, typically child
-// objects can be added using the <child> element without having to be concerned
-// about the underlying implementation.
-//
-// See the GtkWidget documentation (class.Widget.html#gtkwidget-as-gtkbuildable)
-// for many examples of using GtkBuilder with widgets, including setting child
-// objects using the <child> element.
-//
-// A noteworthy special case to the general rule that only objects implementing
-// GtkBuildable may specify how to handle the <child> element is that GtkBuilder
-// provides special support for adding objects to a gio.ListStore by using the
-// <child> element. For instance:
-//
-//	<object class="GListStore">
-//	  <property name="item-type">MyObject</property>
-//	  <child>
-//	    <object class="MyObject" />
-//	  </child>
-//	  ...
-//	</object>
-//
-// # Property bindings
-//
 // It is also possible to bind a property value to another object's property
 // value using the attributes "bind-source" to specify the source object of
-// the binding, and optionally, "bind-property" and "bind-flags" to specify the
-// source property and source binding flags respectively. Internally, GtkBuilder
-// implements this using gobject.Binding objects.
-//
-// For instance, in the example below the “label” property of the bottom_label
-// widget is bound to the “label” property of the top_button widget:
-//
-//	<object class="GtkBox">
-//	  <property name="orientation">vertical</property>
-//	  <child>
-//	    <object class="GtkButton" id="top_button">
-//	      <property name="label">Hello, world</property>
-//	    </object>
-//	  </child>
-//	  <child>
-//	    <object class="GtkLabel" id="bottom_label">
-//	      <property name="label"
-//	                bind-source="top_button"
-//	                bind-property="label"
-//	                bind-flags="sync-create" />
-//	    </object>
-//	  </child>
-//	</object>
-//
-// For more information, see the documentation of the
-// gobject.Object.BindProperty() method.
-//
-// Please note that another way to set up bindings between objects in .ui files
-// is to use the GtkExpression methodology. See the GtkExpression documentation
-// (class.Expression.html#gtkexpression-in-ui-files) for more information.
-//
-// # Internal children
+// the binding, and optionally, "bind-property" and "bind-flags" to specify
+// the source property and source binding flags respectively. Internally,
+// GtkBuilder implements this using GBinding objects. For more information see
+// g_object_bind_property().
 //
 // Sometimes it is necessary to refer to widgets which have implicitly been
 // constructed by GTK as part of a composite widget, to set properties on them
@@ -29613,8 +26464,6 @@ func (boxLayout *BoxLayout) SetSpacing(spacing uint) {
 // be achieved by setting the “internal-child” property of the <child> element
 // to a true value. Note that GtkBuilder still requires an <object> element for
 // the internal child, even if it has already been constructed.
-//
-// # Specialized children
 //
 // A number of widgets have different places where a child can be added (e.g.
 // tabs vs. page content in notebooks). This can be reflected in a UI definition
@@ -29625,53 +26474,29 @@ func (boxLayout *BoxLayout) SetSpacing(spacing uint) {
 // # Signal handlers and function pointers
 //
 // Signal handlers are set up with the <signal> element. The “name” attribute
-// specifies the name of the signal, and the “handler” attribute specifies the
-// function to connect to the signal.
+// specifies the name of the signal, and the “handler” attribute specifies
+// the function to connect to the signal. The remaining attributes, “after”,
+// “swapped” and “object”, have the same meaning as the corresponding parameters
+// of the g_signal_connect_object() or g_signal_connect_data() functions.
+// A “last_modification_time” attribute is also allowed, but it does not have a
+// meaning to the builder.
 //
-//	<object class="GtkButton" id="hello_button">
-//	  <signal name="clicked" handler="hello_button__clicked" />
-//	</object>
-//
-// The remaining attributes, “after”, “swapped” and “object”, have the same
-// meaning as the corresponding parameters of the gobject.SignalConnectObject()
-// or gobject.SignalConnectData() functions:
-//
-// - “after” matches the G_CONNECT_AFTER flag, and will ensure that the handler
-// is called after the default class closure for the signal
-//
-// - “swapped” matches the G_CONNECT_SWAPPED flag, and will swap the instance
-// and closure arguments when invoking the signal handler
-//
-// - “object” will bind the signal handler to the lifetime of the object
-// referenced by the attribute
-//
-// By default "swapped" will be set to "yes" if not specified otherwise, in
-// the case where "object" is set, for convenience. A “last_modification_time”
-// attribute is also allowed, but it does not have a meaning to the builder.
+// If you rely on GModule support to lookup callbacks in the symbol table,
+// the following details should be noted:
 //
 // When compiling applications for Windows, you must declare signal callbacks
-// with the G_MODULE_EXPORT decorator, or they will not be put in the symbol
-// table:
+// with G_MODULE_EXPORT, or they will not be put in the symbol table. On Linux
+// and Unix, this is not necessary; applications should instead be compiled with
+// the -Wl,--export-dynamic CFLAGS, and linked against gmodule-export-2.0.
 //
-//	G_MODULE_EXPORT void
-//	hello_button__clicked (GtkButton *button,
-//	                       gpointer data)
-//	{
-//	  // ...
-//	}
-//
-// On Linux and Unix, this is not necessary; applications should instead be
-// compiled with the -Wl,--export-dynamic argument inside their compiler flags,
-// and linked against gmodule-export-2.0.
-//
-// Example UI Definition
+// A GtkBuilder UI Definition
 //
 //	<interface>
 //	  <object class="GtkDialog" id="dialog1">
 //	    <child internal-child="content_area">
-//	      <object class="GtkBox">
+//	      <object class="GtkBox" id="vbox1">
 //	        <child internal-child="action_area">
-//	          <object class="GtkBox">
+//	          <object class="GtkBox" id="hbuttonbox1">
 //	            <child>
 //	              <object class="GtkButton" id="ok_button">
 //	                <property name="label" translatable="yes">_Ok</property>
@@ -29686,20 +26511,17 @@ func (boxLayout *BoxLayout) SetSpacing(spacing uint) {
 //	  </object>
 //	</interface>
 //
-// # Using GtkBuildable for extending UI definitions
+// Beyond this general structure, several object classes define their own
+// XML DTD fragments for filling in the ANY placeholders in the DTD above.
+// Note that a custom element in a <child> element gets parsed by the custom tag
+// handler of the parent object, while a custom element in an <object> element
+// gets parsed by the custom tag handler of the object.
 //
-// Objects can implement the gtk.Buildable interface to add custom elements and
-// attributes to the XML. Typically, any extension will be documented in each
-// type that implements the interface.
+// These XML fragments are explained in the documentation of the respective
+// objects.
 //
-// # Templates
-//
-// When describing a gtk.Widget, you can use the <template> tag to describe
-// a UI bound to a specific widget type. GTK will automatically load the UI
-// definition when instantiating the type, and bind children and signal handlers
-// to instance fields and function symbols.
-//
-// For more information, see the GtkWidget documentation
+// A <template> tag can be used to define a widget
+// class’s components. See the GtkWidget documentation
 // (class.Widget.html#building-composite-widgets-from-template-xml) for details.
 type Builder struct {
 	_ [0]func() // equal guard
@@ -30734,13 +27556,8 @@ func (self *BuilderListItemFactory) Scope() *BuilderScope {
 
 // ButtonOverrides contains methods that are overridable.
 type ButtonOverrides struct {
-	// Activate: signal that causes the button to animate press then release.
-	// Applications should never connect to this signal, but use the clicked
-	// signal.
 	Activate func()
-	// Clicked: signal emitted when the button has been activated (pressed and
-	// released).
-	Clicked func()
+	Clicked  func()
 }
 
 func defaultButtonOverrides(v *Button) ButtonOverrides {
@@ -30864,9 +27681,6 @@ func marshalButton(p uintptr) (interface{}, error) {
 //
 // This is an action signal. Applications should never connect to this signal,
 // but use the gtk.Button::clicked signal.
-//
-// The default bindings for this signal are all forms of the <kbd>␣</kbd> and
-// <kbd>Enter</kbd> keys.
 func (button *Button) ConnectActivate(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(button, "activate", false, unsafe.Pointer(C._gotk4_gtk4_Button_ConnectActivate), f)
 }
@@ -30905,7 +27719,7 @@ func NewButton() *Button {
 //
 // The function takes the following parameters:
 //
-//   - iconName: icon name.
+//   - iconName (optional): icon name.
 //
 // The function returns the following values:
 //
@@ -30914,8 +27728,10 @@ func NewButtonFromIconName(iconName string) *Button {
 	var _arg1 *C.char      // out
 	var _cret *C.GtkWidget // in
 
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(iconName)))
-	defer C.free(unsafe.Pointer(_arg1))
+	if iconName != "" {
+		_arg1 = (*C.char)(unsafe.Pointer(C.CString(iconName)))
+		defer C.free(unsafe.Pointer(_arg1))
+	}
 
 	_cret = C.gtk_button_new_from_icon_name(_arg1)
 	runtime.KeepAlive(iconName)
@@ -30958,8 +27774,8 @@ func NewButtonWithLabel(label string) *Button {
 // If characters in label are preceded by an underscore, they are underlined.
 // If you need a literal underscore character in a label, use “__” (two
 // underscores). The first underlined character represents a keyboard
-// accelerator called a mnemonic. Pressing <kbd>Alt</kbd> and that key activates
-// the button.
+// accelerator called a mnemonic. Pressing Alt and that key activates the
+// button.
 //
 // The function takes the following parameters:
 //
@@ -30984,30 +27800,6 @@ func NewButtonWithMnemonic(label string) *Button {
 	_button = wrapButton(coreglib.Take(unsafe.Pointer(_cret)))
 
 	return _button
-}
-
-// CanShrink retrieves whether the button can be smaller than the natural size
-// of its contents.
-//
-// The function returns the following values:
-//
-//   - ok: true if the button can shrink, and false otherwise.
-func (button *Button) CanShrink() bool {
-	var _arg0 *C.GtkButton // out
-	var _cret C.gboolean   // in
-
-	_arg0 = (*C.GtkButton)(unsafe.Pointer(coreglib.InternObject(button).Native()))
-
-	_cret = C.gtk_button_get_can_shrink(_arg0)
-	runtime.KeepAlive(button)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
 }
 
 // Child gets the child widget of button.
@@ -31150,30 +27942,6 @@ func (button *Button) UseUnderline() bool {
 	return _ok
 }
 
-// SetCanShrink sets whether the button size can be smaller than the natural
-// size of its contents.
-//
-// For text buttons, setting can_shrink to true will ellipsize the label.
-//
-// For icons and custom children, this function has no effect.
-//
-// The function takes the following parameters:
-//
-//   - canShrink: whether the button can shrink.
-func (button *Button) SetCanShrink(canShrink bool) {
-	var _arg0 *C.GtkButton // out
-	var _arg1 C.gboolean   // out
-
-	_arg0 = (*C.GtkButton)(unsafe.Pointer(coreglib.InternObject(button).Native()))
-	if canShrink {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_button_set_can_shrink(_arg0, _arg1)
-	runtime.KeepAlive(button)
-	runtime.KeepAlive(canShrink)
-}
-
 // SetChild sets the child widget of button.
 //
 // Note that by using this API, you take full responsibility for setting up
@@ -31201,7 +27969,7 @@ func (button *Button) SetChild(child Widgetter) {
 
 // SetHasFrame sets the style of the button.
 //
-// Buttons can have a flat appearance or have a frame drawn around them.
+// Buttons can has a flat appearance or have a frame drawn around them.
 //
 // The function takes the following parameters:
 //
@@ -31283,8 +28051,6 @@ func (button *Button) SetUseUnderline(useUnderline bool) {
 	runtime.KeepAlive(useUnderline)
 }
 
-// Activate: signal that causes the button to animate press then release.
-// Applications should never connect to this signal, but use the clicked signal.
 func (button *Button) activate() {
 	gclass := (*C.GtkButtonClass)(coreglib.PeekParentClass(button))
 	fnarg := gclass.activate
@@ -31297,8 +28063,6 @@ func (button *Button) activate() {
 	runtime.KeepAlive(button)
 }
 
-// Clicked: signal emitted when the button has been activated (pressed and
-// released).
 func (button *Button) clicked() {
 	gclass := (*C.GtkButtonClass)(coreglib.PeekParentClass(button))
 	fnarg := gclass.clicked
@@ -31470,7 +28234,7 @@ func (calendar *Calendar) ClearMarks() {
 //
 // The function returns the following values:
 //
-//   - dateTime: GDateTime representing the shown date.
+//   - dateTime: GDate representing the shown date.
 func (self *Calendar) Date() *glib.DateTime {
 	var _arg0 *C.GtkCalendar // out
 	var _cret *C.GDateTime   // in
@@ -31491,27 +28255,6 @@ func (self *Calendar) Date() *glib.DateTime {
 	)
 
 	return _dateTime
-}
-
-// Day gets the day of the selected date.
-//
-// The function returns the following values:
-//
-//   - gint: day of the selected date.
-func (self *Calendar) Day() int {
-	var _arg0 *C.GtkCalendar // out
-	var _cret C.int          // in
-
-	_arg0 = (*C.GtkCalendar)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_calendar_get_day(_arg0)
-	runtime.KeepAlive(self)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
 }
 
 // DayIsMarked returns if the day of the calendar is already marked.
@@ -31542,27 +28285,6 @@ func (calendar *Calendar) DayIsMarked(day uint) bool {
 	}
 
 	return _ok
-}
-
-// Month gets the month of the selected date.
-//
-// The function returns the following values:
-//
-//   - gint: month of the selected date (as a number between 0 and 11).
-func (self *Calendar) Month() int {
-	var _arg0 *C.GtkCalendar // out
-	var _cret C.int          // in
-
-	_arg0 = (*C.GtkCalendar)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_calendar_get_month(_arg0)
-	runtime.KeepAlive(self)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
 }
 
 // ShowDayNames returns whether self is currently showing the names of the week
@@ -31641,28 +28363,7 @@ func (self *Calendar) ShowWeekNumbers() bool {
 	return _ok
 }
 
-// Year gets the year of the selected date.
-//
-// The function returns the following values:
-//
-//   - gint: year of the selected date.
-func (self *Calendar) Year() int {
-	var _arg0 *C.GtkCalendar // out
-	var _cret C.int          // in
-
-	_arg0 = (*C.GtkCalendar)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_calendar_get_year(_arg0)
-	runtime.KeepAlive(self)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
-}
-
-// MarkDay places a visual marker on a particular day of the current month.
+// MarkDay places a visual marker on a particular day.
 //
 // The function takes the following parameters:
 //
@@ -31694,47 +28395,6 @@ func (self *Calendar) SelectDay(date *glib.DateTime) {
 	C.gtk_calendar_select_day(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(date)
-}
-
-// SetDay sets the day for the selected date.
-//
-// The new date must be valid. For example, setting 31 for the day when the
-// month is February, fails.
-//
-// The function takes the following parameters:
-//
-//   - day: desired day for the selected date (as a number between 1 and 31).
-func (self *Calendar) SetDay(day int) {
-	var _arg0 *C.GtkCalendar // out
-	var _arg1 C.int          // out
-
-	_arg0 = (*C.GtkCalendar)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.int(day)
-
-	C.gtk_calendar_set_day(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(day)
-}
-
-// SetMonth sets the month for the selected date.
-//
-// The new date must be valid. For example, setting 1 (February) for the month
-// when the day is 31, fails.
-//
-// The function takes the following parameters:
-//
-//   - month: desired month for the selected date (as a number between 0 and
-//     11).
-func (self *Calendar) SetMonth(month int) {
-	var _arg0 *C.GtkCalendar // out
-	var _arg1 C.int          // out
-
-	_arg0 = (*C.GtkCalendar)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.int(month)
-
-	C.gtk_calendar_set_month(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(month)
 }
 
 // SetShowDayNames sets whether the calendar shows day names.
@@ -31795,27 +28455,6 @@ func (self *Calendar) SetShowWeekNumbers(value bool) {
 	C.gtk_calendar_set_show_week_numbers(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(value)
-}
-
-// SetYear sets the year for the selected date.
-//
-// The new date must be valid. For example, setting 2023 for the year when then
-// the date is 2024-02-29, fails.
-//
-// The function takes the following parameters:
-//
-//   - year: desired year for the selected date (within glib.DateTime limits,
-//     i.e. from 0001 to 9999).
-func (self *Calendar) SetYear(year int) {
-	var _arg0 *C.GtkCalendar // out
-	var _arg1 C.int          // out
-
-	_arg0 = (*C.GtkCalendar)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.int(year)
-
-	C.gtk_calendar_set_year(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(year)
 }
 
 // UnmarkDay removes the visual marker from a particular day.
@@ -31895,8 +28534,6 @@ type CellAreaOverrides struct {
 	// cell, however some subclasses which embed widgets in the area can also
 	// activate a widget if it currently has the focus.
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function takes the following parameters:
 	//
 	//   - context: GtkCellAreaContext in context with the current row data.
@@ -31912,16 +28549,12 @@ type CellAreaOverrides struct {
 	Activate func(context *CellAreaContext, widget Widgetter, cellArea *gdk.Rectangle, flags CellRendererState, editOnly bool) bool
 	// Add adds renderer to area with the default child cell properties.
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function takes the following parameters:
 	//
 	//   - renderer: GtkCellRenderer to add to area.
 	Add func(renderer CellRendererer)
 	// ApplyAttributes applies any connected attributes to the renderers in area
 	// by pulling the values from tree_model.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -31941,8 +28574,6 @@ type CellAreaOverrides struct {
 	// uses this to request the heights of each row based on a context which was
 	// already used to request all the row widths that are to be displayed.
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function takes the following parameters:
 	//
 	//   - context: GtkCellAreaContext to copy.
@@ -31958,16 +28589,12 @@ type CellAreaOverrides struct {
 	// with the same GtkCellAreaContext which was used to request the size of
 	// those rows of data).
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function returns the following values:
 	//
 	//   - cellAreaContext: newly created GtkCellAreaContext which can be used
 	//     with area.
 	CreateContext func() *CellAreaContext
 	// Event delegates event handling to a GtkCellArea.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -31988,8 +28615,6 @@ type CellAreaOverrides struct {
 	// Implementing GtkCellArea classes should implement this method to receive
 	// and navigate focus in its own way particular to how it lays out cells.
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function takes the following parameters:
 	//
 	//   - direction: GtkDirectionType.
@@ -32006,8 +28631,6 @@ type CellAreaOverrides struct {
 	// important to check the minimum_height and natural_height of this call but
 	// rather to consult gtk_cell_area_context_get_preferred_height() after a
 	// series of requests.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -32034,8 +28657,6 @@ type CellAreaOverrides struct {
 	// then the full width of the requested rows checked again with
 	// gtk_cell_area_context_get_preferred_width().
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function takes the following parameters:
 	//
 	//   - context: GtkCellAreaContext which has already been requested for
@@ -32055,8 +28676,6 @@ type CellAreaOverrides struct {
 	// important to check the minimum_width and natural_width of this call but
 	// rather to consult gtk_cell_area_context_get_preferred_width() after a
 	// series of requests.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -32083,8 +28702,6 @@ type CellAreaOverrides struct {
 	// then the full height of the requested rows checked again with
 	// gtk_cell_area_context_get_preferred_height().
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function takes the following parameters:
 	//
 	//   - context: GtkCellAreaContext which has already been requested for
@@ -32107,15 +28724,11 @@ type CellAreaOverrides struct {
 	// IsActivatable returns whether the area can do anything when activated,
 	// after applying new attributes to area.
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function returns the following values:
 	//
 	//   - ok: whether area can do anything when activated.
 	IsActivatable func() bool
 	// Remove removes renderer from area.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -32123,8 +28736,6 @@ type CellAreaOverrides struct {
 	Remove func(renderer CellRendererer)
 	// Snapshot snapshots area’s cells according to area’s layout onto at the
 	// given coordinates.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -32349,7 +28960,7 @@ func defaultCellAreaOverrides(v *CellArea) CellAreaOverrides {
 // Usually GtkCellArea is only interested in button events, however some
 // customized derived areas can be implemented who are interested in handling
 // other events. Handling an event can trigger the gtk.CellArea::focus-changed
-// signal to fire; as well as gtk.CellArea::add-editable in the case that
+// signal to fire; as well as gtkcellarea::add-editable in the case that
 // an editable cell was clicked and needs to start editing. You can call
 // gtk.CellArea.StopEditing() at any time to cancel any cell editing that is
 // currently in progress.
@@ -32445,8 +29056,6 @@ func defaultCellAreaOverrides(v *CellArea) CellAreaOverrides {
 // gtk.CellArea.CellSet() or gtk.CellArea.CellSetValist(). To obtain the value
 // of a cell property, use gtk.CellArea.CellGetProperty() gtk.CellArea.CellGet()
 // or gtk.CellArea.CellGetValist().
-//
-// Deprecated: List views use widgets for displaying their contents.
 type CellArea struct {
 	_ [0]func() // equal guard
 	coreglib.InitiallyUnowned
@@ -32609,8 +29218,6 @@ func (area *CellArea) ConnectRemoveEditable(f func(renderer CellRendererer, edit
 // however some subclasses which embed widgets in the area can also activate a
 // widget if it currently has the focus.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: GtkCellAreaContext in context with the current row data.
@@ -32662,8 +29269,6 @@ func (area *CellArea) Activate(context *CellAreaContext, widget Widgetter, cellA
 // to activate cells, the base GtkCellArea class activates cells for keyboard
 // events for free in its own GtkCellArea->activate() implementation.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - widget: GtkWidget that area is rendering onto.
@@ -32711,8 +29316,6 @@ func (area *CellArea) ActivateCell(widget Widgetter, renderer CellRendererer, ev
 
 // Add adds renderer to area with the default child cell properties.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer: GtkCellRenderer to add to area.
@@ -32735,8 +29338,6 @@ func (area *CellArea) Add(renderer CellRendererer) {
 // Events handled by focus siblings can also activate the given focusable
 // renderer.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer: GtkCellRenderer expected to have focus.
@@ -32758,8 +29359,6 @@ func (area *CellArea) AddFocusSibling(renderer, sibling CellRendererer) {
 
 // ApplyAttributes applies any connected attributes to the renderers in area by
 // pulling the values from tree_model.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -32796,8 +29395,6 @@ func (area *CellArea) ApplyAttributes(treeModel TreeModeller, iter *TreeIter, is
 // AttributeConnect connects an attribute to apply values from column for the
 // GtkTreeModel in use.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer: GtkCellRenderer to connect an attribute for.
@@ -32825,8 +29422,6 @@ func (area *CellArea) AttributeConnect(renderer CellRendererer, attribute string
 // AttributeDisconnect disconnects attribute for the renderer in area so that
 // attribute will no longer be updated with values from the model.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer: GtkCellRenderer to disconnect an attribute for.
@@ -32849,8 +29444,6 @@ func (area *CellArea) AttributeDisconnect(renderer CellRendererer, attribute str
 
 // AttributeGetColumn returns the model column that an attribute has been mapped
 // to, or -1 if the attribute is not mapped.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -32885,8 +29478,6 @@ func (area *CellArea) AttributeGetColumn(renderer CellRendererer, attribute stri
 
 // CellGetProperty gets the value of a cell property for renderer in area.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer: GtkCellRenderer inside area.
@@ -32912,8 +29503,6 @@ func (area *CellArea) CellGetProperty(renderer CellRendererer, propertyName stri
 }
 
 // CellSetProperty sets a cell property for renderer in area.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -32949,8 +29538,6 @@ func (area *CellArea) CellSetProperty(renderer CellRendererer, propertyName stri
 // the heights of each row based on a context which was already used to request
 // all the row widths that are to be displayed.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: GtkCellAreaContext to copy.
@@ -32983,8 +29570,6 @@ func (area *CellArea) CopyContext(context *CellAreaContext) *CellAreaContext {
 // of data at all times (i.e. one should render and handle events with the same
 // GtkCellAreaContext which was used to request the size of those rows of data).
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellAreaContext: newly created GtkCellAreaContext which can be used with
@@ -33006,8 +29591,6 @@ func (area *CellArea) CreateContext() *CellAreaContext {
 }
 
 // Event delegates event handling to a GtkCellArea.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33058,8 +29641,6 @@ func (area *CellArea) Event(context *CellAreaContext, widget Widgetter, event gd
 // Implementing GtkCellArea classes should implement this method to receive and
 // navigate focus in its own way particular to how it lays out cells.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - direction: GtkDirectionType.
@@ -33089,8 +29670,6 @@ func (area *CellArea) Focus(direction DirectionType) bool {
 }
 
 // ForEach calls callback for every GtkCellRenderer in area.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33148,9 +29727,7 @@ func (area *CellArea) ForEachAlloc(context *CellAreaContext, widget Widgetter, c
 }
 
 // CellAllocation derives the allocation of renderer inside area if area were to
-// be rendered in cell_area.
-//
-// Deprecated: since version 4.10.
+// be renderered in cell_area.
 //
 // The function takes the following parameters:
 //
@@ -33192,8 +29769,6 @@ func (area *CellArea) CellAllocation(context *CellAreaContext, widget Widgetter,
 
 // CellAtPosition gets the GtkCellRenderer at x and y coordinates inside area
 // and optionally returns the full cell allocation for it inside cell_area.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33286,8 +29861,6 @@ func (area *CellArea) CurrentPathString() string {
 // EditWidget gets the GtkCellEditable widget currently used to edit the
 // currently edited cell.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellEditable (optional): currently active GtkCellEditable widget.
@@ -33310,8 +29883,6 @@ func (area *CellArea) EditWidget() *CellEditable {
 }
 
 // EditedCell gets the GtkCellRenderer in area that is currently being edited.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -33347,9 +29918,7 @@ func (area *CellArea) EditedCell() CellRendererer {
 	return _cellRenderer
 }
 
-// FocusCell retrieves the currently focused cell for area
-//
-// Deprecated: since version 4.10.
+// FocusCell retrieves the currently focused cell for area.
 //
 // The function returns the following values:
 //
@@ -33391,8 +29960,6 @@ func (area *CellArea) FocusCell() CellRendererer {
 // This is handy for GtkCellArea subclasses when handling events, after
 // determining the renderer at the event location it can then chose to activate
 // the focus cell for which the event cell may have been a sibling.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33436,8 +30003,6 @@ func (area *CellArea) FocusFromSibling(renderer CellRendererer) CellRendererer {
 }
 
 // FocusSiblings gets the focus sibling cell renderers for renderer.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33496,8 +30061,6 @@ func (area *CellArea) FocusSiblings(renderer CellRendererer) []CellRendererer {
 // to consult gtk_cell_area_context_get_preferred_height() after a series of
 // requests.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: GtkCellAreaContext to perform this request with.
@@ -33546,8 +30109,6 @@ func (area *CellArea) PreferredHeight(context *CellAreaContext, widget Widgetter
 // then the full width of the requested rows checked again with
 // gtk_cell_area_context_get_preferred_width().
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: GtkCellAreaContext which has already been requested for widths.
@@ -33592,8 +30153,6 @@ func (area *CellArea) PreferredHeightForWidth(context *CellAreaContext, widget W
 // when requesting sizes over an arbitrary number of rows, it’s not important to
 // check the minimum_width and natural_width of this call but rather to consult
 // gtk_cell_area_context_get_preferred_width() after a series of requests.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33642,8 +30201,6 @@ func (area *CellArea) PreferredWidth(context *CellAreaContext, widget Widgetter)
 // be requested with gtk_cell_area_get_preferred_height() again and
 // then the full height of the requested rows checked again with
 // gtk_cell_area_context_get_preferred_height().
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33707,8 +30264,6 @@ func (area *CellArea) RequestMode() SizeRequestMode {
 
 // HasRenderer checks if area contains renderer.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer: GtkCellRenderer to check.
@@ -33740,8 +30295,6 @@ func (area *CellArea) HasRenderer(renderer CellRendererer) bool {
 // InnerCellArea: this is a convenience function for GtkCellArea implementations
 // to get the inner area where a given GtkCellRenderer will be rendered.
 // It removes any padding previously added by gtk_cell_area_request_renderer().
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33777,8 +30330,6 @@ func (area *CellArea) InnerCellArea(widget Widgetter, cellArea *gdk.Rectangle) *
 // IsActivatable returns whether the area can do anything when activated,
 // after applying new attributes to area.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: whether area can do anything when activated.
@@ -33802,8 +30353,6 @@ func (area *CellArea) IsActivatable() bool {
 
 // IsFocusSibling returns whether sibling is one of renderer’s focus siblings
 // (see gtk_cell_area_add_focus_sibling()).
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33839,8 +30388,6 @@ func (area *CellArea) IsFocusSibling(renderer, sibling CellRendererer) bool {
 
 // Remove removes renderer from area.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer: GtkCellRenderer to remove from area.
@@ -33858,8 +30405,6 @@ func (area *CellArea) Remove(renderer CellRendererer) {
 
 // RemoveFocusSibling removes sibling from renderer’s focus sibling list (see
 // gtk_cell_area_add_focus_sibling()).
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33885,8 +30430,6 @@ func (area *CellArea) RemoveFocusSibling(renderer, sibling CellRendererer) {
 // this function to request size and then use gtk_cell_area_inner_cell_area()
 // at render and event time since this function will add padding around the cell
 // for focus painting.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -33937,8 +30480,6 @@ func (area *CellArea) RequestRenderer(renderer CellRendererer, orientation Orien
 // GtkCellAreaClass.event(), however it can also be used to implement functions
 // such as gtk_tree_view_set_cursor_on_cell().
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer (optional): GtkCellRenderer to give focus to.
@@ -33958,8 +30499,6 @@ func (area *CellArea) SetFocusCell(renderer CellRendererer) {
 
 // Snapshot snapshots area’s cells according to area’s layout onto at the given
 // coordinates.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -34011,8 +30550,6 @@ func (area *CellArea) Snapshot(context *CellAreaContext, widget Widgetter, snaps
 //
 // See gtk_cell_area_get_edited_cell() and gtk_cell_area_get_edit_widget().
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - canceled: whether editing was canceled.
@@ -34033,8 +30570,6 @@ func (area *CellArea) StopEditing(canceled bool) {
 // Activate activates area, usually by activating the currently focused cell,
 // however some subclasses which embed widgets in the area can also activate a
 // widget if it currently has the focus.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -34088,8 +30623,6 @@ func (area *CellArea) activate(context *CellAreaContext, widget Widgetter, cellA
 
 // Add adds renderer to area with the default child cell properties.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer: GtkCellRenderer to add to area.
@@ -34110,8 +30643,6 @@ func (area *CellArea) add(renderer CellRendererer) {
 
 // applyAttributes applies any connected attributes to the renderers in area by
 // pulling the values from tree_model.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -34158,8 +30689,6 @@ func (area *CellArea) applyAttributes(treeModel TreeModeller, iter *TreeIter, is
 // the heights of each row based on a context which was already used to request
 // all the row widths that are to be displayed.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: GtkCellAreaContext to copy.
@@ -34195,8 +30724,6 @@ func (area *CellArea) copyContext(context *CellAreaContext) *CellAreaContext {
 // of data at all times (i.e. one should render and handle events with the same
 // GtkCellAreaContext which was used to request the size of those rows of data).
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellAreaContext: newly created GtkCellAreaContext which can be used with
@@ -34221,8 +30748,6 @@ func (area *CellArea) createContext() *CellAreaContext {
 }
 
 // Event delegates event handling to a GtkCellArea.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -34276,8 +30801,6 @@ func (area *CellArea) event(context *CellAreaContext, widget Widgetter, event gd
 // Implementing GtkCellArea classes should implement this method to receive and
 // navigate focus in its own way particular to how it lays out cells.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - direction: GtkDirectionType.
@@ -34310,8 +30833,6 @@ func (area *CellArea) focus(direction DirectionType) bool {
 }
 
 // forEach calls callback for every GtkCellRenderer in area.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -34382,8 +30903,6 @@ func (area *CellArea) forEachAlloc(context *CellAreaContext, widget Widgetter, c
 // to consult gtk_cell_area_context_get_preferred_height() after a series of
 // requests.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: GtkCellAreaContext to perform this request with.
@@ -34435,8 +30954,6 @@ func (area *CellArea) preferredHeight(context *CellAreaContext, widget Widgetter
 // then the full width of the requested rows checked again with
 // gtk_cell_area_context_get_preferred_width().
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: GtkCellAreaContext which has already been requested for widths.
@@ -34484,8 +31001,6 @@ func (area *CellArea) preferredHeightForWidth(context *CellAreaContext, widget W
 // when requesting sizes over an arbitrary number of rows, it’s not important to
 // check the minimum_width and natural_width of this call but rather to consult
 // gtk_cell_area_context_get_preferred_width() after a series of requests.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -34537,8 +31052,6 @@ func (area *CellArea) preferredWidth(context *CellAreaContext, widget Widgetter)
 // be requested with gtk_cell_area_get_preferred_height() again and
 // then the full height of the requested rows checked again with
 // gtk_cell_area_context_get_preferred_height().
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -34609,8 +31122,6 @@ func (area *CellArea) requestMode() SizeRequestMode {
 // isActivatable returns whether the area can do anything when activated,
 // after applying new attributes to area.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: whether area can do anything when activated.
@@ -34637,8 +31148,6 @@ func (area *CellArea) isActivatable() bool {
 
 // Remove removes renderer from area.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer: GtkCellRenderer to remove from area.
@@ -34659,8 +31168,6 @@ func (area *CellArea) remove(renderer CellRendererer) {
 
 // Snapshot snapshots area’s cells according to area’s layout onto at the given
 // coordinates.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -34724,8 +31231,6 @@ func (area *CellArea) snapshot(context *CellAreaContext, widget Widgetter, snaps
 // by configuring the GtkCellAreaBox align child cell property with
 // gtk_cell_area_cell_set_property() or by specifying the "align" argument to
 // gtk_cell_area_box_pack_start() and gtk_cell_area_box_pack_end().
-//
-// Deprecated: List views use widgets for displaying their contents.
 type CellAreaBox struct {
 	_ [0]func() // equal guard
 	CellArea
@@ -34766,8 +31271,6 @@ func marshalCellAreaBox(p uintptr) (interface{}, error) {
 
 // NewCellAreaBox creates a new GtkCellAreaBox.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellAreaBox: newly created GtkCellAreaBox.
@@ -34784,8 +31287,6 @@ func NewCellAreaBox() *CellAreaBox {
 }
 
 // Spacing gets the spacing added between cell renderers.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -34810,8 +31311,6 @@ func (box *CellAreaBox) Spacing() int {
 //
 // The renderer is packed after (away from end of) any other GtkCellRenderer
 // packed with reference to the end of box.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -34852,8 +31351,6 @@ func (box *CellAreaBox) PackEnd(renderer CellRendererer, expand, align, fixed bo
 // The renderer is packed after any other GtkCellRenderer packed with reference
 // to the start of box.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - renderer: GtkCellRenderer to add.
@@ -34890,8 +31387,6 @@ func (box *CellAreaBox) PackStart(renderer CellRendererer, expand, align, fixed 
 
 // SetSpacing sets the spacing to add between cell renderers in box.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - spacing: space to add between GtkCellRenderers.
@@ -34919,8 +31414,6 @@ type CellAreaContextOverrides struct {
 	// producing a homogeneous effect of the rows. This is generally the case
 	// for GtkTreeView when GtkTreeView:fixed-height-mode is enabled.
 	//
-	// Deprecated: This object will be removed in GTK 5.
-	//
 	// The function takes the following parameters:
 	//
 	//   - width: allocated width for all GtkTreeModel rows rendered with
@@ -34934,8 +31427,6 @@ type CellAreaContextOverrides struct {
 	//
 	// After gtk_cell_area_context_reset() is called and/or before ever
 	// requesting the size of a GtkCellArea, the returned values are -1.
-	//
-	// Deprecated: This object will be removed in GTK 5.
 	//
 	// The function takes the following parameters:
 	//
@@ -34952,8 +31443,6 @@ type CellAreaContextOverrides struct {
 	//
 	// After gtk_cell_area_context_reset() is called and/or before ever
 	// requesting the size of a GtkCellArea, the returned values are -1.
-	//
-	// Deprecated: This object will be removed in GTK 5.
 	//
 	// The function takes the following parameters:
 	//
@@ -34981,8 +31470,6 @@ type CellAreaContextOverrides struct {
 	// width from top to bottom then a change in the allocated width
 	// necessitates a recalculation of all the displayed row heights using
 	// gtk_cell_area_get_preferred_height_for_width().
-	//
-	// Deprecated: This object will be removed in GTK 5.
 	Reset func()
 }
 
@@ -35008,8 +31495,6 @@ func defaultCellAreaContextOverrides(v *CellAreaContext) CellAreaContextOverride
 // same context which was used to request sizes for a given GtkTreeModel row
 // also be used for the same row when calling other GtkCellArea APIs such as
 // gtk_cell_area_render() and gtk_cell_area_event().
-//
-// Deprecated: This object will be removed in GTK 5.
 type CellAreaContext struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -35073,8 +31558,6 @@ func marshalCellAreaContext(p uintptr) (interface{}, error) {
 // homogeneous effect of the rows. This is generally the case for GtkTreeView
 // when GtkTreeView:fixed-height-mode is enabled.
 //
-// Deprecated: This object will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - width: allocated width for all GtkTreeModel rows rendered with context,
@@ -35101,8 +31584,6 @@ func (context *CellAreaContext) Allocate(width, height int) {
 // If the context was not allocated in width or height, or if the context was
 // recently reset with gtk_cell_area_context_reset(), the returned value will be
 // -1.
-//
-// Deprecated: This object will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -35136,8 +31617,6 @@ func (context *CellAreaContext) Allocation() (width, height int) {
 // For instance at GtkCellAreaContextClass.allocate() time it’s important to
 // know details about any cell spacing that the GtkCellArea is configured with
 // in order to compute a proper allocation.
-//
-// Deprecated: This object will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -35180,8 +31659,6 @@ func (context *CellAreaContext) Area() CellAreaer {
 // After gtk_cell_area_context_reset() is called and/or before ever requesting
 // the size of a GtkCellArea, the returned values are 0.
 //
-// Deprecated: This object will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - minimumHeight (optional): location to store the minimum height.
@@ -35210,8 +31687,6 @@ func (context *CellAreaContext) PreferredHeight() (minimumHeight, naturalHeight 
 //
 // After gtk_cell_area_context_reset() is called and/or before ever requesting
 // the size of a GtkCellArea, the returned values are -1.
-//
-// Deprecated: This object will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -35249,8 +31724,6 @@ func (context *CellAreaContext) PreferredHeightForWidth(width int) (minimumHeigh
 // After gtk_cell_area_context_reset() is called and/or before ever requesting
 // the size of a GtkCellArea, the returned values are 0.
 //
-// Deprecated: This object will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - minimumWidth (optional): location to store the minimum width.
@@ -35280,8 +31753,6 @@ func (context *CellAreaContext) PreferredWidth() (minimumWidth, naturalWidth int
 //
 // After gtk_cell_area_context_reset() is called and/or before ever requesting
 // the size of a GtkCellArea, the returned values are -1.
-//
-// Deprecated: This object will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -35320,8 +31791,6 @@ func (context *CellAreaContext) PreferredWidthForHeight(height int) (minimumWidt
 // over a series of GtkTreeModel rows to progressively push the requested height
 // over a series of gtk_cell_area_get_preferred_height() requests.
 //
-// Deprecated: This object will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - minimumHeight: proposed new minimum height for context.
@@ -35347,8 +31816,6 @@ func (context *CellAreaContext) PushPreferredHeight(minimumHeight, naturalHeight
 // This is used by GtkCellAreaContext implementations during the request process
 // over a series of GtkTreeModel rows to progressively push the requested width
 // over a series of gtk_cell_area_get_preferred_width() requests.
-//
-// Deprecated: This object will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -35385,8 +31852,6 @@ func (context *CellAreaContext) PushPreferredWidth(minimumWidth, naturalWidth in
 // width from top to bottom then a change in the allocated width
 // necessitates a recalculation of all the displayed row heights using
 // gtk_cell_area_get_preferred_height_for_width().
-//
-// Deprecated: This object will be removed in GTK 5.
 func (context *CellAreaContext) Reset() {
 	var _arg0 *C.GtkCellAreaContext // out
 
@@ -35405,8 +31870,6 @@ func (context *CellAreaContext) Reset() {
 // they are allocated in both horizontal and vertical orientations producing a
 // homogeneous effect of the rows. This is generally the case for GtkTreeView
 // when GtkTreeView:fixed-height-mode is enabled.
-//
-// Deprecated: This object will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -35437,8 +31900,6 @@ func (context *CellAreaContext) allocate(width, height int) {
 //
 // After gtk_cell_area_context_reset() is called and/or before ever requesting
 // the size of a GtkCellArea, the returned values are -1.
-//
-// Deprecated: This object will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -35479,8 +31940,6 @@ func (context *CellAreaContext) preferredHeightForWidth(width int) (minimumHeigh
 //
 // After gtk_cell_area_context_reset() is called and/or before ever requesting
 // the size of a GtkCellArea, the returned values are -1.
-//
-// Deprecated: This object will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -35531,8 +31990,6 @@ func (context *CellAreaContext) preferredWidthForHeight(height int) (minimumWidt
 // width from top to bottom then a change in the allocated width
 // necessitates a recalculation of all the displayed row heights using
 // gtk_cell_area_get_preferred_height_for_width().
-//
-// Deprecated: This object will be removed in GTK 5.
 func (context *CellAreaContext) reset() {
 	gclass := (*C.GtkCellAreaContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.reset
@@ -35551,8 +32008,6 @@ type CellRendererOverrides struct {
 	// processing. Some cell renderers may use events; for example,
 	// GtkCellRendererToggle toggles when it gets a mouse click.
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function takes the following parameters:
 	//
 	//   - event: GdkEvent.
@@ -35567,12 +32022,8 @@ type CellRendererOverrides struct {
 	// The function returns the following values:
 	//
 	//   - ok: TRUE if the event was consumed/handled.
-	Activate func(event gdk.Eventer, widget Widgetter, path string, backgroundArea, cellArea *gdk.Rectangle, flags CellRendererState) bool
-	// EditingCanceled: signal gets emitted when the user cancels the process of
-	// editing a cell.
+	Activate        func(event gdk.Eventer, widget Widgetter, path string, backgroundArea, cellArea *gdk.Rectangle, flags CellRendererState) bool
 	EditingCanceled func()
-	// EditingStarted: signal gets emitted when a cell starts to be edited.
-	//
 	// The function takes the following parameters:
 	//
 	//   - editable
@@ -35580,8 +32031,6 @@ type CellRendererOverrides struct {
 	EditingStarted func(editable CellEditabler, path string)
 	// AlignedArea gets the aligned area used by cell inside cell_area. Used for
 	// finding the appropriate edit and focus rectangle.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -35598,8 +32047,6 @@ type CellRendererOverrides struct {
 	// PreferredHeight retrieves a renderer’s natural size when rendered to
 	// widget.
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function takes the following parameters:
 	//
 	//   - widget: GtkWidget this cell will be rendering to.
@@ -35611,8 +32058,6 @@ type CellRendererOverrides struct {
 	PreferredHeight func(widget Widgetter) (minimumSize, naturalSize int)
 	// PreferredHeightForWidth retrieves a cell renderers’s minimum and natural
 	// height if it were rendered to widget with the specified width.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -35627,8 +32072,6 @@ type CellRendererOverrides struct {
 	// PreferredWidth retrieves a renderer’s natural size when rendered to
 	// widget.
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function takes the following parameters:
 	//
 	//   - widget: GtkWidget this cell will be rendering to.
@@ -35640,8 +32083,6 @@ type CellRendererOverrides struct {
 	PreferredWidth func(widget Widgetter) (minimumSize, naturalSize int)
 	// PreferredWidthForHeight retrieves a cell renderers’s minimum and natural
 	// width if it were rendered to widget with the specified height.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -35656,8 +32097,6 @@ type CellRendererOverrides struct {
 	// RequestMode gets whether the cell renderer prefers a height-for-width
 	// layout or a width-for-height layout.
 	//
-	// Deprecated: since version 4.10.
-	//
 	// The function returns the following values:
 	//
 	//   - sizeRequestMode: GtkSizeRequestMode preferred by this renderer.
@@ -35669,8 +32108,6 @@ type CellRendererOverrides struct {
 	// background_area includes the blank space around the cell, and also the
 	// area containing the tree expander; so the background_area rectangles for
 	// all cells tile to cover the entire window.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -35684,8 +32121,6 @@ type CellRendererOverrides struct {
 	// StartEditing starts editing the contents of this cell, through a new
 	// GtkCellEditable widget created by the GtkCellRendererClass.start_editing
 	// virtual function.
-	//
-	// Deprecated: since version 4.10.
 	//
 	// The function takes the following parameters:
 	//
@@ -35755,8 +32190,6 @@ func defaultCellRendererOverrides(v *CellRenderer) CellRendererOverrides {
 // “set” property, e.g. “cell-background-set” corresponds to “cell-background”.
 // These “set” properties reflect whether a property has been set or not.
 // You should not set them independently.
-//
-// Deprecated: List views use widgets for displaying their contents.
 type CellRenderer struct {
 	_ [0]func() // equal guard
 	coreglib.InitiallyUnowned
@@ -35903,8 +32336,6 @@ func (cell *CellRenderer) ConnectEditingStarted(f func(editable CellEditabler, p
 // processing. Some cell renderers may use events; for example,
 // GtkCellRendererToggle toggles when it gets a mouse click.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - event: GdkEvent.
@@ -35958,8 +32389,6 @@ func (cell *CellRenderer) Activate(event gdk.Eventer, widget Widgetter, path str
 // AlignedArea gets the aligned area used by cell inside cell_area. Used for
 // finding the appropriate edit and focus rectangle.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - widget: GtkWidget this cell will be rendering to.
@@ -35997,8 +32426,6 @@ func (cell *CellRenderer) AlignedArea(widget Widgetter, flags CellRendererState,
 
 // Alignment fills in xalign and yalign with the appropriate values of cell.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - xalign (optional): location to fill in with the x alignment of the cell.
@@ -36023,8 +32450,6 @@ func (cell *CellRenderer) Alignment() (xalign, yalign float32) {
 }
 
 // FixedSize fills in width and height with the appropriate size of cell.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -36051,8 +32476,6 @@ func (cell *CellRenderer) FixedSize() (width, height int) {
 
 // IsExpanded checks whether the given GtkCellRenderer is expanded.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the cell renderer is expanded.
@@ -36076,8 +32499,6 @@ func (cell *CellRenderer) IsExpanded() bool {
 
 // IsExpander checks whether the given GtkCellRenderer is an expander.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if cell is an expander, and FALSE otherwise.
@@ -36100,8 +32521,6 @@ func (cell *CellRenderer) IsExpander() bool {
 }
 
 // Padding fills in xpad and ypad with the appropriate values of cell.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -36127,8 +32546,6 @@ func (cell *CellRenderer) Padding() (xpad, ypad int) {
 }
 
 // PreferredHeight retrieves a renderer’s natural size when rendered to widget.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36162,8 +32579,6 @@ func (cell *CellRenderer) PreferredHeight(widget Widgetter) (minimumSize, natura
 
 // PreferredHeightForWidth retrieves a cell renderers’s minimum and natural
 // height if it were rendered to widget with the specified width.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36202,8 +32617,6 @@ func (cell *CellRenderer) PreferredHeightForWidth(widget Widgetter, width int) (
 // PreferredSize retrieves the minimum and natural size of a cell taking into
 // account the widget’s preference for height-for-width management.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - widget: GtkWidget this cell will be rendering to.
@@ -36235,8 +32648,6 @@ func (cell *CellRenderer) PreferredSize(widget Widgetter) (minimumSize, naturalS
 }
 
 // PreferredWidth retrieves a renderer’s natural size when rendered to widget.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36270,8 +32681,6 @@ func (cell *CellRenderer) PreferredWidth(widget Widgetter) (minimumSize, natural
 
 // PreferredWidthForHeight retrieves a cell renderers’s minimum and natural
 // width if it were rendered to widget with the specified height.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36310,8 +32719,6 @@ func (cell *CellRenderer) PreferredWidthForHeight(widget Widgetter, height int) 
 // RequestMode gets whether the cell renderer prefers a height-for-width layout
 // or a width-for-height layout.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - sizeRequestMode: GtkSizeRequestMode preferred by this renderer.
@@ -36332,8 +32739,6 @@ func (cell *CellRenderer) RequestMode() SizeRequestMode {
 }
 
 // Sensitive returns the cell renderer’s sensitivity.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -36358,8 +32763,6 @@ func (cell *CellRenderer) Sensitive() bool {
 
 // State translates the cell renderer state to GtkStateFlags, based on the cell
 // renderer and widget sensitivity, and the given GtkCellRendererState.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36397,8 +32800,6 @@ func (cell *CellRenderer) State(widget Widgetter, cellState CellRendererState) S
 
 // Visible returns the cell renderer’s visibility.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the cell renderer is visible.
@@ -36423,8 +32824,6 @@ func (cell *CellRenderer) Visible() bool {
 // IsActivatable checks whether the cell renderer can do something when
 // activated.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the cell renderer can do anything when activated.
@@ -36448,8 +32847,6 @@ func (cell *CellRenderer) IsActivatable() bool {
 
 // SetAlignment sets the renderer’s alignment within its available space.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - xalign: x alignment of the cell renderer.
@@ -36472,8 +32869,6 @@ func (cell *CellRenderer) SetAlignment(xalign, yalign float32) {
 // SetFixedSize sets the renderer size to be explicit, independent of the
 // properties set.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - width of the cell renderer, or -1.
@@ -36495,8 +32890,6 @@ func (cell *CellRenderer) SetFixedSize(width, height int) {
 
 // SetIsExpanded sets whether the given GtkCellRenderer is expanded.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - isExpanded: whether cell should be expanded.
@@ -36516,8 +32909,6 @@ func (cell *CellRenderer) SetIsExpanded(isExpanded bool) {
 
 // SetIsExpander sets whether the given GtkCellRenderer is an expander.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - isExpander: whether cell is an expander.
@@ -36536,8 +32927,6 @@ func (cell *CellRenderer) SetIsExpander(isExpander bool) {
 }
 
 // SetPadding sets the renderer’s padding.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36560,8 +32949,6 @@ func (cell *CellRenderer) SetPadding(xpad, ypad int) {
 
 // SetSensitive sets the cell renderer’s sensitivity.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - sensitive: sensitivity of the cell.
@@ -36580,8 +32967,6 @@ func (cell *CellRenderer) SetSensitive(sensitive bool) {
 }
 
 // SetVisible sets the cell renderer’s visibility.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36607,8 +32992,6 @@ func (cell *CellRenderer) SetVisible(visible bool) {
 // blank space around the cell, and also the area containing the tree expander;
 // so the background_area rectangles for all cells tile to cover the entire
 // window.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36645,8 +33028,6 @@ func (cell *CellRenderer) Snapshot(snapshot *Snapshot, widget Widgetter, backgro
 // StartEditing starts editing the contents of this cell, through a new
 // GtkCellEditable widget created by the GtkCellRendererClass.start_editing
 // virtual function.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36708,8 +33089,6 @@ func (cell *CellRenderer) StartEditing(event gdk.Eventer, widget Widgetter, path
 // This function should be called by cell renderer implementations in response
 // to the GtkCellEditable::editing-done signal of GtkCellEditable.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - canceled: TRUE if the editing has been canceled.
@@ -36730,8 +33109,6 @@ func (cell *CellRenderer) StopEditing(canceled bool) {
 // Activate passes an activate event to the cell renderer for possible
 // processing. Some cell renderers may use events; for example,
 // GtkCellRendererToggle toggles when it gets a mouse click.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36786,8 +33163,6 @@ func (cell *CellRenderer) activate(event gdk.Eventer, widget Widgetter, path str
 	return _ok
 }
 
-// editingCanceled: signal gets emitted when the user cancels the process of
-// editing a cell.
 func (cell *CellRenderer) editingCanceled() {
 	gclass := (*C.GtkCellRendererClass)(coreglib.PeekParentClass(cell))
 	fnarg := gclass.editing_canceled
@@ -36800,8 +33175,6 @@ func (cell *CellRenderer) editingCanceled() {
 	runtime.KeepAlive(cell)
 }
 
-// editingStarted: signal gets emitted when a cell starts to be edited.
-//
 // The function takes the following parameters:
 //
 //   - editable
@@ -36827,8 +33200,6 @@ func (cell *CellRenderer) editingStarted(editable CellEditabler, path string) {
 
 // alignedArea gets the aligned area used by cell inside cell_area. Used for
 // finding the appropriate edit and focus rectangle.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36870,8 +33241,6 @@ func (cell *CellRenderer) alignedArea(widget Widgetter, flags CellRendererState,
 
 // preferredHeight retrieves a renderer’s natural size when rendered to widget.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - widget: GtkWidget this cell will be rendering to.
@@ -36907,8 +33276,6 @@ func (cell *CellRenderer) preferredHeight(widget Widgetter) (minimumSize, natura
 
 // preferredHeightForWidth retrieves a cell renderers’s minimum and natural
 // height if it were rendered to widget with the specified width.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -36949,8 +33316,6 @@ func (cell *CellRenderer) preferredHeightForWidth(widget Widgetter, width int) (
 
 // preferredWidth retrieves a renderer’s natural size when rendered to widget.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - widget: GtkWidget this cell will be rendering to.
@@ -36986,8 +33351,6 @@ func (cell *CellRenderer) preferredWidth(widget Widgetter) (minimumSize, natural
 
 // preferredWidthForHeight retrieves a cell renderers’s minimum and natural
 // width if it were rendered to widget with the specified height.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -37029,8 +33392,6 @@ func (cell *CellRenderer) preferredWidthForHeight(widget Widgetter, height int) 
 // requestMode gets whether the cell renderer prefers a height-for-width layout
 // or a width-for-height layout.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - sizeRequestMode: GtkSizeRequestMode preferred by this renderer.
@@ -37060,8 +33421,6 @@ func (cell *CellRenderer) requestMode() SizeRequestMode {
 // blank space around the cell, and also the area containing the tree expander;
 // so the background_area rectangles for all cells tile to cover the entire
 // window.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -37101,8 +33460,6 @@ func (cell *CellRenderer) snapshot(snapshot *Snapshot, widget Widgetter, backgro
 // startEditing starts editing the contents of this cell, through a new
 // GtkCellEditable widget created by the GtkCellRendererClass.start_editing
 // virtual function.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -37165,9 +33522,6 @@ func (cell *CellRenderer) startEditing(event gdk.Eventer, widget Widgetter, path
 // GtkCellRendererAccel displays a keyboard accelerator (i.e. a key combination
 // like Control + a). If the cell renderer is editable, the accelerator can be
 // changed by simply typing the new combination.
-//
-// Deprecated: Applications editing keyboard accelerators should provide their
-// own implementation according to platform design guidelines.
 type CellRendererAccel struct {
 	_ [0]func() // equal guard
 	CellRendererText
@@ -37205,8 +33559,6 @@ func (v *CellRendererAccel) ConnectAccelEdited(f func(pathString string, accelKe
 
 // NewCellRendererAccel creates a new GtkCellRendererAccel.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellRendererAccel: new cell renderer.
@@ -37234,9 +33586,6 @@ func NewCellRendererAccel() *CellRendererAccel {
 // to the combo box and sets it to display the column specified by its
 // GtkCellRendererCombo:text-column property. Further properties of the combo
 // box can be set in a handler for the GtkCellRenderer::editing-started signal.
-//
-// Deprecated: List views use widgets to display their contents. You should use
-// gtk.DropDown instead.
 type CellRendererCombo struct {
 	_ [0]func() // equal guard
 	CellRendererText
@@ -37284,8 +33633,6 @@ func (v *CellRendererCombo) ConnectChanged(f func(pathString string, newIter *Tr
 // the cell renderer to a string value in the model, thus rendering a different
 // string in each row of the GtkTreeView.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellRendererCombo: new cell renderer.
@@ -37315,9 +33662,6 @@ func NewCellRendererCombo() *CellRendererCombo {
 // renders that pixbuf, if the GtkCellRenderer:is-expanded property is FALSE and
 // the GtkCellRendererPixbuf:pixbuf-expander-closed property is set to a pixbuf,
 // it renders that one.
-//
-// Deprecated: List views use widgets to display their contents. You should use
-// gtk.Image for icons, and gtk.Picture for images.
 type CellRendererPixbuf struct {
 	_ [0]func() // equal guard
 	CellRenderer
@@ -37348,8 +33692,6 @@ func marshalCellRendererPixbuf(p uintptr) (interface{}, error) {
 // on the cell renderer to a pixbuf value in the model, thus rendering a
 // different image in each row of the GtkTreeView.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellRendererPixbuf: new cell renderer.
@@ -37369,9 +33711,6 @@ func NewCellRendererPixbuf() *CellRendererPixbuf {
 //
 // GtkCellRendererProgress renders a numeric value as a progress par in a cell.
 // Additionally, it can display a text on top of the progress bar.
-//
-// Deprecated: List views use widgets to display their contents. You should use
-// gtk.ProgressBar instead.
 type CellRendererProgress struct {
 	_ [0]func() // equal guard
 	CellRenderer
@@ -37402,8 +33741,6 @@ func marshalCellRendererProgress(p uintptr) (interface{}, error) {
 
 // NewCellRendererProgress creates a new GtkCellRendererProgress.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellRendererProgress: new cell renderer.
@@ -37433,8 +33770,7 @@ func NewCellRendererProgress() *CellRendererProgress {
 // GtkCellRendererSpin:digits to display. Other GtkSpinButton properties can be
 // set in a handler for the GtkCellRenderer::editing-started signal.
 //
-// Deprecated: List views use widgets to display their contents. You should use
-// gtk.SpinButton instead.
+// The GtkCellRendererSpin cell renderer was added in GTK 2.10.
 type CellRendererSpin struct {
 	_ [0]func() // equal guard
 	CellRendererText
@@ -37461,8 +33797,6 @@ func marshalCellRendererSpin(p uintptr) (interface{}, error) {
 }
 
 // NewCellRendererSpin creates a new GtkCellRendererSpin.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -37491,9 +33825,6 @@ func NewCellRendererSpin() *CellRendererSpin {
 // at regular intervals. The usual way to set the cell renderer properties
 // for each cell is to bind them to columns in your tree model using e.g.
 // gtk_tree_view_column_add_attribute().
-//
-// Deprecated: List views use widgets to display their contents. You should use
-// gtk.Spinner instead.
 type CellRendererSpinner struct {
 	_ [0]func() // equal guard
 	CellRenderer
@@ -37519,8 +33850,6 @@ func marshalCellRendererSpinner(p uintptr) (interface{}, error) {
 
 // NewCellRendererSpinner returns a new cell renderer which will show a spinner
 // to indicate activity.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -37560,9 +33889,6 @@ func defaultCellRendererTextOverrides(v *CellRendererText) CellRendererTextOverr
 //
 // If the GtkCellRenderer:mode is GTK_CELL_RENDERER_MODE_EDITABLE, the
 // GtkCellRendererText allows to edit its text using an entry.
-//
-// Deprecated: List views use widgets to display their contents. You should use
-// gtk.Inscription or gtk.Label instead.
 type CellRendererText struct {
 	_ [0]func() // equal guard
 	CellRenderer
@@ -37623,8 +33949,6 @@ func (renderer *CellRendererText) ConnectEdited(f func(path, newText string)) co
 // the cell renderer to a string value in the model, thus rendering a different
 // string in each row of the GtkTreeView.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellRendererText: new cell renderer.
@@ -37647,8 +33971,6 @@ func NewCellRendererText() *CellRendererText {
 // should really only be used if calculating the size of a cell is too slow (ie,
 // a massive number of cells displayed). If number_of_rows is -1, then the fixed
 // height is unset, and the height is determined by the properties again.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -37695,9 +34017,6 @@ func (cellRendererText *CellRendererText) edited(path, newText string) {
 // GtkCellRendererToggle renders a toggle button in a cell. The button is drawn
 // as a radio or a checkbutton, depending on the GtkCellRendererToggle:radio
 // property. When activated, it emits the GtkCellRendererToggle::toggled signal.
-//
-// Deprecated: List views use widgets to display their contents. You should use
-// gtk.ToggleButton instead.
 type CellRendererToggle struct {
 	_ [0]func() // equal guard
 	CellRenderer
@@ -37737,8 +34056,6 @@ func (toggle *CellRendererToggle) ConnectToggled(f func(path string)) coreglib.S
 // on the cell renderer to a boolean value in the model, thus causing the check
 // button to reflect the state of the model.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellRendererToggle: new cell renderer.
@@ -37756,8 +34073,6 @@ func NewCellRendererToggle() *CellRendererToggle {
 
 // Activatable returns whether the cell renderer is activatable. See
 // gtk_cell_renderer_toggle_set_activatable().
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -37783,8 +34098,6 @@ func (toggle *CellRendererToggle) Activatable() bool {
 // Active returns whether the cell renderer is active. See
 // gtk_cell_renderer_toggle_set_active().
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the cell renderer is active.
@@ -37807,8 +34120,6 @@ func (toggle *CellRendererToggle) Active() bool {
 }
 
 // Radio returns whether we’re rendering radio toggles rather than checkboxes.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -37833,8 +34144,6 @@ func (toggle *CellRendererToggle) Radio() bool {
 
 // SetActivatable makes the cell renderer activatable.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - setting: value to set.
@@ -37853,8 +34162,6 @@ func (toggle *CellRendererToggle) SetActivatable(setting bool) {
 }
 
 // SetActive activates or deactivates a cell renderer.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -37879,8 +34186,6 @@ func (toggle *CellRendererToggle) SetActive(setting bool) {
 // the cell renderer, or changed just before rendering each cell in the model
 // (for GtkTreeView, you set up a per-row setting using GtkTreeViewColumn to
 // associate model columns with cell renderer properties).
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -37918,9 +34223,6 @@ func (toggle *CellRendererToggle) SetRadio(radio bool) {
 // # CSS nodes
 //
 // GtkCellView has a single CSS node with name cellview.
-//
-// Deprecated: List views use widgets to display their contents. You can use
-// gtk.Box instead.
 type CellView struct {
 	_ [0]func() // equal guard
 	Widget
@@ -37968,8 +34270,6 @@ func marshalCellView(p uintptr) (interface{}, error) {
 
 // NewCellView creates a new GtkCellView widget.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - cellView: newly created GtkCellView widget.
@@ -37991,8 +34291,6 @@ func NewCellView() *CellView {
 // Specifying the same context for a handful of cells lets the underlying
 // area synchronize the geometry for those cells, in this way alignments with
 // cellviews for other rows are possible.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -38026,8 +34324,6 @@ func NewCellViewWithContext(area CellAreaer, context *CellAreaContext) *CellView
 // The text can be marked up with the Pango text markup language
 // (https://docs.gtk.org/Pango/pango_markup.html).
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - markup: text to display in the cell view.
@@ -38054,8 +34350,6 @@ func NewCellViewWithMarkup(markup string) *CellView {
 
 // NewCellViewWithText creates a new GtkCellView widget, adds a
 // GtkCellRendererText to it, and makes it show text.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -38084,8 +34378,6 @@ func NewCellViewWithText(text string) *CellView {
 // NewCellViewWithTexture creates a new GtkCellView widget, adds a
 // GtkCellRendererPixbuf to it, and makes it show texture.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - texture: image to display in the cell view.
@@ -38111,8 +34403,6 @@ func NewCellViewWithTexture(texture gdk.Texturer) *CellView {
 
 // DisplayedRow returns a GtkTreePath referring to the currently displayed row.
 // If no row is currently displayed, NULL is returned.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -38144,8 +34434,6 @@ func (cellView *CellView) DisplayedRow() *TreePath {
 // DrawSensitive gets whether cell_view is configured to draw all of its cells
 // in a sensitive state.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: whether cell_view draws all of its cells in a sensitive state.
@@ -38170,8 +34458,6 @@ func (cellView *CellView) DrawSensitive() bool {
 // FitModel gets whether cell_view is configured to request space to fit the
 // entire GtkTreeModel.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: whether cell_view requests space to fit the entire GtkTreeModel.
@@ -38194,8 +34480,6 @@ func (cellView *CellView) FitModel() bool {
 }
 
 // Model returns the model for cell_view. If no model is used NULL is returned.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -38224,8 +34508,6 @@ func (cellView *CellView) Model() *TreeModel {
 // be a needed intermediate state if say, the model for the GtkCellView becomes
 // temporarily empty.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - path (optional): GtkTreePath or NULL to unset.
@@ -38247,8 +34529,6 @@ func (cellView *CellView) SetDisplayedRow(path *TreePath) {
 // sensitive state, this is used by GtkComboBox menus to ensure that rows with
 // insensitive cells that contain children appear sensitive in the parent menu
 // item.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -38274,8 +34554,6 @@ func (cellView *CellView) SetDrawSensitive(drawSensitive bool) {
 // the combo box’s button always gets enough space and does not resize when
 // selection changes.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - fitModel: whether cell_view should request space for the whole model.
@@ -38296,8 +34574,6 @@ func (cellView *CellView) SetFitModel(fitModel bool) {
 // SetModel sets the model for cell_view. If cell_view already has a model set,
 // it will remove it before setting the new model. If model is NULL, then it
 // will unset the old model.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -38346,10 +34622,7 @@ func (cellView *CellView) SetModel(model TreeModeller) {
 //
 // # Accessibility
 //
-// Until GTK 4.10, GtkCenterBox used the GTK_ACCESSIBLE_ROLE_GROUP role.
-//
-// Starting from GTK 4.12, GtkCenterBox uses the GTK_ACCESSIBLE_ROLE_GENERIC
-// role.
+// GtkCenterBox uses the GTK_ACCESSIBLE_ROLE_GROUP role.
 type CenterBox struct {
 	_ [0]func() // equal guard
 	Widget
@@ -38502,30 +34775,6 @@ func (self *CenterBox) EndWidget() Widgetter {
 	return _widget
 }
 
-// ShrinkCenterLast gets whether self shrinks the center widget after other
-// children.
-//
-// The function returns the following values:
-//
-//   - ok: whether to shrink the center widget after others.
-func (self *CenterBox) ShrinkCenterLast() bool {
-	var _arg0 *C.GtkCenterBox // out
-	var _cret C.gboolean      // in
-
-	_arg0 = (*C.GtkCenterBox)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_center_box_get_shrink_center_last(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
 // StartWidget gets the start widget, or NULL if there is none.
 //
 // The function returns the following values:
@@ -38586,7 +34835,7 @@ func (self *CenterBox) SetBaselinePosition(position BaselinePosition) {
 
 // SetCenterWidget sets the center widget.
 //
-// To remove the existing center widget, pass NULL.
+// To remove the existing center widget, pas NULL.
 //
 // The function takes the following parameters:
 //
@@ -38624,33 +34873,6 @@ func (self *CenterBox) SetEndWidget(child Widgetter) {
 	C.gtk_center_box_set_end_widget(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(child)
-}
-
-// SetShrinkCenterLast sets whether to shrink the center widget after other
-// children.
-//
-// By default, when there's no space to give all three children their natural
-// widths, the start and end widgets start shrinking and the center child keeps
-// natural width until they reach minimum width.
-//
-// If set to FALSE, start and end widgets keep natural width and the center
-// widget starts shrinking instead.
-//
-// The function takes the following parameters:
-//
-//   - shrinkCenterLast: whether to shrink the center widget after others.
-func (self *CenterBox) SetShrinkCenterLast(shrinkCenterLast bool) {
-	var _arg0 *C.GtkCenterBox // out
-	var _arg1 C.gboolean      // out
-
-	_arg0 = (*C.GtkCenterBox)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if shrinkCenterLast {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_center_box_set_shrink_center_last(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(shrinkCenterLast)
 }
 
 // SetStartWidget sets the start widget.
@@ -38858,31 +35080,7 @@ func (self *CenterLayout) Orientation() Orientation {
 	return _orientation
 }
 
-// ShrinkCenterLast gets whether self shrinks the center widget after other
-// children.
-//
-// The function returns the following values:
-//
-//   - ok: whether to shrink the center widget after others.
-func (self *CenterLayout) ShrinkCenterLast() bool {
-	var _arg0 *C.GtkCenterLayout // out
-	var _cret C.gboolean         // in
-
-	_arg0 = (*C.GtkCenterLayout)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_center_layout_get_shrink_center_last(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// StartWidget returns the start widget of the layout.
+// StartWidget returns the start widget fo the layout.
 //
 // The function returns the following values:
 //
@@ -38994,33 +35192,6 @@ func (self *CenterLayout) SetOrientation(orientation Orientation) {
 	runtime.KeepAlive(orientation)
 }
 
-// SetShrinkCenterLast sets whether to shrink the center widget after other
-// children.
-//
-// By default, when there's no space to give all three children their natural
-// widths, the start and end widgets start shrinking and the center child keeps
-// natural width until they reach minimum width.
-//
-// If set to FALSE, start and end widgets keep natural width and the center
-// widget starts shrinking instead.
-//
-// The function takes the following parameters:
-//
-//   - shrinkCenterLast: whether to shrink the center widget after others.
-func (self *CenterLayout) SetShrinkCenterLast(shrinkCenterLast bool) {
-	var _arg0 *C.GtkCenterLayout // out
-	var _arg1 C.gboolean         // out
-
-	_arg0 = (*C.GtkCenterLayout)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if shrinkCenterLast {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_center_layout_set_shrink_center_last(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(shrinkCenterLast)
-}
-
 // SetStartWidget sets the new start widget of self.
 //
 // To remove the existing start widget, pass NULL.
@@ -39088,11 +35259,6 @@ func defaultCheckButtonOverrides(v *CheckButton) CheckButtonOverrides {
 // !Example GtkCheckButtons (radio-button.png)
 //
 // To add a GtkCheckButton to a group, use gtk.CheckButton.SetGroup().
-//
-// When the code must keep track of the state of a group of radio buttons,
-// it is recommended to keep track of such state through a stateful GAction
-// with a target for each button. Using the toggled signals to keep track of the
-// group changes and state is discouraged.
 //
 // CSS nodes
 //
@@ -39197,9 +35363,6 @@ func marshalCheckButton(p uintptr) (interface{}, error) {
 //
 // Applications should never connect to this signal, but use the
 // gtk.CheckButton::toggled signal.
-//
-// The default bindings for this signal are all forms of the <kbd>␣</kbd> and
-// <kbd>Enter</kbd> keys.
 func (self *CheckButton) ConnectActivate(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "activate", false, unsafe.Pointer(C._gotk4_gtk4_CheckButton_ConnectActivate), f)
 }
@@ -39494,7 +35657,7 @@ func (self *CheckButton) SetGroup(group *CheckButton) {
 
 // SetInconsistent sets the GtkCheckButton to inconsistent state.
 //
-// You should turn off the inconsistent state again if the user checks the check
+// You shoud turn off the inconsistent state again if the user checks the check
 // button. This has to be done manually.
 //
 // The function takes the following parameters:
@@ -39625,8 +35788,6 @@ func marshalClosureExpression(p uintptr) (interface{}, error) {
 // GtkColorButton has a single CSS node with name colorbutton which contains a
 // button node. To differentiate it from a plain GtkButton, it gets the .color
 // style class.
-//
-// Deprecated: Use gtk.ColorDialogButton instead.
 type ColorButton struct {
 	_ [0]func() // equal guard
 	Widget
@@ -39695,8 +35856,6 @@ func (button *ColorButton) ConnectColorSet(f func()) coreglib.SignalHandle {
 // a color chooser dialog will open, allowing the user to select a color.
 // The swatch will be updated to reflect the new color when the user finishes.
 //
-// Deprecated: Use gtk.ColorDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - colorButton: new color button.
@@ -39739,8 +35898,6 @@ func NewColorButtonWithRGBA(rgba *gdk.RGBA) *ColorButton {
 
 // Modal gets whether the dialog is modal.
 //
-// Deprecated: Use gtk.ColorDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the dialog is modal.
@@ -39764,8 +35921,6 @@ func (button *ColorButton) Modal() bool {
 
 // Title gets the title of the color chooser dialog.
 //
-// Deprecated: Use gtk.ColorDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - utf8: internal string, do not free the return value.
@@ -39787,8 +35942,6 @@ func (button *ColorButton) Title() string {
 
 // SetModal sets whether the dialog should be modal.
 //
-// Deprecated: Use gtk.ColorDialogButton instead.
-//
 // The function takes the following parameters:
 //
 //   - modal: TRUE to make the dialog modal.
@@ -39807,8 +35960,6 @@ func (button *ColorButton) SetModal(modal bool) {
 }
 
 // SetTitle sets the title for the color chooser dialog.
-//
-// Deprecated: Use gtk.ColorDialogButton instead.
 //
 // The function takes the following parameters:
 //
@@ -39837,15 +35988,6 @@ func (button *ColorButton) SetTitle(title string) {
 //
 // To change the initially selected color, use gtk.ColorChooser.SetRGBA().
 // To get the selected color use gtk.ColorChooser.GetRGBA().
-//
-// GtkColorChooserDialog has been deprecated in favor of gtk.ColorDialog.
-//
-// # CSS nodes
-//
-// GtkColorChooserDialog has a single CSS node with the name window and style
-// class .colorchooser.
-//
-// Deprecated: Use gtk.ColorDialog instead.
 type ColorChooserDialog struct {
 	_ [0]func() // equal guard
 	Dialog
@@ -39916,8 +36058,6 @@ func marshalColorChooserDialog(p uintptr) (interface{}, error) {
 
 // NewColorChooserDialog creates a new GtkColorChooserDialog.
 //
-// Deprecated: Use gtk.ColorDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - title (optional): title of the dialog.
@@ -39974,8 +36114,6 @@ func NewColorChooserDialog(title string, parent *Window) *ColorChooserDialog {
 // # CSS names
 //
 // GtkColorChooserWidget has a single CSS node with name colorchooser.
-//
-// Deprecated: Direct use of GtkColorChooserWidget is deprecated.
 type ColorChooserWidget struct {
 	_ [0]func() // equal guard
 	Widget
@@ -40032,483 +36170,6 @@ func NewColorChooserWidget() *ColorChooserWidget {
 	_colorChooserWidget = wrapColorChooserWidget(coreglib.Take(unsafe.Pointer(_cret)))
 
 	return _colorChooserWidget
-}
-
-// ColorDialogOverrides contains methods that are overridable.
-type ColorDialogOverrides struct {
-}
-
-func defaultColorDialogOverrides(v *ColorDialog) ColorDialogOverrides {
-	return ColorDialogOverrides{}
-}
-
-// ColorDialog: GtkColorDialog object collects the arguments that are needed to
-// present a color chooser dialog to the user, such as a title for the dialog
-// and whether it should be modal.
-//
-// The dialog is shown with the gtk.ColorDialog.ChooseRGBA() function. This API
-// follows the GIO async pattern, and the result can be obtained by calling
-// gtk.ColorDialog.ChooseRGBAFinish().
-//
-// See gtk.ColorDialogButton for a convenient control that uses GtkColorDialog
-// and presents the results.
-type ColorDialog struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*ColorDialog)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*ColorDialog, *ColorDialogClass, ColorDialogOverrides](
-		GTypeColorDialog,
-		initColorDialogClass,
-		wrapColorDialog,
-		defaultColorDialogOverrides,
-	)
-}
-
-func initColorDialogClass(gclass unsafe.Pointer, overrides ColorDialogOverrides, classInitFunc func(*ColorDialogClass)) {
-	if classInitFunc != nil {
-		class := (*ColorDialogClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapColorDialog(obj *coreglib.Object) *ColorDialog {
-	return &ColorDialog{
-		Object: obj,
-	}
-}
-
-func marshalColorDialog(p uintptr) (interface{}, error) {
-	return wrapColorDialog(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NewColorDialog creates a new GtkColorDialog object.
-//
-// The function returns the following values:
-//
-//   - colorDialog: new GtkColorDialog.
-func NewColorDialog() *ColorDialog {
-	var _cret *C.GtkColorDialog // in
-
-	_cret = C.gtk_color_dialog_new()
-
-	var _colorDialog *ColorDialog // out
-
-	_colorDialog = wrapColorDialog(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-
-	return _colorDialog
-}
-
-// ChooseRGBA: this function initiates a color choice operation by presenting a
-// color chooser dialog to the user.
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.ColorDialog.ChooseRGBAFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - initialColor (optional): color to select initially.
-//   - callback (optional) to call when the operation is complete.
-func (self *ColorDialog) ChooseRGBA(ctx context.Context, parent *Window, initialColor *gdk.RGBA, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkColorDialog     // out
-	var _arg3 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg2 *C.GdkRGBA            // out
-	var _arg4 C.GAsyncReadyCallback // out
-	var _arg5 C.gpointer
-
-	_arg0 = (*C.GtkColorDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if initialColor != nil {
-		_arg2 = (*C.GdkRGBA)(gextras.StructNative(unsafe.Pointer(initialColor)))
-	}
-	if callback != nil {
-		_arg4 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg5 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_color_dialog_choose_rgba(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(initialColor)
-	runtime.KeepAlive(callback)
-}
-
-// ChooseRGBAFinish finishes the gtk.ColorDialog.ChooseRGBA() call and returns
-// the resulting color.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - rgbA (optional): selected color, or NULL and error is set.
-func (self *ColorDialog) ChooseRGBAFinish(result gio.AsyncResulter) (*gdk.RGBA, error) {
-	var _arg0 *C.GtkColorDialog // out
-	var _arg1 *C.GAsyncResult   // out
-	var _cret *C.GdkRGBA        // in
-	var _cerr *C.GError         // in
-
-	_arg0 = (*C.GtkColorDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_color_dialog_choose_rgba_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _rgbA *gdk.RGBA // out
-	var _goerr error    // out
-
-	if _cret != nil {
-		_rgbA = (*gdk.RGBA)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_rgbA)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.gdk_rgba_free((*C.GdkRGBA)(intern.C))
-			},
-		)
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _rgbA, _goerr
-}
-
-// Modal returns whether the color chooser dialog blocks interaction with the
-// parent window while it is presented.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the color chooser dialog is modal.
-func (self *ColorDialog) Modal() bool {
-	var _arg0 *C.GtkColorDialog // out
-	var _cret C.gboolean        // in
-
-	_arg0 = (*C.GtkColorDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_color_dialog_get_modal(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Title returns the title that will be shown on the color chooser dialog.
-//
-// The function returns the following values:
-//
-//   - utf8: title.
-func (self *ColorDialog) Title() string {
-	var _arg0 *C.GtkColorDialog // out
-	var _cret *C.char           // in
-
-	_arg0 = (*C.GtkColorDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_color_dialog_get_title(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// WithAlpha returns whether colors may have alpha.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if colors may have alpha.
-func (self *ColorDialog) WithAlpha() bool {
-	var _arg0 *C.GtkColorDialog // out
-	var _cret C.gboolean        // in
-
-	_arg0 = (*C.GtkColorDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_color_dialog_get_with_alpha(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// SetModal sets whether the color chooser dialog blocks interaction with the
-// parent window while it is presented.
-//
-// The function takes the following parameters:
-//
-//   - modal: new value.
-func (self *ColorDialog) SetModal(modal bool) {
-	var _arg0 *C.GtkColorDialog // out
-	var _arg1 C.gboolean        // out
-
-	_arg0 = (*C.GtkColorDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if modal {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_color_dialog_set_modal(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(modal)
-}
-
-// SetTitle sets the title that will be shown on the color chooser dialog.
-//
-// The function takes the following parameters:
-//
-//   - title: new title.
-func (self *ColorDialog) SetTitle(title string) {
-	var _arg0 *C.GtkColorDialog // out
-	var _arg1 *C.char           // out
-
-	_arg0 = (*C.GtkColorDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(title)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_color_dialog_set_title(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(title)
-}
-
-// SetWithAlpha sets whether colors may have alpha.
-//
-// The function takes the following parameters:
-//
-//   - withAlpha: new value.
-func (self *ColorDialog) SetWithAlpha(withAlpha bool) {
-	var _arg0 *C.GtkColorDialog // out
-	var _arg1 C.gboolean        // out
-
-	_arg0 = (*C.GtkColorDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if withAlpha {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_color_dialog_set_with_alpha(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(withAlpha)
-}
-
-// ColorDialogButtonOverrides contains methods that are overridable.
-type ColorDialogButtonOverrides struct {
-}
-
-func defaultColorDialogButtonOverrides(v *ColorDialogButton) ColorDialogButtonOverrides {
-	return ColorDialogButtonOverrides{}
-}
-
-// ColorDialogButton: GtkColorDialogButton is a wrapped around a gtk.ColorDialog
-// and allows to open a color chooser dialog to change the color.
-//
-// !An example GtkColorDialogButton (color-button.png)
-//
-// It is suitable widget for selecting a color in a preference dialog.
-//
-// CSS nodes
-//
-//	colorbutton
-//	╰── button.color
-//	    ╰── [content]
-//
-// GtkColorDialogButton has a single CSS node with name colorbutton which
-// contains a button node. To differentiate it from a plain GtkButton, it gets
-// the .color style class.
-type ColorDialogButton struct {
-	_ [0]func() // equal guard
-	Widget
-}
-
-var (
-	_ Widgetter = (*ColorDialogButton)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*ColorDialogButton, *ColorDialogButtonClass, ColorDialogButtonOverrides](
-		GTypeColorDialogButton,
-		initColorDialogButtonClass,
-		wrapColorDialogButton,
-		defaultColorDialogButtonOverrides,
-	)
-}
-
-func initColorDialogButtonClass(gclass unsafe.Pointer, overrides ColorDialogButtonOverrides, classInitFunc func(*ColorDialogButtonClass)) {
-	if classInitFunc != nil {
-		class := (*ColorDialogButtonClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapColorDialogButton(obj *coreglib.Object) *ColorDialogButton {
-	return &ColorDialogButton{
-		Widget: Widget{
-			InitiallyUnowned: coreglib.InitiallyUnowned{
-				Object: obj,
-			},
-			Object: obj,
-			Accessible: Accessible{
-				Object: obj,
-			},
-			Buildable: Buildable{
-				Object: obj,
-			},
-			ConstraintTarget: ConstraintTarget{
-				Object: obj,
-			},
-		},
-	}
-}
-
-func marshalColorDialogButton(p uintptr) (interface{}, error) {
-	return wrapColorDialogButton(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// ConnectActivate is emitted when the color dialog button is activated.
-//
-// The ::activate signal on GtkColorDialogButton is an action signal and
-// emitting it causes the button to pop up its dialog.
-func (self *ColorDialogButton) ConnectActivate(f func()) coreglib.SignalHandle {
-	return coreglib.ConnectGeneratedClosure(self, "activate", false, unsafe.Pointer(C._gotk4_gtk4_ColorDialogButton_ConnectActivate), f)
-}
-
-// NewColorDialogButton creates a new GtkColorDialogButton with the given
-// GtkColorDialog.
-//
-// You can pass NULL to this function and set a GtkColorDialog later. The button
-// will be insensitive until that happens.
-//
-// The function takes the following parameters:
-//
-//   - dialog (optional): GtkColorDialog to use.
-//
-// The function returns the following values:
-//
-//   - colorDialogButton: new GtkColorDialogButton.
-func NewColorDialogButton(dialog *ColorDialog) *ColorDialogButton {
-	var _arg1 *C.GtkColorDialog // out
-	var _cret *C.GtkWidget      // in
-
-	if dialog != nil {
-		_arg1 = (*C.GtkColorDialog)(unsafe.Pointer(coreglib.InternObject(dialog).Native()))
-		C.g_object_ref(C.gpointer(coreglib.InternObject(dialog).Native()))
-	}
-
-	_cret = C.gtk_color_dialog_button_new(_arg1)
-	runtime.KeepAlive(dialog)
-
-	var _colorDialogButton *ColorDialogButton // out
-
-	_colorDialogButton = wrapColorDialogButton(coreglib.Take(unsafe.Pointer(_cret)))
-
-	return _colorDialogButton
-}
-
-// Dialog returns the GtkColorDialog of self.
-//
-// The function returns the following values:
-//
-//   - colorDialog (optional): GtkColorDialog.
-func (self *ColorDialogButton) Dialog() *ColorDialog {
-	var _arg0 *C.GtkColorDialogButton // out
-	var _cret *C.GtkColorDialog       // in
-
-	_arg0 = (*C.GtkColorDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_color_dialog_button_get_dialog(_arg0)
-	runtime.KeepAlive(self)
-
-	var _colorDialog *ColorDialog // out
-
-	if _cret != nil {
-		_colorDialog = wrapColorDialog(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _colorDialog
-}
-
-// RGBA returns the color of the button.
-//
-// This function is what should be used to obtain the color that was chosen by
-// the user. To get informed about changes, listen to "notify::rgba".
-//
-// The function returns the following values:
-//
-//   - rgbA: color.
-func (self *ColorDialogButton) RGBA() *gdk.RGBA {
-	var _arg0 *C.GtkColorDialogButton // out
-	var _cret *C.GdkRGBA              // in
-
-	_arg0 = (*C.GtkColorDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_color_dialog_button_get_rgba(_arg0)
-	runtime.KeepAlive(self)
-
-	var _rgbA *gdk.RGBA // out
-
-	_rgbA = (*gdk.RGBA)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-
-	return _rgbA
-}
-
-// SetDialog sets a GtkColorDialog object to use for creating the color chooser
-// dialog that is presented when the user clicks the button.
-//
-// The function takes the following parameters:
-//
-//   - dialog: new GtkColorDialog.
-func (self *ColorDialogButton) SetDialog(dialog *ColorDialog) {
-	var _arg0 *C.GtkColorDialogButton // out
-	var _arg1 *C.GtkColorDialog       // out
-
-	_arg0 = (*C.GtkColorDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GtkColorDialog)(unsafe.Pointer(coreglib.InternObject(dialog).Native()))
-
-	C.gtk_color_dialog_button_set_dialog(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(dialog)
-}
-
-// SetRGBA sets the color of the button.
-//
-// The function takes the following parameters:
-//
-//   - color: new color.
-func (self *ColorDialogButton) SetRGBA(color *gdk.RGBA) {
-	var _arg0 *C.GtkColorDialogButton // out
-	var _arg1 *C.GdkRGBA              // out
-
-	_arg0 = (*C.GtkColorDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GdkRGBA)(gextras.StructNative(unsafe.Pointer(color)))
-
-	C.gtk_color_dialog_button_set_rgba(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(color)
 }
 
 // ColumnView: GtkColumnView presents a large dynamic list of items using
@@ -40725,30 +36386,6 @@ func (self *ColumnView) EnableRubberband() bool {
 	return _ok
 }
 
-// HeaderFactory gets the factory that's currently used to populate section
-// headers.
-//
-// The function returns the following values:
-//
-//   - listItemFactory (optional): factory in use.
-func (self *ColumnView) HeaderFactory() *ListItemFactory {
-	var _arg0 *C.GtkColumnView      // out
-	var _cret *C.GtkListItemFactory // in
-
-	_arg0 = (*C.GtkColumnView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_get_header_factory(_arg0)
-	runtime.KeepAlive(self)
-
-	var _listItemFactory *ListItemFactory // out
-
-	if _cret != nil {
-		_listItemFactory = wrapListItemFactory(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _listItemFactory
-}
-
 // Model gets the model that's currently used to read the items displayed.
 //
 // The function returns the following values:
@@ -40793,29 +36430,6 @@ func (self *ColumnView) Reorderable() bool {
 	}
 
 	return _ok
-}
-
-// RowFactory gets the factory set via gtk.ColumnView.SetRowFactory().
-//
-// The function returns the following values:
-//
-//   - listItemFactory (optional): factory.
-func (self *ColumnView) RowFactory() *ListItemFactory {
-	var _arg0 *C.GtkColumnView      // out
-	var _cret *C.GtkListItemFactory // in
-
-	_arg0 = (*C.GtkColumnView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_get_row_factory(_arg0)
-	runtime.KeepAlive(self)
-
-	var _listItemFactory *ListItemFactory // out
-
-	if _cret != nil {
-		_listItemFactory = wrapListItemFactory(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _listItemFactory
 }
 
 // ShowColumnSeparators returns whether the list should show separators between
@@ -40929,27 +36543,6 @@ func (self *ColumnView) Sorter() *Sorter {
 	return _sorter
 }
 
-// TabBehavior gets the behavior set for the <kbd>Tab</kbd> key.
-//
-// The function returns the following values:
-//
-//   - listTabBehavior: behavior of the <kbd>Tab</kbd> key.
-func (self *ColumnView) TabBehavior() ListTabBehavior {
-	var _arg0 *C.GtkColumnView     // out
-	var _cret C.GtkListTabBehavior // in
-
-	_arg0 = (*C.GtkColumnView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_get_tab_behavior(_arg0)
-	runtime.KeepAlive(self)
-
-	var _listTabBehavior ListTabBehavior // out
-
-	_listTabBehavior = ListTabBehavior(_cret)
-
-	return _listTabBehavior
-}
-
 // InsertColumn inserts a column at the given position in the columns of self.
 //
 // If column is already a column of self, it will be repositioned.
@@ -40990,44 +36583,6 @@ func (self *ColumnView) RemoveColumn(column *ColumnViewColumn) {
 	runtime.KeepAlive(column)
 }
 
-// ScrollTo: scroll to the row at the given position - or cell if a column is
-// given - and performs the actions specified in flags.
-//
-// This function works no matter if the listview is shown or focused. If it
-// isn't, then the changes will take effect once that happens.
-//
-// The function takes the following parameters:
-//
-//   - pos: position of the item.
-//   - column (optional) to scroll to or NULL to not scroll columns.
-//   - flags actions to perform.
-//   - scroll (optional) details of how to perform the scroll operation or NULL
-//     to scroll into view.
-func (self *ColumnView) ScrollTo(pos uint, column *ColumnViewColumn, flags ListScrollFlags, scroll *ScrollInfo) {
-	var _arg0 *C.GtkColumnView       // out
-	var _arg1 C.guint                // out
-	var _arg2 *C.GtkColumnViewColumn // out
-	var _arg3 C.GtkListScrollFlags   // out
-	var _arg4 *C.GtkScrollInfo       // out
-
-	_arg0 = (*C.GtkColumnView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.guint(pos)
-	if column != nil {
-		_arg2 = (*C.GtkColumnViewColumn)(unsafe.Pointer(coreglib.InternObject(column).Native()))
-	}
-	_arg3 = C.GtkListScrollFlags(flags)
-	if scroll != nil {
-		_arg4 = (*C.GtkScrollInfo)(gextras.StructNative(unsafe.Pointer(scroll)))
-	}
-
-	C.gtk_column_view_scroll_to(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(pos)
-	runtime.KeepAlive(column)
-	runtime.KeepAlive(flags)
-	runtime.KeepAlive(scroll)
-}
-
 // SetEnableRubberband sets whether selections can be changed by dragging with
 // the mouse.
 //
@@ -41046,28 +36601,6 @@ func (self *ColumnView) SetEnableRubberband(enableRubberband bool) {
 	C.gtk_column_view_set_enable_rubberband(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(enableRubberband)
-}
-
-// SetHeaderFactory sets the GtkListItemFactory to use for populating the
-// gtk.ListHeader objects used in section headers.
-//
-// If this factory is set to NULL, the list will not show section headers.
-//
-// The function takes the following parameters:
-//
-//   - factory (optional) to use.
-func (self *ColumnView) SetHeaderFactory(factory *ListItemFactory) {
-	var _arg0 *C.GtkColumnView      // out
-	var _arg1 *C.GtkListItemFactory // out
-
-	_arg0 = (*C.GtkColumnView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if factory != nil {
-		_arg1 = (*C.GtkListItemFactory)(unsafe.Pointer(coreglib.InternObject(factory).Native()))
-	}
-
-	C.gtk_column_view_set_header_factory(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(factory)
 }
 
 // SetModel sets the model to use.
@@ -41108,32 +36641,6 @@ func (self *ColumnView) SetReorderable(reorderable bool) {
 	C.gtk_column_view_set_reorderable(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(reorderable)
-}
-
-// SetRowFactory sets the factory used for configuring rows. The factory must be
-// for configuring gtk.ColumnViewRow objects.
-//
-// If this factory is not set - which is the default - then the defaults will be
-// used.
-//
-// This factory is not used to set the widgets displayed in the individual
-// cells. For that see gtkcolumnviewcolumn.SetFactory and gtkcolumnviewcell.
-//
-// The function takes the following parameters:
-//
-//   - factory (optional): row factory.
-func (self *ColumnView) SetRowFactory(factory *ListItemFactory) {
-	var _arg0 *C.GtkColumnView      // out
-	var _arg1 *C.GtkListItemFactory // out
-
-	_arg0 = (*C.GtkColumnView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if factory != nil {
-		_arg1 = (*C.GtkListItemFactory)(unsafe.Pointer(coreglib.InternObject(factory).Native()))
-	}
-
-	C.gtk_column_view_set_row_factory(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(factory)
 }
 
 // SetShowColumnSeparators sets whether the list should show separators between
@@ -41196,24 +36703,6 @@ func (self *ColumnView) SetSingleClickActivate(singleClickActivate bool) {
 	runtime.KeepAlive(singleClickActivate)
 }
 
-// SetTabBehavior sets the behavior of the <kbd>Tab</kbd> and
-// <kbd>Shift</kbd>+<kbd>Tab</kbd> keys.
-//
-// The function takes the following parameters:
-//
-//   - tabBehavior: desired tab behavior.
-func (self *ColumnView) SetTabBehavior(tabBehavior ListTabBehavior) {
-	var _arg0 *C.GtkColumnView     // out
-	var _arg1 C.GtkListTabBehavior // out
-
-	_arg0 = (*C.GtkColumnView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkListTabBehavior(tabBehavior)
-
-	C.gtk_column_view_set_tab_behavior(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(tabBehavior)
-}
-
 // SortByColumn sets the sorting of the view.
 //
 // This function should be used to set up the initial sorting. At runtime, users
@@ -41247,225 +36736,7 @@ func (self *ColumnView) SortByColumn(column *ColumnViewColumn, direction SortTyp
 	runtime.KeepAlive(direction)
 }
 
-// ColumnViewCell: GtkColumnViewCell is used by gtk.ColumnViewColumn to
-// represent items in a cell in gtk.ColumnView.
-//
-// The GtkColumnViewCells are managed by the columnview widget (with its
-// factory) and cannot be created by applications, but they need to be populated
-// by application code. This is done by calling gtk.ColumnViewCell.SetChild().
-//
-// GtkColumnViewCells exist in 2 stages:
-//
-// 1. The unbound stage where the listitem is not currently connected to an item
-// in the list. In that case, the gtk.ColumnViewCell:item property is set to
-// NULL.
-//
-// 2. The bound stage where the listitem references an item from the list.
-// The gtk.ColumnViewCell:item property is not NULL.
-type ColumnViewCell struct {
-	_ [0]func() // equal guard
-	ListItem
-}
-
-var (
-	_ coreglib.Objector = (*ColumnViewCell)(nil)
-)
-
-func wrapColumnViewCell(obj *coreglib.Object) *ColumnViewCell {
-	return &ColumnViewCell{
-		ListItem: ListItem{
-			Object: obj,
-		},
-	}
-}
-
-func marshalColumnViewCell(p uintptr) (interface{}, error) {
-	return wrapColumnViewCell(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// Child gets the child previously set via gtk_column_view_cell_set_child() or
-// NULL if none was set.
-//
-// The function returns the following values:
-//
-//   - widget (optional): child.
-func (self *ColumnViewCell) Child() Widgetter {
-	var _arg0 *C.GtkColumnViewCell // out
-	var _cret *C.GtkWidget         // in
-
-	_arg0 = (*C.GtkColumnViewCell)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_cell_get_child(_arg0)
-	runtime.KeepAlive(self)
-
-	var _widget Widgetter // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.Take(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(Widgetter)
-				return ok
-			})
-			rv, ok := casted.(Widgetter)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gtk.Widgetter")
-			}
-			_widget = rv
-		}
-	}
-
-	return _widget
-}
-
-// Focusable checks if a list item has been set to be focusable via
-// gtk_column_view_cell_set_focusable().
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the item is focusable.
-func (self *ColumnViewCell) Focusable() bool {
-	var _arg0 *C.GtkColumnViewCell // out
-	var _cret C.gboolean           // in
-
-	_arg0 = (*C.GtkColumnViewCell)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_cell_get_focusable(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Item gets the model item that associated with self.
-//
-// If self is unbound, this function returns NULL.
-//
-// The function returns the following values:
-//
-//   - object (optional): item displayed.
-func (self *ColumnViewCell) Item() *coreglib.Object {
-	var _arg0 *C.GtkColumnViewCell // out
-	var _cret C.gpointer           // in
-
-	_arg0 = (*C.GtkColumnViewCell)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_cell_get_item(_arg0)
-	runtime.KeepAlive(self)
-
-	var _object *coreglib.Object // out
-
-	_object = coreglib.Take(unsafe.Pointer(_cret))
-
-	return _object
-}
-
-// Position gets the position in the model that self currently displays.
-//
-// If self is unbound, GTK_INVALID_LIST_POSITION is returned.
-//
-// The function returns the following values:
-//
-//   - guint: position of this item.
-func (self *ColumnViewCell) Position() uint {
-	var _arg0 *C.GtkColumnViewCell // out
-	var _cret C.guint              // in
-
-	_arg0 = (*C.GtkColumnViewCell)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_cell_get_position(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// Selected checks if the item is displayed as selected.
-//
-// The selected state is maintained by the liste widget and its model and cannot
-// be set otherwise.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the item is selected.
-func (self *ColumnViewCell) Selected() bool {
-	var _arg0 *C.GtkColumnViewCell // out
-	var _cret C.gboolean           // in
-
-	_arg0 = (*C.GtkColumnViewCell)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_cell_get_selected(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// SetChild sets the child to be used for this listitem.
-//
-// This function is typically called by applications when setting up a listitem
-// so that the widget can be reused when binding it multiple times.
-//
-// The function takes the following parameters:
-//
-//   - child (optional): list item's child or NULL to unset.
-func (self *ColumnViewCell) SetChild(child Widgetter) {
-	var _arg0 *C.GtkColumnViewCell // out
-	var _arg1 *C.GtkWidget         // out
-
-	_arg0 = (*C.GtkColumnViewCell)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if child != nil {
-		_arg1 = (*C.GtkWidget)(unsafe.Pointer(coreglib.InternObject(child).Native()))
-	}
-
-	C.gtk_column_view_cell_set_child(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(child)
-}
-
-// SetFocusable sets self to be focusable.
-//
-// If an item is focusable, it can be focused using the keyboard. This works
-// similar to gtk.Widget.SetFocusable().
-//
-// Note that if items are not focusable, the keyboard cannot be used to activate
-// them and selecting only works if one of the listitem's children is focusable.
-//
-// By default, list items are focusable.
-//
-// The function takes the following parameters:
-//
-//   - focusable: if the item should be focusable.
-func (self *ColumnViewCell) SetFocusable(focusable bool) {
-	var _arg0 *C.GtkColumnViewCell // out
-	var _arg1 C.gboolean           // out
-
-	_arg0 = (*C.GtkColumnViewCell)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if focusable {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_column_view_cell_set_focusable(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(focusable)
-}
-
-// ColumnViewColumn: GtkColumnViewColumn represents the columns being added to a
+// ColumnViewColumn: GtkColumnViewColumn represents the columns being added to
 // GtkColumnView.
 //
 // The main ingredient for a GtkColumnViewColumn is the GtkListItemFactory that
@@ -41670,29 +36941,6 @@ func (self *ColumnViewColumn) HeaderMenu() gio.MenuModeller {
 	return _menuModel
 }
 
-// ID returns the ID set with gtk_column_view_column_set_id().
-//
-// The function returns the following values:
-//
-//   - utf8 (optional) column's ID.
-func (self *ColumnViewColumn) ID() string {
-	var _arg0 *C.GtkColumnViewColumn // out
-	var _cret *C.char                // in
-
-	_arg0 = (*C.GtkColumnViewColumn)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_column_get_id(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	}
-
-	return _utf8
-}
-
 // Resizable returns whether this column is resizable.
 //
 // The function returns the following values:
@@ -41868,31 +37116,6 @@ func (self *ColumnViewColumn) SetHeaderMenu(menu gio.MenuModeller) {
 	runtime.KeepAlive(menu)
 }
 
-// SetID sets the id of this column.
-//
-// GTK makes no use of this, but applications can use it when storing column
-// view configuration.
-//
-// It is up to callers to ensure uniqueness of IDs.
-//
-// The function takes the following parameters:
-//
-//   - id (optional): ID to use for this column.
-func (self *ColumnViewColumn) SetID(id string) {
-	var _arg0 *C.GtkColumnViewColumn // out
-	var _arg1 *C.char                // out
-
-	_arg0 = (*C.GtkColumnViewColumn)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if id != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(id)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	C.gtk_column_view_column_set_id(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(id)
-}
-
 // SetResizable sets whether this column should be resizable by dragging.
 //
 // The function takes the following parameters:
@@ -41982,532 +37205,10 @@ func (self *ColumnViewColumn) SetVisible(visible bool) {
 	runtime.KeepAlive(visible)
 }
 
-// ColumnViewRow: GtkColumnViewRow is used by gtk.ColumnView to allow
-// configuring how rows are displayed.
-//
-// It is not used to set the widgets displayed in the individual cells. For that
-// see gtkcolumnviewcolumn.SetFactory and gtkcolumnviewcell.
-type ColumnViewRow struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*ColumnViewRow)(nil)
-)
-
-func wrapColumnViewRow(obj *coreglib.Object) *ColumnViewRow {
-	return &ColumnViewRow{
-		Object: obj,
-	}
-}
-
-func marshalColumnViewRow(p uintptr) (interface{}, error) {
-	return wrapColumnViewRow(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// AccessibleDescription gets the accessible description of self.
-//
-// The function returns the following values:
-//
-//   - utf8: accessible description.
-func (self *ColumnViewRow) AccessibleDescription() string {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _cret *C.char             // in
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_row_get_accessible_description(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// AccessibleLabel gets the accessible label of self.
-//
-// The function returns the following values:
-//
-//   - utf8: accessible label.
-func (self *ColumnViewRow) AccessibleLabel() string {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _cret *C.char             // in
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_row_get_accessible_label(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// Activatable checks if the row has been set to be activatable via
-// gtk_column_view_row_set_activatable().
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the row is activatable.
-func (self *ColumnViewRow) Activatable() bool {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _cret C.gboolean          // in
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_row_get_activatable(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Focusable checks if a row item has been set to be focusable via
-// gtk_column_view_row_set_focusable().
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the row is focusable.
-func (self *ColumnViewRow) Focusable() bool {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _cret C.gboolean          // in
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_row_get_focusable(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Item gets the model item that associated with self.
-//
-// If self is unbound, this function returns NULL.
-//
-// The function returns the following values:
-//
-//   - object (optional): item displayed.
-func (self *ColumnViewRow) Item() *coreglib.Object {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _cret C.gpointer          // in
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_row_get_item(_arg0)
-	runtime.KeepAlive(self)
-
-	var _object *coreglib.Object // out
-
-	_object = coreglib.Take(unsafe.Pointer(_cret))
-
-	return _object
-}
-
-// Position gets the position in the model that self currently displays.
-//
-// If self is unbound, GTK_INVALID_LIST_POSITION is returned.
-//
-// The function returns the following values:
-//
-//   - guint: position of this row.
-func (self *ColumnViewRow) Position() uint {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _cret C.guint             // in
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_row_get_position(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// Selectable checks if the row has been set to be selectable via
-// gtk_column_view_row_set_selectable().
-//
-// Do not confuse this function with gtk.ColumnViewRow.GetSelected().
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the row is selectable.
-func (self *ColumnViewRow) Selectable() bool {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _cret C.gboolean          // in
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_row_get_selectable(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Selected checks if the item is selected that this row corresponds to.
-//
-// The selected state is maintained by the list widget and its model and cannot
-// be set otherwise.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the item is selected.
-func (self *ColumnViewRow) Selected() bool {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _cret C.gboolean          // in
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_row_get_selected(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// SetAccessibleDescription sets the accessible description for the row,
-// which may be used by e.g. screen readers.
-//
-// The function takes the following parameters:
-//
-//   - description: description.
-func (self *ColumnViewRow) SetAccessibleDescription(description string) {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _arg1 *C.char             // out
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(description)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_column_view_row_set_accessible_description(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(description)
-}
-
-// SetAccessibleLabel sets the accessible label for the row, which may be used
-// by e.g. screen readers.
-//
-// The function takes the following parameters:
-//
-//   - label: label.
-func (self *ColumnViewRow) SetAccessibleLabel(label string) {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _arg1 *C.char             // out
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(label)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_column_view_row_set_accessible_label(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(label)
-}
-
-// SetActivatable sets self to be activatable.
-//
-// If a row is activatable, double-clicking on the row, using the Return key or
-// calling gtk_widget_activate() will activate the row. Activating instructs the
-// containing columnview to emit the gtk.ColumnView::activate signal.
-//
-// By default, row are activatable.
-//
-// The function takes the following parameters:
-//
-//   - activatable: if the row should be activatable.
-func (self *ColumnViewRow) SetActivatable(activatable bool) {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _arg1 C.gboolean          // out
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if activatable {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_column_view_row_set_activatable(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(activatable)
-}
-
-// SetFocusable sets self to be focusable.
-//
-// If a row is focusable, it can be focused using the keyboard. This works
-// similar to gtk.Widget.SetFocusable().
-//
-// Note that if row are not focusable, the contents of cells can still be
-// focused if they are focusable.
-//
-// By default, rows are focusable.
-//
-// The function takes the following parameters:
-//
-//   - focusable: if the row should be focusable.
-func (self *ColumnViewRow) SetFocusable(focusable bool) {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _arg1 C.gboolean          // out
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if focusable {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_column_view_row_set_focusable(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(focusable)
-}
-
-// SetSelectable sets self to be selectable.
-//
-// If a row is selectable, clicking on the row or using the keyboard will try
-// to select or unselect the row. Whether this succeeds is up to the model to
-// determine, as it is managing the selected state.
-//
-// Note that this means that making a row non-selectable has no influence on the
-// selected state at all. A non-selectable row may still be selected.
-//
-// By default, rows are selectable.
-//
-// The function takes the following parameters:
-//
-//   - selectable: if the row should be selectable.
-func (self *ColumnViewRow) SetSelectable(selectable bool) {
-	var _arg0 *C.GtkColumnViewRow // out
-	var _arg1 C.gboolean          // out
-
-	_arg0 = (*C.GtkColumnViewRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if selectable {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_column_view_row_set_selectable(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(selectable)
-}
-
-// ColumnViewSorterOverrides contains methods that are overridable.
-type ColumnViewSorterOverrides struct {
-}
-
-func defaultColumnViewSorterOverrides(v *ColumnViewSorter) ColumnViewSorterOverrides {
-	return ColumnViewSorterOverrides{}
-}
-
-// ColumnViewSorter: GtkColumnViewSorter is a sorter implementation that is
-// geared towards the needs of GtkColumnView.
-//
-// The sorter returned by gtk.ColumnView.GetSorter() is a GtkColumnViewSorter.
-//
-// In column views, sorting can be configured by associating sorters with
-// columns, and users can invert sort order by clicking on column headers.
-// The API of GtkColumnViewSorter is designed to allow saving and restoring this
-// configuration.
-//
-// If you are only interested in the primary sort column (i.e.
-// the column where a sort indicator is shown in the header), then
-// you can just look at gtk.ColumnViewSorter:primary-sort-column and
-// gtk.ColumnViewSorter:primary-sort-order.
-//
-// If you want to store the full sort configuration, including secondary
-// sort columns that are used for tie breaking, then you can use
-// gtk.ColumnViewSorter.GetNthSortColumn(). To get notified about changes,
-// use gtk.Sorter::changed.
-//
-// To restore a saved sort configuration on a GtkColumnView, use code like:
-//
-//	sorter = gtk_column_view_get_sorter (view);
-//	for (i = gtk_column_view_sorter_get_n_sort_columns (sorter) - 1; i >= 0; i--)
-//	  {
-//	    column = gtk_column_view_sorter_get_nth_sort_column (sorter, i, &order);
-//	    gtk_column_view_sort_by_column (view, column, order);
-//	  }.
-type ColumnViewSorter struct {
-	_ [0]func() // equal guard
-	Sorter
-}
-
-var (
-	_ coreglib.Objector = (*ColumnViewSorter)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*ColumnViewSorter, *ColumnViewSorterClass, ColumnViewSorterOverrides](
-		GTypeColumnViewSorter,
-		initColumnViewSorterClass,
-		wrapColumnViewSorter,
-		defaultColumnViewSorterOverrides,
-	)
-}
-
-func initColumnViewSorterClass(gclass unsafe.Pointer, overrides ColumnViewSorterOverrides, classInitFunc func(*ColumnViewSorterClass)) {
-	if classInitFunc != nil {
-		class := (*ColumnViewSorterClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapColumnViewSorter(obj *coreglib.Object) *ColumnViewSorter {
-	return &ColumnViewSorter{
-		Sorter: Sorter{
-			Object: obj,
-		},
-	}
-}
-
-func marshalColumnViewSorter(p uintptr) (interface{}, error) {
-	return wrapColumnViewSorter(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NSortColumns returns the number of columns by which the sorter sorts.
-//
-// If the sorter of the primary sort column does not determine a total order,
-// then the secondary sorters are consulted to break the ties.
-//
-// Use the gtk.Sorter::changed signal to get notified when the number of sort
-// columns changes.
-//
-// The function returns the following values:
-//
-//   - guint: number of sort columns.
-func (self *ColumnViewSorter) NSortColumns() uint {
-	var _arg0 *C.GtkColumnViewSorter // out
-	var _cret C.guint                // in
-
-	_arg0 = (*C.GtkColumnViewSorter)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_sorter_get_n_sort_columns(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// NthSortColumn gets the position'th sort column and its associated sort order.
-//
-// Use the gtk.Sorter::changed signal to get notified when sort columns change.
-//
-// The function takes the following parameters:
-//
-//   - position of the sort column to retrieve (0 for the primary sort column).
-//
-// The function returns the following values:
-//
-//   - sortOrder: return location for the sort order.
-//   - columnViewColumn (optional) positions sort column.
-func (self *ColumnViewSorter) NthSortColumn(position uint) (SortType, *ColumnViewColumn) {
-	var _arg0 *C.GtkColumnViewSorter // out
-	var _arg1 C.guint                // out
-	var _arg2 C.GtkSortType          // in
-	var _cret *C.GtkColumnViewColumn // in
-
-	_arg0 = (*C.GtkColumnViewSorter)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.guint(position)
-
-	_cret = C.gtk_column_view_sorter_get_nth_sort_column(_arg0, _arg1, &_arg2)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(position)
-
-	var _sortOrder SortType                 // out
-	var _columnViewColumn *ColumnViewColumn // out
-
-	_sortOrder = SortType(_arg2)
-	if _cret != nil {
-		_columnViewColumn = wrapColumnViewColumn(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _sortOrder, _columnViewColumn
-}
-
-// PrimarySortColumn returns the primary sort column.
-//
-// The primary sort column is the one that displays the triangle in a column
-// view header.
-//
-// The function returns the following values:
-//
-//   - columnViewColumn (optional): primary sort column.
-func (self *ColumnViewSorter) PrimarySortColumn() *ColumnViewColumn {
-	var _arg0 *C.GtkColumnViewSorter // out
-	var _cret *C.GtkColumnViewColumn // in
-
-	_arg0 = (*C.GtkColumnViewSorter)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_sorter_get_primary_sort_column(_arg0)
-	runtime.KeepAlive(self)
-
-	var _columnViewColumn *ColumnViewColumn // out
-
-	if _cret != nil {
-		_columnViewColumn = wrapColumnViewColumn(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _columnViewColumn
-}
-
-// PrimarySortOrder returns the primary sort order.
-//
-// The primary sort order determines whether the triangle displayed in the
-// column view header of the primary sort column points upwards or downwards.
-//
-// If there is no primary sort column, then this function returns
-// GTK_SORT_ASCENDING.
-//
-// The function returns the following values:
-//
-//   - sortType: primary sort order.
-func (self *ColumnViewSorter) PrimarySortOrder() SortType {
-	var _arg0 *C.GtkColumnViewSorter // out
-	var _cret C.GtkSortType          // in
-
-	_arg0 = (*C.GtkColumnViewSorter)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_column_view_sorter_get_primary_sort_order(_arg0)
-	runtime.KeepAlive(self)
-
-	var _sortType SortType // out
-
-	_sortType = SortType(_cret)
-
-	return _sortType
-}
-
 // ComboBoxOverrides contains methods that are overridable.
 type ComboBoxOverrides struct {
-	Activate func()
-	// Changed: signal is emitted when the active item is changed.
-	Changed func()
-	// FormatEntryText: signal which allows you to change how the text displayed
-	// in a combo box’s entry is displayed.
+	Activate        func()
+	Changed         func()
 	FormatEntryText func(path string) string
 }
 
@@ -42573,8 +37274,6 @@ func defaultComboBoxOverrides(v *ComboBox) ComboBoxOverrides {
 // # Accessibility
 //
 // GtkComboBox uses the GTK_ACCESSIBLE_ROLE_COMBO_BOX role.
-//
-// Deprecated: Use gtk.DropDown instead.
 type ComboBox struct {
 	_ [0]func() // equal guard
 	Widget
@@ -42743,8 +37442,6 @@ func (comboBox *ComboBox) ConnectPopup(f func()) coreglib.SignalHandle {
 
 // NewComboBox creates a new empty GtkComboBox.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function returns the following values:
 //
 //   - comboBox: new GtkComboBox.
@@ -42766,8 +37463,6 @@ func NewComboBox() *ComboBox {
 // column of the model contains the text for the entry by calling
 // gtk.ComboBox.SetEntryTextColumn().
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function returns the following values:
 //
 //   - comboBox: new GtkComboBox.
@@ -42784,8 +37479,6 @@ func NewComboBoxWithEntry() *ComboBox {
 }
 
 // NewComboBoxWithModel creates a new GtkComboBox with a model.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -42814,8 +37507,6 @@ func NewComboBoxWithModel(model TreeModeller) *ComboBox {
 // and a model.
 //
 // See also gtk.ComboBox.NewWithEntry.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -42846,8 +37537,6 @@ func NewComboBoxWithModelAndEntry(model TreeModeller) *ComboBox {
 // an immediate child of the root of the tree, this function returns
 // gtk_tree_path_get_indices (path)[0], where path is the gtk.TreePath of the
 // active item.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function returns the following values:
 //
@@ -42881,8 +37570,6 @@ func (comboBox *ComboBox) Active() int {
 // If the gtk.ComboBox:id-column property of combo_box is not set, or if no row
 // is active, or if the active row has a NULL ID value, then NULL is returned.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function returns the following values:
 //
 //   - utf8 (optional): ID of the active row.
@@ -42907,8 +37594,6 @@ func (comboBox *ComboBox) ActiveID() string {
 // ActiveIter sets iter to point to the currently active item.
 //
 // If no item is active, iter is left unchanged.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function returns the following values:
 //
@@ -42938,8 +37623,6 @@ func (comboBox *ComboBox) ActiveIter() (*TreeIter, bool) {
 // ButtonSensitivity returns whether the combo box sets the dropdown button
 // sensitive or not when there are no items in the model.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function returns the following values:
 //
 //   - sensitivityType: GTK_SENSITIVITY_ON if the dropdown button is sensitive
@@ -42963,8 +37646,6 @@ func (comboBox *ComboBox) ButtonSensitivity() SensitivityType {
 }
 
 // Child gets the child widget of combo_box.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function returns the following values:
 //
@@ -43003,8 +37684,6 @@ func (comboBox *ComboBox) Child() Widgetter {
 // EntryTextColumn returns the column which combo_box is using to get the
 // strings from to display in the internal entry.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function returns the following values:
 //
 //   - gint: column in the data source model of combo_box.
@@ -43025,8 +37704,6 @@ func (comboBox *ComboBox) EntryTextColumn() int {
 }
 
 // HasEntry returns whether the combo box has an entry.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function returns the following values:
 //
@@ -43052,8 +37729,6 @@ func (comboBox *ComboBox) HasEntry() bool {
 // IDColumn returns the column which combo_box is using to get string IDs for
 // values from.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function returns the following values:
 //
 //   - gint: column in the data source model of combo_box.
@@ -43074,8 +37749,6 @@ func (comboBox *ComboBox) IDColumn() int {
 }
 
 // Model returns the GtkTreeModel of combo_box.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function returns the following values:
 //
@@ -43099,8 +37772,6 @@ func (comboBox *ComboBox) Model() *TreeModel {
 }
 
 // PopupFixedWidth gets whether the popup uses a fixed width.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function returns the following values:
 //
@@ -43127,8 +37798,6 @@ func (comboBox *ComboBox) PopupFixedWidth() bool {
 //
 // This function is mostly intended for use by accessibility technologies;
 // applications should have little use for it.
-//
-// Deprecated: Use gtk.DropDown.
 func (comboBox *ComboBox) Popdown() {
 	var _arg0 *C.GtkComboBox // out
 
@@ -43144,8 +37813,6 @@ func (comboBox *ComboBox) Popdown() {
 // applications should have little use for it.
 //
 // Before calling this, combo_box must be mapped, or nothing will happen.
-//
-// Deprecated: Use gtk.DropDown.
 func (comboBox *ComboBox) Popup() {
 	var _arg0 *C.GtkComboBox // out
 
@@ -43160,8 +37827,6 @@ func (comboBox *ComboBox) Popup() {
 // Note that currently this does not do anything with the device, as it was
 // previously only used for list-mode combo boxes, and those were removed in GTK
 // 4. However, it is retained in case similar functionality is added back later.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -43179,8 +37844,6 @@ func (comboBox *ComboBox) PopupForDevice(device gdk.Devicer) {
 }
 
 // SetActive sets the active item of combo_box to be the item at index.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -43206,8 +37869,6 @@ func (comboBox *ComboBox) SetActive(index_ int) {
 //
 // If the gtk.ComboBox:id-column property of combo_box is unset or if no row has
 // the given ID then the function does nothing and returns FALSE.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -43245,8 +37906,6 @@ func (comboBox *ComboBox) SetActiveID(activeId string) bool {
 //
 // If iter is NULL, the active item is unset.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function takes the following parameters:
 //
 //   - iter (optional): GtkTreeIter.
@@ -43267,8 +37926,6 @@ func (comboBox *ComboBox) SetActiveIter(iter *TreeIter) {
 // SetButtonSensitivity sets whether the dropdown button of the combo box should
 // update its sensitivity depending on the model contents.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function takes the following parameters:
 //
 //   - sensitivity: specify the sensitivity of the dropdown button.
@@ -43285,8 +37942,6 @@ func (comboBox *ComboBox) SetButtonSensitivity(sensitivity SensitivityType) {
 }
 
 // SetChild sets the child widget of combo_box.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -43316,8 +37971,6 @@ func (comboBox *ComboBox) SetChild(child Widgetter) {
 // This is only relevant if combo_box has been created with
 // gtk.ComboBox:has-entry as TRUE.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function takes the following parameters:
 //
 //   - textColumn: column in model to get the strings from for the internal
@@ -43338,8 +37991,6 @@ func (comboBox *ComboBox) SetEntryTextColumn(textColumn int) {
 // IDs for values from.
 //
 // The column id_column in the model of combo_box must be of type G_TYPE_STRING.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -43365,8 +38016,6 @@ func (comboBox *ComboBox) SetIDColumn(idColumn int) {
 // call gtk.CellLayout.Clear() yourself if you need to set up different cell
 // renderers for the new model.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function takes the following parameters:
 //
 //   - model (optional): GtkTreeModel.
@@ -43390,8 +38039,6 @@ func (comboBox *ComboBox) SetModel(model TreeModeller) {
 // If fixed is TRUE, the popup's width is set to match the allocated width of
 // the combo box.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function takes the following parameters:
 //
 //   - fixed: whether to use a fixed popup width.
@@ -43414,8 +38061,6 @@ func (comboBox *ComboBox) SetPopupFixedWidth(fixed bool) {
 //
 // If the row separator function is NULL, no separators are drawn. This is the
 // default value.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -43450,7 +38095,6 @@ func (comboBox *ComboBox) activate() {
 	runtime.KeepAlive(comboBox)
 }
 
-// Changed: signal is emitted when the active item is changed.
 func (comboBox *ComboBox) changed() {
 	gclass := (*C.GtkComboBoxClass)(coreglib.PeekParentClass(comboBox))
 	fnarg := gclass.changed
@@ -43463,8 +38107,6 @@ func (comboBox *ComboBox) changed() {
 	runtime.KeepAlive(comboBox)
 }
 
-// formatEntryText: signal which allows you to change how the text displayed in
-// a combo box’s entry is displayed.
 func (comboBox *ComboBox) formatEntryText(path string) string {
 	gclass := (*C.GtkComboBoxClass)(coreglib.PeekParentClass(comboBox))
 	fnarg := gclass.format_entry_text
@@ -43539,8 +38181,6 @@ func (comboBox *ComboBox) formatEntryText(path string) string {
 // GtkComboBoxText has a single CSS node with name combobox. It adds the style
 // class .combo to the main CSS nodes of its entry and button children, and the
 // .linked class to the node of its internal box.
-//
-// Deprecated: Use gtk.DropDown with a gtk.StringList instead.
 type ComboBoxText struct {
 	_ [0]func() // equal guard
 	ComboBox
@@ -43600,8 +38240,6 @@ func marshalComboBoxText(p uintptr) (interface{}, error) {
 
 // NewComboBoxText creates a new GtkComboBoxText.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function returns the following values:
 //
 //   - comboBoxText: new GtkComboBoxText.
@@ -43618,8 +38256,6 @@ func NewComboBoxText() *ComboBoxText {
 }
 
 // NewComboBoxTextWithEntry creates a new GtkComboBoxText with an entry.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function returns the following values:
 //
@@ -43641,8 +38277,6 @@ func NewComboBoxTextWithEntry() *ComboBoxText {
 // If id is non-NULL then it is used as the ID of the row.
 //
 // This is the same as calling gtk.ComboBoxText.Insert() with a position of -1.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -43672,8 +38306,6 @@ func (comboBox *ComboBoxText) Append(id, text string) {
 // This is the same as calling gtk.ComboBoxText.InsertText() with a position of
 // -1.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function takes the following parameters:
 //
 //   - text: string.
@@ -43695,8 +38327,6 @@ func (comboBox *ComboBoxText) AppendText(text string) {
 // If no row is currently selected, NULL is returned. If combo_box contains an
 // entry, this function will return its contents (which will not necessarily be
 // an item from the list).
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function returns the following values:
 //
@@ -43727,8 +38357,6 @@ func (comboBox *ComboBoxText) ActiveText() string {
 // gtk.ComboBox:id-column.
 //
 // If position is negative then text is appended.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -43764,8 +38392,6 @@ func (comboBox *ComboBoxText) Insert(position int, id, text string) {
 //
 // This is the same as calling gtk.ComboBoxText.Insert() with a NULL ID string.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function takes the following parameters:
 //
 //   - position: index to insert text.
@@ -43791,8 +38417,6 @@ func (comboBox *ComboBoxText) InsertText(position int, text string) {
 // If id is non-NULL then it is used as the ID of the row.
 //
 // This is the same as calling gtk.ComboBoxText.Insert() with a position of 0.
-//
-// Deprecated: Use gtk.DropDown.
 //
 // The function takes the following parameters:
 //
@@ -43822,8 +38446,6 @@ func (comboBox *ComboBoxText) Prepend(id, text string) {
 // This is the same as calling gtk.ComboBoxText.InsertText() with a position of
 // 0.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function takes the following parameters:
 //
 //   - text: string.
@@ -43842,8 +38464,6 @@ func (comboBox *ComboBoxText) PrependText(text string) {
 
 // Remove removes the string at position from combo_box.
 //
-// Deprecated: Use gtk.DropDown.
-//
 // The function takes the following parameters:
 //
 //   - position: index of the item to remove.
@@ -43860,8 +38480,6 @@ func (comboBox *ComboBoxText) Remove(position int) {
 }
 
 // RemoveAll removes all the text entries from the combo box.
-//
-// Deprecated: Use gtk.DropDown.
 func (comboBox *ComboBoxText) RemoveAll() {
 	var _arg0 *C.GtkComboBoxText // out
 
@@ -45324,35 +39942,13 @@ func NewCSSProvider() *CSSProvider {
 	return _cssProvider
 }
 
-// LoadFromBytes loads data into css_provider.
-//
-// This clears any previously loaded information.
-//
-// The function takes the following parameters:
-//
-//   - data: GBytes containing the data to load.
-func (cssProvider *CSSProvider) LoadFromBytes(data *glib.Bytes) {
-	var _arg0 *C.GtkCssProvider // out
-	var _arg1 *C.GBytes         // out
-
-	_arg0 = (*C.GtkCssProvider)(unsafe.Pointer(coreglib.InternObject(cssProvider).Native()))
-	_arg1 = (*C.GBytes)(gextras.StructNative(unsafe.Pointer(data)))
-
-	C.gtk_css_provider_load_from_bytes(_arg0, _arg1)
-	runtime.KeepAlive(cssProvider)
-	runtime.KeepAlive(data)
-}
-
 // LoadFromData loads data into css_provider.
 //
 // This clears any previously loaded information.
 //
-// Deprecated: Use gtk.CSSProvider.LoadFromString() or
-// gtk.CSSProvider.LoadFromBytes() instead.
-//
 // The function takes the following parameters:
 //
-//   - data: CSS data to be parsed.
+//   - data: CSS data loaded in memory.
 func (cssProvider *CSSProvider) LoadFromData(data string) {
 	var _arg0 *C.GtkCssProvider // out
 	var _arg1 *C.char           // out
@@ -45429,26 +40025,6 @@ func (cssProvider *CSSProvider) LoadFromResource(resourcePath string) {
 	runtime.KeepAlive(resourcePath)
 }
 
-// LoadFromString loads string into css_provider.
-//
-// This clears any previously loaded information.
-//
-// The function takes the following parameters:
-//
-//   - str: CSS to load.
-func (cssProvider *CSSProvider) LoadFromString(str string) {
-	var _arg0 *C.GtkCssProvider // out
-	var _arg1 *C.char           // out
-
-	_arg0 = (*C.GtkCssProvider)(unsafe.Pointer(coreglib.InternObject(cssProvider).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(str)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_css_provider_load_from_string(_arg0, _arg1)
-	runtime.KeepAlive(cssProvider)
-	runtime.KeepAlive(str)
-}
-
 // LoadNamed loads a theme from the usual theme paths.
 //
 // The actual process of finding the theme might change between releases,
@@ -45480,9 +40056,9 @@ func (provider *CSSProvider) LoadNamed(name, variant string) {
 
 // String converts the provider into a string representation in CSS format.
 //
-// Using gtk.CSSProvider.LoadFromString() with the return value from this
-// function on a new provider created with gtk.CSSProvider.New will basically
-// create a duplicate of this provider.
+// Using gtk.CSSProvider.LoadFromData() with the return value from this function
+// on a new provider created with gtk.CSSProvider.New will basically create a
+// duplicate of this provider.
 //
 // The function returns the following values:
 //
@@ -45781,14 +40357,10 @@ func (self *CustomSorter) SetSortFunc(sortFunc glib.CompareDataFunc) {
 
 // DialogOverrides contains methods that are overridable.
 type DialogOverrides struct {
-	// Close: signal emitted when the user uses a keybinding to close the
-	// dialog.
 	Close func()
 	// Response emits the ::response signal with the given response ID.
 	//
 	// Used to indicate that the user has responded to the dialog in some way.
-	//
-	// Deprecated: Use gtk.Window instead.
 	//
 	// The function takes the following parameters:
 	//
@@ -45916,8 +40488,6 @@ func defaultDialogOverrides(v *Dialog) DialogOverrides {
 // # Accessibility
 //
 // GtkDialog uses the GTK_ACCESSIBLE_ROLE_DIALOG role.
-//
-// Deprecated: Use gtk.Window instead.
 type Dialog struct {
 	_ [0]func() // equal guard
 	Window
@@ -46027,8 +40597,6 @@ func (dialog *Dialog) ConnectResponse(f func(responseId int)) coreglib.SignalHan
 // Widgets should not be packed into the GtkWindow directly, but into the
 // content_area and action_area, as described above.
 //
-// Deprecated: Use gtk.Window instead.
-//
 // The function returns the following values:
 //
 //   - dialog: new dialog as a GtkWidget.
@@ -46052,8 +40620,6 @@ func NewDialog() *Dialog {
 //
 // If you want to add a non-activatable widget, simply pack it into the
 // action_area field of the GtkDialog struct.
-//
-// Deprecated: Use gtk.Window instead.
 //
 // The function takes the following parameters:
 //
@@ -46080,8 +40646,6 @@ func (dialog *Dialog) AddActionWidget(child Widgetter, responseId int) {
 // gtk.Dialog::response signal with the given response_id. The button is
 // appended to the end of the dialog’s action area. The button widget is
 // returned, but usually you don’t need it.
-//
-// Deprecated: Use gtk.Window instead.
 //
 // The function takes the following parameters:
 //
@@ -46132,8 +40696,6 @@ func (dialog *Dialog) AddButton(buttonText string, responseId int) Widgetter {
 
 // ContentArea returns the content area of dialog.
 //
-// Deprecated: Use gtk.Window instead.
-//
 // The function returns the following values:
 //
 //   - box: content area GtkBox.
@@ -46158,8 +40720,6 @@ func (dialog *Dialog) ContentArea() *Box {
 // Note that the headerbar is only used by the dialog if the
 // gtk.Dialog:use-header-bar property is TRUE.
 //
-// Deprecated: Use gtk.Window instead.
-//
 // The function returns the following values:
 //
 //   - headerBar: header bar.
@@ -46181,8 +40741,6 @@ func (dialog *Dialog) HeaderBar() *HeaderBar {
 
 // ResponseForWidget gets the response id of a widget in the action area of a
 // dialog.
-//
-// Deprecated: Use gtk.Window instead.
 //
 // The function takes the following parameters:
 //
@@ -46213,8 +40771,6 @@ func (dialog *Dialog) ResponseForWidget(widget Widgetter) int {
 
 // WidgetForResponse gets the widget button that uses the given response ID in
 // the action area of a dialog.
-//
-// Deprecated: Use gtk.Window instead.
 //
 // The function takes the following parameters:
 //
@@ -46261,8 +40817,6 @@ func (dialog *Dialog) WidgetForResponse(responseId int) Widgetter {
 //
 // Used to indicate that the user has responded to the dialog in some way.
 //
-// Deprecated: Use gtk.Window instead.
-//
 // The function takes the following parameters:
 //
 //   - responseId: response ID.
@@ -46283,8 +40837,6 @@ func (dialog *Dialog) Response(responseId int) {
 //
 // Pressing “Enter” normally activates the default widget.
 //
-// Deprecated: Use gtk.Window instead.
-//
 // The function takes the following parameters:
 //
 //   - responseId: response ID.
@@ -46304,8 +40856,6 @@ func (dialog *Dialog) SetDefaultResponse(responseId int) {
 //
 // Calls gtk_widget_set_sensitive (widget, setting) for each widget in the
 // dialog’s action area with the given response_id.
-//
-// Deprecated: Use gtk.Window instead.
 //
 // The function takes the following parameters:
 //
@@ -46328,7 +40878,6 @@ func (dialog *Dialog) SetResponseSensitive(responseId int, setting bool) {
 	runtime.KeepAlive(setting)
 }
 
-// Close: signal emitted when the user uses a keybinding to close the dialog.
 func (dialog *Dialog) close() {
 	gclass := (*C.GtkDialogClass)(coreglib.PeekParentClass(dialog))
 	fnarg := gclass.close
@@ -46344,8 +40893,6 @@ func (dialog *Dialog) close() {
 // Response emits the ::response signal with the given response ID.
 //
 // Used to indicate that the user has responded to the dialog in some way.
-//
-// Deprecated: Use gtk.Window instead.
 //
 // The function takes the following parameters:
 //
@@ -46379,8 +40926,8 @@ func defaultDirectoryListOverrides(v *DirectoryList) DirectoryListOverrides {
 // It presents a GListModel and fills it asynchronously with the GFileInfos
 // returned from that function.
 //
-// Enumeration will start automatically when the gtk.DirectoryList:file property
-// is set.
+// Enumeration will start automatically when a the gtk.DirectoryList:file
+// property is set.
 //
 // While the GtkDirectoryList is being filled, the gtk.DirectoryList:loading
 // property will be set to TRUE. You can listen to that property if you want to
@@ -46626,8 +41173,8 @@ func (self *DirectoryList) IsLoading() bool {
 // SetAttributes sets the attributes to be enumerated and starts the
 // enumeration.
 //
-// If attributes is NULL, the list of file infos will still be created, it will
-// just not contain any extra attributes.
+// If attributes is NULL, no attributes will be queried, but a list of
+// GFileInfos will still be created.
 //
 // The function takes the following parameters:
 //
@@ -47356,14 +41903,17 @@ func defaultDrawingAreaOverrides(v *DrawingArea) DrawingAreaOverrides {
 //	               gpointer        data)
 //	{
 //	  GdkRGBA color;
+//	  GtkStyleContext *context;
+//
+//	  context = gtk_widget_get_style_context (GTK_WIDGET (area));
 //
 //	  cairo_arc (cr,
 //	             width / 2.0, height / 2.0,
 //	             MIN (width, height) / 2.0,
 //	             0, 2 * G_PI);
 //
-//	  gtk_widget_get_color (GTK_WIDGET (area),
-//	                        &color);
+//	  gtk_style_context_get_color (context,
+//	                               &color);
 //	  gdk_cairo_set_source_rgba (cr, &color);
 //
 //	  cairo_fill (cr);
@@ -47789,16 +42339,11 @@ func defaultDropDownOverrides(v *DropDown) DropDownOverrides {
 //
 // !An example GtkDropDown (drop-down.png)
 //
-// The GtkDropDown displays the [selected]gtk.DropDown:selected choice.
+// The GtkDropDown displays the selected choice.
 //
 // The options are given to GtkDropDown in the form of GListModel and how the
 // individual options are represented is determined by a gtk.ListItemFactory.
-// The default factory displays simple strings, and adds a checkmark to the
-// selected item in the popup.
-//
-// To set your own factory, use gtk.DropDown.SetFactory(). It is
-// possible to use a separate factory for the items in the popup, with
-// gtk.DropDown.SetListFactory().
+// The default factory displays simple strings.
 //
 // GtkDropDown knows how to obtain strings from the items in a gtk.StringList;
 // for other models, you have to provide an expression to find the strings via
@@ -47821,13 +42366,6 @@ func defaultDropDownOverrides(v *DropDown) DropDownOverrides {
 //	    </object>
 //	  </property>
 //	</object>
-//
-// If a GtkDropDown is created in this manner, or with
-// gtk.DropDown.NewFromStrings, for instance, the object returned from
-// gtk.DropDown.GetSelectedItem() will be a gtk.StringObject.
-//
-// To learn more about the list widget framework, see the overview
-// (section-list-widget.html).
 //
 // # CSS nodes
 //
@@ -48058,30 +42596,6 @@ func (self *DropDown) Factory() *ListItemFactory {
 	return _listItemFactory
 }
 
-// HeaderFactory gets the factory that's currently used to create header widgets
-// for the popup.
-//
-// The function returns the following values:
-//
-//   - listItemFactory (optional): factory in use.
-func (self *DropDown) HeaderFactory() *ListItemFactory {
-	var _arg0 *C.GtkDropDown        // out
-	var _cret *C.GtkListItemFactory // in
-
-	_arg0 = (*C.GtkDropDown)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_drop_down_get_header_factory(_arg0)
-	runtime.KeepAlive(self)
-
-	var _listItemFactory *ListItemFactory // out
-
-	if _cret != nil {
-		_listItemFactory = wrapListItemFactory(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _listItemFactory
-}
-
 // ListFactory gets the factory that's currently used to populate list items in
 // the popup.
 //
@@ -48132,27 +42646,6 @@ func (self *DropDown) Model() *gio.ListModel {
 	}
 
 	return _listModel
-}
-
-// SearchMatchMode returns the match mode that the search filter is using.
-//
-// The function returns the following values:
-//
-//   - stringFilterMatchMode: match mode of the search filter.
-func (self *DropDown) SearchMatchMode() StringFilterMatchMode {
-	var _arg0 *C.GtkDropDown             // out
-	var _cret C.GtkStringFilterMatchMode // in
-
-	_arg0 = (*C.GtkDropDown)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_drop_down_get_search_match_mode(_arg0)
-	runtime.KeepAlive(self)
-
-	var _stringFilterMatchMode StringFilterMatchMode // out
-
-	_stringFilterMatchMode = StringFilterMatchMode(_cret)
-
-	return _stringFilterMatchMode
 }
 
 // Selected gets the position of the selected item.
@@ -48286,26 +42779,6 @@ func (self *DropDown) SetFactory(factory *ListItemFactory) {
 	runtime.KeepAlive(factory)
 }
 
-// SetHeaderFactory sets the GtkListItemFactory to use for creating header
-// widgets for the popup.
-//
-// The function takes the following parameters:
-//
-//   - factory (optional) to use.
-func (self *DropDown) SetHeaderFactory(factory *ListItemFactory) {
-	var _arg0 *C.GtkDropDown        // out
-	var _arg1 *C.GtkListItemFactory // out
-
-	_arg0 = (*C.GtkDropDown)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if factory != nil {
-		_arg1 = (*C.GtkListItemFactory)(unsafe.Pointer(coreglib.InternObject(factory).Native()))
-	}
-
-	C.gtk_drop_down_set_header_factory(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(factory)
-}
-
 // SetListFactory sets the GtkListItemFactory to use for populating list items
 // in the popup.
 //
@@ -48343,23 +42816,6 @@ func (self *DropDown) SetModel(model gio.ListModeller) {
 	C.gtk_drop_down_set_model(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(model)
-}
-
-// SetSearchMatchMode sets the match mode for the search filter.
-//
-// The function takes the following parameters:
-//
-//   - searchMatchMode: new match mode.
-func (self *DropDown) SetSearchMatchMode(searchMatchMode StringFilterMatchMode) {
-	var _arg0 *C.GtkDropDown             // out
-	var _arg1 C.GtkStringFilterMatchMode // out
-
-	_arg0 = (*C.GtkDropDown)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkStringFilterMatchMode(searchMatchMode)
-
-	C.gtk_drop_down_set_search_match_mode(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(searchMatchMode)
 }
 
 // SetSelected selects the item at the given position.
@@ -48435,7 +42891,7 @@ func (self *DropDown) SetShowArrow(showArrow bool) {
 //
 //	  // This widget accepts two types of drop types: GFile objects
 //	  // and GdkPixbuf objects
-//	  gtk_drop_target_set_gtypes (target, (GType [2]) {
+//	  gtk_drop_target_set_gtypes (target, (GTypes [2]) {
 //	    G_TYPE_FILE,
 //	    GDK_TYPE_PIXBUF,
 //	  }, 2);
@@ -49401,8 +43857,6 @@ func NewEmojiChooser() *EmojiChooser {
 
 // EntryOverrides contains methods that are overridable.
 type EntryOverrides struct {
-	// Activate class handler for the GtkEntry::activate signal. The default
-	// implementation activates the gtk.activate-default action.
 	Activate func()
 }
 
@@ -49763,8 +44217,6 @@ func (entry *Entry) Buffer() *EntryBuffer {
 }
 
 // Completion returns the auxiliary completion object currently in use by entry.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -50390,7 +44842,7 @@ func (entry *Entry) ProgressPulseStep() float64 {
 	return _gdouble
 }
 
-// Tabs gets the tabstops of the GtkEntry.
+// Tabs gets the tabstops of the `GtkEntry.
 //
 // See gtk.Entry.SetTabs().
 //
@@ -50572,7 +45024,7 @@ func (entry *Entry) SetAlignment(xalign float32) {
 //
 // The attributes in the list are applied to the entry text.
 //
-// Since the attributes will be applied to text that changes as the user types,
+// Since the attributes will be applies to text that changes as the user types,
 // it makes most sense to use attributes with unlimited extent.
 //
 // The function takes the following parameters:
@@ -50614,8 +45066,6 @@ func (entry *Entry) SetBuffer(buffer *EntryBuffer) {
 // All further configuration of the completion mechanism is done on completion
 // using the GtkEntryCompletion API. Completion is disabled if completion is set
 // to NULL.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -50961,7 +45411,7 @@ func (entry *Entry) SetInvisibleChar(ch uint32) {
 // SetMaxLength sets the maximum allowed length of the contents of the widget.
 //
 // If the current contents are longer than the given length, then they will be
-// truncated to fit. The length is in characters.
+// truncated to fit. The length is is in characters.
 //
 // This is equivalent to getting entry's GtkEntryBuffer and calling
 // gtk.EntryBuffer.SetMaxLength() on it.
@@ -51129,8 +45579,6 @@ func (entry *Entry) UnsetInvisibleChar() {
 	runtime.KeepAlive(entry)
 }
 
-// Activate class handler for the GtkEntry::activate signal. The default
-// implementation activates the gtk.activate-default action.
 func (entry *Entry) activate() {
 	gclass := (*C.GtkEntryClass)(coreglib.PeekParentClass(entry))
 	fnarg := gclass.activate
@@ -51825,8 +46273,6 @@ func (buffer *EntryBuffer) insertedText(position uint, chars string, nChars uint
 // you need the original model, use gtk.TreeModelFilter.GetModel(). Don’t forget
 // to use gtk.TreeModelFilter.ConvertIterToChildIter() to obtain a matching
 // iter.
-//
-// Deprecated: since version 4.10.
 type EntryCompletion struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -51900,8 +46346,6 @@ func (completion *EntryCompletion) ConnectNoMatches(f func()) coreglib.SignalHan
 
 // NewEntryCompletion creates a new GtkEntryCompletion object.
 //
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - entryCompletion: newly created GtkEntryCompletion object.
@@ -51922,8 +46366,6 @@ func NewEntryCompletion() *EntryCompletion {
 //
 // The GtkCellArea is used to layout cells in the underlying GtkTreeViewColumn
 // for the drop-down menu.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -51952,8 +46394,6 @@ func NewEntryCompletionWithArea(area CellAreaer) *EntryCompletion {
 // the current list with completions, using the current key.
 //
 // The completion list view will be updated accordingly.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 func (completion *EntryCompletion) Complete() {
 	var _arg0 *C.GtkEntryCompletion // out
 
@@ -51969,8 +46409,6 @@ func (completion *EntryCompletion) Complete() {
 // If no row matches key, NULL will be returned. Note that a
 // text column must have been set for this function to work, see
 // gtk.EntryCompletion.SetTextColumn() for details.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -52005,8 +46443,6 @@ func (completion *EntryCompletion) ComputePrefix(key string) string {
 // CompletionPrefix: get the original text entered by the user that triggered
 // the completion or NULL if there’s no completion ongoing.
 //
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - utf8 (optional): prefix for the current completion.
@@ -52029,8 +46465,6 @@ func (completion *EntryCompletion) CompletionPrefix() string {
 }
 
 // Entry gets the entry completion has been attached to.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -52070,8 +46504,6 @@ func (completion *EntryCompletion) Entry() Widgetter {
 // InlineCompletion returns whether the common prefix of the possible
 // completions should be automatically inserted in the entry.
 //
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if inline completion is turned on.
@@ -52094,8 +46526,6 @@ func (completion *EntryCompletion) InlineCompletion() bool {
 }
 
 // InlineSelection returns TRUE if inline-selection mode is turned on.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -52120,8 +46550,6 @@ func (completion *EntryCompletion) InlineSelection() bool {
 
 // MinimumKeyLength returns the minimum key length as set for completion.
 //
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - gint: currently used minimum key length.
@@ -52144,8 +46572,6 @@ func (completion *EntryCompletion) MinimumKeyLength() int {
 // Model returns the model the GtkEntryCompletion is using as data source.
 //
 // Returns NULL if the model is unset.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -52171,8 +46597,6 @@ func (completion *EntryCompletion) Model() *TreeModel {
 // PopupCompletion returns whether the completions should be presented in a
 // popup window.
 //
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if popup completion is turned on.
@@ -52196,8 +46620,6 @@ func (completion *EntryCompletion) PopupCompletion() bool {
 
 // PopupSetWidth returns whether the completion popup window will be resized to
 // the width of the entry.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -52223,8 +46645,6 @@ func (completion *EntryCompletion) PopupSetWidth() bool {
 // PopupSingleMatch returns whether the completion popup window will appear even
 // if there is only a single match.
 //
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the popup window will appear regardless of the number of
@@ -52249,8 +46669,6 @@ func (completion *EntryCompletion) PopupSingleMatch() bool {
 
 // TextColumn returns the column in the model of completion to get strings from.
 //
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - gint: column containing the strings.
@@ -52271,8 +46689,6 @@ func (completion *EntryCompletion) TextColumn() int {
 }
 
 // InsertPrefix requests a prefix insertion.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 func (completion *EntryCompletion) InsertPrefix() {
 	var _arg0 *C.GtkEntryCompletion // out
 
@@ -52284,8 +46700,6 @@ func (completion *EntryCompletion) InsertPrefix() {
 
 // SetInlineCompletion sets whether the common prefix of the possible
 // completions should be automatically inserted in the entry.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -52306,8 +46720,6 @@ func (completion *EntryCompletion) SetInlineCompletion(inlineCompletion bool) {
 
 // SetInlineSelection sets whether it is possible to cycle through the possible
 // completions inside the entry.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -52330,8 +46742,6 @@ func (completion *EntryCompletion) SetInlineSelection(inlineSelection bool) {
 //
 // The match function is used to determine if a row should or should not be in
 // the completion list.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -52359,8 +46769,6 @@ func (completion *EntryCompletion) SetMatchFunc(fn EntryCompletionMatchFunc) {
 // of time and will come up with meaningless results anyway (ie, a too large
 // dataset).
 //
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - length: minimum length of the key in order to start completing.
@@ -52380,8 +46788,6 @@ func (completion *EntryCompletion) SetMinimumKeyLength(length int) {
 //
 // If completion already has a model set, it will remove it before setting the
 // new model. If model is NULL, then it will unset the model.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -52403,8 +46809,6 @@ func (completion *EntryCompletion) SetModel(model TreeModeller) {
 // SetPopupCompletion sets whether the completions should be presented in a
 // popup window.
 //
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - popupCompletion: TRUE to do popup completion.
@@ -52424,8 +46828,6 @@ func (completion *EntryCompletion) SetPopupCompletion(popupCompletion bool) {
 
 // SetPopupSetWidth sets whether the completion popup window will be resized to
 // be the same width as the entry.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -52449,8 +46851,6 @@ func (completion *EntryCompletion) SetPopupSetWidth(popupSetWidth bool) {
 //
 // You may want to set this to FALSE if you are using
 // gtk.EntryCompletion:inline-completion.
-//
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -52482,8 +46882,6 @@ func (completion *EntryCompletion) SetPopupSingleMatch(popupSingleMatch bool) {
 // use g_object_set() to set the gtk.EntryCompletion:text-column property
 // directly.
 //
-// Deprecated: GtkEntryCompletion will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - column in the model of completion to get strings from.
@@ -52509,7 +46907,7 @@ func (completion *EntryCompletion) SetTextColumn(column int) {
 // gtk.Widget.RemoveController().
 //
 // See the chapter on input handling (input-handling.html) for an overview
-// of the basic concepts, such as the capture and bubble phases of event
+// of the basic concepts, such as the capture and bubble phases of even
 // propagation.
 type EventController struct {
 	_ [0]func() // equal guard
@@ -53030,7 +47428,7 @@ func (controller *EventControllerKey) ConnectKeyReleased(f func(keyval, keycode 
 
 // ConnectModifiers is emitted whenever the state of modifier keys and pointer
 // buttons change.
-func (controller *EventControllerKey) ConnectModifiers(f func(state gdk.ModifierType) (ok bool)) coreglib.SignalHandle {
+func (controller *EventControllerKey) ConnectModifiers(f func(keyval gdk.ModifierType) (ok bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(controller, "modifiers", false, unsafe.Pointer(C._gotk4_gtk4_EventControllerKey_ConnectModifiers), f)
 }
 
@@ -53570,9 +47968,9 @@ func NewEveryFilter() *EveryFilter {
 // There are situations in which you may prefer to show and hide the expanded
 // widget yourself, such as when you want to actually create the widget at
 // expansion time. In this case, create a GtkExpander but do not add a child to
-// it. The expander widget has an gtk.Expander:expanded property which can be
-// used to monitor its expansion state. You should watch this property with a
-// signal connection as follows:
+// it. The expander widget has an [propertyGtk.Expander:expanded[ property which
+// can be used to monitor its expansion state. You should watch this property
+// with a signal connection as follows:
 //
 //	static void
 //	expander_callback (GObject    *object,
@@ -53623,17 +48021,16 @@ func NewEveryFilter() *EveryFilter {
 //
 // CSS nodes
 //
-//	expander-widget
+//	expander
 //	╰── box
 //	    ├── title
-//	    │   ├── expander
+//	    │   ├── arrow
 //	    │   ╰── <label widget>
 //	    ╰── <child>
 //
-// GtkExpander has a main node expander-widget, and subnode box containing the
-// title and child widget. The box subnode title contains node expander, i.e.
-// the expand/collapse arrow; then the label widget if any. The arrow of an
-// expander that is showing its child gets the :checked pseudoclass set on it.
+// GtkExpander has three CSS nodes, the main node with the name expander,
+// a subnode with name title and node below it with name arrow. The arrow of an
+// expander that is showing its child gets the :checked pseudoclass added to it.
 //
 // # Accessibility
 //
@@ -53868,7 +48265,7 @@ func (expander *Expander) LabelWidget() Widgetter {
 }
 
 // ResizeToplevel returns whether the expander will resize the toplevel widget
-// containing the expander upon resizing and collapsing.
+// containing the expander upon resizing and collpasing.
 //
 // The function returns the following values:
 //
@@ -54023,7 +48420,7 @@ func (expander *Expander) SetLabelWidget(labelWidget Widgetter) {
 }
 
 // SetResizeToplevel sets whether the expander will resize the toplevel widget
-// containing the expander upon resizing and collapsing.
+// containing the expander upon resizing and collpasing.
 //
 // The function takes the following parameters:
 //
@@ -54135,7 +48532,7 @@ func (expander *Expander) SetUseUnderline(useUnderline bool) {
 // # GtkExpression in GObject properties
 //
 // In order to use a GtkExpression as a GObject property, you must use the
-// gtk.ParamSpecExpression() when creating a GParamSpec to install in the
+// gtk_param_spec_expression when creating a GParamSpec to install in the
 // GObject class being defined; for instance:
 //
 //	obj_props[PROP_EXPRESSION] =
@@ -54147,8 +48544,8 @@ func (expander *Expander) SetUseUnderline(useUnderline bool) {
 //	                             G_PARAM_EXPLICIT_NOTIFY);
 //
 // When implementing the GObjectClass.set_property and GObjectClass.get_property
-// virtual functions, you must use gtk.ValueGetExpression(), to retrieve the
-// stored GtkExpression from the GValue container, and gtk.ValueSetExpression(),
+// virtual functions, you must use gtk_value_get_expression, to retrieve the
+// stored GtkExpression from the GValue container, and gtk_value_set_expression,
 // to store the GtkExpression into the GValue; for instance:
 //
 //	// in set_property()...
@@ -54171,17 +48568,12 @@ func (expander *Expander) SetUseUnderline(useUnderline bool) {
 // To create a property expression, use the <lookup> element. It can have a
 // type attribute to specify the object type, and a name attribute to specify
 // the property to look up. The content of <lookup> can either be an element
-// specifying the expression to use the object, or a string that specifies the
+// specfiying the expression to use the object, or a string that specifies the
 // name of the object to use.
 //
 // Example:
 //
 //	<lookup name='search'>string_filter</lookup>
-//
-// Since the <lookup> element creates an expression and its element content
-// can itself be an expression, this means that <lookup> tags can also
-// be nested. This is a common idiom when dealing with GtkListItems. See
-// gtk.BuilderListItemFactory for an example of this technique.
 //
 // To create a constant expression, use the <constant> element. If the type
 // attribute is specified, the element content is interpreted as a value of that
@@ -54190,29 +48582,14 @@ func (expander *Expander) SetUseUnderline(useUnderline bool) {
 //	<constant>string_filter</constant>
 //	<constant type='gchararray'>Hello, world</constant>
 //
-// To create a closure expression, use the <closure> element. The function
-// attribute specifies what function to use for the closure, and the type
-// attribute specifies its return type. The content of the element contains the
-// expressions for the parameters. For instance:
+// To create a closure expression, use the <closure> element. The type and
+// function attributes specify what function to use for the closure, the content
+// of the element contains the expressions for the parameters. For instance:
 //
 //	<closure type='gchararray' function='combine_args_somehow'>
 //	  <constant type='gchararray'>File size:</constant>
 //	  <lookup type='GFile' name='size'>myfile</lookup>
-//	</closure>
-//
-// To create a property binding, use the <binding> element in place of where a
-// <property> tag would ordinarily be used. The name and object attributes are
-// supported. The name attribute is required, and pertains to the applicable
-// property name. The object attribute is optional. If provided, it will use
-// the specified object as the this object when the expression is evaluated.
-// Here is an example in which the label property of a GtkLabel is bound to the
-// string property of another arbitrary object:
-//
-//	<object class='GtkLabel'>
-//	  <binding name='label'>
-//	    <lookup name='string'>some_other_object</lookup>
-//	  </binding>
-//	</object>.
+//	</closure>.
 type Expression struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -54506,7 +48883,7 @@ func (self *Expression) Watch(this_ *coreglib.Object, notify ExpressionNotify) *
 //	                                        GTK_RESPONSE_ACCEPT,
 //	                                        NULL);
 //
-//	  gtk_window_present (GTK_WINDOW (dialog));
+//	  gtk_widget_show (dialog);
 //
 //	  g_signal_connect (dialog, "response",
 //	                    G_CALLBACK (on_open_response),
@@ -54550,7 +48927,7 @@ func (self *Expression) Watch(this_ *coreglib.Object, notify ExpressionNotify) *
 //	  else
 //	    gtk_file_chooser_set_file (chooser, existing_filename);
 //
-//	  gtk_window_present (GTK_WINDOW (dialog));
+//	  gtk_widget_show (dialog);
 //
 //	  g_signal_connect (dialog, "response",
 //	                    G_CALLBACK (on_save_response),
@@ -54615,13 +48992,6 @@ func (self *Expression) Watch(this_ *coreglib.Object, notify ExpressionNotify) *
 //
 // To summarize, make sure you use a predefined response code when you use
 // GtkFileChooserDialog to ensure proper operation.
-//
-// # CSS nodes
-//
-// GtkFileChooserDialog has a single CSS node with the name window and style
-// class .filechooser.
-//
-// Deprecated: Use gtk.FileDialog instead.
 type FileChooserDialog struct {
 	_ [0]func() // equal guard
 	Dialog
@@ -54838,8 +49208,6 @@ func defaultFileChooserNativeOverrides(v *FileChooserNative) FileChooserNativeOv
 // supported:
 //
 // * Shortcut folders.
-//
-// Deprecated: Use gtk.FileDialog instead.
 type FileChooserNative struct {
 	_ [0]func() // equal guard
 	NativeDialog
@@ -54886,8 +49254,6 @@ func marshalFileChooserNative(p uintptr) (interface{}, error) {
 }
 
 // NewFileChooserNative creates a new GtkFileChooserNative.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -54943,8 +49309,6 @@ func NewFileChooserNative(title string, parent *Window, action FileChooserAction
 
 // AcceptLabel retrieves the custom label text for the accept button.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function returns the following values:
 //
 //   - utf8 (optional): custom label.
@@ -54967,8 +49331,6 @@ func (self *FileChooserNative) AcceptLabel() string {
 }
 
 // CancelLabel retrieves the custom label text for the cancel button.
-//
-// Deprecated: Use gtk.FileDialog instead.
 //
 // The function returns the following values:
 //
@@ -55000,8 +49362,6 @@ func (self *FileChooserNative) CancelLabel() string {
 //
 // Pressing Alt and that key should activate the button.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - acceptLabel (optional): custom label.
@@ -55029,8 +49389,6 @@ func (self *FileChooserNative) SetAcceptLabel(acceptLabel string) {
 //
 // Pressing Alt and that key should activate the button.
 //
-// Deprecated: Use gtk.FileDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - cancelLabel (optional): custom label.
@@ -55057,8 +49415,6 @@ func (self *FileChooserNative) SetCancelLabel(cancelLabel string) {
 // # CSS nodes
 //
 // GtkFileChooserWidget has a single CSS node with name filechooser.
-//
-// Deprecated: Direct use of GtkFileChooserWidget is deprecated.
 type FileChooserWidget struct {
 	_ [0]func() // equal guard
 	Widget
@@ -55256,8 +49612,6 @@ func (v *FileChooserWidget) ConnectUpFolder(f func()) coreglib.SignalHandle {
 // This is a file chooser widget that can be embedded in custom windows,
 // and it is the same widget that is used by GtkFileChooserDialog.
 //
-// Deprecated: Direct use of GtkFileChooserWidget is deprecated.
-//
 // The function takes the following parameters:
 //
 //   - action: open or save mode for the widget.
@@ -55279,862 +49633,6 @@ func NewFileChooserWidget(action FileChooserAction) *FileChooserWidget {
 	_fileChooserWidget = wrapFileChooserWidget(coreglib.Take(unsafe.Pointer(_cret)))
 
 	return _fileChooserWidget
-}
-
-// FileDialogOverrides contains methods that are overridable.
-type FileDialogOverrides struct {
-}
-
-func defaultFileDialogOverrides(v *FileDialog) FileDialogOverrides {
-	return FileDialogOverrides{}
-}
-
-// FileDialog: GtkFileDialog object collects the arguments that are needed to
-// present a file chooser dialog to the user, such as a title for the dialog and
-// whether it should be modal.
-//
-// The dialog is shown with gtk.FileDialog.Open(), gtk.FileDialog.Save(),
-// etc. These APIs follow the GIO async pattern, and the result can be
-// obtained by calling the corresponding finish function, for example
-// gtk.FileDialog.OpenFinish().
-type FileDialog struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*FileDialog)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*FileDialog, *FileDialogClass, FileDialogOverrides](
-		GTypeFileDialog,
-		initFileDialogClass,
-		wrapFileDialog,
-		defaultFileDialogOverrides,
-	)
-}
-
-func initFileDialogClass(gclass unsafe.Pointer, overrides FileDialogOverrides, classInitFunc func(*FileDialogClass)) {
-	if classInitFunc != nil {
-		class := (*FileDialogClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapFileDialog(obj *coreglib.Object) *FileDialog {
-	return &FileDialog{
-		Object: obj,
-	}
-}
-
-func marshalFileDialog(p uintptr) (interface{}, error) {
-	return wrapFileDialog(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NewFileDialog creates a new GtkFileDialog object.
-//
-// The function returns the following values:
-//
-//   - fileDialog: new GtkFileDialog.
-func NewFileDialog() *FileDialog {
-	var _cret *C.GtkFileDialog // in
-
-	_cret = C.gtk_file_dialog_new()
-
-	var _fileDialog *FileDialog // out
-
-	_fileDialog = wrapFileDialog(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-
-	return _fileDialog
-}
-
-// The function returns the following values:
-//
-//   - utf8 (optional): label shown on the file chooser's accept button.
-func (self *FileDialog) AcceptLabel() string {
-	var _arg0 *C.GtkFileDialog // out
-	var _cret *C.char          // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_dialog_get_accept_label(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	}
-
-	return _utf8
-}
-
-// DefaultFilter gets the filter that will be selected by default in the file
-// chooser dialog.
-//
-// The function returns the following values:
-//
-//   - fileFilter (optional): current filter.
-func (self *FileDialog) DefaultFilter() *FileFilter {
-	var _arg0 *C.GtkFileDialog // out
-	var _cret *C.GtkFileFilter // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_dialog_get_default_filter(_arg0)
-	runtime.KeepAlive(self)
-
-	var _fileFilter *FileFilter // out
-
-	if _cret != nil {
-		_fileFilter = wrapFileFilter(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _fileFilter
-}
-
-// Filters gets the filters that will be offered to the user in the file chooser
-// dialog.
-//
-// The function returns the following values:
-//
-//   - listModel (optional): filters, as a GListModel of GtkFileFilters.
-func (self *FileDialog) Filters() *gio.ListModel {
-	var _arg0 *C.GtkFileDialog // out
-	var _cret *C.GListModel    // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_dialog_get_filters(_arg0)
-	runtime.KeepAlive(self)
-
-	var _listModel *gio.ListModel // out
-
-	if _cret != nil {
-		{
-			obj := coreglib.Take(unsafe.Pointer(_cret))
-			_listModel = &gio.ListModel{
-				Object: obj,
-			}
-		}
-	}
-
-	return _listModel
-}
-
-// InitialFile gets the file that will be initially selected in the file chooser
-// dialog.
-//
-// The function returns the following values:
-//
-//   - file (optional): file.
-func (self *FileDialog) InitialFile() *gio.File {
-	var _arg0 *C.GtkFileDialog // out
-	var _cret *C.GFile         // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_dialog_get_initial_file(_arg0)
-	runtime.KeepAlive(self)
-
-	var _file *gio.File // out
-
-	if _cret != nil {
-		{
-			obj := coreglib.Take(unsafe.Pointer(_cret))
-			_file = &gio.File{
-				Object: obj,
-			}
-		}
-	}
-
-	return _file
-}
-
-// InitialFolder gets the folder that will be set as the initial folder in the
-// file chooser dialog.
-//
-// The function returns the following values:
-//
-//   - file (optional): folder.
-func (self *FileDialog) InitialFolder() *gio.File {
-	var _arg0 *C.GtkFileDialog // out
-	var _cret *C.GFile         // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_dialog_get_initial_folder(_arg0)
-	runtime.KeepAlive(self)
-
-	var _file *gio.File // out
-
-	if _cret != nil {
-		{
-			obj := coreglib.Take(unsafe.Pointer(_cret))
-			_file = &gio.File{
-				Object: obj,
-			}
-		}
-	}
-
-	return _file
-}
-
-// InitialName gets the name for the file that should be initially set.
-//
-// The function returns the following values:
-//
-//   - utf8 (optional): name.
-func (self *FileDialog) InitialName() string {
-	var _arg0 *C.GtkFileDialog // out
-	var _cret *C.char          // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_dialog_get_initial_name(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	}
-
-	return _utf8
-}
-
-// Modal returns whether the file chooser dialog blocks interaction with the
-// parent window while it is presented.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the file chooser dialog is modal.
-func (self *FileDialog) Modal() bool {
-	var _arg0 *C.GtkFileDialog // out
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_dialog_get_modal(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Title returns the title that will be shown on the file chooser dialog.
-//
-// The function returns the following values:
-//
-//   - utf8: title.
-func (self *FileDialog) Title() string {
-	var _arg0 *C.GtkFileDialog // out
-	var _cret *C.char          // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_dialog_get_title(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// Open: this function initiates a file selection operation by presenting a file
-// chooser dialog to the user.
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.FileDialog.OpenFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - callback (optional) to call when the operation is complete.
-func (self *FileDialog) Open(ctx context.Context, parent *Window, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFileDialog      // out
-	var _arg2 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg3 C.GAsyncReadyCallback // out
-	var _arg4 C.gpointer
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg2 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if callback != nil {
-		_arg3 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg4 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_file_dialog_open(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(callback)
-}
-
-// OpenFinish finishes the gtk.FileDialog.Open() call and returns the resulting
-// file.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - file (optional) that was selected. Otherwise, NULL is returned and error
-//     is set.
-func (self *FileDialog) OpenFinish(result gio.AsyncResulter) (*gio.File, error) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.GAsyncResult  // out
-	var _cret *C.GFile         // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_file_dialog_open_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _file *gio.File // out
-	var _goerr error    // out
-
-	if _cret != nil {
-		{
-			obj := coreglib.AssumeOwnership(unsafe.Pointer(_cret))
-			_file = &gio.File{
-				Object: obj,
-			}
-		}
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _file, _goerr
-}
-
-// OpenMultiple: this function initiates a multi-file selection operation by
-// presenting a file chooser dialog to the user.
-//
-// The file chooser will initially be opened in the directory
-// gtk.FileDialog:initial-folder.
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.FileDialog.OpenMultipleFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - callback (optional) to call when the operation is complete.
-func (self *FileDialog) OpenMultiple(ctx context.Context, parent *Window, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFileDialog      // out
-	var _arg2 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg3 C.GAsyncReadyCallback // out
-	var _arg4 C.gpointer
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg2 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if callback != nil {
-		_arg3 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg4 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_file_dialog_open_multiple(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(callback)
-}
-
-// OpenMultipleFinish finishes the gtk.FileDialog.Open() call and returns the
-// resulting files in a GListModel.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - listModel (optional): file that was selected, as a GListModel of GFiles.
-//     Otherwise, NULL is returned and error is set.
-func (self *FileDialog) OpenMultipleFinish(result gio.AsyncResulter) (*gio.ListModel, error) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.GAsyncResult  // out
-	var _cret *C.GListModel    // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_file_dialog_open_multiple_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _listModel *gio.ListModel // out
-	var _goerr error              // out
-
-	if _cret != nil {
-		{
-			obj := coreglib.AssumeOwnership(unsafe.Pointer(_cret))
-			_listModel = &gio.ListModel{
-				Object: obj,
-			}
-		}
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _listModel, _goerr
-}
-
-// Save: this function initiates a file save operation by presenting a file
-// chooser dialog to the user.
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.FileDialog.SaveFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - callback (optional) to call when the operation is complete.
-func (self *FileDialog) Save(ctx context.Context, parent *Window, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFileDialog      // out
-	var _arg2 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg3 C.GAsyncReadyCallback // out
-	var _arg4 C.gpointer
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg2 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if callback != nil {
-		_arg3 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg4 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_file_dialog_save(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(callback)
-}
-
-// SaveFinish finishes the gtk.FileDialog.Save() call and returns the resulting
-// file.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - file (optional) that was selected. Otherwise, NULL is returned and error
-//     is set.
-func (self *FileDialog) SaveFinish(result gio.AsyncResulter) (*gio.File, error) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.GAsyncResult  // out
-	var _cret *C.GFile         // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_file_dialog_save_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _file *gio.File // out
-	var _goerr error    // out
-
-	if _cret != nil {
-		{
-			obj := coreglib.AssumeOwnership(unsafe.Pointer(_cret))
-			_file = &gio.File{
-				Object: obj,
-			}
-		}
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _file, _goerr
-}
-
-// SelectFolder: this function initiates a directory selection operation by
-// presenting a file chooser dialog to the user.
-//
-// If you pass initial_folder, the file chooser will initially be opened in
-// the parent directory of that folder, otherwise, it will be in the directory
-// gtk.FileDialog:initial-folder.
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.FileDialog.SelectFolderFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - callback (optional) to call when the operation is complete.
-func (self *FileDialog) SelectFolder(ctx context.Context, parent *Window, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFileDialog      // out
-	var _arg2 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg3 C.GAsyncReadyCallback // out
-	var _arg4 C.gpointer
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg2 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if callback != nil {
-		_arg3 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg4 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_file_dialog_select_folder(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(callback)
-}
-
-// SelectFolderFinish finishes the gtk.FileDialog.SelectFolder() call and
-// returns the resulting file.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - file (optional) that was selected. Otherwise, NULL is returned and error
-//     is set.
-func (self *FileDialog) SelectFolderFinish(result gio.AsyncResulter) (*gio.File, error) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.GAsyncResult  // out
-	var _cret *C.GFile         // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_file_dialog_select_folder_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _file *gio.File // out
-	var _goerr error    // out
-
-	if _cret != nil {
-		{
-			obj := coreglib.AssumeOwnership(unsafe.Pointer(_cret))
-			_file = &gio.File{
-				Object: obj,
-			}
-		}
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _file, _goerr
-}
-
-// SelectMultipleFolders: this function initiates a multi-directory selection
-// operation by presenting a file chooser dialog to the user.
-//
-// The file chooser will initially be opened in the directory
-// gtk.FileDialog:initial-folder.
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.FileDialog.SelectMultipleFoldersFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - callback (optional) to call when the operation is complete.
-func (self *FileDialog) SelectMultipleFolders(ctx context.Context, parent *Window, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFileDialog      // out
-	var _arg2 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg3 C.GAsyncReadyCallback // out
-	var _arg4 C.gpointer
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg2 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if callback != nil {
-		_arg3 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg4 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_file_dialog_select_multiple_folders(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(callback)
-}
-
-// SelectMultipleFoldersFinish finishes the
-// gtk.FileDialog.SelectMultipleFolders() call and returns the resulting files
-// in a GListModel.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - listModel (optional): file that was selected, as a GListModel of GFiles.
-//     Otherwise, NULL is returned and error is set.
-func (self *FileDialog) SelectMultipleFoldersFinish(result gio.AsyncResulter) (*gio.ListModel, error) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.GAsyncResult  // out
-	var _cret *C.GListModel    // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_file_dialog_select_multiple_folders_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _listModel *gio.ListModel // out
-	var _goerr error              // out
-
-	if _cret != nil {
-		{
-			obj := coreglib.AssumeOwnership(unsafe.Pointer(_cret))
-			_listModel = &gio.ListModel{
-				Object: obj,
-			}
-		}
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _listModel, _goerr
-}
-
-// SetAcceptLabel sets the label shown on the file chooser's accept button.
-//
-// Leaving the accept label unset or setting it as NULL will fall back to a
-// default label, depending on what API is used to launch the file dialog.
-//
-// The function takes the following parameters:
-//
-//   - acceptLabel (optional): new accept label.
-func (self *FileDialog) SetAcceptLabel(acceptLabel string) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.char          // out
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if acceptLabel != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(acceptLabel)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	C.gtk_file_dialog_set_accept_label(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(acceptLabel)
-}
-
-// SetDefaultFilter sets the filter that will be selected by default in the file
-// chooser dialog.
-//
-// If set to NULL, the first item in gtk.FileDialog:filters will be used as the
-// default filter. If that list is empty, the dialog will be unfiltered.
-//
-// The function takes the following parameters:
-//
-//   - filter (optional): GtkFileFilter.
-func (self *FileDialog) SetDefaultFilter(filter *FileFilter) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.GtkFileFilter // out
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if filter != nil {
-		_arg1 = (*C.GtkFileFilter)(unsafe.Pointer(coreglib.InternObject(filter).Native()))
-	}
-
-	C.gtk_file_dialog_set_default_filter(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(filter)
-}
-
-// SetFilters sets the filters that will be offered to the user in the file
-// chooser dialog.
-//
-// The function takes the following parameters:
-//
-//   - filters (optional): GListModel of GtkFileFilters.
-func (self *FileDialog) SetFilters(filters gio.ListModeller) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.GListModel    // out
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if filters != nil {
-		_arg1 = (*C.GListModel)(unsafe.Pointer(coreglib.InternObject(filters).Native()))
-	}
-
-	C.gtk_file_dialog_set_filters(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(filters)
-}
-
-// SetInitialFile sets the file that will be initially selected in the file
-// chooser dialog.
-//
-// This function is a shortcut for calling both
-// gtk_file_dialog_set_initial_folder() and gtk_file_dialog_set_initial_name()
-// with the directory and name of file respectively.
-//
-// The function takes the following parameters:
-//
-//   - file (optional): GFile.
-func (self *FileDialog) SetInitialFile(file gio.Filer) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.GFile         // out
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if file != nil {
-		_arg1 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(file).Native()))
-	}
-
-	C.gtk_file_dialog_set_initial_file(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(file)
-}
-
-// SetInitialFolder sets the folder that will be set as the initial folder in
-// the file chooser dialog.
-//
-// The function takes the following parameters:
-//
-//   - folder (optional): GFile.
-func (self *FileDialog) SetInitialFolder(folder gio.Filer) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.GFile         // out
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if folder != nil {
-		_arg1 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(folder).Native()))
-	}
-
-	C.gtk_file_dialog_set_initial_folder(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(folder)
-}
-
-// SetInitialName sets the name for the file that should be initially set.
-// For saving dialogs, this will usually be pre-entered into the name field.
-//
-// If a file with this name already exists in the directory set via
-// gtk.FileDialog:initial-folder, the dialog should preselect it.
-//
-// The function takes the following parameters:
-//
-//   - name (optional): UTF8 string.
-func (self *FileDialog) SetInitialName(name string) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.char          // out
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if name != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(name)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	C.gtk_file_dialog_set_initial_name(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(name)
-}
-
-// SetModal sets whether the file chooser dialog blocks interaction with the
-// parent window while it is presented.
-//
-// The function takes the following parameters:
-//
-//   - modal: new value.
-func (self *FileDialog) SetModal(modal bool) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 C.gboolean       // out
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if modal {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_file_dialog_set_modal(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(modal)
-}
-
-// SetTitle sets the title that will be shown on the file chooser dialog.
-//
-// The function takes the following parameters:
-//
-//   - title: new title.
-func (self *FileDialog) SetTitle(title string) {
-	var _arg0 *C.GtkFileDialog // out
-	var _arg1 *C.char          // out
-
-	_arg0 = (*C.GtkFileDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(title)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_file_dialog_set_title(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(title)
 }
 
 // FileFilter: GtkFileFilter filters files by name or mime type.
@@ -56446,358 +49944,6 @@ func (filter *FileFilter) ToGVariant() *glib.Variant {
 	return _variant
 }
 
-// FileLauncherOverrides contains methods that are overridable.
-type FileLauncherOverrides struct {
-}
-
-func defaultFileLauncherOverrides(v *FileLauncher) FileLauncherOverrides {
-	return FileLauncherOverrides{}
-}
-
-// FileLauncher: GtkFileLauncher object collects the arguments that are needed
-// to open a file with an application.
-//
-// Depending on system configuration, user preferences and available APIs, this
-// may or may not show an app chooser dialog or launch the default application
-// right away.
-//
-// The operation is started with the gtk.FileLauncher.Launch() function. This
-// API follows the GIO async pattern, and the result can be obtained by calling
-// gtk.FileLauncher.LaunchFinish().
-//
-// To launch uris that don't represent files, use gtk.URILauncher.
-type FileLauncher struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*FileLauncher)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*FileLauncher, *FileLauncherClass, FileLauncherOverrides](
-		GTypeFileLauncher,
-		initFileLauncherClass,
-		wrapFileLauncher,
-		defaultFileLauncherOverrides,
-	)
-}
-
-func initFileLauncherClass(gclass unsafe.Pointer, overrides FileLauncherOverrides, classInitFunc func(*FileLauncherClass)) {
-	if classInitFunc != nil {
-		class := (*FileLauncherClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapFileLauncher(obj *coreglib.Object) *FileLauncher {
-	return &FileLauncher{
-		Object: obj,
-	}
-}
-
-func marshalFileLauncher(p uintptr) (interface{}, error) {
-	return wrapFileLauncher(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NewFileLauncher creates a new GtkFileLauncher object.
-//
-// The function takes the following parameters:
-//
-//   - file (optional) to open.
-//
-// The function returns the following values:
-//
-//   - fileLauncher: new GtkFileLauncher.
-func NewFileLauncher(file gio.Filer) *FileLauncher {
-	var _arg1 *C.GFile           // out
-	var _cret *C.GtkFileLauncher // in
-
-	if file != nil {
-		_arg1 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(file).Native()))
-	}
-
-	_cret = C.gtk_file_launcher_new(_arg1)
-	runtime.KeepAlive(file)
-
-	var _fileLauncher *FileLauncher // out
-
-	_fileLauncher = wrapFileLauncher(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-
-	return _fileLauncher
-}
-
-// AlwaysAsk returns whether to ask the user to choose an app for opening the
-// file.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if always asking for app.
-func (self *FileLauncher) AlwaysAsk() bool {
-	var _arg0 *C.GtkFileLauncher // out
-	var _cret C.gboolean         // in
-
-	_arg0 = (*C.GtkFileLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_launcher_get_always_ask(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// File gets the file that will be opened.
-//
-// The function returns the following values:
-//
-//   - file (optional): file.
-func (self *FileLauncher) File() *gio.File {
-	var _arg0 *C.GtkFileLauncher // out
-	var _cret *C.GFile           // in
-
-	_arg0 = (*C.GtkFileLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_launcher_get_file(_arg0)
-	runtime.KeepAlive(self)
-
-	var _file *gio.File // out
-
-	if _cret != nil {
-		{
-			obj := coreglib.Take(unsafe.Pointer(_cret))
-			_file = &gio.File{
-				Object: obj,
-			}
-		}
-	}
-
-	return _file
-}
-
-// Writable returns whether to make the file writable for the handler.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the file will be made writable.
-func (self *FileLauncher) Writable() bool {
-	var _arg0 *C.GtkFileLauncher // out
-	var _cret C.gboolean         // in
-
-	_arg0 = (*C.GtkFileLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_file_launcher_get_writable(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Launch an application to open the file.
-//
-// This may present an app chooser dialog to the user.
-//
-// The callback will be called when the operation is completed. It should call
-// gtk.FileLauncher.LaunchFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - callback (optional) to call when the operation is complete.
-func (self *FileLauncher) Launch(ctx context.Context, parent *Window, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFileLauncher    // out
-	var _arg2 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg3 C.GAsyncReadyCallback // out
-	var _arg4 C.gpointer
-
-	_arg0 = (*C.GtkFileLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg2 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if callback != nil {
-		_arg3 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg4 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_file_launcher_launch(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(callback)
-}
-
-// LaunchFinish finishes the gtk.FileLauncher.Launch() call and returns the
-// result.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-func (self *FileLauncher) LaunchFinish(result gio.AsyncResulter) error {
-	var _arg0 *C.GtkFileLauncher // out
-	var _arg1 *C.GAsyncResult    // out
-	var _cerr *C.GError          // in
-
-	_arg0 = (*C.GtkFileLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	C.gtk_file_launcher_launch_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// OpenContainingFolder: launch a file manager to show the file in its parent
-// directory.
-//
-// This is only supported native files. It will fail if file is e.g. a http://
-// uri.
-//
-// The callback will be called when the operation is completed. It should call
-// gtk.FileLauncher.OpenContainingFolderFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - callback (optional) to call when the operation is complete.
-func (self *FileLauncher) OpenContainingFolder(ctx context.Context, parent *Window, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFileLauncher    // out
-	var _arg2 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg3 C.GAsyncReadyCallback // out
-	var _arg4 C.gpointer
-
-	_arg0 = (*C.GtkFileLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg2 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if callback != nil {
-		_arg3 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg4 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_file_launcher_open_containing_folder(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(callback)
-}
-
-// OpenContainingFolderFinish finishes the
-// gtk.FileLauncher.OpenContainingFolder() call and returns the result.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-func (self *FileLauncher) OpenContainingFolderFinish(result gio.AsyncResulter) error {
-	var _arg0 *C.GtkFileLauncher // out
-	var _arg1 *C.GAsyncResult    // out
-	var _cerr *C.GError          // in
-
-	_arg0 = (*C.GtkFileLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	C.gtk_file_launcher_open_containing_folder_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// SetAlwaysAsk sets whether to awlays ask the user to choose an app for opening
-// the file. If FALSE, the file might be opened with a default app or the
-// previous choice.
-//
-// The function takes the following parameters:
-//
-//   - alwaysAsk: gboolean.
-func (self *FileLauncher) SetAlwaysAsk(alwaysAsk bool) {
-	var _arg0 *C.GtkFileLauncher // out
-	var _arg1 C.gboolean         // out
-
-	_arg0 = (*C.GtkFileLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if alwaysAsk {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_file_launcher_set_always_ask(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(alwaysAsk)
-}
-
-// SetFile sets the file that will be opened.
-//
-// The function takes the following parameters:
-//
-//   - file (optional): GFile.
-func (self *FileLauncher) SetFile(file gio.Filer) {
-	var _arg0 *C.GtkFileLauncher // out
-	var _arg1 *C.GFile           // out
-
-	_arg0 = (*C.GtkFileLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if file != nil {
-		_arg1 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(file).Native()))
-	}
-
-	C.gtk_file_launcher_set_file(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(file)
-}
-
-// SetWritable sets whether to make the file writable for the handler.
-//
-// The function takes the following parameters:
-//
-//   - writable: gboolean.
-func (self *FileLauncher) SetWritable(writable bool) {
-	var _arg0 *C.GtkFileLauncher // out
-	var _arg1 C.gboolean         // out
-
-	_arg0 = (*C.GtkFileLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if writable {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_file_launcher_set_writable(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(writable)
-}
-
 // FilterOverrides contains methods that are overridable.
 type FilterOverrides struct {
 	// Strictness gets the known strictness of filters.
@@ -56916,7 +50062,7 @@ func (self *Filter) ConnectChanged(f func(change FilterChange)) coreglib.SignalH
 // Depending on the change parameter, not all items need to be changed, but only
 // some. Refer to the gtk.FilterChange documentation for details.
 //
-// This function is intended for implementers of GtkFilter subclasses and should
+// This function is intended for implementors of GtkFilter subclasses and should
 // not be called from other functions.
 //
 // The function takes the following parameters:
@@ -57072,16 +50218,14 @@ func defaultFilterListModelOverrides(v *FilterListModel) FilterListModelOverride
 // It hides some elements from the other model according to criteria given by a
 // GtkFilter.
 //
-// The model can be set up to do incremental filtering, so that filtering long
+// The model can be set up to do incremental searching, so that filtering long
 // lists doesn't block the UI. See gtk.FilterListModel.SetIncremental() for
 // details.
-//
-// GtkFilterListModel passes through sections from the underlying model.
 type FilterListModel struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
 
-	SectionModel
+	gio.ListModel
 }
 
 var (
@@ -57107,10 +50251,8 @@ func initFilterListModelClass(gclass unsafe.Pointer, overrides FilterListModelOv
 func wrapFilterListModel(obj *coreglib.Object) *FilterListModel {
 	return &FilterListModel{
 		Object: obj,
-		SectionModel: SectionModel{
-			ListModel: gio.ListModel{
-				Object: obj,
-			},
+		ListModel: gio.ListModel{
+			Object: obj,
 		},
 	}
 }
@@ -57813,13 +50955,12 @@ func defaultFlattenListModelOverrides(v *FlattenListModel) FlattenListModelOverr
 // list models.
 //
 // GtkFlattenListModel takes a list model containing list models, and flattens
-// it into a single model. Each list model becomes a section in the single
-// model.
+// it into a single model.
 type FlattenListModel struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
 
-	SectionModel
+	gio.ListModel
 }
 
 var (
@@ -57845,10 +50986,8 @@ func initFlattenListModelClass(gclass unsafe.Pointer, overrides FlattenListModel
 func wrapFlattenListModel(obj *coreglib.Object) *FlattenListModel {
 	return &FlattenListModel{
 		Object: obj,
-		SectionModel: SectionModel{
-			ListModel: gio.ListModel{
-				Object: obj,
-			},
+		ListModel: gio.ListModel{
+			Object: obj,
 		},
 	}
 }
@@ -58479,7 +51618,7 @@ func (box *FlowBox) Insert(widget Widgetter, position int) {
 // InvalidateFilter updates the filtering for all children.
 //
 // Call this function when the result of the filter function on the box is
-// changed due to an external factor. For instance, this would be used if the
+// changed due ot an external factor. For instance, this would be used if the
 // filter function just looked for a specific search term, and the entry with
 // the string has changed.
 func (box *FlowBox) InvalidateFilter() {
@@ -58541,18 +51680,6 @@ func (box *FlowBox) Remove(widget Widgetter) {
 	C.gtk_flow_box_remove(_arg0, _arg1)
 	runtime.KeepAlive(box)
 	runtime.KeepAlive(widget)
-}
-
-// RemoveAll removes all children from box.
-//
-// This function does nothing if box is backed by a model.
-func (box *FlowBox) RemoveAll() {
-	var _arg0 *C.GtkFlowBox // out
-
-	_arg0 = (*C.GtkFlowBox)(unsafe.Pointer(coreglib.InternObject(box).Native()))
-
-	C.gtk_flow_box_remove_all(_arg0)
-	runtime.KeepAlive(box)
 }
 
 // SelectAll: select all children of box, if the selection mode allows it.
@@ -58953,7 +52080,8 @@ func marshalFlowBoxChild(p uintptr) (interface{}, error) {
 // ConnectActivate is emitted when the user activates a child widget in a
 // GtkFlowBox.
 //
-// This can happen either by clicking or double-clicking, or via a keybinding.
+// This can be happen either by clicking or double-clicking, or via a
+// keybinding.
 //
 // This is a keybinding signal (class.SignalAction.html), but it can be used by
 // applications for their own purposes.
@@ -59136,8 +52264,6 @@ func (child *FlowBoxChild) activate() {
 //
 // GtkFontButton has a single CSS node with name fontbutton which contains a
 // button node with the .font style class.
-//
-// Deprecated: Use gtk.FontDialogButton instead.
 type FontButton struct {
 	_ [0]func() // equal guard
 	Widget
@@ -59201,8 +52327,6 @@ func (fontButton *FontButton) ConnectFontSet(f func()) coreglib.SignalHandle {
 
 // NewFontButton creates a new font picker widget.
 //
-// Deprecated: Use gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - fontButton: new font picker widget.
@@ -59220,8 +52344,6 @@ func NewFontButton() *FontButton {
 
 // NewFontButtonWithFont creates a new font picker widget showing the given
 // font.
-//
-// Deprecated: Use gtk.FontDialogButton instead.
 //
 // The function takes the following parameters:
 //
@@ -59249,8 +52371,6 @@ func NewFontButtonWithFont(fontname string) *FontButton {
 
 // Modal gets whether the dialog is modal.
 //
-// Deprecated: Use gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the dialog is modal.
@@ -59274,8 +52394,6 @@ func (fontButton *FontButton) Modal() bool {
 
 // Title retrieves the title of the font chooser dialog.
 //
-// Deprecated: Use gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - utf8: internal copy of the title string which must not be freed.
@@ -59296,8 +52414,6 @@ func (fontButton *FontButton) Title() string {
 }
 
 // UseFont returns whether the selected font is used in the label.
-//
-// Deprecated: Use gtk.FontDialogButton instead.
 //
 // The function returns the following values:
 //
@@ -59322,8 +52438,6 @@ func (fontButton *FontButton) UseFont() bool {
 
 // UseSize returns whether the selected size is used in the label.
 //
-// Deprecated: Use gtk.FontDialogButton instead.
-//
 // The function returns the following values:
 //
 //   - ok: whether the selected size is used in the label.
@@ -59347,8 +52461,6 @@ func (fontButton *FontButton) UseSize() bool {
 
 // SetModal sets whether the dialog should be modal.
 //
-// Deprecated: Use gtk.FontDialogButton instead.
-//
 // The function takes the following parameters:
 //
 //   - modal: TRUE to make the dialog modal.
@@ -59367,8 +52479,6 @@ func (fontButton *FontButton) SetModal(modal bool) {
 }
 
 // SetTitle sets the title for the font chooser dialog.
-//
-// Deprecated: Use gtk.FontDialogButton instead.
 //
 // The function takes the following parameters:
 //
@@ -59389,8 +52499,6 @@ func (fontButton *FontButton) SetTitle(title string) {
 // SetUseFont: if use_font is TRUE, the font name will be written using the
 // selected font.
 //
-// Deprecated: Use gtk.FontDialogButton instead.
-//
 // The function takes the following parameters:
 //
 //   - useFont: if TRUE, font name will be written using font chosen.
@@ -59410,8 +52518,6 @@ func (fontButton *FontButton) SetUseFont(useFont bool) {
 
 // SetUseSize: if use_size is TRUE, the font name will be written using the
 // selected size.
-//
-// Deprecated: Use gtk.FontDialogButton instead.
 //
 // The function takes the following parameters:
 //
@@ -59444,13 +52550,6 @@ func (fontButton *FontButton) SetUseSize(useSize bool) {
 //
 // The GtkFontChooserDialog implementation of the GtkBuildable interface exposes
 // the buttons with the names “select_button” and “cancel_button”.
-//
-// # CSS nodes
-//
-// GtkFontChooserDialog has a single CSS node with the name window and style
-// class .fontchooser.
-//
-// Deprecated: Use gtk.FontDialog instead.
 type FontChooserDialog struct {
 	_ [0]func() // equal guard
 	Dialog
@@ -59521,8 +52620,6 @@ func marshalFontChooserDialog(p uintptr) (interface{}, error) {
 
 // NewFontChooserDialog creates a new GtkFontChooserDialog.
 //
-// Deprecated: Use gtk.FontDialog instead.
-//
 // The function takes the following parameters:
 //
 //   - title (optional): title of the dialog.
@@ -59572,8 +52669,6 @@ func NewFontChooserDialog(title string, parent *Window) *FontChooserDialog {
 // # CSS nodes
 //
 // GtkFontChooserWidget has a single CSS node with name fontchooser.
-//
-// Deprecated: Direct use of GtkFontChooserWidget is deprecated.
 type FontChooserWidget struct {
 	_ [0]func() // equal guard
 	Widget
@@ -59617,8 +52712,6 @@ func marshalFontChooserWidget(p uintptr) (interface{}, error) {
 
 // NewFontChooserWidget creates a new GtkFontChooserWidget.
 //
-// Deprecated: Direct use of GtkFontChooserWidget is deprecated.
-//
 // The function returns the following values:
 //
 //   - fontChooserWidget: new GtkFontChooserWidget.
@@ -59632,1118 +52725,6 @@ func NewFontChooserWidget() *FontChooserWidget {
 	_fontChooserWidget = wrapFontChooserWidget(coreglib.Take(unsafe.Pointer(_cret)))
 
 	return _fontChooserWidget
-}
-
-// FontDialogOverrides contains methods that are overridable.
-type FontDialogOverrides struct {
-}
-
-func defaultFontDialogOverrides(v *FontDialog) FontDialogOverrides {
-	return FontDialogOverrides{}
-}
-
-// FontDialog: GtkFontDialog object collects the arguments that are needed to
-// present a font chooser dialog to the user, such as a title for the dialog and
-// whether it should be modal.
-//
-// The dialog is shown with the gtk.FontDialog.ChooseFont() function or
-// its variants. This API follows the GIO async pattern, and the result
-// can be obtained by calling the corresponding finish function, such as
-// gtk.FontDialog.ChooseFontFinish().
-//
-// See gtk.FontDialogButton for a convenient control that uses GtkFontDialog and
-// presents the results.
-type FontDialog struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*FontDialog)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*FontDialog, *FontDialogClass, FontDialogOverrides](
-		GTypeFontDialog,
-		initFontDialogClass,
-		wrapFontDialog,
-		defaultFontDialogOverrides,
-	)
-}
-
-func initFontDialogClass(gclass unsafe.Pointer, overrides FontDialogOverrides, classInitFunc func(*FontDialogClass)) {
-	if classInitFunc != nil {
-		class := (*FontDialogClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapFontDialog(obj *coreglib.Object) *FontDialog {
-	return &FontDialog{
-		Object: obj,
-	}
-}
-
-func marshalFontDialog(p uintptr) (interface{}, error) {
-	return wrapFontDialog(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NewFontDialog creates a new GtkFontDialog object.
-//
-// The function returns the following values:
-//
-//   - fontDialog: new GtkFontDialog.
-func NewFontDialog() *FontDialog {
-	var _cret *C.GtkFontDialog // in
-
-	_cret = C.gtk_font_dialog_new()
-
-	var _fontDialog *FontDialog // out
-
-	_fontDialog = wrapFontDialog(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-
-	return _fontDialog
-}
-
-// ChooseFace: this function initiates a font selection operation by presenting
-// a dialog to the user for selecting a font face (i.e. a font family and style,
-// but not a specific font size).
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.FontDialog.ChooseFaceFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - initialValue (optional): initial value.
-//   - callback (optional) to call when the operation is complete.
-func (self *FontDialog) ChooseFace(ctx context.Context, parent *Window, initialValue pango.FontFacer, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFontDialog      // out
-	var _arg3 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg2 *C.PangoFontFace      // out
-	var _arg4 C.GAsyncReadyCallback // out
-	var _arg5 C.gpointer
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if initialValue != nil {
-		_arg2 = (*C.PangoFontFace)(unsafe.Pointer(coreglib.InternObject(initialValue).Native()))
-	}
-	if callback != nil {
-		_arg4 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg5 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_font_dialog_choose_face(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(initialValue)
-	runtime.KeepAlive(callback)
-}
-
-// ChooseFaceFinish finishes the gtk.FontDialog.ChooseFace() call and returns
-// the resulting font face.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - fontFace (optional): selected font face.
-func (self *FontDialog) ChooseFaceFinish(result gio.AsyncResulter) (pango.FontFacer, error) {
-	var _arg0 *C.GtkFontDialog // out
-	var _arg1 *C.GAsyncResult  // out
-	var _cret *C.PangoFontFace // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_font_dialog_choose_face_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _fontFace pango.FontFacer // out
-	var _goerr error              // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.AssumeOwnership(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(pango.FontFacer)
-				return ok
-			})
-			rv, ok := casted.(pango.FontFacer)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching pango.FontFacer")
-			}
-			_fontFace = rv
-		}
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _fontFace, _goerr
-}
-
-// ChooseFamily: this function initiates a font selection operation by
-// presenting a dialog to the user for selecting a font family.
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.FontDialog.ChooseFamilyFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - initialValue (optional): initial value.
-//   - callback (optional) to call when the operation is complete.
-func (self *FontDialog) ChooseFamily(ctx context.Context, parent *Window, initialValue pango.FontFamilier, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFontDialog      // out
-	var _arg3 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg2 *C.PangoFontFamily    // out
-	var _arg4 C.GAsyncReadyCallback // out
-	var _arg5 C.gpointer
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if initialValue != nil {
-		_arg2 = (*C.PangoFontFamily)(unsafe.Pointer(coreglib.InternObject(initialValue).Native()))
-	}
-	if callback != nil {
-		_arg4 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg5 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_font_dialog_choose_family(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(initialValue)
-	runtime.KeepAlive(callback)
-}
-
-// ChooseFamilyFinish finishes the gtk.FontDialog.ChooseFamily() call and
-// returns the resulting family.
-//
-// This function never returns an error. If the operation is not
-// finished successfully, the value passed as initial_value to
-// gtk.FontDialog.ChooseFamily() is returned.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - fontFamily (optional): selected family.
-func (self *FontDialog) ChooseFamilyFinish(result gio.AsyncResulter) (pango.FontFamilier, error) {
-	var _arg0 *C.GtkFontDialog   // out
-	var _arg1 *C.GAsyncResult    // out
-	var _cret *C.PangoFontFamily // in
-	var _cerr *C.GError          // in
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_font_dialog_choose_family_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _fontFamily pango.FontFamilier // out
-	var _goerr error                   // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.AssumeOwnership(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(pango.FontFamilier)
-				return ok
-			})
-			rv, ok := casted.(pango.FontFamilier)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching pango.FontFamilier")
-			}
-			_fontFamily = rv
-		}
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _fontFamily, _goerr
-}
-
-// ChooseFont: this function initiates a font selection operation by presenting
-// a dialog to the user for selecting a font.
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.FontDialog.ChooseFontFinish() to obtain the result.
-//
-// If you want to let the user select font features as well, use
-// gtk.FontDialog.ChooseFontAndFeatures() instead.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - initialValue (optional): font to select initially.
-//   - callback (optional) to call when the operation is complete.
-func (self *FontDialog) ChooseFont(ctx context.Context, parent *Window, initialValue *pango.FontDescription, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFontDialog        // out
-	var _arg3 *C.GCancellable         // out
-	var _arg1 *C.GtkWindow            // out
-	var _arg2 *C.PangoFontDescription // out
-	var _arg4 C.GAsyncReadyCallback   // out
-	var _arg5 C.gpointer
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if initialValue != nil {
-		_arg2 = (*C.PangoFontDescription)(gextras.StructNative(unsafe.Pointer(initialValue)))
-	}
-	if callback != nil {
-		_arg4 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg5 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_font_dialog_choose_font(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(initialValue)
-	runtime.KeepAlive(callback)
-}
-
-// ChooseFontAndFeatures: this function initiates a font selection operation by
-// presenting a dialog to the user for selecting a font and font features.
-//
-// Font features affect how the font is rendered, for example enabling glyph
-// variants or ligatures.
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.FontDialog.ChooseFontAndFeaturesFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - initialValue (optional): font to select initially.
-//   - callback (optional) to call when the operation is complete.
-func (self *FontDialog) ChooseFontAndFeatures(ctx context.Context, parent *Window, initialValue *pango.FontDescription, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkFontDialog        // out
-	var _arg3 *C.GCancellable         // out
-	var _arg1 *C.GtkWindow            // out
-	var _arg2 *C.PangoFontDescription // out
-	var _arg4 C.GAsyncReadyCallback   // out
-	var _arg5 C.gpointer
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if initialValue != nil {
-		_arg2 = (*C.PangoFontDescription)(gextras.StructNative(unsafe.Pointer(initialValue)))
-	}
-	if callback != nil {
-		_arg4 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg5 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_font_dialog_choose_font_and_features(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(initialValue)
-	runtime.KeepAlive(callback)
-}
-
-// ChooseFontAndFeaturesFinish finishes the
-// gtk.FontDialog.ChooseFontAndFeatures() call and returns the resulting font
-// description and font features.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - fontDesc: return location for font description.
-//   - fontFeatures: return location for font features.
-//   - language: return location for the language.
-func (self *FontDialog) ChooseFontAndFeaturesFinish(result gio.AsyncResulter) (*pango.FontDescription, string, *pango.Language, error) {
-	var _arg0 *C.GtkFontDialog        // out
-	var _arg1 *C.GAsyncResult         // out
-	var _arg2 *C.PangoFontDescription // in
-	var _arg3 *C.char                 // in
-	var _arg4 *C.PangoLanguage        // in
-	var _cerr *C.GError               // in
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	C.gtk_font_dialog_choose_font_and_features_finish(_arg0, _arg1, &_arg2, &_arg3, &_arg4, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _fontDesc *pango.FontDescription // out
-	var _fontFeatures string             // out
-	var _language *pango.Language        // out
-	var _goerr error                     // out
-
-	_fontDesc = (*pango.FontDescription)(gextras.NewStructNative(unsafe.Pointer(_arg2)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_fontDesc)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.pango_font_description_free((*C.PangoFontDescription)(intern.C))
-		},
-	)
-	_fontFeatures = C.GoString((*C.gchar)(unsafe.Pointer(_arg3)))
-	defer C.free(unsafe.Pointer(_arg3))
-	_language = (*pango.Language)(gextras.NewStructNative(unsafe.Pointer(_arg4)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_language)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.free(intern.C)
-		},
-	)
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _fontDesc, _fontFeatures, _language, _goerr
-}
-
-// ChooseFontFinish finishes the gtk.FontDialog.ChooseFont() call and returns
-// the resulting font description.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - fontDescription (optional): selected font.
-func (self *FontDialog) ChooseFontFinish(result gio.AsyncResulter) (*pango.FontDescription, error) {
-	var _arg0 *C.GtkFontDialog        // out
-	var _arg1 *C.GAsyncResult         // out
-	var _cret *C.PangoFontDescription // in
-	var _cerr *C.GError               // in
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_font_dialog_choose_font_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _fontDescription *pango.FontDescription // out
-	var _goerr error                            // out
-
-	if _cret != nil {
-		_fontDescription = (*pango.FontDescription)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_fontDescription)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.pango_font_description_free((*C.PangoFontDescription)(intern.C))
-			},
-		)
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _fontDescription, _goerr
-}
-
-// Filter returns the filter that decides which fonts to display in the font
-// chooser dialog.
-//
-// The function returns the following values:
-//
-//   - filter (optional): filter.
-func (self *FontDialog) Filter() *Filter {
-	var _arg0 *C.GtkFontDialog // out
-	var _cret *C.GtkFilter     // in
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_get_filter(_arg0)
-	runtime.KeepAlive(self)
-
-	var _filter *Filter // out
-
-	if _cret != nil {
-		_filter = wrapFilter(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _filter
-}
-
-// FontMap returns the fontmap from which fonts are selected, or NULL for the
-// default fontmap.
-//
-// The function returns the following values:
-//
-//   - fontMap (optional): fontmap.
-func (self *FontDialog) FontMap() pango.FontMapper {
-	var _arg0 *C.GtkFontDialog // out
-	var _cret *C.PangoFontMap  // in
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_get_font_map(_arg0)
-	runtime.KeepAlive(self)
-
-	var _fontMap pango.FontMapper // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.Take(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(pango.FontMapper)
-				return ok
-			})
-			rv, ok := casted.(pango.FontMapper)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching pango.FontMapper")
-			}
-			_fontMap = rv
-		}
-	}
-
-	return _fontMap
-}
-
-// Language returns the language for which font features are applied.
-//
-// The function returns the following values:
-//
-//   - language (optional) for font features.
-func (self *FontDialog) Language() *pango.Language {
-	var _arg0 *C.GtkFontDialog // out
-	var _cret *C.PangoLanguage // in
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_get_language(_arg0)
-	runtime.KeepAlive(self)
-
-	var _language *pango.Language // out
-
-	if _cret != nil {
-		_language = (*pango.Language)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_language)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.free(intern.C)
-			},
-		)
-	}
-
-	return _language
-}
-
-// Modal returns whether the font chooser dialog blocks interaction with the
-// parent window while it is presented.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the font chooser dialog is modal.
-func (self *FontDialog) Modal() bool {
-	var _arg0 *C.GtkFontDialog // out
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_get_modal(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Title returns the title that will be shown on the font chooser dialog.
-//
-// The function returns the following values:
-//
-//   - utf8: title.
-func (self *FontDialog) Title() string {
-	var _arg0 *C.GtkFontDialog // out
-	var _cret *C.char          // in
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_get_title(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// SetFilter adds a filter that decides which fonts to display in the font
-// chooser dialog.
-//
-// The GtkFilter must be able to handle both PangoFontFamily and PangoFontFace
-// objects.
-//
-// The function takes the following parameters:
-//
-//   - filter (optional): GtkFilter.
-func (self *FontDialog) SetFilter(filter *Filter) {
-	var _arg0 *C.GtkFontDialog // out
-	var _arg1 *C.GtkFilter     // out
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if filter != nil {
-		_arg1 = (*C.GtkFilter)(unsafe.Pointer(coreglib.InternObject(filter).Native()))
-	}
-
-	C.gtk_font_dialog_set_filter(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(filter)
-}
-
-// SetFontMap sets the fontmap from which fonts are selected.
-//
-// If fontmap is NULL, the default fontmap is used.
-//
-// The function takes the following parameters:
-//
-//   - fontmap (optional): fontmap.
-func (self *FontDialog) SetFontMap(fontmap pango.FontMapper) {
-	var _arg0 *C.GtkFontDialog // out
-	var _arg1 *C.PangoFontMap  // out
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if fontmap != nil {
-		_arg1 = (*C.PangoFontMap)(unsafe.Pointer(coreglib.InternObject(fontmap).Native()))
-	}
-
-	C.gtk_font_dialog_set_font_map(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(fontmap)
-}
-
-// SetLanguage sets the language for which font features are applied.
-//
-// The function takes the following parameters:
-//
-//   - language for font features.
-func (self *FontDialog) SetLanguage(language *pango.Language) {
-	var _arg0 *C.GtkFontDialog // out
-	var _arg1 *C.PangoLanguage // out
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.PangoLanguage)(gextras.StructNative(unsafe.Pointer(language)))
-
-	C.gtk_font_dialog_set_language(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(language)
-}
-
-// SetModal sets whether the font chooser dialog blocks interaction with the
-// parent window while it is presented.
-//
-// The function takes the following parameters:
-//
-//   - modal: new value.
-func (self *FontDialog) SetModal(modal bool) {
-	var _arg0 *C.GtkFontDialog // out
-	var _arg1 C.gboolean       // out
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if modal {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_font_dialog_set_modal(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(modal)
-}
-
-// SetTitle sets the title that will be shown on the font chooser dialog.
-//
-// The function takes the following parameters:
-//
-//   - title: new title.
-func (self *FontDialog) SetTitle(title string) {
-	var _arg0 *C.GtkFontDialog // out
-	var _arg1 *C.char          // out
-
-	_arg0 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(title)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_font_dialog_set_title(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(title)
-}
-
-// FontDialogButtonOverrides contains methods that are overridable.
-type FontDialogButtonOverrides struct {
-}
-
-func defaultFontDialogButtonOverrides(v *FontDialogButton) FontDialogButtonOverrides {
-	return FontDialogButtonOverrides{}
-}
-
-// FontDialogButton: GtkFontDialogButton is wrapped around a gtk.FontDialog and
-// allows to open a font chooser dialog to change the font.
-//
-// !An example GtkFontDialogButton (font-button.png)
-//
-// It is suitable widget for selecting a font in a preference dialog.
-//
-// CSS nodes
-//
-//	fontbutton
-//	╰── button.font
-//	    ╰── [content]
-//
-// GtkFontDialogButton has a single CSS node with name fontbutton which contains
-// a button node with the .font style class.
-type FontDialogButton struct {
-	_ [0]func() // equal guard
-	Widget
-}
-
-var (
-	_ Widgetter = (*FontDialogButton)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*FontDialogButton, *FontDialogButtonClass, FontDialogButtonOverrides](
-		GTypeFontDialogButton,
-		initFontDialogButtonClass,
-		wrapFontDialogButton,
-		defaultFontDialogButtonOverrides,
-	)
-}
-
-func initFontDialogButtonClass(gclass unsafe.Pointer, overrides FontDialogButtonOverrides, classInitFunc func(*FontDialogButtonClass)) {
-	if classInitFunc != nil {
-		class := (*FontDialogButtonClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapFontDialogButton(obj *coreglib.Object) *FontDialogButton {
-	return &FontDialogButton{
-		Widget: Widget{
-			InitiallyUnowned: coreglib.InitiallyUnowned{
-				Object: obj,
-			},
-			Object: obj,
-			Accessible: Accessible{
-				Object: obj,
-			},
-			Buildable: Buildable{
-				Object: obj,
-			},
-			ConstraintTarget: ConstraintTarget{
-				Object: obj,
-			},
-		},
-	}
-}
-
-func marshalFontDialogButton(p uintptr) (interface{}, error) {
-	return wrapFontDialogButton(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// ConnectActivate is emitted when the font dialog button is activated.
-//
-// The ::activate signal on GtkFontDialogButton is an action signal and emitting
-// it causes the button to pop up its dialog.
-func (self *FontDialogButton) ConnectActivate(f func()) coreglib.SignalHandle {
-	return coreglib.ConnectGeneratedClosure(self, "activate", false, unsafe.Pointer(C._gotk4_gtk4_FontDialogButton_ConnectActivate), f)
-}
-
-// NewFontDialogButton creates a new GtkFontDialogButton with the given
-// GtkFontDialog.
-//
-// You can pass NULL to this function and set a GtkFontDialog later. The button
-// will be insensitive until that happens.
-//
-// The function takes the following parameters:
-//
-//   - dialog (optional): GtkFontDialog to use.
-//
-// The function returns the following values:
-//
-//   - fontDialogButton: new GtkFontDialogButton.
-func NewFontDialogButton(dialog *FontDialog) *FontDialogButton {
-	var _arg1 *C.GtkFontDialog // out
-	var _cret *C.GtkWidget     // in
-
-	if dialog != nil {
-		_arg1 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(dialog).Native()))
-		C.g_object_ref(C.gpointer(coreglib.InternObject(dialog).Native()))
-	}
-
-	_cret = C.gtk_font_dialog_button_new(_arg1)
-	runtime.KeepAlive(dialog)
-
-	var _fontDialogButton *FontDialogButton // out
-
-	_fontDialogButton = wrapFontDialogButton(coreglib.Take(unsafe.Pointer(_cret)))
-
-	return _fontDialogButton
-}
-
-// Dialog returns the GtkFontDialog of self.
-//
-// The function returns the following values:
-//
-//   - fontDialog (optional): GtkFontDialog.
-func (self *FontDialogButton) Dialog() *FontDialog {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _cret *C.GtkFontDialog       // in
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_button_get_dialog(_arg0)
-	runtime.KeepAlive(self)
-
-	var _fontDialog *FontDialog // out
-
-	if _cret != nil {
-		_fontDialog = wrapFontDialog(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _fontDialog
-}
-
-// FontDesc returns the font of the button.
-//
-// This function is what should be used to obtain the font that was chosen by
-// the user. To get informed about changes, listen to "notify::font-desc".
-//
-// The function returns the following values:
-//
-//   - fontDescription (optional): font.
-func (self *FontDialogButton) FontDesc() *pango.FontDescription {
-	var _arg0 *C.GtkFontDialogButton  // out
-	var _cret *C.PangoFontDescription // in
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_button_get_font_desc(_arg0)
-	runtime.KeepAlive(self)
-
-	var _fontDescription *pango.FontDescription // out
-
-	if _cret != nil {
-		_fontDescription = (*pango.FontDescription)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	}
-
-	return _fontDescription
-}
-
-// FontFeatures returns the font features of the button.
-//
-// This function is what should be used to obtain the font features that
-// were chosen by the user. To get informed about changes, listen to
-// "notify::font-features".
-//
-// Note that the button will only let users choose font features if
-// gtk.FontDialogButton:level is set to GTK_FONT_LEVEL_FEATURES.
-//
-// The function returns the following values:
-//
-//   - utf8 (optional): font features.
-func (self *FontDialogButton) FontFeatures() string {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _cret *C.char                // in
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_button_get_font_features(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	}
-
-	return _utf8
-}
-
-// Language returns the language that is used for font features.
-//
-// The function returns the following values:
-//
-//   - language (optional): language.
-func (self *FontDialogButton) Language() *pango.Language {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _cret *C.PangoLanguage       // in
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_button_get_language(_arg0)
-	runtime.KeepAlive(self)
-
-	var _language *pango.Language // out
-
-	if _cret != nil {
-		_language = (*pango.Language)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_language)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.free(intern.C)
-			},
-		)
-	}
-
-	return _language
-}
-
-// Level returns the level of detail at which this dialog lets the user select
-// fonts.
-//
-// The function returns the following values:
-//
-//   - fontLevel: level of detail.
-func (self *FontDialogButton) Level() FontLevel {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _cret C.GtkFontLevel         // in
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_button_get_level(_arg0)
-	runtime.KeepAlive(self)
-
-	var _fontLevel FontLevel // out
-
-	_fontLevel = FontLevel(_cret)
-
-	return _fontLevel
-}
-
-// UseFont returns whether the selected font is used in the label.
-//
-// The function returns the following values:
-//
-//   - ok: whether the selected font is used in the label.
-func (self *FontDialogButton) UseFont() bool {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _cret C.gboolean             // in
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_button_get_use_font(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// UseSize returns whether the selected font size is used in the label.
-//
-// The function returns the following values:
-//
-//   - ok: whether the selected font size is used in the label.
-func (self *FontDialogButton) UseSize() bool {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _cret C.gboolean             // in
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_font_dialog_button_get_use_size(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// SetDialog sets a GtkFontDialog object to use for creating the font chooser
-// dialog that is presented when the user clicks the button.
-//
-// The function takes the following parameters:
-//
-//   - dialog: new GtkFontDialog.
-func (self *FontDialogButton) SetDialog(dialog *FontDialog) {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _arg1 *C.GtkFontDialog       // out
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GtkFontDialog)(unsafe.Pointer(coreglib.InternObject(dialog).Native()))
-
-	C.gtk_font_dialog_button_set_dialog(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(dialog)
-}
-
-// SetFontDesc sets the font of the button.
-//
-// The function takes the following parameters:
-//
-//   - fontDesc: new font.
-func (self *FontDialogButton) SetFontDesc(fontDesc *pango.FontDescription) {
-	var _arg0 *C.GtkFontDialogButton  // out
-	var _arg1 *C.PangoFontDescription // out
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.PangoFontDescription)(gextras.StructNative(unsafe.Pointer(fontDesc)))
-
-	C.gtk_font_dialog_button_set_font_desc(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(fontDesc)
-}
-
-// SetFontFeatures sets the font features of the button.
-//
-// The function takes the following parameters:
-//
-//   - fontFeatures (optional): font features.
-func (self *FontDialogButton) SetFontFeatures(fontFeatures string) {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _arg1 *C.char                // out
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if fontFeatures != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(fontFeatures)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	C.gtk_font_dialog_button_set_font_features(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(fontFeatures)
-}
-
-// SetLanguage sets the language to use for font features.
-//
-// The function takes the following parameters:
-//
-//   - language (optional): new language.
-func (self *FontDialogButton) SetLanguage(language *pango.Language) {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _arg1 *C.PangoLanguage       // out
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if language != nil {
-		_arg1 = (*C.PangoLanguage)(gextras.StructNative(unsafe.Pointer(language)))
-	}
-
-	C.gtk_font_dialog_button_set_language(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(language)
-}
-
-// SetLevel sets the level of detail at which this dialog lets the user select
-// fonts.
-//
-// The function takes the following parameters:
-//
-//   - level of detail.
-func (self *FontDialogButton) SetLevel(level FontLevel) {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _arg1 C.GtkFontLevel         // out
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkFontLevel(level)
-
-	C.gtk_font_dialog_button_set_level(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(level)
-}
-
-// SetUseFont: if use_font is TRUE, the font name will be written using the
-// selected font.
-//
-// The function takes the following parameters:
-//
-//   - useFont: if TRUE, font name will be written using the chosen font.
-func (self *FontDialogButton) SetUseFont(useFont bool) {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _arg1 C.gboolean             // out
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if useFont {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_font_dialog_button_set_use_font(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(useFont)
-}
-
-// SetUseSize: if use_size is TRUE, the font name will be written using the
-// selected font size.
-//
-// The function takes the following parameters:
-//
-//   - useSize: if TRUE, font name will be written using the chosen font size.
-func (self *FontDialogButton) SetUseSize(useSize bool) {
-	var _arg0 *C.GtkFontDialogButton // out
-	var _arg1 C.gboolean             // out
-
-	_arg0 = (*C.GtkFontDialogButton)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if useSize {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_font_dialog_button_set_use_size(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(useSize)
 }
 
 // FrameOverrides contains methods that are overridable.
@@ -60796,10 +52777,6 @@ func defaultFrameOverrides(v *Frame) FrameOverrides {
 // GtkFrame has a main CSS node with name “frame”, which is used to draw the
 // visible border. You can set the appearance of the border using CSS properties
 // like “border-style” on this node.
-//
-// # Accessibility
-//
-// GtkFrame uses the GTK_ACCESSIBLE_ROLE_GROUP role.
 type Frame struct {
 	_ [0]func() // equal guard
 	Widget
@@ -61106,10 +53083,7 @@ func (frame *Frame) computeChildAllocation(allocation *Allocation) {
 
 // GLAreaOverrides contains methods that are overridable.
 type GLAreaOverrides struct {
-	// Render class closure for the GtkGLArea::render signal.
 	Render func(context gdk.GLContexter) bool
-	// Resize class closeure for the GtkGLArea::resize signal.
-	//
 	// The function takes the following parameters:
 	//
 	//   - width
@@ -61130,8 +53104,7 @@ func defaultGLAreaOverrides(v *GLArea) GLAreaOverrides {
 //
 // GtkGLArea sets up its own gdk.GLContext, and creates a custom GL framebuffer
 // that the widget will do GL rendering onto. It also ensures that this
-// framebuffer is the default GL rendering target when rendering. The completed
-// rendering is integrated into the larger GTK scene graph as a texture.
+// framebuffer is the default GL rendering target when rendering.
 //
 // In order to draw, you have to connect to the gtk.GLArea::render signal, or
 // subclass GtkGLArea and override the GtkGLAreaClass.render virtual function.
@@ -61147,8 +53120,6 @@ func defaultGLAreaOverrides(v *GLArea) GLAreaOverrides {
 //
 // The render() function will be called when the GtkGLArea is ready for you to
 // draw its content:
-//
-// The initial contents of the framebuffer are transparent.
 //
 //	static gboolean
 //	render (GtkGLArea *area, GdkGLContext *context)
@@ -61354,52 +53325,6 @@ func (area *GLArea) AttachBuffers() {
 	runtime.KeepAlive(area)
 }
 
-// AllowedApis gets the allowed APIs.
-//
-// See gtk.GLArea.SetAllowedApis().
-//
-// The function returns the following values:
-//
-//   - glapI: allowed APIs.
-func (area *GLArea) AllowedApis() gdk.GLAPI {
-	var _arg0 *C.GtkGLArea // out
-	var _cret C.GdkGLAPI   // in
-
-	_arg0 = (*C.GtkGLArea)(unsafe.Pointer(coreglib.InternObject(area).Native()))
-
-	_cret = C.gtk_gl_area_get_allowed_apis(_arg0)
-	runtime.KeepAlive(area)
-
-	var _glapI gdk.GLAPI // out
-
-	_glapI = gdk.GLAPI(_cret)
-
-	return _glapI
-}
-
-// Api gets the API that is currently in use.
-//
-// If the GL area has not been realized yet, 0 is returned.
-//
-// The function returns the following values:
-//
-//   - glapI: currently used API.
-func (area *GLArea) Api() gdk.GLAPI {
-	var _arg0 *C.GtkGLArea // out
-	var _cret C.GdkGLAPI   // in
-
-	_arg0 = (*C.GtkGLArea)(unsafe.Pointer(coreglib.InternObject(area).Native()))
-
-	_cret = C.gtk_gl_area_get_api(_arg0)
-	runtime.KeepAlive(area)
-
-	var _glapI gdk.GLAPI // out
-
-	_glapI = gdk.GLAPI(_cret)
-
-	return _glapI
-}
-
 // AutoRender returns whether the area is in auto render mode or not.
 //
 // The function returns the following values:
@@ -61559,8 +53484,6 @@ func (area *GLArea) RequiredVersion() (major, minor int) {
 //
 // See gtk.GLArea.SetUseES().
 //
-// Deprecated: Use gtk.GLArea.GetApi().
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the GtkGLArea should create an OpenGL ES context and FALSE
@@ -61612,27 +53535,6 @@ func (area *GLArea) QueueRender() {
 
 	C.gtk_gl_area_queue_render(_arg0)
 	runtime.KeepAlive(area)
-}
-
-// SetAllowedApis sets the allowed APIs to create a context with.
-//
-// You should check gtk.GLArea:api before drawing with either API.
-//
-// By default, all APIs are allowed.
-//
-// The function takes the following parameters:
-//
-//   - apis: allowed APIs.
-func (area *GLArea) SetAllowedApis(apis gdk.GLAPI) {
-	var _arg0 *C.GtkGLArea // out
-	var _arg1 C.GdkGLAPI   // out
-
-	_arg0 = (*C.GtkGLArea)(unsafe.Pointer(coreglib.InternObject(area).Native()))
-	_arg1 = C.GdkGLAPI(apis)
-
-	C.gtk_gl_area_set_allowed_apis(_arg0, _arg1)
-	runtime.KeepAlive(area)
-	runtime.KeepAlive(apis)
 }
 
 // SetAutoRender sets whether the GtkGLArea is in auto render mode.
@@ -61761,8 +53663,6 @@ func (area *GLArea) SetRequiredVersion(major, minor int) {
 // You should check the capabilities of the GdkGLContext before drawing with
 // either API.
 //
-// Deprecated: Use gtk.GLArea.SetAllowedApis().
-//
 // The function takes the following parameters:
 //
 //   - useEs: whether to use OpenGL or OpenGL ES.
@@ -61780,7 +53680,6 @@ func (area *GLArea) SetUseES(useEs bool) {
 	runtime.KeepAlive(useEs)
 }
 
-// Render class closure for the GtkGLArea::render signal.
 func (area *GLArea) render(context gdk.GLContexter) bool {
 	gclass := (*C.GtkGLAreaClass)(coreglib.PeekParentClass(area))
 	fnarg := gclass.render
@@ -61805,8 +53704,6 @@ func (area *GLArea) render(context gdk.GLContexter) bool {
 	return _ok
 }
 
-// Resize class closeure for the GtkGLArea::resize signal.
-//
 // The function takes the following parameters:
 //
 //   - width
@@ -61876,8 +53773,8 @@ func (area *GLArea) resize(width, height int) {
 //
 // Within a widget, gestures can be grouped through gtk.Gesture.Group().
 // Grouped gestures synchronize the state of sequences, so calling
-// gtk.Gesture.SetState() on one will effectively propagate the state throughout
-// the group.
+// gtk.Gesture.SetSequenceState() on one will effectively propagate the state
+// throughout the group.
 //
 // By default, all sequences start out in the GTK_EVENT_SEQUENCE_NONE state,
 // sequences in this state trigger the gesture event handler, but event
@@ -61906,8 +53803,8 @@ func (area *GLArea) resize(width, height int) {
 // will be emulated if the sequence changes to GTK_EVENT_SEQUENCE_DENIED. This
 // way event coherence is preserved before event propagation is unstopped again.
 //
-// Sequence states can't be changed freely. See gtk.Gesture.SetState() to know
-// about the possible lifetimes of a GdkEventSequence.
+// Sequence states can't be changed freely. See gtk.Gesture.SetSequenceState()
+// to know about the possible lifetimes of a GdkEventSequence.
 //
 // # Touchpad gestures
 //
@@ -62515,8 +54412,6 @@ func (gesture *Gesture) IsRecognized() bool {
 // emitting the event, the sequence will be already be initialized to the
 // group's global state when the second gesture processes the event.
 //
-// Deprecated: Use gtk.Gesture.SetState().
-//
 // The function takes the following parameters:
 //
 //   - sequence: GdkEventSequence.
@@ -62553,39 +54448,7 @@ func (gesture *Gesture) SetSequenceState(sequence *gdk.EventSequence, state Even
 // SetState sets the state of all sequences that gesture is currently
 // interacting with.
 //
-// Sequences start in state GTK_EVENT_SEQUENCE_NONE, and whenever they change
-// state, they can never go back to that state. Likewise, sequences in state
-// GTK_EVENT_SEQUENCE_DENIED cannot turn back to a not denied state. With these
-// rules, the lifetime of an event sequence is constrained to the next four:
-//
-// * None * None → Denied * None → Claimed * None → Claimed → Denied
-//
-// Note: Due to event handling ordering, it may be unsafe to set the state on
-// another gesture within a gtk.Gesture::begin signal handler, as the callback
-// might be executed before the other gesture knows about the sequence. A safe
-// way to perform this could be:
-//
-//	static void
-//	first_gesture_begin_cb (GtkGesture       *first_gesture,
-//	                        GdkEventSequence *sequence,
-//	                        gpointer          user_data)
-//	{
-//	  gtk_gesture_set_state (first_gesture, GTK_EVENT_SEQUENCE_CLAIMED);
-//	  gtk_gesture_set_state (second_gesture, GTK_EVENT_SEQUENCE_DENIED);
-//	}
-//
-//	static void
-//	second_gesture_begin_cb (GtkGesture       *second_gesture,
-//	                         GdkEventSequence *sequence,
-//	                         gpointer          user_data)
-//	{
-//	  if (gtk_gesture_get_sequence_state (first_gesture, sequence) == GTK_EVENT_SEQUENCE_CLAIMED)
-//	    gtk_gesture_set_state (second_gesture, GTK_EVENT_SEQUENCE_DENIED);
-//	}
-//
-// If both gestures are in the same group, just set the state on the gesture
-// emitting the event, the sequence will be already be initialized to the
-// group's global state when the second gesture processes the event.
+// See gtk.Gesture.SetSequenceState() for more details on sequence states.
 //
 // The function takes the following parameters:
 //
@@ -63550,54 +55413,6 @@ func (gesture *GestureStylus) DeviceTool() *gdk.DeviceTool {
 	return _deviceTool
 }
 
-// StylusOnly checks whether the gesture is for styluses only.
-//
-// Stylus-only gestures will signal events exclusively from stylus input
-// devices.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the gesture is only for stylus events.
-func (gesture *GestureStylus) StylusOnly() bool {
-	var _arg0 *C.GtkGestureStylus // out
-	var _cret C.gboolean          // in
-
-	_arg0 = (*C.GtkGestureStylus)(unsafe.Pointer(coreglib.InternObject(gesture).Native()))
-
-	_cret = C.gtk_gesture_stylus_get_stylus_only(_arg0)
-	runtime.KeepAlive(gesture)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// SetStylusOnly sets the state of stylus-only
-//
-// If true, the gesture will exclusively handle events from stylus input
-// devices, otherwise it'll handle events from any pointing device.
-//
-// The function takes the following parameters:
-//
-//   - stylusOnly: whether the gesture is used exclusively for stylus events.
-func (gesture *GestureStylus) SetStylusOnly(stylusOnly bool) {
-	var _arg0 *C.GtkGestureStylus // out
-	var _arg1 C.gboolean          // out
-
-	_arg0 = (*C.GtkGestureStylus)(unsafe.Pointer(coreglib.InternObject(gesture).Native()))
-	if stylusOnly {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_gesture_stylus_set_stylus_only(_arg0, _arg1)
-	runtime.KeepAlive(gesture)
-	runtime.KeepAlive(stylusOnly)
-}
-
 // GestureSwipe: GtkGestureSwipe is a GtkGesture for swipe gestures.
 //
 // After a press/move/.../move/release sequence happens, the
@@ -63769,224 +55584,6 @@ func (gesture *GestureZoom) ScaleDelta() float64 {
 	return _gdouble
 }
 
-// GraphicsOffloadOverrides contains methods that are overridable.
-type GraphicsOffloadOverrides struct {
-}
-
-func defaultGraphicsOffloadOverrides(v *GraphicsOffload) GraphicsOffloadOverrides {
-	return GraphicsOffloadOverrides{}
-}
-
-// GraphicsOffload: widget that allows to bypass gsk rendering for its child by
-// passing the content directly to the compositor.
-//
-// Graphics offload is an optimization to reduce overhead and battery use that
-// is most useful for video content. It only works on some platforms and in
-// certain situations. GTK will automatically fall back to normal rendering if
-// it doesn't.
-//
-// Graphics offload is most efficient if there are no controls drawn on top of
-// the video content.
-//
-// You should consider using graphics offload for your main widget if it
-// shows frequently changing content (such as a video, or a VM display)
-// and you provide the content in the form of dmabuf textures (see
-// gdk.DmabufTextureBuilder), in particular if it may be fullscreen.
-//
-// Numerous factors can prohibit graphics offload:
-//
-// - Unsupported platforms. Currently, graphics offload only works on Linux with
-// Wayland.
-//
-// - Clipping, such as rounded corners that cause the video content to not be
-// rectangular
-//
-// - Unsupported dmabuf formats (see gdk.Display.GetDmabufFormats())
-//
-// - Translucent video content (content with an alpha channel, even if it isn't
-// used)
-//
-// - Transforms that are more complex than translations and scales
-//
-// - Filters such as opacity, grayscale or similar
-//
-// To investigate problems related graphics offload, GTK offers debug flags to
-// print out information about graphics offload and dmabuf use:
-//
-//	GDK_DEBUG=offload
-//	GDK_DEBUG=dmabuf
-//
-// The GTK inspector provides a visual debugging tool for graphics offload.
-type GraphicsOffload struct {
-	_ [0]func() // equal guard
-	Widget
-}
-
-var (
-	_ Widgetter = (*GraphicsOffload)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*GraphicsOffload, *GraphicsOffloadClass, GraphicsOffloadOverrides](
-		GTypeGraphicsOffload,
-		initGraphicsOffloadClass,
-		wrapGraphicsOffload,
-		defaultGraphicsOffloadOverrides,
-	)
-}
-
-func initGraphicsOffloadClass(gclass unsafe.Pointer, overrides GraphicsOffloadOverrides, classInitFunc func(*GraphicsOffloadClass)) {
-	if classInitFunc != nil {
-		class := (*GraphicsOffloadClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapGraphicsOffload(obj *coreglib.Object) *GraphicsOffload {
-	return &GraphicsOffload{
-		Widget: Widget{
-			InitiallyUnowned: coreglib.InitiallyUnowned{
-				Object: obj,
-			},
-			Object: obj,
-			Accessible: Accessible{
-				Object: obj,
-			},
-			Buildable: Buildable{
-				Object: obj,
-			},
-			ConstraintTarget: ConstraintTarget{
-				Object: obj,
-			},
-		},
-	}
-}
-
-func marshalGraphicsOffload(p uintptr) (interface{}, error) {
-	return wrapGraphicsOffload(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NewGraphicsOffload creates a new GtkGraphicsOffload widget.
-//
-// The function takes the following parameters:
-//
-//   - child (optional) widget.
-//
-// The function returns the following values:
-//
-//   - graphicsOffload: new widget.
-func NewGraphicsOffload(child Widgetter) *GraphicsOffload {
-	var _arg1 *C.GtkWidget // out
-	var _cret *C.GtkWidget // in
-
-	if child != nil {
-		_arg1 = (*C.GtkWidget)(unsafe.Pointer(coreglib.InternObject(child).Native()))
-	}
-
-	_cret = C.gtk_graphics_offload_new(_arg1)
-	runtime.KeepAlive(child)
-
-	var _graphicsOffload *GraphicsOffload // out
-
-	_graphicsOffload = wrapGraphicsOffload(coreglib.Take(unsafe.Pointer(_cret)))
-
-	return _graphicsOffload
-}
-
-// Child gets the child of self.
-//
-// The function returns the following values:
-//
-//   - widget (optional): child widget.
-func (self *GraphicsOffload) Child() Widgetter {
-	var _arg0 *C.GtkGraphicsOffload // out
-	var _cret *C.GtkWidget          // in
-
-	_arg0 = (*C.GtkGraphicsOffload)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_graphics_offload_get_child(_arg0)
-	runtime.KeepAlive(self)
-
-	var _widget Widgetter // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.Take(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(Widgetter)
-				return ok
-			})
-			rv, ok := casted.(Widgetter)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gtk.Widgetter")
-			}
-			_widget = rv
-		}
-	}
-
-	return _widget
-}
-
-// Enabled returns whether offload is enabled for self.
-//
-// The function returns the following values:
-//
-//   - graphicsOffloadEnabled: whether offload is enabled.
-func (self *GraphicsOffload) Enabled() GraphicsOffloadEnabled {
-	var _arg0 *C.GtkGraphicsOffload       // out
-	var _cret C.GtkGraphicsOffloadEnabled // in
-
-	_arg0 = (*C.GtkGraphicsOffload)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_graphics_offload_get_enabled(_arg0)
-	runtime.KeepAlive(self)
-
-	var _graphicsOffloadEnabled GraphicsOffloadEnabled // out
-
-	_graphicsOffloadEnabled = GraphicsOffloadEnabled(_cret)
-
-	return _graphicsOffloadEnabled
-}
-
-// SetChild sets the child of self.
-//
-// The function takes the following parameters:
-//
-//   - child (optional) widget.
-func (self *GraphicsOffload) SetChild(child Widgetter) {
-	var _arg0 *C.GtkGraphicsOffload // out
-	var _arg1 *C.GtkWidget          // out
-
-	_arg0 = (*C.GtkGraphicsOffload)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if child != nil {
-		_arg1 = (*C.GtkWidget)(unsafe.Pointer(coreglib.InternObject(child).Native()))
-	}
-
-	C.gtk_graphics_offload_set_child(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(child)
-}
-
-// SetEnabled sets whether this GtkGraphicsOffload widget will attempt to
-// offload the content of its child widget.
-//
-// The function takes the following parameters:
-//
-//   - enabled: whether to enable offload.
-func (self *GraphicsOffload) SetEnabled(enabled GraphicsOffloadEnabled) {
-	var _arg0 *C.GtkGraphicsOffload       // out
-	var _arg1 C.GtkGraphicsOffloadEnabled // out
-
-	_arg0 = (*C.GtkGraphicsOffload)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkGraphicsOffloadEnabled(enabled)
-
-	C.gtk_graphics_offload_set_enabled(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(enabled)
-}
-
 // GridOverrides contains methods that are overridable.
 type GridOverrides struct {
 }
@@ -64073,9 +55670,7 @@ func defaultGridOverrides(v *Grid) GridOverrides {
 //
 // # Accessibility
 //
-// Until GTK 4.10, GtkGrid used the GTK_ACCESSIBLE_ROLE_GROUP role.
-//
-// Starting from GTK 4.12, GtkGrid uses the GTK_ACCESSIBLE_ROLE_GENERIC role.
+// GtkGrid uses the GTK_ACCESSIBLE_ROLE_GROUP role.
 type Grid struct {
 	_ [0]func() // equal guard
 	Widget
@@ -65497,59 +57092,6 @@ func (self *GridView) SingleClickActivate() bool {
 	return _ok
 }
 
-// TabBehavior gets the behavior set for the <kbd>Tab</kbd> key.
-//
-// The function returns the following values:
-//
-//   - listTabBehavior: behavior of the <kbd>Tab</kbd> key.
-func (self *GridView) TabBehavior() ListTabBehavior {
-	var _arg0 *C.GtkGridView       // out
-	var _cret C.GtkListTabBehavior // in
-
-	_arg0 = (*C.GtkGridView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_grid_view_get_tab_behavior(_arg0)
-	runtime.KeepAlive(self)
-
-	var _listTabBehavior ListTabBehavior // out
-
-	_listTabBehavior = ListTabBehavior(_cret)
-
-	return _listTabBehavior
-}
-
-// ScrollTo scrolls to the item at the given position and performs the actions
-// specified in flags.
-//
-// This function works no matter if the gridview is shown or focused. If it
-// isn't, then the changes will take effect once that happens.
-//
-// The function takes the following parameters:
-//
-//   - pos: position of the item.
-//   - flags actions to perform.
-//   - scroll (optional) details of how to perform the scroll operation or NULL
-//     to scroll into view.
-func (self *GridView) ScrollTo(pos uint, flags ListScrollFlags, scroll *ScrollInfo) {
-	var _arg0 *C.GtkGridView       // out
-	var _arg1 C.guint              // out
-	var _arg2 C.GtkListScrollFlags // out
-	var _arg3 *C.GtkScrollInfo     // out
-
-	_arg0 = (*C.GtkGridView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.guint(pos)
-	_arg2 = C.GtkListScrollFlags(flags)
-	if scroll != nil {
-		_arg3 = (*C.GtkScrollInfo)(gextras.StructNative(unsafe.Pointer(scroll)))
-	}
-
-	C.gtk_grid_view_scroll_to(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(pos)
-	runtime.KeepAlive(flags)
-	runtime.KeepAlive(scroll)
-}
-
 // SetEnableRubberband sets whether selections can be changed by dragging with
 // the mouse.
 //
@@ -65633,7 +57175,7 @@ func (self *GridView) SetMinColumns(minColumns uint) {
 	runtime.KeepAlive(minColumns)
 }
 
-// SetModel sets the model to use.
+// SetModel sets the imodel to use.
 //
 // This must be a gtk.SelectionModel.
 //
@@ -65672,24 +57214,6 @@ func (self *GridView) SetSingleClickActivate(singleClickActivate bool) {
 	C.gtk_grid_view_set_single_click_activate(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(singleClickActivate)
-}
-
-// SetTabBehavior sets the behavior of the <kbd>Tab</kbd> and
-// <kbd>Shift</kbd>+<kbd>Tab</kbd> keys.
-//
-// The function takes the following parameters:
-//
-//   - tabBehavior: desired tab behavior.
-func (self *GridView) SetTabBehavior(tabBehavior ListTabBehavior) {
-	var _arg0 *C.GtkGridView       // out
-	var _arg1 C.GtkListTabBehavior // out
-
-	_arg0 = (*C.GtkGridView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkListTabBehavior(tabBehavior)
-
-	C.gtk_grid_view_set_tab_behavior(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(tabBehavior)
 }
 
 // HeaderBar: GtkHeaderBar is a widget for creating custom title bars for
@@ -65961,7 +57485,7 @@ func (bar *HeaderBar) Remove(child Widgetter) {
 // Recognized button names are minimize, maximize, close and icon (the window
 // icon).
 //
-// For example, “icon:minimize,maximize,close” specifies an icon on the left,
+// For example, “icon:minimize,maximize,close” specifies a icon on the left,
 // and minimize, maximize and close buttons on the right.
 //
 // The function takes the following parameters:
@@ -66032,9 +57556,6 @@ func (bar *HeaderBar) SetTitleWidget(titleWidget Widgetter) {
 
 // IMContextOverrides contains methods that are overridable.
 type IMContextOverrides struct {
-	ActivateOSK          func()
-	ActivateOSKWithEvent func(event gdk.Eventer) bool
-	// Commit: default handler of the gtk.IMContext::commit signal.
 	Commit func(str string)
 	// DeleteSurrounding asks the widget that the input context is attached
 	// to delete characters around the cursor position by emitting the
@@ -66050,7 +57571,7 @@ type IMContextOverrides struct {
 	// was handled, the input context might not have deleted all the characters
 	// that were requested to be deleted.
 	//
-	// This function is used by an input method that wants to make substitutions
+	// This function is used by an input method that wants to make subsitutions
 	// in the existing text in response to new input. It is not useful for
 	// applications.
 	//
@@ -66161,20 +57682,14 @@ type IMContextOverrides struct {
 	//   - ok: TRUE if surrounding text was provided; in this case you must free
 	//     the result stored in text.
 	SurroundingWithSelection func() (text string, cursorIndex, anchorIndex int, ok bool)
-	// PreeditChanged: default handler of the gtk.IMContext::preedit-changed
-	// signal.
-	PreeditChanged func()
-	// PreeditEnd: default handler of the gtk.IMContext::preedit-end signal.
-	PreeditEnd func()
-	// PreeditStart: default handler of the gtk.IMContext::preedit-start signal.
-	PreeditStart func()
+	PreeditChanged           func()
+	PreeditEnd               func()
+	PreeditStart             func()
 	// Reset: notify the input method that a change such as a change in cursor
 	// position has been made.
 	//
 	// This will typically cause the input method to clear the preedit state.
-	Reset func()
-	// RetrieveSurrounding: default handler of the
-	// gtk.IMContext::retrieve-surrounding signal.
+	Reset               func()
 	RetrieveSurrounding func() bool
 	// SetClientWidget: set the client widget for the input context.
 	//
@@ -66238,8 +57753,6 @@ type IMContextOverrides struct {
 
 func defaultIMContextOverrides(v *IMContext) IMContextOverrides {
 	return IMContextOverrides{
-		ActivateOSK:                 v.activateOSK,
-		ActivateOSKWithEvent:        v.activateOSKWithEvent,
 		Commit:                      v.commit,
 		DeleteSurrounding:           v.deleteSurrounding,
 		FilterKeypress:              v.filterKeypress,
@@ -66321,14 +57834,6 @@ func init() {
 
 func initIMContextClass(gclass unsafe.Pointer, overrides IMContextOverrides, classInitFunc func(*IMContextClass)) {
 	pclass := (*C.GtkIMContextClass)(unsafe.Pointer(C.g_type_check_class_cast((*C.GTypeClass)(gclass), C.GType(GTypeIMContext))))
-
-	if overrides.ActivateOSK != nil {
-		pclass.activate_osk = (*[0]byte)(C._gotk4_gtk4_IMContextClass_activate_osk)
-	}
-
-	if overrides.ActivateOSKWithEvent != nil {
-		pclass.activate_osk_with_event = (*[0]byte)(C._gotk4_gtk4_IMContextClass_activate_osk_with_event)
-	}
 
 	if overrides.Commit != nil {
 		pclass.commit = (*[0]byte)(C._gotk4_gtk4_IMContextClass_commit)
@@ -66474,43 +57979,6 @@ func (context *IMContext) ConnectRetrieveSurrounding(f func() (ok bool)) coregli
 	return coreglib.ConnectGeneratedClosure(context, "retrieve-surrounding", false, unsafe.Pointer(C._gotk4_gtk4_IMContext_ConnectRetrieveSurrounding), f)
 }
 
-// ActivateOSK requests the platform to show an on-screen keyboard for user
-// input.
-//
-// This method will return TRUE if this request was actually performed to the
-// platform, other environmental factors may result in an on-screen keyboard
-// effectively not showing up.
-//
-// The function takes the following parameters:
-//
-//   - event (optional): gdk.Event.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if an on-screen keyboard could be requested to the platform.
-func (context *IMContext) ActivateOSK(event gdk.Eventer) bool {
-	var _arg0 *C.GtkIMContext // out
-	var _arg1 *C.GdkEvent     // out
-	var _cret C.gboolean      // in
-
-	_arg0 = (*C.GtkIMContext)(unsafe.Pointer(coreglib.InternObject(context).Native()))
-	if event != nil {
-		_arg1 = (*C.GdkEvent)(unsafe.Pointer(coreglib.InternObject(event).Native()))
-	}
-
-	_cret = C.gtk_im_context_activate_osk(_arg0, _arg1)
-	runtime.KeepAlive(context)
-	runtime.KeepAlive(event)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
 // DeleteSurrounding asks the widget that the input context is attached
 // to delete characters around the cursor position by emitting the
 // ::delete_surrounding signal.
@@ -66525,7 +57993,7 @@ func (context *IMContext) ActivateOSK(event gdk.Eventer) bool {
 // handled, the input context might not have deleted all the characters that
 // were requested to be deleted.
 //
-// This function is used by an input method that wants to make substitutions
+// This function is used by an input method that wants to make subsitutions
 // in the existing text in response to new input. It is not useful for
 // applications.
 //
@@ -66976,43 +58444,6 @@ func (context *IMContext) SetUsePreedit(usePreedit bool) {
 	runtime.KeepAlive(usePreedit)
 }
 
-func (context *IMContext) activateOSK() {
-	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
-	fnarg := gclass.activate_osk
-
-	var _arg0 *C.GtkIMContext // out
-
-	_arg0 = (*C.GtkIMContext)(unsafe.Pointer(coreglib.InternObject(context).Native()))
-
-	C._gotk4_gtk4_IMContext_virtual_activate_osk(unsafe.Pointer(fnarg), _arg0)
-	runtime.KeepAlive(context)
-}
-
-func (context *IMContext) activateOSKWithEvent(event gdk.Eventer) bool {
-	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
-	fnarg := gclass.activate_osk_with_event
-
-	var _arg0 *C.GtkIMContext // out
-	var _arg1 *C.GdkEvent     // out
-	var _cret C.gboolean      // in
-
-	_arg0 = (*C.GtkIMContext)(unsafe.Pointer(coreglib.InternObject(context).Native()))
-	_arg1 = (*C.GdkEvent)(unsafe.Pointer(coreglib.InternObject(event).Native()))
-
-	_cret = C._gotk4_gtk4_IMContext_virtual_activate_osk_with_event(unsafe.Pointer(fnarg), _arg0, _arg1)
-	runtime.KeepAlive(context)
-	runtime.KeepAlive(event)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Commit: default handler of the gtk.IMContext::commit signal.
 func (context *IMContext) commit(str string) {
 	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.commit
@@ -67043,7 +58474,7 @@ func (context *IMContext) commit(str string) {
 // handled, the input context might not have deleted all the characters that
 // were requested to be deleted.
 //
-// This function is used by an input method that wants to make substitutions
+// This function is used by an input method that wants to make subsitutions
 // in the existing text in response to new input. It is not useful for
 // applications.
 //
@@ -67311,7 +58742,6 @@ func (context *IMContext) surroundingWithSelection() (text string, cursorIndex, 
 	return _text, _cursorIndex, _anchorIndex, _ok
 }
 
-// preeditChanged: default handler of the gtk.IMContext::preedit-changed signal.
 func (context *IMContext) preeditChanged() {
 	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.preedit_changed
@@ -67324,7 +58754,6 @@ func (context *IMContext) preeditChanged() {
 	runtime.KeepAlive(context)
 }
 
-// preeditEnd: default handler of the gtk.IMContext::preedit-end signal.
 func (context *IMContext) preeditEnd() {
 	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.preedit_end
@@ -67337,7 +58766,6 @@ func (context *IMContext) preeditEnd() {
 	runtime.KeepAlive(context)
 }
 
-// preeditStart: default handler of the gtk.IMContext::preedit-start signal.
 func (context *IMContext) preeditStart() {
 	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.preedit_start
@@ -67366,8 +58794,6 @@ func (context *IMContext) reset() {
 	runtime.KeepAlive(context)
 }
 
-// retrieveSurrounding: default handler of the
-// gtk.IMContext::retrieve-surrounding signal.
 func (context *IMContext) retrieveSurrounding() bool {
 	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.retrieve_surrounding
@@ -67554,9 +58980,8 @@ func defaultIMContextSimpleOverrides(v *IMContextSimple) IMContextSimpleOverride
 // GtkIMContextSimple reads compose sequences from the first of the
 // following files that is found: ~/.config/gtk-4.0/Compose, ~/.XCompose,
 // /usr/share/X11/locale/$locale/Compose (for locales that have a nontrivial
-// Compose file). A subset of the file syntax described in the Compose(5) manual
-// page is supported. Additionally, include "L" loads GTK’s built-in table of
-// compose sequences rather than the locale-specific one from X11.
+// Compose file). The syntax of these files is described in the Compose(5)
+// manual page.
 //
 // If none of these files is found, GtkIMContextSimple uses a built-in table of
 // compose sequences that is derived from the X11 Compose files.
@@ -67981,7 +59406,7 @@ func marshalIconTheme(p uintptr) (interface{}, error) {
 
 // ConnectChanged is emitted when the icon theme changes.
 //
-// This can happen because current icon theme is switched or because GTK detects
+// This can happen becuase current icon theme is switched or because GTK detects
 // that a change has occurred in the contents of the current icon theme.
 func (self *IconTheme) ConnectChanged(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "changed", false, unsafe.Pointer(C._gotk4_gtk4_IconTheme_ConnectChanged), f)
@@ -68609,8 +60034,6 @@ func IconThemeGetForDisplay(display *gdk.Display) *IconTheme {
 //
 // GtkIconView has a single CSS node with name iconview and style class .view.
 // For rubberband selection, a subnode with name rubberband is used.
-//
-// Deprecated: Use gtk.GridView instead.
 type IconView struct {
 	_ [0]func() // equal guard
 	Widget
@@ -68746,9 +60169,7 @@ func (iconView *IconView) ConnectUnselectAll(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(iconView, "unselect-all", false, unsafe.Pointer(C._gotk4_gtk4_IconView_ConnectUnselectAll), f)
 }
 
-// NewIconView creates a new GtkIconView widget
-//
-// Deprecated: Use gtk.GridView instead.
+// NewIconView creates a new GtkIconView widget.
 //
 // The function returns the following values:
 //
@@ -68767,8 +60188,6 @@ func NewIconView() *IconView {
 
 // NewIconViewWithArea creates a new GtkIconView widget using the specified area
 // to layout cells inside the icons.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -68795,8 +60214,6 @@ func NewIconViewWithArea(area CellAreaer) *IconView {
 
 // NewIconViewWithModel creates a new GtkIconView widget with the model model.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - model: model.
@@ -68822,8 +60239,6 @@ func NewIconViewWithModel(model TreeModeller) *IconView {
 
 // CreateDragIcon creates a GdkPaintable representation of the item at path.
 // This image is used for a drag icon.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -68861,8 +60276,6 @@ func (iconView *IconView) CreateDragIcon(path *TreePath) *gdk.Paintable {
 // EnableModelDragDest turns icon_view into a drop destination for automatic
 // DND. Calling this method sets GtkIconView:reorderable to FALSE.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - formats that the drag will support.
@@ -68884,8 +60297,6 @@ func (iconView *IconView) EnableModelDragDest(formats *gdk.ContentFormats, actio
 
 // EnableModelDragSource turns icon_view into a drag source for automatic DND.
 // Calling this method sets GtkIconView:reorderable to FALSE.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -68913,8 +60324,6 @@ func (iconView *IconView) EnableModelDragSource(startButtonMask gdk.ModifierType
 // ActivateOnSingleClick gets the setting set by
 // gtk_icon_view_set_activate_on_single_click().
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if item-activated will be emitted on a single click.
@@ -68940,8 +60349,6 @@ func (iconView *IconView) ActivateOnSingleClick() bool {
 // specified by path and cell. If cell is NULL the main cell area is used.
 //
 // This function is only valid if icon_view is realized.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -68983,8 +60390,6 @@ func (iconView *IconView) CellRect(path *TreePath, cell CellRendererer) (*gdk.Re
 
 // ColumnSpacing returns the value of the ::column-spacing property.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - gint: space between columns.
@@ -69005,8 +60410,6 @@ func (iconView *IconView) ColumnSpacing() int {
 }
 
 // Columns returns the value of the ::columns property.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function returns the following values:
 //
@@ -69032,8 +60435,6 @@ func (iconView *IconView) Columns() int {
 // focus, then *cell will be NULL.
 //
 // The returned GtkTreePath must be freed with gtk_tree_path_free().
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function returns the following values:
 //
@@ -69089,8 +60490,6 @@ func (iconView *IconView) Cursor() (*TreePath, CellRendererer, bool) {
 
 // DestItemAtPos determines the destination item for a given position.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - dragX: position to determine the destination item for.
@@ -69142,8 +60541,6 @@ func (iconView *IconView) DestItemAtPos(dragX, dragY int) (*TreePath, IconViewDr
 // DragDestItem gets information about the item that is highlighted for
 // feedback.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - path (optional): return location for the path of the highlighted item.
@@ -69176,8 +60573,6 @@ func (iconView *IconView) DragDestItem() (*TreePath, IconViewDropPosition) {
 }
 
 // ItemAtPos gets the path and cell for the icon at the given position.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -69246,8 +60641,6 @@ func (iconView *IconView) ItemAtPos(x, y int) (*TreePath, CellRendererer, bool) 
 // ItemColumn gets the column in which the item path is currently displayed.
 // Column numbers start at 0.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - path: GtkTreePath of the item.
@@ -69277,8 +60670,6 @@ func (iconView *IconView) ItemColumn(path *TreePath) int {
 // ItemOrientation returns the value of the ::item-orientation property which
 // determines whether the labels are drawn beside the icons instead of below.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - orientation: relative position of texts and icons.
@@ -69299,8 +60690,6 @@ func (iconView *IconView) ItemOrientation() Orientation {
 }
 
 // ItemPadding returns the value of the ::item-padding property.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function returns the following values:
 //
@@ -69323,8 +60712,6 @@ func (iconView *IconView) ItemPadding() int {
 
 // ItemRow gets the row in which the item path is currently displayed. Row
 // numbers start at 0.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -69354,8 +60741,6 @@ func (iconView *IconView) ItemRow(path *TreePath) int {
 
 // ItemWidth returns the value of the ::item-width property.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - gint: width of a single item, or -1.
@@ -69377,8 +60762,6 @@ func (iconView *IconView) ItemWidth() int {
 
 // Margin returns the value of the ::margin property.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - gint: space at the borders.
@@ -69399,8 +60782,6 @@ func (iconView *IconView) Margin() int {
 }
 
 // MarkupColumn returns the column with markup text for icon_view.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function returns the following values:
 //
@@ -69424,8 +60805,6 @@ func (iconView *IconView) MarkupColumn() int {
 // Model returns the model the GtkIconView is based on. Returns NULL if the
 // model is unset.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - treeModel (optional): currently used GtkTreeModel.
@@ -69448,8 +60827,6 @@ func (iconView *IconView) Model() *TreeModel {
 }
 
 // PathAtPos gets the path for the icon at the given position.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -69492,8 +60869,6 @@ func (iconView *IconView) PathAtPos(x, y int) *TreePath {
 
 // PixbufColumn returns the column with pixbufs for icon_view.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - gint: pixbuf column, or -1 if it’s unset.
@@ -69515,8 +60890,6 @@ func (iconView *IconView) PixbufColumn() int {
 
 // Reorderable retrieves whether the user can reorder the list via
 // drag-and-drop. See gtk_icon_view_set_reorderable().
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function returns the following values:
 //
@@ -69540,8 +60913,6 @@ func (iconView *IconView) Reorderable() bool {
 }
 
 // RowSpacing returns the value of the ::row-spacing property.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function returns the following values:
 //
@@ -69576,9 +60947,7 @@ func (iconView *IconView) RowSpacing() int {
 //
 //	// use list
 //
-//	g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);
-//
-// Deprecated: Use gtk.GridView instead.
+//	g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);.
 //
 // The function returns the following values:
 //
@@ -69613,8 +60982,6 @@ func (iconView *IconView) SelectedItems() []*TreePath {
 
 // SelectionMode gets the selection mode of the icon_view.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - selectionMode: current selection mode.
@@ -69635,8 +61002,6 @@ func (iconView *IconView) SelectionMode() SelectionMode {
 }
 
 // Spacing returns the value of the ::spacing property.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function returns the following values:
 //
@@ -69659,8 +61024,6 @@ func (iconView *IconView) Spacing() int {
 
 // TextColumn returns the column with text for icon_view.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - gint: text column, or -1 if it’s unset.
@@ -69682,8 +61045,6 @@ func (iconView *IconView) TextColumn() int {
 
 // TooltipColumn returns the column of icon_view’s model which is being used for
 // displaying tooltips on icon_view’s rows.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function returns the following values:
 //
@@ -69715,8 +61076,6 @@ func (iconView *IconView) TooltipColumn() int {
 // the item returned will be the cursor item. When TRUE, then any of model,
 // path and iter which have been provided will be set to point to that row and
 // the corresponding model.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -69783,8 +61142,6 @@ func (iconView *IconView) TooltipContext(x, y int, keyboardTip bool) (*TreeModel
 //
 // Both paths should be freed with gtk_tree_path_free() after use.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function returns the following values:
 //
 //   - startPath (optional): return location for start of region.
@@ -69832,8 +61189,6 @@ func (iconView *IconView) VisibleRange() (startPath, endPath *TreePath, ok bool)
 
 // ItemActivated activates the item determined by path.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - path: GtkTreePath to be activated.
@@ -69851,8 +61206,6 @@ func (iconView *IconView) ItemActivated(path *TreePath) {
 
 // PathIsSelected returns TRUE if the icon pointed to by path is currently
 // selected. If path does not point to a valid location, FALSE is returned.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -69896,8 +61249,6 @@ func (iconView *IconView) PathIsSelected(path *TreePath) bool {
 // model. If the model changes before the icon_view is realized, the centered
 // path will be modified to reflect this change.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - path of the item to move to.
@@ -69929,8 +61280,6 @@ func (iconView *IconView) ScrollToPath(path *TreePath, useAlign bool, rowAlign, 
 
 // SelectAll selects all the icons. icon_view must has its selection mode set to
 // GTK_SELECTION_MULTIPLE.
-//
-// Deprecated: Use gtk.GridView instead.
 func (iconView *IconView) SelectAll() {
 	var _arg0 *C.GtkIconView // out
 
@@ -69941,8 +61290,6 @@ func (iconView *IconView) SelectAll() {
 }
 
 // SelectPath selects the row at path.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -69961,8 +61308,6 @@ func (iconView *IconView) SelectPath(path *TreePath) {
 
 // SelectedForEach calls a function for each selected icon. Note that the model
 // or selection cannot be modified from within this function.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -69985,8 +61330,6 @@ func (iconView *IconView) SelectedForEach(fn IconViewForEachFunc) {
 // SetActivateOnSingleClick causes the GtkIconView::item-activated signal to be
 // emitted on a single click instead of a double click.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - single: TRUE to emit item-activated on a single click.
@@ -70007,8 +61350,6 @@ func (iconView *IconView) SetActivateOnSingleClick(single bool) {
 // SetColumnSpacing sets the ::column-spacing property which specifies the space
 // which is inserted between the columns of the icon view.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - columnSpacing: column spacing.
@@ -70027,8 +61368,6 @@ func (iconView *IconView) SetColumnSpacing(columnSpacing int) {
 // SetColumns sets the ::columns property which determines in how many columns
 // the icons are arranged. If columns is -1, the number of columns will be
 // chosen automatically to fill the available area.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -70054,8 +61393,6 @@ func (iconView *IconView) SetColumns(columns int) {
 // This function is often followed by gtk_widget_grab_focus (icon_view) in
 // order to give keyboard focus to the widget. Please note that editing can only
 // happen when the widget is realized.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -70086,8 +61423,6 @@ func (iconView *IconView) SetCursor(path *TreePath, cell CellRendererer, startEd
 
 // SetDragDestItem sets the item that is highlighted for feedback.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - path (optional) of the item to highlight.
@@ -70112,8 +61447,6 @@ func (iconView *IconView) SetDragDestItem(path *TreePath, pos IconViewDropPositi
 // SetItemOrientation sets the ::item-orientation property which determines
 // whether the labels are drawn beside the icons instead of below.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - orientation: relative position of texts and icons.
@@ -70131,8 +61464,6 @@ func (iconView *IconView) SetItemOrientation(orientation Orientation) {
 
 // SetItemPadding sets the GtkIconView:item-padding property which specifies the
 // padding around each of the icon view’s items.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -70153,8 +61484,6 @@ func (iconView *IconView) SetItemPadding(itemPadding int) {
 // for each item. If it is set to -1, the icon view will automatically determine
 // a suitable item size.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - itemWidth: width for each item.
@@ -70172,8 +61501,6 @@ func (iconView *IconView) SetItemWidth(itemWidth int) {
 
 // SetMargin sets the ::margin property which specifies the space which is
 // inserted at the top, bottom, left and right of the icon view.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -70195,8 +61522,6 @@ func (iconView *IconView) SetMargin(margin int) {
 // markup column is set to something, it overrides the text column set by
 // gtk_icon_view_set_text_column().
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - column in the currently used model, or -1 to display no text.
@@ -70216,8 +61541,6 @@ func (iconView *IconView) SetMarkupColumn(column int) {
 // model set, it will remove it before setting the new model. If model is NULL,
 // then it will unset the old model.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - model (optional): model.
@@ -70236,9 +61559,7 @@ func (iconView *IconView) SetModel(model TreeModeller) {
 }
 
 // SetPixbufColumn sets the column with pixbufs for icon_view to be column.
-// The pixbuf column must be of type GDK_TYPE_PIXBUF
-//
-// Deprecated: Use gtk.GridView instead.
+// The pixbuf column must be of type GDK_TYPE_PIXBUF.
 //
 // The function takes the following parameters:
 //
@@ -70268,8 +61589,6 @@ func (iconView *IconView) SetPixbufColumn(column int) {
 // reordering is allowed. If more control is needed, you should probably handle
 // drag and drop manually.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - reorderable: TRUE, if the list of items can be reordered.
@@ -70290,8 +61609,6 @@ func (iconView *IconView) SetReorderable(reorderable bool) {
 // SetRowSpacing sets the ::row-spacing property which specifies the space which
 // is inserted between the rows of the icon view.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - rowSpacing: row spacing.
@@ -70308,8 +61625,6 @@ func (iconView *IconView) SetRowSpacing(rowSpacing int) {
 }
 
 // SetSelectionMode sets the selection mode of the icon_view.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -70329,8 +61644,6 @@ func (iconView *IconView) SetSelectionMode(mode SelectionMode) {
 // SetSpacing sets the ::spacing property which specifies the space which is
 // inserted between the cells (i.e. the icon and the text) of an item.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - spacing: spacing.
@@ -70348,8 +61661,6 @@ func (iconView *IconView) SetSpacing(spacing int) {
 
 // SetTextColumn sets the column with text for icon_view to be column. The text
 // column must be of type G_TYPE_STRING.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -70370,8 +61681,6 @@ func (iconView *IconView) SetTextColumn(column int) {
 // in the item pointed to by path. See also gtk_tooltip_set_tip_area().
 //
 // See also gtk_icon_view_set_tooltip_column() for a simpler alternative.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -70409,8 +61718,6 @@ func (iconView *IconView) SetTooltipCell(tooltip *Tooltip, path *TreePath, cell 
 // Note that the signal handler sets the text with gtk_tooltip_set_markup(),
 // so &, <, etc have to be escaped in the text.
 //
-// Deprecated: Use gtk.GridView instead.
-//
 // The function takes the following parameters:
 //
 //   - column: integer, which is a valid column number for icon_view’s model.
@@ -70429,8 +61736,6 @@ func (iconView *IconView) SetTooltipColumn(column int) {
 // SetTooltipItem sets the tip area of tooltip to be the area covered by the
 // item at path. See also gtk_icon_view_set_tooltip_column() for a simpler
 // alternative. See also gtk_tooltip_set_tip_area().
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -70452,8 +61757,6 @@ func (iconView *IconView) SetTooltipItem(tooltip *Tooltip, path *TreePath) {
 }
 
 // UnselectAll unselects all the icons.
-//
-// Deprecated: Use gtk.GridView instead.
 func (iconView *IconView) UnselectAll() {
 	var _arg0 *C.GtkIconView // out
 
@@ -70464,8 +61767,6 @@ func (iconView *IconView) UnselectAll() {
 }
 
 // UnselectPath unselects the row at path.
-//
-// Deprecated: Use gtk.GridView instead.
 //
 // The function takes the following parameters:
 //
@@ -70485,8 +61786,6 @@ func (iconView *IconView) UnselectPath(path *TreePath) {
 // UnsetModelDragDest undoes the effect of
 // gtk_icon_view_enable_model_drag_dest(). Calling this method sets
 // GtkIconView:reorderable to FALSE.
-//
-// Deprecated: Use gtk.GridView instead.
 func (iconView *IconView) UnsetModelDragDest() {
 	var _arg0 *C.GtkIconView // out
 
@@ -70499,8 +61798,6 @@ func (iconView *IconView) UnsetModelDragDest() {
 // UnsetModelDragSource undoes the effect of
 // gtk_icon_view_enable_model_drag_source(). Calling this method sets
 // GtkIconView:reorderable to FALSE.
-//
-// Deprecated: Use gtk.GridView instead.
 func (iconView *IconView) UnsetModelDragSource() {
 	var _arg0 *C.GtkIconView // out
 
@@ -70740,9 +62037,6 @@ func NewImageFromPaintable(paintable gdk.Paintabler) *Image {
 // Note that this function just creates an GtkImage from the pixbuf.
 // The GtkImage created will not react to state changes. Should you want that,
 // you should use gtk.Image.NewFromIconName.
-//
-// Deprecated: Use gtk.Image.NewFromPaintable and gdk.Texture.NewForPixbuf
-// instead.
 //
 // The function takes the following parameters:
 //
@@ -71065,8 +62359,6 @@ func (image *Image) SetFromPaintable(paintable gdk.Paintabler) {
 // Note: This is a helper for gtk.Image.SetFromPaintable(), and you can't get
 // back the exact pixbuf once this is called, only a paintable.
 //
-// Deprecated: Use gtk.Image.SetFromPaintable() instead.
-//
 // The function takes the following parameters:
 //
 //   - pixbuf (optional): GdkPixbuf or NULL.
@@ -71143,8 +62435,7 @@ func (image *Image) SetPixelSize(pixelSize int) {
 	runtime.KeepAlive(pixelSize)
 }
 
-// InfoBar: GtkInfoBar can be used to show messages to the user without a
-// dialog.
+// InfoBar: GtkInfoBar can be show messages to the user without a dialog.
 //
 // !An example GtkInfoBar (info-bar.png)
 //
@@ -71215,10 +62506,6 @@ func (image *Image) SetPixelSize(pixelSize int) {
 // of the style classes .info, .warning, .error or .question, depending on the
 // message type. If the info bar shows a close button, that button will have the
 // .close style class applied.
-//
-// Deprecated: There is no replacement in GTK for an "info bar" widget; you
-// can use gtk.Revealer with a gtk.Box containing a gtk.Label and an optional
-// gtk.Button, according to your application's design.
 type InfoBar struct {
 	_ [0]func() // equal guard
 	Widget
@@ -71273,8 +62560,6 @@ func (infoBar *InfoBar) ConnectResponse(f func(responseId int)) coreglib.SignalH
 
 // NewInfoBar creates a new GtkInfoBar object.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - infoBar: new GtkInfoBar object.
@@ -71296,8 +62581,6 @@ func NewInfoBar() *InfoBar {
 // This also connects a signal handler that will emit the gtk.InfoBar::response
 // signal on the message area when the widget is activated. The widget is
 // appended to the end of the message areas action area.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -71321,10 +62604,8 @@ func (infoBar *InfoBar) AddActionWidget(child Widgetter, responseId int) {
 // AddButton adds a button with the given text.
 //
 // Clicking the button will emit the gtk.InfoBar::response signal with the given
-// response_id. The button is appended to the end of the info bar's action area.
-// The button widget is returned, but usually you don't need it.
-//
-// Deprecated: since version 4.10.
+// response_id. The button is appended to the end of the info bars's action
+// area. The button widget is returned, but usually you don't need it.
 //
 // The function takes the following parameters:
 //
@@ -71359,8 +62640,6 @@ func (infoBar *InfoBar) AddButton(buttonText string, responseId int) *Button {
 
 // AddChild adds a widget to the content area of the info bar.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - widget: child to be added.
@@ -71377,8 +62656,6 @@ func (infoBar *InfoBar) AddChild(widget Widgetter) {
 }
 
 // MessageType returns the message type of the message area.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -71400,8 +62677,6 @@ func (infoBar *InfoBar) MessageType() MessageType {
 }
 
 // Revealed returns whether the info bar is currently revealed.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -71426,8 +62701,6 @@ func (infoBar *InfoBar) Revealed() bool {
 
 // ShowCloseButton returns whether the widget will display a standard close
 // button.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -71455,8 +62728,6 @@ func (infoBar *InfoBar) ShowCloseButton() bool {
 // The widget must have been put there by a call to
 // gtk.InfoBar.AddActionWidget() or gtk.InfoBar.AddButton().
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - widget: action widget to remove.
@@ -71474,8 +62745,6 @@ func (infoBar *InfoBar) RemoveActionWidget(widget Widgetter) {
 
 // RemoveChild removes a widget from the content area of the info bar.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - widget: child that has been added to the content area.
@@ -71492,8 +62761,6 @@ func (infoBar *InfoBar) RemoveChild(widget Widgetter) {
 }
 
 // Response emits the “response” signal with the given response_id.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -71518,8 +62785,6 @@ func (infoBar *InfoBar) Response(responseId int) {
 // Note that this function currently requires info_bar to be added to a widget
 // hierarchy.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - responseId: response ID.
@@ -71538,8 +62803,6 @@ func (infoBar *InfoBar) SetDefaultResponse(responseId int) {
 // SetMessageType sets the message type of the message area.
 //
 // GTK uses this type to determine how the message is displayed.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -71561,8 +62824,6 @@ func (infoBar *InfoBar) SetMessageType(messageType MessageType) {
 // Calls gtk_widget_set_sensitive (widget, setting) for each widget in the
 // info bars’s action area with the given response_id. A convenient way to
 // sensitize/desensitize buttons.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -71593,8 +62854,6 @@ func (infoBar *InfoBar) SetResponseSensitive(responseId int, setting bool) {
 // Note: this does not show or hide info_bar in the gtk.Widget:visible sense,
 // so revealing has no effect if gtk.Widget:visible is FALSE.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - revealed: new value of the property.
@@ -71615,8 +62874,6 @@ func (infoBar *InfoBar) SetRevealed(revealed bool) {
 // SetShowCloseButton: if true, a standard close button is shown.
 //
 // When clicked it emits the response GTK_RESPONSE_CLOSE.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -71654,19 +62911,14 @@ func defaultInscriptionOverrides(v *Inscription) InscriptionOverrides {
 // as well as it can.
 //
 // Users of this widget should take care to plan behaviour for the common case
-// where the text doesn't fit exactly in the allocated space.
+// where the text doesn't fit exactly in the allocated space, .
 type Inscription struct {
 	_ [0]func() // equal guard
 	Widget
-
-	*coreglib.Object
-	Accessible
-	AccessibleText
 }
 
 var (
-	_ Widgetter         = (*Inscription)(nil)
-	_ coreglib.Objector = (*Inscription)(nil)
+	_ Widgetter = (*Inscription)(nil)
 )
 
 func init() {
@@ -71699,15 +62951,6 @@ func wrapInscription(obj *coreglib.Object) *Inscription {
 				Object: obj,
 			},
 			ConstraintTarget: ConstraintTarget{
-				Object: obj,
-			},
-		},
-		Object: obj,
-		Accessible: Accessible{
-			Object: obj,
-		},
-		AccessibleText: AccessibleText{
-			Accessible: Accessible{
 				Object: obj,
 			},
 		},
@@ -72348,9 +63591,8 @@ func (self *KeyvalTrigger) Modifiers() gdk.ModifierType {
 // Mnemonics automatically activate any activatable widget the label is
 // inside, such as a gtk.Button; if the label is not inside the mnemonic’s
 // target widget, you have to tell the label about the target using
-// gtk.Label.SetMnemonicWidget().
-//
-// Here’s a simple example where the label is inside a button:
+// gtk.Label.SetMnemonicWidget. Here’s a simple example where the label is
+// inside a button:
 //
 //	// Pressing Alt+H will activate this button
 //	GtkWidget *button = gtk_button_new ();
@@ -72384,11 +63626,11 @@ func (self *KeyvalTrigger) Modifiers() gdk.ModifierType {
 // (See the Pango manual for complete documentation] of available tags,
 // pango.ParseMarkup())
 //
-// The markup passed to gtk.Label.SetMarkup() must be valid; for example,
+// The markup passed to gtk_label_set_markup() must be valid; for example,
 // literal <, > and & characters must be escaped as &lt;, &gt;, and &amp;.
 // If you pass text obtained from the user, file, or a network to
-// gtk.Label.SetMarkup(), you’ll want to escape it with glib.MarkupEscapeText()
-// or glib.MarkupPrintfEscaped().
+// gtk.Label.SetMarkup(), you’ll want to escape it with g_markup_escape_text()
+// or g_markup_printf_escaped().
 //
 // Markup strings are just a convenient way to set the pango.AttrList on a
 // label; gtk.Label.SetAttributes() may be a simpler way to set attributes
@@ -72403,8 +63645,8 @@ func (self *KeyvalTrigger) Modifiers() gdk.ModifierType {
 //
 // Labels can be made selectable with gtk.Label.SetSelectable(). Selectable
 // labels allow the user to copy the label contents to the clipboard. Only
-// labels that contain useful-to-copy information—such as error messages—should
-// be made selectable.
+// labels that contain useful-to-copy information — such as error messages —
+// should be made selectable.
 //
 // # Text layout
 //
@@ -72436,11 +63678,11 @@ func (self *KeyvalTrigger) Modifiers() gdk.ModifierType {
 // attribute is displayed as a tooltip on the link. The “class“ attribute is
 // used as style class on the CSS node for the link.
 //
-// An example of inline links looks like this:
+// An example looks like this:
 //
 //	const char *text =
-//	"Go to the "
-//	"<a href=\"https://www.gtk.org\" title=\"&lt;i&gt;Our&lt;/i&gt; website\">"
+//	"Go to the"
+//	"<a href=\"http://www.gtk.org title=\"&lt;i&gt;Our&lt;/i&gt; website\">"
 //	"GTK website</a> for more...";
 //	GtkWidget *label = gtk_label_new (NULL);
 //	gtk_label_set_markup (GTK_LABEL (label), text);
@@ -72451,15 +63693,10 @@ func (self *KeyvalTrigger) Modifiers() gdk.ModifierType {
 type Label struct {
 	_ [0]func() // equal guard
 	Widget
-
-	*coreglib.Object
-	Accessible
-	AccessibleText
 }
 
 var (
-	_ Widgetter         = (*Label)(nil)
-	_ coreglib.Objector = (*Label)(nil)
+	_ Widgetter = (*Label)(nil)
 )
 
 func wrapLabel(obj *coreglib.Object) *Label {
@@ -72479,15 +63716,6 @@ func wrapLabel(obj *coreglib.Object) *Label {
 				Object: obj,
 			},
 		},
-		Object: obj,
-		Accessible: Accessible{
-			Object: obj,
-		},
-		AccessibleText: AccessibleText{
-			Accessible: Accessible{
-				Object: obj,
-			},
-		},
 	}
 }
 
@@ -72503,8 +63731,7 @@ func marshalLabel(p uintptr) (interface{}, error) {
 // Applications may also emit the signal with g_signal_emit_by_name() if they
 // need to control activation of URIs programmatically.
 //
-// The default bindings for this signal are all forms of the <kbd>Enter</kbd>
-// key.
+// The default bindings for this signal are all forms of the Enter key.
 func (self *Label) ConnectActivateCurrentLink(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "activate-current-link", false, unsafe.Pointer(C._gotk4_gtk4_Label_ConnectActivateCurrentLink), f)
 }
@@ -72512,16 +63739,16 @@ func (self *Label) ConnectActivateCurrentLink(f func()) coreglib.SignalHandle {
 // ConnectActivateLink gets emitted to activate a URI.
 //
 // Applications may connect to it to override the default behaviour, which is to
-// call gtk.FileLauncher.Launch().
+// call gtk_show_uri().
 func (self *Label) ConnectActivateLink(f func(uri string) (ok bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "activate-link", false, unsafe.Pointer(C._gotk4_gtk4_Label_ConnectActivateLink), f)
 }
 
-// ConnectCopyClipboard gets emitted to copy the selection to the clipboard.
+// ConnectCopyClipboard gets emitted to copy the slection to the clipboard.
 //
 // The ::copy-clipboard signal is a keybinding signal (class.SignalAction.html).
 //
-// The default binding for this signal is <kbd>Ctrl</kbd>+<kbd>c</kbd>.
+// The default binding for this signal is Ctrl-c.
 func (self *Label) ConnectCopyClipboard(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "copy-clipboard", false, unsafe.Pointer(C._gotk4_gtk4_Label_ConnectCopyClipboard), f)
 }
@@ -72539,12 +63766,11 @@ func (self *Label) ConnectCopyClipboard(f func()) coreglib.SignalHandle {
 // the Shift modifier extends the selection, the variant without the Shift
 // modifier does not. There are too many key combinations to list them all here.
 //
-// - <kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd> move by individual
-// characters/lines
+// - Arrow keys move by individual characters/lines
 //
-// - <kbd>Ctrl</kbd>+<kbd>←</kbd>, etc. move by words/paragraphs
+// - Ctrl-arrow key combinations move by words/paragraphs
 //
-// - <kbd>Home</kbd> and <kbd>End</kbd> move to the ends of the buffer.
+// - Home/End keys move to the ends of the buffer.
 func (self *Label) ConnectMoveCursor(f func(step MovementStep, count int, extendSelection bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "move-cursor", false, unsafe.Pointer(C._gotk4_gtk4_Label_ConnectMoveCursor), f)
 }
@@ -72620,12 +63846,12 @@ func NewLabelWithMnemonic(str string) *Label {
 	return _label
 }
 
-// Attributes gets the label's attribute list.
+// Attributes gets the labels attribute list.
 //
 // This is the pango.AttrList that was set on the label using
 // gtk.Label.SetAttributes(), if any. This function does not reflect attributes
-// that come from the label's markup (see gtk.Label.SetMarkup()). If you want to
-// get the effective attributes for the label, use pango_layout_get_attributes
+// that come from the labels markup (see gtk.Label.SetMarkup()). If you want to
+// get the effective attributes for the label, use pango_layout_get_attribute
 // (gtk_label_get_layout (self)).
 //
 // The function returns the following values:
@@ -73349,7 +64575,7 @@ func (self *Label) SetAttributes(attrs *pango.AttrList) {
 	runtime.KeepAlive(attrs)
 }
 
-// SetEllipsize sets the mode used to ellipsize the text.
+// SetEllipsize sets the mode used to ellipsizei the text.
 //
 // The text will be ellipsized if there is not enough space to render the entire
 // string.
@@ -73552,7 +64778,7 @@ func (self *Label) SetMaxWidthChars(nChars int) {
 // explicitly using this function.
 //
 // The target widget will be accelerated by emitting the
-// gtk.Widget::mnemonic-activate signal on it. The default handler for this
+// gtkwidget::mnemonic-activate signal on it. The default handler for this
 // signal will activate the widget if there are no mnemonic collisions and
 // toggle focus between the colliding widgets otherwise.
 //
@@ -74020,10 +65246,7 @@ type LayoutManagerOverrides struct {
 	//
 	//   - layoutChild: GtkLayoutChild.
 	CreateLayoutChild func(widget, forChild Widgetter) LayoutChilder
-	// RequestMode: virtual function, used to return the preferred request mode
-	// for the layout manager; for instance, "width for height" or "height for
-	// width"; see GtkSizeRequestMode.
-	RequestMode func(widget Widgetter) SizeRequestMode
+	RequestMode       func(widget Widgetter) SizeRequestMode
 	// Measure measures the size of the widget using manager, for the given
 	// orientation and size.
 	//
@@ -74048,12 +65271,8 @@ type LayoutManagerOverrides struct {
 	//   - minimumBaseline (optional): baseline position for the minimum size.
 	//   - naturalBaseline (optional): baseline position for the natural size.
 	Measure func(widget Widgetter, orientation Orientation, forSize int) (minimum, natural, minimumBaseline, naturalBaseline int)
-	// Root: virtual function, called when the widget using the layout manager
-	// is attached to a GtkRoot.
-	Root func()
-	// Unroot: virtual function, called when the widget using the layout manager
-	// is detached from a GtkRoot.
-	Unroot func()
+	Root    func()
+	Unroot  func()
 }
 
 func defaultLayoutManagerOverrides(v *LayoutManager) LayoutManagerOverrides {
@@ -74487,9 +65706,6 @@ func (manager *LayoutManager) createLayoutChild(widget, forChild Widgetter) Layo
 	return _layoutChild
 }
 
-// requestMode: virtual function, used to return the preferred request mode for
-// the layout manager; for instance, "width for height" or "height for width";
-// see GtkSizeRequestMode.
 func (manager *LayoutManager) requestMode(widget Widgetter) SizeRequestMode {
 	gclass := (*C.GtkLayoutManagerClass)(coreglib.PeekParentClass(manager))
 	fnarg := gclass.get_request_mode
@@ -74571,8 +65787,6 @@ func (manager *LayoutManager) measure(widget Widgetter, orientation Orientation,
 	return _minimum, _natural, _minimumBaseline, _naturalBaseline
 }
 
-// Root: virtual function, called when the widget using the layout manager is
-// attached to a GtkRoot.
 func (manager *LayoutManager) root() {
 	gclass := (*C.GtkLayoutManagerClass)(coreglib.PeekParentClass(manager))
 	fnarg := gclass.root
@@ -74585,8 +65799,6 @@ func (manager *LayoutManager) root() {
 	runtime.KeepAlive(manager)
 }
 
-// Unroot: virtual function, called when the widget using the layout manager is
-// detached from a GtkRoot.
 func (manager *LayoutManager) unroot() {
 	gclass := (*C.GtkLayoutManagerClass)(coreglib.PeekParentClass(manager))
 	fnarg := gclass.unroot
@@ -74640,7 +65852,7 @@ func (manager *LayoutManager) unroot() {
 //	  //   background-color: magenta;
 //	  //   border-style: solid;
 //	  //   border-color: black;
-//	  //   border-width: 1px;
+//	  //   border-style: 1px;
 //	  // }
 //
 //	  gtk_level_bar_add_offset_value (bar, "my-offset", 0.60);
@@ -74666,7 +65878,7 @@ func (manager *LayoutManager) unroot() {
 //
 // The GtkLevelBar implementation of the GtkBuildable interface supports a
 // custom <offsets> element, which can contain any number of <offset> elements,
-// each of which must have "name" and "value" attributes.
+// each of which must have name and value attributes.
 //
 // CSS nodes
 //
@@ -74696,8 +65908,6 @@ type LevelBar struct {
 	Widget
 
 	*coreglib.Object
-	Accessible
-	AccessibleRange
 	Orientable
 }
 
@@ -74724,14 +65934,6 @@ func wrapLevelBar(obj *coreglib.Object) *LevelBar {
 			},
 		},
 		Object: obj,
-		Accessible: Accessible{
-			Object: obj,
-		},
-		AccessibleRange: AccessibleRange{
-			Accessible: Accessible{
-				Object: obj,
-			},
-		},
 		Orientable: Orientable{
 			Object: obj,
 		},
@@ -74874,7 +66076,7 @@ func (self *LevelBar) MaxValue() float64 {
 	return _gdouble
 }
 
-// MinValue returns the min-value of the GtkLevelBar.
+// MinValue returns the min-value of the GtkLevelBar`.
 //
 // The function returns the following values:
 //
@@ -74957,8 +66159,8 @@ func (self *LevelBar) OffsetValue(name string) (float64, bool) {
 //
 // The function returns the following values:
 //
-//   - gdouble: value in the interval between gtk.LevelBar:min-value and
-//     gtk.LevelBar:max-value.
+//   - gdouble: value in the interval between gtk.LevelBar:min-value[ and
+//     [propertyGTK.LevelBar:max-value.
 func (self *LevelBar) Value() float64 {
 	var _arg0 *C.GtkLevelBar // out
 	var _cret C.double       // in
@@ -75105,8 +66307,8 @@ func (self *LevelBar) SetValue(value float64) {
 // The URI bound to a GtkLinkButton can be set specifically using
 // gtk.LinkButton.SetURI().
 //
-// By default, GtkLinkButton calls gtk.FileLauncher.Launch() when the
-// button is clicked. This behaviour can be overridden by connecting to the
+// By default, GtkLinkButton calls gtk.ShowURI() when the button is
+// clicked. This behaviour can be overridden by connecting to the
 // gtk.LinkButton::activate-link signal and returning TRUE from the signal
 // handler.
 //
@@ -75174,8 +66376,8 @@ func marshalLinkButton(p uintptr) (interface{}, error) {
 
 // ConnectActivateLink is emitted each time the GtkLinkButton is clicked.
 //
-// The default handler will call gtk.FileLauncher.Launch() with the URI stored
-// inside the gtk.LinkButton:uri property.
+// The default handler will call gtk.ShowURI() with the URI stored inside the
+// gtk.LinkButton:uri property.
 //
 // To override the default behavior, you can connect to the ::activate-link
 // signal and stop the propagation of the signal by returning TRUE from your
@@ -75430,16 +66632,13 @@ func BaseListBase(obj ListBaser) *ListBase {
 //
 // CSS nodes
 //
-//	list[.separators][.rich-list][.navigation-sidebar][.boxed-list]
+//	list[.separators][.rich-list][.navigation-sidebar]
 //	╰── row[.activatable]
 //
 // GtkListBox uses a single CSS node named list. It may carry the .separators
 // style class, when the gtk.ListBox:show-separators property is set.
 // Each GtkListBoxRow uses a single CSS node named row. The row nodes get the
 // .activatable style class added when appropriate.
-//
-// It may also carry the .boxed-list style class. In this case, the list will be
-// automatically surrounded by a frame and have separators.
 //
 // The main list node may also carry style classes to select the style of
 // list presentation (section-list-widget.html#list-styles): .rich-list,
@@ -75963,18 +67162,6 @@ func (box *ListBox) Remove(child Widgetter) {
 	runtime.KeepAlive(child)
 }
 
-// RemoveAll removes all rows from box.
-//
-// This function does nothing if box is backed by a model.
-func (box *ListBox) RemoveAll() {
-	var _arg0 *C.GtkListBox // out
-
-	_arg0 = (*C.GtkListBox)(unsafe.Pointer(coreglib.InternObject(box).Native()))
-
-	C.gtk_list_box_remove_all(_arg0)
-	runtime.KeepAlive(box)
-}
-
 // SelectAll: select all children of box, if the selection mode allows it.
 func (box *ListBox) SelectAll() {
 	var _arg0 *C.GtkListBox // out
@@ -76257,7 +67444,7 @@ func (box *ListBox) UnselectAll() {
 //
 // The function takes the following parameters:
 //
-//   - row to unselect.
+//   - row to unselected.
 func (box *ListBox) UnselectRow(row *ListBoxRow) {
 	var _arg0 *C.GtkListBox    // out
 	var _arg1 *C.GtkListBoxRow // out
@@ -76669,193 +67856,14 @@ func (row *ListBoxRow) activate() {
 	runtime.KeepAlive(row)
 }
 
-// ListHeader: GtkListHeader is used by list widgets to represent the headers
-// they display.
-//
-// GtkListHeader objects are managed just like gtk.ListItem objects via their
-// factory, but provide a different set of properties suitable for managing the
-// header instead of individual items.
-type ListHeader struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*ListHeader)(nil)
-)
-
-func wrapListHeader(obj *coreglib.Object) *ListHeader {
-	return &ListHeader{
-		Object: obj,
-	}
-}
-
-func marshalListHeader(p uintptr) (interface{}, error) {
-	return wrapListHeader(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// Child gets the child previously set via gtk_list_header_set_child() or NULL
-// if none was set.
-//
-// The function returns the following values:
-//
-//   - widget (optional): child.
-func (self *ListHeader) Child() Widgetter {
-	var _arg0 *C.GtkListHeader // out
-	var _cret *C.GtkWidget     // in
-
-	_arg0 = (*C.GtkListHeader)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_list_header_get_child(_arg0)
-	runtime.KeepAlive(self)
-
-	var _widget Widgetter // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.Take(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(Widgetter)
-				return ok
-			})
-			rv, ok := casted.(Widgetter)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gtk.Widgetter")
-			}
-			_widget = rv
-		}
-	}
-
-	return _widget
-}
-
-// End gets the end position in the model of the section that self is currently
-// the header for.
-//
-// If self is unbound, GTK_INVALID_LIST_POSITION is returned.
-//
-// The function returns the following values:
-//
-//   - guint: end position of the section.
-func (self *ListHeader) End() uint {
-	var _arg0 *C.GtkListHeader // out
-	var _cret C.guint          // in
-
-	_arg0 = (*C.GtkListHeader)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_list_header_get_end(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// Item gets the model item at the start of the section. This is the item that
-// occupies the list model at position gtk.ListHeader:start.
-//
-// If self is unbound, this function returns NULL.
-//
-// The function returns the following values:
-//
-//   - object (optional): item displayed.
-func (self *ListHeader) Item() *coreglib.Object {
-	var _arg0 *C.GtkListHeader // out
-	var _cret C.gpointer       // in
-
-	_arg0 = (*C.GtkListHeader)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_list_header_get_item(_arg0)
-	runtime.KeepAlive(self)
-
-	var _object *coreglib.Object // out
-
-	_object = coreglib.Take(unsafe.Pointer(_cret))
-
-	return _object
-}
-
-// NItems gets the the number of items in the section.
-//
-// If self is unbound, 0 is returned.
-//
-// The function returns the following values:
-//
-//   - guint: number of items in the section.
-func (self *ListHeader) NItems() uint {
-	var _arg0 *C.GtkListHeader // out
-	var _cret C.guint          // in
-
-	_arg0 = (*C.GtkListHeader)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_list_header_get_n_items(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// Start gets the start position in the model of the section that self is
-// currently the header for.
-//
-// If self is unbound, GTK_INVALID_LIST_POSITION is returned.
-//
-// The function returns the following values:
-//
-//   - guint: start position of the section.
-func (self *ListHeader) Start() uint {
-	var _arg0 *C.GtkListHeader // out
-	var _cret C.guint          // in
-
-	_arg0 = (*C.GtkListHeader)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_list_header_get_start(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// SetChild sets the child to be used for this listitem.
-//
-// This function is typically called by applications when setting up a header so
-// that the widget can be reused when binding it multiple times.
-//
-// The function takes the following parameters:
-//
-//   - child (optional): list item's child or NULL to unset.
-func (self *ListHeader) SetChild(child Widgetter) {
-	var _arg0 *C.GtkListHeader // out
-	var _arg1 *C.GtkWidget     // out
-
-	_arg0 = (*C.GtkListHeader)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if child != nil {
-		_arg1 = (*C.GtkWidget)(unsafe.Pointer(coreglib.InternObject(child).Native()))
-	}
-
-	C.gtk_list_header_set_child(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(child)
-}
-
 // ListItem: GtkListItem is used by list widgets to represent items in a
-// gio.ListModel.
+// GListModel.
 //
-// GtkListItem objects are managed by the list widget (with its factory)
-// and cannot be created by applications, but they need to be populated by
-// application code. This is done by calling gtk.ListItem.SetChild().
+// The GtkListItems are managed by the list widget (with its factory) and cannot
+// be created by applications, but they need to be populated by application
+// code. This is done by calling gtk.ListItem.SetChild().
 //
-// GtkListItem objects exist in 2 stages:
+// GtkListItems exist in 2 stages:
 //
 // 1. The unbound stage where the listitem is not currently connected to an item
 // in the list. In that case, the gtk.ListItem:item property is set to NULL.
@@ -76879,48 +67887,6 @@ func wrapListItem(obj *coreglib.Object) *ListItem {
 
 func marshalListItem(p uintptr) (interface{}, error) {
 	return wrapListItem(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// AccessibleDescription gets the accessible description of self.
-//
-// The function returns the following values:
-//
-//   - utf8: accessible description.
-func (self *ListItem) AccessibleDescription() string {
-	var _arg0 *C.GtkListItem // out
-	var _cret *C.char        // in
-
-	_arg0 = (*C.GtkListItem)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_list_item_get_accessible_description(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// AccessibleLabel gets the accessible label of self.
-//
-// The function returns the following values:
-//
-//   - utf8: accessible label.
-func (self *ListItem) AccessibleLabel() string {
-	var _arg0 *C.GtkListItem // out
-	var _cret *C.char        // in
-
-	_arg0 = (*C.GtkListItem)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_list_item_get_accessible_label(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
 }
 
 // Activatable checks if a list item has been set to be activatable via
@@ -76982,30 +67948,6 @@ func (self *ListItem) Child() Widgetter {
 	}
 
 	return _widget
-}
-
-// Focusable checks if a list item has been set to be focusable via
-// gtk_list_item_set_focusable().
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the item is focusable.
-func (self *ListItem) Focusable() bool {
-	var _arg0 *C.GtkListItem // out
-	var _cret C.gboolean     // in
-
-	_arg0 = (*C.GtkListItem)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_list_item_get_focusable(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
 }
 
 // Item gets the model item that associated with self.
@@ -77106,44 +68048,6 @@ func (self *ListItem) Selected() bool {
 	return _ok
 }
 
-// SetAccessibleDescription sets the accessible description for the list item,
-// which may be used by e.g. screen readers.
-//
-// The function takes the following parameters:
-//
-//   - description: description.
-func (self *ListItem) SetAccessibleDescription(description string) {
-	var _arg0 *C.GtkListItem // out
-	var _arg1 *C.char        // out
-
-	_arg0 = (*C.GtkListItem)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(description)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_list_item_set_accessible_description(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(description)
-}
-
-// SetAccessibleLabel sets the accessible label for the list item, which may be
-// used by e.g. screen readers.
-//
-// The function takes the following parameters:
-//
-//   - label: label.
-func (self *ListItem) SetAccessibleLabel(label string) {
-	var _arg0 *C.GtkListItem // out
-	var _arg1 *C.char        // out
-
-	_arg0 = (*C.GtkListItem)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(label)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_list_item_set_accessible_label(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(label)
-}
-
 // SetActivatable sets self to be activatable.
 //
 // If an item is activatable, double-clicking on the item, using the Return key
@@ -77190,33 +68094,6 @@ func (self *ListItem) SetChild(child Widgetter) {
 	C.gtk_list_item_set_child(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(child)
-}
-
-// SetFocusable sets self to be focusable.
-//
-// If an item is focusable, it can be focused using the keyboard. This works
-// similar to gtk.Widget.SetFocusable().
-//
-// Note that if items are not focusable, the keyboard cannot be used to activate
-// them and selecting only works if one of the listitem's children is focusable.
-//
-// By default, list items are focusable.
-//
-// The function takes the following parameters:
-//
-//   - focusable: if the item should be focusable.
-func (self *ListItem) SetFocusable(focusable bool) {
-	var _arg0 *C.GtkListItem // out
-	var _arg1 C.gboolean     // out
-
-	_arg0 = (*C.GtkListItem)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if focusable {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_list_item_set_focusable(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(focusable)
 }
 
 // SetSelectable sets self to be selectable.
@@ -77390,10 +68267,6 @@ func defaultListStoreOverrides(v *ListStore) ListStoreOverrides {
 //	                      -1);
 //	}
 //
-// GtkListStore is deprecated since GTK 4.10, and should not be used in newly
-// written code. You should use gio.ListStore instead, and the various list
-// models provided by GTK.
-//
 // # Performance Considerations
 //
 // Internally, the GtkListStore was originally implemented with a linked
@@ -77458,9 +68331,7 @@ func defaultListStoreOverrides(v *ListStore) ListStoreOverrides {
 //	      <col id="2">50</col>
 //	    </row>
 //	  </data>
-//	</object>
-//
-// Deprecated: Use gio.ListStore instead.
+//	</object>.
 type ListStore struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -77515,11 +68386,8 @@ func marshalListStore(p uintptr) (interface{}, error) {
 	return wrapListStore(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
 }
 
-// NewListStore creates a new GtkListStore.
-//
-// This function is meant to be used by language bindings.
-//
-// Deprecated: Use gio.ListStore instead.
+// NewListStore: non-vararg creation function. Used primarily by language
+// bindings.
 //
 // The function takes the following parameters:
 //
@@ -77557,8 +68425,6 @@ func NewListStore(types []coreglib.Type) *ListStore {
 // this new row. The row will be empty after this function is called. To fill in
 // values, you need to call gtk_list_store_set() or gtk_list_store_set_value().
 //
-// Deprecated: Use list models.
-//
 // The function returns the following values:
 //
 //   - iter: unset GtkTreeIter to set to the appended row.
@@ -77579,8 +68445,6 @@ func (listStore *ListStore) Append() *TreeIter {
 }
 
 // Clear removes all rows from the list store.
-//
-// Deprecated: Use list models.
 func (listStore *ListStore) Clear() {
 	var _arg0 *C.GtkListStore // out
 
@@ -77595,8 +68459,6 @@ func (listStore *ListStore) Clear() {
 // the list, then the new row will be appended to the list. The row will be
 // empty after this function is called. To fill in values, you need to call
 // gtk_list_store_set() or gtk_list_store_set_value().
-//
-// Deprecated: Use list models.
 //
 // The function takes the following parameters:
 //
@@ -77629,8 +68491,6 @@ func (listStore *ListStore) Insert(position int) *TreeIter {
 // changed to point to this new row. The row will be empty after this function
 // is called. To fill in values, you need to call gtk_list_store_set() or
 // gtk_list_store_set_value().
-//
-// Deprecated: Use list models.
 //
 // The function takes the following parameters:
 //
@@ -77665,8 +68525,6 @@ func (listStore *ListStore) InsertAfter(sibling *TreeIter) *TreeIter {
 // this new row. The row will be empty after this function is called. To fill in
 // values, you need to call gtk_list_store_set() or gtk_list_store_set_value().
 //
-// Deprecated: Use list models.
-//
 // The function takes the following parameters:
 //
 //   - sibling (optional): valid GtkTreeIter.
@@ -77699,8 +68557,6 @@ func (listStore *ListStore) InsertBefore(sibling *TreeIter) *TreeIter {
 // the columns and values as two arrays, instead of varargs.
 //
 // This function is mainly intended for language-bindings.
-//
-// Deprecated: Use list models.
 //
 // The function takes the following parameters:
 //
@@ -77757,8 +68613,6 @@ func (listStore *ListStore) InsertWithValues(position int, columns []int, values
 //
 // This function is slow. Only use it for debugging and/or testing purposes.
 //
-// Deprecated: Use list models.
-//
 // The function takes the following parameters:
 //
 //   - iter: iterator to check.
@@ -77791,8 +68645,6 @@ func (listStore *ListStore) IterIsValid(iter *TreeIter) bool {
 // function only works with unsorted stores. If position is NULL, iter will be
 // moved to the start of the list.
 //
-// Deprecated: Use list models.
-//
 // The function takes the following parameters:
 //
 //   - iter: GtkTreeIter.
@@ -77817,8 +68669,6 @@ func (store *ListStore) MoveAfter(iter, position *TreeIter) {
 // MoveBefore moves iter in store to the position before position. Note that
 // this function only works with unsorted stores. If position is NULL, iter will
 // be moved to the end of the list.
-//
-// Deprecated: Use list models.
 //
 // The function takes the following parameters:
 //
@@ -77845,8 +68695,6 @@ func (store *ListStore) MoveBefore(iter, position *TreeIter) {
 // this new row. The row will be empty after this function is called. To fill in
 // values, you need to call gtk_list_store_set() or gtk_list_store_set_value().
 //
-// Deprecated: Use list models.
-//
 // The function returns the following values:
 //
 //   - iter: unset GtkTreeIter to set to the prepend row.
@@ -77869,8 +68717,6 @@ func (listStore *ListStore) Prepend() *TreeIter {
 // Remove removes the given row from the list store. After being removed,
 // iter is set to be the next valid row, or invalidated if it pointed to the
 // last row in list_store.
-//
-// Deprecated: Use list models.
 //
 // The function takes the following parameters:
 //
@@ -77903,8 +68749,6 @@ func (listStore *ListStore) Remove(iter *TreeIter) bool {
 // Reorder reorders store to follow the order indicated by new_order. Note that
 // this function only works with unsorted stores.
 //
-// Deprecated: Use list models.
-//
 // The function takes the following parameters:
 //
 //   - newOrder: array of integers mapping the new position of each child to its
@@ -77933,15 +68777,10 @@ func (store *ListStore) Reorder(newOrder []int) {
 	runtime.KeepAlive(newOrder)
 }
 
-// SetColumnTypes sets the types of the columns of a list store.
-//
-// This function is meant primarily for objects that inherit from GtkListStore,
-// and should only be used when constructing a new instance.
-//
-// This function cannot be called after a row has been added, or a method on the
-// GtkTreeModel interface is called.
-//
-// Deprecated: Use list models.
+// SetColumnTypes: this function is meant primarily for GObjects that
+// inherit from GtkListStore, and should only be used when constructing a new
+// GtkListStore. It will not function after a row has been added, or a method on
+// the GtkTreeModel interface is called.
 //
 // The function takes the following parameters:
 //
@@ -77970,8 +68809,6 @@ func (listStore *ListStore) SetColumnTypes(types []coreglib.Type) {
 // SetValue sets the data in the cell specified by iter and column. The type of
 // value must be convertible to the type of the column.
 //
-// Deprecated: Use list models.
-//
 // The function takes the following parameters:
 //
 //   - iter: valid GtkTreeIter for the row being modified.
@@ -77999,8 +68836,6 @@ func (listStore *ListStore) SetValue(iter *TreeIter, column int, value *coreglib
 // values as two arrays, instead of varargs. This function is mainly intended
 // for language-bindings and in case the number of columns to change is not
 // known until run-time.
-//
-// Deprecated: Use list models.
 //
 // The function takes the following parameters:
 //
@@ -78044,8 +68879,6 @@ func (listStore *ListStore) Set(iter *TreeIter, columns []int, values []coreglib
 
 // Swap swaps a and b in store. Note that this function only works with unsorted
 // stores.
-//
-// Deprecated: Use list models.
 //
 // The function takes the following parameters:
 //
@@ -78299,30 +69132,6 @@ func (self *ListView) Factory() *ListItemFactory {
 	return _listItemFactory
 }
 
-// HeaderFactory gets the factory that's currently used to populate section
-// headers.
-//
-// The function returns the following values:
-//
-//   - listItemFactory (optional): factory in use.
-func (self *ListView) HeaderFactory() *ListItemFactory {
-	var _arg0 *C.GtkListView        // out
-	var _cret *C.GtkListItemFactory // in
-
-	_arg0 = (*C.GtkListView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_list_view_get_header_factory(_arg0)
-	runtime.KeepAlive(self)
-
-	var _listItemFactory *ListItemFactory // out
-
-	if _cret != nil {
-		_listItemFactory = wrapListItemFactory(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _listItemFactory
-}
-
 // Model gets the model that's currently used to read the items displayed.
 //
 // The function returns the following values:
@@ -78394,59 +69203,6 @@ func (self *ListView) SingleClickActivate() bool {
 	return _ok
 }
 
-// TabBehavior gets the behavior set for the <kbd>Tab</kbd> key.
-//
-// The function returns the following values:
-//
-//   - listTabBehavior: behavior of the <kbd>Tab</kbd> key.
-func (self *ListView) TabBehavior() ListTabBehavior {
-	var _arg0 *C.GtkListView       // out
-	var _cret C.GtkListTabBehavior // in
-
-	_arg0 = (*C.GtkListView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_list_view_get_tab_behavior(_arg0)
-	runtime.KeepAlive(self)
-
-	var _listTabBehavior ListTabBehavior // out
-
-	_listTabBehavior = ListTabBehavior(_cret)
-
-	return _listTabBehavior
-}
-
-// ScrollTo scrolls to the item at the given position and performs the actions
-// specified in flags.
-//
-// This function works no matter if the listview is shown or focused. If it
-// isn't, then the changes will take effect once that happens.
-//
-// The function takes the following parameters:
-//
-//   - pos: position of the item.
-//   - flags actions to perform.
-//   - scroll (optional) details of how to perform the scroll operation or NULL
-//     to scroll into view.
-func (self *ListView) ScrollTo(pos uint, flags ListScrollFlags, scroll *ScrollInfo) {
-	var _arg0 *C.GtkListView       // out
-	var _arg1 C.guint              // out
-	var _arg2 C.GtkListScrollFlags // out
-	var _arg3 *C.GtkScrollInfo     // out
-
-	_arg0 = (*C.GtkListView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.guint(pos)
-	_arg2 = C.GtkListScrollFlags(flags)
-	if scroll != nil {
-		_arg3 = (*C.GtkScrollInfo)(gextras.StructNative(unsafe.Pointer(scroll)))
-	}
-
-	C.gtk_list_view_scroll_to(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(pos)
-	runtime.KeepAlive(flags)
-	runtime.KeepAlive(scroll)
-}
-
 // SetEnableRubberband sets whether selections can be changed by dragging with
 // the mouse.
 //
@@ -78482,28 +69238,6 @@ func (self *ListView) SetFactory(factory *ListItemFactory) {
 	}
 
 	C.gtk_list_view_set_factory(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(factory)
-}
-
-// SetHeaderFactory sets the GtkListItemFactory to use for populating the
-// gtk.ListHeader objects used in section headers.
-//
-// If this factory is set to NULL, the list will not show section headers.
-//
-// The function takes the following parameters:
-//
-//   - factory (optional) to use.
-func (self *ListView) SetHeaderFactory(factory *ListItemFactory) {
-	var _arg0 *C.GtkListView        // out
-	var _arg1 *C.GtkListItemFactory // out
-
-	_arg0 = (*C.GtkListView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if factory != nil {
-		_arg1 = (*C.GtkListItemFactory)(unsafe.Pointer(coreglib.InternObject(factory).Native()))
-	}
-
-	C.gtk_list_view_set_header_factory(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(factory)
 }
@@ -78569,24 +69303,6 @@ func (self *ListView) SetSingleClickActivate(singleClickActivate bool) {
 	runtime.KeepAlive(singleClickActivate)
 }
 
-// SetTabBehavior sets the behavior of the <kbd>Tab</kbd> and
-// <kbd>Shift</kbd>+<kbd>Tab</kbd> keys.
-//
-// The function takes the following parameters:
-//
-//   - tabBehavior: desired tab behavior.
-func (self *ListView) SetTabBehavior(tabBehavior ListTabBehavior) {
-	var _arg0 *C.GtkListView       // out
-	var _arg1 C.GtkListTabBehavior // out
-
-	_arg0 = (*C.GtkListView)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkListTabBehavior(tabBehavior)
-
-	C.gtk_list_view_set_tab_behavior(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(tabBehavior)
-}
-
 // LockButton: GtkLockButton is a widget to obtain and revoke authorizations
 // needed to operate the controls.
 //
@@ -78622,8 +69338,6 @@ func (self *ListView) SetTabBehavior(tabBehavior ListTabBehavior) {
 // adjusted with the gtk.LockButton:text-lock, gtk.LockButton:text-unlock,
 // gtk.LockButton:tooltip-lock, gtk.LockButton:tooltip-unlock and
 // gtk.LockButton:tooltip-not-authorized properties.
-//
-// Deprecated: This widget will be removed in GTK 5.
 type LockButton struct {
 	_ [0]func() // equal guard
 	Button
@@ -78680,8 +69394,6 @@ func marshalLockButton(p uintptr) (interface{}, error) {
 
 // NewLockButton creates a new lock button which reflects the permission.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - permission (optional): GPermission.
@@ -78708,8 +69420,6 @@ func NewLockButton(permission gio.Permissioner) *LockButton {
 }
 
 // Permission obtains the GPermission object that controls button.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -78746,8 +69456,6 @@ func (button *LockButton) Permission() gio.Permissioner {
 }
 
 // SetPermission sets the GPermission object that controls button.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -78801,13 +69509,11 @@ func defaultMapListModelOverrides(v *MapListModel) MapListModelOverrides {
 //
 // GtkMapListModel will attempt to discard the mapped objects as soon as they
 // are no longer needed and recreate them if necessary.
-//
-// GtkMapListModel passes through sections from the underlying model.
 type MapListModel struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
 
-	SectionModel
+	gio.ListModel
 }
 
 var (
@@ -78833,10 +69539,8 @@ func initMapListModelClass(gclass unsafe.Pointer, overrides MapListModelOverride
 func wrapMapListModel(obj *coreglib.Object) *MapListModel {
 	return &MapListModel{
 		Object: obj,
-		SectionModel: SectionModel{
-			ListModel: gio.ListModel{
-				Object: obj,
-			},
+		ListModel: gio.ListModel{
+			Object: obj,
 		},
 	}
 }
@@ -79155,7 +69859,7 @@ func defaultMediaFileOverrides(v *MediaFile) MediaFileOverrides {
 // GTK provides a GIO extension point for GtkMediaFile implementations to allow
 // for external implementations using various media frameworks.
 //
-// GTK itself includes an implementation using GStreamer.
+// GTK itself includes implementations using GStreamer and ffmpeg.
 type MediaFile struct {
 	_ [0]func() // equal guard
 	MediaStream
@@ -80656,36 +71360,12 @@ func NewMenuButton() *MenuButton {
 	return _menuButton
 }
 
-// Active returns whether the menu button is active.
+// AlwaysShowArrow gets whether to show a dropdown arrow even when using an
+// icon.
 //
 // The function returns the following values:
 //
-//   - ok: TRUE if the button is active.
-func (menuButton *MenuButton) Active() bool {
-	var _arg0 *C.GtkMenuButton // out
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GtkMenuButton)(unsafe.Pointer(coreglib.InternObject(menuButton).Native()))
-
-	_cret = C.gtk_menu_button_get_active(_arg0)
-	runtime.KeepAlive(menuButton)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// AlwaysShowArrow gets whether to show a dropdown arrow even when using an icon
-// or a custom child.
-//
-// The function returns the following values:
-//
-//   - ok: whether to show a dropdown arrow even when using an icon or a custom
-//     child.
+//   - ok: whether to show a dropdown arrow even when using an icon.
 func (menuButton *MenuButton) AlwaysShowArrow() bool {
 	var _arg0 *C.GtkMenuButton // out
 	var _cret C.gboolean       // in
@@ -80693,30 +71373,6 @@ func (menuButton *MenuButton) AlwaysShowArrow() bool {
 	_arg0 = (*C.GtkMenuButton)(unsafe.Pointer(coreglib.InternObject(menuButton).Native()))
 
 	_cret = C.gtk_menu_button_get_always_show_arrow(_arg0)
-	runtime.KeepAlive(menuButton)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// CanShrink retrieves whether the button can be smaller than the natural size
-// of its contents.
-//
-// The function returns the following values:
-//
-//   - ok: true if the button can shrink, and false otherwise.
-func (menuButton *MenuButton) CanShrink() bool {
-	var _arg0 *C.GtkMenuButton // out
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GtkMenuButton)(unsafe.Pointer(coreglib.InternObject(menuButton).Native()))
-
-	_cret = C.gtk_menu_button_get_can_shrink(_arg0)
 	runtime.KeepAlive(menuButton)
 
 	var _ok bool // out
@@ -80983,32 +71639,12 @@ func (menuButton *MenuButton) Popup() {
 	runtime.KeepAlive(menuButton)
 }
 
-// SetActive sets whether the menu button is active.
-//
-// The function takes the following parameters:
-//
-//   - active: whether the menu button is active.
-func (menuButton *MenuButton) SetActive(active bool) {
-	var _arg0 *C.GtkMenuButton // out
-	var _arg1 C.gboolean       // out
-
-	_arg0 = (*C.GtkMenuButton)(unsafe.Pointer(coreglib.InternObject(menuButton).Native()))
-	if active {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_menu_button_set_active(_arg0, _arg1)
-	runtime.KeepAlive(menuButton)
-	runtime.KeepAlive(active)
-}
-
 // SetAlwaysShowArrow sets whether to show a dropdown arrow even when using an
 // icon or a custom child.
 //
 // The function takes the following parameters:
 //
-//   - alwaysShowArrow: whether to show a dropdown arrow even when using an icon
-//     or a custom child.
+//   - alwaysShowArrow: hether to show a dropdown arrow even when using an icon.
 func (menuButton *MenuButton) SetAlwaysShowArrow(alwaysShowArrow bool) {
 	var _arg0 *C.GtkMenuButton // out
 	var _arg1 C.gboolean       // out
@@ -81021,30 +71657,6 @@ func (menuButton *MenuButton) SetAlwaysShowArrow(alwaysShowArrow bool) {
 	C.gtk_menu_button_set_always_show_arrow(_arg0, _arg1)
 	runtime.KeepAlive(menuButton)
 	runtime.KeepAlive(alwaysShowArrow)
-}
-
-// SetCanShrink sets whether the button size can be smaller than the natural
-// size of its contents.
-//
-// For text buttons, setting can_shrink to true will ellipsize the label.
-//
-// For icon buttons, this function has no effect.
-//
-// The function takes the following parameters:
-//
-//   - canShrink: whether the button can shrink.
-func (menuButton *MenuButton) SetCanShrink(canShrink bool) {
-	var _arg0 *C.GtkMenuButton // out
-	var _arg1 C.gboolean       // out
-
-	_arg0 = (*C.GtkMenuButton)(unsafe.Pointer(coreglib.InternObject(menuButton).Native()))
-	if canShrink {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_menu_button_set_can_shrink(_arg0, _arg1)
-	runtime.KeepAlive(menuButton)
-	runtime.KeepAlive(canShrink)
 }
 
 // SetChild sets the child widget of menu_button.
@@ -81347,8 +71959,6 @@ func (menuButton *MenuButton) SetUseUnderline(useUnderline bool) {
 //
 // The GtkMessageDialog implementation of the GtkBuildable interface exposes the
 // message area as an internal child with the name “message_area”.
-//
-// Deprecated: Use gtk.AlertDialog instead.
 type MessageDialog struct {
 	_ [0]func() // equal guard
 	Dialog
@@ -81417,8 +72027,6 @@ func marshalMessageDialog(p uintptr) (interface{}, error) {
 // labels. See gtk.Dialog.GetContentArea() for the corresponding function in the
 // parent gtk.Dialog.
 //
-// Deprecated: Use gtk.AlertDialog instead.
-//
 // The function returns the following values:
 //
 //   - widget: GtkBox corresponding to the “message area” in the message_dialog.
@@ -81455,8 +72063,6 @@ func (messageDialog *MessageDialog) MessageArea() Widgetter {
 }
 
 // SetMarkup sets the text of the message dialog.
-//
-// Deprecated: Use gtk.AlertDialog instead.
 //
 // The function takes the following parameters:
 //
@@ -81894,8 +72500,6 @@ type MultiSelection struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
 
-	gio.ListModel
-	SectionModel
 	SelectionModel
 }
 
@@ -81922,14 +72526,6 @@ func initMultiSelectionClass(gclass unsafe.Pointer, overrides MultiSelectionOver
 func wrapMultiSelection(obj *coreglib.Object) *MultiSelection {
 	return &MultiSelection{
 		Object: obj,
-		ListModel: gio.ListModel{
-			Object: obj,
-		},
-		SectionModel: SectionModel{
-			ListModel: gio.ListModel{
-				Object: obj,
-			},
-		},
 		SelectionModel: SelectionModel{
 			ListModel: gio.ListModel{
 				Object: obj,
@@ -82223,8 +72819,7 @@ type NativeDialogOverrides struct {
 	// emitted until after the next call to gtk.NativeDialog.Show().
 	//
 	// If the dialog is not visible this does nothing.
-	Hide func()
-	// Response class handler for the GtkNativeDialog::response signal.
+	Hide     func()
 	Response func(responseId int)
 	// Show shows the dialog on the display.
 	//
@@ -82569,7 +73164,6 @@ func (self *NativeDialog) hide() {
 	runtime.KeepAlive(self)
 }
 
-// Response class handler for the GtkNativeDialog::response signal.
 func (self *NativeDialog) response(responseId int) {
 	gclass := (*C.GtkNativeDialogClass)(coreglib.PeekParentClass(self))
 	fnarg := gclass.response
@@ -82659,14 +73253,10 @@ func defaultNoSelectionOverrides(v *NoSelection) NoSelectionOverrides {
 //
 // This model is meant to be used as a simple wrapper around a GListModel when a
 // GtkSelectionModel is required.
-//
-// GtkNoSelection passes through sections from the underlying model.
 type NoSelection struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
 
-	gio.ListModel
-	SectionModel
 	SelectionModel
 }
 
@@ -82693,14 +73283,6 @@ func initNoSelectionClass(gclass unsafe.Pointer, overrides NoSelectionOverrides,
 func wrapNoSelection(obj *coreglib.Object) *NoSelection {
 	return &NoSelection{
 		Object: obj,
-		ListModel: gio.ListModel{
-			Object: obj,
-		},
-		SectionModel: SectionModel{
-			ListModel: gio.ListModel{
-				Object: obj,
-			},
-		},
 		SelectionModel: SelectionModel{
 			ListModel: gio.ListModel{
 				Object: obj,
@@ -83529,9 +74111,8 @@ func (notebook *Notebook) TabLabel(child Widgetter) Widgetter {
 //
 // The function returns the following values:
 //
-//   - utf8 (optional): text of the tab label, or NULL if the tab label widget
-//     is not a GtkLabel. The string is owned by the widget and must not be
-//     freed.
+//   - utf8 (optional): text of the tab label, or NULL if the tab label idget is
+//     not a GtkLabel. The string is owned by the widget and must not be freed.
 func (notebook *Notebook) TabLabelText(child Widgetter) string {
 	var _arg0 *C.GtkNotebook // out
 	var _arg1 *C.GtkWidget   // out
@@ -84079,16 +74660,14 @@ func (notebook *Notebook) SetShowTabs(showTabs bool) {
 // SetTabDetachable sets whether the tab can be detached from notebook to
 // another notebook or widget.
 //
-// Note that two notebooks must share a common group identifier (see
+// Note that two notebooks must share a common group identificator (see
 // gtk.Notebook.SetGroupName()) to allow automatic tabs interchange between
 // them.
 //
-// If you want a widget to interact with a notebook through DnD (i.e.: accept
-// dragged tabs from it) it must be set as a drop destination by adding to it
-// a gtk.DropTarget controller that accepts the GType GTK_TYPE_NOTEBOOK_PAGE.
-// The :value of said drop target will be preloaded with a gtk.NotebookPage
-// object that corresponds to the dropped tab, so you can process the value via
-// ::accept or ::drop signals.
+// If you want a widget to interact with a notebook through DnD (i.e.:
+// accept dragged tabs from it) it must be set as a drop destination and accept
+// the target “GTK_NOTEBOOK_TAB”. The notebook will fill the selection with a
+// GtkWidget** pointing to the child widget that corresponds to the dropped tab.
 //
 // Note that you should use gtk.Notebook.DetachTab() instead of
 // gtk.Notebook.RemovePage() if you want to remove the tab from the source
@@ -84897,13 +75476,12 @@ func defaultOverlayLayoutOverrides(v *OverlayLayout) OverlayLayoutOverrides {
 	return OverlayLayoutOverrides{}
 }
 
-// OverlayLayout: GtkOverlayLayout is the layout manager used by gtk.Overlay.
+// OverlayLayout: GtkOverlayLayout is the layout manager used by GtkOverlay.
 //
 // It places widgets as overlays on top of the main child.
 //
-// This is not a reusable layout manager, since it expects its widget to be
-// a GtkOverlay. It is only listed here so that its layout properties get
-// documented.
+// This is not a reusable layout manager, since it expects its widget to be a
+// GtkOverlay. It only listed here so that its layout properties get documented.
 type OverlayLayout struct {
 	_ [0]func() // equal guard
 	LayoutManager
@@ -86083,21 +76661,19 @@ func (setup *PageSetup) ToKeyFile(keyFile *glib.KeyFile, groupName string) {
 //	gtk_widget_set_size_request (hpaned, 200, -1);
 //
 //	gtk_paned_set_start_child (GTK_PANED (hpaned), frame1);
-//	gtk_paned_set_resize_start_child (GTK_PANED (hpaned), TRUE);
-//	gtk_paned_set_shrink_start_child (GTK_PANED (hpaned), FALSE);
+//	gtk_paned_set_start_child_resize (GTK_PANED (hpaned), TRUE);
+//	gtk_paned_set_start_child_shrink (GTK_PANED (hpaned), FALSE);
 //	gtk_widget_set_size_request (frame1, 50, -1);
 //
 //	gtk_paned_set_end_child (GTK_PANED (hpaned), frame2);
-//	gtk_paned_set_resize_end_child (GTK_PANED (hpaned), FALSE);
-//	gtk_paned_set_shrink_end_child (GTK_PANED (hpaned), FALSE);
+//	gtk_paned_set_end_child_resize (GTK_PANED (hpaned), FALSE);
+//	gtk_paned_set_end_child_shrink (GTK_PANED (hpaned), FALSE);
 //	gtk_widget_set_size_request (frame2, 50, -1);.
 type Paned struct {
 	_ [0]func() // equal guard
 	Widget
 
 	*coreglib.Object
-	Accessible
-	AccessibleRange
 	Orientable
 }
 
@@ -86124,14 +76700,6 @@ func wrapPaned(obj *coreglib.Object) *Paned {
 			},
 		},
 		Object: obj,
-		Accessible: Accessible{
-			Object: obj,
-		},
-		AccessibleRange: AccessibleRange{
-			Accessible: Accessible{
-				Object: obj,
-			},
-		},
 		Orientable: Orientable{
 			Object: obj,
 		},
@@ -86908,10 +77476,10 @@ func defaultPictureOverrides(v *Picture) PictureOverrides {
 // gtk.Picture:can-shrink can be unset to make sure that paintables are never
 // made smaller than their ideal size - but be careful if you do not know the
 // size of the paintable in use (like when displaying user-loaded images).
-// This can easily cause the picture to grow larger than the screen.
-// And gtk.Widget:halign and gtk.Widget:valign can be used to make sure the
-// paintable doesn't fill all available space but is instead displayed at its
-// original size.
+// This can easily cause the picture to grow larger than the screen. And
+// gtkwidget:halign and gtkwidget:valign can be used to make sure the paintable
+// doesn't fill all available space but is instead displayed at its original
+// size.
 //
 // # CSS nodes
 //
@@ -87086,9 +77654,6 @@ func NewPictureForPaintable(paintable gdk.Paintabler) *Picture {
 // function for details.
 //
 // The pixbuf must not be modified after passing it to this function.
-//
-// Deprecated: Use gtk.Picture.NewForPaintable and gdk.Texture.NewForPixbuf
-// instead.
 //
 // The function takes the following parameters:
 //
@@ -87483,8 +78048,6 @@ func (self *Picture) SetPaintable(paintable gdk.Paintabler) {
 //
 // This is a utility function that calls gtk.Picture.SetPaintable().
 //
-// Deprecated: Use gtk.Picture.SetPaintable() instead.
-//
 // The function takes the following parameters:
 //
 //   - pixbuf (optional): GdkPixbuf.
@@ -87583,15 +78146,14 @@ func defaultPopoverOverrides(v *Popover) PopoverOverrides {
 //
 // CSS nodes
 //
-//	popover.background[.menu]
+//	popover[.menu]
 //	├── arrow
-//	╰── contents
+//	╰── contents.background
 //	    ╰── <child>
 //
-// GtkPopover has a main node with name popover, an arrow with name arrow,
-// and another node for the content named contents. The popover node always
-// gets the .background style class. It also gets the .menu style class if the
-// popover is menu-like, e.g. is a gtk.PopoverMenu.
+// The contents child node always gets the .background style class and the
+// popover itself gets the .menu style class if the popover is menu-like (i.e.
+// GtkPopoverMenu).
 //
 // Particular uses of GtkPopover, such as touch selection popups or magnifiers
 // in GtkEntry or GtkTextView get style classes like .touch-selection or
@@ -87856,7 +78418,7 @@ func (popover *Popover) MnemonicsVisible() bool {
 	return _ok
 }
 
-// Offset gets the offset previous set with gtk.Popover.SetOffset()().
+// Offset gets the offset previous set with gtk_popover_set_offset().
 //
 // The function returns the following values:
 //
@@ -87956,13 +78518,7 @@ func (popover *Popover) Popup() {
 	runtime.KeepAlive(popover)
 }
 
-// Present: allocate a size for the GtkPopover.
-//
-// This function needs to be called in size-allocate by widgets who have
-// a GtkPopover as child. When using a layout manager, this is happening
-// automatically.
-//
-// To make a popover appear on screen, use gtk.Popover.Popup().
+// Present presents the popover to the user.
 func (popover *Popover) Present() {
 	var _arg0 *C.GtkPopover // out
 
@@ -88202,8 +78758,7 @@ func (popover *Popover) closed() {
 //
 // GtkPopoverMenu treats its children like menus and allows switching between
 // them. It can open submenus as traditional, nested submenus, or in a more
-// touch-friendly sliding fashion. The property gtk.PopoverMenu:flags controls
-// this appearance.
+// touch-friendly sliding fashion.
 //
 // GtkPopoverMenu is meant to be used primarily with menu models,
 // using gtk.PopoverMenu.NewFromModel. If you need to put other widgets
@@ -88289,20 +78844,13 @@ func (popover *Popover) closed() {
 //
 // Menu items will also show accelerators, which are usually
 // associated with actions via gtk.Application.SetAccelsForAction(),
-// widgetclass.AddBindingAction or gtk.ShortcutController.AddShortcut().
+// gtk_widget_class_add_binding_action or gtk.ShortcutController.AddShortcut().
 //
 // # CSS Nodes
 //
 // GtkPopoverMenu is just a subclass of GtkPopover that adds custom content to
 // it, therefore it has the same CSS nodes. It is one of the cases that add a
-// .menu style class to the main popover node.
-//
-// Menu items have nodes with name button and class .model. If a section
-// display-hint is set, the section gets a node box with class horizontal plus
-// a class with the same text as the display hint. Note that said box may not be
-// the direct ancestor of the item buttons. Thus, for example, to style items in
-// an inline-buttons section, select .inline-buttons button.model. Other things
-// that may be of interest to style in menus include label nodes.
+// .menu style class to the popover's main node.
 //
 // # Accessibility
 //
@@ -88415,6 +78963,10 @@ func NewPopoverMenuFromModel(model gio.MenuModeller) *PopoverMenu {
 // using gtk.Widget.InsertActionGroup() on the parent widget or on any of its
 // parent widgets.
 //
+// The only flag that is supported currently is GTK_POPOVER_MENU_NESTED, which
+// makes GTK create traditional, nested submenus instead of the default sliding
+// submenus.
+//
 // The function takes the following parameters:
 //
 //   - model: GMenuModel.
@@ -88480,28 +79032,6 @@ func (popover *PopoverMenu) AddChild(child Widgetter, id string) bool {
 	return _ok
 }
 
-// Flags returns the flags that popover uses to create/display a menu from its
-// model.
-//
-// The function returns the following values:
-//
-//   - popoverMenuFlags: GtkPopoverMenuFlags.
-func (popover *PopoverMenu) Flags() PopoverMenuFlags {
-	var _arg0 *C.GtkPopoverMenu     // out
-	var _cret C.GtkPopoverMenuFlags // in
-
-	_arg0 = (*C.GtkPopoverMenu)(unsafe.Pointer(coreglib.InternObject(popover).Native()))
-
-	_cret = C.gtk_popover_menu_get_flags(_arg0)
-	runtime.KeepAlive(popover)
-
-	var _popoverMenuFlags PopoverMenuFlags // out
-
-	_popoverMenuFlags = PopoverMenuFlags(_cret)
-
-	return _popoverMenuFlags
-}
-
 // MenuModel returns the menu model used to populate the popover.
 //
 // The function returns the following values:
@@ -88539,7 +79069,7 @@ func (popover *PopoverMenu) MenuModel() gio.MenuModeller {
 }
 
 // RemoveChild removes a widget that has previously been added with
-// gtk.PopoverMenu.AddChild()().
+// gtk_popover_menu_add_child().
 //
 // The function takes the following parameters:
 //
@@ -88567,27 +79097,6 @@ func (popover *PopoverMenu) RemoveChild(child Widgetter) bool {
 	}
 
 	return _ok
-}
-
-// SetFlags sets the flags that popover uses to create/display a menu from its
-// model.
-//
-// If a model is set and the flags change, contents are rebuilt, so if setting
-// properties individually, set flags before model to avoid a redundant rebuild.
-//
-// The function takes the following parameters:
-//
-//   - flags: set of GtkPopoverMenuFlags.
-func (popover *PopoverMenu) SetFlags(flags PopoverMenuFlags) {
-	var _arg0 *C.GtkPopoverMenu     // out
-	var _arg1 C.GtkPopoverMenuFlags // out
-
-	_arg0 = (*C.GtkPopoverMenu)(unsafe.Pointer(coreglib.InternObject(popover).Native()))
-	_arg1 = C.GtkPopoverMenuFlags(flags)
-
-	C.gtk_popover_menu_set_flags(_arg0, _arg1)
-	runtime.KeepAlive(popover)
-	runtime.KeepAlive(flags)
 }
 
 // SetMenuModel sets a new menu model on popover.
@@ -89199,594 +79708,31 @@ func (context *PrintContext) SetCairoContext(cr *cairo.Context, dpiX, dpiY float
 	runtime.KeepAlive(dpiY)
 }
 
-// PrintDialogOverrides contains methods that are overridable.
-type PrintDialogOverrides struct {
-}
-
-func defaultPrintDialogOverrides(v *PrintDialog) PrintDialogOverrides {
-	return PrintDialogOverrides{}
-}
-
-// PrintDialog: GtkPrintDialog object collects the arguments that are needed
-// to present a print dialog to the user, such as a title for the dialog and
-// whether it should be modal.
-//
-// The dialog is shown with the gtk.PrintDialog.Setup() function.
-// The actual printing can be done with gtk.PrintDialog.Print() or
-// gtk.PrintDialog.PrintFile(). These APIs follows the GIO async pattern,
-// and the results can be obtained by calling the corresponding finish methods.
-type PrintDialog struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*PrintDialog)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*PrintDialog, *PrintDialogClass, PrintDialogOverrides](
-		GTypePrintDialog,
-		initPrintDialogClass,
-		wrapPrintDialog,
-		defaultPrintDialogOverrides,
-	)
-}
-
-func initPrintDialogClass(gclass unsafe.Pointer, overrides PrintDialogOverrides, classInitFunc func(*PrintDialogClass)) {
-	if classInitFunc != nil {
-		class := (*PrintDialogClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapPrintDialog(obj *coreglib.Object) *PrintDialog {
-	return &PrintDialog{
-		Object: obj,
-	}
-}
-
-func marshalPrintDialog(p uintptr) (interface{}, error) {
-	return wrapPrintDialog(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NewPrintDialog creates a new GtkPrintDialog object.
-//
-// The function returns the following values:
-//
-//   - printDialog: new GtkPrintDialog.
-func NewPrintDialog() *PrintDialog {
-	var _cret *C.GtkPrintDialog // in
-
-	_cret = C.gtk_print_dialog_new()
-
-	var _printDialog *PrintDialog // out
-
-	_printDialog = wrapPrintDialog(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-
-	return _printDialog
-}
-
-// AcceptLabel returns the label that will be shown on the accept button of the
-// print dialog.
-//
-// The function returns the following values:
-//
-//   - utf8: accept label.
-func (self *PrintDialog) AcceptLabel() string {
-	var _arg0 *C.GtkPrintDialog // out
-	var _cret *C.char           // in
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_print_dialog_get_accept_label(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// Modal returns whether the print dialog blocks interaction with the parent
-// window while it is presented.
-//
-// The function returns the following values:
-//
-//   - ok: whether the print dialog is modal.
-func (self *PrintDialog) Modal() bool {
-	var _arg0 *C.GtkPrintDialog // out
-	var _cret C.gboolean        // in
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_print_dialog_get_modal(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// PageSetup returns the page setup.
-//
-// The function returns the following values:
-//
-//   - pageSetup: page setup.
-func (self *PrintDialog) PageSetup() *PageSetup {
-	var _arg0 *C.GtkPrintDialog // out
-	var _cret *C.GtkPageSetup   // in
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_print_dialog_get_page_setup(_arg0)
-	runtime.KeepAlive(self)
-
-	var _pageSetup *PageSetup // out
-
-	_pageSetup = wrapPageSetup(coreglib.Take(unsafe.Pointer(_cret)))
-
-	return _pageSetup
-}
-
-// PrintSettings returns the print settings for the print dialog.
-//
-// The function returns the following values:
-//
-//   - printSettings: settings.
-func (self *PrintDialog) PrintSettings() *PrintSettings {
-	var _arg0 *C.GtkPrintDialog   // out
-	var _cret *C.GtkPrintSettings // in
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_print_dialog_get_print_settings(_arg0)
-	runtime.KeepAlive(self)
-
-	var _printSettings *PrintSettings // out
-
-	_printSettings = wrapPrintSettings(coreglib.Take(unsafe.Pointer(_cret)))
-
-	return _printSettings
-}
-
-// Title returns the title that will be shown on the print dialog.
-//
-// The function returns the following values:
-//
-//   - utf8: title.
-func (self *PrintDialog) Title() string {
-	var _arg0 *C.GtkPrintDialog // out
-	var _cret *C.char           // in
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_print_dialog_get_title(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// Print: this function prints content from a stream.
-//
-// If you pass NULL as setup, then this method will present a print dialog.
-// Otherwise, it will attempt to print directly, without user interaction.
-//
-// The callback will be called when the printing is done. It should call
-// gtk.PrintDialog.PrintFinish() to obtain the results.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - setup (optional): GtkPrintSetup to use.
-//   - callback (optional) to call when the operation is complete.
-func (self *PrintDialog) Print(ctx context.Context, parent *Window, setup *PrintSetup, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkPrintDialog     // out
-	var _arg3 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg2 *C.GtkPrintSetup      // out
-	var _arg4 C.GAsyncReadyCallback // out
-	var _arg5 C.gpointer
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if setup != nil {
-		_arg2 = (*C.GtkPrintSetup)(gextras.StructNative(unsafe.Pointer(setup)))
-	}
-	if callback != nil {
-		_arg4 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg5 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_print_dialog_print(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(setup)
-	runtime.KeepAlive(callback)
-}
-
-// PrintFile: this function prints a file.
-//
-// If you pass NULL as setup, then this method will present a print dialog.
-// Otherwise, it will attempt to print directly, without user interaction.
-//
-// The callback will be called when the printing is done. It should call
-// gtk.PrintDialog.PrintFileFinish() to obtain the results.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - setup (optional): GtkPrintSetup to use.
-//   - file: GFile to print.
-//   - callback (optional) to call when the operation is complete.
-func (self *PrintDialog) PrintFile(ctx context.Context, parent *Window, setup *PrintSetup, file gio.Filer, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkPrintDialog     // out
-	var _arg4 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg2 *C.GtkPrintSetup      // out
-	var _arg3 *C.GFile              // out
-	var _arg5 C.GAsyncReadyCallback // out
-	var _arg6 C.gpointer
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg4 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if setup != nil {
-		_arg2 = (*C.GtkPrintSetup)(gextras.StructNative(unsafe.Pointer(setup)))
-	}
-	_arg3 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(file).Native()))
-	if callback != nil {
-		_arg5 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg6 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_print_dialog_print_file(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(setup)
-	runtime.KeepAlive(file)
-	runtime.KeepAlive(callback)
-}
-
-// PrintFileFinish finishes the gtk.PrintDialog.PrintFile() call and returns the
-// results.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-func (self *PrintDialog) PrintFileFinish(result gio.AsyncResulter) error {
-	var _arg0 *C.GtkPrintDialog // out
-	var _arg1 *C.GAsyncResult   // out
-	var _cerr *C.GError         // in
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	C.gtk_print_dialog_print_file_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// PrintFinish finishes the gtk.PrintDialog.Print() call and returns the
-// results.
-//
-// If the call was successful, the content to be printed should be written to
-// the returned output stream. Otherwise, NULL is returned.
-//
-// The overall results of the print operation will be returned in the
-// gio.OutputStream.Close() call, so if you are interested in the results, you
-// need to explicitly close the output stream (it will be closed automatically
-// if you just unref it). Be aware that the close call may not be instant as it
-// operation will for the printer to finish printing.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - outputStream (optional): gio.OutputStream.
-func (self *PrintDialog) PrintFinish(result gio.AsyncResulter) (gio.OutputStreamer, error) {
-	var _arg0 *C.GtkPrintDialog // out
-	var _arg1 *C.GAsyncResult   // out
-	var _cret *C.GOutputStream  // in
-	var _cerr *C.GError         // in
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_print_dialog_print_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _outputStream gio.OutputStreamer // out
-	var _goerr error                     // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.AssumeOwnership(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(gio.OutputStreamer)
-				return ok
-			})
-			rv, ok := casted.(gio.OutputStreamer)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gio.OutputStreamer")
-			}
-			_outputStream = rv
-		}
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _outputStream, _goerr
-}
-
-// SetAcceptLabel sets the label that will be shown on the accept button of the
-// print dialog shown for gtk.PrintDialog.Setup().
-//
-// The function takes the following parameters:
-//
-//   - acceptLabel: new accept label.
-func (self *PrintDialog) SetAcceptLabel(acceptLabel string) {
-	var _arg0 *C.GtkPrintDialog // out
-	var _arg1 *C.char           // out
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(acceptLabel)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_print_dialog_set_accept_label(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(acceptLabel)
-}
-
-// SetModal sets whether the print dialog blocks interaction with the parent
-// window while it is presented.
-//
-// The function takes the following parameters:
-//
-//   - modal: new value.
-func (self *PrintDialog) SetModal(modal bool) {
-	var _arg0 *C.GtkPrintDialog // out
-	var _arg1 C.gboolean        // out
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if modal {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_print_dialog_set_modal(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(modal)
-}
-
-// SetPageSetup: set the page setup for the print dialog.
-//
-// The function takes the following parameters:
-//
-//   - pageSetup: new page setup.
-func (self *PrintDialog) SetPageSetup(pageSetup *PageSetup) {
-	var _arg0 *C.GtkPrintDialog // out
-	var _arg1 *C.GtkPageSetup   // out
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GtkPageSetup)(unsafe.Pointer(coreglib.InternObject(pageSetup).Native()))
-
-	C.gtk_print_dialog_set_page_setup(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(pageSetup)
-}
-
-// SetPrintSettings sets the print settings for the print dialog.
-//
-// The function takes the following parameters:
-//
-//   - printSettings: new print settings.
-func (self *PrintDialog) SetPrintSettings(printSettings *PrintSettings) {
-	var _arg0 *C.GtkPrintDialog   // out
-	var _arg1 *C.GtkPrintSettings // out
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GtkPrintSettings)(unsafe.Pointer(coreglib.InternObject(printSettings).Native()))
-
-	C.gtk_print_dialog_set_print_settings(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(printSettings)
-}
-
-// SetTitle sets the title that will be shown on the print dialog.
-//
-// The function takes the following parameters:
-//
-//   - title: new title.
-func (self *PrintDialog) SetTitle(title string) {
-	var _arg0 *C.GtkPrintDialog // out
-	var _arg1 *C.char           // out
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(title)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.gtk_print_dialog_set_title(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(title)
-}
-
-// Setup: this function presents a print dialog to let the user select a
-// printer, and set up print settings and page setup.
-//
-// The callback will be called when the dialog is dismissed. It should call
-// gtk.PrintDialog.SetupFinish() to obtain the results in the form of a
-// gtk.PrintSetup, that can then be passed to gtk.PrintDialog.Print() or
-// gtk.PrintDialog.PrintFile().
-//
-// One possible use for this method is to have the user select a printer, then
-// show a page setup UI in the application (e.g. to arrange images on a page),
-// then call gtk.PrintDialog.Print() on self to do the printing without further
-// user interaction.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - callback (optional) to call when the operation is complete.
-func (self *PrintDialog) Setup(ctx context.Context, parent *Window, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkPrintDialog     // out
-	var _arg2 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg3 C.GAsyncReadyCallback // out
-	var _arg4 C.gpointer
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg2 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if callback != nil {
-		_arg3 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg4 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_print_dialog_setup(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(callback)
-}
-
-// SetupFinish finishes the gtk.PrintDialog.Setup() call.
-//
-// If the call was successful, it returns a gtk.PrintSetup which contains the
-// print settings and page setup information that will be used to print.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-//
-// The function returns the following values:
-//
-//   - printSetup (optional): GtkPrintSetup object that resulted from the call,
-//     or NULL if the call was not successful.
-func (self *PrintDialog) SetupFinish(result gio.AsyncResulter) (*PrintSetup, error) {
-	var _arg0 *C.GtkPrintDialog // out
-	var _arg1 *C.GAsyncResult   // out
-	var _cret *C.GtkPrintSetup  // in
-	var _cerr *C.GError         // in
-
-	_arg0 = (*C.GtkPrintDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	_cret = C.gtk_print_dialog_setup_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _printSetup *PrintSetup // out
-	var _goerr error            // out
-
-	if _cret != nil {
-		_printSetup = (*PrintSetup)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_printSetup)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.gtk_print_setup_unref((*C.GtkPrintSetup)(intern.C))
-			},
-		)
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _printSetup, _goerr
-}
-
 // PrintOperationOverrides contains methods that are overridable.
 type PrintOperationOverrides struct {
-	// BeginPrint: signal emitted after the user has finished changing print
-	// settings in the dialog, before the actual rendering starts.
-	BeginPrint func(context *PrintContext)
-	// CustomWidgetApply: signal emitted right before “begin-print” if you added
-	// a custom widget in the “create-custom-widget” handler.
+	BeginPrint        func(context *PrintContext)
 	CustomWidgetApply func(widget Widgetter)
-	// Done: signal emitted when the print operation run has finished doing
-	// everything required for printing.
-	Done func(result PrintOperationResult)
-	// DrawPage: signal emitted for every page that is printed.
-	//
+	Done              func(result PrintOperationResult)
 	// The function takes the following parameters:
 	//
 	//   - context
 	//   - pageNr
 	DrawPage func(context *PrintContext, pageNr int)
-	// EndPrint: signal emitted after all pages have been rendered.
 	EndPrint func(context *PrintContext)
-	// Paginate: signal emitted after the “begin-print” signal, but before the
-	// actual rendering starts.
 	Paginate func(context *PrintContext) bool
-	// Preview: signal emitted when a preview is requested from the native
-	// dialog.
-	//
 	// The function takes the following parameters:
 	//
 	//   - preview
 	//   - context
 	//   - parent
 	Preview func(preview PrintOperationPreviewer, context *PrintContext, parent *Window) bool
-	// RequestPageSetup is emitted once for every page that is printed, to give
-	// the application a chance to modify the page setup.
-	//
 	// The function takes the following parameters:
 	//
 	//   - context
 	//   - pageNr
 	//   - setup
 	RequestPageSetup func(context *PrintContext, pageNr int, setup *PageSetup)
-	// StatusChanged is emitted at between the various phases of the print
-	// operation.
-	StatusChanged func()
-	// UpdateCustomWidget is emitted after change of selected printer.
-	//
+	StatusChanged    func()
 	// The function takes the following parameters:
 	//
 	//   - widget
@@ -90458,7 +80404,7 @@ func (op *PrintOperation) IsFinished() bool {
 //						     error->message);
 //	   g_signal_connect (error_dialog, "response",
 //	                     G_CALLBACK (gtk_window_destroy), NULL);
-//	   gtk_window_present (GTK_WINDOW (error_dialog));
+//	   gtk_widget_show (error_dialog);
 //	   g_error_free (error);
 //	 }
 //	else if (res == GTK_PRINT_OPERATION_RESULT_APPLY)
@@ -90868,8 +80814,6 @@ func (op *PrintOperation) SetUseFullPage(fullPage bool) {
 	runtime.KeepAlive(fullPage)
 }
 
-// beginPrint: signal emitted after the user has finished changing print
-// settings in the dialog, before the actual rendering starts.
 func (operation *PrintOperation) beginPrint(context *PrintContext) {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.begin_print
@@ -90885,8 +80829,6 @@ func (operation *PrintOperation) beginPrint(context *PrintContext) {
 	runtime.KeepAlive(context)
 }
 
-// customWidgetApply: signal emitted right before “begin-print” if you added a
-// custom widget in the “create-custom-widget” handler.
 func (operation *PrintOperation) customWidgetApply(widget Widgetter) {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.custom_widget_apply
@@ -90902,8 +80844,6 @@ func (operation *PrintOperation) customWidgetApply(widget Widgetter) {
 	runtime.KeepAlive(widget)
 }
 
-// Done: signal emitted when the print operation run has finished doing
-// everything required for printing.
 func (operation *PrintOperation) done(result PrintOperationResult) {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.done
@@ -90919,8 +80859,6 @@ func (operation *PrintOperation) done(result PrintOperationResult) {
 	runtime.KeepAlive(result)
 }
 
-// drawPage: signal emitted for every page that is printed.
-//
 // The function takes the following parameters:
 //
 //   - context
@@ -90943,7 +80881,6 @@ func (operation *PrintOperation) drawPage(context *PrintContext, pageNr int) {
 	runtime.KeepAlive(pageNr)
 }
 
-// endPrint: signal emitted after all pages have been rendered.
 func (operation *PrintOperation) endPrint(context *PrintContext) {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.end_print
@@ -90959,8 +80896,6 @@ func (operation *PrintOperation) endPrint(context *PrintContext) {
 	runtime.KeepAlive(context)
 }
 
-// Paginate: signal emitted after the “begin-print” signal, but before the
-// actual rendering starts.
 func (operation *PrintOperation) paginate(context *PrintContext) bool {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.paginate
@@ -90985,8 +80920,6 @@ func (operation *PrintOperation) paginate(context *PrintContext) bool {
 	return _ok
 }
 
-// Preview: signal emitted when a preview is requested from the native dialog.
-//
 // The function takes the following parameters:
 //
 //   - preview
@@ -91022,9 +80955,6 @@ func (operation *PrintOperation) preview(preview PrintOperationPreviewer, contex
 	return _ok
 }
 
-// requestPageSetup is emitted once for every page that is printed, to give the
-// application a chance to modify the page setup.
-//
 // The function takes the following parameters:
 //
 //   - context
@@ -91051,8 +80981,6 @@ func (operation *PrintOperation) requestPageSetup(context *PrintContext, pageNr 
 	runtime.KeepAlive(setup)
 }
 
-// statusChanged is emitted at between the various phases of the print
-// operation.
 func (operation *PrintOperation) statusChanged() {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.status_changed
@@ -91065,8 +80993,6 @@ func (operation *PrintOperation) statusChanged() {
 	runtime.KeepAlive(operation)
 }
 
-// updateCustomWidget is emitted after change of selected printer.
-//
 // The function takes the following parameters:
 //
 //   - widget
@@ -92962,8 +82888,6 @@ type ProgressBar struct {
 	Widget
 
 	*coreglib.Object
-	Accessible
-	AccessibleRange
 	Orientable
 }
 
@@ -92990,14 +82914,6 @@ func wrapProgressBar(obj *coreglib.Object) *ProgressBar {
 			},
 		},
 		Object: obj,
-		Accessible: Accessible{
-			Object: obj,
-		},
-		AccessibleRange: AccessibleRange{
-			Accessible: Accessible{
-				Object: obj,
-			},
-		},
 		Orientable: Orientable{
 			Object: obj,
 		},
@@ -93460,8 +83376,6 @@ type Range struct {
 	Widget
 
 	*coreglib.Object
-	Accessible
-	AccessibleRange
 	Orientable
 }
 
@@ -93526,14 +83440,6 @@ func wrapRange(obj *coreglib.Object) *Range {
 			},
 		},
 		Object: obj,
-		Accessible: Accessible{
-			Object: obj,
-		},
-		AccessibleRange: AccessibleRange{
-			Accessible: Accessible{
-				Object: obj,
-			},
-		},
 		Orientable: Orientable{
 			Object: obj,
 		},
@@ -94938,7 +84844,7 @@ type ScaleOverrides struct {
 	// Remember when using the PangoLayout function you need to convert to and
 	// from pixels using PANGO_PIXELS() or PANGO_SCALE.
 	//
-	// If the gtk.Scale:draw-value property is FALSE, the return values are
+	// If the gtkscale:draw-value property is FALSE, the return values are
 	// undefined.
 	//
 	// The function returns the following values:
@@ -94959,7 +84865,7 @@ func defaultScaleOverrides(v *Scale) ScaleOverrides {
 // !An example GtkScale (scales.png)
 //
 // To use it, you’ll probably want to investigate the methods on its base class,
-// gtk.Range, in addition to the methods for GtkScale itself. To set the value
+// gtkrange, in addition to the methods for GtkScale itself. To set the value
 // of a scale, you would normally use gtk.Range.SetValue(). To detect changes to
 // the value, you would normally use the gtk.Range::value-changed signal.
 //
@@ -95081,14 +84987,6 @@ func wrapScale(obj *coreglib.Object) *Scale {
 				},
 			},
 			Object: obj,
-			Accessible: Accessible{
-				Object: obj,
-			},
-			AccessibleRange: AccessibleRange{
-				Accessible: Accessible{
-					Object: obj,
-				},
-			},
 			Orientable: Orientable{
 				Object: obj,
 			},
@@ -95304,7 +85202,7 @@ func (scale *Scale) HasOrigin() bool {
 // The function returns the following values:
 //
 //   - layout (optional): pango.Layout for this scale, or NULL if the
-//     gtk.Scale:draw-value property is FALSE.
+//     gtkscale:draw-value property is FALSE.
 func (scale *Scale) Layout() *pango.Layout {
 	var _arg0 *C.GtkScale    // out
 	var _cret *C.PangoLayout // in
@@ -95334,7 +85232,7 @@ func (scale *Scale) Layout() *pango.Layout {
 // Remember when using the PangoLayout function you need to convert to and from
 // pixels using PANGO_PIXELS() or PANGO_SCALE.
 //
-// If the gtk.Scale:draw-value property is FALSE, the return values are
+// If the gtkscale:draw-value property is FALSE, the return values are
 // undefined.
 //
 // The function returns the following values:
@@ -95385,9 +85283,9 @@ func (scale *Scale) ValuePos() PositionType {
 //
 // Also causes the value of the adjustment to be rounded to this
 // number of digits, so the retrieved value matches the displayed one,
-// if gtk.Scale:draw-value is TRUE when the value changes. If you want to
-// enforce rounding the value when gtk.Scale:draw-value is FALSE, you can set
-// gtk.Range:round-digits instead.
+// if gtkscale:draw-value is TRUE when the value changes. If you want to
+// enforce rounding the value when gtkscale:draw-value is FALSE, you can set
+// gtkrange:round-digits instead.
 //
 // Note that rounding to a small number of digits can interfere with the smooth
 // autoscrolling that is built into GtkScale. As an alternative, you can use
@@ -95436,7 +85334,7 @@ func (scale *Scale) SetDrawValue(drawValue bool) {
 // That string will then be used to display the scale's value.
 //
 // If LL is passed as func, the value will be displayed on its own, rounded
-// according to the value of the gtk.Scale:digits property.
+// according to the value of the gtkscale:digits property.
 //
 // The function takes the following parameters:
 //
@@ -95461,9 +85359,9 @@ func (scale *Scale) SetFormatValueFunc(fn ScaleFormatValueFunc) {
 
 // SetHasOrigin sets whether the scale has an origin.
 //
-// If gtk.Scale:has-origin is set to TRUE (the default), the scale will
-// highlight the part of the trough between the origin (bottom or left side) and
-// the current value.
+// If gtkscale:has-origin is set to TRUE (the default), the scale will highlight
+// the part of the trough between the origin (bottom or left side) and the
+// current value.
 //
 // The function takes the following parameters:
 //
@@ -95505,7 +85403,7 @@ func (scale *Scale) SetValuePos(pos PositionType) {
 // Remember when using the PangoLayout function you need to convert to and from
 // pixels using PANGO_PIXELS() or PANGO_SCALE.
 //
-// If the gtk.Scale:draw-value property is FALSE, the return values are
+// If the gtkscale:draw-value property is FALSE, the return values are
 // undefined.
 //
 // The function returns the following values:
@@ -95551,21 +85449,15 @@ func defaultScaleButtonOverrides(v *ScaleButton) ScaleButtonOverrides {
 // applications, and GTK provides a gtk.VolumeButton subclass that is tailored
 // for this use case.
 //
-// CSS nodes
+// # CSS nodes
 //
-//	scalebutton.scale
-//	╰── button.toggle
-//	    ╰── <icon>
-//
-// GtkScaleButton has a single CSS node with name scalebutton and .scale style
-// class, and contains a button node with a .toggle style class.
+// GtkScaleButton has a single CSS node with name button. To differentiate it
+// from a plain GtkButton, it gets the .scale style class.
 type ScaleButton struct {
 	_ [0]func() // equal guard
 	Widget
 
 	*coreglib.Object
-	Accessible
-	AccessibleRange
 	Orientable
 }
 
@@ -95614,14 +85506,6 @@ func wrapScaleButton(obj *coreglib.Object) *ScaleButton {
 			},
 		},
 		Object: obj,
-		Accessible: Accessible{
-			Object: obj,
-		},
-		AccessibleRange: AccessibleRange{
-			Accessible: Accessible{
-				Object: obj,
-			},
-		},
 		Orientable: Orientable{
 			Object: obj,
 		},
@@ -95710,31 +85594,6 @@ func NewScaleButton(min, max, step float64, icons []string) *ScaleButton {
 	return _scaleButton
 }
 
-// Active queries a GtkScaleButton and returns its current state.
-//
-// Returns TRUE if the scale button is pressed in and FALSE if it is raised.
-//
-// The function returns the following values:
-//
-//   - ok: whether the button is pressed.
-func (button *ScaleButton) Active() bool {
-	var _arg0 *C.GtkScaleButton // out
-	var _cret C.gboolean        // in
-
-	_arg0 = (*C.GtkScaleButton)(unsafe.Pointer(coreglib.InternObject(button).Native()))
-
-	_cret = C.gtk_scale_button_get_active(_arg0)
-	runtime.KeepAlive(button)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
 // Adjustment gets the GtkAdjustment associated with the GtkScaleButton’s scale.
 //
 // See gtk.Range.GetAdjustment() for details.
@@ -95756,29 +85615,6 @@ func (button *ScaleButton) Adjustment() *Adjustment {
 	_adjustment = wrapAdjustment(coreglib.Take(unsafe.Pointer(_cret)))
 
 	return _adjustment
-}
-
-// HasFrame returns whether the button has a frame.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the button has a frame.
-func (button *ScaleButton) HasFrame() bool {
-	var _arg0 *C.GtkScaleButton // out
-	var _cret C.gboolean        // in
-
-	_arg0 = (*C.GtkScaleButton)(unsafe.Pointer(coreglib.InternObject(button).Native()))
-
-	_cret = C.gtk_scale_button_get_has_frame(_arg0)
-	runtime.KeepAlive(button)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
 }
 
 // MinusButton retrieves the minus button of the GtkScaleButton.
@@ -95901,25 +85737,6 @@ func (button *ScaleButton) SetAdjustment(adjustment *Adjustment) {
 	runtime.KeepAlive(adjustment)
 }
 
-// SetHasFrame sets the style of the button.
-//
-// The function takes the following parameters:
-//
-//   - hasFrame: whether the button should have a visible frame.
-func (button *ScaleButton) SetHasFrame(hasFrame bool) {
-	var _arg0 *C.GtkScaleButton // out
-	var _arg1 C.gboolean        // out
-
-	_arg0 = (*C.GtkScaleButton)(unsafe.Pointer(coreglib.InternObject(button).Native()))
-	if hasFrame {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_scale_button_set_has_frame(_arg0, _arg1)
-	runtime.KeepAlive(button)
-	runtime.KeepAlive(hasFrame)
-}
-
 // SetIcons sets the icons to be used by the scale button.
 //
 // The function takes the following parameters:
@@ -96029,8 +85846,6 @@ type Scrollbar struct {
 	Widget
 
 	*coreglib.Object
-	Accessible
-	AccessibleRange
 	Orientable
 }
 
@@ -96057,14 +85872,6 @@ func wrapScrollbar(obj *coreglib.Object) *Scrollbar {
 			},
 		},
 		Object: obj,
-		Accessible: Accessible{
-			Object: obj,
-		},
-		AccessibleRange: AccessibleRange{
-			Accessible: Accessible{
-				Object: obj,
-			},
-		},
 		Orientable: Orientable{
 			Object: obj,
 		},
@@ -96161,16 +85968,32 @@ func (self *Scrollbar) SetAdjustment(adjustment *Adjustment) {
 // GtkViewport. Therefore, you can just add any child widget and not worry about
 // the details.
 //
-// If gtk.ScrolledWindow.SetChild() has added a GtkViewport for you,
-// it will be automatically removed when you unset the child. Unless
-// gtk.ScrolledWindow:hscrollbar-policy and gtk.ScrolledWindow:vscrollbar-policy
-// are GTK_POLICY_NEVER or GTK_POLICY_EXTERNAL, GtkScrolledWindow adds
-// internal GtkScrollbar widgets around its child. The scroll position
-// of the child, and if applicable the scrollbars, is controlled by the
-// gtk.ScrolledWindow:hadjustment and gtk.ScrolledWindow:vadjustment that are
-// associated with the GtkScrolledWindow. See the docs on gtk.Scrollbar for the
-// details, but note that the “step_increment” and “page_increment” fields are
-// only effective if the policy causes scrollbars to be present.
+// If gtk.ScrolledWindow.SetChild() has added a GtkViewport for you, you can
+// remove both your added child widget from the GtkViewport, and the GtkViewport
+// from the GtkScrolledWindow, like this:
+//
+//	GtkWidget *scrolled_window = gtk_scrolled_window_new ();
+//	GtkWidget *child_widget = gtk_button_new ();
+//
+//	// GtkButton is not a GtkScrollable, so GtkScrolledWindow will automatically
+//	// add a GtkViewport.
+//	gtk_box_append (GTK_BOX (scrolled_window), child_widget);
+//
+//	// Either of these will result in child_widget being unparented:
+//	gtk_box_remove (GTK_BOX (scrolled_window), child_widget);
+//	// or
+//	gtk_box_remove (GTK_BOX (scrolled_window),
+//	                      gtk_bin_get_child (GTK_BIN (scrolled_window)));
+//
+// Unless gtk.ScrolledWindow:hscrollbar-policy and
+// gtk.ScrolledWindow:vscrollbar-policy are GTK_POLICY_NEVER or
+// GTK_POLICY_EXTERNAL, GtkScrolledWindow adds internal GtkScrollbar widgets
+// around its child. The scroll position of the child, and if applicable
+// the scrollbars, is controlled by the gtk.ScrolledWindow:hadjustment
+// and gtk.ScrolledWindow:vadjustment that are associated with the
+// GtkScrolledWindow. See the docs on gtk.Scrollbar for the details, but note
+// that the “step_increment” and “page_increment” fields are only effective if
+// the policy causes scrollbars to be present.
 //
 // If a GtkScrolledWindow doesn’t behave quite as you would like, or doesn’t
 // have exactly the right layout, it’s very possible to set up your own
@@ -96210,10 +86033,7 @@ func (self *Scrollbar) SetAdjustment(adjustment *Adjustment) {
 //
 // # Accessibility
 //
-// Until GTK 4.10, GtkScrolledWindow used the GTK_ACCESSIBLE_ROLE_GROUP role.
-//
-// Starting from GTK 4.12, GtkScrolledWindow uses the
-// GTK_ACCESSIBLE_ROLE_GENERIC role.
+// GtkScrolledWindow uses the GTK_ACCESSIBLE_ROLE_GROUP role.
 type ScrolledWindow struct {
 	_ [0]func() // equal guard
 	Widget
@@ -96312,10 +86132,6 @@ func NewScrolledWindow() *ScrolledWindow {
 }
 
 // Child gets the child widget of scrolled_window.
-//
-// If the scrolled window automatically added a gtk.Viewport, this function
-// will return the viewport widget, and you can retrieve its child using
-// gtk.Viewport.GetChild().
 //
 // The function returns the following values:
 //
@@ -96729,10 +86545,6 @@ func (scrolledWindow *ScrolledWindow) VScrollbar() Widgetter {
 }
 
 // SetChild sets the child widget of scrolled_window.
-//
-// If child does not implement the gtk.Scrollable interface, the scrolled window
-// will add child to a gtk.Viewport instance and then add the viewport as its
-// child widget.
 //
 // The function takes the following parameters:
 //
@@ -97152,7 +86964,7 @@ func NewSearchBar() *SearchBar {
 	return _searchBar
 }
 
-// ConnectEntry connects the GtkEditable widget passed as the one to be used in
+// ConnectEntry connects the `GtkEditable widget passed as the one to be used in
 // this search bar.
 //
 // The entry should be a descendant of the search bar. Calling this function
@@ -97549,48 +87361,6 @@ func NewSearchEntry() *SearchEntry {
 	return _searchEntry
 }
 
-// InputHints gets the input purpose for entry.
-//
-// The function returns the following values:
-//
-//   - inputHints: input hints.
-func (entry *SearchEntry) InputHints() InputHints {
-	var _arg0 *C.GtkSearchEntry // out
-	var _cret C.GtkInputHints   // in
-
-	_arg0 = (*C.GtkSearchEntry)(unsafe.Pointer(coreglib.InternObject(entry).Native()))
-
-	_cret = C.gtk_search_entry_get_input_hints(_arg0)
-	runtime.KeepAlive(entry)
-
-	var _inputHints InputHints // out
-
-	_inputHints = InputHints(_cret)
-
-	return _inputHints
-}
-
-// InputPurpose gets the input purpose of entry.
-//
-// The function returns the following values:
-//
-//   - inputPurpose: input hints.
-func (entry *SearchEntry) InputPurpose() InputPurpose {
-	var _arg0 *C.GtkSearchEntry // out
-	var _cret C.GtkInputPurpose // in
-
-	_arg0 = (*C.GtkSearchEntry)(unsafe.Pointer(coreglib.InternObject(entry).Native()))
-
-	_cret = C.gtk_search_entry_get_input_purpose(_arg0)
-	runtime.KeepAlive(entry)
-
-	var _inputPurpose InputPurpose // out
-
-	_inputPurpose = InputPurpose(_cret)
-
-	return _inputPurpose
-}
-
 // KeyCaptureWidget gets the widget that entry is capturing key events from.
 //
 // The function returns the following values:
@@ -97627,29 +87397,6 @@ func (entry *SearchEntry) KeyCaptureWidget() Widgetter {
 	return _widget
 }
 
-// PlaceholderText gets the placeholder text associated with entry.
-//
-// The function returns the following values:
-//
-//   - utf8 (optional): placeholder text.
-func (entry *SearchEntry) PlaceholderText() string {
-	var _arg0 *C.GtkSearchEntry // out
-	var _cret *C.char           // in
-
-	_arg0 = (*C.GtkSearchEntry)(unsafe.Pointer(coreglib.InternObject(entry).Native()))
-
-	_cret = C.gtk_search_entry_get_placeholder_text(_arg0)
-	runtime.KeepAlive(entry)
-
-	var _utf8 string // out
-
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	}
-
-	return _utf8
-}
-
 // SearchDelay: get the delay to be used between the last keypress and the
 // gtk.SearchEntry::search-changed signal being emitted.
 //
@@ -97670,40 +87417,6 @@ func (entry *SearchEntry) SearchDelay() uint {
 	_guint = uint(_cret)
 
 	return _guint
-}
-
-// SetInputHints sets the input hints for entry.
-//
-// The function takes the following parameters:
-//
-//   - hints: new input hints.
-func (entry *SearchEntry) SetInputHints(hints InputHints) {
-	var _arg0 *C.GtkSearchEntry // out
-	var _arg1 C.GtkInputHints   // out
-
-	_arg0 = (*C.GtkSearchEntry)(unsafe.Pointer(coreglib.InternObject(entry).Native()))
-	_arg1 = C.GtkInputHints(hints)
-
-	C.gtk_search_entry_set_input_hints(_arg0, _arg1)
-	runtime.KeepAlive(entry)
-	runtime.KeepAlive(hints)
-}
-
-// SetInputPurpose sets the input purpose of entry.
-//
-// The function takes the following parameters:
-//
-//   - purpose: new input purpose.
-func (entry *SearchEntry) SetInputPurpose(purpose InputPurpose) {
-	var _arg0 *C.GtkSearchEntry // out
-	var _arg1 C.GtkInputPurpose // out
-
-	_arg0 = (*C.GtkSearchEntry)(unsafe.Pointer(coreglib.InternObject(entry).Native()))
-	_arg1 = C.GtkInputPurpose(purpose)
-
-	C.gtk_search_entry_set_input_purpose(_arg0, _arg1)
-	runtime.KeepAlive(entry)
-	runtime.KeepAlive(purpose)
 }
 
 // SetKeyCaptureWidget sets widget as the widget that entry will capture key
@@ -97736,26 +87449,6 @@ func (entry *SearchEntry) SetKeyCaptureWidget(widget Widgetter) {
 	C.gtk_search_entry_set_key_capture_widget(_arg0, _arg1)
 	runtime.KeepAlive(entry)
 	runtime.KeepAlive(widget)
-}
-
-// SetPlaceholderText sets the placeholder text associated with entry.
-//
-// The function takes the following parameters:
-//
-//   - text (optional) to set as a placeholder.
-func (entry *SearchEntry) SetPlaceholderText(text string) {
-	var _arg0 *C.GtkSearchEntry // out
-	var _arg1 *C.char           // out
-
-	_arg0 = (*C.GtkSearchEntry)(unsafe.Pointer(coreglib.InternObject(entry).Native()))
-	if text != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(text)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	C.gtk_search_entry_set_placeholder_text(_arg0, _arg1)
-	runtime.KeepAlive(entry)
-	runtime.KeepAlive(text)
 }
 
 // SetSearchDelay: set the delay to be used between the last keypress and the
@@ -97902,7 +87595,7 @@ func (self *SelectionFilterModel) SetModel(model SelectionModeller) {
 
 // Separator: GtkSeparator is a horizontal or vertical separator widget.
 //
-// !An example GtkSeparator (separator.png)
+// !An example GtkSeparator (separators.png)
 //
 // A GtkSeparator can be used to group the widgets within a window. It displays
 // a line with a shadow to make it appear sunken into the interface.
@@ -97990,9 +87683,7 @@ func NewSeparator(orientation Orientation) *Separator {
 // user change these settings.
 //
 // On Wayland, the settings are obtained either via a settings portal, or by
-// reading desktop settings from gio.Settings.
-//
-// On macOS, the settings are obtained from NSUserDefaults.
+// reading desktop settings from DConf.
 //
 // In the absence of these sharing mechanisms, GTK reads default values for
 // settings from settings.ini files in /etc/gtk-4.0, $XDG_CONFIG_DIRS/gtk-4.0
@@ -98541,20 +88232,20 @@ func (self *ShortcutAction) String() string {
 // shortcuts.
 //
 // Most common shortcuts are using this controller implicitly, e.g. by adding
-// a mnemonic underline to a gtk.Label, or by installing a key binding using
+// a mnemonic underline to a GtkLabel, or by installing a key binding using
 // gtk.WidgetClass.AddBinding(), or by adding accelerators to global actions
 // using gtk.Application.SetAccelsForAction().
 //
 // But it is possible to create your own shortcut controller, and add shortcuts
 // to it.
 //
-// GtkShortcutController implements gio.ListModel for querying the shortcuts
-// that have been added to it.
+// GtkShortcutController implements GListModel for querying the shortcuts that
+// have been added to it.
 //
-// # GtkShortcutController as GtkBuildable
+// # GtkShortcutController as a GtkBuildable
 //
-// GtkShortcutControllers can be created in gtk.Builder ui files, to set up
-// shortcuts in the same place as the widgets.
+// GtkShortcutControllers can be creates in ui files to set up shortcuts in the
+// same place as the widgets.
 //
 // An example of a UI definition fragment with GtkShortcutController:
 //
@@ -98573,9 +88264,9 @@ func (self *ShortcutAction) String() string {
 //	</object>
 //
 // This example creates a gtk.ActivateAction for triggering the activate signal
-// of the gtk.Button. See gtk.ShortcutAction.ParseString for the syntax for
-// other kinds of gtk.ShortcutAction. See gtk.ShortcutTrigger.ParseString to
-// learn more about the syntax for triggers.
+// of the GtkButton. See gtk.ShortcutAction.ParseString for the syntax for other
+// kinds of GtkShortcutAction. See gtk.ShortcutTrigger.ParseString to learn more
+// about the syntax for triggers.
 type ShortcutController struct {
 	_ [0]func() // equal guard
 	EventController
@@ -99240,13 +88931,6 @@ func (self *ShortcutTrigger) Trigger(event gdk.Eventer, enableMnemonics bool) gd
 // the application context.
 //
 // This widget is only meant to be used with gtk.ShortcutsWindow.
-//
-// The recommended way to construct a GtkShortcutsGroup is with gtk.Builder,
-// by using the <child> tag to populate a GtkShortcutsGroup with one or more
-// gtk.ShortcutsShortcut instances.
-//
-// If you need to add a shortcut programmatically, use
-// gtk.ShortcutsGroup.AddShortcut().
 type ShortcutsGroup struct {
 	_ [0]func() // equal guard
 	Box
@@ -99287,27 +88971,6 @@ func marshalShortcutsGroup(p uintptr) (interface{}, error) {
 	return wrapShortcutsGroup(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
 }
 
-// AddShortcut adds a shortcut to the shortcuts group.
-//
-// This is the programmatic equivalent to using gtk.Builder and a <child>
-// tag to add the child. Adding children with other API is not appropriate as
-// GtkShortcutsGroup manages its children internally.
-//
-// The function takes the following parameters:
-//
-//   - shortcut: GtkShortcutsShortcut to add.
-func (self *ShortcutsGroup) AddShortcut(shortcut *ShortcutsShortcut) {
-	var _arg0 *C.GtkShortcutsGroup    // out
-	var _arg1 *C.GtkShortcutsShortcut // out
-
-	_arg0 = (*C.GtkShortcutsGroup)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GtkShortcutsShortcut)(unsafe.Pointer(coreglib.InternObject(shortcut).Native()))
-
-	C.gtk_shortcuts_group_add_shortcut(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(shortcut)
-}
-
 // ShortcutsSection: GtkShortcutsSection collects all the keyboard shortcuts and
 // gestures for a major application mode.
 //
@@ -99319,14 +88982,6 @@ func (self *ShortcutsGroup) AddShortcut(shortcut *ShortcutsShortcut) {
 // groups in the section are distributed over pages and columns.
 //
 // This widget is only meant to be used with gtk.ShortcutsWindow.
-//
-// The recommended way to construct a GtkShortcutsSection is with gtk.Builder,
-// by using the <child> tag to populate a GtkShortcutsSection with one or
-// more gtk.ShortcutsGroup instances, which in turn contain one or more
-// gtk.ShortcutsShortcut objects.
-//
-// If you need to add a group programmatically, use
-// gtk.ShortcutsSection.AddGroup().
 type ShortcutsSection struct {
 	_ [0]func() // equal guard
 	Box
@@ -99367,31 +89022,8 @@ func marshalShortcutsSection(p uintptr) (interface{}, error) {
 	return wrapShortcutsSection(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
 }
 
-func (self *ShortcutsSection) ConnectChangeCurrentPage(f func(object int) (ok bool)) coreglib.SignalHandle {
-	return coreglib.ConnectGeneratedClosure(self, "change-current-page", false, unsafe.Pointer(C._gotk4_gtk4_ShortcutsSection_ConnectChangeCurrentPage), f)
-}
-
-// AddGroup adds a group to the shortcuts section.
-//
-// This is the programmatic equivalent to using gtk.Builder and a <child> tag to
-// add the child.
-//
-// Adding children with the GtkBox API is not appropriate, as
-// GtkShortcutsSection manages its children internally.
-//
-// The function takes the following parameters:
-//
-//   - group: GtkShortcutsGroup to add.
-func (self *ShortcutsSection) AddGroup(group *ShortcutsGroup) {
-	var _arg0 *C.GtkShortcutsSection // out
-	var _arg1 *C.GtkShortcutsGroup   // out
-
-	_arg0 = (*C.GtkShortcutsSection)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GtkShortcutsGroup)(unsafe.Pointer(coreglib.InternObject(group).Native()))
-
-	C.gtk_shortcuts_section_add_group(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(group)
+func (v *ShortcutsSection) ConnectChangeCurrentPage(f func(object int) (ok bool)) coreglib.SignalHandle {
+	return coreglib.ConnectGeneratedClosure(v, "change-current-page", false, unsafe.Pointer(C._gotk4_gtk4_ShortcutsSection_ConnectChangeCurrentPage), f)
 }
 
 // ShortcutsShortcut: GtkShortcutsShortcut represents a single keyboard shortcut
@@ -99440,14 +89072,10 @@ func marshalShortcutsShortcut(p uintptr) (interface{}, error) {
 // Additionally, the shortcuts can be filtered by the current view, to avoid
 // showing information that is not relevant in the current application context.
 //
-// The recommended way to construct a GtkShortcutsWindow is with gtk.Builder,
-// by using the <child> tag to populate a GtkShortcutsWindow with one or more
-// gtk.ShortcutsSection objects, which contain one or more gtk.ShortcutsGroup
-// instances, which, in turn, contain gtk.ShortcutsShortcut instances.
-//
-// If you need to add a section programmatically, use
-// gtk.ShortcutsWindow.AddSection() instead of gtk.Window.SetChild(), as the
-// shortcuts window manages its children directly.
+// The recommended way to construct a GtkShortcutsWindow is with gtk.Builder, by
+// populating a GtkShortcutsWindow with one or more GtkShortcutsSection objects,
+// which contain GtkShortcutsGroups that in turn contain objects of class
+// GtkShortcutsShortcut.
 //
 // A simple example:
 //
@@ -99479,11 +89107,6 @@ func marshalShortcutsShortcut(p uintptr) (interface{}, error) {
 //
 // The .ui file for this example can be found here
 // (https://gitlab.gnome.org/GNOME/gtk/tree/main/demos/gtk-demo/shortcuts-builder.ui).
-//
-// # CSS nodes
-//
-// GtkShortcutsWindow has a single CSS node with the name window and style class
-// .shortcuts.
 type ShortcutsWindow struct {
 	_ [0]func() // equal guard
 	Window
@@ -99548,8 +89171,8 @@ func marshalShortcutsWindow(p uintptr) (interface{}, error) {
 // This is a keybinding signal (class.SignalAction.html).
 //
 // The default binding for this signal is the Escape key.
-func (self *ShortcutsWindow) ConnectClose(f func()) coreglib.SignalHandle {
-	return coreglib.ConnectGeneratedClosure(self, "close", false, unsafe.Pointer(C._gotk4_gtk4_ShortcutsWindow_ConnectClose), f)
+func (v *ShortcutsWindow) ConnectClose(f func()) coreglib.SignalHandle {
+	return coreglib.ConnectGeneratedClosure(v, "close", false, unsafe.Pointer(C._gotk4_gtk4_ShortcutsWindow_ConnectClose), f)
 }
 
 // ConnectSearch is emitted when the user uses a keybinding to start a search.
@@ -99557,31 +89180,8 @@ func (self *ShortcutsWindow) ConnectClose(f func()) coreglib.SignalHandle {
 // This is a keybinding signal (class.SignalAction.html).
 //
 // The default binding for this signal is Control-F.
-func (self *ShortcutsWindow) ConnectSearch(f func()) coreglib.SignalHandle {
-	return coreglib.ConnectGeneratedClosure(self, "search", false, unsafe.Pointer(C._gotk4_gtk4_ShortcutsWindow_ConnectSearch), f)
-}
-
-// AddSection adds a section to the shortcuts window.
-//
-// This is the programmatic equivalent to using gtk.Builder and a <child> tag to
-// add the child.
-//
-// Using gtk.Window.SetChild() is not appropriate as the shortcuts window
-// manages its children internally.
-//
-// The function takes the following parameters:
-//
-//   - section: GtkShortcutsSection to add.
-func (self *ShortcutsWindow) AddSection(section *ShortcutsSection) {
-	var _arg0 *C.GtkShortcutsWindow  // out
-	var _arg1 *C.GtkShortcutsSection // out
-
-	_arg0 = (*C.GtkShortcutsWindow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GtkShortcutsSection)(unsafe.Pointer(coreglib.InternObject(section).Native()))
-
-	C.gtk_shortcuts_window_add_section(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(section)
+func (v *ShortcutsWindow) ConnectSearch(f func()) coreglib.SignalHandle {
+	return coreglib.ConnectGeneratedClosure(v, "search", false, unsafe.Pointer(C._gotk4_gtk4_ShortcutsWindow_ConnectSearch), f)
 }
 
 // SignalAction: GtkShortcutAction that emits a signal.
@@ -99660,7 +89260,7 @@ func (self *SignalAction) SignalName() string {
 }
 
 // SignalListItemFactory: GtkSignalListItemFactory is a GtkListItemFactory that
-// emits signals to manage listitems.
+// emits signals to to manage listitems.
 //
 // Signals are emitted for every listitem in the same order:
 //
@@ -99691,11 +89291,11 @@ func (self *SignalAction) SignalName() string {
 // effects of gtk.SignalListItemFactory::setup. After this signal was emitted on
 // a listitem, the listitem will be destroyed and not be used again.
 //
-// Note that during the signal emissions, changing properties on the listitems
-// passed will not trigger notify signals as the listitem's notifications are
-// frozen. See g_object_freeze_notify() for details.
+// Note that during the signal emissions, changing properties on the
+// GtkListItems passed will not trigger notify signals as the listitem's
+// notifications are frozen. See g_object_freeze_notify() for details.
 //
-// For tracking changes in other properties in the listitem,
+// For tracking changes in other properties in the GtkListItem,
 // the ::notify signal is recommended. The signal can be connected in
 // the gtk.SignalListItemFactory::setup signal and removed again during
 // gtk.SignalListItemFactory::teardown.
@@ -99721,7 +89321,7 @@ func marshalSignalListItemFactory(p uintptr) (interface{}, error) {
 }
 
 // ConnectBind is emitted when an object has been bound, for example when a new
-// gtk.ListItem:item has been set on a listitem and should be bound for use.
+// gtk.ListItem:item has been set on a GtkListItem and should be bound for use.
 //
 // After this signal was emitted, the object might be shown in a gtk.ListView or
 // other widget.
@@ -99753,8 +89353,8 @@ func (v *SignalListItemFactory) ConnectTeardown(f func(object *coreglib.Object))
 	return coreglib.ConnectGeneratedClosure(v, "teardown", false, unsafe.Pointer(C._gotk4_gtk4_SignalListItemFactory_ConnectTeardown), f)
 }
 
-// ConnectUnbind is emitted when an object has been unbound from its item,
-// for example when a listitem was removed from use in a list widget and its
+// ConnectUnbind is emitted when a object has been unbound from its item,
+// for example when a listitem was removed from use in a list widget and its new
 // gtk.ListItem:item is about to be unset.
 //
 // This signal is the opposite of the gtk.SignalListItemFactory::bind signal and
@@ -99801,8 +89401,6 @@ type SingleSelection struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
 
-	gio.ListModel
-	SectionModel
 	SelectionModel
 }
 
@@ -99829,14 +89427,6 @@ func initSingleSelectionClass(gclass unsafe.Pointer, overrides SingleSelectionOv
 func wrapSingleSelection(obj *coreglib.Object) *SingleSelection {
 	return &SingleSelection{
 		Object: obj,
-		ListModel: gio.ListModel{
-			Object: obj,
-		},
-		SectionModel: SectionModel{
-			ListModel: gio.ListModel{
-				Object: obj,
-			},
-		},
 		SelectionModel: SelectionModel{
 			ListModel: gio.ListModel{
 				Object: obj,
@@ -100345,13 +89935,11 @@ func defaultSliceListModelOverrides(v *SliceListModel) SliceListModelOverrides {
 // This is useful when implementing paging by setting the size to the number
 // of elements per page and updating the offset whenever a different page is
 // opened.
-//
-// GtkSliceListModel passes through sections from the underlying model.
 type SliceListModel struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
 
-	SectionModel
+	gio.ListModel
 }
 
 var (
@@ -100377,10 +89965,8 @@ func initSliceListModelClass(gclass unsafe.Pointer, overrides SliceListModelOver
 func wrapSliceListModel(obj *coreglib.Object) *SliceListModel {
 	return &SliceListModel{
 		Object: obj,
-		SectionModel: SectionModel{
-			ListModel: gio.ListModel{
-				Object: obj,
-			},
+		ListModel: gio.ListModel{
+			Object: obj,
 		},
 	}
 }
@@ -100738,34 +90324,6 @@ func (snapshot *Snapshot) AppendConicGradient(bounds *graphene.Rect, center *gra
 	runtime.KeepAlive(stops)
 }
 
-// AppendFill: convenience method to fill a path with a color.
-//
-// See gtk.Snapshot.PushFill() if you need to fill a path with more complex
-// content than a color.
-//
-// The function takes the following parameters:
-//
-//   - path describing the area to fill.
-//   - fillRule: fill rule to use.
-//   - color to fill the path with.
-func (snapshot *Snapshot) AppendFill(path *gsk.Path, fillRule gsk.FillRule, color *gdk.RGBA) {
-	var _arg0 *C.GtkSnapshot // out
-	var _arg1 *C.GskPath     // out
-	var _arg2 C.GskFillRule  // out
-	var _arg3 *C.GdkRGBA     // out
-
-	_arg0 = (*C.GtkSnapshot)(unsafe.Pointer(coreglib.InternObject(snapshot).Native()))
-	_arg1 = (*C.GskPath)(gextras.StructNative(unsafe.Pointer(path)))
-	_arg2 = C.GskFillRule(fillRule)
-	_arg3 = (*C.GdkRGBA)(gextras.StructNative(unsafe.Pointer(color)))
-
-	C.gtk_snapshot_append_fill(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(snapshot)
-	runtime.KeepAlive(path)
-	runtime.KeepAlive(fillRule)
-	runtime.KeepAlive(color)
-}
-
 // AppendInsetShadow appends an inset shadow into the box given by outline.
 //
 // The function takes the following parameters:
@@ -101061,69 +90619,8 @@ func (snapshot *Snapshot) AppendRepeatingRadialGradient(bounds *graphene.Rect, c
 	runtime.KeepAlive(stops)
 }
 
-// AppendScaledTexture creates a new render node drawing the texture into the
-// given bounds and appends it to the current render node of snapshot.
-//
-// In contrast to gtk.Snapshot.AppendTexture(), this function provides control
-// about how the filter that is used when scaling.
-//
-// The function takes the following parameters:
-//
-//   - texture to render.
-//   - filter to use.
-//   - bounds for the new node.
-func (snapshot *Snapshot) AppendScaledTexture(texture gdk.Texturer, filter gsk.ScalingFilter, bounds *graphene.Rect) {
-	var _arg0 *C.GtkSnapshot     // out
-	var _arg1 *C.GdkTexture      // out
-	var _arg2 C.GskScalingFilter // out
-	var _arg3 *C.graphene_rect_t // out
-
-	_arg0 = (*C.GtkSnapshot)(unsafe.Pointer(coreglib.InternObject(snapshot).Native()))
-	_arg1 = (*C.GdkTexture)(unsafe.Pointer(coreglib.InternObject(texture).Native()))
-	_arg2 = C.GskScalingFilter(filter)
-	_arg3 = (*C.graphene_rect_t)(gextras.StructNative(unsafe.Pointer(bounds)))
-
-	C.gtk_snapshot_append_scaled_texture(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(snapshot)
-	runtime.KeepAlive(texture)
-	runtime.KeepAlive(filter)
-	runtime.KeepAlive(bounds)
-}
-
-// AppendStroke: convenience method to stroke a path with a color.
-//
-// See gtk.Snapshot.PushStroke() if you need to stroke a path with more complex
-// content than a color.
-//
-// The function takes the following parameters:
-//
-//   - path describing the area to fill.
-//   - stroke attributes.
-//   - color to fill the path with.
-func (snapshot *Snapshot) AppendStroke(path *gsk.Path, stroke *gsk.Stroke, color *gdk.RGBA) {
-	var _arg0 *C.GtkSnapshot // out
-	var _arg1 *C.GskPath     // out
-	var _arg2 *C.GskStroke   // out
-	var _arg3 *C.GdkRGBA     // out
-
-	_arg0 = (*C.GtkSnapshot)(unsafe.Pointer(coreglib.InternObject(snapshot).Native()))
-	_arg1 = (*C.GskPath)(gextras.StructNative(unsafe.Pointer(path)))
-	_arg2 = (*C.GskStroke)(gextras.StructNative(unsafe.Pointer(stroke)))
-	_arg3 = (*C.GdkRGBA)(gextras.StructNative(unsafe.Pointer(color)))
-
-	C.gtk_snapshot_append_stroke(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(snapshot)
-	runtime.KeepAlive(path)
-	runtime.KeepAlive(stroke)
-	runtime.KeepAlive(color)
-}
-
 // AppendTexture creates a new render node drawing the texture into the given
 // bounds and appends it to the current render node of snapshot.
-//
-// If the texture needs to be scaled to fill bounds, linear filtering is used.
-// See gtk.Snapshot.AppendScaledTexture() if you need other filtering, such as
-// nearest-neighbour.
 //
 // The function takes the following parameters:
 //
@@ -101252,13 +90749,6 @@ func (snapshot *Snapshot) PushClip(bounds *graphene.Rect) {
 // PushColorMatrix modifies the colors of an image by applying an affine
 // transformation in RGB space.
 //
-// In particular, the colors will be transformed by applying
-//
-//	pixel = transpose(color_matrix) * pixel + color_offset
-//
-// for every pixel. The transformation operates on unpremultiplied colors,
-// with color components ordered R, G, B, A.
-//
 // The image is recorded until the next call to gtk.Snapshot.Pop().
 //
 // The function takes the following parameters:
@@ -101302,33 +90792,6 @@ func (snapshot *Snapshot) PushCrossFade(progress float64) {
 	C.gtk_snapshot_push_cross_fade(_arg0, _arg1)
 	runtime.KeepAlive(snapshot)
 	runtime.KeepAlive(progress)
-}
-
-// PushFill fills the area given by path and fill_rule with an image and
-// discards everything outside of it.
-//
-// The image is recorded until the next call to gtk.Snapshot.Pop().
-//
-// If you want to fill the path with a color, gtk.Snapshot.AppendFill() may be
-// more convenient.
-//
-// The function takes the following parameters:
-//
-//   - path describing the area to fill.
-//   - fillRule: fill rule to use.
-func (snapshot *Snapshot) PushFill(path *gsk.Path, fillRule gsk.FillRule) {
-	var _arg0 *C.GtkSnapshot // out
-	var _arg1 *C.GskPath     // out
-	var _arg2 C.GskFillRule  // out
-
-	_arg0 = (*C.GtkSnapshot)(unsafe.Pointer(coreglib.InternObject(snapshot).Native()))
-	_arg1 = (*C.GskPath)(gextras.StructNative(unsafe.Pointer(path)))
-	_arg2 = C.GskFillRule(fillRule)
-
-	C.gtk_snapshot_push_fill(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(snapshot)
-	runtime.KeepAlive(path)
-	runtime.KeepAlive(fillRule)
 }
 
 // PushGLShader: push a gsk.GLShaderNode.
@@ -101385,29 +90848,6 @@ func (snapshot *Snapshot) PushGLShader(shader *gsk.GLShader, bounds *graphene.Re
 	runtime.KeepAlive(shader)
 	runtime.KeepAlive(bounds)
 	runtime.KeepAlive(takeArgs)
-}
-
-// PushMask: until the first call to gtk.Snapshot.Pop(), the mask image for the
-// mask operation will be recorded.
-//
-// After that call, the source image will be recorded until the second call to
-// gtk.Snapshot.Pop().
-//
-// Calling this function requires 2 subsequent calls to gtk_snapshot_pop().
-//
-// The function takes the following parameters:
-//
-//   - maskMode: mask mode to use.
-func (snapshot *Snapshot) PushMask(maskMode gsk.MaskMode) {
-	var _arg0 *C.GtkSnapshot // out
-	var _arg1 C.GskMaskMode  // out
-
-	_arg0 = (*C.GtkSnapshot)(unsafe.Pointer(coreglib.InternObject(snapshot).Native()))
-	_arg1 = C.GskMaskMode(maskMode)
-
-	C.gtk_snapshot_push_mask(_arg0, _arg1)
-	runtime.KeepAlive(snapshot)
-	runtime.KeepAlive(maskMode)
 }
 
 // PushOpacity modifies the opacity of an image.
@@ -101502,42 +90942,9 @@ func (snapshot *Snapshot) PushShadow(shadow []gsk.Shadow) {
 	runtime.KeepAlive(shadow)
 }
 
-// PushStroke strokes the given path with the attributes given by stroke and an
-// image.
-//
-// The image is recorded until the next call to gtk.Snapshot.Pop().
-//
-// Note that the strokes are subject to the same transformation as everything
-// else, so uneven scaling will cause horizontal and vertical strokes to have
-// different widths.
-//
-// If you want to stroke the path with a color, gtk.Snapshot.AppendStroke() may
-// be more convenient.
-//
-// The function takes the following parameters:
-//
-//   - path to stroke.
-//   - stroke attributes.
-func (snapshot *Snapshot) PushStroke(path *gsk.Path, stroke *gsk.Stroke) {
-	var _arg0 *C.GtkSnapshot // out
-	var _arg1 *C.GskPath     // out
-	var _arg2 *C.GskStroke   // out
-
-	_arg0 = (*C.GtkSnapshot)(unsafe.Pointer(coreglib.InternObject(snapshot).Native()))
-	_arg1 = (*C.GskPath)(gextras.StructNative(unsafe.Pointer(path)))
-	_arg2 = (*C.GskStroke)(gextras.StructNative(unsafe.Pointer(stroke)))
-
-	C.gtk_snapshot_push_stroke(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(snapshot)
-	runtime.KeepAlive(path)
-	runtime.KeepAlive(stroke)
-}
-
 // RenderBackground creates a render node for the CSS background according to
 // context, and appends it to the current node of snapshot, without changing the
 // current node.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -101574,8 +90981,6 @@ func (snapshot *Snapshot) RenderBackground(context *StyleContext, x, y, width, h
 // and appends it to the current node of snapshot, without changing the current
 // node.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: style context that defines the focus ring.
@@ -101611,8 +91016,6 @@ func (snapshot *Snapshot) RenderFocus(context *StyleContext, x, y, width, height
 // and appends it to the current node of snapshot, without changing the current
 // node.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: style context that defines the frame.
@@ -101646,8 +91049,6 @@ func (snapshot *Snapshot) RenderFrame(context *StyleContext, x, y, width, height
 
 // RenderInsertionCursor draws a text caret using snapshot at the specified
 // index of layout.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -101688,8 +91089,6 @@ func (snapshot *Snapshot) RenderInsertionCursor(context *StyleContext, x, y floa
 // style information in context, and appends it to the current node of snapshot,
 // without changing the current node.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - context: style context that defines the text.
@@ -101729,10 +91128,9 @@ func (snapshot *Snapshot) Restore() {
 }
 
 // Rotate rotates @snapshot's coordinate system by angle degrees in 2D space -
-// or in 3D speak, rotates around the Z axis. The rotation happens around the
-// origin point of (0, 0) in the snapshot's current coordinate system.
+// or in 3D speak, rotates around the Z axis.
 //
-// To rotate around axes other than the Z axis, use gsk.Transform.Rotate3D().
+// To rotate around other axes, use gsk.Transform.Rotate3D().
 //
 // The function takes the following parameters:
 //
@@ -101776,11 +91174,9 @@ func (snapshot *Snapshot) Rotate3D(angle float32, axis *graphene.Vec3) {
 // internal stack.
 //
 // When gtk.Snapshot.Restore() is called, snapshot will be restored to the saved
-// state.
-//
-// Multiple calls to gtk.Snapshot.Save() and gtk.Snapshot.Restore() can be
-// nested; each call to gtk_snapshot_restore() restores the state from the
-// matching paired gtk_snapshot_save().
+// state. Multiple calls to snapshot.Save and snapshot.Restore can be nested;
+// each call to gtk_snapshot_restore() restores the state from the matching
+// paired gtk_snapshot_save().
 //
 // It is necessary to clear all saved states with corresponding calls to
 // gtk_snapshot_restore().
@@ -101844,17 +91240,13 @@ func (snapshot *Snapshot) Scale3D(factorX, factorY, factorZ float32) {
 
 // ToNode returns the render node that was constructed by snapshot.
 //
-// Note that this function may return NULL if nothing has been added to the
-// snapshot or if its content does not produce pixels to be rendered.
-//
 // After calling this function, it is no longer possible to add more nodes
 // to snapshot. The only function that should be called after this is
 // gobject.Object.Unref().
 //
 // The function returns the following values:
 //
-//   - renderNode (optional): constructed GskRenderNode or NULL if there are no
-//     nodes to render.
+//   - renderNode (optional): constructed GskRenderNode.
 func (snapshot *Snapshot) ToNode() gsk.RenderNoder {
 	var _arg0 *C.GtkSnapshot   // out
 	var _cret *C.GskRenderNode // in
@@ -102025,17 +91417,11 @@ func defaultSortListModelOverrides(v *SortListModel) SortListModelOverrides {
 // advantage of any external knowledge when sorting. If you run into performance
 // issues with GtkSortListModel, it is strongly recommended that you write your
 // own sorting list model.
-//
-// GtkSortListModel allows sorting the items into sections. It implements
-// GtkSectionModel and when gtk.SortListModel:section-sorter is set, it will
-// sort all items with that sorter and items comparing equal with it will be put
-// into the same section. The gtk.SortListModel:sorter will then be used to sort
-// items inside their sections.
 type SortListModel struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
 
-	SectionModel
+	gio.ListModel
 }
 
 var (
@@ -102061,10 +91447,8 @@ func initSortListModelClass(gclass unsafe.Pointer, overrides SortListModelOverri
 func wrapSortListModel(obj *coreglib.Object) *SortListModel {
 	return &SortListModel{
 		Object: obj,
-		SectionModel: SectionModel{
-			ListModel: gio.ListModel{
-				Object: obj,
-			},
+		ListModel: gio.ListModel{
+			Object: obj,
 		},
 	}
 }
@@ -102196,30 +91580,6 @@ func (self *SortListModel) Pending() uint {
 	return _guint
 }
 
-// SectionSorter gets the section sorter that is used to sort items of self into
-// sections.
-//
-// The function returns the following values:
-//
-//   - sorter (optional) of #self.
-func (self *SortListModel) SectionSorter() *Sorter {
-	var _arg0 *C.GtkSortListModel // out
-	var _cret *C.GtkSorter        // in
-
-	_arg0 = (*C.GtkSortListModel)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_sort_list_model_get_section_sorter(_arg0)
-	runtime.KeepAlive(self)
-
-	var _sorter *Sorter // out
-
-	if _cret != nil {
-		_sorter = wrapSorter(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _sorter
-}
-
 // Sorter gets the sorter that is used to sort self.
 //
 // The function returns the following values:
@@ -102296,25 +91656,6 @@ func (self *SortListModel) SetModel(model gio.ListModeller) {
 	C.gtk_sort_list_model_set_model(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(model)
-}
-
-// SetSectionSorter sets a new section sorter on self.
-//
-// The function takes the following parameters:
-//
-//   - sorter (optional): GtkSorter to sort model with.
-func (self *SortListModel) SetSectionSorter(sorter *Sorter) {
-	var _arg0 *C.GtkSortListModel // out
-	var _arg1 *C.GtkSorter        // out
-
-	_arg0 = (*C.GtkSortListModel)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if sorter != nil {
-		_arg1 = (*C.GtkSorter)(unsafe.Pointer(coreglib.InternObject(sorter).Native()))
-	}
-
-	C.gtk_sort_list_model_set_section_sorter(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(sorter)
 }
 
 // SetSorter sets a new sorter on self.
@@ -102466,7 +91807,7 @@ func (self *Sorter) ConnectChanged(f func(change SorterChange)) coreglib.SignalH
 // order without a full resorting. Refer to the gtk.SorterChange documentation
 // for details.
 //
-// This function is intended for implementers of GtkSorter subclasses and should
+// This function is intended for implementors of GtkSorter subclasses and should
 // not be called from other functions.
 //
 // The function takes the following parameters:
@@ -102672,7 +92013,7 @@ func (self *Sorter) order() SorterOrder {
 //	  button = gtk_spin_button_new (adjustment, 1.0, 0);
 //	  gtk_window_set_child (GTK_WINDOW (window), button);
 //
-//	  gtk_window_present (GTK_WINDOW (window));
+//	  gtk_widget_show (window);
 //	}
 //
 // Using a GtkSpinButton to get a floating point value
@@ -102701,7 +92042,7 @@ func (self *Sorter) order() SorterOrder {
 //	  button = gtk_spin_button_new (adjustment, 0.001, 3);
 //	  gtk_window_set_child (GTK_WINDOW (window), button);
 //
-//	  gtk_window_present (GTK_WINDOW (window));
+//	  gtk_widget_show (window);
 //	}
 //
 // CSS nodes
@@ -102729,7 +92070,7 @@ func (self *Sorter) order() SorterOrder {
 // below the text node. The orientation of the spin button is reflected in the
 // .vertical or .horizontal style class on the main node.
 //
-// # Accessibility
+// # Accessiblity
 //
 // GtkSpinButton uses the GTK_ACCESSIBLE_ROLE_SPIN_BUTTON role.
 type SpinButton struct {
@@ -102739,7 +92080,6 @@ type SpinButton struct {
 	*coreglib.Object
 	coreglib.InitiallyUnowned
 	Accessible
-	AccessibleRange
 	Buildable
 	CellEditable
 	ConstraintTarget
@@ -102775,11 +92115,6 @@ func wrapSpinButton(obj *coreglib.Object) *SpinButton {
 		},
 		Accessible: Accessible{
 			Object: obj,
-		},
-		AccessibleRange: AccessibleRange{
-			Accessible: Accessible{
-				Object: obj,
-			},
 		},
 		Buildable: Buildable{
 			Object: obj,
@@ -102831,17 +92166,6 @@ func marshalSpinButton(p uintptr) (interface{}, error) {
 	return wrapSpinButton(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
 }
 
-// ConnectActivate is emitted when the spin button is activated.
-//
-// The keybindings for this signal are all forms of the <kbd>Enter</kbd> key.
-//
-// If the <kbd>Enter</kbd> key results in the value being committed to the spin
-// button, then activation does not occur until <kbd>Enter</kbd> is pressed
-// again.
-func (spinButton *SpinButton) ConnectActivate(f func()) coreglib.SignalHandle {
-	return coreglib.ConnectGeneratedClosure(spinButton, "activate", false, unsafe.Pointer(C._gotk4_gtk4_SpinButton_ConnectActivate), f)
-}
-
 // ConnectChangeValue is emitted when the user initiates a value change.
 //
 // This is a keybinding signal (class.SignalAction.html).
@@ -102861,10 +92185,12 @@ func (spinButton *SpinButton) ConnectChangeValue(f func(scroll ScrollType)) core
 //	on_output (GtkSpinButton *spin,
 //	           gpointer       data)
 //	{
+//	   GtkAdjustment *adjustment;
 //	   char *text;
 //	   int value;
 //
-//	   value = gtk_spin_button_get_value_as_int (spin);
+//	   adjustment = gtk_spin_button_get_adjustment (spin);
+//	   value = (int)gtk_adjustment_get_value (adjustment);
 //	   text = g_strdup_printf ("02d", value);
 //	   gtk_editable_set_text (GTK_EDITABLE (spin), text):
 //	   g_free (text);
@@ -102995,30 +92321,6 @@ func (spinButton *SpinButton) Configure(adjustment *Adjustment, climbRate float6
 	runtime.KeepAlive(adjustment)
 	runtime.KeepAlive(climbRate)
 	runtime.KeepAlive(digits)
-}
-
-// ActivatesDefault retrieves the value set by
-// gtk.SpinButton.SetActivatesDefault().
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the spin button will activate the default widget.
-func (spinButton *SpinButton) ActivatesDefault() bool {
-	var _arg0 *C.GtkSpinButton // out
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GtkSpinButton)(unsafe.Pointer(coreglib.InternObject(spinButton).Native()))
-
-	_cret = C.gtk_spin_button_get_activates_default(_arg0)
-	runtime.KeepAlive(spinButton)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
 }
 
 // Adjustment: get the adjustment associated with a GtkSpinButton.
@@ -103271,28 +92573,6 @@ func (spinButton *SpinButton) Wrap() bool {
 	}
 
 	return _ok
-}
-
-// SetActivatesDefault sets whether activating the spin button will activate the
-// default widget for the window containing the spin button.
-//
-// See gtk.SpinButton::activate for what counts as activation.
-//
-// The function takes the following parameters:
-//
-//   - activatesDefault: TRUE to activate window’s default widget on activation.
-func (spinButton *SpinButton) SetActivatesDefault(activatesDefault bool) {
-	var _arg0 *C.GtkSpinButton // out
-	var _arg1 C.gboolean       // out
-
-	_arg0 = (*C.GtkSpinButton)(unsafe.Pointer(coreglib.InternObject(spinButton).Native()))
-	if activatesDefault {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_spin_button_set_activates_default(_arg0, _arg1)
-	runtime.KeepAlive(spinButton)
-	runtime.KeepAlive(activatesDefault)
 }
 
 // SetAdjustment replaces the GtkAdjustment associated with spin_button.
@@ -104942,8 +94222,6 @@ func (switcher *StackSwitcher) SetStack(stack *Stack) {
 // # CSS node
 //
 // GtkStatusbar has a single CSS node with name statusbar.
-//
-// Deprecated: This widget will be removed in GTK 5.
 type Statusbar struct {
 	_ [0]func() // equal guard
 	Widget
@@ -104991,8 +94269,6 @@ func (statusbar *Statusbar) ConnectTextPushed(f func(contextId uint, text string
 
 // NewStatusbar creates a new GtkStatusbar ready for messages.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - statusbar: new GtkStatusbar.
@@ -105012,8 +94288,6 @@ func NewStatusbar() *Statusbar {
 // context.
 //
 // Note that the description is not shown in the UI.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -105049,8 +94323,6 @@ func (statusbar *Statusbar) ContextID(contextDescription string) uint {
 // Note that this may not change the displayed message, if the message at the
 // top of the stack has a different context id.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - contextId: context identifier.
@@ -105067,8 +94339,6 @@ func (statusbar *Statusbar) Pop(contextId uint) {
 }
 
 // Push pushes a new message onto a statusbar’s stack.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -105105,8 +94375,6 @@ func (statusbar *Statusbar) Push(contextId uint, text string) uint {
 // Remove forces the removal of a message from a statusbar’s stack. The exact
 // context_id and message_id must be specified.
 //
-// Deprecated: This widget will be removed in GTK 5.
-//
 // The function takes the following parameters:
 //
 //   - contextId: context identifier.
@@ -105128,8 +94396,6 @@ func (statusbar *Statusbar) Remove(contextId, messageId uint) {
 
 // RemoveAll forces the removal of all messages from a statusbar's stack with
 // the exact context_id.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -105427,8 +94693,7 @@ func defaultStringListOverrides(v *StringList) StringListOverrides {
 
 // StringList: GtkStringList is a list model that wraps an array of strings.
 //
-// The objects in the model are of type gtk.StringObject and have a "string"
-// property that can be used inside expressions.
+// The objects in the model have a "string" property.
 //
 // GtkStringList is well-suited for any place where you would typically use a
 // char*[], but need a list model.
@@ -105684,8 +94949,7 @@ func defaultStringObjectOverrides(v *StringObject) StringObjectOverrides {
 // StringObject: GtkStringObject is the type of items in a GtkStringList.
 //
 // A GtkStringObject is a wrapper around a const char*; it has a
-// gtk.StringObject:string property that can be used for property bindings and
-// expressions.
+// gtk.StringObject:string property.
 type StringObject struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -105852,27 +95116,6 @@ func NewStringSorter(expression Expressioner) *StringSorter {
 	return _stringSorter
 }
 
-// Collation gets which collation method the sorter uses.
-//
-// The function returns the following values:
-//
-//   - collation method.
-func (self *StringSorter) Collation() Collation {
-	var _arg0 *C.GtkStringSorter // out
-	var _cret C.GtkCollation     // in
-
-	_arg0 = (*C.GtkStringSorter)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_string_sorter_get_collation(_arg0)
-	runtime.KeepAlive(self)
-
-	var _collation Collation // out
-
-	_collation = Collation(_cret)
-
-	return _collation
-}
-
 // Expression gets the expression that is evaluated to obtain strings from
 // items.
 //
@@ -105931,23 +95174,6 @@ func (self *StringSorter) IgnoreCase() bool {
 	}
 
 	return _ok
-}
-
-// SetCollation sets the collation method to use for sorting.
-//
-// The function takes the following parameters:
-//
-//   - collation method.
-func (self *StringSorter) SetCollation(collation Collation) {
-	var _arg0 *C.GtkStringSorter // out
-	var _arg1 C.GtkCollation     // out
-
-	_arg0 = (*C.GtkStringSorter)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkCollation(collation)
-
-	C.gtk_string_sorter_set_collation(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(collation)
 }
 
 // SetExpression sets the expression that is evaluated to obtain strings from
@@ -106038,10 +95264,6 @@ func defaultStyleContextOverrides(v *StyleContext) StyleContextOverrides {
 // keep in mind that the user settings in XDG_CONFIG_HOME/gtk-4.0/gtk.css
 // will still take precedence over your changes, as it uses the
 // GTK_STYLE_PROVIDER_PRIORITY_USER priority.
-//
-// Deprecated: The relevant API has been moved to gtk.Widget where applicable;
-// otherwise, there is no replacement for querying the style machinery. Stylable
-// UI elements should use widgets.
 type StyleContext struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -106093,9 +95315,7 @@ func marshalStyleContext(p uintptr) (interface{}, error) {
 //
 // While any widget defining a “search” class would be matched by:
 //
-//	.search { ... }
-//
-// Deprecated: Use gtk.Widget.AddCSSClass() instead.
+//	.search { ... }.
 //
 // The function takes the following parameters:
 //
@@ -106124,8 +95344,6 @@ func (context *StyleContext) AddClass(className string) {
 // through this function takes precedence over another added through
 // gtk.StyleContext().AddProviderForDisplay.
 //
-// Deprecated: Use style classes instead.
-//
 // The function takes the following parameters:
 //
 //   - provider: GtkStyleProvider.
@@ -106150,8 +95368,6 @@ func (context *StyleContext) AddProvider(provider StyleProviderer, priority uint
 
 // Border gets the border for a given state as a GtkBorder.
 //
-// Deprecated: This api will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - border: return value for the border settings.
@@ -106173,8 +95389,6 @@ func (context *StyleContext) Border() *Border {
 
 // Color gets the foreground color for a given state.
 //
-// Deprecated: Use gtk.Widget.GetColor() instead.
-//
 // The function returns the following values:
 //
 //   - color: return value for the foreground color.
@@ -106195,8 +95409,6 @@ func (context *StyleContext) Color() *gdk.RGBA {
 }
 
 // Display returns the GdkDisplay to which context is attached.
-//
-// Deprecated: Use gtk.Widget.GetDisplay() instead.
 //
 // The function returns the following values:
 //
@@ -106224,8 +95436,6 @@ func (context *StyleContext) Display() *gdk.Display {
 
 // Margin gets the margin for a given state as a GtkBorder.
 //
-// Deprecated: This api will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - margin: return value for the margin settings.
@@ -106247,8 +95457,6 @@ func (context *StyleContext) Margin() *Border {
 
 // Padding gets the padding for a given state as a GtkBorder.
 //
-// Deprecated: This api will be removed in GTK 5.
-//
 // The function returns the following values:
 //
 //   - padding: return value for the padding settings.
@@ -106269,8 +95477,6 @@ func (context *StyleContext) Padding() *Border {
 }
 
 // Scale returns the scale used for assets.
-//
-// Deprecated: Use gtk.Widget.GetScaleFactor() instead.
 //
 // The function returns the following values:
 //
@@ -106297,8 +95503,6 @@ func (context *StyleContext) Scale() int {
 // GtkStyleContext methods, like gtk.StyleContext.GetPadding(). If you need to
 // retrieve the current state of a GtkWidget, use gtk.Widget.GetStateFlags().
 //
-// Deprecated: Use gtk.Widget.GetStateFlags() instead.
-//
 // The function returns the following values:
 //
 //   - stateFlags: state flags.
@@ -106319,8 +95523,6 @@ func (context *StyleContext) State() StateFlags {
 }
 
 // HasClass returns TRUE if context currently has defined the given class name.
-//
-// Deprecated: Use gtk.Widget.HasCSSClass() instead.
 //
 // The function takes the following parameters:
 //
@@ -106352,8 +95554,6 @@ func (context *StyleContext) HasClass(className string) bool {
 }
 
 // LookupColor looks up and resolves a color name in the context color map.
-//
-// Deprecated: This api will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -106390,8 +95590,6 @@ func (context *StyleContext) LookupColor(colorName string) (*gdk.RGBA, bool) {
 
 // RemoveClass removes class_name from context.
 //
-// Deprecated: Use gtk.Widget.RemoveCSSClass() instead.
-//
 // The function takes the following parameters:
 //
 //   - className class name to remove.
@@ -106409,8 +95607,6 @@ func (context *StyleContext) RemoveClass(className string) {
 }
 
 // RemoveProvider removes provider from the style providers list in context.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -106430,8 +95626,6 @@ func (context *StyleContext) RemoveProvider(provider StyleProviderer) {
 // Restore restores context state to a previous stage.
 //
 // See gtk.StyleContext.Save().
-//
-// Deprecated: This API will be removed in GTK 5.
 func (context *StyleContext) Restore() {
 	var _arg0 *C.GtkStyleContext // out
 
@@ -106449,8 +95643,6 @@ func (context *StyleContext) Restore() {
 //
 // The matching call to gtk.StyleContext.Restore() must be done before GTK
 // returns to the main loop.
-//
-// Deprecated: This API will be removed in GTK 5.
 func (context *StyleContext) Save() {
 	var _arg0 *C.GtkStyleContext // out
 
@@ -106467,8 +95659,6 @@ func (context *StyleContext) Save() {
 //
 // If you are using a GtkStyleContext returned from
 // gtk.Widget.GetStyleContext(), you do not need to call this yourself.
-//
-// Deprecated: You should not use this api.
 //
 // The function takes the following parameters:
 //
@@ -106487,8 +95677,6 @@ func (context *StyleContext) SetDisplay(display *gdk.Display) {
 
 // SetScale sets the scale to use when getting image assets for the style.
 //
-// Deprecated: You should not use this api.
-//
 // The function takes the following parameters:
 //
 //   - scale: scale.
@@ -106505,8 +95693,6 @@ func (context *StyleContext) SetScale(scale int) {
 }
 
 // SetState sets the state to be used for style matching.
-//
-// Deprecated: You should not use this api.
 //
 // The function takes the following parameters:
 //
@@ -106532,8 +95718,6 @@ func (context *StyleContext) SetState(flags StateFlags) {
 // This function is intended for testing and debugging of the CSS implementation
 // in GTK. There are no guarantees about the format of the returned string,
 // it may change.
-//
-// Deprecated: This api will be removed in GTK 5.
 //
 // The function takes the following parameters:
 //
@@ -106631,27 +95815,20 @@ func StyleContextRemoveProviderForDisplay(display *gdk.Display, provider StylePr
 // !An example GtkSwitch (switch.png)
 //
 // The user can control which state should be active by clicking the empty area,
-// or by dragging the slider.
+// or by dragging the handle.
 //
-// GtkSwitch can also express situations where the underlying state changes with
-// a delay. In this case, the slider position indicates the user's recent change
-// (represented by the gtk.Switch:active property), while the trough color
-// indicates the present underlying state (represented by the gtk.Switch:state
-// property).
-//
-// !GtkSwitch with delayed state change (switch-state.png)
-//
-// See gtk.Switch::state-set for details.
+// GtkSwitch can also handle situations where the underlying state changes with
+// a delay. See gtkswitch::state-set for details.
 //
 // CSS nodes
 //
 //	switch
-//	├── image
-//	├── image
+//	├── label
+//	├── label
 //	╰── slider
 //
 // GtkSwitch has four css nodes, the main node with the name switch and subnodes
-// for the slider and the on and off images. Neither of them is using any style
+// for the slider and the on and off labels. Neither of them is using any style
 // classes.
 //
 // # Accessibility
@@ -106723,12 +95900,17 @@ func (self *Switch) ConnectActivate(f func()) coreglib.SignalHandle {
 // ConnectStateSet is emitted to change the underlying state.
 //
 // The ::state-set signal is emitted when the user changes the switch position.
-// The default handler calls gtk.Switch.SetState() with the value of state.
+// The default handler keeps the state in sync with the gtk.Switch:active
+// property.
 //
 // To implement delayed state change, applications can connect to this signal,
 // initiate the change of the underlying state, and call gtk.Switch.SetState()
 // when the underlying state change is complete. The signal handler should
 // return TRUE to prevent the default handler from running.
+//
+// Visually, the underlying state is represented by the trough color of the
+// switch, while the gtk.Switch:active property is represented by the position
+// of the switch.
 func (self *Switch) ConnectStateSet(f func(state bool) (ok bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "state-set", false, unsafe.Pointer(C._gotk4_gtk4_Switch_ConnectStateSet), f)
 }
@@ -106817,8 +95999,9 @@ func (self *Switch) SetActive(isActive bool) {
 
 // SetState sets the underlying state of the GtkSwitch.
 //
-// This function is typically called from a gtk.Switch::state-set signal handler
-// in order to set up delayed state changes.
+// Normally, this is the same as gtk.Switch:active, unless the switch is set
+// up for delayed state changes. This function is typically called from a
+// gtk.Switch::state-set signal handler.
 //
 // See gtk.Switch::state-set for details.
 //
@@ -106841,10 +96024,10 @@ func (self *Switch) SetState(state bool) {
 
 // Text: GtkText widget is a single-line text entry widget.
 //
-// GtkText is the common implementation of single-line text editing
-// that is shared between gtk.Entry, gtk.PasswordEntry, gtk.SpinButton,
-// and other widgets. In all of these, GtkText is used as the delegate for the
-// gtk.Editable implementation.
+// GtkText is the common implementation of single-line text editing that is
+// shared between GtkEntry, GtkPasswordEntry, GtkSpinButton and other widgets.
+// In all of these, GtkText is used as the delegate for the gtk.Editable
+// implementation.
 //
 // A fairly large set of key bindings are supported by default. If the entered
 // text is longer than the allocation of the widget, the widget will scroll so
@@ -106857,10 +96040,10 @@ func (self *Switch) SetState(state bool) {
 // but it can be changed with gtk.Text.SetInvisibleChar().
 //
 // If you are looking to add icons or progress display in an entry, look at
-// gtk.Entry. There other alternatives for more specialized use cases, such as
-// gtk.SearchEntry.
+// GtkEntry. There other alternatives for more specialized use cases, such as
+// GtkSearchEntry.
 //
-// If you need multi-line editable text, look at gtk.TextView.
+// If you need multi-line editable text, look at GtkTextView.
 //
 // CSS nodes
 //
@@ -106880,10 +96063,10 @@ func (self *Switch) SetState(state bool) {
 // When the entry is in overwrite mode, it adds a subnode with the name
 // block-cursor that determines how the block cursor is drawn.
 //
-// The CSS node for a context menu is added as a subnode with the name popup.
+// The CSS node for a context menu is added as a subnode below text as well.
 //
 // The undershoot nodes are used to draw the underflow indication when content
-// is scrolled out of view. These nodes get the .left or .right style class
+// is scrolled out of view. These nodes get the .left and .right style classes
 // added depending on where the indication is drawn.
 //
 // When touch is used and touch selection handles are shown, they are using
@@ -106903,8 +96086,6 @@ type Text struct {
 	Widget
 
 	*coreglib.Object
-	Accessible
-	AccessibleText
 	EditableTextWidget
 }
 
@@ -106931,14 +96112,6 @@ func wrapText(obj *coreglib.Object) *Text {
 			},
 		},
 		Object: obj,
-		Accessible: Accessible{
-			Object: obj,
-		},
-		AccessibleText: AccessibleText{
-			Accessible: Accessible{
-				Object: obj,
-			},
-		},
 		EditableTextWidget: EditableTextWidget{
 			Widget: Widget{
 				InitiallyUnowned: coreglib.InitiallyUnowned{
@@ -106963,7 +96136,7 @@ func marshalText(p uintptr) (interface{}, error) {
 	return wrapText(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
 }
 
-// ConnectActivate is emitted when the user hits the <kbd>Enter</kbd> key.
+// ConnectActivate is emitted when the user hits the Enter key.
 //
 // The default bindings for this signal are all forms of the <kbd>Enter</kbd>
 // key.
@@ -106976,7 +96149,7 @@ func (self *Text) ConnectActivate(f func()) coreglib.SignalHandle {
 // This is a keybinding signal (class.SignalAction.html).
 //
 // The default bindings for this signal are <kbd>Backspace</kbd> and
-// <kbd>Shift</kbd>+<kbd>Backspace</kbd>.
+// <kbd>Shift</kbd>-<kbd>Backspace</kbd>.
 func (self *Text) ConnectBackspace(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "backspace", false, unsafe.Pointer(C._gotk4_gtk4_Text_ConnectBackspace), f)
 }
@@ -106985,8 +96158,8 @@ func (self *Text) ConnectBackspace(f func()) coreglib.SignalHandle {
 //
 // This is a keybinding signal (class.SignalAction.html).
 //
-// The default bindings for this signal are <kbd>Ctrl</kbd>+<kbd>c</kbd> and
-// <kbd>Ctrl</kbd>+<kbd>Insert</kbd>.
+// The default bindings for this signal are <kbd>Ctrl</kbd>-<kbd>c</kbd> and
+// <kbd>Ctrl</kbd>-<kbd>Insert</kbd>.
 func (self *Text) ConnectCopyClipboard(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "copy-clipboard", false, unsafe.Pointer(C._gotk4_gtk4_Text_ConnectCopyClipboard), f)
 }
@@ -106995,8 +96168,8 @@ func (self *Text) ConnectCopyClipboard(f func()) coreglib.SignalHandle {
 //
 // This is a keybinding signal (class.SignalAction.html).
 //
-// The default bindings for this signal are <kbd>Ctrl</kbd>+<kbd>x</kbd> and
-// <kbd>Shift</kbd>+<kbd>Delete</kbd>.
+// The default bindings for this signal are <kbd>Ctrl</kbd>-<kbd>x</kbd> and
+// <kbd>Shift</kbd>-<kbd>Delete</kbd>.
 func (self *Text) ConnectCutClipboard(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "cut-clipboard", false, unsafe.Pointer(C._gotk4_gtk4_Text_ConnectCutClipboard), f)
 }
@@ -107009,7 +96182,7 @@ func (self *Text) ConnectCutClipboard(f func()) coreglib.SignalHandle {
 // otherwise it deletes the requested number of characters.
 //
 // The default bindings for this signal are <kbd>Delete</kbd> for deleting a
-// character and <kbd>Ctrl</kbd>+<kbd>Delete</kbd> for deleting a word.
+// character and <kbd>Ctrl</kbd>-<kbd>Delete</kbd> for deleting a word.
 func (self *Text) ConnectDeleteFromCursor(f func(typ DeleteType, count int)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "delete-from-cursor", false, unsafe.Pointer(C._gotk4_gtk4_Text_ConnectDeleteFromCursor), f)
 }
@@ -107028,8 +96201,8 @@ func (self *Text) ConnectInsertAtCursor(f func(str string)) coreglib.SignalHandl
 //
 // This is a keybinding signal (class.SignalAction.html).
 //
-// The default bindings for this signal are <kbd>Ctrl</kbd>+<kbd>.</kbd> and
-// <kbd>Ctrl</kbd>+<kbd>;</kbd>.
+// The default bindings for this signal are <kbd>Ctrl</kbd>-<kbd>.</kbd> and
+// <kbd>Ctrl</kbd>-<kbd>;</kbd>.
 func (self *Text) ConnectInsertEmoji(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "insert-emoji", false, unsafe.Pointer(C._gotk4_gtk4_Text_ConnectInsertEmoji), f)
 }
@@ -107051,9 +96224,9 @@ func (self *Text) ConnectInsertEmoji(f func()) coreglib.SignalHandle {
 // - <kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd> move by individual
 // characters/lines
 //
-// - <kbd>Ctrl</kbd>+<kbd>←</kbd>, etc. move by words/paragraphs
+// - <kbd>Ctrl</kbd>-<kbd>→</kbd>, etc. move by words/paragraphs
 //
-// - <kbd>Home</kbd> and <kbd>End</kbd> move to the ends of the buffer.
+// - <kbd>Home</kbd>, <kbd>End</kbd> move to the ends of the buffer.
 func (self *Text) ConnectMoveCursor(f func(step MovementStep, count int, extend bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "move-cursor", false, unsafe.Pointer(C._gotk4_gtk4_Text_ConnectMoveCursor), f)
 }
@@ -107062,8 +96235,8 @@ func (self *Text) ConnectMoveCursor(f func(step MovementStep, count int, extend 
 //
 // This is a keybinding signal (class.SignalAction.html).
 //
-// The default bindings for this signal are <kbd>Ctrl</kbd>+<kbd>v</kbd> and
-// <kbd>Shift</kbd>+<kbd>Insert</kbd>.
+// The default bindings for this signal are <kbd>Ctrl</kbd>-<kbd>v</kbd> and
+// <kbd>Shift</kbd>-<kbd>Insert</kbd>.
 func (self *Text) ConnectPasteClipboard(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "paste-clipboard", false, unsafe.Pointer(C._gotk4_gtk4_Text_ConnectPasteClipboard), f)
 }
@@ -107958,10 +97131,7 @@ type TextBufferOverrides struct {
 	// add extra calls if you user action consists solely of a single call to
 	// one of those functions.
 	BeginUserAction func()
-	// Changed class handler for the GtkTextBuffer::changed signal.
-	Changed func()
-	// DeleteRange class handler for the GtkTextBuffer::delete-range signal.
-	//
+	Changed         func()
 	// The function takes the following parameters:
 	//
 	//   - start
@@ -108005,28 +97175,20 @@ type TextBufferOverrides struct {
 	//   - iter: location to insert the paintable.
 	//   - paintable: GdkPaintable.
 	InsertPaintable func(iter *TextIter, paintable gdk.Paintabler)
-	// InsertText class handler for the GtkTextBuffer::insert-text signal.
-	//
 	// The function takes the following parameters:
 	//
 	//   - pos
 	//   - newText
 	//   - newTextLength
-	InsertText func(pos *TextIter, newText string, newTextLength int)
-	// MarkDeleted class handler for the GtkTextBuffer::mark-deleted signal.
+	InsertText  func(pos *TextIter, newText string, newTextLength int)
 	MarkDeleted func(mark *TextMark)
-	// MarkSet class handler for the GtkTextBuffer::mark-set signal.
-	//
 	// The function takes the following parameters:
 	//
 	//   - location
 	//   - mark
-	MarkSet func(location *TextIter, mark *TextMark)
-	// ModifiedChanged class handler for the GtkTextBuffer::modified-changed
-	// signal.
+	MarkSet         func(location *TextIter, mark *TextMark)
 	ModifiedChanged func()
-	// PasteDone class handler for the GtkTextBuffer::paste-done signal.
-	PasteDone func(clipboard *gdk.Clipboard)
+	PasteDone       func(clipboard *gdk.Clipboard)
 	// Redo redoes the next redoable action on the buffer, if there is one.
 	Redo func()
 	// RemoveTag emits the “remove-tag” signal.
@@ -108904,7 +98066,7 @@ func (buffer *TextBuffer) Bounds() (start, end *TextIter) {
 //
 // The function returns the following values:
 //
-//   - ok: TRUE if there is a redoable action.
+//   - ok: TRUE if there is an redoable action.
 func (buffer *TextBuffer) CanRedo() bool {
 	var _arg0 *C.GtkTextBuffer // out
 	var _cret C.gboolean       // in
@@ -108978,10 +98140,6 @@ func (buffer *TextBuffer) CharCount() int {
 // See gtk.TextBuffer.BeginIrreversibleAction() and
 // gtk.TextBuffer.EndIrreversibleAction() to create changes to the buffer that
 // cannot be undone.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if undoing and redoing changes to the buffer is allowed.
 func (buffer *TextBuffer) EnableUndo() bool {
 	var _arg0 *C.GtkTextBuffer // out
 	var _cret C.gboolean       // in
@@ -109351,10 +98509,6 @@ func (buffer *TextBuffer) Mark(name string) *TextMark {
 // If 0, unlimited undo actions may be performed. Note that this may have a
 // memory usage impact as it requires storing an additional copy of the inserted
 // or removed text within the text buffer.
-//
-// The function returns the following values:
-//
-//   - guint: max number of undo levels allowed (0 indicates unlimited).
 func (buffer *TextBuffer) MaxUndoLevels() uint {
 	var _arg0 *C.GtkTextBuffer // out
 	var _cret C.guint          // in
@@ -110107,7 +99261,7 @@ func (buffer *TextBuffer) RemoveAllTags(start, end *TextIter) {
 }
 
 // RemoveSelectionClipboard removes a GdkClipboard added with
-// gtk.TextBuffer.AddSelectionClipboard().
+// gtk_text_buffer_add_selection_clipboard().
 //
 // The function takes the following parameters:
 //
@@ -110265,7 +99419,7 @@ func (buffer *TextBuffer) SetMaxUndoLevels(maxUndoLevels uint) {
 // the last time it was saved.
 //
 // Whenever the buffer is saved to disk, call gtk_text_buffer_set_modified
-// (buffer, FALSE). When the buffer is modified, it will automatically toggle
+// (buffer, FALSE). When the buffer is modified, it will automatically toggled
 // on the modified bit again. When the modified bit flips, the buffer emits the
 // gtk.TextBuffer::modified-changed signal.
 //
@@ -110382,7 +99536,6 @@ func (buffer *TextBuffer) beginUserAction() {
 	runtime.KeepAlive(buffer)
 }
 
-// Changed class handler for the GtkTextBuffer::changed signal.
 func (buffer *TextBuffer) changed() {
 	gclass := (*C.GtkTextBufferClass)(coreglib.PeekParentClass(buffer))
 	fnarg := gclass.changed
@@ -110395,8 +99548,6 @@ func (buffer *TextBuffer) changed() {
 	runtime.KeepAlive(buffer)
 }
 
-// deleteRange class handler for the GtkTextBuffer::delete-range signal.
-//
 // The function takes the following parameters:
 //
 //   - start
@@ -110501,8 +99652,6 @@ func (buffer *TextBuffer) insertPaintable(iter *TextIter, paintable gdk.Paintabl
 	runtime.KeepAlive(paintable)
 }
 
-// insertText class handler for the GtkTextBuffer::insert-text signal.
-//
 // The function takes the following parameters:
 //
 //   - pos
@@ -110530,7 +99679,6 @@ func (buffer *TextBuffer) insertText(pos *TextIter, newText string, newTextLengt
 	runtime.KeepAlive(newTextLength)
 }
 
-// markDeleted class handler for the GtkTextBuffer::mark-deleted signal.
 func (buffer *TextBuffer) markDeleted(mark *TextMark) {
 	gclass := (*C.GtkTextBufferClass)(coreglib.PeekParentClass(buffer))
 	fnarg := gclass.mark_deleted
@@ -110546,8 +99694,6 @@ func (buffer *TextBuffer) markDeleted(mark *TextMark) {
 	runtime.KeepAlive(mark)
 }
 
-// markSet class handler for the GtkTextBuffer::mark-set signal.
-//
 // The function takes the following parameters:
 //
 //   - location
@@ -110570,7 +99716,6 @@ func (buffer *TextBuffer) markSet(location *TextIter, mark *TextMark) {
 	runtime.KeepAlive(mark)
 }
 
-// modifiedChanged class handler for the GtkTextBuffer::modified-changed signal.
 func (buffer *TextBuffer) modifiedChanged() {
 	gclass := (*C.GtkTextBufferClass)(coreglib.PeekParentClass(buffer))
 	fnarg := gclass.modified_changed
@@ -110583,7 +99728,6 @@ func (buffer *TextBuffer) modifiedChanged() {
 	runtime.KeepAlive(buffer)
 }
 
-// pasteDone class handler for the GtkTextBuffer::paste-done signal.
 func (buffer *TextBuffer) pasteDone(clipboard *gdk.Clipboard) {
 	gclass := (*C.GtkTextBufferClass)(coreglib.PeekParentClass(buffer))
 	fnarg := gclass.paste_done
@@ -111453,25 +100597,14 @@ func (table *TextTagTable) Remove(tag *TextTag) {
 
 // TextViewOverrides contains methods that are overridable.
 type TextViewOverrides struct {
-	// Backspace class handler for the GtkTextView::backspace keybinding signal.
-	Backspace func()
-	// CopyClipboard class handler for the GtkTextView::copy-clipboard
-	// keybinding signal.
+	Backspace     func()
 	CopyClipboard func()
-	// CutClipboard class handler for the GtkTextView::cut-clipboard keybinding
-	// signal.
-	CutClipboard func()
-	// DeleteFromCursor class handler for the GtkTextView::delete-from-cursor
-	// keybinding signal.
-	//
+	CutClipboard  func()
 	// The function takes the following parameters:
 	//
 	//   - typ
 	//   - count
 	DeleteFromCursor func(typ DeleteType, count int)
-	// ExtendSelection class handler for the GtkTextView::extend-selection
-	// signal.
-	//
 	// The function takes the following parameters:
 	//
 	//   - granularity
@@ -111479,39 +100612,21 @@ type TextViewOverrides struct {
 	//   - start
 	//   - end
 	ExtendSelection func(granularity TextExtendSelection, location, start, end *TextIter) bool
-	// InsertAtCursor class handler for the GtkTextView::insert-at-cursor
-	// keybinding signal.
-	InsertAtCursor func(str string)
-	// InsertEmoji class handler for the GtkTextView::insert-emoji signal.
-	InsertEmoji func()
-	// MoveCursor class handler for the GtkTextView::move-cursor keybinding
-	// signal.
-	//
+	InsertAtCursor  func(str string)
+	InsertEmoji     func()
 	// The function takes the following parameters:
 	//
 	//   - step
 	//   - count
 	//   - extendSelection
-	MoveCursor func(step MovementStep, count int, extendSelection bool)
-	// PasteClipboard class handler for the GtkTextView::paste-clipboard
-	// keybinding signal.
+	MoveCursor     func(step MovementStep, count int, extendSelection bool)
 	PasteClipboard func()
-	// SetAnchor class handler for the GtkTextView::set-anchor keybinding
-	// signal.
-	SetAnchor func()
-	// SnapshotLayer: snapshot_layer vfunc is called before and after the text
-	// view is drawing its own text. Applications can override this vfunc in
-	// a subclass to draw customized content underneath or above the text.
-	// In the GTK_TEXT_VIEW_LAYER_BELOW_TEXT and GTK_TEXT_VIEW_LAYER_ABOVE_TEXT
-	// layers the drawing is done in the buffer coordinate space.
-	//
+	SetAnchor      func()
 	// The function takes the following parameters:
 	//
 	//   - layer
 	//   - snapshot
-	SnapshotLayer func(layer TextViewLayer, snapshot *Snapshot)
-	// ToggleOverwrite class handler for the GtkTextView::toggle-overwrite
-	// keybinding signal.
+	SnapshotLayer   func(layer TextViewLayer, snapshot *Snapshot)
 	ToggleOverwrite func()
 }
 
@@ -111569,8 +100684,6 @@ type TextView struct {
 	Widget
 
 	*coreglib.Object
-	Accessible
-	AccessibleText
 	Scrollable
 }
 
@@ -111663,14 +100776,6 @@ func wrapTextView(obj *coreglib.Object) *TextView {
 			},
 		},
 		Object: obj,
-		Accessible: Accessible{
-			Object: obj,
-		},
-		AccessibleText: AccessibleText{
-			Accessible: Accessible{
-				Object: obj,
-			},
-		},
 		Scrollable: Scrollable{
 			Object: obj,
 		},
@@ -111686,7 +100791,7 @@ func marshalTextView(p uintptr) (interface{}, error) {
 // The ::backspace signal is a keybinding signal (class.SignalAction.html).
 //
 // The default bindings for this signal are <kbd>Backspace</kbd> and
-// <kbd>Shift</kbd>+<kbd>Backspace</kbd>.
+// <kbd>Shift</kbd>-<kbd>Backspace</kbd>.
 func (textView *TextView) ConnectBackspace(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(textView, "backspace", false, unsafe.Pointer(C._gotk4_gtk4_TextView_ConnectBackspace), f)
 }
@@ -111695,8 +100800,8 @@ func (textView *TextView) ConnectBackspace(f func()) coreglib.SignalHandle {
 //
 // The ::copy-clipboard signal is a keybinding signal (class.SignalAction.html).
 //
-// The default bindings for this signal are <kbd>Ctrl</kbd>+<kbd>c</kbd> and
-// <kbd>Ctrl</kbd>+<kbd>Insert</kbd>.
+// The default bindings for this signal are <kbd>Ctrl</kbd>-<kbd>c</kbd> and
+// <kbd>Ctrl</kbd>-<kbd>Insert</kbd>.
 func (textView *TextView) ConnectCopyClipboard(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(textView, "copy-clipboard", false, unsafe.Pointer(C._gotk4_gtk4_TextView_ConnectCopyClipboard), f)
 }
@@ -111705,8 +100810,8 @@ func (textView *TextView) ConnectCopyClipboard(f func()) coreglib.SignalHandle {
 //
 // The ::cut-clipboard signal is a keybinding signal (class.SignalAction.html).
 //
-// The default bindings for this signal are <kbd>Ctrl</kbd>+<kbd>x</kbd> and
-// <kbd>Shift</kbd>+<kbd>Delete</kbd>.
+// The default bindings for this signal are <kbd>Ctrl</kbd>-<kbd>x</kbd> and
+// <kbd>Shift</kbd>-<kbd>Delete</kbd>.
 func (textView *TextView) ConnectCutClipboard(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(textView, "cut-clipboard", false, unsafe.Pointer(C._gotk4_gtk4_TextView_ConnectCutClipboard), f)
 }
@@ -111720,8 +100825,8 @@ func (textView *TextView) ConnectCutClipboard(f func()) coreglib.SignalHandle {
 // otherwise it deletes the requested number of characters.
 //
 // The default bindings for this signal are <kbd>Delete</kbd> for deleting
-// a character, <kbd>Ctrl</kbd>+<kbd>Delete</kbd> for deleting a word and
-// <kbd>Ctrl</kbd>+<kbd>Backspace</kbd> for deleting a word backwards.
+// a character, <kbd>Ctrl</kbd>-<kbd>Delete</kbd> for deleting a word and
+// <kbd>Ctrl</kbd>-<kbd>Backspace</kbd> for deleting a word backwards.
 func (textView *TextView) ConnectDeleteFromCursor(f func(typ DeleteType, count int)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(textView, "delete-from-cursor", false, unsafe.Pointer(C._gotk4_gtk4_TextView_ConnectDeleteFromCursor), f)
 }
@@ -111748,8 +100853,8 @@ func (textView *TextView) ConnectInsertAtCursor(f func(str string)) coreglib.Sig
 //
 // The ::insert-emoji signal is a keybinding signal (class.SignalAction.html).
 //
-// The default bindings for this signal are <kbd>Ctrl</kbd>+<kbd>.</kbd> and
-// <kbd>Ctrl</kbd>+<kbd>;</kbd>.
+// The default bindings for this signal are <kbd>Ctrl</kbd>-<kbd>.</kbd> and
+// <kbd>Ctrl</kbd>-<kbd>;</kbd>.
 func (textView *TextView) ConnectInsertEmoji(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(textView, "insert-emoji", false, unsafe.Pointer(C._gotk4_gtk4_TextView_ConnectInsertEmoji), f)
 }
@@ -111768,13 +100873,13 @@ func (textView *TextView) ConnectInsertEmoji(f func()) coreglib.SignalHandle {
 // - <kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd> move by individual
 // characters/lines
 //
-// - <kbd>Ctrl</kbd>+<kbd>←</kbd>, etc. move by words/paragraphs
+// - <kbd>Ctrl</kbd>-<kbd>→</kbd>, etc. move by words/paragraphs
 //
-// - <kbd>Home</kbd> and <kbd>End</kbd> move to the ends of the buffer
+// - <kbd>Home</kbd>, <kbd>End</kbd> move to the ends of the buffer
 //
-// - <kbd>PgUp</kbd> and <kbd>PgDn</kbd> move vertically by pages
+// - <kbd>PgUp</kbd>, <kbd>PgDn</kbd> move vertically by pages
 //
-// - <kbd>Ctrl</kbd>+<kbd>PgUp</kbd> and <kbd>Ctrl</kbd>+<kbd>PgDn</kbd> move
+// - <kbd>Ctrl</kbd>-<kbd>PgUp</kbd>, <kbd>Ctrl</kbd>-<kbd>PgDn</kbd> move
 // horizontally by pages.
 func (textView *TextView) ConnectMoveCursor(f func(step MovementStep, count int, extendSelection bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(textView, "move-cursor", false, unsafe.Pointer(C._gotk4_gtk4_TextView_ConnectMoveCursor), f)
@@ -111798,8 +100903,8 @@ func (textView *TextView) ConnectMoveViewport(f func(step ScrollStep, count int)
 // The ::paste-clipboard signal is a keybinding signal
 // (class.SignalAction.html).
 //
-// The default bindings for this signal are <kbd>Ctrl</kbd>+<kbd>v</kbd> and
-// <kbd>Shift</kbd>+<kbd>Insert</kbd>.
+// The default bindings for this signal are <kbd>Ctrl</kbd>-<kbd>v</kbd> and
+// <kbd>Shift</kbd>-<kbd>Insert</kbd>.
 func (textView *TextView) ConnectPasteClipboard(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(textView, "paste-clipboard", false, unsafe.Pointer(C._gotk4_gtk4_TextView_ConnectPasteClipboard), f)
 }
@@ -111820,10 +100925,10 @@ func (textView *TextView) ConnectPreeditChanged(f func(preedit string)) coreglib
 //
 // The ::select-all signal is a keybinding signal (class.SignalAction.html).
 //
-// The default bindings for this signal are <kbd>Ctrl</kbd>+<kbd>a</kbd>
-// and <kbd>Ctrl</kbd>+<kbd>/</kbd> for selecting and
-// <kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>a</kbd> and
-// <kbd>Ctrl</kbd>+<kbd>\</kbd> for unselecting.
+// The default bindings for this signal are <kbd>Ctrl</kbd>-<kbd>a</kbd>
+// and <kbd>Ctrl</kbd>-<kbd>/</kbd> for selecting and
+// <kbd>Shift</kbd>-<kbd>Ctrl</kbd>-<kbd>a</kbd> and
+// <kbd>Ctrl</kbd>-<kbd>\</kbd> for unselecting.
 func (textView *TextView) ConnectSelectAll(f func(sel bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(textView, "select-all", false, unsafe.Pointer(C._gotk4_gtk4_TextView_ConnectSelectAll), f)
 }
@@ -113380,8 +102485,6 @@ func (textView *TextView) ScrollToMark(mark *TextMark, withinMargin float64, use
 // If accepts_tab is TRUE, a tab character is inserted. If accepts_tab is FALSE
 // the keyboard focus is moved to the next widget in the focus chain.
 //
-// Focus can always be moved using <kbd>Ctrl</kbd>+<kbd>Tab</kbd>.
-//
 // The function takes the following parameters:
 //
 //   - acceptsTab: TRUE if pressing the Tab key should insert a tab character,
@@ -113450,7 +102553,7 @@ func (textView *TextView) SetBuffer(buffer *TextBuffer) {
 // so you may want to turn the cursor off.
 //
 // Note that this property may be overridden by the
-// gtk.Settings:gtk-keynav-use-caret setting.
+// gtksettings:gtk-keynav-use-caret setting.
 //
 // The function takes the following parameters:
 //
@@ -113889,7 +102992,6 @@ func (textView *TextView) WindowToBufferCoords(win TextWindowType, windowX, wind
 	return _bufferX, _bufferY
 }
 
-// Backspace class handler for the GtkTextView::backspace keybinding signal.
 func (textView *TextView) backspace() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.backspace
@@ -113902,8 +103004,6 @@ func (textView *TextView) backspace() {
 	runtime.KeepAlive(textView)
 }
 
-// copyClipboard class handler for the GtkTextView::copy-clipboard keybinding
-// signal.
 func (textView *TextView) copyClipboard() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.copy_clipboard
@@ -113916,8 +103016,6 @@ func (textView *TextView) copyClipboard() {
 	runtime.KeepAlive(textView)
 }
 
-// cutClipboard class handler for the GtkTextView::cut-clipboard keybinding
-// signal.
 func (textView *TextView) cutClipboard() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.cut_clipboard
@@ -113930,9 +103028,6 @@ func (textView *TextView) cutClipboard() {
 	runtime.KeepAlive(textView)
 }
 
-// deleteFromCursor class handler for the GtkTextView::delete-from-cursor
-// keybinding signal.
-//
 // The function takes the following parameters:
 //
 //   - typ
@@ -113955,8 +103050,6 @@ func (textView *TextView) deleteFromCursor(typ DeleteType, count int) {
 	runtime.KeepAlive(count)
 }
 
-// extendSelection class handler for the GtkTextView::extend-selection signal.
-//
 // The function takes the following parameters:
 //
 //   - granularity
@@ -113996,8 +103089,6 @@ func (textView *TextView) extendSelection(granularity TextExtendSelection, locat
 	return _ok
 }
 
-// insertAtCursor class handler for the GtkTextView::insert-at-cursor keybinding
-// signal.
 func (textView *TextView) insertAtCursor(str string) {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.insert_at_cursor
@@ -114014,7 +103105,6 @@ func (textView *TextView) insertAtCursor(str string) {
 	runtime.KeepAlive(str)
 }
 
-// insertEmoji class handler for the GtkTextView::insert-emoji signal.
 func (textView *TextView) insertEmoji() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.insert_emoji
@@ -114027,8 +103117,6 @@ func (textView *TextView) insertEmoji() {
 	runtime.KeepAlive(textView)
 }
 
-// moveCursor class handler for the GtkTextView::move-cursor keybinding signal.
-//
 // The function takes the following parameters:
 //
 //   - step
@@ -114057,8 +103145,6 @@ func (textView *TextView) moveCursor(step MovementStep, count int, extendSelecti
 	runtime.KeepAlive(extendSelection)
 }
 
-// pasteClipboard class handler for the GtkTextView::paste-clipboard keybinding
-// signal.
 func (textView *TextView) pasteClipboard() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.paste_clipboard
@@ -114071,7 +103157,6 @@ func (textView *TextView) pasteClipboard() {
 	runtime.KeepAlive(textView)
 }
 
-// setAnchor class handler for the GtkTextView::set-anchor keybinding signal.
 func (textView *TextView) setAnchor() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.set_anchor
@@ -114084,12 +103169,6 @@ func (textView *TextView) setAnchor() {
 	runtime.KeepAlive(textView)
 }
 
-// snapshotLayer: snapshot_layer vfunc is called before and after the text
-// view is drawing its own text. Applications can override this vfunc in a
-// subclass to draw customized content underneath or above the text. In the
-// GTK_TEXT_VIEW_LAYER_BELOW_TEXT and GTK_TEXT_VIEW_LAYER_ABOVE_TEXT layers the
-// drawing is done in the buffer coordinate space.
-//
 // The function takes the following parameters:
 //
 //   - layer
@@ -114112,8 +103191,6 @@ func (textView *TextView) snapshotLayer(layer TextViewLayer, snapshot *Snapshot)
 	runtime.KeepAlive(snapshot)
 }
 
-// toggleOverwrite class handler for the GtkTextView::toggle-overwrite
-// keybinding signal.
 func (textView *TextView) toggleOverwrite() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.toggle_overwrite
@@ -114130,8 +103207,7 @@ func (textView *TextView) toggleOverwrite() {
 type ToggleButtonOverrides struct {
 	// Toggled emits the ::toggled signal on the GtkToggleButton.
 	//
-	// Deprecated: There is no good reason for an application ever to call this
-	// function.
+	// There is no good reason for an application ever to call this function.
 	Toggled func()
 }
 
@@ -114171,10 +103247,6 @@ func defaultToggleButtonOverrides(v *ToggleButton) ToggleButtonOverrides {
 // GtkToggleButton has a single CSS node with name button. To differentiate it
 // from a plain GtkButton, it gets the .toggle style class.
 //
-// # Accessibility
-//
-// GtkToggleButton uses the GTK_ACCESSIBLE_ROLE_TOGGLE_BUTTON role.
-//
 // Creating two GtkToggleButton widgets.
 //
 //	static void
@@ -114212,7 +103284,7 @@ func defaultToggleButtonOverrides(v *ToggleButton) ToggleButtonOverrides {
 //	  gtk_box_append (GTK_BOX (box), toggle2);
 //
 //	  gtk_window_set_child (GTK_WINDOW (window), box);
-//	  gtk_window_present (GTK_WINDOW (window));
+//	  gtk_widget_show (window);
 //	}.
 type ToggleButton struct {
 	_ [0]func() // equal guard
@@ -114401,7 +103473,7 @@ func (toggleButton *ToggleButton) Active() bool {
 // raise it.
 //
 // If the status of the button changes, this action causes the
-// gtk.ToggleButton::toggled signal to be emitted.
+// gtktogglebutton::toggled signal to be emitted.
 //
 // The function takes the following parameters:
 //
@@ -114450,8 +103522,7 @@ func (toggleButton *ToggleButton) SetGroup(group *ToggleButton) {
 
 // Toggled emits the ::toggled signal on the GtkToggleButton.
 //
-// Deprecated: There is no good reason for an application ever to call this
-// function.
+// There is no good reason for an application ever to call this function.
 func (toggleButton *ToggleButton) Toggled() {
 	var _arg0 *C.GtkToggleButton // out
 
@@ -114463,8 +103534,7 @@ func (toggleButton *ToggleButton) Toggled() {
 
 // Toggled emits the ::toggled signal on the GtkToggleButton.
 //
-// Deprecated: There is no good reason for an application ever to call this
-// function.
+// There is no good reason for an application ever to call this function.
 func (toggleButton *ToggleButton) toggled() {
 	gclass := (*C.GtkToggleButtonClass)(coreglib.PeekParentClass(toggleButton))
 	fnarg := gclass.toggled
@@ -114693,24 +103763,11 @@ func defaultTreeExpanderOverrides(v *TreeExpander) TreeExpanderOverrides {
 // "listitem.toggle-expand" actions are provided to allow adding custom UI for
 // managing expanded state.
 //
-// It is important to mention that you want to set the gtk.ListItem:focusable
-// property to FALSE when using this widget, as you want the keyboard focus
-// to be in the treexpander, and not inside the list to make use of the
-// keybindings.
-//
 // The GtkTreeListModel must be set to not be passthrough. Then it will provide
 // gtk.TreeListRow items which can be set via gtk.TreeExpander.SetListRow()
 // on the expander. The expander will then watch that row item automatically.
 // gtk.TreeExpander.SetChild() sets the widget that displays the actual row
 // contents.
-//
-// GtkTreeExpander can be modified with properties such as
-// gtk.TreeExpander:indent-for-icon, gtk.TreeExpander:indent-for-depth,
-// and gtk.TreeExpander:hide-expander to achieve a different appearance.
-// This can even be done to influence individual rows, for example by binding
-// the gtk.TreeExpander:hide-expander property to the item count of the model of
-// the treelistrow, to hide the expander for rows without children, even if the
-// row is expandable.
 //
 // CSS nodes
 //
@@ -114728,10 +103785,9 @@ func defaultTreeExpanderOverrides(v *TreeExpander) TreeExpanderOverrides {
 //
 // # Accessibility
 //
-// Until GTK 4.10, GtkTreeExpander used the GTK_ACCESSIBLE_ROLE_GROUP role.
-//
-// Since GTK 4.12, GtkTreeExpander uses the GTK_ACCESSIBLE_ROLE_BUTTON role.
-// Toggling it will change the GTK_ACCESSIBLE_STATE_EXPANDED state.
+// GtkTreeExpander uses the GTK_ACCESSIBLE_ROLE_GROUP role. The expander icon
+// is represented as a GTK_ACCESSIBLE_ROLE_BUTTON, labelled by the expander's
+// child, and toggling it will change the GTK_ACCESSIBLE_STATE_EXPANDED state.
 type TreeExpander struct {
 	_ [0]func() // equal guard
 	Widget
@@ -114834,54 +103890,6 @@ func (self *TreeExpander) Child() Widgetter {
 	return _widget
 }
 
-// HideExpander gets whether the TreeExpander should be hidden in a
-// GtkTreeListRow.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the expander icon should be hidden. Otherwise FALSE.
-func (self *TreeExpander) HideExpander() bool {
-	var _arg0 *C.GtkTreeExpander // out
-	var _cret C.gboolean         // in
-
-	_arg0 = (*C.GtkTreeExpander)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_tree_expander_get_hide_expander(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// IndentForDepth: treeExpander indents each level of depth with an additional
-// indent.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the child should be indented . Otherwise FALSE.
-func (self *TreeExpander) IndentForDepth() bool {
-	var _arg0 *C.GtkTreeExpander // out
-	var _cret C.gboolean         // in
-
-	_arg0 = (*C.GtkTreeExpander)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_tree_expander_get_indent_for_depth(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
 // IndentForIcon: treeExpander indents the child by the width of an
 // expander-icon if it is not expandable.
 //
@@ -114972,46 +103980,6 @@ func (self *TreeExpander) SetChild(child Widgetter) {
 	C.gtk_tree_expander_set_child(_arg0, _arg1)
 	runtime.KeepAlive(self)
 	runtime.KeepAlive(child)
-}
-
-// SetHideExpander sets whether the expander icon should be visible in a
-// GtkTreeListRow.
-//
-// The function takes the following parameters:
-//
-//   - hideExpander: TRUE if the expander should be hidden. Otherwise FALSE.
-func (self *TreeExpander) SetHideExpander(hideExpander bool) {
-	var _arg0 *C.GtkTreeExpander // out
-	var _arg1 C.gboolean         // out
-
-	_arg0 = (*C.GtkTreeExpander)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if hideExpander {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_tree_expander_set_hide_expander(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(hideExpander)
-}
-
-// SetIndentForDepth sets if the TreeExpander should indent the child according
-// to its depth.
-//
-// The function takes the following parameters:
-//
-//   - indentForDepth: TRUE if the child should be indented. Otherwise FALSE.
-func (self *TreeExpander) SetIndentForDepth(indentForDepth bool) {
-	var _arg0 *C.GtkTreeExpander // out
-	var _arg1 C.gboolean         // out
-
-	_arg0 = (*C.GtkTreeExpander)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if indentForDepth {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_tree_expander_set_indent_for_depth(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(indentForDepth)
 }
 
 // SetIndentForIcon sets if the TreeExpander should indent the child by the
@@ -115463,8 +104431,7 @@ func (self *TreeListRow) Children() *gio.ListModel {
 // rows corresponding to items of models of direct children of the root model
 // have a depth of 1 and so on.
 //
-// The depth of a row never changes until the row is removed from its model at
-// which point it will forever return 0.
+// The depth of a row never changes until the row is destroyed.
 //
 // The function returns the following values:
 //
@@ -115508,12 +104475,13 @@ func (self *TreeListRow) Expanded() bool {
 	return _ok
 }
 
-// Item gets the item corresponding to this row,.
+// Item gets the item corresponding to this row,
+//
+// The value returned by this function never changes until the row is destroyed.
 //
 // The function returns the following values:
 //
-//   - object (optional): item of this row. This function is only marked as
-//     nullable for backwards compatibility reasons.
+//   - object (optional): item of this row or NULL when the row was destroyed.
 func (self *TreeListRow) Item() *coreglib.Object {
 	var _arg0 *C.GtkTreeListRow // out
 	var _cret C.gpointer        // in
@@ -115536,8 +104504,7 @@ func (self *TreeListRow) Item() *coreglib.Object {
 //
 // If self is a row corresponding to the root model, NULL is returned.
 //
-// The value returned by this function never changes until the row is removed
-// from its model at which point it will forever return NULL.
+// The value returned by this function never changes until the row is destroyed.
 //
 // The function returns the following values:
 //
@@ -115587,8 +104554,7 @@ func (self *TreeListRow) Position() uint {
 // This does not mean that the row is actually expanded, this can be checked
 // with gtk.TreeListRow.GetExpanded().
 //
-// If a row is expandable never changes until the row is removed from its model
-// at which point it will forever return FALSE.
+// If a row is expandable never changes until the row is destroyed.
 //
 // The function returns the following values:
 //
@@ -115855,8 +104821,6 @@ func defaultTreeModelFilterOverrides(v *TreeModelFilter) TreeModelFilterOverride
 // either rely on GtkTreeStore to emit all signals because it does not implement
 // reference counting, or for models that do implement reference counting,
 // obtain references on these child levels yourself.
-//
-// Deprecated: Use gtk.FilterListModel instead.
 type TreeModelFilter struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -115917,8 +104881,6 @@ func marshalTreeModelFilter(p uintptr) (interface{}, error) {
 // filtered is static (and doesn’t change often) and there has been a lot of
 // unreffed access to nodes. As a side effect of this function, all unreffed
 // iters will be invalid.
-//
-// Deprecated: since version 4.10.
 func (filter *TreeModelFilter) ClearCache() {
 	var _arg0 *C.GtkTreeModelFilter // out
 
@@ -115931,8 +104893,6 @@ func (filter *TreeModelFilter) ClearCache() {
 // ConvertChildIterToIter sets filter_iter to point to the row in filter that
 // corresponds to the row pointed at by child_iter. If filter_iter was not set,
 // FALSE is returned.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -115973,8 +104933,6 @@ func (filter *TreeModelFilter) ConvertChildIterToIter(childIter *TreeIter) (*Tre
 // path on the child model or points to a row which is not visible in filter,
 // then NULL is returned.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - childPath: GtkTreePath to convert.
@@ -116012,8 +104970,6 @@ func (filter *TreeModelFilter) ConvertChildPathToPath(childPath *TreePath) *Tree
 // ConvertIterToChildIter sets child_iter to point to the row pointed to by
 // filter_iter.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - filterIter: valid GtkTreeIter pointing to a row on filter.
@@ -116045,8 +105001,6 @@ func (filter *TreeModelFilter) ConvertIterToChildIter(filterIter *TreeIter) *Tre
 // path will point to the same location in the model not being filtered.
 // If filter_path does not point to a location in the child model, NULL is
 // returned.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -116084,8 +105038,6 @@ func (filter *TreeModelFilter) ConvertPathToChildPath(filterPath *TreePath) *Tre
 
 // Model returns a pointer to the child model of filter.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - treeModel: pointer to a GtkTreeModel.
@@ -116107,8 +105059,6 @@ func (filter *TreeModelFilter) Model() *TreeModel {
 
 // Refilter emits ::row_changed for each row in the child model, which causes
 // the filter to re-evaluate whether a row is visible or not.
-//
-// Deprecated: since version 4.10.
 func (filter *TreeModelFilter) Refilter() {
 	var _arg0 *C.GtkTreeModelFilter // out
 
@@ -116127,8 +105077,6 @@ func (filter *TreeModelFilter) Refilter() {
 //
 // Note that gtk_tree_model_filter_set_modify_func() can only be called once for
 // a given filter model.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -116169,8 +105117,6 @@ func (filter *TreeModelFilter) SetModifyFunc(types []coreglib.Type, fn TreeModel
 // Note that gtk_tree_model_filter_set_visible_func() or
 // gtk_tree_model_filter_set_visible_column() can only be called once for a
 // given filter model.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -116220,8 +105166,6 @@ func (filter *TreeModelFilter) SetVisibleColumn(column int) {
 // Note that gtk_tree_model_filter_set_visible_func() or
 // gtk_tree_model_filter_set_visible_column() can only be called once for a
 // given filter model.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -116368,9 +105312,7 @@ func defaultTreeModelSortOverrides(v *TreeModelSort) TreeModelSortOverrides {
 //	                      COLUMN_1, &modified_data,
 //	                      -1);
 //	  g_free (modified_data);
-//	}
-//
-// Deprecated: Use gtk.SortListModel instead.
+//	}.
 type TreeModelSort struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -116449,8 +105391,6 @@ func NewTreeModelSortWithModel(childModel TreeModeller) *TreeModelSort {
 // sorted is static (and doesn’t change often) and there has been a lot of
 // unreffed access to nodes. As a side effect of this function, all unreffed
 // iters will be invalid.
-//
-// Deprecated: since version 4.10.
 func (treeModelSort *TreeModelSort) ClearCache() {
 	var _arg0 *C.GtkTreeModelSort // out
 
@@ -116463,8 +105403,6 @@ func (treeModelSort *TreeModelSort) ClearCache() {
 // ConvertChildIterToIter sets sort_iter to point to the row in tree_model_sort
 // that corresponds to the row pointed at by child_iter. If sort_iter was not
 // set, FALSE is returned. Note: a boolean is only returned since 2.14.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -116504,8 +105442,6 @@ func (treeModelSort *TreeModelSort) ConvertChildIterToIter(childIter *TreeIter) 
 // returned path will point to the same row in the sorted model. If child_path
 // isn’t a valid path on the child model, then NULL is returned.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - childPath: GtkTreePath to convert.
@@ -116543,8 +105479,6 @@ func (treeModelSort *TreeModelSort) ConvertChildPathToPath(childPath *TreePath) 
 // ConvertIterToChildIter sets child_iter to point to the row pointed to by
 // sorted_iter.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - sortedIter: valid GtkTreeIter pointing to a row on tree_model_sort.
@@ -116576,8 +105510,6 @@ func (treeModelSort *TreeModelSort) ConvertIterToChildIter(sortedIter *TreeIter)
 // tree_model_sort. The returned path will point to the same location in the
 // model not being sorted. If sorted_path does not point to a location in the
 // child model, NULL is returned.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -116639,8 +105571,6 @@ func (treeModel *TreeModelSort) Model() *TreeModel {
 //
 // Checks if the given iter is a valid iter for this GtkTreeModelSort.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - iter: GtkTreeIter.
@@ -116673,8 +105603,6 @@ func (treeModelSort *TreeModelSort) IterIsValid(iter *TreeIter) bool {
 // “unsorted” state. That is, it is in the same order as the child model.
 // It will re-sort the model to be in the same order as the child model only if
 // the GtkTreeModelSort is in “unsorted” state.
-//
-// Deprecated: since version 4.10.
 func (treeModelSort *TreeModelSort) ResetDefaultSortFunc() {
 	var _arg0 *C.GtkTreeModelSort // out
 
@@ -116708,8 +105636,6 @@ func (treeModelSort *TreeModelSort) ResetDefaultSortFunc() {
 // it may on occasion emit a GtkTreeSelection::changed signal when nothing has
 // happened (mostly as a result of programmers calling select_row on an already
 // selected row).
-//
-// Deprecated: Use gtk.SelectionModel instead.
 type TreeSelection struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -116739,8 +105665,6 @@ func (selection *TreeSelection) ConnectChanged(f func()) coreglib.SignalHandle {
 
 // CountSelectedRows returns the number of rows that have been selected in tree.
 //
-// Deprecated: Use GtkListView or GtkColumnView.
-//
 // The function returns the following values:
 //
 //   - gint: number of rows selected.
@@ -116762,8 +105686,6 @@ func (selection *TreeSelection) CountSelectedRows() int {
 
 // Mode gets the selection mode for selection. See
 // gtk_tree_selection_set_mode().
-//
-// Deprecated: Use GtkListView or GtkColumnView.
 //
 // The function returns the following values:
 //
@@ -116789,8 +105711,6 @@ func (selection *TreeSelection) Mode() SelectionMode {
 // want to test if selection has any selected nodes. model is filled with
 // the current model as a convenience. This function will not work if you use
 // selection is GTK_SELECTION_MULTIPLE.
-//
-// Deprecated: Use GtkListView or GtkColumnView.
 //
 // The function returns the following values:
 //
@@ -116830,9 +105750,7 @@ func (selection *TreeSelection) Selected() (*TreeModel, *TreeIter, bool) {
 //
 // To free the return value, use:
 //
-//	g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);
-//
-// Deprecated: Use GtkListView or GtkColumnView.
+//	g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);.
 //
 // The function returns the following values:
 //
@@ -116873,8 +105791,6 @@ func (selection *TreeSelection) SelectedRows() (*TreeModel, []*TreePath) {
 
 // TreeView returns the tree view associated with selection.
 //
-// Deprecated: Use GtkListView or GtkColumnView.
-//
 // The function returns the following values:
 //
 //   - treeView: GtkTreeView.
@@ -116895,8 +105811,6 @@ func (selection *TreeSelection) TreeView() *TreeView {
 }
 
 // IterIsSelected returns TRUE if the row at iter is currently selected.
-//
-// Deprecated: Use GtkListView or GtkColumnView.
 //
 // The function takes the following parameters:
 //
@@ -116927,9 +105841,7 @@ func (selection *TreeSelection) IterIsSelected(iter *TreeIter) bool {
 }
 
 // PathIsSelected returns TRUE if the row pointed to by path is currently
-// selected. If path does not point to a valid location, FALSE is returned
-//
-// Deprecated: Use GtkListView or GtkColumnView.
+// selected. If path does not point to a valid location, FALSE is returned.
 //
 // The function takes the following parameters:
 //
@@ -116961,8 +105873,6 @@ func (selection *TreeSelection) PathIsSelected(path *TreePath) bool {
 
 // SelectAll selects all the nodes. selection must be set to
 // GTK_SELECTION_MULTIPLE mode.
-//
-// Deprecated: Use GtkListView or GtkColumnView.
 func (selection *TreeSelection) SelectAll() {
 	var _arg0 *C.GtkTreeSelection // out
 
@@ -116973,8 +105883,6 @@ func (selection *TreeSelection) SelectAll() {
 }
 
 // SelectIter selects the specified iterator.
-//
-// Deprecated: Use GtkListView or GtkColumnView.
 //
 // The function takes the following parameters:
 //
@@ -116993,8 +105901,6 @@ func (selection *TreeSelection) SelectIter(iter *TreeIter) {
 
 // SelectPath: select the row at path.
 //
-// Deprecated: Use GtkListView or GtkColumnView.
-//
 // The function takes the following parameters:
 //
 //   - path: GtkTreePath to be selected.
@@ -117012,8 +105918,6 @@ func (selection *TreeSelection) SelectPath(path *TreePath) {
 
 // SelectRange selects a range of nodes, determined by start_path and end_path
 // inclusive. selection must be set to GTK_SELECTION_MULTIPLE mode.
-//
-// Deprecated: Use GtkListView or GtkColumnView.
 //
 // The function takes the following parameters:
 //
@@ -117038,8 +105942,6 @@ func (selection *TreeSelection) SelectRange(startPath, endPath *TreePath) {
 // cannot modify the tree or selection from within this function. As a result,
 // gtk_tree_selection_get_selected_rows() might be more useful.
 //
-// Deprecated: Use GtkListView or GtkColumnView.
-//
 // The function takes the following parameters:
 //
 //   - fn: function to call for each selected node.
@@ -117061,8 +105963,6 @@ func (selection *TreeSelection) SelectedForEach(fn TreeSelectionForEachFunc) {
 // SetMode sets the selection mode of the selection. If the previous type
 // was GTK_SELECTION_MULTIPLE, then the anchor is kept selected, if it was
 // previously selected.
-//
-// Deprecated: Use GtkListView or GtkColumnView.
 //
 // The function takes the following parameters:
 //
@@ -117086,8 +105986,6 @@ func (selection *TreeSelection) SetMode(typ SelectionMode) {
 // return TRUE if the state of the node may be toggled, and FALSE if the state
 // of the node should be left unchanged.
 //
-// Deprecated: Use GtkListView or GtkColumnView.
-//
 // The function takes the following parameters:
 //
 //   - fn (optional): selection function. May be NULL.
@@ -117110,8 +106008,6 @@ func (selection *TreeSelection) SetSelectFunction(fn TreeSelectionFunc) {
 }
 
 // UnselectAll unselects all the nodes.
-//
-// Deprecated: Use GtkListView or GtkColumnView.
 func (selection *TreeSelection) UnselectAll() {
 	var _arg0 *C.GtkTreeSelection // out
 
@@ -117122,8 +106018,6 @@ func (selection *TreeSelection) UnselectAll() {
 }
 
 // UnselectIter unselects the specified iterator.
-//
-// Deprecated: Use GtkListView or GtkColumnView.
 //
 // The function takes the following parameters:
 //
@@ -117142,8 +106036,6 @@ func (selection *TreeSelection) UnselectIter(iter *TreeIter) {
 
 // UnselectPath unselects the row at path.
 //
-// Deprecated: Use GtkListView or GtkColumnView.
-//
 // The function takes the following parameters:
 //
 //   - path: GtkTreePath to be unselected.
@@ -117161,8 +106053,6 @@ func (selection *TreeSelection) UnselectPath(path *TreePath) {
 
 // UnselectRange unselects a range of nodes, determined by start_path and
 // end_path inclusive.
-//
-// Deprecated: Use GtkListView or GtkColumnView.
 //
 // The function takes the following parameters:
 //
@@ -117191,16 +106081,13 @@ func defaultTreeStoreOverrides(v *TreeStore) TreeStoreOverrides {
 	return TreeStoreOverrides{}
 }
 
-// TreeStore: tree-like data structure that can be used with the gtk.TreeView.
+// TreeStore: tree-like data structure that can be used with the GtkTreeView
 //
 // The GtkTreeStore object is a list model for use with a GtkTreeView widget.
-// It implements the gtk.TreeModel interface, and consequently, can use all
-// of the methods available there. It also implements the gtk.TreeSortable
-// interface so it can be sorted by the view. Finally, it also implements the
-// tree [drag]gtk.TreeDragSource and [drop]gtk.TreeDragDest interfaces.
-//
-// GtkTreeStore is deprecated since GTK 4.10, and should not be used in newly
-// written code. You should use gtk.TreeListModel for a tree-like model object.
+// It implements the GtkTreeModel interface, and consequently, can use all of
+// the methods available there. It also implements the GtkTreeSortable interface
+// so it can be sorted by the view. Finally, it also implements the tree [drag
+// and drop][gtk3-GtkTreeView-drag-and-drop] interfaces.
 //
 // # GtkTreeStore as GtkBuildable
 //
@@ -117217,9 +106104,7 @@ func defaultTreeStoreOverrides(v *TreeStore) TreeStoreOverrides {
 //	    <column type="gchararray"/>
 //	    <column type="gint"/>
 //	  </columns>
-//	</object>
-//
-// Deprecated: Use gtk.TreeListModel instead.
+//	</object>.
 type TreeStore struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -117274,11 +106159,8 @@ func marshalTreeStore(p uintptr) (interface{}, error) {
 	return wrapTreeStore(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
 }
 
-// NewTreeStore creates a new tree store.
-//
-// This constructor is meant for language bindings.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// NewTreeStore: non vararg creation function. Used primarily by language
+// bindings.
 //
 // The function takes the following parameters:
 //
@@ -117312,16 +106194,11 @@ func NewTreeStore(types []coreglib.Type) *TreeStore {
 	return _treeStore
 }
 
-// Append appends a new row to tree_store.
-//
-// If parent is non-NULL, then it will append the new row after the last child
-// of parent, otherwise it will append a row to the top level.
-//
-// The iter parameter will be changed to point to this new row. The row will
-// be empty after this function is called. To fill in values, you need to call
-// gtk_tree_store_set() or gtk_tree_store_set_value().
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// Append appends a new row to tree_store. If parent is non-NULL, then it will
+// append the new row after the last child of parent, otherwise it will append
+// a row to the top level. iter will be changed to point to this new row.
+// The row will be empty after this function is called. To fill in values,
+// you need to call gtk_tree_store_set() or gtk_tree_store_set_value().
 //
 // The function takes the following parameters:
 //
@@ -117351,9 +106228,7 @@ func (treeStore *TreeStore) Append(parent *TreeIter) *TreeIter {
 	return _iter
 }
 
-// Clear removes all rows from tree_store
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// Clear removes all rows from tree_store.
 func (treeStore *TreeStore) Clear() {
 	var _arg0 *C.GtkTreeStore // out
 
@@ -117363,19 +106238,13 @@ func (treeStore *TreeStore) Clear() {
 	runtime.KeepAlive(treeStore)
 }
 
-// Insert creates a new row at position.
-//
-// If parent is non-NULL, then the row will be made a child of parent.
-// Otherwise, the row will be created at the toplevel.
-//
-// If position is -1 or is larger than the number of rows at that level,
-// then the new row will be inserted to the end of the list.
-//
-// The iter parameter will be changed to point to this new row. The row will
-// be empty after this function is called. To fill in values, you need to call
-// gtk_tree_store_set() or gtk_tree_store_set_value().
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// Insert creates a new row at position. If parent is non-NULL, then the row
+// will be made a child of parent. Otherwise, the row will be created at the
+// toplevel. If position is -1 or is larger than the number of rows at that
+// level, then the new row will be inserted to the end of the list. iter will be
+// changed to point to this new row. The row will be empty after this function
+// is called. To fill in values, you need to call gtk_tree_store_set() or
+// gtk_tree_store_set_value().
 //
 // The function takes the following parameters:
 //
@@ -117409,21 +106278,15 @@ func (treeStore *TreeStore) Insert(parent *TreeIter, position int) *TreeIter {
 	return _iter
 }
 
-// InsertAfter inserts a new row after sibling.
+// InsertAfter inserts a new row after sibling. If sibling is NULL, then the
+// row will be prepended to parent ’s children. If parent and sibling are NULL,
+// then the row will be prepended to the toplevel. If both sibling and parent
+// are set, then parent must be the parent of sibling. When sibling is set,
+// parent is optional.
 //
-// If sibling is NULL, then the row will be prepended to parent’s children.
-//
-// If parent and sibling are NULL, then the row will be prepended to the
-// toplevel.
-//
-// If both sibling and parent are set, then parent must be the parent of
-// sibling. When sibling is set, parent is optional.
-//
-// The iter parameter will be changed to point to this new row. The row will
-// be empty after this function is called. To fill in values, you need to call
+// iter will be changed to point to this new row. The row will be empty
+// after this function is called. To fill in values, you need to call
 // gtk_tree_store_set() or gtk_tree_store_set_value().
-//
-// Deprecated: Use gtk.TreeListModel instead.
 //
 // The function takes the following parameters:
 //
@@ -117459,21 +106322,15 @@ func (treeStore *TreeStore) InsertAfter(parent, sibling *TreeIter) *TreeIter {
 	return _iter
 }
 
-// InsertBefore inserts a new row before sibling.
+// InsertBefore inserts a new row before sibling. If sibling is NULL, then the
+// row will be appended to parent ’s children. If parent and sibling are NULL,
+// then the row will be appended to the toplevel. If both sibling and parent
+// are set, then parent must be the parent of sibling. When sibling is set,
+// parent is optional.
 //
-// If sibling is NULL, then the row will be appended to parent’s children.
-//
-// If parent and sibling are NULL, then the row will be appended to the
-// toplevel.
-//
-// If both sibling and parent are set, then parent must be the parent of
-// sibling. When sibling is set, parent is optional.
-//
-// The iter parameter will be changed to point to this new row. The row will
-// be empty after this function is called. To fill in values, you need to call
+// iter will be changed to point to this new row. The row will be empty
+// after this function is called. To fill in values, you need to call
 // gtk_tree_store_set() or gtk_tree_store_set_value().
-//
-// Deprecated: Use gtk.TreeListModel instead.
 //
 // The function takes the following parameters:
 //
@@ -117510,11 +106367,8 @@ func (treeStore *TreeStore) InsertBefore(parent, sibling *TreeIter) *TreeIter {
 }
 
 // InsertWithValues: variant of gtk_tree_store_insert_with_values() which takes
-// the columns and values as two arrays, instead of varargs.
-//
-// This function is mainly intended for language bindings.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// the columns and values as two arrays, instead of varargs. This function is
+// mainly intended for language bindings.
 //
 // The function takes the following parameters:
 //
@@ -117573,9 +106427,8 @@ func (treeStore *TreeStore) InsertWithValues(parent *TreeIter, position int, col
 	return _iter
 }
 
-// IsAncestor checks if iter is an ancestor of descendant.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// IsAncestor returns TRUE if iter is an ancestor of descendant. That is,
+// iter is the parent (or grandparent or great-grandparent) of descendant.
 //
 // The function takes the following parameters:
 //
@@ -117584,7 +106437,7 @@ func (treeStore *TreeStore) InsertWithValues(parent *TreeIter, position int, col
 //
 // The function returns the following values:
 //
-//   - ok: true if iter is an ancestor of descendant, and false otherwise.
+//   - ok: TRUE, if iter is an ancestor of descendant.
 func (treeStore *TreeStore) IsAncestor(iter, descendant *TreeIter) bool {
 	var _arg0 *C.GtkTreeStore // out
 	var _arg1 *C.GtkTreeIter  // out
@@ -117609,12 +106462,8 @@ func (treeStore *TreeStore) IsAncestor(iter, descendant *TreeIter) bool {
 	return _ok
 }
 
-// IterDepth returns the depth of the position pointed by the iterator
-//
-// The depth will be 0 for anything on the root level, 1 for anything down a
-// level, etc.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// IterDepth returns the depth of iter. This will be 0 for anything on the root
+// level, 1 for anything down a level, etc.
 //
 // The function takes the following parameters:
 //
@@ -117622,7 +106471,7 @@ func (treeStore *TreeStore) IsAncestor(iter, descendant *TreeIter) bool {
 //
 // The function returns the following values:
 //
-//   - gint: depth of the position pointed by the iterator.
+//   - gint: depth of iter.
 func (treeStore *TreeStore) IterDepth(iter *TreeIter) int {
 	var _arg0 *C.GtkTreeStore // out
 	var _arg1 *C.GtkTreeIter  // out
@@ -117646,15 +106495,13 @@ func (treeStore *TreeStore) IterDepth(iter *TreeIter) int {
 //
 // This function is slow. Only use it for debugging and/or testing purposes.
 //
-// Deprecated: Use gtk.TreeListModel instead.
-//
 // The function takes the following parameters:
 //
 //   - iter: iterator to check.
 //
 // The function returns the following values:
 //
-//   - ok: true if the iter is valid, and false otherwise.
+//   - ok: TRUE if the iter is valid, FALSE if the iter is invalid.
 func (treeStore *TreeStore) IterIsValid(iter *TreeIter) bool {
 	var _arg0 *C.GtkTreeStore // out
 	var _arg1 *C.GtkTreeIter  // out
@@ -117676,15 +106523,10 @@ func (treeStore *TreeStore) IterIsValid(iter *TreeIter) bool {
 	return _ok
 }
 
-// MoveAfter moves iter in tree_store to the position after position.
-//
-// iter and position should be in the same level.
-//
-// Note that this function only works with unsorted stores.
-//
-// If position is NULL, iter will be moved to the start of the level.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// MoveAfter moves iter in tree_store to the position after position. iter and
+// position should be in the same level. Note that this function only works with
+// unsorted stores. If position is NULL, iter will be moved to the start of the
+// level.
 //
 // The function takes the following parameters:
 //
@@ -117707,15 +106549,10 @@ func (treeStore *TreeStore) MoveAfter(iter, position *TreeIter) {
 	runtime.KeepAlive(position)
 }
 
-// MoveBefore moves iter in tree_store to the position before position.
-//
-// iter and position should be in the same level.
-//
-// Note that this function only works with unsorted stores.
-//
-// If position is NULL, iter will be moved to the end of the level.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// MoveBefore moves iter in tree_store to the position before position. iter and
+// position should be in the same level. Note that this function only works with
+// unsorted stores. If position is NULL, iter will be moved to the end of the
+// level.
 //
 // The function takes the following parameters:
 //
@@ -117738,15 +106575,11 @@ func (treeStore *TreeStore) MoveBefore(iter, position *TreeIter) {
 	runtime.KeepAlive(position)
 }
 
-// Prepend prepends a new row to tree_store.
-//
-// If parent is non-NULL, then it will prepend the new row before the first
-// child of parent, otherwise it will prepend a row to the top level.
-// The iter parameter will be changed to point to this new row. The row will
-// be empty after this function is called. To fill in values, you need to call
-// gtk_tree_store_set() or gtk_tree_store_set_value().
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// Prepend prepends a new row to tree_store. If parent is non-NULL, then it
+// will prepend the new row before the first child of parent, otherwise it will
+// prepend a row to the top level. iter will be changed to point to this new
+// row. The row will be empty after this function is called. To fill in values,
+// you need to call gtk_tree_store_set() or gtk_tree_store_set_value().
 //
 // The function takes the following parameters:
 //
@@ -117776,12 +106609,9 @@ func (treeStore *TreeStore) Prepend(parent *TreeIter) *TreeIter {
 	return _iter
 }
 
-// Remove removes iter from tree_store.
-//
-// After being removed, iter is set to the next valid row at that level,
-// or invalidated if it previously pointed to the last one.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// Remove removes iter from tree_store. After being removed, iter is set to the
+// next valid row at that level, or invalidated if it previously pointed to the
+// last one.
 //
 // The function takes the following parameters:
 //
@@ -117789,7 +106619,7 @@ func (treeStore *TreeStore) Prepend(parent *TreeIter) *TreeIter {
 //
 // The function returns the following values:
 //
-//   - ok: true if iter is still valid, and false otherwise.
+//   - ok: TRUE if iter is still valid, FALSE if not.
 func (treeStore *TreeStore) Remove(iter *TreeIter) bool {
 	var _arg0 *C.GtkTreeStore // out
 	var _arg1 *C.GtkTreeIter  // out
@@ -117811,15 +106641,10 @@ func (treeStore *TreeStore) Remove(iter *TreeIter) bool {
 	return _ok
 }
 
-// SetColumnTypes sets the type of the columns in a tree store.
-//
-// This function is meant primarily for types that inherit from GtkTreeStore,
-// and should only be used when constructing a new GtkTreeStore.
-//
-// This functions cannot be called after a row has been added, or a method on
-// the GtkTreeModel interface is called on the tree store.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// SetColumnTypes: this function is meant primarily for GObjects that
+// inherit from GtkTreeStore, and should only be used when constructing a new
+// GtkTreeStore. It will not function after a row has been added, or a method on
+// the GtkTreeModel interface is called.
 //
 // The function takes the following parameters:
 //
@@ -117845,11 +106670,8 @@ func (treeStore *TreeStore) SetColumnTypes(types []coreglib.Type) {
 	runtime.KeepAlive(types)
 }
 
-// SetValue sets the data in the cell specified by iter and column.
-//
-// The type of value must be convertible to the type of the column.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// SetValue sets the data in the cell specified by iter and column. The type of
+// value must be convertible to the type of the column.
 //
 // The function takes the following parameters:
 //
@@ -117875,12 +106697,9 @@ func (treeStore *TreeStore) SetValue(iter *TreeIter, column int, value *coreglib
 }
 
 // Set: variant of gtk_tree_store_set_valist() which takes the columns and
-// values as two arrays, instead of using variadic arguments.
-//
-// This function is mainly intended for language bindings or in case the number
-// of columns to change is not known until run-time.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// values as two arrays, instead of varargs. This function is mainly intended
+// for language bindings or in case the number of columns to change is not known
+// until run-time.
 //
 // The function takes the following parameters:
 //
@@ -117922,11 +106741,8 @@ func (treeStore *TreeStore) Set(iter *TreeIter, columns []int, values []coreglib
 	runtime.KeepAlive(values)
 }
 
-// Swap swaps a and b in the same level of tree_store.
-//
-// Note that this function only works with unsorted stores.
-//
-// Deprecated: Use gtk.TreeListModel instead.
+// Swap swaps a and b in the same level of tree_store. Note that this function
+// only works with unsorted stores.
 //
 // The function takes the following parameters:
 //
@@ -117965,8 +106781,6 @@ type TreeViewOverrides struct {
 	//   - modify
 	MoveCursor func(step MovementStep, count int, extend, modify bool) bool
 	// RowActivated activates the cell determined by path and column.
-	//
-	// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 	//
 	// The function takes the following parameters:
 	//
@@ -118106,8 +106920,6 @@ func defaultTreeViewOverrides(v *TreeView) TreeViewOverrides {
 //
 // For the drop target location during DND, a subnode with name dndtarget is
 // used.
-//
-// Deprecated: Use gtk.ListView for lists, and gtk.ColumnView for tabular lists.
 type TreeView struct {
 	_ [0]func() // equal guard
 	Widget
@@ -118320,8 +107132,6 @@ func (treeView *TreeView) ConnectUnselectAll(f func() (ok bool)) coreglib.Signal
 
 // NewTreeView creates a new GtkTreeView widget.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - treeView: newly created GtkTreeView widget.
@@ -118339,8 +107149,6 @@ func NewTreeView() *TreeView {
 
 // NewTreeViewWithModel creates a new GtkTreeView widget with the model
 // initialized to model.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -118369,8 +107177,6 @@ func NewTreeViewWithModel(model TreeModeller) *TreeView {
 // “fixed_height” mode enabled, then column must have its “sizing” property set
 // to be GTK_TREE_VIEW_COLUMN_FIXED.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - column: GtkTreeViewColumn to add.
@@ -118398,8 +107204,6 @@ func (treeView *TreeView) AppendColumn(column *TreeViewColumn) int {
 }
 
 // CollapseAll: recursively collapses all visible, expanded nodes in tree_view.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 func (treeView *TreeView) CollapseAll() {
 	var _arg0 *C.GtkTreeView // out
 
@@ -118410,8 +107214,6 @@ func (treeView *TreeView) CollapseAll() {
 }
 
 // CollapseRow collapses a row (hides its child rows, if they exist).
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -118443,8 +107245,6 @@ func (treeView *TreeView) CollapseRow(path *TreePath) bool {
 
 // ColumnsAutosize resizes all columns to their optimal width. Only works after
 // the treeview has been realized.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 func (treeView *TreeView) ColumnsAutosize() {
 	var _arg0 *C.GtkTreeView // out
 
@@ -118456,8 +107256,6 @@ func (treeView *TreeView) ColumnsAutosize() {
 
 // ConvertBinWindowToTreeCoords converts bin_window coordinates to coordinates
 // for the tree (the full scrollable area of the tree).
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -118496,8 +107294,6 @@ func (treeView *TreeView) ConvertBinWindowToTreeCoords(bx, by int) (tx, ty int) 
 // ConvertBinWindowToWidgetCoords converts bin_window coordinates to widget
 // relative coordinates.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - bx: bin_window X coordinate.
@@ -118534,8 +107330,6 @@ func (treeView *TreeView) ConvertBinWindowToWidgetCoords(bx, by int) (wx, wy int
 
 // ConvertTreeToBinWindowCoords converts tree coordinates (coordinates in full
 // scrollable area of the tree) to bin_window coordinates.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -118574,8 +107368,6 @@ func (treeView *TreeView) ConvertTreeToBinWindowCoords(tx, ty int) (bx, by int) 
 // ConvertTreeToWidgetCoords converts tree coordinates (coordinates in full
 // scrollable area of the tree) to widget coordinates.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - tx: x coordinate relative to the tree.
@@ -118612,8 +107404,6 @@ func (treeView *TreeView) ConvertTreeToWidgetCoords(tx, ty int) (wx, wy int) {
 
 // ConvertWidgetToBinWindowCoords converts widget coordinates to coordinates for
 // the bin_window.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -118652,8 +107442,6 @@ func (treeView *TreeView) ConvertWidgetToBinWindowCoords(wx, wy int) (bx, by int
 // ConvertWidgetToTreeCoords converts widget coordinates to coordinates for the
 // tree (the full scrollable area of the tree).
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - wx: x coordinate relative to the widget.
@@ -118691,8 +107479,6 @@ func (treeView *TreeView) ConvertWidgetToTreeCoords(wx, wy int) (tx, ty int) {
 // CreateRowDragIcon creates a cairo_surface_t representation of the row at
 // path. This image is used for a drag icon.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - path: GtkTreePath in tree_view.
@@ -118729,8 +107515,6 @@ func (treeView *TreeView) CreateRowDragIcon(path *TreePath) *gdk.Paintable {
 // EnableModelDragDest turns tree_view into a drop destination for automatic
 // DND. Calling this method sets GtkTreeView:reorderable to FALSE.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - formats: target formats that the drag will support.
@@ -118752,8 +107536,6 @@ func (treeView *TreeView) EnableModelDragDest(formats *gdk.ContentFormats, actio
 
 // EnableModelDragSource turns tree_view into a drag source for automatic DND.
 // Calling this method sets GtkTreeView:reorderable to FALSE.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -118779,8 +107561,6 @@ func (treeView *TreeView) EnableModelDragSource(startButtonMask gdk.ModifierType
 }
 
 // ExpandAll: recursively expands all nodes in the tree_view.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 func (treeView *TreeView) ExpandAll() {
 	var _arg0 *C.GtkTreeView // out
 
@@ -118791,8 +107571,6 @@ func (treeView *TreeView) ExpandAll() {
 }
 
 // ExpandRow opens the row so its children are visible.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -118832,8 +107610,6 @@ func (treeView *TreeView) ExpandRow(path *TreePath, openAll bool) bool {
 // ExpandToPath expands the row at path. This will also expand all parent rows
 // of path as necessary.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - path to a row.
@@ -118851,8 +107627,6 @@ func (treeView *TreeView) ExpandToPath(path *TreePath) {
 
 // ActivateOnSingleClick gets the setting set by
 // gtk_tree_view_set_activate_on_single_click().
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function returns the following values:
 //
@@ -118884,8 +107658,6 @@ func (treeView *TreeView) ActivateOnSingleClick() bool {
 // These background areas tile to cover the entire bin window. Contrast with the
 // cell_area, returned by gtk_tree_view_get_cell_area(), which returns only the
 // cell itself, excluding surrounding borders and the tree expander area.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -118933,8 +107705,6 @@ func (treeView *TreeView) BackgroundArea(path *TreePath, column *TreeViewColumn)
 // to gtk_cell_renderer_render(). This function is only valid if tree_view is
 // realized.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - path (optional): GtkTreePath for the row, or NULL to get only horizontal
@@ -118973,8 +107743,6 @@ func (treeView *TreeView) CellArea(path *TreePath, column *TreeViewColumn) *gdk.
 
 // Column gets the GtkTreeViewColumn at the given position in the #tree_view.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - n of the column, counting from 0.
@@ -119007,8 +107775,6 @@ func (treeView *TreeView) Column(n int) *TreeViewColumn {
 // Columns returns a GList of all the GtkTreeViewColumns currently in tree_view.
 // The returned list must be freed with g_list_free ().
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - list of GtkTreeViewColumns.
@@ -119040,8 +107806,6 @@ func (treeView *TreeView) Columns() []*TreeViewColumn {
 //
 // The returned GtkTreePath must be freed with gtk_tree_path_free() when you are
 // done with it.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function returns the following values:
 //
@@ -119081,8 +107845,6 @@ func (treeView *TreeView) Cursor() (*TreePath, *TreeViewColumn) {
 // and drag_y are expected to be in widget coordinates. This function is only
 // meaningful if tree_view is realized. Therefore this function will always
 // return FALSE if tree_view is not realized or does not have a model.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -119135,8 +107897,6 @@ func (treeView *TreeView) DestRowAtPos(dragX, dragY int) (*TreePath, TreeViewDro
 
 // DragDestRow gets information about the row that is highlighted for feedback.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - path (optional): return location for the path of the highlighted row.
@@ -119171,8 +107931,6 @@ func (treeView *TreeView) DragDestRow() (*TreePath, TreeViewDropPosition) {
 // EnableSearch returns whether or not the tree allows to start interactive
 // searching by typing in text.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - ok: whether or not to let the user search interactively.
@@ -119195,8 +107953,6 @@ func (treeView *TreeView) EnableSearch() bool {
 }
 
 // EnableTreeLines returns whether or not tree lines are drawn in tree_view.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function returns the following values:
 //
@@ -119223,8 +107979,6 @@ func (treeView *TreeView) EnableTreeLines() bool {
 // or NULL if none has been set. This column has the expander arrow drawn next
 // to it.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - treeViewColumn (optional): expander column.
@@ -119247,8 +108001,6 @@ func (treeView *TreeView) ExpanderColumn() *TreeViewColumn {
 }
 
 // FixedHeightMode returns whether fixed height mode is turned on for tree_view.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function returns the following values:
 //
@@ -119273,8 +108025,6 @@ func (treeView *TreeView) FixedHeightMode() bool {
 
 // GridLines returns which grid lines are enabled in tree_view.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - treeViewGridLines GtkTreeViewGridLines value indicating which grid lines
@@ -119296,8 +108046,6 @@ func (treeView *TreeView) GridLines() TreeViewGridLines {
 }
 
 // HeadersClickable returns whether all header columns are clickable.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function returns the following values:
 //
@@ -119322,8 +108070,6 @@ func (treeView *TreeView) HeadersClickable() bool {
 
 // HeadersVisible returns TRUE if the headers on the tree_view are visible.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - ok: whether the headers are visible or not.
@@ -119346,8 +108092,6 @@ func (treeView *TreeView) HeadersVisible() bool {
 }
 
 // HoverExpand returns whether hover expansion mode is turned on for tree_view.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function returns the following values:
 //
@@ -119373,8 +108117,6 @@ func (treeView *TreeView) HoverExpand() bool {
 // HoverSelection returns whether hover selection mode is turned on for
 // tree_view.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if tree_view is in hover selection mode.
@@ -119399,8 +108141,6 @@ func (treeView *TreeView) HoverSelection() bool {
 // LevelIndentation returns the amount, in pixels, of extra indentation for
 // child levels in tree_view.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - gint: amount of extra indentation for child levels in tree_view. A return
@@ -119424,8 +108164,6 @@ func (treeView *TreeView) LevelIndentation() int {
 // Model returns the model the GtkTreeView is based on. Returns NULL if the
 // model is unset.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - treeModel (optional): GtkTreeModel.
@@ -119448,8 +108186,6 @@ func (treeView *TreeView) Model() *TreeModel {
 }
 
 // NColumns queries the number of columns in the given tree_view.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function returns the following values:
 //
@@ -119486,8 +108222,6 @@ func (treeView *TreeView) NColumns() uint {
 // For converting widget coordinates (eg. the ones
 // you get from GtkWidget::query-tooltip), please see
 // gtk_tree_view_convert_widget_to_bin_window_coords().
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -119553,8 +108287,6 @@ func (treeView *TreeView) PathAtPos(x, y int) (path *TreePath, column *TreeViewC
 // Reorderable retrieves whether the user can reorder the tree via
 // drag-and-drop. See gtk_tree_view_set_reorderable().
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the tree can be reordered.
@@ -119580,8 +108312,6 @@ func (treeView *TreeView) Reorderable() bool {
 // If the selection mode is GTK_SELECTION_MULTIPLE, rubber banding will allow
 // the user to select multiple rows by dragging the mouse.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if rubber banding in tree_view is enabled.
@@ -119604,8 +108334,6 @@ func (treeView *TreeView) RubberBanding() bool {
 }
 
 // SearchColumn gets the column searched on by the interactive search code.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function returns the following values:
 //
@@ -119630,8 +108358,6 @@ func (treeView *TreeView) SearchColumn() int {
 // search entry for tree_view. In case the built-in entry is being used,
 // NULL will be returned.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - editable (optional): entry currently in use as search entry.
@@ -119655,8 +108381,6 @@ func (treeView *TreeView) SearchEntry() *EditableTextWidget {
 
 // Selection gets the GtkTreeSelection associated with tree_view.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - treeSelection: GtkTreeSelection object.
@@ -119677,8 +108401,6 @@ func (treeView *TreeView) Selection() *TreeSelection {
 }
 
 // ShowExpanders returns whether or not expanders are drawn in tree_view.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function returns the following values:
 //
@@ -119703,8 +108425,6 @@ func (treeView *TreeView) ShowExpanders() bool {
 
 // TooltipColumn returns the column of tree_view’s model which is being used for
 // displaying tooltips on tree_view’s rows.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function returns the following values:
 //
@@ -119737,8 +108457,6 @@ func (treeView *TreeView) TooltipColumn() int {
 // path and iter which have been provided will be set to point to that row and
 // the corresponding model. x and y will always be converted to be relative to
 // tree_view’s bin_window if keyboard_tooltip is FALSE.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -119805,8 +108523,6 @@ func (treeView *TreeView) TooltipContext(x, y int, keyboardTip bool) (*TreeModel
 //
 // The paths should be freed with gtk_tree_path_free() after use.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - startPath (optional): return location for start of region.
@@ -119857,8 +108573,6 @@ func (treeView *TreeView) VisibleRange() (startPath, endPath *TreePath, ok bool)
 // gtk_tree_view_convert_tree_to_bin_window_coords(). Tree coordinates start at
 // 0,0 for row 0 of the tree, and cover the entire scrollable area of the tree.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - visibleRect: rectangle to fill.
@@ -119882,8 +108596,6 @@ func (treeView *TreeView) VisibleRect() *gdk.Rectangle {
 // If position is -1, then the column is inserted at the end. If tree_view has
 // “fixed_height” mode enabled, then column must have its “sizing” property set
 // to be GTK_TREE_VIEW_COLUMN_FIXED.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -119921,8 +108633,6 @@ func (treeView *TreeView) InsertColumn(column *TreeViewColumn, position int) int
 // gtk_tree_view_column_set_cell_data_func(), gtk_tree_view_column_pack_start().
 // If tree_view has “fixed_height” mode enabled, then the new column will have
 // its “sizing” property set to be GTK_TREE_VIEW_COLUMN_FIXED.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -119984,8 +108694,6 @@ func (treeView *TreeView) InsertColumnWithDataFunc(position int, title string, c
 // The path, column, cell_x and cell_y arguments will be filled
 // in likewise as for gtk_tree_view_get_path_at_pos(). Please see
 // gtk_tree_view_get_path_at_pos() for more information.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120051,8 +108759,6 @@ func (treeView *TreeView) IsBlankAtPos(x, y int) (path *TreePath, column *TreeVi
 // IsRubberBandingActive returns whether a rubber banding operation is currently
 // being done in tree_view.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if a rubber banding operation is currently being done in
@@ -120077,8 +108783,6 @@ func (treeView *TreeView) IsRubberBandingActive() bool {
 
 // MapExpandedRows calls func on all expanded rows.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - fn: function to be called.
@@ -120099,8 +108803,6 @@ func (treeView *TreeView) MapExpandedRows(fn TreeViewMappingFunc) {
 
 // MoveColumnAfter moves column to be after to base_column. If base_column is
 // NULL, then column is placed in the first position.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120124,8 +108826,6 @@ func (treeView *TreeView) MoveColumnAfter(column, baseColumn *TreeViewColumn) {
 }
 
 // RemoveColumn removes column from tree_view.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120155,8 +108855,6 @@ func (treeView *TreeView) RemoveColumn(column *TreeViewColumn) int {
 
 // RowActivated activates the cell determined by path and column.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - path: GtkTreePath to be activated.
@@ -120180,8 +108878,6 @@ func (treeView *TreeView) RowActivated(path *TreePath, column *TreeViewColumn) {
 
 // RowExpanded returns TRUE if the node pointed to by path is expanded in
 // tree_view.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120228,8 +108924,6 @@ func (treeView *TreeView) RowExpanded(path *TreePath) bool {
 // model. If the model changes before the tree_view is realized, the centered
 // path will be modified to reflect this change.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - path (optional) of the row to move to.
@@ -120274,8 +108968,6 @@ func (treeView *TreeView) ScrollToCell(path *TreePath, column *TreeViewColumn, u
 //
 // If either tree_x or tree_y are -1, then that direction isn’t scrolled.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - treeX: x coordinate of new top-left pixel of visible area, or -1.
@@ -120297,8 +108989,6 @@ func (treeView *TreeView) ScrollToPoint(treeX, treeY int) {
 
 // SetActivateOnSingleClick: cause the GtkTreeView::row-activated signal to be
 // emitted on a single click instead of a double click.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120325,8 +109015,6 @@ func (treeView *TreeView) SetActivateOnSingleClick(single bool) {
 // If either of the GtkTreeViewColumn arguments for the drop spot are NULL,
 // then they indicate an edge. If func is set to be NULL, then tree_view reverts
 // to the default behavior of allowing all columns to be dropped everywhere.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120360,8 +109048,6 @@ func (treeView *TreeView) SetColumnDragFunction(fn TreeViewColumnDropFunc) {
 //
 // If path is invalid for model, the current cursor (if any) will be unset and
 // the function will return without failing.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120404,8 +109090,6 @@ func (treeView *TreeView) SetCursor(path *TreePath, focusColumn *TreeViewColumn,
 // If path is invalid for model, the current cursor (if any) will be unset and
 // the function will return without failing.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - path: GtkTreePath.
@@ -120442,8 +109126,6 @@ func (treeView *TreeView) SetCursorOnCell(path *TreePath, focusColumn *TreeViewC
 // SetDragDestRow sets the row that is highlighted for feedback. If path is
 // NULL, an existing highlight is removed.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - path (optional) of the row to highlight.
@@ -120472,8 +109154,6 @@ func (treeView *TreeView) SetDragDestRow(path *TreePath, pos TreeViewDropPositio
 // Note that even if this is FALSE, the user can still initiate a search using
 // the “start-interactive-search” key binding.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - enableSearch: TRUE, if the user can search interactively.
@@ -120493,8 +109173,6 @@ func (treeView *TreeView) SetEnableSearch(enableSearch bool) {
 
 // SetEnableTreeLines sets whether to draw lines interconnecting the expanders
 // in tree_view. This does not have any visible effects for lists.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120520,8 +109198,6 @@ func (treeView *TreeView) SetEnableTreeLines(enabled bool) {
 // If you do not want expander arrow to appear in your tree, set the expander
 // column to a hidden column.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - column (optional): NULL, or the column to draw the expander arrow at.
@@ -120544,8 +109220,6 @@ func (treeView *TreeView) SetExpanderColumn(column *TreeViewColumn) {
 // same height. Only enable this option if all rows are the same height and all
 // columns are of type GTK_TREE_VIEW_COLUMN_FIXED.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - enable: TRUE to enable fixed height mode.
@@ -120565,8 +109239,6 @@ func (treeView *TreeView) SetFixedHeightMode(enable bool) {
 
 // SetGridLines sets which grid lines to draw in tree_view.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - gridLines GtkTreeViewGridLines value indicating which grid lines to
@@ -120584,8 +109256,6 @@ func (treeView *TreeView) SetGridLines(gridLines TreeViewGridLines) {
 }
 
 // SetHeadersClickable: allow the column title buttons to be clicked.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120606,8 +109276,6 @@ func (treeView *TreeView) SetHeadersClickable(setting bool) {
 
 // SetHeadersVisible sets the visibility state of the headers.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - headersVisible: TRUE if the headers are visible.
@@ -120627,8 +109295,6 @@ func (treeView *TreeView) SetHeadersVisible(headersVisible bool) {
 
 // SetHoverExpand enables or disables the hover expansion mode of tree_view.
 // Hover expansion makes rows expand or collapse if the pointer moves over them.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120651,8 +109317,6 @@ func (treeView *TreeView) SetHoverExpand(expand bool) {
 // Hover selection makes the selected row follow the pointer. Currently,
 // this works only for the selection modes GTK_SELECTION_SINGLE and
 // GTK_SELECTION_BROWSE.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120677,8 +109341,6 @@ func (treeView *TreeView) SetHoverSelection(hover bool) {
 // the default indentation will be used. This does not have any visible effects
 // for lists.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - indentation: amount, in pixels, of extra indentation in tree_view.
@@ -120697,8 +109359,6 @@ func (treeView *TreeView) SetLevelIndentation(indentation int) {
 // SetModel sets the model for a GtkTreeView. If the tree_view already has a
 // model set, it will remove it before setting the new model. If model is NULL,
 // then it will unset the old model.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120731,8 +109391,6 @@ func (treeView *TreeView) SetModel(model TreeModeller) {
 // reordering is allowed. If more control is needed, you should probably handle
 // drag and drop manually.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - reorderable: TRUE, if the tree can be reordered.
@@ -120753,8 +109411,6 @@ func (treeView *TreeView) SetReorderable(reorderable bool) {
 // SetRowSeparatorFunc sets the row separator function, which is used to
 // determine whether a row should be drawn as a separator. If the row separator
 // function is NULL, no separators are drawn. This is the default value.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120780,8 +109436,6 @@ func (treeView *TreeView) SetRowSeparatorFunc(fn TreeViewRowSeparatorFunc) {
 // SetRubberBanding enables or disables rubber banding in tree_view. If the
 // selection mode is GTK_SELECTION_MULTIPLE, rubber banding will allow the user
 // to select multiple rows by dragging the mouse.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120810,8 +109464,6 @@ func (treeView *TreeView) SetRubberBanding(enable bool) {
 // Note that column refers to a column of the current model. The search column
 // is reset to -1 when the model is changed.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - column of the model to search in, or -1 to disable searching.
@@ -120831,8 +109483,6 @@ func (treeView *TreeView) SetSearchColumn(column int) {
 // this tree_view. This is useful when you want to provide a search entry in our
 // interface at all time at a fixed position. Passing NULL for entry will make
 // the interactive search code use the built-in popup entry again.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120854,8 +109504,6 @@ func (treeView *TreeView) SetSearchEntry(entry EditableTextWidgetter) {
 // SetSearchEqualFunc sets the compare function for the interactive search
 // capabilities; note that somewhat like strcmp() returning 0 for equality
 // GtkTreeViewSearchEqualFunc returns FALSE on matches.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120882,8 +109530,6 @@ func (treeView *TreeView) SetSearchEqualFunc(searchEqualFunc TreeViewSearchEqual
 // that hiding the expanders will disable the default indentation. You can set a
 // custom indentation in this case using gtk_tree_view_set_level_indentation().
 // This does not have any visible effects for lists.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120913,8 +109559,6 @@ func (treeView *TreeView) SetShowExpanders(enabled bool) {
 // cursor for this function to operate correctly.
 //
 // See also gtk_tree_view_set_tooltip_column() for a simpler alternative.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -120960,8 +109604,6 @@ func (treeView *TreeView) SetTooltipCell(tooltip *Tooltip, path *TreePath, colum
 // Note that the signal handler sets the text with gtk_tooltip_set_markup(),
 // so &, <, etc have to be escaped in the text.
 //
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - column: integer, which is a valid column number for tree_view’s model.
@@ -120980,8 +109622,6 @@ func (treeView *TreeView) SetTooltipColumn(column int) {
 // SetTooltipRow sets the tip area of tooltip to be the area covered by the
 // row at path. See also gtk_tree_view_set_tooltip_column() for a simpler
 // alternative. See also gtk_tooltip_set_tip_area().
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -121005,8 +109645,6 @@ func (treeView *TreeView) SetTooltipRow(tooltip *Tooltip, path *TreePath) {
 // UnsetRowsDragDest undoes the effect of
 // gtk_tree_view_enable_model_drag_dest(). Calling this method sets
 // GtkTreeView:reorderable to FALSE.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 func (treeView *TreeView) UnsetRowsDragDest() {
 	var _arg0 *C.GtkTreeView // out
 
@@ -121019,8 +109657,6 @@ func (treeView *TreeView) UnsetRowsDragDest() {
 // UnsetRowsDragSource undoes the effect of
 // gtk_tree_view_enable_model_drag_source(). Calling this method sets
 // GtkTreeView:reorderable to FALSE.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 func (treeView *TreeView) UnsetRowsDragSource() {
 	var _arg0 *C.GtkTreeView // out
 
@@ -121139,8 +109775,6 @@ func (treeView *TreeView) moveCursor(step MovementStep, count int, extend, modif
 }
 
 // rowActivated activates the cell determined by path and column.
-//
-// Deprecated: Use gtk.ListView or gtk.ColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -121415,9 +110049,6 @@ func (treeView *TreeView) unselectAll() bool {
 // types related to the tree widget and how they work together, and to the
 // gtk.TreeView documentation for specifics about the CSS node structure for
 // treeviews and their headers.
-//
-// Deprecated: Use gtk.ColumnView and gtk.ColumnViewColumn instead of
-// gtk.TreeView to show a tabular list.
 type TreeViewColumn struct {
 	_ [0]func() // equal guard
 	coreglib.InitiallyUnowned
@@ -121457,8 +110088,6 @@ func (treeColumn *TreeViewColumn) ConnectClicked(f func()) coreglib.SignalHandle
 
 // NewTreeViewColumn creates a new GtkTreeViewColumn.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - treeViewColumn: newly created GtkTreeViewColumn.
@@ -121476,8 +110105,6 @@ func NewTreeViewColumn() *TreeViewColumn {
 
 // NewTreeViewColumnWithArea creates a new GtkTreeViewColumn using area to
 // render its cells.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -121510,8 +110137,6 @@ func NewTreeViewColumnWithArea(area CellAreaer) *TreeViewColumn {
 // column 2 of the model contains strings, you could have the “text” attribute
 // of a GtkCellRendererText get its values from column 2.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - cellRenderer: GtkCellRenderer to set attributes on.
@@ -121541,8 +110166,6 @@ func (treeColumn *TreeViewColumn) AddAttribute(cellRenderer CellRendererer, attr
 //
 // If the cell is not found in the column, start_pos and width are not changed
 // and FALSE is returned.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -121584,8 +110207,6 @@ func (treeColumn *TreeViewColumn) CellGetPosition(cellRenderer CellRendererer) (
 // CellGetSize obtains the width and height needed to render the column. This is
 // used primarily by the GtkTreeView.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - xOffset (optional): location to return x offset of a cell relative to
@@ -121621,9 +110242,7 @@ func (treeColumn *TreeViewColumn) CellGetSize() (xOffset, yOffset, width, height
 
 // CellIsVisible returns TRUE if any of the cells packed into the tree_column
 // are visible. For this to be meaningful, you must first initialize the cells
-// with gtk_tree_view_column_cell_set_cell_data()
-//
-// Deprecated: Use GtkColumnView instead.
+// with gtk_tree_view_column_cell_set_cell_data().
 //
 // The function returns the following values:
 //
@@ -121651,8 +110270,6 @@ func (treeColumn *TreeViewColumn) CellIsVisible() bool {
 // That is, for every attribute mapping in tree_column, it will get a value from
 // the set column on the iter, and use that value to set the attribute on the
 // cell renderer. This is used primarily by the GtkTreeView.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -121686,8 +110303,6 @@ func (treeColumn *TreeViewColumn) CellSetCellData(treeModel TreeModeller, iter *
 }
 
 // Clear unsets all the mappings on all renderers on the tree_column.
-//
-// Deprecated: Use GtkColumnView instead.
 func (treeColumn *TreeViewColumn) Clear() {
 	var _arg0 *C.GtkTreeViewColumn // out
 
@@ -121699,8 +110314,6 @@ func (treeColumn *TreeViewColumn) Clear() {
 
 // ClearAttributes clears all existing attributes previously set with
 // gtk_tree_view_column_set_attributes().
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -121719,8 +110332,6 @@ func (treeColumn *TreeViewColumn) ClearAttributes(cellRenderer CellRendererer) {
 
 // Clicked emits the “clicked” signal on the column. This function will only
 // work if tree_column is clickable.
-//
-// Deprecated: Use GtkColumnView instead.
 func (treeColumn *TreeViewColumn) Clicked() {
 	var _arg0 *C.GtkTreeViewColumn // out
 
@@ -121732,8 +110343,6 @@ func (treeColumn *TreeViewColumn) Clicked() {
 
 // FocusCell sets the current keyboard focus to be at cell, if the column
 // contains 2 or more editable and activatable cells.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -121752,8 +110361,6 @@ func (treeColumn *TreeViewColumn) FocusCell(cell CellRendererer) {
 
 // Alignment returns the current x alignment of tree_column. This value can
 // range between 0.0 and 1.0.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function returns the following values:
 //
@@ -121774,9 +110381,7 @@ func (treeColumn *TreeViewColumn) Alignment() float32 {
 	return _gfloat
 }
 
-// Button returns the button used in the treeview column header
-//
-// Deprecated: Use GtkColumnView instead.
+// Button returns the button used in the treeview column header.
 //
 // The function returns the following values:
 //
@@ -121815,8 +110420,6 @@ func (treeColumn *TreeViewColumn) Button() Widgetter {
 
 // Clickable returns TRUE if the user can click on the header for the column.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if user can click the column header.
@@ -121839,8 +110442,6 @@ func (treeColumn *TreeViewColumn) Clickable() bool {
 }
 
 // Expand returns TRUE if the column expands to fill available space.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function returns the following values:
 //
@@ -121867,8 +110468,6 @@ func (treeColumn *TreeViewColumn) Expand() bool {
 // be the actual displayed width of the column; for that, use
 // gtk_tree_view_column_get_width().
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - gint: fixed width of the column.
@@ -121890,8 +110489,6 @@ func (treeColumn *TreeViewColumn) FixedWidth() int {
 
 // MaxWidth returns the maximum width in pixels of the tree_column, or -1 if no
 // maximum width is set.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function returns the following values:
 //
@@ -121915,8 +110512,6 @@ func (treeColumn *TreeViewColumn) MaxWidth() int {
 // MinWidth returns the minimum width in pixels of the tree_column, or -1 if no
 // minimum width is set.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - gint: minimum width of the tree_column.
@@ -121937,8 +110532,6 @@ func (treeColumn *TreeViewColumn) MinWidth() int {
 }
 
 // Reorderable returns TRUE if the tree_column can be reordered by the user.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function returns the following values:
 //
@@ -121963,8 +110556,6 @@ func (treeColumn *TreeViewColumn) Reorderable() bool {
 
 // Resizable returns TRUE if the tree_column can be resized by the end user.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE, if the tree_column can be resized.
@@ -121987,8 +110578,6 @@ func (treeColumn *TreeViewColumn) Resizable() bool {
 }
 
 // Sizing returns the current type of tree_column.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function returns the following values:
 //
@@ -122014,8 +110603,6 @@ func (treeColumn *TreeViewColumn) Sizing() TreeViewColumnSizing {
 //
 // See gtk.TreeViewColumn.SetSortColumnID().
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - gint: current sort_column_id for this column, or -1 if this column can’t
@@ -122038,8 +110625,6 @@ func (treeColumn *TreeViewColumn) SortColumnID() int {
 
 // SortIndicator gets the value set by
 // gtk_tree_view_column_set_sort_indicator().
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function returns the following values:
 //
@@ -122064,8 +110649,6 @@ func (treeColumn *TreeViewColumn) SortIndicator() bool {
 
 // SortOrder gets the value set by gtk_tree_view_column_set_sort_order().
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - sortType: sort order the sort indicator is indicating.
@@ -122086,8 +110669,6 @@ func (treeColumn *TreeViewColumn) SortOrder() SortType {
 }
 
 // Spacing returns the spacing of tree_column.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function returns the following values:
 //
@@ -122110,8 +110691,6 @@ func (treeColumn *TreeViewColumn) Spacing() int {
 
 // Title returns the title of the widget.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - utf8: title of the column. This string should not be modified or freed.
@@ -122133,8 +110712,6 @@ func (treeColumn *TreeViewColumn) Title() string {
 
 // TreeView returns the GtkTreeView wherein tree_column has been inserted.
 // If column is currently not inserted in any tree view, NULL is returned.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function returns the following values:
 //
@@ -122172,8 +110749,6 @@ func (treeColumn *TreeViewColumn) TreeView() Widgetter {
 
 // Visible returns TRUE if tree_column is visible.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - ok: whether the column is visible or not. If it is visible, then the tree
@@ -122199,8 +110774,6 @@ func (treeColumn *TreeViewColumn) Visible() bool {
 // Widget returns the GtkWidget in the button on the column header.
 //
 // If a custom widget has not been set then NULL is returned.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function returns the following values:
 //
@@ -122238,8 +110811,6 @@ func (treeColumn *TreeViewColumn) Widget() Widgetter {
 
 // Width returns the current size of tree_column in pixels.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function returns the following values:
 //
 //   - gint: current width of tree_column.
@@ -122260,8 +110831,6 @@ func (treeColumn *TreeViewColumn) Width() int {
 }
 
 // XOffset returns the current X offset of tree_column in pixels.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function returns the following values:
 //
@@ -122285,8 +110854,6 @@ func (treeColumn *TreeViewColumn) XOffset() int {
 // PackEnd adds the cell to end of the column. If expand is FALSE, then the cell
 // is allocated no more space than it needs. Any unused space is divided evenly
 // between cells for which expand is TRUE.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -122313,8 +110880,6 @@ func (treeColumn *TreeViewColumn) PackEnd(cell CellRendererer, expand bool) {
 // FALSE, then the cell is allocated no more space than it needs. Any unused
 // space is divided evenly between cells for which expand is TRUE.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - cell: GtkCellRenderer.
@@ -122338,8 +110903,6 @@ func (treeColumn *TreeViewColumn) PackStart(cell CellRendererer, expand bool) {
 
 // QueueResize flags the column, and the cell renderers added to this column,
 // to have their sizes renegotiated.
-//
-// Deprecated: Use GtkColumnView instead.
 func (treeColumn *TreeViewColumn) QueueResize() {
 	var _arg0 *C.GtkTreeViewColumn // out
 
@@ -122352,8 +110915,6 @@ func (treeColumn *TreeViewColumn) QueueResize() {
 // SetAlignment sets the alignment of the title or custom widget inside the
 // column header. The alignment determines its location inside the button -- 0.0
 // for left, 0.5 for center, 1.0 for right.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -122375,8 +110936,6 @@ func (treeColumn *TreeViewColumn) SetAlignment(xalign float32) {
 // This function is used instead of the standard attributes mapping for setting
 // the column value, and should set the value of tree_column's cell renderer as
 // appropriate. func may be NULL to remove an older one.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -122406,8 +110965,6 @@ func (treeColumn *TreeViewColumn) SetCellDataFunc(cellRenderer CellRendererer, f
 // SetClickable sets the header to be active if clickable is TRUE. When the
 // header is active, then it can take keyboard focus, and can be clicked.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - clickable: TRUE if the header is active.
@@ -122432,8 +110989,6 @@ func (treeColumn *TreeViewColumn) SetClickable(clickable bool) {
 //
 // Along with “fixed-width”, the “expand” property changes when the column is
 // resized by the user.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -122464,8 +111019,6 @@ func (treeColumn *TreeViewColumn) SetExpand(expand bool) {
 // Along with “expand”, the “fixed-width” property changes when the column is
 // resized by the user.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - fixedWidth: new fixed width, in pixels, or -1.
@@ -122486,8 +111039,6 @@ func (treeColumn *TreeViewColumn) SetFixedWidth(fixedWidth int) {
 // max width if it’s the last column in a view. In this case, the column expands
 // to fill any extra space.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - maxWidth: maximum width of the column in pixels, or -1.
@@ -122506,8 +111057,6 @@ func (treeColumn *TreeViewColumn) SetMaxWidth(maxWidth int) {
 // SetMinWidth sets the minimum width of the tree_column. If min_width is -1,
 // then the minimum width is unset.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - minWidth: minimum width of the column in pixels, or -1.
@@ -122525,8 +111074,6 @@ func (treeColumn *TreeViewColumn) SetMinWidth(minWidth int) {
 
 // SetReorderable: if reorderable is TRUE, then the column can be reordered by
 // the end user dragging the header.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -122552,8 +111099,6 @@ func (treeColumn *TreeViewColumn) SetReorderable(reorderable bool) {
 // GTK_TREE_VIEW_COLUMN_AUTOSIZE, then the sizing mode is changed to
 // GTK_TREE_VIEW_COLUMN_GROW_ONLY.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - resizable: TRUE, if the column can be resized.
@@ -122572,8 +111117,6 @@ func (treeColumn *TreeViewColumn) SetResizable(resizable bool) {
 }
 
 // SetSizing sets the growth behavior of tree_column to type.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -122594,8 +111137,6 @@ func (treeColumn *TreeViewColumn) SetSizing(typ TreeViewColumnSizing) {
 // when this column is selected for sorting. Doing so makes the column header
 // clickable.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - sortColumnId: sort_column_id of the model to sort on.
@@ -122614,8 +111155,6 @@ func (treeColumn *TreeViewColumn) SetSortColumnID(sortColumnId int) {
 // SetSortIndicator: call this function with a setting of TRUE to display
 // an arrow in the header button indicating the column is sorted. Call
 // gtk_tree_view_column_set_sort_order() to change the direction of the arrow.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -122646,8 +111185,6 @@ func (treeColumn *TreeViewColumn) SetSortIndicator(setting bool) {
 // Note that you must have the sort indicator enabled to see anything when
 // calling this function; see gtk_tree_view_column_set_sort_indicator().
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - order: sort order that the sort indicator should indicate.
@@ -122665,8 +111202,6 @@ func (treeColumn *TreeViewColumn) SetSortOrder(order SortType) {
 
 // SetSpacing sets the spacing field of tree_column, which is the number of
 // pixels to place between cell renderers packed into it.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -122686,8 +111221,6 @@ func (treeColumn *TreeViewColumn) SetSpacing(spacing int) {
 // SetTitle sets the title of the tree_column. If a custom widget has been set,
 // then this value is ignored.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - title of the tree_column.
@@ -122705,8 +111238,6 @@ func (treeColumn *TreeViewColumn) SetTitle(title string) {
 }
 
 // SetVisible sets the visibility of tree_column.
-//
-// Deprecated: Use GtkColumnView instead.
 //
 // The function takes the following parameters:
 //
@@ -122728,8 +111259,6 @@ func (treeColumn *TreeViewColumn) SetVisible(visible bool) {
 // SetWidget sets the widget in the header to be widget. If widget is NULL, then
 // the header button is set with a GtkLabel set to the title of tree_column.
 //
-// Deprecated: Use GtkColumnView instead.
-//
 // The function takes the following parameters:
 //
 //   - widget (optional): child GtkWidget.
@@ -122745,199 +111274,6 @@ func (treeColumn *TreeViewColumn) SetWidget(widget Widgetter) {
 	C.gtk_tree_view_column_set_widget(_arg0, _arg1)
 	runtime.KeepAlive(treeColumn)
 	runtime.KeepAlive(widget)
-}
-
-// URILauncherOverrides contains methods that are overridable.
-type URILauncherOverrides struct {
-}
-
-func defaultURILauncherOverrides(v *URILauncher) URILauncherOverrides {
-	return URILauncherOverrides{}
-}
-
-// URILauncher: GtkUriLauncher object collects the arguments that are needed to
-// open a uri with an application.
-//
-// Depending on system configuration, user preferences and available APIs, this
-// may or may not show an app chooser dialog or launch the default application
-// right away.
-//
-// The operation is started with the gtk.URILauncher.Launch() function. This
-// API follows the GIO async pattern, and the result can be obtained by calling
-// gtk.URILauncher.LaunchFinish().
-//
-// To launch a file, use gtk.FileLauncher.
-type URILauncher struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*URILauncher)(nil)
-)
-
-func init() {
-	coreglib.RegisterClassInfo[*URILauncher, *URILauncherClass, URILauncherOverrides](
-		GTypeURILauncher,
-		initURILauncherClass,
-		wrapURILauncher,
-		defaultURILauncherOverrides,
-	)
-}
-
-func initURILauncherClass(gclass unsafe.Pointer, overrides URILauncherOverrides, classInitFunc func(*URILauncherClass)) {
-	if classInitFunc != nil {
-		class := (*URILauncherClass)(gextras.NewStructNative(gclass))
-		classInitFunc(class)
-	}
-}
-
-func wrapURILauncher(obj *coreglib.Object) *URILauncher {
-	return &URILauncher{
-		Object: obj,
-	}
-}
-
-func marshalURILauncher(p uintptr) (interface{}, error) {
-	return wrapURILauncher(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NewURILauncher creates a new GtkUriLauncher object.
-//
-// The function takes the following parameters:
-//
-//   - uri (optional) to open.
-//
-// The function returns the following values:
-//
-//   - uriLauncher: new GtkUriLauncher.
-func NewURILauncher(uri string) *URILauncher {
-	var _arg1 *C.char           // out
-	var _cret *C.GtkUriLauncher // in
-
-	if uri != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(uri)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	_cret = C.gtk_uri_launcher_new(_arg1)
-	runtime.KeepAlive(uri)
-
-	var _uriLauncher *URILauncher // out
-
-	_uriLauncher = wrapURILauncher(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-
-	return _uriLauncher
-}
-
-// URI gets the uri that will be opened.
-//
-// The function returns the following values:
-//
-//   - utf8 (optional): uri.
-func (self *URILauncher) URI() string {
-	var _arg0 *C.GtkUriLauncher // out
-	var _cret *C.char           // in
-
-	_arg0 = (*C.GtkUriLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_uri_launcher_get_uri(_arg0)
-	runtime.KeepAlive(self)
-
-	var _utf8 string // out
-
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	}
-
-	return _utf8
-}
-
-// Launch an application to open the uri.
-//
-// This may present an app chooser dialog to the user.
-//
-// The callback will be called when the operation is completed. It should call
-// gtk.URILauncher.LaunchFinish() to obtain the result.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable to cancel the operation.
-//   - parent (optional) GtkWindow.
-//   - callback (optional) to call when the operation is complete.
-func (self *URILauncher) Launch(ctx context.Context, parent *Window, callback gio.AsyncReadyCallback) {
-	var _arg0 *C.GtkUriLauncher     // out
-	var _arg2 *C.GCancellable       // out
-	var _arg1 *C.GtkWindow          // out
-	var _arg3 C.GAsyncReadyCallback // out
-	var _arg4 C.gpointer
-
-	_arg0 = (*C.GtkUriLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg2 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	if parent != nil {
-		_arg1 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(parent).Native()))
-	}
-	if callback != nil {
-		_arg3 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
-		_arg4 = C.gpointer(gbox.AssignOnce(callback))
-	}
-
-	C.gtk_uri_launcher_launch(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(parent)
-	runtime.KeepAlive(callback)
-}
-
-// LaunchFinish finishes the gtk.URILauncher.Launch() call and returns the
-// result.
-//
-// The function takes the following parameters:
-//
-//   - result: GAsyncResult.
-func (self *URILauncher) LaunchFinish(result gio.AsyncResulter) error {
-	var _arg0 *C.GtkUriLauncher // out
-	var _arg1 *C.GAsyncResult   // out
-	var _cerr *C.GError         // in
-
-	_arg0 = (*C.GtkUriLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GAsyncResult)(unsafe.Pointer(coreglib.InternObject(result).Native()))
-
-	C.gtk_uri_launcher_launch_finish(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(result)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// SetURI sets the uri that will be opened.
-//
-// The function takes the following parameters:
-//
-//   - uri (optional): uri.
-func (self *URILauncher) SetURI(uri string) {
-	var _arg0 *C.GtkUriLauncher // out
-	var _arg1 *C.char           // out
-
-	_arg0 = (*C.GtkUriLauncher)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if uri != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(uri)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	C.gtk_uri_launcher_set_uri(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(uri)
 }
 
 // VideoOverrides contains methods that are overridable.
@@ -123194,29 +111530,6 @@ func (self *Video) File() *gio.File {
 	return _file
 }
 
-// GraphicsOffload returns whether graphics offload is enabled.
-//
-// See gtk.GraphicsOffload for more information on graphics offload.
-//
-// The function returns the following values:
-//
-//   - graphicsOffloadEnabled graphics offload status.
-func (self *Video) GraphicsOffload() GraphicsOffloadEnabled {
-	var _arg0 *C.GtkVideo                 // out
-	var _cret C.GtkGraphicsOffloadEnabled // in
-
-	_arg0 = (*C.GtkVideo)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gtk_video_get_graphics_offload(_arg0)
-	runtime.KeepAlive(self)
-
-	var _graphicsOffloadEnabled GraphicsOffloadEnabled // out
-
-	_graphicsOffloadEnabled = GraphicsOffloadEnabled(_cret)
-
-	return _graphicsOffloadEnabled
-}
-
 // Loop returns TRUE if videos have been set to loop.
 //
 // The function returns the following values:
@@ -123337,25 +111650,6 @@ func (self *Video) SetFilename(filename string) {
 	runtime.KeepAlive(filename)
 }
 
-// SetGraphicsOffload sets whether to enable graphics offload.
-//
-// See gtk.GraphicsOffload for more information on graphics offload.
-//
-// The function takes the following parameters:
-//
-//   - enabled: new graphics offload status.
-func (self *Video) SetGraphicsOffload(enabled GraphicsOffloadEnabled) {
-	var _arg0 *C.GtkVideo                 // out
-	var _arg1 C.GtkGraphicsOffloadEnabled // out
-
-	_arg0 = (*C.GtkVideo)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GtkGraphicsOffloadEnabled(enabled)
-
-	C.gtk_video_set_graphics_offload(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(enabled)
-}
-
 // SetLoop sets whether new files loaded by self should be set to loop.
 //
 // The function takes the following parameters:
@@ -123435,10 +111729,7 @@ func (self *Video) SetResource(resourcePath string) {
 //
 // # Accessibility
 //
-// Until GTK 4.10, GtkViewport used the GTK_ACCESSIBLE_ROLE_GROUP role.
-//
-// Starting from GTK 4.12, GtkViewport uses the GTK_ACCESSIBLE_ROLE_GENERIC
-// role.
+// GtkViewport uses the GTK_ACCESSIBLE_ROLE_GROUP role.
 type Viewport struct {
 	_ [0]func() // equal guard
 	Widget
@@ -123576,33 +111867,6 @@ func (viewport *Viewport) ScrollToFocus() bool {
 	return _ok
 }
 
-// ScrollTo scrolls a descendant of the viewport into view.
-//
-// The viewport and the descendant must be visible and mapped for this function
-// to work, otherwise no scrolling will be performed.
-//
-// The function takes the following parameters:
-//
-//   - descendant widget of the viewport.
-//   - scroll (optional) details of how to perform the scroll operation or NULL
-//     to scroll into view.
-func (viewport *Viewport) ScrollTo(descendant Widgetter, scroll *ScrollInfo) {
-	var _arg0 *C.GtkViewport   // out
-	var _arg1 *C.GtkWidget     // out
-	var _arg2 *C.GtkScrollInfo // out
-
-	_arg0 = (*C.GtkViewport)(unsafe.Pointer(coreglib.InternObject(viewport).Native()))
-	_arg1 = (*C.GtkWidget)(unsafe.Pointer(coreglib.InternObject(descendant).Native()))
-	if scroll != nil {
-		_arg2 = (*C.GtkScrollInfo)(gextras.StructNative(unsafe.Pointer(scroll)))
-	}
-
-	C.gtk_viewport_scroll_to(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(viewport)
-	runtime.KeepAlive(descendant)
-	runtime.KeepAlive(scroll)
-}
-
 // SetChild sets the child widget of viewport.
 //
 // The function takes the following parameters:
@@ -123645,9 +111909,7 @@ func (viewport *Viewport) SetScrollToFocus(scrollToFocus bool) {
 // VolumeButton: GtkVolumeButton is a GtkScaleButton subclass tailored for
 // volume control.
 //
-// !An example GtkVolumeButton (volumebutton.png)
-//
-// Deprecated: This widget will be removed in GTK 5.
+// !An example GtkVolumeButton (volumebutton.png).
 type VolumeButton struct {
 	_ [0]func() // equal guard
 	ScaleButton
@@ -123677,14 +111939,6 @@ func wrapVolumeButton(obj *coreglib.Object) *VolumeButton {
 				},
 			},
 			Object: obj,
-			Accessible: Accessible{
-				Object: obj,
-			},
-			AccessibleRange: AccessibleRange{
-				Accessible: Accessible{
-					Object: obj,
-				},
-			},
 			Orientable: Orientable{
 				Object: obj,
 			},
@@ -123700,8 +111954,6 @@ func marshalVolumeButton(p uintptr) (interface{}, error) {
 //
 // The button has a range between 0.0 and 1.0, with a stepping of 0.02. Volume
 // values can be obtained and modified using the functions from gtk.ScaleButton.
-//
-// Deprecated: This widget will be removed in GTK 5.
 //
 // The function returns the following values:
 //
@@ -123733,12 +111985,9 @@ type WidgetOverrides struct {
 	// The function returns the following values:
 	//
 	//   - ok: TRUE if widget contains (x, y).
-	Contains func(x, y float64) bool
-	// DirectionChanged: signal emitted when the text direction of a widget
-	// changes.
+	Contains         func(x, y float64) bool
 	DirectionChanged func(previousDirection TextDirection)
-	// Focus: vfunc for gtk_widget_child_focus().
-	Focus func(direction DirectionType) bool
+	Focus            func(direction DirectionType) bool
 	// RequestMode gets whether the widget prefers a height-for-width layout or
 	// a width-for-height layout.
 	//
@@ -123767,8 +112016,6 @@ type WidgetOverrides struct {
 	// Hide reverses the effects of gtk_widget_show().
 	//
 	// This is causing the widget to be hidden (invisible to the user).
-	//
-	// Deprecated: Use gtk.Widget.SetVisible() instead.
 	Hide func()
 	// KeynavFailed emits the ::keynav-failed signal on the widget.
 	//
@@ -123851,12 +112098,7 @@ type WidgetOverrides struct {
 	//
 	//   - ok: TRUE if the signal has been handled.
 	MnemonicActivate func(groupCycling bool) bool
-	// MoveFocus: signal emitted when a change of focus is requested.
-	MoveFocus func(direction DirectionType)
-	// QueryTooltip: signal emitted when “has-tooltip” is TRUE and the hover
-	// timeout has expired with the cursor hovering “above” widget; or emitted
-	// when widget got focus in keyboard mode.
-	//
+	MoveFocus        func(direction DirectionType)
 	// The function takes the following parameters:
 	//
 	//   - x
@@ -123880,9 +112122,7 @@ type WidgetOverrides struct {
 	// a better approach is to connect to a signal that will be called after the
 	// widget is realized automatically, such as gtk.Widget::realize.
 	Realize func()
-	// Root: called when the widget gets added to a GtkRoot widget. Must chain
-	// up.
-	Root func()
+	Root    func()
 	// SetFocusChild: set child as the current focus child of widget.
 	//
 	// This function is only suitable for widget implementations. If you want a
@@ -123903,25 +112143,15 @@ type WidgetOverrides struct {
 	// When a toplevel container is shown, it is immediately realized and
 	// mapped; other shown widgets are realized and mapped when their toplevel
 	// container is realized and mapped.
-	//
-	// Deprecated: Use gtk.Widget.SetVisible() instead.
 	Show func()
-	// SizeAllocate: called to set the allocation, if the widget does not have a
-	// layout manager.
-	//
 	// The function takes the following parameters:
 	//
 	//   - width
 	//   - height
 	//   - baseline
-	SizeAllocate func(width, height, baseline int)
-	// Snapshot: vfunc called when a new snapshot of the widget has to be taken.
-	Snapshot func(snapshot *Snapshot)
-	// StateFlagsChanged: signal emitted when the widget state changes,
-	// see gtk_widget_get_state_flags().
-	StateFlagsChanged func(previousStateFlags StateFlags)
-	// SystemSettingChanged is emitted when a system setting was changed.
-	// Must chain up.
+	SizeAllocate         func(width, height, baseline int)
+	Snapshot             func(snapshot *Snapshot)
+	StateFlagsChanged    func(previousStateFlags StateFlags)
 	SystemSettingChanged func(settings SystemSetting)
 	// Unmap causes a widget to be unmapped if it’s currently mapped.
 	//
@@ -123932,9 +112162,7 @@ type WidgetOverrides struct {
 	//
 	// This function is only useful in widget implementations.
 	Unrealize func()
-	// Unroot: called when the widget is about to be removed from its GtkRoot
-	// widget. Must chain up.
-	Unroot func()
+	Unroot    func()
 }
 
 func defaultWidgetOverrides(v *Widget) WidgetOverrides {
@@ -124006,14 +112234,14 @@ func defaultWidgetOverrides(v *Widget) WidgetOverrides {
 // mode:
 //
 // First, the default minimum and natural width for each widget in the
-// interface will be computed using gtk.Widget.Measure() with an orientation
+// interface will be computed using gtk_widget_measure with an orientation
 // of GTK_ORIENTATION_HORIZONTAL and a for_size of -1. Because the preferred
 // widths for each widget depend on the preferred widths of their children, this
 // information propagates up the hierarchy, and finally a minimum and natural
-// width is determined for the entire toplevel. Next, the toplevel will use the
-// minimum width to query for the minimum height contextual to that width using
-// gtk.Widget.Measure() with an orientation of GTK_ORIENTATION_VERTICAL and a
-// for_size of the just computed width. This will also be a highly recursive
+// width is determined for the entire toplevel. Next, the toplevel will use
+// the minimum width to query for the minimum height contextual to that width
+// using gtk_widget_measure with an orientation of GTK_ORIENTATION_VERTICAL and
+// a for_size of the just computed width. This will also be a highly recursive
 // operation. The minimum height for the minimum width is normally used to set
 // the minimum size constraint on the toplevel.
 //
@@ -124097,13 +112325,13 @@ func defaultWidgetOverrides(v *Widget) WidgetOverrides {
 // GTK therefore does not allow this and will warn if you try to do it.
 //
 // Of course if you are getting the size request for another widget, such as
-// a child widget, you must use gtk.Widget.Measure(); otherwise, you would not
+// a child widget, you must use gtk_widget_measure; otherwise, you would not
 // properly consider widget margins, gtk.SizeGroup, and so forth.
 //
 // GTK also supports baseline vertical alignment of widgets. This means that
 // widgets are positioned such that the typographical baseline of widgets in
 // the same row are aligned. This happens if a widget supports baselines,
-// has a vertical alignment using baselines, and is inside a widget that
+// has a vertical alignment of GTK_ALIGN_BASELINE, and is inside a widget that
 // supports baselines and has a natural “row” that it aligns to the baseline,
 // or a baseline assigned to it by the grandparent.
 //
@@ -124113,8 +112341,9 @@ func defaultWidgetOverrides(v *Widget) WidgetOverrides {
 //
 // If a widget ends up baseline aligned it will be allocated all the space in
 // the parent as if it was GTK_ALIGN_FILL, but the selected baseline can be
-// found via gtk.Widget.GetBaseline(). If the baseline has a value other than -1
-// you need to align the widget such that the baseline appears at the position.
+// found via gtk_widget_get_allocated_baseline. If the baseline has a value
+// other than -1 you need to align the widget such that the baseline appears at
+// the position.
 //
 // # GtkWidget as GtkBuildable
 //
@@ -124183,12 +112412,12 @@ func defaultWidgetOverrides(v *Widget) WidgetOverrides {
 //
 // Unlike regular interface descriptions, gtk.WidgetClass.SetTemplate() will
 // expect a <template> tag as a direct child of the toplevel <interface> tag.
-// The <template> tag must specify the “class” attribute which must be the type
-// name of the widget. Optionally, the “parent” attribute may be specified
-// to specify the direct parent type of the widget type; this is ignored by
-// GtkBuilder but can be used by UI design tools to introspect what kind of
-// properties and internal children exist for a given type when the actual type
-// does not exist.
+// The <template> tag must specify the “class” attribute which must be
+// the type name of the widget. Optionally, the “parent” attribute may
+// be specified to specify the direct parent type of the widget type,
+// this is ignored by GtkBuilder but required for UI design tools like Glade
+// (https://glade.gnome.org/) to introspect what kind of properties and internal
+// children exist for a given type when the actual type does not exist.
 //
 // The XML which is contained inside the <template> tag behaves as if it were
 // added to the <object> tag defining the widget itself. You may set properties
@@ -124201,13 +112430,7 @@ func defaultWidgetOverrides(v *Widget) WidgetOverrides {
 // which might be referenced by other widgets declared as children of the
 // <template> tag.
 //
-// Since, unlike the <object> tag, the <template> tag does not contain an “id”
-// attribute, if you need to refer to the instance of the object itself that
-// the template will create, simply refer to the template class name in an
-// applicable element content.
-//
-// Here is an example of a template definition, which includes an example of
-// this in the <signal> tag:
+// An example of a template definition:
 //
 //	<interface>
 //	  <template class="FooWidget" parent="GtkBox">
@@ -124268,7 +112491,7 @@ func defaultWidgetOverrides(v *Widget) WidgetOverrides {
 //	}
 //
 // You can access widgets defined in the template using the
-// gtk.Widget.GetTemplateChild() function, but you will typically
+// gtk_widget_get_template_child function, but you will typically
 // declare a pointer in the instance private data structure of your
 // type using the same name as the widget in the template definition,
 // and call gtk.WidgetClass.BindTemplateChildFull() (or one of
@@ -124548,17 +112771,11 @@ func (widget *Widget) ConnectMnemonicActivate(f func(groupCycling bool) (ok bool
 }
 
 // ConnectMoveFocus is emitted when the focus is moved.
-//
-// The ::move-focus signal is a keybinding signal (class.SignalAction.html).
-//
-// The default bindings for this signal are <kbd>Tab</kbd> to move forward,
-// and <kbd>Shift</kbd>+<kbd>Tab</kbd> to move backward.
 func (widget *Widget) ConnectMoveFocus(f func(direction DirectionType)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(widget, "move-focus", false, unsafe.Pointer(C._gotk4_gtk4_Widget_ConnectMoveFocus), f)
 }
 
-// ConnectQueryTooltip is emitted when the widget’s tooltip is about to be
-// shown.
+// ConnectQueryTooltip is emitted when the widgets tooltip is about to be shown.
 //
 // This happens when the gtk.Widget:has-tooltip property is TRUE and the hover
 // timeout has expired with the cursor hovering "above" widget; or emitted when
@@ -124754,7 +112971,7 @@ func (widget *Widget) AddController(controller EventControllerer) {
 
 // AddCSSClass adds a style class to widget.
 //
-// After calling this function, the widget’s style will match for css_class,
+// After calling this function, the widgets style will match for css_class,
 // according to CSS matching rules.
 //
 // Use gtk.Widget.RemoveCSSClass() to remove the style again.
@@ -124940,9 +113157,7 @@ func (widget *Widget) ChildFocus(direction DirectionType) bool {
 // ComputeBounds computes the bounds for widget in the coordinate space of
 // target.
 //
-// The bounds of widget are (the bounding box of) the region that it is expected
-// to draw in. See the coordinate system (coordinates.html) overview to learn
-// more.
+// FIXME: Explain what "bounds" are.
 //
 // If the operation is successful, TRUE is returned. If widget has no bounds or
 // the bounds cannot be expressed in target's coordinate space (for example if
@@ -125074,9 +113289,6 @@ func (widget *Widget) ComputePoint(target Widgetter, point *graphene.Point) (*gr
 // The transform can not be computed in certain cases, for example when widget
 // and target do not share a common ancestor. In that case out_transform gets
 // set to the identity matrix.
-//
-// To learn more about widget coordinate systems, see the coordinate system
-// overview (coordinates.html).
 //
 // The function takes the following parameters:
 //
@@ -125324,8 +113536,6 @@ func (widget *Widget) ErrorBell() {
 // GtkWidgetClass.snapshot() function, and when allocating child widgets in
 // GtkWidgetClass.size_allocate().
 //
-// Deprecated: Use gtk.Widget.GetBaseline() instead.
-//
 // The function returns the following values:
 //
 //   - gint: baseline of the widget, or -1 if none.
@@ -125348,11 +113558,6 @@ func (widget *Widget) AllocatedBaseline() int {
 // AllocatedHeight returns the height that has currently been allocated to
 // widget.
 //
-// To learn more about widget sizes, see the coordinate system overview
-// (coordinates.html).
-//
-// Deprecated: Use gtk.Widget.GetHeight() instead.
-//
 // The function returns the following values:
 //
 //   - gint: height of the widget.
@@ -125373,11 +113578,6 @@ func (widget *Widget) AllocatedHeight() int {
 }
 
 // AllocatedWidth returns the width that has currently been allocated to widget.
-//
-// To learn more about widget sizes, see the coordinate system overview
-// (coordinates.html).
-//
-// Deprecated: Use gtk.Widget.GetWidth() instead.
 //
 // The function returns the following values:
 //
@@ -125412,9 +113612,6 @@ func (widget *Widget) AllocatedWidth() int {
 // So a layout container is guaranteed that its children stay inside the
 // assigned bounds, but not that they have exactly the bounds the container
 // assigned.
-//
-// Deprecated: Use gtk.Widget.ComputeBounds(), gtk.Widget.GetWidth() or
-// gtk.Widget.GetHeight() instead.
 //
 // The function returns the following values:
 //
@@ -125485,31 +113682,6 @@ func (widget *Widget) Ancestor(widgetType coreglib.Type) Widgetter {
 	}
 
 	return _ret
-}
-
-// Baseline returns the baseline that has currently been allocated to widget.
-//
-// This function is intended to be used when implementing handlers for the
-// GtkWidgetClass.snapshot() function, and when allocating child widgets in
-// GtkWidgetClass.size_allocate().
-//
-// The function returns the following values:
-//
-//   - gint: baseline of the widget, or -1 if none.
-func (widget *Widget) Baseline() int {
-	var _arg0 *C.GtkWidget // out
-	var _cret C.int        // in
-
-	_arg0 = (*C.GtkWidget)(unsafe.Pointer(coreglib.InternObject(widget).Native()))
-
-	_cret = C.gtk_widget_get_baseline(_arg0)
-	runtime.KeepAlive(widget)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
 }
 
 // CanFocus determines whether the input focus can enter widget or any of its
@@ -125619,30 +113791,6 @@ func (widget *Widget) Clipboard() *gdk.Clipboard {
 	}
 
 	return _clipboard
-}
-
-// Color gets the current foreground color for the widget’s CSS style.
-//
-// This function should only be used in snapshot implementations that need to do
-// custom drawing with the foreground color.
-//
-// The function returns the following values:
-//
-//   - color: return location for the color.
-func (widget *Widget) Color() *gdk.RGBA {
-	var _arg0 *C.GtkWidget // out
-	var _arg1 C.GdkRGBA    // in
-
-	_arg0 = (*C.GtkWidget)(unsafe.Pointer(coreglib.InternObject(widget).Native()))
-
-	C.gtk_widget_get_color(_arg0, &_arg1)
-	runtime.KeepAlive(widget)
-
-	var _color *gdk.RGBA // out
-
-	_color = (*gdk.RGBA)(gextras.NewStructNative(unsafe.Pointer((&_arg1))))
-
-	return _color
 }
 
 // CSSClasses returns the list of style classes applied to widget.
@@ -125790,7 +113938,7 @@ func (widget *Widget) Display() *gdk.Display {
 	return _display
 }
 
-// FirstChild returns the widget’s first child.
+// FirstChild returns the widgets first child.
 //
 // This API is primarily meant for widget implementations.
 //
@@ -126036,10 +114184,8 @@ func (widget *Widget) FrameClock() gdk.FrameClocker {
 
 // HAlign gets the horizontal alignment of widget.
 //
-// For backwards compatibility reasons this method will never return one of
-// the baseline alignments, but instead it will convert it to GTK_ALIGN_FILL or
-// GTK_ALIGN_CENTER.
-//
+// For backwards compatibility reasons this method will never return
+// GTK_ALIGN_BASELINE, but instead it will convert it to GTK_ALIGN_FILL.
 // Baselines are not supported for horizontal alignment.
 //
 // The function returns the following values:
@@ -126090,9 +114236,6 @@ func (widget *Widget) HasTooltip() bool {
 // which is the height you should be using in gtk.Widget.Snapshot().
 //
 // For pointer events, see gtk.Widget.Contains().
-//
-// To learn more about widget sizes, see the coordinate system overview
-// (coordinates.html).
 //
 // The function returns the following values:
 //
@@ -126180,7 +114323,7 @@ func (widget *Widget) HExpandSet() bool {
 	return _ok
 }
 
-// LastChild returns the widget’s last child.
+// LastChild returns the widgets last child.
 //
 // This API is primarily meant for widget implementations.
 //
@@ -126415,7 +114558,7 @@ func (widget *Widget) Native() *NativeSurface {
 	return _native
 }
 
-// NextSibling returns the widget’s next sibling.
+// NextSibling returns the widgets next sibling.
 //
 // This API is primarily meant for widget implementations.
 //
@@ -126476,7 +114619,7 @@ func (widget *Widget) Opacity() float64 {
 	return _gdouble
 }
 
-// Overflow returns the widget’s overflow value.
+// Overflow returns the widgets overflow value.
 //
 // The function returns the following values:
 //
@@ -126579,7 +114722,7 @@ func (widget *Widget) Parent() Widgetter {
 // height for the natural width is generally smaller than the required height
 // for the minimum width.
 //
-// Use gtk.Widget.Measure() if you want to support baseline alignment.
+// Use gtk_widget_measure if you want to support baseline alignment.
 //
 // The function returns the following values:
 //
@@ -126604,7 +114747,7 @@ func (widget *Widget) PreferredSize() (minimumSize, naturalSize *Requisition) {
 	return _minimumSize, _naturalSize
 }
 
-// PrevSibling returns the widget’s previous sibling.
+// PrevSibling returns the widgets previous sibling.
 //
 // This API is primarily meant for widget implementations.
 //
@@ -126870,9 +115013,6 @@ func (widget *Widget) Settings() *Settings {
 // orientation-independent code, such as when implementing gtk.Orientable
 // widgets.
 //
-// To learn more about widget sizes, see the coordinate system overview
-// (coordinates.html).
-//
 // The function takes the following parameters:
 //
 //   - orientation to query.
@@ -126963,11 +115103,9 @@ func (widget *Widget) StateFlags() StateFlags {
 //
 // The returned object is guaranteed to be the same for the lifetime of widget.
 //
-// Deprecated: Style contexts will be removed in GTK 5.
-//
 // The function returns the following values:
 //
-//   - styleContext widget’s GtkStyleContext.
+//   - styleContext widgets GtkStyleContext.
 func (widget *Widget) StyleContext() *StyleContext {
 	var _arg0 *C.GtkWidget       // out
 	var _cret *C.GtkStyleContext // in
@@ -127187,9 +115325,6 @@ func (widget *Widget) Visible() bool {
 //
 // For pointer events, see gtk.Widget.Contains().
 //
-// To learn more about widget sizes, see the coordinate system overview
-// (coordinates.html).
-//
 // The function returns the following values:
 //
 //   - gint: width of widget.
@@ -127357,8 +115492,6 @@ func (widget *Widget) HasVisibleFocus() bool {
 // Hide reverses the effects of gtk_widget_show().
 //
 // This is causing the widget to be hidden (invisible to the user).
-//
-// Deprecated: Use gtk.Widget.SetVisible() instead.
 func (widget *Widget) Hide() {
 	var _arg0 *C.GtkWidget // out
 
@@ -129027,6 +117160,9 @@ func (widget *Widget) SetVExpandSet(set bool) {
 // Note that setting this to TRUE doesn’t mean the widget is actually viewable,
 // see gtk.Widget.GetVisible().
 //
+// This function simply calls gtk.Widget.Show() or gtk.Widget.Hide() but is
+// nicer to use when the visibility of the widget depends on some condition.
+//
 // The function takes the following parameters:
 //
 //   - visible: whether the widget should be shown or not.
@@ -129081,8 +117217,6 @@ func (widget *Widget) ShouldLayout() bool {
 // When a toplevel container is shown, it is immediately realized and mapped;
 // other shown widgets are realized and mapped when their toplevel container is
 // realized and mapped.
-//
-// Deprecated: Use gtk.Widget.SetVisible() instead.
 func (widget *Widget) Show() {
 	var _arg0 *C.GtkWidget // out
 
@@ -129155,8 +117289,6 @@ func (widget *Widget) SnapshotChild(child Widgetter, snapshot *Snapshot) {
 // allocation to coordinates relative to dest_widget’s allocations.
 //
 // In order to perform this operation, both widget must share a common ancestor.
-//
-// Deprecated: Use gtk_widget_compute_point() instead.
 //
 // The function takes the following parameters:
 //
@@ -129313,7 +117445,6 @@ func (widget *Widget) contains(x, y float64) bool {
 	return _ok
 }
 
-// directionChanged: signal emitted when the text direction of a widget changes.
 func (widget *Widget) directionChanged(previousDirection TextDirection) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.direction_changed
@@ -129329,7 +117460,6 @@ func (widget *Widget) directionChanged(previousDirection TextDirection) {
 	runtime.KeepAlive(previousDirection)
 }
 
-// Focus: vfunc for gtk_widget_child_focus().
 func (widget *Widget) focus(direction DirectionType) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.focus
@@ -129420,8 +117550,6 @@ func (widget *Widget) grabFocus() bool {
 // Hide reverses the effects of gtk_widget_show().
 //
 // This is causing the widget to be hidden (invisible to the user).
-//
-// Deprecated: Use gtk.Widget.SetVisible() instead.
 func (widget *Widget) hide() {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.hide
@@ -129605,7 +117733,6 @@ func (widget *Widget) mnemonicActivate(groupCycling bool) bool {
 	return _ok
 }
 
-// moveFocus: signal emitted when a change of focus is requested.
 func (widget *Widget) moveFocus(direction DirectionType) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.move_focus
@@ -129621,10 +117748,6 @@ func (widget *Widget) moveFocus(direction DirectionType) {
 	runtime.KeepAlive(direction)
 }
 
-// queryTooltip: signal emitted when “has-tooltip” is TRUE and the hover timeout
-// has expired with the cursor hovering “above” widget; or emitted when widget
-// got focus in keyboard mode.
-//
 // The function takes the following parameters:
 //
 //   - x
@@ -129692,7 +117815,6 @@ func (widget *Widget) realize() {
 	runtime.KeepAlive(widget)
 }
 
-// Root: called when the widget gets added to a GtkRoot widget. Must chain up.
 func (widget *Widget) root() {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.root
@@ -129741,8 +117863,6 @@ func (widget *Widget) setFocusChild(child Widgetter) {
 // When a toplevel container is shown, it is immediately realized and mapped;
 // other shown widgets are realized and mapped when their toplevel container is
 // realized and mapped.
-//
-// Deprecated: Use gtk.Widget.SetVisible() instead.
 func (widget *Widget) show() {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.show
@@ -129755,9 +117875,6 @@ func (widget *Widget) show() {
 	runtime.KeepAlive(widget)
 }
 
-// sizeAllocate: called to set the allocation, if the widget does not have a
-// layout manager.
-//
 // The function takes the following parameters:
 //
 //   - width
@@ -129784,7 +117901,6 @@ func (widget *Widget) sizeAllocate(width, height, baseline int) {
 	runtime.KeepAlive(baseline)
 }
 
-// Snapshot: vfunc called when a new snapshot of the widget has to be taken.
 func (widget *Widget) snapshot(snapshot *Snapshot) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.snapshot
@@ -129800,8 +117916,6 @@ func (widget *Widget) snapshot(snapshot *Snapshot) {
 	runtime.KeepAlive(snapshot)
 }
 
-// stateFlagsChanged: signal emitted when the widget state changes, see
-// gtk_widget_get_state_flags().
 func (widget *Widget) stateFlagsChanged(previousStateFlags StateFlags) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.state_flags_changed
@@ -129817,8 +117931,6 @@ func (widget *Widget) stateFlagsChanged(previousStateFlags StateFlags) {
 	runtime.KeepAlive(previousStateFlags)
 }
 
-// systemSettingChanged is emitted when a system setting was changed. Must chain
-// up.
 func (widget *Widget) systemSettingChanged(settings SystemSetting) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.system_setting_changed
@@ -129865,8 +117977,6 @@ func (widget *Widget) unrealize() {
 	runtime.KeepAlive(widget)
 }
 
-// Unroot: called when the widget is about to be removed from its GtkRoot
-// widget. Must chain up.
 func (widget *Widget) unroot() {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.unroot
@@ -130065,18 +118175,11 @@ func (self *WidgetPaintable) SetWidget(widget Widgetter) {
 
 // WindowOverrides contains methods that are overridable.
 type WindowOverrides struct {
-	// ActivateDefault activates the default widget for the window.
 	ActivateDefault func()
-	// ActivateFocus activates the current focused widget within the window.
-	ActivateFocus func()
-	// CloseRequest class handler for the GtkWindow::close-request signal.
-	CloseRequest func() bool
-	// EnableDebugging class handler for the GtkWindow::enable-debugging
-	// keybinding signal.
+	ActivateFocus   func()
+	CloseRequest    func() bool
 	EnableDebugging func(toggle bool) bool
-	// KeysChanged: signal gets emitted when the set of accelerators or
-	// mnemonics that are associated with window changes.
-	KeysChanged func()
+	KeysChanged     func()
 }
 
 func defaultWindowOverrides(v *Window) WindowOverrides {
@@ -130133,9 +118236,7 @@ func defaultWindowOverrides(v *Window) WindowOverrides {
 //
 // # Accessibility
 //
-// Until GTK 4.10, GtkWindow used the GTK_ACCESSIBLE_ROLE_WINDOW role.
-//
-// Since GTK 4.12, GtkWindow uses the GTK_ACCESSIBLE_ROLE_APPLICATION role.
+// GtkWindow uses the GTK_ACCESSIBLE_ROLE_WINDOW role.
 //
 // # Actions
 //
@@ -130343,7 +118444,7 @@ func (window *Window) Destroy() {
 // Fullscreen asks to place window in the fullscreen state.
 //
 // Note that you shouldn’t assume the window is definitely fullscreen afterward,
-// because other entities (e.g. the user or window manager) unfullscreen it
+// because other entities (e.g. the user or window manager unfullscreen it
 // again, and not all window managers honor requests to fullscreen windows.
 //
 // You can track the result of this operation via the gdk.Toplevel:state
@@ -130470,10 +118571,6 @@ func (window *Window) Decorated() bool {
 // A value of 0 for the width or height indicates that a default size has not
 // been explicitly set for that dimension, so the “natural” size of the window
 // will be used.
-//
-// This function is the recommended way for
-// [saving window state across restarts of
-// applications](https://developer.gnome.org/documentation/tutorials/save-state.html).
 //
 // The function returns the following values:
 //
@@ -131007,36 +119104,10 @@ func (window *Window) IsMaximized() bool {
 	return _ok
 }
 
-// IsSuspended retrieves the current suspended state of window.
-//
-// A window being suspended means it's currently not visible to the user,
-// for example by being on a inactive workspace, minimized, obstructed.
-//
-// The function returns the following values:
-//
-//   - ok: whether the window is suspended.
-func (window *Window) IsSuspended() bool {
-	var _arg0 *C.GtkWindow // out
-	var _cret C.gboolean   // in
-
-	_arg0 = (*C.GtkWindow)(unsafe.Pointer(coreglib.InternObject(window).Native()))
-
-	_cret = C.gtk_window_is_suspended(_arg0)
-	runtime.KeepAlive(window)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
 // Maximize asks to maximize window, so that it fills the screen.
 //
 // Note that you shouldn’t assume the window is definitely maximized afterward,
-// because other entities (e.g. the user or window manager) could unmaximize it
+// because other entities (e.g. the user or window manager could unmaximize it
 // again, and not all window managers support maximization.
 //
 // It’s permitted to call this function before showing a window, in which case
@@ -131058,7 +119129,7 @@ func (window *Window) Maximize() {
 //
 // Note that you shouldn’t assume the window is definitely minimized afterward,
 // because the windowing system might not support this functionality; other
-// entities (e.g. the user or the window manager) could unminimize it again, or
+// entities (e.g. the user or the window manager could unminimize it again, or
 // there may not be a window manager in which case minimization isn’t possible,
 // etc.
 //
@@ -131077,11 +119148,9 @@ func (window *Window) Minimize() {
 
 // Present presents a window to the user.
 //
-// This may mean raising the window in the stacking order, unminimizing it,
-// moving it to the current desktop and/or giving it the keyboard focus
-// (possibly dependent on the user’s platform, window manager and preferences).
-//
-// If window is hidden, this function also makes it visible.
+// This function should not be used as when it is called, it is too late
+// to gather a valid timestamp to allow focus stealing prevention to work
+// correctly.
 func (window *Window) Present() {
 	var _arg0 *C.GtkWindow // out
 
@@ -131091,16 +119160,24 @@ func (window *Window) Present() {
 	runtime.KeepAlive(window)
 }
 
-// PresentWithTime presents a window to the user in response to an user
-// interaction.
+// PresentWithTime presents a window to the user.
 //
-// See gtk.Window.Present() for more details.
+// This may mean raising the window in the stacking order, unminimizing it,
+// moving it to the current desktop, and/or giving it the keyboard focus,
+// possibly dependent on the user’s platform, window manager, and preferences.
 //
-// The timestamp should be gathered when the window was requested to be shown
-// (when clicking a link for example), rather than once the window is ready to
-// be shown.
+// If window is hidden, this function calls gtk.Widget.Show() as well.
 //
-// Deprecated: Use gtk_window_present().
+// This function should be used when the user tries to open a window that’s
+// already open. Say for example the preferences dialog is currently open,
+// and the user chooses Preferences from the menu a second time; use
+// gtk.Window.Present() to move the already-open dialog where the user can see
+// it.
+//
+// Presents a window to the user in response to a user interaction. The
+// timestamp should be gathered when the window was requested to be shown (when
+// clicking a link for example), rather than once the window is ready to be
+// shown.
 //
 // The function takes the following parameters:
 //
@@ -131199,19 +119276,8 @@ func (window *Window) SetDecorated(setting bool) {
 
 // SetDefaultSize sets the default size of a window.
 //
-// The default size of a window is the size that will be used if no other
-// constraints apply.
-//
-// The default size will be updated whenever the window is resized to reflect
-// the new size, unless the window is forced to a size, like when it is
-// maximized or fullscreened.
-//
-// If the window’s minimum size request is larger than the default, the default
-// will be ignored.
-//
-// Setting the default size to a value <= 0 will cause it to be ignored and the
-// natural size request will be used instead. It is possible to do this while
-// the window is showing to "reset" it to its initial size.
+// If the window’s “natural” size (its size request) is larger than the default,
+// the default will be ignored.
 //
 // Unlike gtk.Widget.SetSizeRequest(), which sets a size request for a widget
 // and thus would keep users from shrinking the window, this function only sets
@@ -131219,6 +119285,13 @@ func (window *Window) SetDecorated(setting bool) {
 // Users can still shrink the window again as they normally would. Setting a
 // default size of -1 means to use the “natural” default size (the size request
 // of the window).
+//
+// The default size of a window only affects the first time a window is shown;
+// if a window is hidden and re-shown, it will remember the size it had prior to
+// hiding, rather than using the default size.
+//
+// Windows can’t actually be 0x0 in size, they must be at least 1x1, but passing
+// 0 for width and height is OK, resulting in a 1x1 default size.
 //
 // If you use this function to reestablish a previously saved window size,
 // note that the appropriate size to save is the one returned by
@@ -131367,9 +119440,6 @@ func (window *Window) SetFocus(focus Widgetter) {
 
 // SetFocusVisible sets whether “focus rectangles” are supposed to be visible.
 //
-// This property is maintained by GTK based on user input, and should not be set
-// by applications.
-//
 // The function takes the following parameters:
 //
 //   - setting: new value.
@@ -131454,9 +119524,6 @@ func (window *Window) SetIconName(name string) {
 }
 
 // SetMnemonicsVisible sets whether mnemonics are supposed to be visible.
-//
-// This property is maintained by GTK based on user input, and should not be set
-// by applications.
 //
 // The function takes the following parameters:
 //
@@ -131637,7 +119704,7 @@ func (window *Window) SetTransientFor(parent *Window) {
 // its previous state.
 //
 // Note that you shouldn’t assume the window is definitely not fullscreen
-// afterward, because other entities (e.g. the user or window manager)
+// afterward, because other entities (e.g. the user or window manager
 // could fullscreen it again, and not all window managers honor requests to
 // unfullscreen windows; normally the window will end up restored to its normal
 // state. Just don’t write code that crashes if not.
@@ -131657,7 +119724,7 @@ func (window *Window) Unfullscreen() {
 // Unmaximize asks to unmaximize window.
 //
 // Note that you shouldn’t assume the window is definitely unmaximized
-// afterward, because other entities (e.g. the user or window manager) maximize
+// afterward, because other entities (e.g. the user or window manager maximize
 // it again, and not all window managers honor requests to unmaximize.
 //
 // You can track the result of this operation via the gdk.Toplevel:state
@@ -131676,7 +119743,7 @@ func (window *Window) Unmaximize() {
 //
 // Note that you shouldn’t assume the window is definitely unminimized
 // afterward, because the windowing system might not support this functionality;
-// other entities (e.g. the user or the window manager) could minimize it again,
+// other entities (e.g. the user or the window manager could minimize it again,
 // or there may not be a window manager in which case minimization isn’t
 // possible, etc.
 //
@@ -131690,7 +119757,6 @@ func (window *Window) Unminimize() {
 	runtime.KeepAlive(window)
 }
 
-// activateDefault activates the default widget for the window.
 func (window *Window) activateDefault() {
 	gclass := (*C.GtkWindowClass)(coreglib.PeekParentClass(window))
 	fnarg := gclass.activate_default
@@ -131703,7 +119769,6 @@ func (window *Window) activateDefault() {
 	runtime.KeepAlive(window)
 }
 
-// activateFocus activates the current focused widget within the window.
 func (window *Window) activateFocus() {
 	gclass := (*C.GtkWindowClass)(coreglib.PeekParentClass(window))
 	fnarg := gclass.activate_focus
@@ -131716,7 +119781,6 @@ func (window *Window) activateFocus() {
 	runtime.KeepAlive(window)
 }
 
-// closeRequest class handler for the GtkWindow::close-request signal.
 func (window *Window) closeRequest() bool {
 	gclass := (*C.GtkWindowClass)(coreglib.PeekParentClass(window))
 	fnarg := gclass.close_request
@@ -131738,8 +119802,6 @@ func (window *Window) closeRequest() bool {
 	return _ok
 }
 
-// enableDebugging class handler for the GtkWindow::enable-debugging keybinding
-// signal.
 func (window *Window) enableDebugging(toggle bool) bool {
 	gclass := (*C.GtkWindowClass)(coreglib.PeekParentClass(window))
 	fnarg := gclass.enable_debugging
@@ -131766,8 +119828,6 @@ func (window *Window) enableDebugging(toggle bool) bool {
 	return _ok
 }
 
-// keysChanged: signal gets emitted when the set of accelerators or mnemonics
-// that are associated with window changes.
 func (window *Window) keysChanged() {
 	gclass := (*C.GtkWindowClass)(coreglib.PeekParentClass(window))
 	fnarg := gclass.keys_changed
@@ -131876,10 +119936,10 @@ func WindowListToplevels() []Widgetter {
 // startup notification.
 //
 // By default, after showing the first GtkWindow, GTK calls
-// gdk.Toplevel.SetStartupID(). Call this function to disable the automatic
-// startup notification. You might do this if your first window is a splash
-// screen, and you want to delay notification until after your real main window
-// has been shown, for example.
+// gdk.Display.NotifyStartupComplete(). Call this function to disable the
+// automatic startup notification. You might do this if your first window is a
+// splash screen, and you want to delay notification until after your real main
+// window has been shown, for example.
 //
 // In that example, you would disable startup notification temporarily, show
 // your splash screen, then re-enable it so that showing the main window would
@@ -132342,10 +120402,7 @@ func defaultWindowHandleOverrides(v *WindowHandle) WindowHandleOverrides {
 //
 // # Accessibility
 //
-// Until GTK 4.10, GtkWindowHandle used the GTK_ACCESSIBLE_ROLE_GROUP role.
-//
-// Starting from GTK 4.12, GtkWindowHandle uses the GTK_ACCESSIBLE_ROLE_GENERIC
-// role.
+// GtkWindowHandle uses the GTK_ACCESSIBLE_ROLE_GROUP role.
 type WindowHandle struct {
 	_ [0]func() // equal guard
 	Widget
@@ -132467,205 +120524,6 @@ func (self *WindowHandle) SetChild(child Widgetter) {
 	runtime.KeepAlive(child)
 }
 
-// AccessibleInterface: common interface for accessible objects.
-//
-// An instance of this type is always passed by reference.
-type AccessibleInterface struct {
-	*accessibleInterface
-}
-
-// accessibleInterface is the struct that's finalized.
-type accessibleInterface struct {
-	native *C.GtkAccessibleInterface
-}
-
-// AccessibleList: boxed type which wraps a list of references to GtkAccessible
-// objects.
-//
-// An instance of this type is always passed by reference.
-type AccessibleList struct {
-	*accessibleList
-}
-
-// accessibleList is the struct that's finalized.
-type accessibleList struct {
-	native *C.GtkAccessibleList
-}
-
-func marshalAccessibleList(p uintptr) (interface{}, error) {
-	b := coreglib.ValueFromNative(unsafe.Pointer(p)).Boxed()
-	return &AccessibleList{&accessibleList{(*C.GtkAccessibleList)(b)}}, nil
-}
-
-// NewAccessibleListFromArray constructs a struct AccessibleList.
-func NewAccessibleListFromArray(accessibles []Accessibler) *AccessibleList {
-	var _arg1 **C.GtkAccessible // out
-	var _arg2 C.gsize
-	var _cret *C.GtkAccessibleList // in
-
-	_arg2 = (C.gsize)(len(accessibles))
-	_arg1 = (**C.GtkAccessible)(C.calloc(C.size_t(len(accessibles)), C.size_t(unsafe.Sizeof(uint(0)))))
-	defer C.free(unsafe.Pointer(_arg1))
-	{
-		out := unsafe.Slice((**C.GtkAccessible)(_arg1), len(accessibles))
-		for i := range accessibles {
-			out[i] = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(accessibles[i]).Native()))
-		}
-	}
-
-	_cret = C.gtk_accessible_list_new_from_array(_arg1, _arg2)
-	runtime.KeepAlive(accessibles)
-
-	var _accessibleList *AccessibleList // out
-
-	_accessibleList = (*AccessibleList)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_accessibleList)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.free(intern.C)
-		},
-	)
-
-	return _accessibleList
-}
-
-// NewAccessibleListFromList constructs a struct AccessibleList.
-func NewAccessibleListFromList(list []Accessibler) *AccessibleList {
-	var _arg1 *C.GList             // out
-	var _cret *C.GtkAccessibleList // in
-
-	for i := len(list) - 1; i >= 0; i-- {
-		src := list[i]
-		var dst *C.GtkAccessible // out
-		dst = (*C.GtkAccessible)(unsafe.Pointer(coreglib.InternObject(src).Native()))
-		_arg1 = C.g_list_prepend(_arg1, C.gpointer(unsafe.Pointer(dst)))
-	}
-	defer C.g_list_free(_arg1)
-
-	_cret = C.gtk_accessible_list_new_from_list(_arg1)
-	runtime.KeepAlive(list)
-
-	var _accessibleList *AccessibleList // out
-
-	_accessibleList = (*AccessibleList)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_accessibleList)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.free(intern.C)
-		},
-	)
-
-	return _accessibleList
-}
-
-// Objects gets the list of objects this boxed type holds.
-//
-// The function returns the following values:
-//
-//   - list: shallow copy of the objects.
-func (accessibleList *AccessibleList) Objects() []*Accessible {
-	var _arg0 *C.GtkAccessibleList // out
-	var _cret *C.GList             // in
-
-	_arg0 = (*C.GtkAccessibleList)(gextras.StructNative(unsafe.Pointer(accessibleList)))
-
-	_cret = C.gtk_accessible_list_get_objects(_arg0)
-	runtime.KeepAlive(accessibleList)
-
-	var _list []*Accessible // out
-
-	_list = make([]*Accessible, 0, gextras.ListSize(unsafe.Pointer(_cret)))
-	gextras.MoveList(unsafe.Pointer(_cret), true, func(v unsafe.Pointer) {
-		src := (*C.GtkAccessible)(v)
-		var dst *Accessible // out
-		dst = wrapAccessible(coreglib.Take(unsafe.Pointer(src)))
-		_list = append(_list, dst)
-	})
-
-	return _list
-}
-
-// AccessibleRangeInterface: instance of this type is always passed by
-// reference.
-type AccessibleRangeInterface struct {
-	*accessibleRangeInterface
-}
-
-// accessibleRangeInterface is the struct that's finalized.
-type accessibleRangeInterface struct {
-	native *C.GtkAccessibleRangeInterface
-}
-
-// AccessibleTextInterface: interface vtable for accessible objects containing
-// text.
-//
-// An instance of this type is always passed by reference.
-type AccessibleTextInterface struct {
-	*accessibleTextInterface
-}
-
-// accessibleTextInterface is the struct that's finalized.
-type accessibleTextInterface struct {
-	native *C.GtkAccessibleTextInterface
-}
-
-// AccessibleTextRange: range inside the text of an accessible object.
-//
-// An instance of this type is always passed by reference.
-type AccessibleTextRange struct {
-	*accessibleTextRange
-}
-
-// accessibleTextRange is the struct that's finalized.
-type accessibleTextRange struct {
-	native *C.GtkAccessibleTextRange
-}
-
-// NewAccessibleTextRange creates a new AccessibleTextRange instance from the given
-// fields. Beware that this function allocates on the Go heap; be careful
-// when using it!
-func NewAccessibleTextRange(start, length uint) AccessibleTextRange {
-	var f0 C.gsize // out
-	f0 = C.gsize(start)
-	var f1 C.gsize // out
-	f1 = C.gsize(length)
-
-	v := C.GtkAccessibleTextRange{
-		start:  f0,
-		length: f1,
-	}
-
-	return *(*AccessibleTextRange)(gextras.NewStructNative(unsafe.Pointer(&v)))
-}
-
-// Start: start of the range, in characters.
-func (a *AccessibleTextRange) Start() uint {
-	valptr := &a.native.start
-	var _v uint // out
-	_v = uint(*valptr)
-	return _v
-}
-
-// Length: length of the range, in characters.
-func (a *AccessibleTextRange) Length() uint {
-	valptr := &a.native.length
-	var _v uint // out
-	_v = uint(*valptr)
-	return _v
-}
-
-// Start: start of the range, in characters.
-func (a *AccessibleTextRange) SetStart(start uint) {
-	valptr := &a.native.start
-	*valptr = C.gsize(start)
-}
-
-// Length: length of the range, in characters.
-func (a *AccessibleTextRange) SetLength(length uint) {
-	valptr := &a.native.length
-	*valptr = C.gsize(length)
-}
-
 // ActionableInterface: interface vtable for GtkActionable.
 //
 // An instance of this type is always passed by reference.
@@ -132686,16 +120544,6 @@ type AdjustmentClass struct {
 // adjustmentClass is the struct that's finalized.
 type adjustmentClass struct {
 	native *C.GtkAdjustmentClass
-}
-
-// AlertDialogClass: instance of this type is always passed by reference.
-type AlertDialogClass struct {
-	*alertDialogClass
-}
-
-// alertDialogClass is the struct that's finalized.
-type alertDialogClass struct {
-	native *C.GtkAlertDialogClass
 }
 
 // ApplicationClass: instance of this type is always passed by reference.
@@ -133233,7 +121081,7 @@ func (self *Bitset) IsEmpty() bool {
 //
 // The function takes the following parameters:
 //
-//   - value to remove.
+//   - value to add.
 //
 // The function returns the following values:
 //
@@ -134070,50 +121918,6 @@ type colorChooserInterface struct {
 	native *C.GtkColorChooserInterface
 }
 
-// ColorDialogButtonClass: instance of this type is always passed by reference.
-type ColorDialogButtonClass struct {
-	*colorDialogButtonClass
-}
-
-// colorDialogButtonClass is the struct that's finalized.
-type colorDialogButtonClass struct {
-	native *C.GtkColorDialogButtonClass
-}
-
-func (c *ColorDialogButtonClass) ParentClass() *WidgetClass {
-	valptr := &c.native.parent_class
-	var _v *WidgetClass // out
-	_v = (*WidgetClass)(gextras.NewStructNative(unsafe.Pointer(valptr)))
-	return _v
-}
-
-// ColorDialogClass: instance of this type is always passed by reference.
-type ColorDialogClass struct {
-	*colorDialogClass
-}
-
-// colorDialogClass is the struct that's finalized.
-type colorDialogClass struct {
-	native *C.GtkColorDialogClass
-}
-
-// ColumnViewSorterClass: instance of this type is always passed by reference.
-type ColumnViewSorterClass struct {
-	*columnViewSorterClass
-}
-
-// columnViewSorterClass is the struct that's finalized.
-type columnViewSorterClass struct {
-	native *C.GtkColumnViewSorterClass
-}
-
-func (c *ColumnViewSorterClass) ParentClass() *SorterClass {
-	valptr := &c.native.parent_class
-	var _v *SorterClass // out
-	_v = (*SorterClass)(gextras.NewStructNative(unsafe.Pointer(valptr)))
-	return _v
-}
-
 // ComboBoxClass: instance of this type is always passed by reference.
 type ComboBoxClass struct {
 	*comboBoxClass
@@ -134187,7 +121991,19 @@ func (c *ConstraintLayoutClass) ParentClass() *LayoutManagerClass {
 	return _v
 }
 
-// CSSLocation: instance of this type is always passed by reference.
+// CSSLocation represents a location in a file or other source of data parsed by
+// the CSS engine.
+//
+// The bytes and line_bytes offsets are meant to be used to programmatically
+// match data. The lines and line_chars offsets can be used for printing the
+// location in a file.
+//
+// Note that the lines parameter starts from 0 and is increased whenever a CSS
+// line break is encountered. (CSS defines the C character sequences "\r\n",
+// "\r", "\n" and "\f" as newlines.) If your document uses different rules for
+// line breaking, you might want run into problems here.
+//
+// An instance of this type is always passed by reference.
 type CSSLocation struct {
 	*cssLocation
 }
@@ -134223,6 +122039,7 @@ func NewCSSLocation(bytes, chars, lines, lineBytes, lineChars uint) CSSLocation 
 	return *(*CSSLocation)(gextras.NewStructNative(unsafe.Pointer(&v)))
 }
 
+// Bytes: number of bytes parsed since the beginning.
 func (c *CSSLocation) Bytes() uint {
 	valptr := &c.native.bytes
 	var _v uint // out
@@ -134230,6 +122047,7 @@ func (c *CSSLocation) Bytes() uint {
 	return _v
 }
 
+// Chars: number of characters parsed since the beginning.
 func (c *CSSLocation) Chars() uint {
 	valptr := &c.native.chars
 	var _v uint // out
@@ -134237,6 +122055,8 @@ func (c *CSSLocation) Chars() uint {
 	return _v
 }
 
+// Lines: number of full lines that have been parsed. If you want to display
+// this as a line number, you need to add 1 to this.
 func (c *CSSLocation) Lines() uint {
 	valptr := &c.native.lines
 	var _v uint // out
@@ -134244,6 +122064,7 @@ func (c *CSSLocation) Lines() uint {
 	return _v
 }
 
+// LineBytes: number of bytes parsed since the last line break.
 func (c *CSSLocation) LineBytes() uint {
 	valptr := &c.native.line_bytes
 	var _v uint // out
@@ -134251,6 +122072,7 @@ func (c *CSSLocation) LineBytes() uint {
 	return _v
 }
 
+// LineChars: number of characters parsed since the last line break.
 func (c *CSSLocation) LineChars() uint {
 	valptr := &c.native.line_chars
 	var _v uint // out
@@ -134258,26 +122080,32 @@ func (c *CSSLocation) LineChars() uint {
 	return _v
 }
 
+// Bytes: number of bytes parsed since the beginning.
 func (c *CSSLocation) SetBytes(bytes uint) {
 	valptr := &c.native.bytes
 	*valptr = C.gsize(bytes)
 }
 
+// Chars: number of characters parsed since the beginning.
 func (c *CSSLocation) SetChars(chars uint) {
 	valptr := &c.native.chars
 	*valptr = C.gsize(chars)
 }
 
+// Lines: number of full lines that have been parsed. If you want to display
+// this as a line number, you need to add 1 to this.
 func (c *CSSLocation) SetLines(lines uint) {
 	valptr := &c.native.lines
 	*valptr = C.gsize(lines)
 }
 
+// LineBytes: number of bytes parsed since the last line break.
 func (c *CSSLocation) SetLineBytes(lineBytes uint) {
 	valptr := &c.native.line_bytes
 	*valptr = C.gsize(lineBytes)
 }
 
+// LineChars: number of characters parsed since the last line break.
 func (c *CSSLocation) SetLineChars(lineChars uint) {
 	valptr := &c.native.line_chars
 	*valptr = C.gsize(lineChars)
@@ -134740,26 +122568,6 @@ func (f *FileChooserNativeClass) ParentClass() *NativeDialogClass {
 	return _v
 }
 
-// FileDialogClass: instance of this type is always passed by reference.
-type FileDialogClass struct {
-	*fileDialogClass
-}
-
-// fileDialogClass is the struct that's finalized.
-type fileDialogClass struct {
-	native *C.GtkFileDialogClass
-}
-
-// FileLauncherClass: instance of this type is always passed by reference.
-type FileLauncherClass struct {
-	*fileLauncherClass
-}
-
-// fileLauncherClass is the struct that's finalized.
-type fileLauncherClass struct {
-	native *C.GtkFileLauncherClass
-}
-
 // FilterClass: instance of this type is always passed by reference.
 type FilterClass struct {
 	*filterClass
@@ -134861,33 +122669,6 @@ type fontChooserIface struct {
 	native *C.GtkFontChooserIface
 }
 
-// FontDialogButtonClass: instance of this type is always passed by reference.
-type FontDialogButtonClass struct {
-	*fontDialogButtonClass
-}
-
-// fontDialogButtonClass is the struct that's finalized.
-type fontDialogButtonClass struct {
-	native *C.GtkFontDialogButtonClass
-}
-
-func (f *FontDialogButtonClass) ParentClass() *WidgetClass {
-	valptr := &f.native.parent_class
-	var _v *WidgetClass // out
-	_v = (*WidgetClass)(gextras.NewStructNative(unsafe.Pointer(valptr)))
-	return _v
-}
-
-// FontDialogClass: instance of this type is always passed by reference.
-type FontDialogClass struct {
-	*fontDialogClass
-}
-
-// fontDialogClass is the struct that's finalized.
-type fontDialogClass struct {
-	native *C.GtkFontDialogClass
-}
-
 // FrameClass: instance of this type is always passed by reference.
 type FrameClass struct {
 	*frameClass
@@ -134916,23 +122697,6 @@ type GLAreaClass struct {
 // glAreaClass is the struct that's finalized.
 type glAreaClass struct {
 	native *C.GtkGLAreaClass
-}
-
-// GraphicsOffloadClass: instance of this type is always passed by reference.
-type GraphicsOffloadClass struct {
-	*graphicsOffloadClass
-}
-
-// graphicsOffloadClass is the struct that's finalized.
-type graphicsOffloadClass struct {
-	native *C.GtkGraphicsOffloadClass
-}
-
-func (g *GraphicsOffloadClass) ParentClass() *WidgetClass {
-	valptr := &g.native.parent_class
-	var _v *WidgetClass // out
-	_v = (*WidgetClass)(gextras.NewStructNative(unsafe.Pointer(valptr)))
-	return _v
 }
 
 // GridClass: instance of this type is always passed by reference.
@@ -136146,16 +123910,6 @@ func (p *PopoverClass) ParentClass() *WidgetClass {
 	return _v
 }
 
-// PrintDialogClass: instance of this type is always passed by reference.
-type PrintDialogClass struct {
-	*printDialogClass
-}
-
-// printDialogClass is the struct that's finalized.
-type printDialogClass struct {
-	native *C.GtkPrintDialogClass
-}
-
 // PrintOperationClass: instance of this type is always passed by reference.
 type PrintOperationClass struct {
 	*printOperationClass
@@ -136175,84 +123929,6 @@ type PrintOperationPreviewIface struct {
 // printOperationPreviewIface is the struct that's finalized.
 type printOperationPreviewIface struct {
 	native *C.GtkPrintOperationPreviewIface
-}
-
-// PrintSetup: GtkPrintSetup is an auxiliary object for printing that allows
-// decoupling the setup from the printing.
-//
-// A print setup is obtained by calling gtk.PrintDialog.Setup(), and can later
-// be passed to print functions such as gtk.PrintDialog.Print().
-//
-// Print setups can be reused for multiple print calls.
-//
-// Applications may wish to store the page_setup and print_settings from the
-// print setup and copy them to the PrintDialog if they want to keep using them.
-//
-// An instance of this type is always passed by reference.
-type PrintSetup struct {
-	*printSetup
-}
-
-// printSetup is the struct that's finalized.
-type printSetup struct {
-	native *C.GtkPrintSetup
-}
-
-func marshalPrintSetup(p uintptr) (interface{}, error) {
-	b := coreglib.ValueFromNative(unsafe.Pointer(p)).Boxed()
-	return &PrintSetup{&printSetup{(*C.GtkPrintSetup)(b)}}, nil
-}
-
-// PageSetup returns the page setup of setup.
-//
-// It may be different from the GtkPrintDialog's page setup if the user changed
-// it during the setup process.
-//
-// The function returns the following values:
-//
-//   - pageSetup (optional): page setup, or NULL.
-func (setup *PrintSetup) PageSetup() *PageSetup {
-	var _arg0 *C.GtkPrintSetup // out
-	var _cret *C.GtkPageSetup  // in
-
-	_arg0 = (*C.GtkPrintSetup)(gextras.StructNative(unsafe.Pointer(setup)))
-
-	_cret = C.gtk_print_setup_get_page_setup(_arg0)
-	runtime.KeepAlive(setup)
-
-	var _pageSetup *PageSetup // out
-
-	if _cret != nil {
-		_pageSetup = wrapPageSetup(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _pageSetup
-}
-
-// PrintSettings returns the print settings of setup.
-//
-// They may be different from the GtkPrintDialog's settings if the user changed
-// them during the setup process.
-//
-// The function returns the following values:
-//
-//   - printSettings (optional): print settings, or NULL.
-func (setup *PrintSetup) PrintSettings() *PrintSettings {
-	var _arg0 *C.GtkPrintSetup    // out
-	var _cret *C.GtkPrintSettings // in
-
-	_arg0 = (*C.GtkPrintSetup)(gextras.StructNative(unsafe.Pointer(setup)))
-
-	_cret = C.gtk_print_setup_get_print_settings(_arg0)
-	runtime.KeepAlive(setup)
-
-	var _printSettings *PrintSettings // out
-
-	if _cret != nil {
-		_printSettings = wrapPrintSettings(coreglib.Take(unsafe.Pointer(_cret)))
-	}
-
-	return _printSettings
 }
 
 // RangeClass: instance of this type is always passed by reference.
@@ -137221,130 +124897,6 @@ func (s *ScaleClass) ParentClass() *RangeClass {
 	return _v
 }
 
-// ScrollInfo: GtkScrollInfo can be used to provide more accurate data on how a
-// scroll operation should be performed.
-//
-// Scrolling functions usually allow passing a NULL scroll info which will cause
-// the default values to be used and just scroll the element into view.
-//
-// An instance of this type is always passed by reference.
-type ScrollInfo struct {
-	*scrollInfo
-}
-
-// scrollInfo is the struct that's finalized.
-type scrollInfo struct {
-	native *C.GtkScrollInfo
-}
-
-func marshalScrollInfo(p uintptr) (interface{}, error) {
-	b := coreglib.ValueFromNative(unsafe.Pointer(p)).Boxed()
-	return &ScrollInfo{&scrollInfo{(*C.GtkScrollInfo)(b)}}, nil
-}
-
-// NewScrollInfo constructs a struct ScrollInfo.
-func NewScrollInfo() *ScrollInfo {
-	var _cret *C.GtkScrollInfo // in
-
-	_cret = C.gtk_scroll_info_new()
-
-	var _scrollInfo *ScrollInfo // out
-
-	_scrollInfo = (*ScrollInfo)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_scrollInfo)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.gtk_scroll_info_unref((*C.GtkScrollInfo)(intern.C))
-		},
-	)
-
-	return _scrollInfo
-}
-
-// EnableHorizontal checks if horizontal scrolling is enabled.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if horizontal scrolling is enabled.
-func (self *ScrollInfo) EnableHorizontal() bool {
-	var _arg0 *C.GtkScrollInfo // out
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GtkScrollInfo)(gextras.StructNative(unsafe.Pointer(self)))
-
-	_cret = C.gtk_scroll_info_get_enable_horizontal(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// EnableVertical checks if vertical scrolling is enabled.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if vertical scrolling is enabled.
-func (self *ScrollInfo) EnableVertical() bool {
-	var _arg0 *C.GtkScrollInfo // out
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GtkScrollInfo)(gextras.StructNative(unsafe.Pointer(self)))
-
-	_cret = C.gtk_scroll_info_get_enable_vertical(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// SetEnableHorizontal turns horizontal scrolling on or off.
-//
-// The function takes the following parameters:
-//
-//   - horizontal: if scrolling in the horizontal direction should happen.
-func (self *ScrollInfo) SetEnableHorizontal(horizontal bool) {
-	var _arg0 *C.GtkScrollInfo // out
-	var _arg1 C.gboolean       // out
-
-	_arg0 = (*C.GtkScrollInfo)(gextras.StructNative(unsafe.Pointer(self)))
-	if horizontal {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_scroll_info_set_enable_horizontal(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(horizontal)
-}
-
-// SetEnableVertical turns vertical scrolling on or off.
-//
-// The function takes the following parameters:
-//
-//   - vertical: if scrolling in the vertical direction should happen.
-func (self *ScrollInfo) SetEnableVertical(vertical bool) {
-	var _arg0 *C.GtkScrollInfo // out
-	var _arg1 C.gboolean       // out
-
-	_arg0 = (*C.GtkScrollInfo)(gextras.StructNative(unsafe.Pointer(self)))
-	if vertical {
-		_arg1 = C.TRUE
-	}
-
-	C.gtk_scroll_info_set_enable_vertical(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(vertical)
-}
-
 // ScrollableInterface: instance of this type is always passed by reference.
 type ScrollableInterface struct {
 	*scrollableInterface
@@ -137353,21 +124905,6 @@ type ScrollableInterface struct {
 // scrollableInterface is the struct that's finalized.
 type scrollableInterface struct {
 	native *C.GtkScrollableInterface
-}
-
-// SectionModelInterface: list of virtual functions for the
-// GtkSectionModel interface. No function must be implemented, but unless
-// GtkSectionModel::get_section() is implemented, the whole model will just be a
-// single section.
-//
-// An instance of this type is always passed by reference.
-type SectionModelInterface struct {
-	*sectionModelInterface
-}
-
-// sectionModelInterface is the struct that's finalized.
-type sectionModelInterface struct {
-	native *C.GtkSectionModelInterface
 }
 
 // SelectionFilterModelClass: instance of this type is always passed by
@@ -137680,8 +125217,8 @@ func (iter *TextIter) BackwardChars(count int) bool {
 	return _ok
 }
 
-// BackwardCursorPosition: like gtk.TextIter.ForwardCursorPosition(), but moves
-// backward.
+// BackwardCursorPosition: like gtk_text_iter_forward_cursor_position(),
+// but moves backward.
 //
 // The function returns the following values:
 //
@@ -137736,8 +125273,8 @@ func (iter *TextIter) BackwardCursorPositions(count int) bool {
 	return _ok
 }
 
-// BackwardFindChar: same as gtk.TextIter.ForwardFindChar(), but goes backward
-// from iter.
+// BackwardFindChar: same as gtk_text_iter_forward_find_char(), but goes
+// backward from iter.
 //
 // The function takes the following parameters:
 //
@@ -137844,7 +125381,7 @@ func (iter *TextIter) BackwardLines(count int) bool {
 	return _ok
 }
 
-// BackwardSearch: same as gtk.TextIter.ForwardSearch(), but moves backward.
+// BackwardSearch: same as gtk_text_iter_forward_search(), but moves backward.
 //
 // match_end will never be set to a GtkTextIter located after iter, even if
 // there is a possible match_start before or at iter.
@@ -137926,8 +125463,8 @@ func (iter *TextIter) BackwardSentenceStart() bool {
 	return _ok
 }
 
-// BackwardSentenceStarts calls gtk.TextIter.BackwardSentenceStart() up to count
-// times.
+// BackwardSentenceStarts calls gtk_text_iter_backward_sentence_start() up to
+// count times.
 //
 // If count is negative, moves forward instead of backward.
 //
@@ -137996,7 +125533,7 @@ func (iter *TextIter) BackwardToTagToggle(tag *TextTag) bool {
 	return _ok
 }
 
-// BackwardVisibleCursorPosition moves iter backward to the previous visible
+// BackwardVisibleCursorPosition moves iter forward to the previous visible
 // cursor position.
 //
 // See gtk.TextIter.BackwardCursorPosition() for details.
@@ -138151,8 +125688,8 @@ func (iter *TextIter) BackwardVisibleWordStart() bool {
 	return _ok
 }
 
-// BackwardVisibleWordStarts calls gtk.TextIter.BackwardVisibleWordStart() up to
-// count times.
+// BackwardVisibleWordStarts calls gtk_text_iter_backward_visible_word_start()
+// up to count times.
 //
 // The function takes the following parameters:
 //
@@ -138211,7 +125748,8 @@ func (iter *TextIter) BackwardWordStart() bool {
 	return _ok
 }
 
-// BackwardWordStarts calls gtk.TextIter.BackwardWordStart() up to count times.
+// BackwardWordStarts calls gtk_text_iter_backward_word_start() up to count
+// times.
 //
 // The function takes the following parameters:
 //
@@ -138873,7 +126411,7 @@ func (iter *TextIter) ForwardSentenceEnd() bool {
 	return _ok
 }
 
-// ForwardSentenceEnds calls gtk.TextIter.ForwardSentenceEnd() count times.
+// ForwardSentenceEnds calls gtk_text_iter_forward_sentence_end() count times.
 //
 // If count is negative, moves backward instead of forward.
 //
@@ -138908,7 +126446,7 @@ func (iter *TextIter) ForwardSentenceEnds(count int) bool {
 // ForwardToEnd moves iter forward to the “end iterator”, which points one past
 // the last valid character in the buffer.
 //
-// gtk.TextIter.GetChar() called on the end iterator returns 0, which is
+// gtk_text_iter_get_char() called on the end iterator returns 0, which is
 // convenient for writing loops.
 func (iter *TextIter) ForwardToEnd() {
 	var _arg0 *C.GtkTextIter // out
@@ -139139,8 +126677,8 @@ func (iter *TextIter) ForwardVisibleWordEnd() bool {
 	return _ok
 }
 
-// ForwardVisibleWordEnds calls gtk.TextIter.ForwardVisibleWordEnd() up to count
-// times.
+// ForwardVisibleWordEnds calls gtk_text_iter_forward_visible_word_end() up to
+// count times.
 //
 // The function takes the following parameters:
 //
@@ -139198,7 +126736,7 @@ func (iter *TextIter) ForwardWordEnd() bool {
 	return _ok
 }
 
-// ForwardWordEnds calls gtk.TextIter.ForwardWordEnd() up to count times.
+// ForwardWordEnds calls gtk_text_iter_forward_word_end() up to count times.
 //
 // The function takes the following parameters:
 //
@@ -139486,8 +127024,8 @@ func (iter *TextIter) Marks() []*TextMark {
 // Offset returns the character offset of an iterator.
 //
 // Each character in a GtkTextBuffer has an offset, starting with 0 for the
-// first character in the buffer. Use gtk.TextBuffer.GetIterAtOffset() to
-// convert an offset back into an iterator.
+// first character in the buffer. Use gtk,textbuffer.GetIterAtOffset to convert
+// an offset back into an iterator.
 //
 // The function returns the following values:
 //
@@ -139951,7 +127489,7 @@ func (iter *TextIter) IsCursorPosition() bool {
 // IsEnd returns TRUE if iter is the end iterator.
 //
 // This means it is one past the last dereferenceable iterator in the buffer.
-// gtk.TextIter.IsEnd() is the most efficient way to check whether an iterator
+// gtk_text_iter_is_end() is the most efficient way to check whether an iterator
 // is the end iterator.
 //
 // The function returns the following values:
@@ -140041,7 +127579,7 @@ func (iter *TextIter) SetLine(lineNumber int) {
 	runtime.KeepAlive(lineNumber)
 }
 
-// SetLineIndex: same as gtk.TextIter.SetLineOffset(), but works with a byte
+// SetLineIndex: same as gtk_text_iter_set_line_offset(), but works with a byte
 // index. The given byte index must be at the start of a character, it can’t be
 // in the middle of a UTF-8 encoded character.
 //
@@ -140102,7 +127640,7 @@ func (iter *TextIter) SetOffset(charOffset int) {
 	runtime.KeepAlive(charOffset)
 }
 
-// SetVisibleLineIndex: like gtk.TextIter.SetLineIndex(), but the index is in
+// SetVisibleLineIndex: like gtk_text_iter_set_line_index(), but the index is in
 // visible bytes, i.e. text with a tag making it invisible is not counted in the
 // index.
 //
@@ -140121,9 +127659,9 @@ func (iter *TextIter) SetVisibleLineIndex(byteOnLine int) {
 	runtime.KeepAlive(byteOnLine)
 }
 
-// SetVisibleLineOffset: like gtk.TextIter.SetLineOffset(), but the offset is in
-// visible characters, i.e. text with a tag making it invisible is not counted
-// in the offset.
+// SetVisibleLineOffset: like gtk_text_iter_set_line_offset(), but the offset
+// is in visible characters, i.e. text with a tag making it invisible is not
+// counted in the offset.
 //
 // The function takes the following parameters:
 //
@@ -140201,7 +127739,7 @@ func (iter *TextIter) StartsSentence() bool {
 // Note that if this function returns TRUE, it means that iter is at the
 // beginning of the tagged range, and that the character at iter is inside the
 // tagged range. In other words, unlike gtk.TextIter.EndsTag(), if this function
-// returns TRUE, gtk.TextIter.HasTag() will also return TRUE for the same
+// returns TRUE, [methodGtk.TextIter.has_tag will also return TRUE for the same
 // parameters.
 //
 // The function takes the following parameters:
@@ -140392,8 +127930,6 @@ func (t *TreeExpanderClass) ParentClass() *WidgetClass {
 // Models are expected to put a unique integer in the stamp member, and put
 // model-specific data in the three user_data members.
 //
-// Deprecated: since version 4.10.
-//
 // An instance of this type is always passed by reference.
 type TreeIter struct {
 	*treeIter
@@ -140452,8 +127988,6 @@ func (t *TreeIter) SetStamp(stamp int) {
 // This function is not intended for use in applications, because you can just
 // copy the structs by value (GtkTreeIter new_iter = iter;). You must free this
 // iter with gtk_tree_iter_free().
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -140548,8 +128082,6 @@ type treeModelSortClass struct {
 }
 
 // TreePath: opaque structure representing a path to a row in a model.
-//
-// Deprecated: since version 4.10.
 //
 // An instance of this type is always passed by reference.
 type TreePath struct {
@@ -140666,8 +128198,6 @@ func NewTreePathFromString(path string) *TreePath {
 //
 // As a result, the depth of the path is increased.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - index_: index.
@@ -140687,8 +128217,6 @@ func (path *TreePath) AppendIndex(index_ int) {
 //
 // If a appears before b in a tree, then -1 is returned. If b appears before a,
 // then 1 is returned. If the two nodes are equal, then 0 is returned.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -140718,8 +128246,6 @@ func (a *TreePath) Compare(b *TreePath) int {
 
 // Copy creates a new GtkTreePath as a copy of path.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - treePath: new GtkTreePath.
@@ -140746,8 +128272,6 @@ func (path *TreePath) Copy() *TreePath {
 }
 
 // Down moves path to point to the first child of the current path.
-//
-// Deprecated: since version 4.10.
 func (path *TreePath) Down() {
 	var _arg0 *C.GtkTreePath // out
 
@@ -140758,8 +128282,6 @@ func (path *TreePath) Down() {
 }
 
 // Depth returns the current depth of path.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -140784,8 +128306,6 @@ func (path *TreePath) Depth() int {
 //
 // This is an array of integers, each representing a node in a tree. It also
 // returns the number of elements in the array. The array should not be freed.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -140817,8 +128337,6 @@ func (path *TreePath) Indices() []int {
 
 // IsAncestor returns TRUE if descendant is a descendant of path.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - descendant: another GtkTreePath.
@@ -140849,8 +128367,6 @@ func (path *TreePath) IsAncestor(descendant *TreePath) bool {
 
 // IsDescendant returns TRUE if path is a descendant of ancestor.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - ancestor: another GtkTreePath.
@@ -140880,8 +128396,6 @@ func (path *TreePath) IsDescendant(ancestor *TreePath) bool {
 }
 
 // Next moves the path to point to the next node at the current depth.
-//
-// Deprecated: since version 4.10.
 func (path *TreePath) Next() {
 	var _arg0 *C.GtkTreePath // out
 
@@ -140894,8 +128408,6 @@ func (path *TreePath) Next() {
 // PrependIndex prepends a new index to a path.
 //
 // As a result, the depth of the path is increased.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -140914,8 +128426,6 @@ func (path *TreePath) PrependIndex(index_ int) {
 
 // Prev moves the path to point to the previous node at the current depth,
 // if it exists.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -140944,8 +128454,6 @@ func (path *TreePath) Prev() bool {
 // be an acceptable return value for this string. If the path has depth 0,
 // NULL is returned.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - utf8 (optional): newly-allocated string.
@@ -140969,8 +128477,6 @@ func (path *TreePath) String() string {
 }
 
 // Up moves the path to point to its parent node, if it has a parent.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -140996,8 +128502,6 @@ func (path *TreePath) Up() bool {
 // TreeRowReference tracks model changes so that it always refers to the same
 // row (a GtkTreePath refers to a position, not a fixed row). Create a new
 // GtkTreeRowReference with gtk_tree_row_reference_new().
-//
-// Deprecated: Use gio.ListModel instead.
 //
 // An instance of this type is always passed by reference.
 type TreeRowReference struct {
@@ -141075,8 +128579,6 @@ func NewTreeRowReferenceProxy(proxy *coreglib.Object, model TreeModeller, path *
 
 // Copy copies a GtkTreeRowReference.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - treeRowReference: copy of reference.
@@ -141104,8 +128606,6 @@ func (reference *TreeRowReference) Copy() *TreeRowReference {
 
 // Model returns the model that the row reference is monitoring.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - treeModel: model.
@@ -141127,8 +128627,6 @@ func (reference *TreeRowReference) Model() *TreeModel {
 
 // Path returns a path that the row reference currently points to, or NULL if
 // the path pointed to is no longer valid.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -141160,8 +128658,6 @@ func (reference *TreeRowReference) Path() *TreePath {
 // Valid returns TRUE if the reference is non-NULL and refers to a current valid
 // path.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if reference points to a valid path.
@@ -141189,8 +128685,6 @@ func (reference *TreeRowReference) Valid() bool {
 // gtk_tree_row_reference_new_proxy() know that the model emitted the
 // ::row-deleted signal.
 //
-// Deprecated: since version 4.10.
-//
 // The function takes the following parameters:
 //
 //   - proxy: GObject.
@@ -141210,8 +128704,6 @@ func TreeRowReferenceDeleted(proxy *coreglib.Object, path *TreePath) {
 // TreeRowReferenceInserted lets a set of row reference created by
 // gtk_tree_row_reference_new_proxy() know that the model emitted the
 // ::row-inserted signal.
-//
-// Deprecated: since version 4.10.
 //
 // The function takes the following parameters:
 //
@@ -141264,16 +128756,6 @@ func (t *TreeViewClass) ParentClass() *WidgetClass {
 	var _v *WidgetClass // out
 	_v = (*WidgetClass)(gextras.NewStructNative(unsafe.Pointer(valptr)))
 	return _v
-}
-
-// URILauncherClass: instance of this type is always passed by reference.
-type URILauncherClass struct {
-	*uriLauncherClass
-}
-
-// uriLauncherClass is the struct that's finalized.
-type uriLauncherClass struct {
-	native *C.GtkUriLauncherClass
 }
 
 // VideoClass: instance of this type is always passed by reference.
@@ -141488,7 +128970,7 @@ func (widgetClass *WidgetClass) LayoutManagerType() coreglib.Type {
 // InstallPropertyAction installs an action called action_name on widget_class
 // and binds its state to the value of the property_name property.
 //
-// This function will perform a few sanity checks on the property selected via
+// This function will perform a few santity checks on the property selected via
 // property_name. Namely, the property must exist, must be readable, writable
 // and must not be construct-only. There are also restrictions on the type of
 // the given property, it must be boolean, int, unsigned int, double or string.
@@ -141739,7 +129221,7 @@ func (widgetClass *WidgetClass) SetTemplateFromResource(resourceName string) {
 // class’s template data.
 //
 // Note that this must be called from a composite widget classes class
-// initializer after calling gtk.WidgetClass.SetTemplate().
+// initializer after calling gtkwidgetclass.SetTemplate.
 //
 // The function takes the following parameters:
 //

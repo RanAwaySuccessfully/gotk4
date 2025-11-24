@@ -325,15 +325,15 @@ const VERSION_MAJOR = 1
 
 // VERSION_MICRO: micro component of the version of Pango available at
 // compile-time.
-const VERSION_MICRO = 2
+const VERSION_MICRO = 12
 
 // VERSION_MINOR: minor component of the version of Pango available at
 // compile-time.
-const VERSION_MINOR = 52
+const VERSION_MINOR = 50
 
 // VERSION_STRING: string literal containing the version of Pango available at
 // compile-time.
-const VERSION_STRING = "1.52.2"
+const VERSION_STRING = "1.50.12"
 
 // Glyph: PangoGlyph represents a single glyph in the output form of a string.
 type Glyph = uint32
@@ -8444,70 +8444,6 @@ func (fontmap *FontMap) LoadFontset(context *Context, desc *FontDescription, lan
 	return _fontset
 }
 
-// ReloadFont returns a new font that is like font, except that its size is
-// multiplied by scale, its backend-dependent configuration (e.g. cairo font
-// options) is replaced by the one in context, and its variations are replaced
-// by variations.
-//
-// The function takes the following parameters:
-//
-//   - font in fontmap.
-//   - scale factor to apply.
-//   - context (optional): PangoContext.
-//   - variations (optional): font variations to use.
-//
-// The function returns the following values:
-//
-//   - ret: modified font.
-func (fontmap *FontMap) ReloadFont(font Fonter, scale float64, context *Context, variations string) Fonter {
-	var _arg0 *C.PangoFontMap // out
-	var _arg1 *C.PangoFont    // out
-	var _arg2 C.double        // out
-	var _arg3 *C.PangoContext // out
-	var _arg4 *C.char         // out
-	var _cret *C.PangoFont    // in
-
-	_arg0 = (*C.PangoFontMap)(unsafe.Pointer(coreglib.InternObject(fontmap).Native()))
-	_arg1 = (*C.PangoFont)(unsafe.Pointer(coreglib.InternObject(font).Native()))
-	_arg2 = C.double(scale)
-	if context != nil {
-		_arg3 = (*C.PangoContext)(unsafe.Pointer(coreglib.InternObject(context).Native()))
-	}
-	if variations != "" {
-		_arg4 = (*C.char)(unsafe.Pointer(C.CString(variations)))
-		defer C.free(unsafe.Pointer(_arg4))
-	}
-
-	_cret = C.pango_font_map_reload_font(_arg0, _arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(fontmap)
-	runtime.KeepAlive(font)
-	runtime.KeepAlive(scale)
-	runtime.KeepAlive(context)
-	runtime.KeepAlive(variations)
-
-	var _ret Fonter // out
-
-	{
-		objptr := unsafe.Pointer(_cret)
-		if objptr == nil {
-			panic("object of type pango.Fonter is nil")
-		}
-
-		object := coreglib.AssumeOwnership(objptr)
-		casted := object.WalkCast(func(obj coreglib.Objector) bool {
-			_, ok := obj.(Fonter)
-			return ok
-		})
-		rv, ok := casted.(Fonter)
-		if !ok {
-			panic("no marshaler for " + object.TypeFromInstance().String() + " matching pango.Fonter")
-		}
-		_ret = rv
-	}
-
-	return _ret
-}
-
 // Changed forces a change in the context, which will cause any PangoContext
 // using this fontmap to change.
 //
@@ -8782,8 +8718,7 @@ type FontsetOverrides struct {
 	// The function returns the following values:
 	//
 	//   - font: PangoFont.
-	Font func(wc uint) Fonter
-	// Language: function to get the language of the fontset.
+	Font     func(wc uint) Fonter
 	Language func() *Language
 	// Metrics: get overall metric information for the fonts in the fontset.
 	//
@@ -9046,7 +8981,6 @@ func (fontset *Fontset) font(wc uint) Fonter {
 	return _font
 }
 
-// Language: function to get the language of the fontset.
 func (fontset *Fontset) language() *Language {
 	gclass := (*C.PangoFontsetClass)(coreglib.PeekParentClass(fontset))
 	fnarg := gclass.get_language
@@ -11255,7 +11189,6 @@ func LayoutDeserialize(context *Context, bytes *glib.Bytes, flags LayoutDeserial
 
 // RendererOverrides contains methods that are overridable.
 type RendererOverrides struct {
-	// Begin: do renderer-specific initialization before drawing.
 	Begin func()
 	// DrawErrorUnderline: draw a squiggly line that approximately covers the
 	// given rectangle in the style of an underline used to indicate a spelling
@@ -11341,9 +11274,6 @@ type RendererOverrides struct {
 	//   - width of rectangle in Pango units.
 	//   - height of rectangle in Pango units.
 	DrawRectangle func(part RenderPart, x, y, width, height int)
-	// DrawShape: draw content for a glyph shaped with PangoAttrShape x, y are
-	// the coordinates of the left edge of the baseline, in user coordinates.
-	//
 	// The function takes the following parameters:
 	//
 	//   - attr
@@ -11363,8 +11293,7 @@ type RendererOverrides struct {
 	//   - x12: x coordinate of left end of bottom of trapezoid.
 	//   - x22: x coordinate of right end of bottom of trapezoid.
 	DrawTrapezoid func(part RenderPart, y1, x11, x21, y2, x12, x22 float64)
-	// End: do renderer-specific cleanup after drawing.
-	End func()
+	End           func()
 	// PartChanged informs Pango that the way that the rendering is done for
 	// part has changed.
 	//
@@ -11383,8 +11312,7 @@ type RendererOverrides struct {
 	//
 	//   - part for which rendering has changed.
 	PartChanged func(part RenderPart)
-	// PrepareRun updates the renderer for a new run.
-	PrepareRun func(run *LayoutRun)
+	PrepareRun  func(run *LayoutRun)
 }
 
 func defaultRendererOverrides(v *Renderer) RendererOverrides {
@@ -12077,7 +12005,6 @@ func (renderer *Renderer) SetMatrix(matrix *Matrix) {
 	runtime.KeepAlive(matrix)
 }
 
-// Begin: do renderer-specific initialization before drawing.
 func (renderer *Renderer) begin() {
 	gclass := (*C.PangoRendererClass)(coreglib.PeekParentClass(renderer))
 	fnarg := gclass.begin
@@ -12291,9 +12218,6 @@ func (renderer *Renderer) drawRectangle(part RenderPart, x, y, width, height int
 	runtime.KeepAlive(height)
 }
 
-// drawShape: draw content for a glyph shaped with PangoAttrShape x, y are the
-// coordinates of the left edge of the baseline, in user coordinates.
-//
 // The function takes the following parameters:
 //
 //   - attr
@@ -12365,7 +12289,6 @@ func (renderer *Renderer) drawTrapezoid(part RenderPart, y1, x11, x21, y2, x12, 
 	runtime.KeepAlive(x22)
 }
 
-// End: do renderer-specific cleanup after drawing.
 func (renderer *Renderer) end() {
 	gclass := (*C.PangoRendererClass)(coreglib.PeekParentClass(renderer))
 	fnarg := gclass.end
@@ -12410,7 +12333,6 @@ func (renderer *Renderer) partChanged(part RenderPart) {
 	runtime.KeepAlive(part)
 }
 
-// prepareRun updates the renderer for a new run.
 func (renderer *Renderer) prepareRun(run *LayoutRun) {
 	gclass := (*C.PangoRendererClass)(coreglib.PeekParentClass(renderer))
 	fnarg := gclass.prepare_run

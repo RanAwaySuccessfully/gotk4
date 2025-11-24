@@ -1507,28 +1507,6 @@ func _gotk4_gtk4_PrintOperationPreview_ConnectReady(arg0 C.gpointer, arg1 *C.Gtk
 	f(_context)
 }
 
-//export _gotk4_gtk4_SectionModel_ConnectSectionsChanged
-func _gotk4_gtk4_SectionModel_ConnectSectionsChanged(arg0 C.gpointer, arg1 C.guint, arg2 C.guint, arg3 C.guintptr) {
-	var f func(position, nItems uint)
-	{
-		closure := coreglib.ConnectedGeneratedClosure(uintptr(arg3))
-		if closure == nil {
-			panic("given unknown closure user_data")
-		}
-		defer closure.TryRepanic()
-
-		f = closure.Func.(func(position, nItems uint))
-	}
-
-	var _position uint // out
-	var _nItems uint   // out
-
-	_position = uint(arg1)
-	_nItems = uint(arg2)
-
-	f(_position, _nItems)
-}
-
 //export _gotk4_gtk4_SelectionModel_ConnectSelectionChanged
 func _gotk4_gtk4_SelectionModel_ConnectSelectionChanged(arg0 C.gpointer, arg1 C.guint, arg2 C.guint, arg3 C.guintptr) {
 	var f func(position, nItems uint)
@@ -3705,22 +3683,6 @@ func _gotk4_gtk4_ColorButton_ConnectColorSet(arg0 C.gpointer, arg1 C.guintptr) {
 	f()
 }
 
-//export _gotk4_gtk4_ColorDialogButton_ConnectActivate
-func _gotk4_gtk4_ColorDialogButton_ConnectActivate(arg0 C.gpointer, arg1 C.guintptr) {
-	var f func()
-	{
-		closure := coreglib.ConnectedGeneratedClosure(uintptr(arg1))
-		if closure == nil {
-			panic("given unknown closure user_data")
-		}
-		defer closure.TryRepanic()
-
-		f = closure.Func.(func())
-	}
-
-	f()
-}
-
 //export _gotk4_gtk4_ColumnView_ConnectActivate
 func _gotk4_gtk4_ColumnView_ConnectActivate(arg0 C.gpointer, arg1 C.guint, arg2 C.guintptr) {
 	var f func(position uint)
@@ -5127,7 +5089,7 @@ func _gotk4_gtk4_EventControllerKey_ConnectKeyReleased(arg0 C.gpointer, arg1 C.g
 
 //export _gotk4_gtk4_EventControllerKey_ConnectModifiers
 func _gotk4_gtk4_EventControllerKey_ConnectModifiers(arg0 C.gpointer, arg1 C.GdkModifierType, arg2 C.guintptr) (cret C.gboolean) {
-	var f func(state gdk.ModifierType) (ok bool)
+	var f func(keyval gdk.ModifierType) (ok bool)
 	{
 		closure := coreglib.ConnectedGeneratedClosure(uintptr(arg2))
 		if closure == nil {
@@ -5135,14 +5097,14 @@ func _gotk4_gtk4_EventControllerKey_ConnectModifiers(arg0 C.gpointer, arg1 C.Gdk
 		}
 		defer closure.TryRepanic()
 
-		f = closure.Func.(func(state gdk.ModifierType) (ok bool))
+		f = closure.Func.(func(keyval gdk.ModifierType) (ok bool))
 	}
 
-	var _state gdk.ModifierType // out
+	var _keyval gdk.ModifierType // out
 
-	_state = gdk.ModifierType(arg1)
+	_keyval = gdk.ModifierType(arg1)
 
-	ok := f(_state)
+	ok := f(_keyval)
 
 	var _ bool
 
@@ -5800,22 +5762,6 @@ func _gotk4_gtk4_FontButton_ConnectActivate(arg0 C.gpointer, arg1 C.guintptr) {
 
 //export _gotk4_gtk4_FontButton_ConnectFontSet
 func _gotk4_gtk4_FontButton_ConnectFontSet(arg0 C.gpointer, arg1 C.guintptr) {
-	var f func()
-	{
-		closure := coreglib.ConnectedGeneratedClosure(uintptr(arg1))
-		if closure == nil {
-			panic("given unknown closure user_data")
-		}
-		defer closure.TryRepanic()
-
-		f = closure.Func.(func())
-	}
-
-	f()
-}
-
-//export _gotk4_gtk4_FontDialogButton_ConnectActivate
-func _gotk4_gtk4_FontDialogButton_ConnectActivate(arg0 C.gpointer, arg1 C.guintptr) {
 	var f func()
 	{
 		closure := coreglib.ConnectedGeneratedClosure(uintptr(arg1))
@@ -6492,56 +6438,6 @@ func _gotk4_gtk4_GridView_ConnectActivate(arg0 C.gpointer, arg1 C.guint, arg2 C.
 	_position = uint(arg1)
 
 	f(_position)
-}
-
-//export _gotk4_gtk4_IMContextClass_activate_osk
-func _gotk4_gtk4_IMContextClass_activate_osk(arg0 *C.GtkIMContext) {
-	instance0 := coreglib.Take(unsafe.Pointer(arg0))
-	overrides := coreglib.OverridesFromObj[IMContextOverrides](instance0)
-	if overrides.ActivateOSK == nil {
-		panic("gotk4: " + instance0.TypeFromInstance().String() + ": expected IMContextOverrides.ActivateOSK, got none")
-	}
-
-	overrides.ActivateOSK()
-}
-
-//export _gotk4_gtk4_IMContextClass_activate_osk_with_event
-func _gotk4_gtk4_IMContextClass_activate_osk_with_event(arg0 *C.GtkIMContext, arg1 *C.GdkEvent) (cret C.gboolean) {
-	instance0 := coreglib.Take(unsafe.Pointer(arg0))
-	overrides := coreglib.OverridesFromObj[IMContextOverrides](instance0)
-	if overrides.ActivateOSKWithEvent == nil {
-		panic("gotk4: " + instance0.TypeFromInstance().String() + ": expected IMContextOverrides.ActivateOSKWithEvent, got none")
-	}
-
-	var _event gdk.Eventer // out
-
-	{
-		objptr := unsafe.Pointer(arg1)
-		if objptr == nil {
-			panic("object of type gdk.Eventer is nil")
-		}
-
-		object := coreglib.Take(objptr)
-		casted := object.WalkCast(func(obj coreglib.Objector) bool {
-			_, ok := obj.(gdk.Eventer)
-			return ok
-		})
-		rv, ok := casted.(gdk.Eventer)
-		if !ok {
-			panic("no marshaler for " + object.TypeFromInstance().String() + " matching gdk.Eventer")
-		}
-		_event = rv
-	}
-
-	ok := overrides.ActivateOSKWithEvent(_event)
-
-	var _ bool
-
-	if ok {
-		cret = C.TRUE
-	}
-
-	return cret
 }
 
 //export _gotk4_gtk4_IMContextClass_commit
@@ -9754,22 +9650,6 @@ func _gotk4_gtk4_Sorter_ConnectChanged(arg0 C.gpointer, arg1 C.GtkSorterChange, 
 	_change = SorterChange(arg1)
 
 	f(_change)
-}
-
-//export _gotk4_gtk4_SpinButton_ConnectActivate
-func _gotk4_gtk4_SpinButton_ConnectActivate(arg0 C.gpointer, arg1 C.guintptr) {
-	var f func()
-	{
-		closure := coreglib.ConnectedGeneratedClosure(uintptr(arg1))
-		if closure == nil {
-			panic("given unknown closure user_data")
-		}
-		defer closure.TryRepanic()
-
-		f = closure.Func.(func())
-	}
-
-	f()
 }
 
 //export _gotk4_gtk4_SpinButton_ConnectChangeValue

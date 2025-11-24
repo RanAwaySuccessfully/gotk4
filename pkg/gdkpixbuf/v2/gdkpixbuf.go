@@ -91,7 +91,7 @@ const PIXBUF_MAJOR = 2
 
 // PIXBUF_MICRO: micro version of gdk-pixbuf library, that is the "2" in "0.8.2"
 // for example.
-const PIXBUF_MICRO = 12
+const PIXBUF_MICRO = 10
 
 // PIXBUF_MINOR: minor version of gdk-pixbuf library, that is the "8" in "0.8.2"
 // for example.
@@ -100,7 +100,7 @@ const PIXBUF_MINOR = 42
 // PIXBUF_VERSION contains the full version of GdkPixbuf as a string.
 //
 // This is the version being compiled against; contrast with gdk_pixbuf_version.
-const PIXBUF_VERSION = "2.42.12"
+const PIXBUF_VERSION = "2.42.10"
 
 // Colorspace: this enumeration defines the color spaces that are supported by
 // the gdk-pixbuf library.
@@ -1175,7 +1175,7 @@ func NewPixbufFromStreamFinish(asyncResult gio.AsyncResulter) (*Pixbuf, error) {
 //
 // The function returns the following values:
 //
-//   - pixbuf (optional): newly-created pixbuf.
+//   - pixbuf: newly-created pixbuf.
 func NewPixbufFromXPMData(data []string) *Pixbuf {
 	var _arg1 **C.char     // out
 	var _cret *C.GdkPixbuf // in
@@ -1199,9 +1199,7 @@ func NewPixbufFromXPMData(data []string) *Pixbuf {
 
 	var _pixbuf *Pixbuf // out
 
-	if _cret != nil {
-		_pixbuf = wrapPixbuf(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-	}
+	_pixbuf = wrapPixbuf(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
 
 	return _pixbuf
 }
@@ -1227,7 +1225,7 @@ func NewPixbufFromXPMData(data []string) *Pixbuf {
 //
 // The function returns the following values:
 //
-//   - ret (optional): newly-created pixbuf.
+//   - ret: newly-created pixbuf.
 func (pixbuf *Pixbuf) AddAlpha(substituteColor bool, r, g, b byte) *Pixbuf {
 	var _arg0 *C.GdkPixbuf // out
 	var _arg1 C.gboolean   // out
@@ -1253,9 +1251,7 @@ func (pixbuf *Pixbuf) AddAlpha(substituteColor bool, r, g, b byte) *Pixbuf {
 
 	var _ret *Pixbuf // out
 
-	if _cret != nil {
-		_ret = wrapPixbuf(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-	}
+	_ret = wrapPixbuf(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
 
 	return _ret
 }
@@ -4289,8 +4285,8 @@ func marshalPixbufFormat(p uintptr) (interface{}, error) {
 //
 // The function returns the following values:
 //
-//   - pixbufFormat (optional): newly allocated copy of a GdkPixbufFormat.
-//     Use gdk_pixbuf_format_free() to free the resources when done.
+//   - pixbufFormat: newly allocated copy of a GdkPixbufFormat. Use
+//     gdk_pixbuf_format_free() to free the resources when done.
 func (format *PixbufFormat) Copy() *PixbufFormat {
 	var _arg0 *C.GdkPixbufFormat // out
 	var _cret *C.GdkPixbufFormat // in
@@ -4302,15 +4298,13 @@ func (format *PixbufFormat) Copy() *PixbufFormat {
 
 	var _pixbufFormat *PixbufFormat // out
 
-	if _cret != nil {
-		_pixbufFormat = (*PixbufFormat)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_pixbufFormat)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.gdk_pixbuf_format_free((*C.GdkPixbufFormat)(intern.C))
-			},
-		)
-	}
+	_pixbufFormat = (*PixbufFormat)(gextras.NewStructNative(unsafe.Pointer(_cret)))
+	runtime.SetFinalizer(
+		gextras.StructIntern(unsafe.Pointer(_pixbufFormat)),
+		func(intern *struct{ C unsafe.Pointer }) {
+			C.gdk_pixbuf_format_free((*C.GdkPixbufFormat)(intern.C))
+		},
+	)
 
 	return _pixbufFormat
 }
@@ -4319,7 +4313,7 @@ func (format *PixbufFormat) Copy() *PixbufFormat {
 //
 // The function returns the following values:
 //
-//   - utf8 (optional): description of the format.
+//   - utf8: description of the format.
 func (format *PixbufFormat) Description() string {
 	var _arg0 *C.GdkPixbufFormat // out
 	var _cret *C.gchar           // in
@@ -4331,10 +4325,8 @@ func (format *PixbufFormat) Description() string {
 
 	var _utf8 string // out
 
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-		defer C.free(unsafe.Pointer(_cret))
-	}
+	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
+	defer C.free(unsafe.Pointer(_cret))
 
 	return _utf8
 }
@@ -4344,7 +4336,7 @@ func (format *PixbufFormat) Description() string {
 //
 // The function returns the following values:
 //
-//   - utf8s (optional): array of filename extensions.
+//   - utf8s: array of filename extensions.
 func (format *PixbufFormat) Extensions() []string {
 	var _arg0 *C.GdkPixbufFormat // out
 	var _cret **C.gchar          // in
@@ -4356,21 +4348,19 @@ func (format *PixbufFormat) Extensions() []string {
 
 	var _utf8s []string // out
 
-	if _cret != nil {
-		defer C.free(unsafe.Pointer(_cret))
-		{
-			var i int
-			var z *C.gchar
-			for p := _cret; *p != z; p = &unsafe.Slice(p, 2)[1] {
-				i++
-			}
+	defer C.free(unsafe.Pointer(_cret))
+	{
+		var i int
+		var z *C.gchar
+		for p := _cret; *p != z; p = &unsafe.Slice(p, 2)[1] {
+			i++
+		}
 
-			src := unsafe.Slice(_cret, i)
-			_utf8s = make([]string, i)
-			for i := range src {
-				_utf8s[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
-				defer C.free(unsafe.Pointer(src[i]))
-			}
+		src := unsafe.Slice(_cret, i)
+		_utf8s = make([]string, i)
+		for i := range src {
+			_utf8s[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
+			defer C.free(unsafe.Pointer(src[i]))
 		}
 	}
 
@@ -4385,7 +4375,7 @@ func (format *PixbufFormat) Extensions() []string {
 //
 // The function returns the following values:
 //
-//   - utf8 (optional): string describing the license of the pixbuf format.
+//   - utf8: string describing the license of the pixbuf format.
 func (format *PixbufFormat) License() string {
 	var _arg0 *C.GdkPixbufFormat // out
 	var _cret *C.gchar           // in
@@ -4397,10 +4387,8 @@ func (format *PixbufFormat) License() string {
 
 	var _utf8 string // out
 
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-		defer C.free(unsafe.Pointer(_cret))
-	}
+	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
+	defer C.free(unsafe.Pointer(_cret))
 
 	return _utf8
 }
@@ -4409,7 +4397,7 @@ func (format *PixbufFormat) License() string {
 //
 // The function returns the following values:
 //
-//   - utf8s (optional): array of mime types.
+//   - utf8s: array of mime types.
 func (format *PixbufFormat) MIMETypes() []string {
 	var _arg0 *C.GdkPixbufFormat // out
 	var _cret **C.gchar          // in
@@ -4421,21 +4409,19 @@ func (format *PixbufFormat) MIMETypes() []string {
 
 	var _utf8s []string // out
 
-	if _cret != nil {
-		defer C.free(unsafe.Pointer(_cret))
-		{
-			var i int
-			var z *C.gchar
-			for p := _cret; *p != z; p = &unsafe.Slice(p, 2)[1] {
-				i++
-			}
+	defer C.free(unsafe.Pointer(_cret))
+	{
+		var i int
+		var z *C.gchar
+		for p := _cret; *p != z; p = &unsafe.Slice(p, 2)[1] {
+			i++
+		}
 
-			src := unsafe.Slice(_cret, i)
-			_utf8s = make([]string, i)
-			for i := range src {
-				_utf8s[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
-				defer C.free(unsafe.Pointer(src[i]))
-			}
+		src := unsafe.Slice(_cret, i)
+		_utf8s = make([]string, i)
+		for i := range src {
+			_utf8s[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
+			defer C.free(unsafe.Pointer(src[i]))
 		}
 	}
 
@@ -4446,7 +4432,7 @@ func (format *PixbufFormat) MIMETypes() []string {
 //
 // The function returns the following values:
 //
-//   - utf8 (optional): name of the format.
+//   - utf8: name of the format.
 func (format *PixbufFormat) Name() string {
 	var _arg0 *C.GdkPixbufFormat // out
 	var _cret *C.gchar           // in
@@ -4458,10 +4444,8 @@ func (format *PixbufFormat) Name() string {
 
 	var _utf8 string // out
 
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-		defer C.free(unsafe.Pointer(_cret))
-	}
+	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
+	defer C.free(unsafe.Pointer(_cret))
 
 	return _utf8
 }

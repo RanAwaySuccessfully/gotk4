@@ -119,7 +119,6 @@ var (
 	GTypeCrossingMode          = coreglib.Type(C.gdk_crossing_mode_get_type())
 	GTypeDevicePadFeature      = coreglib.Type(C.gdk_device_pad_feature_get_type())
 	GTypeDeviceToolType        = coreglib.Type(C.gdk_device_tool_type_get_type())
-	GTypeDmabufError           = coreglib.Type(C.gdk_dmabuf_error_get_type())
 	GTypeDragCancelReason      = coreglib.Type(C.gdk_drag_cancel_reason_get_type())
 	GTypeEventType             = coreglib.Type(C.gdk_event_type_get_type())
 	GTypeFullscreenMode        = coreglib.Type(C.gdk_fullscreen_mode_get_type())
@@ -166,8 +165,6 @@ var (
 	GTypeDeviceTool            = coreglib.Type(C.gdk_device_tool_get_type())
 	GTypeDisplay               = coreglib.Type(C.gdk_display_get_type())
 	GTypeDisplayManager        = coreglib.Type(C.gdk_display_manager_get_type())
-	GTypeDmabufTexture         = coreglib.Type(C.gdk_dmabuf_texture_get_type())
-	GTypeDmabufTextureBuilder  = coreglib.Type(C.gdk_dmabuf_texture_builder_get_type())
 	GTypeDrag                  = coreglib.Type(C.gdk_drag_get_type())
 	GTypeDrawContext           = coreglib.Type(C.gdk_draw_context_get_type())
 	GTypeDrop                  = coreglib.Type(C.gdk_drop_get_type())
@@ -176,7 +173,6 @@ var (
 	GTypeFrameClock            = coreglib.Type(C.gdk_frame_clock_get_type())
 	GTypeGLContext             = coreglib.Type(C.gdk_gl_context_get_type())
 	GTypeGLTexture             = coreglib.Type(C.gdk_gl_texture_get_type())
-	GTypeGLTextureBuilder      = coreglib.Type(C.gdk_gl_texture_builder_get_type())
 	GTypeGrabBrokenEvent       = coreglib.Type(C.gdk_grab_broken_event_get_type())
 	GTypeKeyEvent              = coreglib.Type(C.gdk_key_event_get_type())
 	GTypeMemoryTexture         = coreglib.Type(C.gdk_memory_texture_get_type())
@@ -194,14 +190,12 @@ var (
 	GTypeVulkanContext         = coreglib.Type(C.gdk_vulkan_context_get_type())
 	GTypeContentFormats        = coreglib.Type(C.gdk_content_formats_get_type())
 	GTypeContentFormatsBuilder = coreglib.Type(C.gdk_content_formats_builder_get_type())
-	GTypeDmabufFormats         = coreglib.Type(C.gdk_dmabuf_formats_get_type())
 	GTypeEventSequence         = coreglib.Type(C.gdk_event_sequence_get_type())
 	GTypeFileList              = coreglib.Type(C.gdk_file_list_get_type())
 	GTypeFrameTimings          = coreglib.Type(C.gdk_frame_timings_get_type())
 	GTypePopupLayout           = coreglib.Type(C.gdk_popup_layout_get_type())
 	GTypeRGBA                  = coreglib.Type(C.gdk_rgba_get_type())
 	GTypeRectangle             = coreglib.Type(C.gdk_rectangle_get_type())
-	GTypeTextureDownloader     = coreglib.Type(C.gdk_texture_downloader_get_type())
 	GTypeToplevelLayout        = coreglib.Type(C.gdk_toplevel_layout_get_type())
 )
 
@@ -211,7 +205,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeCrossingMode, F: marshalCrossingMode},
 		coreglib.TypeMarshaler{T: GTypeDevicePadFeature, F: marshalDevicePadFeature},
 		coreglib.TypeMarshaler{T: GTypeDeviceToolType, F: marshalDeviceToolType},
-		coreglib.TypeMarshaler{T: GTypeDmabufError, F: marshalDmabufError},
 		coreglib.TypeMarshaler{T: GTypeDragCancelReason, F: marshalDragCancelReason},
 		coreglib.TypeMarshaler{T: GTypeEventType, F: marshalEventType},
 		coreglib.TypeMarshaler{T: GTypeFullscreenMode, F: marshalFullscreenMode},
@@ -258,8 +251,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeDeviceTool, F: marshalDeviceTool},
 		coreglib.TypeMarshaler{T: GTypeDisplay, F: marshalDisplay},
 		coreglib.TypeMarshaler{T: GTypeDisplayManager, F: marshalDisplayManager},
-		coreglib.TypeMarshaler{T: GTypeDmabufTexture, F: marshalDmabufTexture},
-		coreglib.TypeMarshaler{T: GTypeDmabufTextureBuilder, F: marshalDmabufTextureBuilder},
 		coreglib.TypeMarshaler{T: GTypeDrag, F: marshalDrag},
 		coreglib.TypeMarshaler{T: GTypeDrawContext, F: marshalDrawContext},
 		coreglib.TypeMarshaler{T: GTypeDrop, F: marshalDrop},
@@ -268,7 +259,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeFrameClock, F: marshalFrameClock},
 		coreglib.TypeMarshaler{T: GTypeGLContext, F: marshalGLContext},
 		coreglib.TypeMarshaler{T: GTypeGLTexture, F: marshalGLTexture},
-		coreglib.TypeMarshaler{T: GTypeGLTextureBuilder, F: marshalGLTextureBuilder},
 		coreglib.TypeMarshaler{T: GTypeGrabBrokenEvent, F: marshalGrabBrokenEvent},
 		coreglib.TypeMarshaler{T: GTypeKeyEvent, F: marshalKeyEvent},
 		coreglib.TypeMarshaler{T: GTypeMemoryTexture, F: marshalMemoryTexture},
@@ -286,14 +276,12 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeVulkanContext, F: marshalVulkanContext},
 		coreglib.TypeMarshaler{T: GTypeContentFormats, F: marshalContentFormats},
 		coreglib.TypeMarshaler{T: GTypeContentFormatsBuilder, F: marshalContentFormatsBuilder},
-		coreglib.TypeMarshaler{T: GTypeDmabufFormats, F: marshalDmabufFormats},
 		coreglib.TypeMarshaler{T: GTypeEventSequence, F: marshalEventSequence},
 		coreglib.TypeMarshaler{T: GTypeFileList, F: marshalFileList},
 		coreglib.TypeMarshaler{T: GTypeFrameTimings, F: marshalFrameTimings},
 		coreglib.TypeMarshaler{T: GTypePopupLayout, F: marshalPopupLayout},
 		coreglib.TypeMarshaler{T: GTypeRGBA, F: marshalRGBA},
 		coreglib.TypeMarshaler{T: GTypeRectangle, F: marshalRectangle},
-		coreglib.TypeMarshaler{T: GTypeTextureDownloader, F: marshalTextureDownloader},
 		coreglib.TypeMarshaler{T: GTypeToplevelLayout, F: marshalToplevelLayout},
 	})
 }
@@ -2826,50 +2814,6 @@ func (d DeviceToolType) String() string {
 	}
 }
 
-// DmabufError: error enumeration for GdkDmabufTexture.
-type DmabufError C.gint
-
-const (
-	// DmabufErrorNotAvailable: dmabuf support is not available, because the OS
-	// is not Linux, or it was explicitly disabled at compile- or runtime.
-	DmabufErrorNotAvailable DmabufError = iota
-	// DmabufErrorUnsupportedFormat: requested format is not supported.
-	DmabufErrorUnsupportedFormat
-	// DmabufErrorCreationFailed: GTK failed to create the resource for other
-	// reasons.
-	DmabufErrorCreationFailed
-)
-
-func marshalDmabufError(p uintptr) (interface{}, error) {
-	return DmabufError(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for DmabufError.
-func (d DmabufError) String() string {
-	switch d {
-	case DmabufErrorNotAvailable:
-		return "NotAvailable"
-	case DmabufErrorUnsupportedFormat:
-		return "UnsupportedFormat"
-	case DmabufErrorCreationFailed:
-		return "CreationFailed"
-	default:
-		return fmt.Sprintf("DmabufError(%d)", d)
-	}
-}
-
-func DmabufErrorQuark() glib.Quark {
-	var _cret C.GQuark // in
-
-	_cret = C.gdk_dmabuf_error_quark()
-
-	var _quark glib.Quark // out
-
-	_quark = glib.Quark(_cret)
-
-	return _quark
-}
-
 // DragCancelReason: used in GdkDrag to the reason of a cancelled DND operation.
 type DragCancelReason C.gint
 
@@ -2967,7 +2911,7 @@ const (
 	// PadGroupMode: tablet pad group mode change.
 	PadGroupMode
 	// TouchpadHold: touchpad hold gesture event, the current state is
-	// determined by its phase field.
+	// determined by its phase field. Since: 4.6.
 	TouchpadHold
 	// EventLast marks the end of the GdkEventType enumeration.
 	EventLast
@@ -3301,63 +3245,33 @@ const (
 	MemoryR8G8B8
 	// MemoryB8G8R8: 3 bytes; for blue, green, red. The data is opaque.
 	MemoryB8G8R8
-	// MemoryR16G16B16: 3 guint16 values; for red, green, blue.
+	// MemoryR16G16B16: 3 guint16 values; for red, green, blue. Since: 4.6.
 	MemoryR16G16B16
 	// MemoryR16G16B16A16Premultiplied: 4 guint16 values; for red, green, blue,
-	// alpha. The color values are premultiplied with the alpha value.
+	// alpha. The color values are premultiplied with the alpha value. Since:
+	// 4.6.
 	MemoryR16G16B16A16Premultiplied
-	// MemoryR16G16B16A16: 4 guint16 values; for red, green, blue, alpha.
+	// MemoryR16G16B16A16: 4 guint16 values; for red, green, blue, alpha. Since:
+	// 4.6.
 	MemoryR16G16B16A16
 	// MemoryR16G16B16Float: 3 half-float values; for red, green, blue. The data
-	// is opaque.
+	// is opaque. Since: 4.6.
 	MemoryR16G16B16Float
 	// MemoryR16G16B16A16FloatPremultiplied: 4 half-float values; for red,
 	// green, blue and alpha. The color values are premultiplied with the alpha
-	// value.
+	// value. Since: 4.6.
 	MemoryR16G16B16A16FloatPremultiplied
 	// MemoryR16G16B16A16Float: 4 half-float values; for red, green, blue and
-	// alpha.
+	// alpha. Since: 4.6.
 	MemoryR16G16B16A16Float
-	// MemoryR32G32B32Float: 3 float values; for red, green, blue.
 	MemoryR32G32B32Float
 	// MemoryR32G32B32A32FloatPremultiplied: 4 float values; for red, green,
 	// blue and alpha. The color values are premultiplied with the alpha value.
+	// Since: 4.6.
 	MemoryR32G32B32A32FloatPremultiplied
 	// MemoryR32G32B32A32Float: 4 float values; for red, green, blue and alpha.
+	// Since: 4.6.
 	MemoryR32G32B32A32Float
-	// MemoryG8A8Premultiplied: 2 bytes; for grayscale, alpha. The color values
-	// are premultiplied with the alpha value.
-	MemoryG8A8Premultiplied
-	// MemoryG8A8: 2 bytes; for grayscale, alpha.
-	MemoryG8A8
-	// MemoryG8: one byte; for grayscale. The data is opaque.
-	MemoryG8
-	// MemoryG16A16Premultiplied: 2 guint16 values; for grayscale, alpha.
-	// The color values are premultiplied with the alpha value.
-	MemoryG16A16Premultiplied
-	// MemoryG16A16: 2 guint16 values; for grayscale, alpha.
-	MemoryG16A16
-	// MemoryG16: one guint16 value; for grayscale. The data is opaque.
-	MemoryG16
-	// MemoryA8: one byte; for alpha.
-	MemoryA8
-	// MemoryA16: one guint16 value; for alpha.
-	MemoryA16
-	// MemoryA16Float: one half-float value; for alpha.
-	MemoryA16Float
-	// MemoryA32Float: one float value; for alpha.
-	MemoryA32Float
-	// MemoryA8B8G8R8Premultiplied: 4 bytes; for alpha, blue, green, red,
-	// The color values are premultiplied with the alpha value.
-	MemoryA8B8G8R8Premultiplied
-	// MemoryB8G8R8X8: 4 bytes; for blue, green, red, unused.
-	MemoryB8G8R8X8
-	// MemorYX8R8G8B8: 4 bytes; for unused, red, green, blue.
-	MemorYX8R8G8B8
-	// MemoryR8G8B8X8: 4 bytes; for red, green, blue, unused.
-	MemoryR8G8B8X8
-	// MemorYX8B8G8R8: 4 bytes; for unused, blue, green, red.
-	MemorYX8B8G8R8
 	// MemoryNFormats: number of formats. This value will change as more formats
 	// get added, so do not rely on its concrete integer.
 	MemoryNFormats
@@ -3406,36 +3320,6 @@ func (m MemoryFormat) String() string {
 		return "R32G32B32A32FloatPremultiplied"
 	case MemoryR32G32B32A32Float:
 		return "R32G32B32A32Float"
-	case MemoryG8A8Premultiplied:
-		return "G8A8Premultiplied"
-	case MemoryG8A8:
-		return "G8A8"
-	case MemoryG8:
-		return "G8"
-	case MemoryG16A16Premultiplied:
-		return "G16A16Premultiplied"
-	case MemoryG16A16:
-		return "G16A16"
-	case MemoryG16:
-		return "G16"
-	case MemoryA8:
-		return "A8"
-	case MemoryA16:
-		return "A16"
-	case MemoryA16Float:
-		return "A16Float"
-	case MemoryA32Float:
-		return "A32Float"
-	case MemoryA8B8G8R8Premultiplied:
-		return "A8B8G8R8Premultiplied"
-	case MemoryB8G8R8X8:
-		return "B8G8R8X8"
-	case MemorYX8R8G8B8:
-		return "X8R8G8B8"
-	case MemoryR8G8B8X8:
-		return "R8G8B8X8"
-	case MemorYX8B8G8R8:
-		return "X8B8G8R8"
 	case MemoryNFormats:
 		return "NFormats"
 	default:
@@ -4233,8 +4117,6 @@ func (g GLAPI) Has(other GLAPI) bool {
 type ModifierType C.guint
 
 const (
-	// NoModifierMask: no modifier.
-	NoModifierMask ModifierType = 0b0
 	// ShiftMask: shift key.
 	ShiftMask ModifierType = 0b1
 	// LockMask: lock key (depending on the modifier mapping of the X server
@@ -4275,15 +4157,13 @@ func (m ModifierType) String() string {
 	}
 
 	var builder strings.Builder
-	builder.Grow(142)
+	builder.Grow(127)
 
 	for m != 0 {
 		next := m & (m - 1)
 		bit := m - next
 
 		switch bit {
-		case NoModifierMask:
-			builder.WriteString("NoModifierMask|")
 		case ShiftMask:
 			builder.WriteString("ShiftMask|")
 		case LockMask:
@@ -4329,11 +4209,11 @@ func (m ModifierType) Has(other ModifierType) bool {
 type PaintableFlags C.guint
 
 const (
-	// PaintableStaticSize: size is immutable. The
-	// gdk.Paintable::invalidate-size signal will never be emitted.
+	// PaintableStaticSize: size is immutable. The gdkpaintable::invalidate-size
+	// signal will never be emitted.
 	PaintableStaticSize PaintableFlags = 0b1
 	// PaintableStaticContents: content is immutable. The
-	// gdk.Paintable::invalidate-contents signal will never be emitted.
+	// gdkpaintable::invalidate-contents signal will never be emitted.
 	PaintableStaticContents PaintableFlags = 0b10
 )
 
@@ -4393,7 +4273,7 @@ const (
 	// SeatCapabilityAllPointing: union of all pointing capabilities.
 	SeatCapabilityAllPointing SeatCapabilities = 0b111
 	// SeatCapabilityAll: union of all capabilities.
-	SeatCapabilityAll SeatCapabilities = 0b11111
+	SeatCapabilityAll SeatCapabilities = 0b1111
 )
 
 func marshalSeatCapabilities(p uintptr) (interface{}, error) {
@@ -4488,8 +4368,6 @@ const (
 	ToplevelStateLeftTiled ToplevelState = 0b100000000000000
 	// ToplevelStateLeftResizable: whether the left edge is resizable.
 	ToplevelStateLeftResizable ToplevelState = 0b1000000000000000
-	// ToplevelStateSuspended: surface is not visible to the user.
-	ToplevelStateSuspended ToplevelState = 0b10000000000000000
 )
 
 func marshalToplevelState(p uintptr) (interface{}, error) {
@@ -4542,8 +4420,6 @@ func (t ToplevelState) String() string {
 			builder.WriteString("LeftTiled|")
 		case ToplevelStateLeftResizable:
 			builder.WriteString("LeftResizable|")
-		case ToplevelStateSuspended:
-			builder.WriteString("Suspended|")
 		default:
 			builder.WriteString(fmt.Sprintf("ToplevelState(0b%b)|", bit))
 		}
@@ -4895,18 +4771,6 @@ func ContentSerializeFinish(result gio.AsyncResulter) error {
 	}
 
 	return _goerr
-}
-
-func DragSurfaceSizeGetType() coreglib.Type {
-	var _cret C.GType // in
-
-	_cret = C.gdk_drag_surface_size_get_type()
-
-	var _gType coreglib.Type // out
-
-	_gType = coreglib.Type(_cret)
-
-	return _gType
 }
 
 // EventsGetAngle returns the relative angle from event1 to event2.
@@ -5301,9 +5165,6 @@ func KeyvalToUpper(keyval uint) uint {
 // This function will create an RGB pixbuf with 8 bits per channel. The pixbuf
 // will contain an alpha channel if the surface contains one.
 //
-// Deprecated: Use gdk.Texture and subclasses instead cairo surfaces and
-// pixbufs.
-//
 // The function takes the following parameters:
 //
 //   - surface to copy from.
@@ -5359,9 +5220,6 @@ func PixbufGetFromSurface(surface *cairo.Surface, srcX, srcY, width, height int)
 //
 // This should generally not be used in newly written code as later stages will
 // almost certainly convert the pixbuf back into a texture to draw it on screen.
-//
-// Deprecated: Use gdk.Texture and subclasses instead cairo surfaces and
-// pixbufs.
 //
 // The function takes the following parameters:
 //
@@ -5737,7 +5595,7 @@ func (dragSurface *DragSurface) Present(width, height int) bool {
 // it is suggested that you scale your paintable ignoring any potential aspect
 // ratio.
 //
-// The contents that a GdkPaintable produces may depend on the gdk.Snapshot
+// The contents that a GdkPaintable produces may depend on the gdksnapshot
 // passed to it. For example, paintables may decide to use more detailed images
 // on higher resolution screens or when OpenGL is available. A GdkPaintable will
 // however always produce the same output for the same snapshot.
@@ -5745,7 +5603,7 @@ func (dragSurface *DragSurface) Present(width, height int) bool {
 // A GdkPaintable may change its contents, meaning that it will now
 // produce a different output with the same snapshot. Once that happens,
 // it will call gdk.Paintable.InvalidateContents() which will emit the
-// gdk.Paintable::invalidate-contents signal. If a paintable is known to
+// gdkpaintable::invalidate-contents signal. If a paintable is known to
 // never change its contents, it will set the GDK_PAINTABLE_STATIC_CONTENTS
 // flag. If a consumer cannot deal with changing contents, it may call
 // gdk.Paintable.GetCurrentImage() which will return a static paintable and use
@@ -5756,7 +5614,7 @@ func (dragSurface *DragSurface) Present(width, height int) bool {
 // interface can use this information to layout thepaintable appropriately.
 // Just like the contents, the size of a paintable can change. A paintable
 // will indicate this by calling gdk.Paintable.InvalidateSize() which will
-// emit the gdk.Paintable::invalidate-size signal. And just like for contents,
+// emit the gdkpaintable::invalidate-size signal. And just like for contents,
 // if a paintable is known to never change its size, it will set the
 // GDK_PAINTABLE_STATIC_SIZE flag.
 //
@@ -6320,8 +6178,7 @@ func (paintable *Paintable) snapshot(snapshot Snapshotter, width, height float64
 //
 // This is often useful for implementing the gdk.Paintable.GetCurrentImage()
 // virtual function when the paintable is in an incomplete state (like a
-// GtkMediaStream (../gtk4/class.MediaStream.html) before receiving the first
-// frame).
+// gtk.MediaStream before receiving the first frame).
 //
 // The function takes the following parameters:
 //
@@ -6355,7 +6212,7 @@ func NewPaintableEmpty(intrinsicWidth, intrinsicHeight int) *Paintable {
 // The GdkPopup is positioned relative to its parent surface.
 //
 // GdkPopups are typically used to implement menus and similar popups. They can
-// be modal, which is indicated by the gdk.Popup:autohide property.
+// be modal, which is indicated by the gdkpopup:autohide property.
 //
 // Popup wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -6557,7 +6414,7 @@ func (popup *Popup) SurfaceAnchor() Gravity {
 // change position according to layout.
 //
 // After calling this function, the result should be handled in response to
-// the gdk.Surface::layout signal being emitted. The resulting popup position
+// the gdksurface::layout signal being emitted. The resulting popup position
 // can be queried using gdk.Popup.GetPositionX(), gdk.Popup.GetPositionY(),
 // and the resulting size will be sent as parameters in the layout signal.
 // Use gdk.Popup.GetRectAnchor() and gdk.Popup.GetSurfaceAnchor() to get the
@@ -6759,9 +6616,8 @@ func (toplevel *Toplevel) BeginResize(edge SurfaceEdge, device Devicer, button i
 
 // Focus sets keyboard focus to surface.
 //
-// In most cases, gtk_window_present_with_time()
-// (../gtk4/method.Window.present_with_time.html) should be used on a GtkWindow
-// (../gtk4/class.Window.html), rather than calling this function.
+// In most cases, gtk.Window.PresentWithTime() should be used on a gtk.Window,
+// rather than calling this function.
 //
 // The function takes the following parameters:
 //
@@ -7031,9 +6887,8 @@ func (toplevel *Toplevel) SetModal(modal bool) {
 
 // SetStartupID sets the startup notification ID.
 //
-// When using GTK, typically you should use gtk_window_set_startup_id()
-// (../gtk4/method.Window.set_startup_id.html) instead of this low-level
-// function.
+// When using GTK, typically you should use gtk.Window.SetStartupID() instead of
+// this low-level function.
 //
 // The function takes the following parameters:
 //
@@ -7077,9 +6932,7 @@ func (toplevel *Toplevel) SetTitle(title string) {
 // with the application surface parent. This allows the window manager to do
 // things like center surface on parent and keep surface above parent.
 //
-// See gtk_window_set_transient_for()
-// (../gtk4/method.Window.set_transient_for.html) if you’re using GtkWindow
-// (../gtk4/class.Window.html).
+// See gtk.Window.SetTransientFor() if you’re using gtk.Window or gtk.Dialog.
 //
 // The function takes the following parameters:
 //
@@ -8071,9 +7924,8 @@ func (clipboard *Clipboard) Set(value *coreglib.Value) {
 // Depending on the platform, the functionality may not be available unless a
 // "clipboard manager" is running.
 //
-// This function is called automatically when a GtkApplication
-// (../gtk4/class.Application.html) is shut down, so you likely don't need to
-// call it.
+// This function is called automatically when a gtk.Application is shut down,
+// so you likely don't need to call it.
 //
 // The function takes the following parameters:
 //
@@ -9420,10 +9272,9 @@ func (event *CrossingEvent) Mode() CrossingMode {
 // something about it.
 //
 // Cursors by themselves are not very interesting: they must be bound to a
-// window for users to see them. This is done with gdk.Surface.SetCursor()
-// or gdk.Surface.SetDeviceCursor(). Applications will typically
-// use higher-level GTK functions such as gtk_widget_set_cursor()
-// (../gtk4/method.Widget.set_cursor.html) instead.
+// window for users to see them. This is done with gdk.Surface.SetCursor() or
+// gdk.Surface.SetDeviceCursor(). Applications will typically use higher-level
+// GTK functions such as gtk.Widget.SetCursor() instead.
 //
 // Cursors are not bound to a given gdk.Display, so they can be shared. However,
 // the appearance of cursors may vary when used on different platforms.
@@ -10365,18 +10216,18 @@ func (tool *DeviceTool) Axes() AxisFlags {
 
 // HardwareID gets the hardware ID of this tool, or 0 if it's not known.
 //
-// When non-zero, the identifier is unique for the given tool model, meaning
-// that two identical tools will share the same hardware_id, but will have
-// different serial numbers (see gdk.DeviceTool.GetSerial()).
+// When non-zero, the identificator is unique for the given tool model,
+// meaning that two identical tools will share the same hardware_id, but will
+// have different serial numbers (see gdk.DeviceTool.GetSerial()).
 //
 // This is a more concrete (and device specific) method to identify a
 // GdkDeviceTool than gdk.DeviceTool.GetToolType(), as a tablet may support
 // multiple devices with the same GdkDeviceToolType, but different hardware
-// identifiers.
+// identificators.
 //
 // The function returns the following values:
 //
-//   - guint64: hardware identifier of this tool.
+//   - guint64: hardware identificator of this tool.
 func (tool *DeviceTool) HardwareID() uint64 {
 	var _arg0 *C.GdkDeviceTool // out
 	var _cret C.guint64        // in
@@ -10707,44 +10558,10 @@ func (display *Display) DefaultSeat() Seater {
 	return _seat
 }
 
-// DmabufFormats returns the dma-buf formats that are supported on this display.
-//
-// GTK may use OpenGL or Vulkan to support some formats. Calling this function
-// will then initialize them if they aren't yet.
-//
-// The formats returned by this function can be used for negotiating buffer
-// formats with producers such as v4l, pipewire or GStreamer.
-//
-// To learn more about dma-bufs, see gdk.DmabufTextureBuilder.
-//
-// The function returns the following values:
-//
-//   - dmabufFormats: GdkDmabufFormats object.
-func (display *Display) DmabufFormats() *DmabufFormats {
-	var _arg0 *C.GdkDisplay       // out
-	var _cret *C.GdkDmabufFormats // in
-
-	_arg0 = (*C.GdkDisplay)(unsafe.Pointer(coreglib.InternObject(display).Native()))
-
-	_cret = C.gdk_display_get_dmabuf_formats(_arg0)
-	runtime.KeepAlive(display)
-
-	var _dmabufFormats *DmabufFormats // out
-
-	_dmabufFormats = (*DmabufFormats)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	C.gdk_dmabuf_formats_ref(_cret)
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_dmabufFormats)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.gdk_dmabuf_formats_unref((*C.GdkDmabufFormats)(intern.C))
-		},
-	)
-
-	return _dmabufFormats
-}
-
 // MonitorAtSurface gets the monitor in which the largest area of surface
 // resides.
+//
+// Returns a monitor close to surface if it is outside of all monitors.
 //
 // The function takes the following parameters:
 //
@@ -10752,7 +10569,7 @@ func (display *Display) DmabufFormats() *DmabufFormats {
 //
 // The function returns the following values:
 //
-//   - monitor (optional) with the largest overlap with surface.
+//   - monitor with the largest overlap with surface.
 func (display *Display) MonitorAtSurface(surface Surfacer) *Monitor {
 	var _arg0 *C.GdkDisplay // out
 	var _arg1 *C.GdkSurface // out
@@ -10767,9 +10584,7 @@ func (display *Display) MonitorAtSurface(surface Surfacer) *Monitor {
 
 	var _monitor *Monitor // out
 
-	if _cret != nil {
-		_monitor = wrapMonitor(coreglib.Take(unsafe.Pointer(_cret)))
-	}
+	_monitor = wrapMonitor(coreglib.Take(unsafe.Pointer(_cret)))
 
 	return _monitor
 }
@@ -10891,8 +10706,6 @@ func (display *Display) Setting(name string, value *coreglib.Value) bool {
 
 // StartupNotificationID gets the startup notification ID for a Wayland display,
 // or NULL if no ID has been defined.
-//
-// Deprecated: since version 4.10.
 //
 // The function returns the following values:
 //
@@ -11181,13 +10994,9 @@ func (display *Display) MapKeyval(keyval uint) ([]KeymapKey, bool) {
 // NotifyStartupComplete indicates to the GUI environment that the application
 // has finished loading, using a given identifier.
 //
-// GTK will call this function automatically for GtkWindow
-// (../gtk4/class.Window.html) with custom startup-notification
-// identifier unless gtk_window_set_auto_startup_notification()
-// (../gtk4/method.Window.set_auto_startup_notification.html) is called to
-// disable that feature.
-//
-// Deprecated: Using gdk.Toplevel.SetStartupID() is sufficient.
+// GTK will call this function automatically for gtk.Window
+// with custom startup-notification identifier unless
+// gtk.Window.SetAutoStartupNotification() is called to disable that feature.
 //
 // The function takes the following parameters:
 //
@@ -11237,10 +11046,11 @@ func (self *Display) PrepareGL() error {
 	return _goerr
 }
 
-// PutEvent adds the given event to the event queue for display.
+// PutEvent appends the given event onto the front of the event queue for
+// display.
 //
-// Deprecated: This function is only useful in very special situations and
-// should not be used by applications.
+// This function is only useful in very special situations and should not be
+// used by applications.
 //
 // The function takes the following parameters:
 //
@@ -11274,34 +11084,6 @@ func (display *Display) SupportsInputShapes() bool {
 	_arg0 = (*C.GdkDisplay)(unsafe.Pointer(coreglib.InternObject(display).Native()))
 
 	_cret = C.gdk_display_supports_input_shapes(_arg0)
-	runtime.KeepAlive(display)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// SupportsShadowWidth returns whether it's possible for a surface to draw
-// outside of the window area.
-//
-// If TRUE is returned the application decides if it wants to draw shadows.
-// If FALSE is returned, the compositor decides if it wants to draw shadows.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if surfaces can draw shadows or FALSE if the display does not
-//     support this functionality.
-func (display *Display) SupportsShadowWidth() bool {
-	var _arg0 *C.GdkDisplay // out
-	var _cret C.gboolean    // in
-
-	_arg0 = (*C.GdkDisplay)(unsafe.Pointer(coreglib.InternObject(display).Native()))
-
-	_cret = C.gdk_display_supports_shadow_width(_arg0)
 	runtime.KeepAlive(display)
 
 	var _ok bool // out
@@ -11433,7 +11215,7 @@ func DisplayGetDefault() *Display {
 //
 // The function takes the following parameters:
 //
-//   - displayName (optional): name of the display to open.
+//   - displayName: name of the display to open.
 //
 // The function returns the following values:
 //
@@ -11442,10 +11224,8 @@ func DisplayOpen(displayName string) *Display {
 	var _arg1 *C.char       // out
 	var _cret *C.GdkDisplay // in
 
-	if displayName != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(displayName)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
+	_arg1 = (*C.char)(unsafe.Pointer(C.CString(displayName)))
+	defer C.free(unsafe.Pointer(_arg1))
 
 	_cret = C.gdk_display_open(_arg1)
 	runtime.KeepAlive(displayName)
@@ -11576,7 +11356,7 @@ func (manager *DisplayManager) ListDisplays() []*Display {
 //
 // The function takes the following parameters:
 //
-//   - name (optional) of the display to open.
+//   - name of the display to open.
 //
 // The function returns the following values:
 //
@@ -11588,10 +11368,8 @@ func (manager *DisplayManager) OpenDisplay(name string) *Display {
 	var _cret *C.GdkDisplay        // in
 
 	_arg0 = (*C.GdkDisplayManager)(unsafe.Pointer(coreglib.InternObject(manager).Native()))
-	if name != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(name)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
+	_arg1 = (*C.char)(unsafe.Pointer(C.CString(name)))
+	defer C.free(unsafe.Pointer(_arg1))
 
 	_cret = C.gdk_display_manager_open_display(_arg0, _arg1)
 	runtime.KeepAlive(manager)
@@ -11629,8 +11407,7 @@ func (manager *DisplayManager) SetDefaultDisplay(display *Display) {
 // environment variable to find out which of the supported GDK backends to use
 // (in case GDK has been compiled with multiple backends).
 //
-// Applications can use set_allowed_backends to limit what backends will be
-// used.
+// Applications can use set_allowed_backends to limit what backends wil be used.
 //
 // The function returns the following values:
 //
@@ -11645,696 +11422,6 @@ func DisplayManagerGet() *DisplayManager {
 	_displayManager = wrapDisplayManager(coreglib.Take(unsafe.Pointer(_cret)))
 
 	return _displayManager
-}
-
-// DmabufTexture: GdkTexture representing a DMA buffer.
-//
-// To create a GdkDmabufTexture, use the auxiliary gdk.DmabufTextureBuilder
-// object.
-//
-// Dma-buf textures can only be created on Linux.
-type DmabufTexture struct {
-	_ [0]func() // equal guard
-	Texture
-}
-
-var (
-	_ Texturer = (*DmabufTexture)(nil)
-)
-
-func wrapDmabufTexture(obj *coreglib.Object) *DmabufTexture {
-	return &DmabufTexture{
-		Texture: Texture{
-			Object: obj,
-			Paintable: Paintable{
-				Object: obj,
-			},
-			LoadableIcon: gio.LoadableIcon{
-				Icon: gio.Icon{
-					Object: obj,
-				},
-			},
-		},
-	}
-}
-
-func marshalDmabufTexture(p uintptr) (interface{}, error) {
-	return wrapDmabufTexture(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// DmabufTextureBuilder: GdkDmabufTextureBuilder is a builder used to construct
-// gdk.Texture objects from DMA buffers.
-//
-// DMA buffers are commonly called **_dma-bufs_**.
-//
-// DMA buffers are a feature of the Linux kernel to enable efficient buffer
-// and memory sharing between hardware such as codecs, GPUs, displays, cameras
-// and the kernel drivers controlling them. For example, a decoder may want its
-// output to be directly shared with the display server for rendering without a
-// copy.
-//
-// Any device driver which participates in DMA buffer sharing, can do so as
-// either the exporter or importer of buffers (or both).
-//
-// The memory that is shared via DMA buffers is usually stored in non-system
-// memory (maybe in device's local memory or something else not directly
-// accessible by the CPU), and accessing this memory from the CPU may have
-// higher-than-usual overhead.
-//
-// In particular for graphics data, it is not uncommon that data consists
-// of multiple separate blocks of memory, for example one block for each of
-// the red, green and blue channels. These blocks are called **_planes_**.
-// DMA buffers can have up to four planes. Even if the memory is a single block,
-// the data can be organized in multiple planes, by specifying offsets from the
-// beginning of the data.
-//
-// DMA buffers are exposed to user-space as file descriptors allowing to pass
-// them between processes. If a DMA buffer has multiple planes, there is one
-// file descriptor per plane.
-//
-// The format of the data (for graphics data, essentially its colorspace) is
-// described by a 32-bit integer. These format identifiers are defined in the
-// header file drm_fourcc.h and commonly referred to as **_fourcc_** values,
-// since they are identified by 4 ASCII characters. Additionally, each DMA
-// buffer has a **_modifier_**, which is a 64-bit integer that describes
-// driver-specific details of the memory layout, such as tiling or compression.
-//
-// For historical reasons, some producers of dma-bufs don't provide an explicit
-// modifier, but instead return DMA_FORMAT_MOD_INVALID to indicate that their
-// modifier is **_implicit_**. GTK tries to accommodate this situation by
-// accepting DMA_FORMAT_MOD_INVALID as modifier.
-//
-// The operation of GdkDmabufTextureBuilder is quite simple: Create a
-// texture builder, set all the necessary properties, and then call
-// gdk.DmabufTextureBuilder.Build() to create the new texture.
-//
-// The required properties for a dma-buf texture are
-//
-//   - The width and height in pixels
-//
-//   - The fourcc code and modifier which identify the format and memory layout
-//     of the dma-buf
-//
-//   - The file descriptor, offset and stride for each of the planes
-//
-// GdkDmabufTextureBuilder can be used for quick one-shot construction of
-// textures as well as kept around and reused to construct multiple textures.
-//
-// # For further information, see
-//
-// * The Linux kernel documentation
-// (https://docs.kernel.org/driver-api/dma-buf.html)
-//
-// * The header file drm_fourcc.h
-// (https://gitlab.freedesktop.org/mesa/drm/-/blob/main/include/drm/drm_fourcc.h).
-type DmabufTextureBuilder struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*DmabufTextureBuilder)(nil)
-)
-
-func wrapDmabufTextureBuilder(obj *coreglib.Object) *DmabufTextureBuilder {
-	return &DmabufTextureBuilder{
-		Object: obj,
-	}
-}
-
-func marshalDmabufTextureBuilder(p uintptr) (interface{}, error) {
-	return wrapDmabufTextureBuilder(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NewDmabufTextureBuilder creates a new texture builder.
-//
-// The function returns the following values:
-//
-//   - dmabufTextureBuilder: new GdkTextureBuilder.
-func NewDmabufTextureBuilder() *DmabufTextureBuilder {
-	var _cret *C.GdkDmabufTextureBuilder // in
-
-	_cret = C.gdk_dmabuf_texture_builder_new()
-
-	var _dmabufTextureBuilder *DmabufTextureBuilder // out
-
-	_dmabufTextureBuilder = wrapDmabufTextureBuilder(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-
-	return _dmabufTextureBuilder
-}
-
-// Display returns the display that this texture builder is associated with.
-//
-// The function returns the following values:
-//
-//   - display: display.
-func (self *DmabufTextureBuilder) Display() *Display {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _cret *C.GdkDisplay              // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_dmabuf_texture_builder_get_display(_arg0)
-	runtime.KeepAlive(self)
-
-	var _display *Display // out
-
-	_display = wrapDisplay(coreglib.Take(unsafe.Pointer(_cret)))
-
-	return _display
-}
-
-// Fd gets the file descriptor for a plane.
-//
-// The function takes the following parameters:
-//
-//   - plane to get the fd for.
-//
-// The function returns the following values:
-//
-//   - gint: file descriptor.
-func (self *DmabufTextureBuilder) Fd(plane uint) int {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.uint                     // out
-	var _cret C.int                      // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(plane)
-
-	_cret = C.gdk_dmabuf_texture_builder_get_fd(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(plane)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
-}
-
-// Fourcc gets the format previously set via
-// gdk_dmabuf_texture_builder_set_fourcc() or 0 if the format wasn't set.
-//
-// The format is specified as a fourcc code.
-//
-// The function returns the following values:
-//
-//   - guint32: format.
-func (self *DmabufTextureBuilder) Fourcc() uint32 {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _cret C.guint32                  // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_dmabuf_texture_builder_get_fourcc(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint32 uint32 // out
-
-	_guint32 = uint32(_cret)
-
-	return _guint32
-}
-
-// Height gets the height previously set via
-// gdk_dmabuf_texture_builder_set_height() or 0 if the height wasn't set.
-//
-// The function returns the following values:
-//
-//   - guint: height.
-func (self *DmabufTextureBuilder) Height() uint {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _cret C.uint                     // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_dmabuf_texture_builder_get_height(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// Modifier gets the modifier value.
-//
-// The function returns the following values:
-//
-//   - guint64: modifier.
-func (self *DmabufTextureBuilder) Modifier() uint64 {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _cret C.guint64                  // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_dmabuf_texture_builder_get_modifier(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint64 uint64 // out
-
-	_guint64 = uint64(_cret)
-
-	return _guint64
-}
-
-// NPlanes gets the number of planes.
-//
-// The function returns the following values:
-//
-//   - guint: number of planes.
-func (self *DmabufTextureBuilder) NPlanes() uint {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _cret C.uint                     // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_dmabuf_texture_builder_get_n_planes(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// Offset gets the offset value for a plane.
-//
-// The function takes the following parameters:
-//
-//   - plane to get the offset for.
-//
-// The function returns the following values:
-//
-//   - guint: offset.
-func (self *DmabufTextureBuilder) Offset(plane uint) uint {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.uint                     // out
-	var _cret C.uint                     // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(plane)
-
-	_cret = C.gdk_dmabuf_texture_builder_get_offset(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(plane)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// Premultiplied: whether the data is premultiplied.
-//
-// The function returns the following values:
-//
-//   - ok: whether the data is premultiplied.
-func (self *DmabufTextureBuilder) Premultiplied() bool {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _cret C.gboolean                 // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_dmabuf_texture_builder_get_premultiplied(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Stride gets the stride value for a plane.
-//
-// The function takes the following parameters:
-//
-//   - plane to get the stride for.
-//
-// The function returns the following values:
-//
-//   - guint: stride.
-func (self *DmabufTextureBuilder) Stride(plane uint) uint {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.uint                     // out
-	var _cret C.uint                     // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(plane)
-
-	_cret = C.gdk_dmabuf_texture_builder_get_stride(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(plane)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// UpdateRegion gets the region previously set via
-// gdk_dmabuf_texture_builder_set_update_region() or NULL if none was set.
-//
-// The function returns the following values:
-//
-//   - region (optional): region.
-func (self *DmabufTextureBuilder) UpdateRegion() *cairo.Region {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _cret *C.cairo_region_t          // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_dmabuf_texture_builder_get_update_region(_arg0)
-	runtime.KeepAlive(self)
-
-	var _region *cairo.Region // out
-
-	if _cret != nil {
-		{
-			_pp := &struct{ p unsafe.Pointer }{unsafe.Pointer(_cret)}
-			_region = (*cairo.Region)(unsafe.Pointer(_pp))
-		}
-		C.cairo_region_reference(_cret)
-		runtime.SetFinalizer(_region, func(v *cairo.Region) {
-			C.cairo_region_destroy((*C.cairo_region_t)(unsafe.Pointer(v.Native())))
-		})
-	}
-
-	return _region
-}
-
-// UpdateTexture gets the texture previously set via
-// gdk_dmabuf_texture_builder_set_update_texture() or NULL if none was set.
-//
-// The function returns the following values:
-//
-//   - texture (optional): texture.
-func (self *DmabufTextureBuilder) UpdateTexture() Texturer {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _cret *C.GdkTexture              // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_dmabuf_texture_builder_get_update_texture(_arg0)
-	runtime.KeepAlive(self)
-
-	var _texture Texturer // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.Take(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(Texturer)
-				return ok
-			})
-			rv, ok := casted.(Texturer)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gdk.Texturer")
-			}
-			_texture = rv
-		}
-	}
-
-	return _texture
-}
-
-// Width gets the width previously set via
-// gdk_dmabuf_texture_builder_set_width() or 0 if the width wasn't set.
-//
-// The function returns the following values:
-//
-//   - guint: width.
-func (self *DmabufTextureBuilder) Width() uint {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _cret C.uint                     // in
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_dmabuf_texture_builder_get_width(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// SetDisplay sets the display that this texture builder is associated with.
-//
-// The display is used to determine the supported dma-buf formats.
-//
-// The function takes the following parameters:
-//
-//   - display: display.
-func (self *DmabufTextureBuilder) SetDisplay(display *Display) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 *C.GdkDisplay              // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (*C.GdkDisplay)(unsafe.Pointer(coreglib.InternObject(display).Native()))
-
-	C.gdk_dmabuf_texture_builder_set_display(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(display)
-}
-
-// SetFd sets the file descriptor for a plane.
-//
-// The function takes the following parameters:
-//
-//   - plane to set the fd for.
-//   - fd: file descriptor.
-func (self *DmabufTextureBuilder) SetFd(plane uint, fd int) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.uint                     // out
-	var _arg2 C.int                      // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(plane)
-	_arg2 = C.int(fd)
-
-	C.gdk_dmabuf_texture_builder_set_fd(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(plane)
-	runtime.KeepAlive(fd)
-}
-
-// SetFourcc sets the format of the texture.
-//
-// The format is specified as a fourcc code.
-//
-// The format must be set before calling gdk.GLTextureBuilder.Build().
-//
-// The function takes the following parameters:
-//
-//   - fourcc texture's format or 0 to unset.
-func (self *DmabufTextureBuilder) SetFourcc(fourcc uint32) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.guint32                  // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.guint32(fourcc)
-
-	C.gdk_dmabuf_texture_builder_set_fourcc(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(fourcc)
-}
-
-// SetHeight sets the height of the texture.
-//
-// The height must be set before calling gdk.GLTextureBuilder.Build().
-//
-// The function takes the following parameters:
-//
-//   - height texture's height or 0 to unset.
-func (self *DmabufTextureBuilder) SetHeight(height uint) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.uint                     // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(height)
-
-	C.gdk_dmabuf_texture_builder_set_height(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(height)
-}
-
-// SetModifier sets the modifier.
-//
-// The function takes the following parameters:
-//
-//   - modifier value.
-func (self *DmabufTextureBuilder) SetModifier(modifier uint64) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.guint64                  // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.guint64(modifier)
-
-	C.gdk_dmabuf_texture_builder_set_modifier(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(modifier)
-}
-
-// SetNPlanes sets the number of planes of the texture.
-//
-// The function takes the following parameters:
-//
-//   - nPlanes: number of planes.
-func (self *DmabufTextureBuilder) SetNPlanes(nPlanes uint) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.uint                     // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(nPlanes)
-
-	C.gdk_dmabuf_texture_builder_set_n_planes(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(nPlanes)
-}
-
-// SetOffset sets the offset for a plane.
-//
-// The function takes the following parameters:
-//
-//   - plane to set the offset for.
-//   - offset value.
-func (self *DmabufTextureBuilder) SetOffset(plane, offset uint) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.uint                     // out
-	var _arg2 C.uint                     // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(plane)
-	_arg2 = C.uint(offset)
-
-	C.gdk_dmabuf_texture_builder_set_offset(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(plane)
-	runtime.KeepAlive(offset)
-}
-
-// SetPremultiplied sets whether the data is premultiplied.
-//
-// Unless otherwise specified, all formats including alpha channels are assumed
-// to be premultiplied.
-//
-// The function takes the following parameters:
-//
-//   - premultiplied: whether the data is premultiplied.
-func (self *DmabufTextureBuilder) SetPremultiplied(premultiplied bool) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.gboolean                 // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if premultiplied {
-		_arg1 = C.TRUE
-	}
-
-	C.gdk_dmabuf_texture_builder_set_premultiplied(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(premultiplied)
-}
-
-// SetStride sets the stride for a plane.
-//
-// The stride must be set for all planes before calling
-// gdk.GLTextureBuilder.Build().
-//
-// The function takes the following parameters:
-//
-//   - plane to set the stride for.
-//   - stride value.
-func (self *DmabufTextureBuilder) SetStride(plane, stride uint) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.uint                     // out
-	var _arg2 C.uint                     // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(plane)
-	_arg2 = C.uint(stride)
-
-	C.gdk_dmabuf_texture_builder_set_stride(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(plane)
-	runtime.KeepAlive(stride)
-}
-
-// SetUpdateRegion sets the region to be updated by this texture. Together
-// with gdk.DmabufTextureBuilder:update-texture this describes an update of a
-// previous texture.
-//
-// When rendering animations of large textures, it is possible that consecutive
-// textures are only updating contents in parts of the texture. It is then
-// possible to describe this update via these two properties, so that GTK can
-// avoid rerendering parts that did not change.
-//
-// An example would be a screen recording where only the mouse pointer moves.
-//
-// The function takes the following parameters:
-//
-//   - region (optional) to update.
-func (self *DmabufTextureBuilder) SetUpdateRegion(region *cairo.Region) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 *C.cairo_region_t          // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if region != nil {
-		_arg1 = (*C.cairo_region_t)(unsafe.Pointer(region.Native()))
-	}
-
-	C.gdk_dmabuf_texture_builder_set_update_region(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(region)
-}
-
-// SetUpdateTexture sets the texture to be updated by this texture. See
-// gdk.DmabufTextureBuilder.SetUpdateRegion() for an explanation.
-//
-// The function takes the following parameters:
-//
-//   - texture (optional) to update.
-func (self *DmabufTextureBuilder) SetUpdateTexture(texture Texturer) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 *C.GdkTexture              // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if texture != nil {
-		_arg1 = (*C.GdkTexture)(unsafe.Pointer(coreglib.InternObject(texture).Native()))
-	}
-
-	C.gdk_dmabuf_texture_builder_set_update_texture(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(texture)
-}
-
-// SetWidth sets the width of the texture.
-//
-// The width must be set before calling gdk.GLTextureBuilder.Build().
-//
-// The function takes the following parameters:
-//
-//   - width texture's width or 0 to unset.
-func (self *DmabufTextureBuilder) SetWidth(width uint) {
-	var _arg0 *C.GdkDmabufTextureBuilder // out
-	var _arg1 C.uint                     // out
-
-	_arg0 = (*C.GdkDmabufTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.uint(width)
-
-	C.gdk_dmabuf_texture_builder_set_width(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(width)
 }
 
 // Drag: GdkDrag object represents the source of an ongoing DND operation.
@@ -12824,8 +11911,8 @@ func BaseDrawContext(obj DrawContexter) *DrawContext {
 //
 // When using GTK, the widget system automatically places calls to
 // gdk_draw_context_begin_frame() and gdk_draw_context_end_frame() via the use
-// of GskRenderer (../gsk4/class.Renderer.html)s, so application code does not
-// need to call these functions explicitly.
+// of gsk.Renderers, so application code does not need to call these functions
+// explicitly.
 //
 // The function takes the following parameters:
 //
@@ -13341,6 +12428,7 @@ func (self *Drop) ReadFinish(result gio.AsyncResulter) (string, gio.InputStreame
 	var _goerr error                   // out
 
 	_outMimeType = C.GoString((*C.gchar)(unsafe.Pointer(_arg2)))
+	defer C.free(unsafe.Pointer(_arg2))
 	if _cret != nil {
 		{
 			objptr := unsafe.Pointer(_cret)
@@ -13684,7 +12772,7 @@ func (event *Event) Display() *Display {
 	return _display
 }
 
-// EventSequence returns the event sequence to which the event belongs.
+// EventSequence retuns the event sequence to which the event belongs.
 //
 // Related touch events are connected in a sequence. Other events typically
 // don't have event sequence information.
@@ -13814,8 +12902,6 @@ func (event *Event) PointerEmulated() bool {
 }
 
 // Position: extract the event surface relative x/y coordinates from an event.
-//
-// This position is in surface coordinates (coordinates.html).
 //
 // The function returns the following values:
 //
@@ -14036,7 +13122,7 @@ func (event *FocusEvent) In() bool {
 // for the synchronization being implemented, the clock will process a
 // frame and emit signals for each phase that has been requested. (See the
 // signals of the GdkFrameClock class for documentation of the phases.
-// GDK_FRAME_CLOCK_PHASE_UPDATE and the gdk.FrameClock::update signal are most
+// GDK_FRAME_CLOCK_PHASE_UPDATE and the gdkframeclock::update signal are most
 // interesting for application writers, and are used to update the animations,
 // using the frame time given by gdk.FrameClock.GetFrameTime().
 //
@@ -14047,7 +13133,7 @@ func (event *FocusEvent) In() bool {
 // all calls to gdk.FrameClock.GetFrameTime() that are called at a “similar”
 // time get the same value. This means that if different animations are
 // timed by looking at the difference in time between an initial value from
-// gdk.FrameClock.GetFrameTime() and the value inside the gdk.FrameClock::update
+// gdk.FrameClock.GetFrameTime() and the value inside the gdkframeclock::update
 // signal of the clock, they will stay exactly synchronized.
 type FrameClock struct {
 	_ [0]func() // equal guard
@@ -14123,8 +13209,8 @@ func (frameClock *FrameClock) ConnectLayout(f func()) coreglib.SignalHandle {
 // processing of the frame.
 //
 // The frame is repainted. GDK normally handles this internally and emits
-// gdk.Surface::render signals which are turned into GtkWidget::snapshot
-// (../gtk4/signal.Widget.snapshot.html) signals by GTK.
+// gdk.Surface::render signals which are turned into gtk.Widget::snapshot
+// signals by GTK.
 func (frameClock *FrameClock) ConnectPaint(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(frameClock, "paint", false, unsafe.Pointer(C._gotk4_gdk4_FrameClock_ConnectPaint), f)
 }
@@ -14142,8 +13228,7 @@ func (frameClock *FrameClock) ConnectResumeEvents(f func()) coreglib.SignalHandl
 //
 // Animations should be updated using gdk.FrameClock.GetFrameTime().
 // Applications can connect directly to this signal, or use
-// gtk_widget_add_tick_callback() (../gtk4/method.Widget.add_tick_callback.html)
-// as a more convenient interface.
+// gtk.Widget.AddTickCallback() as a more convenient interface.
 func (frameClock *FrameClock) ConnectUpdate(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(frameClock, "update", false, unsafe.Pointer(C._gotk4_gdk4_FrameClock_ConnectUpdate), f)
 }
@@ -14761,6 +13846,9 @@ func (context *GLContext) UseES() bool {
 //
 // The context must be realized prior to calling this function.
 //
+// If the context has never been made current, the version cannot be known and
+// it will return 0 for both major and minor.
+//
 // The function returns the following values:
 //
 //   - major: return location for the major version.
@@ -15111,501 +14199,6 @@ func (self *GLTexture) Release() {
 
 	C.gdk_gl_texture_release(_arg0)
 	runtime.KeepAlive(self)
-}
-
-// GLTextureBuilder: GdkGLTextureBuilder is a builder used to construct
-// gdk.Texture objects from GL textures.
-//
-// The operation is quite simple: Create a texture builder,
-// set all the necessary properties - keep in mind that the
-// properties gdk.GLTextureBuilder:context, gdk.GLTextureBuilder:id,
-// gdk.GLTextureBuilder:width, and gdk.GLTextureBuilder:height are mandatory -
-// and then call gdk.GLTextureBuilder.Build() to create the new texture.
-//
-// GdkGLTextureBuilder can be used for quick one-shot construction of textures
-// as well as kept around and reused to construct multiple textures.
-type GLTextureBuilder struct {
-	_ [0]func() // equal guard
-	*coreglib.Object
-}
-
-var (
-	_ coreglib.Objector = (*GLTextureBuilder)(nil)
-)
-
-func wrapGLTextureBuilder(obj *coreglib.Object) *GLTextureBuilder {
-	return &GLTextureBuilder{
-		Object: obj,
-	}
-}
-
-func marshalGLTextureBuilder(p uintptr) (interface{}, error) {
-	return wrapGLTextureBuilder(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NewGLTextureBuilder creates a new texture builder.
-//
-// The function returns the following values:
-//
-//   - glTextureBuilder: new GdkTextureBuilder.
-func NewGLTextureBuilder() *GLTextureBuilder {
-	var _cret *C.GdkGLTextureBuilder // in
-
-	_cret = C.gdk_gl_texture_builder_new()
-
-	var _glTextureBuilder *GLTextureBuilder // out
-
-	_glTextureBuilder = wrapGLTextureBuilder(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-
-	return _glTextureBuilder
-}
-
-// Context gets the context previously set via
-// gdk_gl_texture_builder_set_context() or NULL if none was set.
-//
-// The function returns the following values:
-//
-//   - glContext (optional): context.
-func (self *GLTextureBuilder) Context() GLContexter {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _cret *C.GdkGLContext        // in
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_gl_texture_builder_get_context(_arg0)
-	runtime.KeepAlive(self)
-
-	var _glContext GLContexter // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.Take(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(GLContexter)
-				return ok
-			})
-			rv, ok := casted.(GLContexter)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gdk.GLContexter")
-			}
-			_glContext = rv
-		}
-	}
-
-	return _glContext
-}
-
-// Format gets the format previously set via
-// gdk_gl_texture_builder_set_format().
-//
-// The function returns the following values:
-//
-//   - memoryFormat: format.
-func (self *GLTextureBuilder) Format() MemoryFormat {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _cret C.GdkMemoryFormat      // in
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_gl_texture_builder_get_format(_arg0)
-	runtime.KeepAlive(self)
-
-	var _memoryFormat MemoryFormat // out
-
-	_memoryFormat = MemoryFormat(_cret)
-
-	return _memoryFormat
-}
-
-// HasMipmap gets whether the texture has a mipmap.
-//
-// The function returns the following values:
-//
-//   - ok: whether the texture has a mipmap.
-func (self *GLTextureBuilder) HasMipmap() bool {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _cret C.gboolean             // in
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_gl_texture_builder_get_has_mipmap(_arg0)
-	runtime.KeepAlive(self)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Height gets the height previously set via gdk_gl_texture_builder_set_height()
-// or 0 if the height wasn't set.
-//
-// The function returns the following values:
-//
-//   - gint: height.
-func (self *GLTextureBuilder) Height() int {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _cret C.int                  // in
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_gl_texture_builder_get_height(_arg0)
-	runtime.KeepAlive(self)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
-}
-
-// ID gets the texture id previously set via gdk_gl_texture_builder_set_id() or
-// 0 if the id wasn't set.
-//
-// The function returns the following values:
-//
-//   - guint: id.
-func (self *GLTextureBuilder) ID() uint {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _cret C.guint                // in
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_gl_texture_builder_get_id(_arg0)
-	runtime.KeepAlive(self)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// Sync gets the GLsync previously set via gdk_gl_texture_builder_set_sync().
-//
-// The function returns the following values:
-//
-//   - gpointer (optional): GLSync.
-func (self *GLTextureBuilder) Sync() unsafe.Pointer {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _cret C.gpointer             // in
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_gl_texture_builder_get_sync(_arg0)
-	runtime.KeepAlive(self)
-
-	var _gpointer unsafe.Pointer // out
-
-	_gpointer = (unsafe.Pointer)(unsafe.Pointer(_cret))
-
-	return _gpointer
-}
-
-// UpdateRegion gets the region previously set via
-// gdk_gl_texture_builder_set_update_region() or NULL if none was set.
-//
-// The function returns the following values:
-//
-//   - region (optional): region.
-func (self *GLTextureBuilder) UpdateRegion() *cairo.Region {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _cret *C.cairo_region_t      // in
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_gl_texture_builder_get_update_region(_arg0)
-	runtime.KeepAlive(self)
-
-	var _region *cairo.Region // out
-
-	if _cret != nil {
-		{
-			_pp := &struct{ p unsafe.Pointer }{unsafe.Pointer(_cret)}
-			_region = (*cairo.Region)(unsafe.Pointer(_pp))
-		}
-		C.cairo_region_reference(_cret)
-		runtime.SetFinalizer(_region, func(v *cairo.Region) {
-			C.cairo_region_destroy((*C.cairo_region_t)(unsafe.Pointer(v.Native())))
-		})
-	}
-
-	return _region
-}
-
-// UpdateTexture gets the texture previously set via
-// gdk_gl_texture_builder_set_update_texture() or NULL if none was set.
-//
-// The function returns the following values:
-//
-//   - texture (optional): texture.
-func (self *GLTextureBuilder) UpdateTexture() Texturer {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _cret *C.GdkTexture          // in
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_gl_texture_builder_get_update_texture(_arg0)
-	runtime.KeepAlive(self)
-
-	var _texture Texturer // out
-
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.Take(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(Texturer)
-				return ok
-			})
-			rv, ok := casted.(Texturer)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gdk.Texturer")
-			}
-			_texture = rv
-		}
-	}
-
-	return _texture
-}
-
-// Width gets the width previously set via gdk_gl_texture_builder_set_width() or
-// 0 if the width wasn't set.
-//
-// The function returns the following values:
-//
-//   - gint: width.
-func (self *GLTextureBuilder) Width() int {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _cret C.int                  // in
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_gl_texture_builder_get_width(_arg0)
-	runtime.KeepAlive(self)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
-}
-
-// SetContext sets the context to be used for the texture. This is the context
-// that owns the texture.
-//
-// The context must be set before calling gdk.GLTextureBuilder.Build().
-//
-// The function takes the following parameters:
-//
-//   - context (optional) the texture beongs to or NULL to unset.
-func (self *GLTextureBuilder) SetContext(context GLContexter) {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _arg1 *C.GdkGLContext        // out
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if context != nil {
-		_arg1 = (*C.GdkGLContext)(unsafe.Pointer(coreglib.InternObject(context).Native()))
-	}
-
-	C.gdk_gl_texture_builder_set_context(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(context)
-}
-
-// SetFormat sets the format of the texture. The default is
-// GDK_MEMORY_R8G8B8A8_PREMULTIPLIED.
-//
-// The format is the preferred format the texture data should be
-// downloaded to. The format must be supported by the GL version of
-// gdk.GLTextureBuilder:context.
-//
-// GDK's texture download code assumes that the format corresponds to the
-// storage parameters of the GL texture in an obvious way. For example,
-// a format of GDK_MEMORY_R16G16B16A16_PREMULTIPLIED is expected to be stored
-// as GL_RGBA16 texture, and GDK_MEMORY_G8A8 is expected to be stored as GL_RG8
-// texture.
-//
-// Setting the right format is particularly useful when using high bit
-// depth textures to preserve the bit depth, to set the correct value for
-// unpremultiplied textures and to make sure opaque textures are treated as
-// such.
-//
-// Non-RGBA textures need to have swizzling parameters set up properly to be
-// usable in GSK's shaders.
-//
-// The function takes the following parameters:
-//
-//   - format texture's format.
-func (self *GLTextureBuilder) SetFormat(format MemoryFormat) {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _arg1 C.GdkMemoryFormat      // out
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.GdkMemoryFormat(format)
-
-	C.gdk_gl_texture_builder_set_format(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(format)
-}
-
-// SetHasMipmap sets whether the texture has a mipmap. This allows the renderer
-// and other users of the generated texture to use a higher quality downscaling.
-//
-// Typically, the glGenerateMipmap function is used to generate a mimap.
-//
-// The function takes the following parameters:
-//
-//   - hasMipmap: whether the texture has a mipmap.
-func (self *GLTextureBuilder) SetHasMipmap(hasMipmap bool) {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _arg1 C.gboolean             // out
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if hasMipmap {
-		_arg1 = C.TRUE
-	}
-
-	C.gdk_gl_texture_builder_set_has_mipmap(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(hasMipmap)
-}
-
-// SetHeight sets the height of the texture.
-//
-// The height must be set before calling gdk.GLTextureBuilder.Build().
-//
-// The function takes the following parameters:
-//
-//   - height texture's height or 0 to unset.
-func (self *GLTextureBuilder) SetHeight(height int) {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _arg1 C.int                  // out
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.int(height)
-
-	C.gdk_gl_texture_builder_set_height(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(height)
-}
-
-// SetID sets the texture id of the texture. The texture id must remain
-// unmodified until the texture was finalized. See gdk.GLTextureBuilder.Build()
-// for a longer discussion.
-//
-// The id must be set before calling gdk.GLTextureBuilder.Build().
-//
-// The function takes the following parameters:
-//
-//   - id: texture id to be used for creating the texture.
-func (self *GLTextureBuilder) SetID(id uint) {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _arg1 C.guint                // out
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.guint(id)
-
-	C.gdk_gl_texture_builder_set_id(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(id)
-}
-
-// SetSync sets the GLSync object to use for the texture.
-//
-// GTK will wait on this object before using the created GdkTexture.
-//
-// The destroy function that is passed to gdk.GLTextureBuilder.Build() is
-// responsible for freeing the sync object when it is no longer needed.
-// The texture builder does not destroy it and it is the callers responsibility
-// to make sure it doesn't leak.
-//
-// The function takes the following parameters:
-//
-//   - sync (optional): GLSync object.
-func (self *GLTextureBuilder) SetSync(sync unsafe.Pointer) {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _arg1 C.gpointer             // out
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = (C.gpointer)(unsafe.Pointer(sync))
-
-	C.gdk_gl_texture_builder_set_sync(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(sync)
-}
-
-// SetUpdateRegion sets the region to be updated by this texture. Together with
-// gdk.GLTextureBuilder:update-texture this describes an update of a previous
-// texture.
-//
-// When rendering animations of large textures, it is possible that consecutive
-// textures are only updating contents in parts of the texture. It is then
-// possible to describe this update via these two properties, so that GTK can
-// avoid rerendering parts that did not change.
-//
-// An example would be a screen recording where only the mouse pointer moves.
-//
-// The function takes the following parameters:
-//
-//   - region (optional) to update.
-func (self *GLTextureBuilder) SetUpdateRegion(region *cairo.Region) {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _arg1 *C.cairo_region_t      // out
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if region != nil {
-		_arg1 = (*C.cairo_region_t)(unsafe.Pointer(region.Native()))
-	}
-
-	C.gdk_gl_texture_builder_set_update_region(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(region)
-}
-
-// SetUpdateTexture sets the texture to be updated by this texture. See
-// gdk.GLTextureBuilder.SetUpdateRegion() for an explanation.
-//
-// The function takes the following parameters:
-//
-//   - texture (optional) to update.
-func (self *GLTextureBuilder) SetUpdateTexture(texture Texturer) {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _arg1 *C.GdkTexture          // out
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	if texture != nil {
-		_arg1 = (*C.GdkTexture)(unsafe.Pointer(coreglib.InternObject(texture).Native()))
-	}
-
-	C.gdk_gl_texture_builder_set_update_texture(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(texture)
-}
-
-// SetWidth sets the width of the texture.
-//
-// The width must be set before calling gdk.GLTextureBuilder.Build().
-//
-// The function takes the following parameters:
-//
-//   - width texture's width or 0 to unset.
-func (self *GLTextureBuilder) SetWidth(width int) {
-	var _arg0 *C.GdkGLTextureBuilder // out
-	var _arg1 C.int                  // out
-
-	_arg0 = (*C.GdkGLTextureBuilder)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-	_arg1 = C.int(width)
-
-	C.gdk_gl_texture_builder_set_width(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(width)
 }
 
 // GrabBrokenEvent: event related to a broken windowing system grab.
@@ -16018,10 +14611,6 @@ func (monitor *Monitor) ConnectInvalidate(f func()) coreglib.SignalHandle {
 
 // Connector gets the name of the monitor's connector, if available.
 //
-// These are strings such as "eDP-1", or "HDMI-2". They depend on software and
-// hardware configuration, and should not be relied on as stable identifiers of
-// a specific monitor.
-//
 // The function returns the following values:
 //
 //   - utf8 (optional): name of the connector.
@@ -16032,31 +14621,6 @@ func (monitor *Monitor) Connector() string {
 	_arg0 = (*C.GdkMonitor)(unsafe.Pointer(coreglib.InternObject(monitor).Native()))
 
 	_cret = C.gdk_monitor_get_connector(_arg0)
-	runtime.KeepAlive(monitor)
-
-	var _utf8 string // out
-
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	}
-
-	return _utf8
-}
-
-// Description gets a string describing the monitor, if available.
-//
-// This can be used to identify a monitor in the UI.
-//
-// The function returns the following values:
-//
-//   - utf8 (optional): monitor description.
-func (monitor *Monitor) Description() string {
-	var _arg0 *C.GdkMonitor // out
-	var _cret *C.char       // in
-
-	_arg0 = (*C.GdkMonitor)(unsafe.Pointer(coreglib.InternObject(monitor).Native()))
-
-	_cret = C.gdk_monitor_get_description(_arg0)
 	runtime.KeepAlive(monitor)
 
 	var _utf8 string // out
@@ -16093,7 +14657,7 @@ func (monitor *Monitor) Display() *Display {
 // coordinate space.
 //
 // The returned geometry is in ”application pixels”, not in ”device pixels” (see
-// gdk.Monitor.GetScale()).
+// gdk.Monitor.GetScaleFactor()).
 //
 // The function returns the following values:
 //
@@ -16207,32 +14771,6 @@ func (monitor *Monitor) RefreshRate() int {
 	_gint = int(_cret)
 
 	return _gint
-}
-
-// Scale gets the internal scale factor that maps from monitor coordinates to
-// device pixels.
-//
-// This can be used if you want to create pixel based data for a particular
-// monitor, but most of the time you’re drawing to a surface where it is better
-// to use gdk.Surface.GetScale() instead.
-//
-// The function returns the following values:
-//
-//   - gdouble: scale.
-func (monitor *Monitor) Scale() float64 {
-	var _arg0 *C.GdkMonitor // out
-	var _cret C.double      // in
-
-	_arg0 = (*C.GdkMonitor)(unsafe.Pointer(coreglib.InternObject(monitor).Native()))
-
-	_cret = C.gdk_monitor_get_scale(_arg0)
-	runtime.KeepAlive(monitor)
-
-	var _gdouble float64 // out
-
-	_gdouble = float64(_cret)
-
-	return _gdouble
 }
 
 // ScaleFactor gets the internal scale factor that maps from monitor coordinates
@@ -16861,8 +15399,7 @@ func (seat *Seat) Tools() []*DeviceTool {
 
 // Snapshot: base type for snapshot operations.
 //
-// The subclass of GdkSnapshot used by GTK is GtkSnapshot
-// (../gtk4/class.Snapshot.html).
+// The subclass of GdkSnapshot used by GTK is gtk.Snapshot.
 type Snapshot struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -16905,7 +15442,7 @@ func BaseSnapshot(obj Snapshotter) *Snapshot {
 // Surface: GdkSurface is a rectangular region on the screen.
 //
 // It’s a low-level object, used to implement high-level objects such as
-// GtkWindow (../gtk4/class.Window.html).
+// gtk.Window or gtk.Dialog in GTK.
 //
 // The surfaces you see in practice are either gdk.Toplevel or gdk.Popup,
 // and those interfaces provide much of the required API to interact with these
@@ -17152,8 +15689,6 @@ func (surface *Surface) CreateGLContext() (GLContexter, error) {
 // to a “nil” surface if other is already in an error state or any other error
 // occurs.
 //
-// Deprecated: Create a suitable cairo image surface yourself.
-//
 // The function takes the following parameters:
 //
 //   - content for the new surface.
@@ -17192,14 +15727,13 @@ func (surface *Surface) CreateSimilarSurface(content cairo.Content, width, heigh
 	return _ret
 }
 
-// CreateVulkanContext sets an error and returns NULL.
+// CreateVulkanContext creates a new GdkVulkanContext for rendering on surface.
 //
-// Deprecated: GTK does not expose any Vulkan internals. This function is a
-// leftover that was accidentally exposed.
+// If the creation of the GdkVulkanContext failed, error will be set.
 //
 // The function returns the following values:
 //
-//   - vulkanContext: NULL.
+//   - vulkanContext: newly created GdkVulkanContext, or NULL on error.
 func (surface *Surface) CreateVulkanContext() (VulkanContexter, error) {
 	var _arg0 *C.GdkSurface       // out
 	var _cret *C.GdkVulkanContext // in
@@ -17474,37 +16008,6 @@ func (surface *Surface) Mapped() bool {
 	return _ok
 }
 
-// Scale returns the internal scale that maps from surface coordinates to the
-// actual device pixels.
-//
-// When the scale is bigger than 1, the windowing system prefers to get buffers
-// with a resolution that is bigger than the surface size (e.g. to show the
-// surface on a high-resolution display, or in a magnifier).
-//
-// Compare with gdk.Surface.GetScaleFactor(), which returns the next larger
-// integer.
-//
-// The scale may change during the lifetime of the surface.
-//
-// The function returns the following values:
-//
-//   - gdouble: scale.
-func (surface *Surface) Scale() float64 {
-	var _arg0 *C.GdkSurface // out
-	var _cret C.double      // in
-
-	_arg0 = (*C.GdkSurface)(unsafe.Pointer(coreglib.InternObject(surface).Native()))
-
-	_cret = C.gdk_surface_get_scale(_arg0)
-	runtime.KeepAlive(surface)
-
-	var _gdouble float64 // out
-
-	_gdouble = float64(_cret)
-
-	return _gdouble
-}
-
 // ScaleFactor returns the internal scale factor that maps from surface
 // coordinates to the actual device pixels.
 //
@@ -17515,7 +16018,7 @@ func (surface *Surface) Scale() float64 {
 // the scale value can be used to determine whether to use a pixel resource with
 // higher resolution data.
 //
-// The scale factor may change during the lifetime of the surface.
+// The scale of a surface may change during runtime.
 //
 // The function returns the following values:
 //
@@ -17562,10 +16065,9 @@ func (surface *Surface) Width() int {
 
 // Hide the surface.
 //
-// For toplevel surfaces, withdraws them, so they will no longer be known
-// to the window manager; for all surfaces, unmaps them, so they won’t be
-// displayed. Normally done automatically as part of gtk_widget_hide()
-// (../gtk4/method.Widget.hide.html).
+// For toplevel surfaces, withdraws them, so they will no longer be known to the
+// window manager; for all surfaces, unmaps them, so they won’t be displayed.
+// Normally done automatically as part of gtk.Widget.Hide().
 func (surface *Surface) Hide() {
 	var _arg0 *C.GdkSurface // out
 
@@ -17719,8 +16221,8 @@ func (surface *Surface) SetInputRegion(region *cairo.Region) {
 //
 // GTK will update this property automatically if the surface background is
 // opaque, as we know where the opaque regions are. If your surface background
-// is not opaque, please update this property in your GtkWidgetClass.css_changed
-// (../gtk4/vfunc.Widget.css_changed.html) handler.
+// is not opaque, please update this property in your gtk.Widget.CSSChanged()
+// handler.
 //
 // The function takes the following parameters:
 //
@@ -17745,7 +16247,7 @@ func (surface *Surface) SetOpaqueRegion(region *cairo.Region) {
 // frames, and will be used for a long time.
 //
 // There are various ways to create GdkTexture objects from a gdkpixbuf.Pixbuf,
-// or from bytes stored in memory, a file, or a gio.Resource.
+// or a Cairo surface, or other pixel data.
 //
 // The ownership of the pixel data is transferred to the GdkTexture instance;
 // you can only make a copy of it, via gdk.Texture.Download().
@@ -17794,8 +16296,8 @@ func marshalTexture(p uintptr) (interface{}, error) {
 	return wrapTexture(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
 }
 
-func (self *Texture) baseTexture() *Texture {
-	return self
+func (texture *Texture) baseTexture() *Texture {
+	return texture
 }
 
 // BaseTexture returns the underlying base object.
@@ -17834,8 +16336,8 @@ func NewTextureForPixbuf(pixbuf *gdkpixbuf.Pixbuf) *Texture {
 
 // NewTextureFromBytes creates a new texture by loading an image from memory,
 //
-// The file format is detected automatically. The supported formats are PNG,
-// JPEG and TIFF, though more formats might be available.
+// The file format is detected automatically. The supported formats are PNG and
+// JPEG, though more formats might be available.
 //
 // If NULL is returned, then error will be set.
 //
@@ -17873,8 +16375,8 @@ func NewTextureFromBytes(bytes *glib.Bytes) (*Texture, error) {
 
 // NewTextureFromFile creates a new texture by loading an image from a file.
 //
-// The file format is detected automatically. The supported formats are PNG,
-// JPEG and TIFF, though more formats might be available.
+// The file format is detected automatically. The supported formats are PNG and
+// JPEG, though more formats might be available.
 //
 // If NULL is returned, then error will be set.
 //
@@ -17912,8 +16414,8 @@ func NewTextureFromFile(file gio.Filer) (*Texture, error) {
 
 // NewTextureFromFilename creates a new texture by loading an image from a file.
 //
-// The file format is detected automatically. The supported formats are PNG,
-// JPEG and TIFF, though more formats might be available.
+// The file format is detected automatically. The supported formats are PNG and
+// JPEG, though more formats might be available.
 //
 // If NULL is returned, then error will be set.
 //
@@ -17986,35 +16488,6 @@ func NewTextureFromResource(resourcePath string) *Texture {
 	_texture = wrapTexture(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
 
 	return _texture
-}
-
-// Format gets the memory format most closely associated with the data of the
-// texture.
-//
-// Note that it may not be an exact match for texture data stored on the GPU or
-// with compression.
-//
-// The format can give an indication about the bit depth and opacity of the
-// texture and is useful to determine the best format for downloading the
-// texture.
-//
-// The function returns the following values:
-//
-//   - memoryFormat: preferred format for the texture's data.
-func (self *Texture) Format() MemoryFormat {
-	var _arg0 *C.GdkTexture     // out
-	var _cret C.GdkMemoryFormat // in
-
-	_arg0 = (*C.GdkTexture)(unsafe.Pointer(coreglib.InternObject(self).Native()))
-
-	_cret = C.gdk_texture_get_format(_arg0)
-	runtime.KeepAlive(self)
-
-	var _memoryFormat MemoryFormat // out
-
-	_memoryFormat = MemoryFormat(_cret)
-
-	return _memoryFormat
 }
 
 // Height returns the height of the texture, in pixels.
@@ -19125,166 +17598,6 @@ type contentProviderClass struct {
 	native *C.GdkContentProviderClass
 }
 
-// DmabufFormats: GdkDmabufFormats struct provides information about supported
-// DMA buffer formats.
-//
-// You can query whether a given format is supported with
-// gdk.DmabufFormats.Contains() and you can iterate over the list
-// of all supported formats with gdk.DmabufFormats.GetNFormats() and
-// gdk.DmabufFormats.GetFormat().
-//
-// The list of supported formats is sorted by preference, with the best formats
-// coming first.
-//
-// The list may contains (format, modifier) pairs where the modifier is
-// DMA_FORMAT_MOD_INVALID, indicating that **_implicit modifiers_** may be used
-// with this format.
-//
-// See gdk.DmabufTextureBuilder for more information about DMA buffers.
-//
-// Note that DMA buffers only exist on Linux.
-//
-// An instance of this type is always passed by reference.
-type DmabufFormats struct {
-	*dmabufFormats
-}
-
-// dmabufFormats is the struct that's finalized.
-type dmabufFormats struct {
-	native *C.GdkDmabufFormats
-}
-
-func marshalDmabufFormats(p uintptr) (interface{}, error) {
-	b := coreglib.ValueFromNative(unsafe.Pointer(p)).Boxed()
-	return &DmabufFormats{&dmabufFormats{(*C.GdkDmabufFormats)(b)}}, nil
-}
-
-// Contains returns whether a given format is contained in formats.
-//
-// The function takes the following parameters:
-//
-//   - fourcc: format code.
-//   - modifier: format modifier.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the format specified by the arguments is part of formats.
-func (formats *DmabufFormats) Contains(fourcc uint32, modifier uint64) bool {
-	var _arg0 *C.GdkDmabufFormats // out
-	var _arg1 C.guint32           // out
-	var _arg2 C.guint64           // out
-	var _cret C.gboolean          // in
-
-	_arg0 = (*C.GdkDmabufFormats)(gextras.StructNative(unsafe.Pointer(formats)))
-	_arg1 = C.guint32(fourcc)
-	_arg2 = C.guint64(modifier)
-
-	_cret = C.gdk_dmabuf_formats_contains(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(formats)
-	runtime.KeepAlive(fourcc)
-	runtime.KeepAlive(modifier)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Equal returns whether formats1 and formats2 contain the same dmabuf formats,
-// in the same order.
-//
-// The function takes the following parameters:
-//
-//   - formats2 (optional): another GdkDmabufFormats.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if formats1 and formats2 are equal.
-func (formats1 *DmabufFormats) Equal(formats2 *DmabufFormats) bool {
-	var _arg0 *C.GdkDmabufFormats // out
-	var _arg1 *C.GdkDmabufFormats // out
-	var _cret C.gboolean          // in
-
-	if formats1 != nil {
-		_arg0 = (*C.GdkDmabufFormats)(gextras.StructNative(unsafe.Pointer(formats1)))
-	}
-	if formats2 != nil {
-		_arg1 = (*C.GdkDmabufFormats)(gextras.StructNative(unsafe.Pointer(formats2)))
-	}
-
-	_cret = C.gdk_dmabuf_formats_equal(_arg0, _arg1)
-	runtime.KeepAlive(formats1)
-	runtime.KeepAlive(formats2)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Format gets the fourcc code and modifier for a format that is contained in
-// formats.
-//
-// The function takes the following parameters:
-//
-//   - idx: index of the format to return.
-//
-// The function returns the following values:
-//
-//   - fourcc: return location for the format code.
-//   - modifier: return location for the format modifier.
-func (formats *DmabufFormats) Format(idx uint) (uint32, uint64) {
-	var _arg0 *C.GdkDmabufFormats // out
-	var _arg1 C.gsize             // out
-	var _arg2 C.guint32           // in
-	var _arg3 C.guint64           // in
-
-	_arg0 = (*C.GdkDmabufFormats)(gextras.StructNative(unsafe.Pointer(formats)))
-	_arg1 = C.gsize(idx)
-
-	C.gdk_dmabuf_formats_get_format(_arg0, _arg1, &_arg2, &_arg3)
-	runtime.KeepAlive(formats)
-	runtime.KeepAlive(idx)
-
-	var _fourcc uint32   // out
-	var _modifier uint64 // out
-
-	_fourcc = uint32(_arg2)
-	_modifier = uint64(_arg3)
-
-	return _fourcc, _modifier
-}
-
-// NFormats returns the number of formats that the formats object contains.
-//
-// Note that DMA buffers are a Linux concept, so on other platforms,
-// gdk.DmabufFormats.GetNFormats() will always return zero.
-//
-// The function returns the following values:
-//
-//   - gsize: number of formats.
-func (formats *DmabufFormats) NFormats() uint {
-	var _arg0 *C.GdkDmabufFormats // out
-	var _cret C.gsize             // in
-
-	_arg0 = (*C.GdkDmabufFormats)(gextras.StructNative(unsafe.Pointer(formats)))
-
-	_cret = C.gdk_dmabuf_formats_get_n_formats(_arg0)
-	runtime.KeepAlive(formats)
-
-	var _gsize uint // out
-
-	_gsize = uint(_cret)
-
-	return _gsize
-}
-
 // EventSequence: GdkEventSequence is an opaque type representing a sequence of
 // related touch events.
 //
@@ -19740,11 +18053,10 @@ type paintableInterface struct {
 // Ultimatively, it is up to the windowing system to determine the position
 // and size of the popup. You can learn about the result by calling
 // gdk.Popup.GetPositionX(), gdk.Popup.GetPositionY(), gdk.Popup.GetRectAnchor()
-// and gdk.Popup.GetSurfaceAnchor() after the popup has been presented.
-// This can be used to adjust the rendering. For example, GtkPopover
-// (../gtk4/class.Popover.html) changes its arrow position accordingly. But you
-// have to be careful avoid changing the size of the popover, or it has to be
-// presented again.
+// and gdk.Popup.GetSurfaceAnchor() after the popup has been presented. This can
+// be used to adjust the rendering. For example, gtk.Popover changes its arrow
+// position accordingly. But you have to be careful avoid changing the size of
+// the popover, or it has to be presented again.
 //
 // An instance of this type is always passed by reference.
 type PopupLayout struct {
@@ -20357,7 +18669,7 @@ func (rgba *RGBA) IsOpaque() bool {
 //
 // The string can be either one of:
 //
-// - A standard name (Taken from the CSS specification).
+// - A standard name (Taken from the Css specification).
 //
 // - A hexadecimal value in the form “\#rgb”, “\#rrggbb”, “\#rrrgggbbb” or
 // ”\#rrrrggggbbbb”
@@ -20369,10 +18681,6 @@ func (rgba *RGBA) IsOpaque() bool {
 // opacity)
 //
 // - A RGBA color in the form “rgba(r,g,b,a)”
-//
-// - A HSL color in the form "hsl(hue, saturation, lightness)"
-//
-// - A HSLA color in the form "hsla(hue, saturation, lightness, alpha)"
 //
 // Where “r”, “g”, “b” and “a” are respectively the red, green, blue and alpha
 // color values. In the last two cases, “r”, “g”, and “b” are either integers in
@@ -20688,215 +18996,6 @@ func (src1 *Rectangle) Union(src2 *Rectangle) *Rectangle {
 	_dest = (*Rectangle)(gextras.NewStructNative(unsafe.Pointer((&_arg2))))
 
 	return _dest
-}
-
-// TextureDownloader: GdkTextureDownloader is used to download the contents of a
-// gdk.Texture.
-//
-// It is intended to be created as a short-term object for a single download,
-// but can be used for multiple downloads of different textures or with
-// different settings.
-//
-// GdkTextureDownloader can be used to convert data between different formats.
-// Create a GdkTexture for the existing format and then download it in a
-// different format.
-//
-// An instance of this type is always passed by reference.
-type TextureDownloader struct {
-	*textureDownloader
-}
-
-// textureDownloader is the struct that's finalized.
-type textureDownloader struct {
-	native *C.GdkTextureDownloader
-}
-
-func marshalTextureDownloader(p uintptr) (interface{}, error) {
-	b := coreglib.ValueFromNative(unsafe.Pointer(p)).Boxed()
-	return &TextureDownloader{&textureDownloader{(*C.GdkTextureDownloader)(b)}}, nil
-}
-
-// NewTextureDownloader constructs a struct TextureDownloader.
-func NewTextureDownloader(texture Texturer) *TextureDownloader {
-	var _arg1 *C.GdkTexture           // out
-	var _cret *C.GdkTextureDownloader // in
-
-	_arg1 = (*C.GdkTexture)(unsafe.Pointer(coreglib.InternObject(texture).Native()))
-
-	_cret = C.gdk_texture_downloader_new(_arg1)
-	runtime.KeepAlive(texture)
-
-	var _textureDownloader *TextureDownloader // out
-
-	_textureDownloader = (*TextureDownloader)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_textureDownloader)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.gdk_texture_downloader_free((*C.GdkTextureDownloader)(intern.C))
-		},
-	)
-
-	return _textureDownloader
-}
-
-// Copy creates a copy of the downloader.
-//
-// This function is meant for language bindings.
-//
-// The function returns the following values:
-//
-//   - textureDownloader: copy of the downloader.
-func (self *TextureDownloader) Copy() *TextureDownloader {
-	var _arg0 *C.GdkTextureDownloader // out
-	var _cret *C.GdkTextureDownloader // in
-
-	_arg0 = (*C.GdkTextureDownloader)(gextras.StructNative(unsafe.Pointer(self)))
-
-	_cret = C.gdk_texture_downloader_copy(_arg0)
-	runtime.KeepAlive(self)
-
-	var _textureDownloader *TextureDownloader // out
-
-	_textureDownloader = (*TextureDownloader)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_textureDownloader)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.gdk_texture_downloader_free((*C.GdkTextureDownloader)(intern.C))
-		},
-	)
-
-	return _textureDownloader
-}
-
-// DownloadBytes downloads the given texture pixels into a GBytes. The rowstride
-// will be stored in the stride value.
-//
-// This function will abort if it tries to download a large texture and fails
-// to allocate memory. If you think that may happen, you should handle memory
-// allocation yourself and use gdk.TextureDownloader.DownloadInto() once
-// allocation succeeded.
-//
-// The function returns the following values:
-//
-//   - outStride: stride of the resulting data in bytes.
-//   - bytes: downloaded pixels.
-func (self *TextureDownloader) DownloadBytes() (uint, *glib.Bytes) {
-	var _arg0 *C.GdkTextureDownloader // out
-	var _arg1 C.gsize                 // in
-	var _cret *C.GBytes               // in
-
-	_arg0 = (*C.GdkTextureDownloader)(gextras.StructNative(unsafe.Pointer(self)))
-
-	_cret = C.gdk_texture_downloader_download_bytes(_arg0, &_arg1)
-	runtime.KeepAlive(self)
-
-	var _outStride uint    // out
-	var _bytes *glib.Bytes // out
-
-	_outStride = uint(_arg1)
-	_bytes = (*glib.Bytes)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_bytes)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_bytes_unref((*C.GBytes)(intern.C))
-		},
-	)
-
-	return _outStride, _bytes
-}
-
-// Format gets the format that the data will be downloaded in.
-//
-// The function returns the following values:
-//
-//   - memoryFormat: format of the download.
-func (self *TextureDownloader) Format() MemoryFormat {
-	var _arg0 *C.GdkTextureDownloader // out
-	var _cret C.GdkMemoryFormat       // in
-
-	_arg0 = (*C.GdkTextureDownloader)(gextras.StructNative(unsafe.Pointer(self)))
-
-	_cret = C.gdk_texture_downloader_get_format(_arg0)
-	runtime.KeepAlive(self)
-
-	var _memoryFormat MemoryFormat // out
-
-	_memoryFormat = MemoryFormat(_cret)
-
-	return _memoryFormat
-}
-
-// Texture gets the texture that the downloader will download.
-//
-// The function returns the following values:
-//
-//   - texture to download.
-func (self *TextureDownloader) Texture() Texturer {
-	var _arg0 *C.GdkTextureDownloader // out
-	var _cret *C.GdkTexture           // in
-
-	_arg0 = (*C.GdkTextureDownloader)(gextras.StructNative(unsafe.Pointer(self)))
-
-	_cret = C.gdk_texture_downloader_get_texture(_arg0)
-	runtime.KeepAlive(self)
-
-	var _texture Texturer // out
-
-	{
-		objptr := unsafe.Pointer(_cret)
-		if objptr == nil {
-			panic("object of type gdk.Texturer is nil")
-		}
-
-		object := coreglib.Take(objptr)
-		casted := object.WalkCast(func(obj coreglib.Objector) bool {
-			_, ok := obj.(Texturer)
-			return ok
-		})
-		rv, ok := casted.(Texturer)
-		if !ok {
-			panic("no marshaler for " + object.TypeFromInstance().String() + " matching gdk.Texturer")
-		}
-		_texture = rv
-	}
-
-	return _texture
-}
-
-// SetFormat sets the format the downloader will download.
-//
-// By default, GDK_MEMORY_DEFAULT is set.
-//
-// The function takes the following parameters:
-//
-//   - format to use.
-func (self *TextureDownloader) SetFormat(format MemoryFormat) {
-	var _arg0 *C.GdkTextureDownloader // out
-	var _arg1 C.GdkMemoryFormat       // out
-
-	_arg0 = (*C.GdkTextureDownloader)(gextras.StructNative(unsafe.Pointer(self)))
-	_arg1 = C.GdkMemoryFormat(format)
-
-	C.gdk_texture_downloader_set_format(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(format)
-}
-
-// SetTexture changes the texture the downloader will download.
-//
-// The function takes the following parameters:
-//
-//   - texture: new texture to download.
-func (self *TextureDownloader) SetTexture(texture Texturer) {
-	var _arg0 *C.GdkTextureDownloader // out
-	var _arg1 *C.GdkTexture           // out
-
-	_arg0 = (*C.GdkTextureDownloader)(gextras.StructNative(unsafe.Pointer(self)))
-	_arg1 = (*C.GdkTexture)(unsafe.Pointer(coreglib.InternObject(texture).Native()))
-
-	C.gdk_texture_downloader_set_texture(_arg0, _arg1)
-	runtime.KeepAlive(self)
-	runtime.KeepAlive(texture)
 }
 
 // TimeCoord: GdkTimeCoord stores a single event in a motion history.

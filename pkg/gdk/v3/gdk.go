@@ -20,7 +20,7 @@ import (
 	"github.com/diamondburned/gotk4/pkg/pango"
 )
 
-// #cgo pkg-config: gdk-3.0 gtk+-3.0
+// #cgo pkg-config: gdk-3.0
 // #cgo CFLAGS: -Wno-deprecated-declarations
 // #include <stdlib.h>
 // #include <gdk/gdk.h>
@@ -2533,7 +2533,7 @@ const KEY_zerosuperior = 16785520
 const KEY_zstroke = 16777654
 const MAJOR_VERSION = 3
 const MAX_TIMECOORD_AXES = 128
-const MICRO_VERSION = 42
+const MICRO_VERSION = 38
 const MINOR_VERSION = 24
 
 // PARENT_RELATIVE: special value, indicating that the background for a window

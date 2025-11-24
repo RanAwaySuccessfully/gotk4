@@ -88,6 +88,7 @@ import (
 // extern void _gotk4_gio2_ListModel_ConnectItemsChanged(gpointer, guint, guint, guint, guintptr);
 // extern void _gotk4_gio2_FilenameCompleter_ConnectGotCompletionData(gpointer, guintptr);
 // extern void _gotk4_gio2_FilenameCompleterClass_got_completion_data(GFilenameCompleter*);
+// extern void _gotk4_gio2_FileProgressCallback(goffset, goffset, gpointer);
 // extern void _gotk4_gio2_FileMonitor_ConnectChanged(gpointer, GFile*, GFile*, GFileMonitorEvent, guintptr);
 // extern void _gotk4_gio2_FileMonitorClass_changed(GFileMonitor*, GFile*, GFile*, GFileMonitorEvent);
 // extern void _gotk4_gio2_Drive_ConnectStopButton(gpointer, guintptr);
@@ -118,7 +119,6 @@ import (
 // extern void _gotk4_gio2_Application_ConnectActivate(gpointer, guintptr);
 // extern void _gotk4_gio2_ApplicationCommandLineClass_printerr_literal(GApplicationCommandLine*, gchar*);
 // extern void _gotk4_gio2_ApplicationCommandLineClass_print_literal(GApplicationCommandLine*, gchar*);
-// extern void _gotk4_gio2_ApplicationCommandLineClass_done(GApplicationCommandLine*);
 // extern void _gotk4_gio2_ApplicationClass_startup(GApplication*);
 // extern void _gotk4_gio2_ApplicationClass_shutdown(GApplication*);
 // extern void _gotk4_gio2_ApplicationClass_run_mainloop(GApplication*);
@@ -238,6 +238,7 @@ import (
 // extern GVolume* _gotk4_gio2_VolumeMonitorClass_get_volume_for_uuid(GVolumeMonitor*, char*);
 // extern GVariant* _gotk4_gio2_MenuModelClass_get_item_attribute_value(GMenuModel*, gint, gchar*, GVariantType*);
 // extern GVariant* _gotk4_gio2_DBusInterfaceSkeletonClass_get_properties(GDBusInterfaceSkeleton*);
+// extern GType _gotk4_gio2_DBusProxyTypeFunc(GDBusObjectManagerClient*, gchar*, gchar*, gpointer);
 // extern GTlsInteractionResult _gotk4_gio2_TlsInteractionClass_request_certificate_finish(GTlsInteraction*, GAsyncResult*, GError**);
 // extern GTlsInteractionResult _gotk4_gio2_TlsInteractionClass_request_certificate(GTlsInteraction*, GTlsConnection*, GTlsCertificateRequestFlags, GCancellable*, GError**);
 // extern GTlsInteractionResult _gotk4_gio2_TlsInteractionClass_ask_password_finish(GTlsInteraction*, GAsyncResult*, GError**);
@@ -284,7 +285,6 @@ import (
 // extern GFile* _gotk4_gio2_VfsClass_get_file_for_path(GVfs*, char*);
 // extern GFile* _gotk4_gio2_VFSFileLookupFunc(GVfs*, char*, gpointer);
 // extern GDBusMessage* _gotk4_gio2_DBusMessageFilterFunction(GDBusConnection*, GDBusMessage*, gboolean, gpointer);
-// extern GDBusInterfaceVTable* _gotk4_gio2_DBusInterfaceSkeletonClass_get_vtable(GDBusInterfaceSkeleton*);
 // extern GDBusInterfaceInfo* _gotk4_gio2_DBusInterfaceSkeletonClass_get_info(GDBusInterfaceSkeleton*);
 // GAction* _gotk4_gio2_ActionMap_virtual_lookup_action(void* fnptr, GActionMap* arg0, gchar* arg1) {
 //   return ((GAction* (*)(GActionMap*, gchar*))(fnptr))(arg0, arg1);
@@ -306,9 +306,6 @@ import (
 // };
 // GDBusInterfaceInfo* _gotk4_gio2_DBusInterface_virtual_get_info(void* fnptr, GDBusInterface* arg0) {
 //   return ((GDBusInterfaceInfo* (*)(GDBusInterface*))(fnptr))(arg0);
-// };
-// GDBusInterfaceVTable* _gotk4_gio2_DBusInterfaceSkeleton_virtual_get_vtable(void* fnptr, GDBusInterfaceSkeleton* arg0) {
-//   return ((GDBusInterfaceVTable* (*)(GDBusInterfaceSkeleton*))(fnptr))(arg0);
 // };
 // GDBusObject* _gotk4_gio2_DBusInterface_virtual_dup_object(void* fnptr, GDBusInterface* arg0) {
 //   return ((GDBusObject* (*)(GDBusInterface*))(fnptr))(arg0);
@@ -940,6 +937,9 @@ import (
 // gboolean _gotk4_gio2_FileOutputStream_virtual_truncate_fn(void* fnptr, GFileOutputStream* arg0, goffset arg1, GCancellable* arg2, GError** arg3) {
 //   return ((gboolean (*)(GFileOutputStream*, goffset, GCancellable*, GError**))(fnptr))(arg0, arg1, arg2, arg3);
 // };
+// gboolean _gotk4_gio2_File_virtual_copy(void* fnptr, GFile* arg0, GFile* arg1, GFileCopyFlags arg2, GCancellable* arg3, GFileProgressCallback arg4, gpointer arg5, GError** arg6) {
+//   return ((gboolean (*)(GFile*, GFile*, GFileCopyFlags, GCancellable*, GFileProgressCallback, gpointer, GError**))(fnptr))(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+// };
 // gboolean _gotk4_gio2_File_virtual_copy_finish(void* fnptr, GFile* arg0, GAsyncResult* arg1, GError** arg2) {
 //   return ((gboolean (*)(GFile*, GAsyncResult*, GError**))(fnptr))(arg0, arg1, arg2);
 // };
@@ -981,6 +981,9 @@ import (
 // };
 // gboolean _gotk4_gio2_File_virtual_mount_enclosing_volume_finish(void* fnptr, GFile* arg0, GAsyncResult* arg1, GError** arg2) {
 //   return ((gboolean (*)(GFile*, GAsyncResult*, GError**))(fnptr))(arg0, arg1, arg2);
+// };
+// gboolean _gotk4_gio2_File_virtual_move(void* fnptr, GFile* arg0, GFile* arg1, GFileCopyFlags arg2, GCancellable* arg3, GFileProgressCallback arg4, gpointer arg5, GError** arg6) {
+//   return ((gboolean (*)(GFile*, GFile*, GFileCopyFlags, GCancellable*, GFileProgressCallback, gpointer, GError**))(fnptr))(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 // };
 // gboolean _gotk4_gio2_File_virtual_move_finish(void* fnptr, GFile* arg0, GAsyncResult* arg1, GError** arg2) {
 //   return ((gboolean (*)(GFile*, GAsyncResult*, GError**))(fnptr))(arg0, arg1, arg2);
@@ -1381,9 +1384,6 @@ import (
 // void _gotk4_gio2_AppLaunchContext_virtual_launched(void* fnptr, GAppLaunchContext* arg0, GAppInfo* arg1, GVariant* arg2) {
 //   ((void (*)(GAppLaunchContext*, GAppInfo*, GVariant*))(fnptr))(arg0, arg1, arg2);
 // };
-// void _gotk4_gio2_ApplicationCommandLine_virtual_done(void* fnptr, GApplicationCommandLine* arg0) {
-//   ((void (*)(GApplicationCommandLine*))(fnptr))(arg0);
-// };
 // void _gotk4_gio2_ApplicationCommandLine_virtual_print_literal(void* fnptr, GApplicationCommandLine* arg0, gchar* arg1) {
 //   ((void (*)(GApplicationCommandLine*, gchar*))(fnptr))(arg0, arg1);
 // };
@@ -1551,6 +1551,9 @@ import (
 // };
 // void _gotk4_gio2_File_virtual_mount_mountable(void* fnptr, GFile* arg0, GMountMountFlags arg1, GMountOperation* arg2, GCancellable* arg3, GAsyncReadyCallback arg4, gpointer arg5) {
 //   ((void (*)(GFile*, GMountMountFlags, GMountOperation*, GCancellable*, GAsyncReadyCallback, gpointer))(fnptr))(arg0, arg1, arg2, arg3, arg4, arg5);
+// };
+// void _gotk4_gio2_File_virtual_move_async(void* fnptr, GFile* arg0, GFile* arg1, GFileCopyFlags arg2, int arg3, GCancellable* arg4, GFileProgressCallback arg5, gpointer arg6, GAsyncReadyCallback arg7, gpointer arg8) {
+//   ((void (*)(GFile*, GFile*, GFileCopyFlags, int, GCancellable*, GFileProgressCallback, gpointer, GAsyncReadyCallback, gpointer))(fnptr))(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 // };
 // void _gotk4_gio2_File_virtual_open_readwrite_async(void* fnptr, GFile* arg0, int arg1, GCancellable* arg2, GAsyncReadyCallback arg3, gpointer arg4) {
 //   ((void (*)(GFile*, int, GCancellable*, GAsyncReadyCallback, gpointer))(fnptr))(arg0, arg1, arg2, arg3, arg4);
@@ -2793,38 +2796,6 @@ const FILE_ATTRIBUTE_STANDARD_TYPE = "standard::type"
 // Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
 const FILE_ATTRIBUTE_THUMBNAILING_FAILED = "thumbnail::failed"
 
-// FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE: key in the "thumbnail" namespace
-// for checking if thumbnailing failed for the large image.
-//
-// This attribute is TRUE if thumbnailing failed.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
-const FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE = "thumbnail::failed-large"
-
-// FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL: key in the "thumbnail" namespace
-// for checking if thumbnailing failed for the normal image.
-//
-// This attribute is TRUE if thumbnailing failed.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
-const FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL = "thumbnail::failed-normal"
-
-// FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE: key in the "thumbnail" namespace
-// for checking if thumbnailing failed for the x-large image.
-//
-// This attribute is TRUE if thumbnailing failed.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
-const FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE = "thumbnail::failed-xlarge"
-
-// FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE: key in the "thumbnail" namespace
-// for checking if thumbnailing failed for the xx-large image.
-//
-// This attribute is TRUE if thumbnailing failed.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
-const FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE = "thumbnail::failed-xxlarge"
-
 // FILE_ATTRIBUTE_THUMBNAIL_IS_VALID: key in the "thumbnail" namespace for
 // checking whether the thumbnail is outdated.
 //
@@ -2838,87 +2809,11 @@ const FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE = "thumbnail::failed-xxlarge"
 // Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
 const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID = "thumbnail::is-valid"
 
-// FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE: key in the "thumbnail" namespace for
-// checking whether the large thumbnail is outdated.
-//
-// This attribute is TRUE if the large thumbnail is up-to-date with the file it
-// represents, and FALSE if the file has been modified since the thumbnail was
-// generated.
-//
-// If G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE is TRUE and this attribute is
-// FALSE, it indicates that thumbnailing may be attempted again and may succeed.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
-const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE = "thumbnail::is-valid-large"
-
-// FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL: key in the "thumbnail" namespace
-// for checking whether the normal thumbnail is outdated.
-//
-// This attribute is TRUE if the normal thumbnail is up-to-date with the file it
-// represents, and FALSE if the file has been modified since the thumbnail was
-// generated.
-//
-// If G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL is TRUE and this attribute is
-// FALSE, it indicates that thumbnailing may be attempted again and may succeed.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
-const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL = "thumbnail::is-valid-normal"
-
-// FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE: key in the "thumbnail" namespace
-// for checking whether the x-large thumbnail is outdated.
-//
-// This attribute is TRUE if the x-large thumbnail is up-to-date with the file
-// it represents, and FALSE if the file has been modified since the thumbnail
-// was generated.
-//
-// If G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE is TRUE and this attribute is
-// FALSE, it indicates that thumbnailing may be attempted again and may succeed.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
-const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE = "thumbnail::is-valid-xlarge"
-
-// FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE: key in the "thumbnail" namespace
-// for checking whether the xx-large thumbnail is outdated.
-//
-// This attribute is TRUE if the x-large thumbnail is up-to-date with the file
-// it represents, and FALSE if the file has been modified since the thumbnail
-// was generated.
-//
-// If G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE is TRUE and this attribute is
-// FALSE, it indicates that thumbnailing may be attempted again and may succeed.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
-const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE = "thumbnail::is-valid-xxlarge"
-
 // FILE_ATTRIBUTE_THUMBNAIL_PATH: key in the "thumbnail" namespace for getting
-// the path to the thumbnail image with the biggest size available.
+// the path to the thumbnail image.
 //
 // Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
 const FILE_ATTRIBUTE_THUMBNAIL_PATH = "thumbnail::path"
-
-// FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE: key in the "thumbnail" namespace for
-// getting the path to the large thumbnail image.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
-const FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE = "thumbnail::path-large"
-
-// FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL: key in the "thumbnail" namespace for
-// getting the path to the normal thumbnail image.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
-const FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL = "thumbnail::path-normal"
-
-// FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE: key in the "thumbnail" namespace for
-// getting the path to the x-large thumbnail image.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
-const FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE = "thumbnail::path-xlarge"
-
-// FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE: key in the "thumbnail" namespace for
-// getting the path to the xx-large thumbnail image.
-//
-// Corresponding AttributeType is G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
-const FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE = "thumbnail::path-xxlarge"
 
 // FILE_ATTRIBUTE_TIME_ACCESS: key in the "time" namespace for getting the time
 // the file was last accessed.
@@ -3154,12 +3049,6 @@ const MENU_ATTRIBUTE_LABEL = "label"
 //
 // See also g_menu_item_set_action_and_target().
 const MENU_ATTRIBUTE_TARGET = "target"
-
-// MENU_EXPORTER_MAX_SECTION_SIZE: maximum number of entries in a menu section
-// supported by g_dbus_connection_export_menu_model().
-//
-// The exact value of the limit may change in future GLib versions.
-const MENU_EXPORTER_MAX_SECTION_SIZE = 1000
 
 // MENU_LINK_SECTION: name of the link that associates a menu item with a
 // section. The linked menu will usually be shown in place of the menu item,
@@ -4589,8 +4478,6 @@ const (
 	IOErrorMessageTooLarge IOErrorEnum = 46
 	// IOErrorNoSuchDevice: no such device found. Since 2.74.
 	IOErrorNoSuchDevice IOErrorEnum = 47
-	// IOErrorDestinationUnset: destination address unset. Since 2.80.
-	IOErrorDestinationUnset IOErrorEnum = 48
 )
 
 func marshalIOErrorEnum(p uintptr) (interface{}, error) {
@@ -4696,8 +4583,6 @@ func (i IOErrorEnum) String() string {
 		return "MessageTooLarge"
 	case IOErrorNoSuchDevice:
 		return "NoSuchDevice"
-	case IOErrorDestinationUnset:
-		return "DestinationUnset"
 	default:
 		return fmt.Sprintf("IOErrorEnum(%d)", i)
 	}
@@ -6966,9 +6851,6 @@ const (
 	// FileCopyTargetDefaultPerms leaves target file with default perms, instead
 	// of setting the source file perms.
 	FileCopyTargetDefaultPerms FileCopyFlags = 0b100000
-	// FileCopyTargetDefaultModifiedTime: use default modification timestamps
-	// instead of copying them from the source file. Since 2.80.
-	FileCopyTargetDefaultModifiedTime FileCopyFlags = 0b1000000
 )
 
 func marshalFileCopyFlags(p uintptr) (interface{}, error) {
@@ -6982,7 +6864,7 @@ func (f FileCopyFlags) String() string {
 	}
 
 	var builder strings.Builder
-	builder.Grow(177)
+	builder.Grow(143)
 
 	for f != 0 {
 		next := f & (f - 1)
@@ -7003,8 +6885,6 @@ func (f FileCopyFlags) String() string {
 			builder.WriteString("NoFallbackForMove|")
 		case FileCopyTargetDefaultPerms:
 			builder.WriteString("TargetDefaultPerms|")
-		case FileCopyTargetDefaultModifiedTime:
-			builder.WriteString("TargetDefaultModifiedTime|")
 		default:
 			builder.WriteString(fmt.Sprintf("FileCopyFlags(0b%b)|", bit))
 		}
@@ -7092,10 +6972,7 @@ const (
 	// FileMeasureApparentSize: tally usage based on apparent file sizes.
 	// Normally, the block-size is used, if available, as this is a
 	// more accurate representation of disk space used. Compare with du
-	// --apparent-size. Since GLib 2.78. and similarly to du since GNU Coreutils
-	// 9.2, this will ignore the sizes of file types other than regular files
-	// and links, as the sizes of other file types are not specified in a
-	// standard way.
+	// --apparent-size.
 	FileMeasureApparentSize FileMeasureFlags = 0b100
 	// FileMeasureNoXdev: do not cross mount point boundaries. Compare with du
 	// -x.
@@ -8112,6 +7989,10 @@ type BusNameLostCallback func(connection *DBusConnection, name string)
 // established has been closed. In that case, connection will be NULL.
 type BusNameVanishedCallback func(connection *DBusConnection, name string)
 
+// CancellableSourceFunc: this is the function type of the callback used for the
+// #GSource returned by g_cancellable_source_new().
+type CancellableSourceFunc func(cancellable context.Context) (ok bool)
+
 // DBusInterfaceGetPropertyFunc: type of the get_property function in
 // BusInterfaceVTable.
 type DBusInterfaceGetPropertyFunc func(connection *DBusConnection, sender, objectPath, interfaceName, propertyName string) (err error, variant *glib.Variant)
@@ -8185,6 +8066,14 @@ type DBusInterfaceSetPropertyFunc func(connection *DBusConnection, sender, objec
 // BusCapabilityFlags value obtained from connection.
 type DBusMessageFilterFunction func(connection *DBusConnection, message *DBusMessage, incoming bool) (dBusMessage *DBusMessage)
 
+// DBusProxyTypeFunc: function signature for a function used to determine the
+// #GType to use for an interface proxy (if interface_name is not NULL) or
+// object proxy (if interface_name is NULL).
+//
+// This function is called in the [thread-default main
+// loop][g-main-context-push-thread-default] that manager was constructed in.
+type DBusProxyTypeFunc func(manager *DBusObjectManagerClient, objectPath, interfaceName string) (gType coreglib.Type)
+
 // DBusSignalCallback: signature for callback function used in
 // g_dbus_connection_signal_subscribe().
 type DBusSignalCallback func(connection *DBusConnection, senderName, objectPath, interfaceName, signalName string, parameters *glib.Variant)
@@ -8228,6 +8117,56 @@ type DBusSubtreeEnumerateFunc func(connection *DBusConnection, sender, objectPat
 // the empty array case, but not in the NULL case.
 type DBusSubtreeIntrospectFunc func(connection *DBusConnection, sender, objectPath, node string) (dBusInterfaceInfos []*DBusInterfaceInfo)
 
+// DatagramBasedSourceFunc: this is the function type of the callback used for
+// the #GSource returned by g_datagram_based_create_source().
+type DatagramBasedSourceFunc func(datagramBased DatagramBasedder, condition glib.IOCondition) (ok bool)
+
+// FileMeasureProgressCallback: this callback type is used by
+// g_file_measure_disk_usage() to make periodic progress reports when measuring
+// the amount of disk spaced used by a directory.
+//
+// These calls are made on a best-effort basis and not all types of #GFile
+// will support them. At the minimum, however, one call will always be made
+// immediately.
+//
+// In the case that there is no support, reporting will be set to FALSE (and
+// the other values undefined) and no further calls will be made. Otherwise,
+// the reporting will be TRUE and the other values all-zeros during the first
+// (immediate) call. In this way, you can know which type of progress UI to show
+// without a delay.
+//
+// For g_file_measure_disk_usage() the callback is made directly. For
+// g_file_measure_disk_usage_async() the callback is made via the default main
+// context of the calling thread (ie: the same way that the final async result
+// would be reported).
+//
+// current_size is in the same units as requested by the operation (see
+// G_FILE_MEASURE_APPARENT_SIZE).
+//
+// The frequency of the updates is implementation defined, but is ideally about
+// once every 200ms.
+//
+// The last progress callback may or may not be equal to the final result.
+// Always check the async result to get the final value.
+type FileMeasureProgressCallback func(reporting bool, currentSize, numDirs, numFiles uint64)
+
+// FileProgressCallback: when doing file operations that may take a while,
+// such as moving a file or copying a file, a progress callback is used to pass
+// how far along that operation is to the application.
+type FileProgressCallback func(currentNumBytes, totalNumBytes int64)
+
+// FileReadMoreCallback: when loading the partial contents of a file with
+// g_file_load_partial_contents_async(), it may become necessary to determine
+// if any more data from the file should be loaded. A ReadMoreCallback function
+// facilitates this by returning TRUE if more data should be read, or FALSE
+// otherwise.
+type FileReadMoreCallback func(fileContents string, fileSize int64) (ok bool)
+
+// PollableSourceFunc: this is the function type of the callback used for
+// the #GSource returned by g_pollable_input_stream_create_source() and
+// g_pollable_output_stream_create_source().
+type PollableSourceFunc func(pollableStream *coreglib.Object) (ok bool)
+
 // SettingsBindGetMapping: type for the function that is used to convert from
 // #GSettings to an object property. The value is already initialized to hold
 // values of the appropriate type.
@@ -8248,6 +8187,10 @@ type SettingsBindSetMapping func(value *coreglib.Value, expectedType *glib.Varia
 // "last chance" to successfully return a valid value. TRUE must be returned in
 // this case.
 type SettingsGetMapping func(value *glib.Variant) (result unsafe.Pointer, ok bool)
+
+// SocketSourceFunc: this is the function type of the callback used for the
+// #GSource returned by g_socket_create_source().
+type SocketSourceFunc func(socket *Socket, condition glib.IOCondition) (ok bool)
 
 // VFSFileLookupFunc: this function type is used by g_vfs_register_uri_scheme()
 // to make it possible for a client to associate an URI scheme to a different
@@ -9711,22 +9654,13 @@ func DBusUnescapeObjectPath(s string) []byte {
 	return _guint8s
 }
 
-// IOErrorFromErrno converts errno.h error codes into GIO error codes.
-//
-// The fallback value G_IO_ERROR_FAILED is returned for error codes not
-// currently handled (but note that future GLib releases may return a more
-// specific value instead).
+// IOErrorFromErrno converts errno.h error codes into GIO error codes. The
+// fallback value G_IO_ERROR_FAILED is returned for error codes not currently
+// handled (but note that future GLib releases may return a more specific value
+// instead).
 //
 // As errno is global and may be modified by intermediate function calls,
-// you should save its value immediately after the call returns, and use the
-// saved value instead of errno:
-//
-//	int saved_errno;
-//
-//	ret = read (blah);
-//	saved_errno = errno;
-//
-//	g_io_error_from_errno (saved_errno);.
+// you should save its value as soon as the call which sets it.
 //
 // The function takes the following parameters:
 //
@@ -10370,32 +10304,32 @@ func SimpleAsyncReportGErrorInIdle(object *coreglib.Object, callback AsyncReadyC
 	runtime.KeepAlive(err)
 }
 
-// Action: GAction represents a single named action.
+// Action represents a single named action.
 //
 // The main interface to an action is that it can be activated with
-// gio.Action.Activate(). This results in the 'activate' signal being emitted.
-// An activation has a GVariant parameter (which may be NULL). The correct type
+// g_action_activate(). This results in the 'activate' signal being emitted.
+// An activation has a #GVariant parameter (which may be NULL). The correct type
 // for the parameter is determined by a static parameter type (which is given at
 // construction time).
 //
 // An action may optionally have a state, in which case the state may be set
-// with gio.Action.ChangeState(). This call takes a #GVariant. The correct
+// with g_action_change_state(). This call takes a #GVariant. The correct
 // type for the state is determined by a static state type (which is given at
 // construction time).
 //
 // The state may have a hint associated with it, specifying its valid range.
 //
-// GAction is merely the interface to the concept of an action, as described
-// above. Various implementations of actions exist, including gio.SimpleAction.
+// #GAction is merely the interface to the concept of an action, as described
+// above. Various implementations of actions exist, including Action.
 //
 // In all cases, the implementing class is responsible for storing the name
 // of the action, the parameter type, the enabled state, the optional state
 // type and the state and emitting the appropriate signals when these change.
-// The implementor is responsible for filtering calls to gio.Action.Activate()
-// and gio.Action.ChangeState() for type safety and for the state being enabled.
+// The implementor is responsible for filtering calls to g_action_activate() and
+// g_action_change_state() for type safety and for the state being enabled.
 //
-// Probably the only useful thing to do with a GAction is to put it inside of a
-// gio.SimpleActionGroup.
+// Probably the only useful thing to do with a #GAction is to put it inside of a
+// ActionGroup.
 //
 // Action wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -10993,27 +10927,22 @@ func ActionNameIsValid(actionName string) bool {
 //
 // The first format is used to represent an action name with no target value and
 // consists of just an action name containing no whitespace nor the characters
-// :, ( or ). For example: app.action.
+// ':', '(' or ')'. For example: "app.action".
 //
-// The second format is used to represent an action with a target value that is
-// a non-empty string consisting only of alphanumerics, plus - and .. In that
-// case, the action name and target value are separated by a double colon (::).
-// For example: app.action::target.
+// The second format is used to represent an action with a target value that
+// is a non-empty string consisting only of alphanumerics, plus '-' and '.'.
+// In that case, the action name and target value are separated by a double
+// colon ("::"). For example: "app.action::target".
 //
 // The third format is used to represent an action with any type of target
 // value, including strings. The target value follows the action name,
-// surrounded in parens. For example: app.action(42). The target value is
+// surrounded in parens. For example: "app.action(42)". The target value is
 // parsed using g_variant_parse(). If a tuple-typed value is desired, it must
 // be specified in the same way, resulting in two sets of parens, for example:
-// app.action((1,2,3)). A string target can be specified this way as well:
-// app.action('target'). For strings, this third format must be used if target
-// value is empty or contains characters other than alphanumerics, - and ..
-//
-// If this function returns TRUE, a non-NULL value is guaranteed to be returned
-// in action_name (if a pointer is passed in). A NULL value may still be
-// returned in target_value, as the detailed_name may not contain a target.
-//
-// If returned, the #GVariant in target_value is guaranteed to not be floating.
+// "app.action((1,2,3))". A string target can be specified this way as well:
+// "app.action('target')". For strings, this third format must be used if *
+// target value is empty or contains characters other than alphanumerics,
+// '-' and '.'.
 //
 // The function takes the following parameters:
 //
@@ -11021,8 +10950,8 @@ func ActionNameIsValid(actionName string) bool {
 //
 // The function returns the following values:
 //
-//   - actionName (optional): action name.
-//   - targetValue (optional): target value, or NULL for no target.
+//   - actionName: action name.
+//   - targetValue: target value, or NULL for no target.
 func ActionParseDetailedName(detailedName string) (string, *glib.Variant, error) {
 	var _arg1 *C.gchar    // out
 	var _arg2 *C.gchar    // in
@@ -11039,19 +10968,15 @@ func ActionParseDetailedName(detailedName string) (string, *glib.Variant, error)
 	var _targetValue *glib.Variant // out
 	var _goerr error               // out
 
-	if _arg2 != nil {
-		_actionName = C.GoString((*C.gchar)(unsafe.Pointer(_arg2)))
-		defer C.free(unsafe.Pointer(_arg2))
-	}
-	if _arg3 != nil {
-		_targetValue = (*glib.Variant)(gextras.NewStructNative(unsafe.Pointer(_arg3)))
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_targetValue)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.g_variant_unref((*C.GVariant)(intern.C))
-			},
-		)
-	}
+	_actionName = C.GoString((*C.gchar)(unsafe.Pointer(_arg2)))
+	defer C.free(unsafe.Pointer(_arg2))
+	_targetValue = (*glib.Variant)(gextras.NewStructNative(unsafe.Pointer(_arg3)))
+	runtime.SetFinalizer(
+		gextras.StructIntern(unsafe.Pointer(_targetValue)),
+		func(intern *struct{ C unsafe.Pointer }) {
+			C.g_variant_unref((*C.GVariant)(intern.C))
+		},
+	)
 	if _cerr != nil {
 		_goerr = gerror.Take(unsafe.Pointer(_cerr))
 	}
@@ -11102,24 +11027,23 @@ func ActionPrintDetailedName(actionName string, targetValue *glib.Variant) strin
 	return _utf8
 }
 
-// ActionGroup: GActionGroup represents a group of actions.
-//
-// Actions can be used to expose functionality in a structured way, either from
-// one part of a program to another, or to the outside world. Action groups are
-// often used together with a GMenuModel that provides additional representation
-// data for displaying the actions to the user, e.g. in a menu.
+// ActionGroup represents a group of actions. Actions can be used to expose
+// functionality in a structured way, either from one part of a program to
+// another, or to the outside world. Action groups are often used together
+// with a Model that provides additional representation data for displaying the
+// actions to the user, e.g. in a menu.
 //
 // The main way to interact with the actions in a GActionGroup is to activate
-// them with gio.ActionGroup.ActivateAction(). Activating an action may require
-// a GVariant parameter. The required type of the parameter can be inquired
-// with gio.ActionGroup.GetActionParameterType(). Actions may be disabled,
-// see gio.ActionGroup.GetActionEnabled(). Activating a disabled action has no
+// them with g_action_group_activate_action(). Activating an action may require
+// a #GVariant parameter. The required type of the parameter can be inquired
+// with g_action_group_get_action_parameter_type(). Actions may be disabled,
+// see g_action_group_get_action_enabled(). Activating a disabled action has no
 // effect.
 //
 // Actions may optionally have a state in the form of a #GVariant. The current
-// state of an action can be inquired with gio.ActionGroup.GetActionState().
+// state of an action can be inquired with g_action_group_get_action_state().
 // Activating a stateful action may change its state, but it is also possible to
-// set the state by calling gio.ActionGroup.ChangeActionState().
+// set the state by calling g_action_group_change_action_state().
 //
 // As typical example, consider a text editing application which has an option
 // to change the current font to 'bold'. A good way to represent this would be a
@@ -11127,24 +11051,23 @@ func ActionPrintDetailedName(actionName string, targetValue *glib.Variant) strin
 // state.
 //
 // Each action in the group has a unique name (which is a string). All method
-// calls, except gio.ActionGroup.ListActions() take the name of an action as an
+// calls, except g_action_group_list_actions() take the name of an action as an
 // argument.
 //
-// The GActionGroup API is meant to be the 'public' API to the action group.
+// The Group API is meant to be the 'public' API to the action group.
 // The calls here are exactly the interaction that 'external forces' (eg: UI,
 // incoming D-Bus messages, etc.) are supposed to have with actions. 'Internal'
 // APIs (ie: ones meant only to be accessed by the action group implementation)
 // are found on subclasses. This is why you will find - for example -
-// gio.ActionGroup.GetActionEnabled() but not an equivalent set() call.
+// g_action_group_get_action_enabled() but not an equivalent set() call.
 //
 // Signals are emitted on the action group in response to state changes on
 // individual actions.
 //
-// Implementations of GActionGroup should provide implementations
-// for the virtual functions gio.ActionGroup.ListActions() and
-// gio.ActionGroup.QueryAction(). The other virtual functions should not
-// be implemented - their "wrappers" are actually implemented with calls to
-// gio.ActionGroup.QueryAction().
+// Implementations of Group should provide implementations for the virtual
+// functions g_action_group_list_actions() and g_action_group_query_action().
+// The other virtual functions should not be implemented - their "wrappers" are
+// actually implemented with calls to g_action_group_query_action().
 //
 // ActionGroup wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -12419,11 +12342,8 @@ func (actionGroup *ActionGroup) queryAction(actionName string) (enabled bool, pa
 	return _enabled, _parameterType, _stateType, _stateHint, _state, _ok
 }
 
-// ActionMap: GActionMap is an interface for action containers.
-//
-// The GActionMap interface is implemented by gio.ActionGroup implementations
-// that operate by containing a number of named gio.Action instances, such as
-// gio.SimpleActionGroup.
+// ActionMap interface is implemented by Group implementations that operate by
+// containing a number of named #GAction instances, such as ActionGroup.
 //
 // One useful application of this interface is to map the names of actions from
 // various action groups to unique, prefixed names (e.g. by prepending "app." or
@@ -12453,8 +12373,6 @@ type ActionMapper interface {
 	LookupAction(actionName string) *Action
 	// RemoveAction removes the named action from the action map.
 	RemoveAction(actionName string)
-	// RemoveActionEntries: remove actions from a Map.
-	RemoveActionEntries(entries []ActionEntry)
 }
 
 var _ ActionMapper = (*ActionMap)(nil)
@@ -12608,50 +12526,6 @@ func (actionMap *ActionMap) RemoveAction(actionName string) {
 	runtime.KeepAlive(actionName)
 }
 
-// RemoveActionEntries: remove actions from a Map. This is meant as the reverse
-// of g_action_map_add_action_entries().
-//
-//	static const GActionEntry entries[] = {
-//	    { "quit",         activate_quit              },
-//	    { "print-string", activate_print_string, "s" }
-//	};
-//
-//	void
-//	add_actions (GActionMap *map)
-//	{
-//	  g_action_map_add_action_entries (map, entries, G_N_ELEMENTS (entries), NULL);
-//	}
-//
-//	void
-//	remove_actions (GActionMap *map)
-//	{
-//	  g_action_map_remove_action_entries (map, entries, G_N_ELEMENTS (entries));
-//	}.
-//
-// The function takes the following parameters:
-//
-//   - entries: pointer to the first item in an array of Entry structs.
-func (actionMap *ActionMap) RemoveActionEntries(entries []ActionEntry) {
-	var _arg0 *C.GActionMap   // out
-	var _arg1 *C.GActionEntry // out
-	var _arg2 C.gint
-
-	_arg0 = (*C.GActionMap)(unsafe.Pointer(coreglib.InternObject(actionMap).Native()))
-	_arg2 = (C.gint)(len(entries))
-	_arg1 = (*C.GActionEntry)(C.calloc(C.size_t(len(entries)), C.size_t(C.sizeof_GActionEntry)))
-	defer C.free(unsafe.Pointer(_arg1))
-	{
-		out := unsafe.Slice((*C.GActionEntry)(_arg1), len(entries))
-		for i := range entries {
-			out[i] = *(*C.GActionEntry)(gextras.StructNative(unsafe.Pointer((&entries[i]))))
-		}
-	}
-
-	C.g_action_map_remove_action_entries(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(actionMap)
-	runtime.KeepAlive(entries)
-}
-
 // addAction adds an action to the action_map.
 //
 // If the action map already contains an action with the same name as action
@@ -12736,29 +12610,26 @@ func (actionMap *ActionMap) removeAction(actionName string) {
 	runtime.KeepAlive(actionName)
 }
 
-// AppInfo: information about an installed application and methods to launch it
-// (with file arguments).
-//
-// GAppInfo and GAppLaunchContext are used for describing and launching
-// applications installed on the system.
+// AppInfo and LaunchContext are used for describing and launching applications
+// installed on the system.
 //
 // As of GLib 2.20, URIs will always be converted to POSIX paths (using
-// gio.File.GetPath()) when using gio.AppInfo.Launch() even if the application
+// g_file_get_path()) when using g_app_info_launch() even if the application
 // requested an URI and not a POSIX path. For example for a desktop-file based
 // application with Exec key totem U and a single URI, sftp://foo/file.avi,
 // then /home/user/.gvfs/sftp on foo/file.avi will be passed. This will only
-// work if a set of suitable GIO extensions (such as GVfs 2.26 compiled with
+// work if a set of suitable GIO extensions (such as gvfs 2.26 compiled with
 // FUSE support), is available and operational; if this is not the case, the URI
 // will be passed unmodified to the application. Some URIs, such as mailto:,
-// of course cannot be mapped to a POSIX path (in GVfs there's no FUSE mount for
+// of course cannot be mapped to a POSIX path (in gvfs there's no FUSE mount for
 // it); such URIs will be passed unmodified to the application.
 //
-// Specifically for GVfs 2.26 and later, the POSIX URI will be mapped back
-// to the GIO URI in the gio.File constructors (since GVfs implements the
-// GVfs extension point). As such, if the application needs to examine
-// the URI, it needs to use gio.File.GetURI() or similar on gio.File.
+// Specifically for gvfs 2.26 and later, the POSIX URI will be mapped
+// back to the GIO URI in the #GFile constructors (since gvfs implements
+// the #GVfs extension point). As such, if the application needs to
+// examine the URI, it needs to use g_file_get_uri() or similar on #GFile.
 // In other words, an application cannot assume that the URI passed to e.g.
-// gio.File().NewForCommandlineArg is equal to the result of gio.File.GetURI().
+// g_file_new_for_commandline_arg() is equal to the result of g_file_get_uri().
 // The following snippet illustrates this:
 //
 //	GFile *f;
@@ -13106,10 +12977,6 @@ func (appinfo *AppInfo) DisplayName() string {
 
 // Executable gets the executable's name for the installed application.
 //
-// This is intended to be used for debugging or labelling what program is going
-// to be run. To launch the executable, use g_app_info_launch() and related
-// functions, rather than spawning the return value from this function.
-//
 // The function returns the following values:
 //
 //   - filename: string containing the appinfo's application binaries name.
@@ -13263,8 +13130,8 @@ func (appinfo *AppInfo) SupportedTypes() []string {
 // environment variable with the path of the launched desktop file and
 // GIO_LAUNCHED_DESKTOP_FILE_PID to the process id of the launched process. This
 // can be used to ignore GIO_LAUNCHED_DESKTOP_FILE, should it be inherited by
-// further processes. The DISPLAY, XDG_ACTIVATION_TOKEN and DESKTOP_STARTUP_ID
-// environment variables are also set, based on information provided in context.
+// further processes. The DISPLAY and DESKTOP_STARTUP_ID environment variables
+// are also set, based on information provided in context.
 //
 // The function takes the following parameters:
 //
@@ -13879,10 +13746,6 @@ func (appinfo *AppInfo) displayName() string {
 
 // Executable gets the executable's name for the installed application.
 //
-// This is intended to be used for debugging or labelling what program is going
-// to be run. To launch the executable, use g_app_info_launch() and related
-// functions, rather than spawning the return value from this function.
-//
 // The function returns the following values:
 //
 //   - filename: string containing the appinfo's application binaries name.
@@ -14051,8 +13914,8 @@ func (appinfo *AppInfo) supportedTypes() []string {
 // environment variable with the path of the launched desktop file and
 // GIO_LAUNCHED_DESKTOP_FILE_PID to the process id of the launched process. This
 // can be used to ignore GIO_LAUNCHED_DESKTOP_FILE, should it be inherited by
-// further processes. The DISPLAY, XDG_ACTIVATION_TOKEN and DESKTOP_STARTUP_ID
-// environment variables are also set, based on information provided in context.
+// further processes. The DISPLAY and DESKTOP_STARTUP_ID environment variables
+// are also set, based on information provided in context.
 //
 // The function takes the following parameters:
 //
@@ -14948,20 +14811,17 @@ func AppInfoResetTypeAssociations(contentType string) {
 	runtime.KeepAlive(contentType)
 }
 
-// AsyncInitable: GAsyncInitable is an interface for asynchronously
-// initializable objects.
+// AsyncInitable: this is the asynchronous version of #GInitable; it behaves the
+// same in all ways except that initialization is asynchronous. For more details
+// see the descriptions on #GInitable.
 //
-// This is the asynchronous version of gio.Initable; it behaves the same in all
-// ways except that initialization is asynchronous. For more details see the
-// descriptions on GInitable.
-//
-// A class may implement both the GInitable and GAsyncInitable interfaces.
+// A class may implement both the #GInitable and Initable interfaces.
 //
 // Users of objects implementing this are not intended to use the interface
 // method directly; instead it will be used automatically in various ways.
-// For C applications you generally just call gio.AsyncInitable().NewAsync
+// For C applications you generally just call g_async_initable_new_async()
 // directly, or indirectly via a foo_thing_new_async() wrapper. This will call
-// gio.AsyncInitable.InitAsync() under the covers, calling back with NULL and a
+// g_async_initable_init_async() under the cover, calling back with NULL and a
 // set GError on failure.
 //
 // A typical implementation might look something like this:
@@ -15316,32 +15176,32 @@ func (initable *AsyncInitable) initFinish(res AsyncResulter) error {
 	return _goerr
 }
 
-// AsyncResult: GAsyncResult provides a base class for implementing asynchronous
-// function results.
+// AsyncResult provides a base class for implementing asynchronous function
+// results.
 //
-// Asynchronous operations are broken up into two separate operations which
-// are chained together by a GAsyncReadyCallback. To begin an asynchronous
-// operation, provide a GAsyncReadyCallback to the asynchronous function.
+// Asynchronous operations are broken up into two separate operations
+// which are chained together by a ReadyCallback. To begin an asynchronous
+// operation, provide a ReadyCallback to the asynchronous function.
 // This callback will be triggered when the operation has completed,
-// and must be run in a later iteration of the thread-default main context (see
-// glib.MainContext.PushThreadDefault()) from where the operation was initiated.
-// It will be passed a GAsyncResult instance filled with the details of the
-// operation's success or failure, the object the asynchronous function was
+// and must be run in a later iteration of the [thread-default main
+// context][g-main-context-push-thread-default] from where the operation was
+// initiated. It will be passed a Result instance filled with the details of
+// the operation's success or failure, the object the asynchronous function was
 // started for and any error codes returned. The asynchronous callback function
-// is then expected to call the corresponding _finish() function, passing
-// the object the function was called for, the GAsyncResult instance, and
-// (optionally) an error to grab any error conditions that may have occurred.
+// is then expected to call the corresponding "_finish()" function, passing the
+// object the function was called for, the Result instance, and (optionally) an
+// error to grab any error conditions that may have occurred.
 //
-// The _finish() function for an operation takes the generic result (of type
-// GAsyncResult) and returns the specific result that the operation in question
-// yields (e.g. a gio.FileEnumerator for a "enumerate children" operation).
-// If the result or error status of the operation is not needed, there is no
-// need to call the _finish() function; GIO will take care of cleaning up the
-// result and error information after the GAsyncReadyCallback returns. You can
-// pass NULL for the GAsyncReadyCallback if you don't need to take any action
-// at all after the operation completes. Applications may also take a reference
-// to the GAsyncResult and call _finish() later; however, the _finish() function
-// may be called at most once.
+// The "_finish()" function for an operation takes the generic result (of type
+// Result) and returns the specific result that the operation in question yields
+// (e.g. a Enumerator for a "enumerate children" operation). If the result
+// or error status of the operation is not needed, there is no need to call
+// the "_finish()" function; GIO will take care of cleaning up the result and
+// error information after the ReadyCallback returns. You can pass NULL for the
+// ReadyCallback if you don't need to take any action at all after the operation
+// completes. Applications may also take a reference to the Result and call
+// "_finish()" later; however, the "_finish()" function may be called at most
+// once.
 //
 // Example of a typical asynchronous operation flow:
 //
@@ -15623,10 +15483,8 @@ func (res *AsyncResult) isTagged(sourceTag unsafe.Pointer) bool {
 	return _ok
 }
 
-// Converter: GConverter is an interface for streaming conversions.
-//
-// GConverter is implemented by objects that convert binary data in various
-// ways. The conversion can be stateful and may fail at any place.
+// Converter is implemented by objects that convert binary data in various ways.
+// The conversion can be stateful and may fail at any place.
 //
 // Some example conversions are: character set conversion, compression,
 // decompression and regular expression replace.
@@ -15746,7 +15604,7 @@ func marshalConverter(p uintptr) (interface{}, error) {
 // The function takes the following parameters:
 //
 //   - inbuf: buffer containing the data to convert.
-//   - outbuf: a buffer to write converted data in.
+//   - outbuf: buffer to write converted data in.
 //   - flags controlling the conversion details.
 //
 // The function returns the following values:
@@ -15892,7 +15750,7 @@ func (converter *Converter) Reset() {
 // The function takes the following parameters:
 //
 //   - inbuf (optional): buffer containing the data to convert.
-//   - outbuf: a buffer to write converted data in.
+//   - outbuf (optional): buffer to write converted data in.
 //   - flags controlling the conversion details.
 //
 // The function returns the following values:
@@ -15963,11 +15821,8 @@ func (converter *Converter) reset() {
 	runtime.KeepAlive(converter)
 }
 
-// DBusInterface: base type for D-Bus interfaces.
-//
-// The GDBusInterface type is the base type for D-Bus interfaces both on
-// the service side (see gio.DBusInterfaceSkeleton) and client side (see
-// gio.DBusProxy).
+// DBusInterface type is the base type for D-Bus interfaces both on the service
+// side (see BusInterfaceSkeleton) and client side (see BusProxy).
 //
 // DBusInterface wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -16162,9 +16017,9 @@ func (interface_ *DBusInterface) setObject(object DBusObjector) {
 	runtime.KeepAlive(object)
 }
 
-// DBusObject: GDBusObject type is the base type for D-Bus objects on both
-// the service side (see gio.DBusObjectSkeleton) and the client side (see
-// gio.DBusObjectProxy). It is essentially just a container of interfaces.
+// DBusObject type is the base type for D-Bus objects on both the service
+// side (see BusObjectSkeleton) and the client side (see BusObjectProxy).
+// It is essentially just a container of interfaces.
 //
 // DBusObject wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -16390,7 +16245,6 @@ func (object *DBusObject) objectPath() string {
 	return _utf8
 }
 
-// interfaceAdded: signal handler for the BusObject::interface-added signal.
 func (object *DBusObject) interfaceAdded(interface_ DBusInterfacer) {
 	gclass := (*C.GDBusObjectIface)(coreglib.PeekParentClass(object))
 	fnarg := gclass.interface_added
@@ -16406,7 +16260,6 @@ func (object *DBusObject) interfaceAdded(interface_ DBusInterfacer) {
 	runtime.KeepAlive(interface_)
 }
 
-// interfaceRemoved: signal handler for the BusObject::interface-removed signal.
 func (object *DBusObject) interfaceRemoved(interface_ DBusInterfacer) {
 	gclass := (*C.GDBusObjectIface)(coreglib.PeekParentClass(object))
 	fnarg := gclass.interface_removed
@@ -16422,14 +16275,13 @@ func (object *DBusObject) interfaceRemoved(interface_ DBusInterfacer) {
 	runtime.KeepAlive(interface_)
 }
 
-// DBusObjectManager: GDBusObjectManager type is the base
-// type for service- and client-side implementations of
-// the standardized org.freedesktop.DBus.ObjectManager
+// DBusObjectManager type is the base type for service- and client-side
+// implementations of the standardized org.freedesktop.DBus.ObjectManager
 // (http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-objectmanager)
 // interface.
 //
-// See gio.DBusObjectManagerClient for the client-side implementation and
-// gio.DBusObjectManagerServer for the service-side implementation.
+// See BusObjectManagerClient for the client-side implementation and
+// BusObjectManagerServer for the service-side implementation.
 //
 // DBusObjectManager wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -16749,9 +16601,6 @@ func (manager *DBusObjectManager) objects() []*DBusObject {
 	return _list
 }
 
-// interfaceAdded: signal handler for the BusObjectManager::interface-added
-// signal.
-//
 // The function takes the following parameters:
 //
 //   - object
@@ -16774,9 +16623,6 @@ func (manager *DBusObjectManager) interfaceAdded(object DBusObjector, interface_
 	runtime.KeepAlive(interface_)
 }
 
-// interfaceRemoved: signal handler for the BusObjectManager::interface-removed
-// signal.
-//
 // The function takes the following parameters:
 //
 //   - object
@@ -16799,7 +16645,6 @@ func (manager *DBusObjectManager) interfaceRemoved(object DBusObjector, interfac
 	runtime.KeepAlive(interface_)
 }
 
-// objectAdded: signal handler for the BusObjectManager::object-added signal.
 func (manager *DBusObjectManager) objectAdded(object DBusObjector) {
 	gclass := (*C.GDBusObjectManagerIface)(coreglib.PeekParentClass(manager))
 	fnarg := gclass.object_added
@@ -16815,8 +16660,6 @@ func (manager *DBusObjectManager) objectAdded(object DBusObjector) {
 	runtime.KeepAlive(object)
 }
 
-// objectRemoved: signal handler for the BusObjectManager::object-removed
-// signal.
 func (manager *DBusObjectManager) objectRemoved(object DBusObjector) {
 	gclass := (*C.GDBusObjectManagerIface)(coreglib.PeekParentClass(manager))
 	fnarg := gclass.object_removed
@@ -16832,35 +16675,33 @@ func (manager *DBusObjectManager) objectRemoved(object DBusObjector) {
 	runtime.KeepAlive(object)
 }
 
-// DatagramBased: interface for socket-like objects with datagram semantics.
-//
-// A GDatagramBased is a networking interface for representing datagram-based
+// DatagramBased is a networking interface for representing datagram-based
 // communications. It is a more or less direct mapping of the core parts of
 // the BSD socket API in a portable GObject interface. It is implemented by
-// gio.Socket, which wraps the UNIX socket API on UNIX and winsock2 on Windows.
+// #GSocket, which wraps the UNIX socket API on UNIX and winsock2 on Windows.
 //
-// GDatagramBased is entirely platform independent, and is intended to be used
-// alongside higher-level networking APIs such as gio.IOStream.
+// Based is entirely platform independent, and is intended to be used alongside
+// higher-level networking APIs such as OStream.
 //
 // It uses vectored scatter/gather I/O by default, allowing for many messages
 // to be sent or received in a single call. Where possible, implementations of
 // the interface should take advantage of vectored I/O to minimise processing
-// or system calls. For example, GSocket uses recvmmsg() and sendmmsg() where
+// or system calls. For example, #GSocket uses recvmmsg() and sendmmsg() where
 // possible. Callers should take advantage of scatter/gather I/O (the use
 // of multiple buffers per message) to avoid unnecessary copying of data to
 // assemble or disassemble a message.
 //
-// Each GDatagramBased operation has a timeout parameter which may be negative
-// for blocking behaviour, zero for non-blocking behaviour, or positive for
-// timeout behaviour. A blocking operation blocks until finished or there
-// is an error. A non-blocking operation will return immediately with a
-// G_IO_ERROR_WOULD_BLOCK error if it cannot make progress. A timeout operation
-// will block until the operation is complete or the timeout expires; if the
-// timeout expires it will return what progress it made, or G_IO_ERROR_TIMED_OUT
-// if no progress was made. To know when a call would successfully run you can
-// call gio.DatagramBased.ConditionCheck() or gio.DatagramBased.ConditionWait().
-// You can also use gio.DatagramBased.CreateSource() and attach it to a
-// glib.MainContext to get callbacks when I/O is possible.
+// Each Based operation has a timeout parameter which may be negative for
+// blocking behaviour, zero for non-blocking behaviour, or positive for timeout
+// behaviour. A blocking operation blocks until finished or there is an error. A
+// non-blocking operation will return immediately with a G_IO_ERROR_WOULD_BLOCK
+// error if it cannot make progress. A timeout operation will block until
+// the operation is complete or the timeout expires; if the timeout expires
+// it will return what progress it made, or G_IO_ERROR_TIMED_OUT if no
+// progress was made. To know when a call would successfully run you can call
+// g_datagram_based_condition_check() or g_datagram_based_condition_wait().
+// You can also use g_datagram_based_create_source() and attach it to a Context
+// to get callbacks when I/O is possible.
 //
 // When running a non-blocking operation applications should always be able
 // to handle getting a G_IO_ERROR_WOULD_BLOCK error even when some other
@@ -16869,17 +16710,16 @@ func (manager *DBusObjectManager) objectRemoved(object DBusObjector) {
 // For instance, on Windows a socket is always seen as writable until a write
 // returns G_IO_ERROR_WOULD_BLOCK.
 //
-// As with GSocket, GDatagramBaseds can be either connection oriented (for
-// example, SCTP) or connectionless (for example, UDP). GDatagramBaseds
-// must be datagram-based, not stream-based. The interface does not cover
-// connection establishment — use methods on the underlying type to establish a
-// connection before sending and receiving data through the GDatagramBased API.
-// For connectionless socket types the target/source address is specified or
-// received in each I/O operation.
+// As with #GSocket, Baseds can be either connection oriented (for example,
+// SCTP) or connectionless (for example, UDP). Baseds must be datagram-based,
+// not stream-based. The interface does not cover connection establishment —
+// use methods on the underlying type to establish a connection before sending
+// and receiving data through the Based API. For connectionless socket types the
+// target/source address is specified or received in each I/O operation.
 //
-// Like most other APIs in GLib, GDatagramBased is not inherently thread safe.
-// To use a GDatagramBased concurrently from multiple threads, you must
-// implement your own locking.
+// Like most other APIs in GLib, Based is not inherently thread safe. To use
+// a Based concurrently from multiple threads, you must implement your own
+// locking.
 //
 // DatagramBased wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -17686,21 +17526,21 @@ func (datagramBased *DatagramBased) sendMessages(ctx context.Context, messages [
 type DebugControllerOverrider interface {
 }
 
-// DebugController: GDebugController is an interface to expose control of
-// debugging features and debug output.
+// DebugController is an interface to expose control of debugging features and
+// debug output.
 //
-// It is implemented on Linux using gio.DebugControllerDBus, which exposes a
-// D-Bus interface to allow authenticated peers to control debug features in
-// this process.
+// It is implemented on Linux using ControllerDBus, which exposes a D-Bus
+// interface to allow authenticated peers to control debug features in this
+// process.
 //
-// Whether debug output is enabled is exposed as
-// gio.DebugController:debug-enabled. This controls glib.LogSetDebugEnabled()
-// by default. Application code may connect to the gobject.Object::notify signal
-// for it to control other parts of its debug infrastructure as necessary.
+// Whether debug output is enabled is exposed as Controller:debug-enabled.
+// This controls g_log_set_debug_enabled() by default. Application code may
+// connect to the #GObject::notify signal for it to control other parts of its
+// debug infrastructure as necessary.
 //
 // If your application or service is using the default GLib log writer function,
-// creating one of the built-in implementations of GDebugController should be
-// all that’s needed to dynamically enable or disable debug output.
+// creating one of the built-in implementations of Controller should be all
+// that’s needed to dynamically enable or disable debug output.
 //
 // DebugController wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -17780,30 +17620,30 @@ func (self *DebugController) SetDebugEnabled(debugEnabled bool) {
 	runtime.KeepAlive(debugEnabled)
 }
 
-// Drive: GDrive represents a piece of hardware connected to the machine.
-// It’s generally only created for removable hardware or hardware with removable
+// Drive - this represent a piece of hardware connected to the machine.
+// It's generally only created for removable hardware or hardware with removable
 // media.
 //
-// GDrive is a container class for gio.Volume objects that stem from the same
-// piece of media. As such, GDrive abstracts a drive with (or without) removable
-// media and provides operations for querying whether media is available,
-// determining whether media change is automatically detected and ejecting the
-// media.
+// #GDrive is a container class for #GVolume objects that stem from the same
+// piece of media. As such, #GDrive abstracts a drive with (or without)
+// removable media and provides operations for querying whether media is
+// available, determining whether media change is automatically detected and
+// ejecting the media.
 //
-// If the GDrive reports that media isn’t automatically detected, one can poll
+// If the #GDrive reports that media isn't automatically detected, one can poll
 // for media; typically one should not do this periodically as a poll for media
 // operation is potentially expensive and may spin up the drive creating noise.
 //
-// GDrive supports starting and stopping drives with authentication support
+// #GDrive supports starting and stopping drives with authentication support
 // for the former. This can be used to support a diverse set of use cases
 // including connecting/disconnecting iSCSI devices, powering down external disk
 // enclosures and starting/stopping multi-disk devices such as RAID devices.
-// Note that the actual semantics and side-effects of starting/stopping a GDrive
-// may vary according to implementation. To choose the correct verbs in e.g.
-// a file manager, use gio.Drive.GetStartStopType().
+// Note that the actual semantics and side-effects of starting/stopping a
+// #GDrive may vary according to implementation. To choose the correct verbs in
+// e.g. a file manager, use g_drive_get_start_stop_type().
 //
-// For porting from GnomeVFS (migrating-gnome-vfs.html) note that there is no
-// equivalent of GDrive in that API.
+// For porting from GnomeVFS note that there is no equivalent of #GDrive in that
+// API.
 //
 // Drive wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -18839,7 +18679,6 @@ func (drive *Drive) canStop() bool {
 	return _ok
 }
 
-// Changed: signal emitted when the drive is changed.
 func (drive *Drive) changed() {
 	gclass := (*C.GDriveIface)(coreglib.PeekParentClass(drive))
 	fnarg := gclass.changed
@@ -18852,9 +18691,6 @@ func (drive *Drive) changed() {
 	runtime.KeepAlive(drive)
 }
 
-// Disconnected: removed signal that is emitted when the #GDrive have been
-// disconnected. If the recipient is holding references to the object they
-// should release them so the object can be finalized.
 func (drive *Drive) disconnected() {
 	gclass := (*C.GDriveIface)(coreglib.PeekParentClass(drive))
 	fnarg := gclass.disconnected
@@ -18908,8 +18744,6 @@ func (drive *Drive) eject(ctx context.Context, flags MountUnmountFlags, callback
 	runtime.KeepAlive(callback)
 }
 
-// ejectButton: signal emitted when the physical eject button (if any) of a
-// drive have been pressed.
 func (drive *Drive) ejectButton() {
 	gclass := (*C.GDriveIface)(coreglib.PeekParentClass(drive))
 	fnarg := gclass.eject_button
@@ -19585,8 +19419,6 @@ func (drive *Drive) stop(ctx context.Context, flags MountUnmountFlags, mountOper
 	runtime.KeepAlive(callback)
 }
 
-// stopButton: signal emitted when the physical stop button (if any) of a drive
-// have been pressed. Since 2.22.
 func (drive *Drive) stopButton() {
 	gclass := (*C.GDriveIface)(coreglib.PeekParentClass(drive))
 	fnarg := gclass.stop_button
@@ -19632,8 +19464,8 @@ func (drive *Drive) stopFinish(result AsyncResulter) error {
 type DTLSClientConnectionOverrider interface {
 }
 
-// DTLSClientConnection: GDtlsClientConnection is the client-side subclass of
-// gio.DTLSConnection, representing a client-side DTLS connection.
+// DTLSClientConnection is the client-side subclass of Connection, representing
+// a client-side DTLS connection.
 //
 // DTLSClientConnection wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -19811,25 +19643,23 @@ func NewDTLSClientConnection(baseSocket DatagramBasedder, serverIdentity SocketC
 	return _dtlsClientConnection, _goerr
 }
 
-// DTLSConnection: GDtlsConnection is the base DTLS connection class type,
-// which wraps a gio.DatagramBased and provides DTLS encryption on top of it.
-// Its subclasses, gio.DTLSClientConnection and gio.DTLSServerConnection,
-// implement client-side and server-side DTLS, respectively.
+// DTLSConnection is the base DTLS connection class type, which wraps a Based
+// and provides DTLS encryption on top of it. Its subclasses, ClientConnection
+// and ServerConnection, implement client-side and server-side DTLS,
+// respectively.
 //
-// For TLS support, see gio.TLSConnection.
+// For TLS support, see Connection.
 //
-// As DTLS is datagram based, GDtlsConnection implements gio.DatagramBased,
-// presenting a datagram-socket-like API for the encrypted connection.
-// This operates over a base datagram connection, which is also a GDatagramBased
-// (gio.DTLSConnection:base-socket).
+// As DTLS is datagram based, Connection implements Based, presenting a
+// datagram-socket-like API for the encrypted connection. This operates over a
+// base datagram connection, which is also a Based (Connection:base-socket).
 //
-// To close a DTLS connection, use gio.DTLSConnection.Close().
+// To close a DTLS connection, use g_dtls_connection_close().
 //
-// Neither gio.DTLSServerConnection or gio.DTLSClientConnection set the peer
-// address on their base gio.DatagramBased if it is a gio.Socket — it is up to
-// the caller to do that if they wish. If they do not, and gio.Socket.Close()
-// is called on the base socket, the GDtlsConnection will not raise a
-// G_IO_ERROR_NOT_CONNECTED error on further I/O.
+// Neither ServerConnection or ClientConnection set the peer address on their
+// base Based if it is a #GSocket — it is up to the caller to do that if they
+// wish. If they do not, and g_socket_close() is called on the base socket, the
+// Connection will not raise a G_IO_ERROR_NOT_CONNECTED error on further I/O.
 //
 // DTLSConnection wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -20892,8 +20722,6 @@ func (conn *DTLSConnection) ShutdownFinish(result AsyncResulter) error {
 	return _goerr
 }
 
-// acceptCertificate: check whether to accept a certificate.
-//
 // The function takes the following parameters:
 //
 //   - peerCert
@@ -20925,8 +20753,6 @@ func (connection *DTLSConnection) acceptCertificate(peerCert TLSCertificater, er
 	return _ok
 }
 
-// bindingData: retrieve TLS channel binding data (Since: 2.66).
-//
 // The function takes the following parameters:
 //
 //   - typ
@@ -21303,8 +21129,8 @@ func (conn *DTLSConnection) shutdownFinish(result AsyncResulter) error {
 type DTLSServerConnectionOverrider interface {
 }
 
-// DTLSServerConnection: GDtlsServerConnection is the server-side subclass of
-// gio.DTLSConnection, representing a server-side DTLS connection.
+// DTLSServerConnection is the server-side subclass of Connection, representing
+// a server-side DTLS connection.
 //
 // DTLSServerConnection wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -21386,98 +21212,96 @@ func NewDTLSServerConnection(baseSocket DatagramBasedder, certificate TLSCertifi
 	return _dtlsServerConnection, _goerr
 }
 
-// File: GFile is a high level abstraction for manipulating files on a virtual
-// file system. GFiles are lightweight, immutable objects that do no I/O upon
-// creation. It is necessary to understand that GFile objects do not represent
+// File is a high level abstraction for manipulating files on a virtual file
+// system. #GFiles are lightweight, immutable objects that do no I/O upon
+// creation. It is necessary to understand that #GFile objects do not represent
 // files, merely an identifier for a file. All file content I/O is implemented
-// as streaming operations (see gio.InputStream and gio.OutputStream).
+// as streaming operations (see Stream and Stream).
 //
-// To construct a GFile, you can use:
+// To construct a #GFile, you can use:
 //
-// - gio.File().NewForPath if you have a path.
+// - g_file_new_for_path() if you have a path.
 //
-// - gio.File().NewForURI if you have a URI.
+// - g_file_new_for_uri() if you have a URI.
 //
-// - gio.File().NewForCommandlineArg or gio.File().NewForCommandlineArgAndCwd
-// for a command line argument.
+// - g_file_new_for_commandline_arg() for a command line argument.
 //
-// - gio.File().NewTmp to create a temporary file from a template.
+// - g_file_new_tmp() to create a temporary file from a template.
 //
-// - gio.File().NewTmpAsync to asynchronously create a temporary file.
+// - g_file_new_tmp_async() to asynchronously create a temporary file.
 //
-// - gio.File().NewTmpDirAsync to asynchronously create a temporary directory.
+// - g_file_new_tmp_dir_async() to asynchronously create a temporary directory.
 //
-// - gio.File().ParseName from a UTF-8 string gotten from
-// gio.File.GetParseName().
+// - g_file_parse_name() from a UTF-8 string gotten from
+// g_file_get_parse_name().
 //
-// - gio.File().NewBuildFilename or gio.File().NewBuildFilenamev to create a
-// file from path elements.
+// - g_file_new_build_filename() to create a file from path elements.
 //
-// One way to think of a GFile is as an abstraction of a pathname. For normal
-// files the system pathname is what is stored internally, but as GFiles are
+// One way to think of a #GFile is as an abstraction of a pathname. For normal
+// files the system pathname is what is stored internally, but as #GFiles are
 // extensible it could also be something else that corresponds to a pathname in
 // a userspace implementation of a filesystem.
 //
-// GFiles make up hierarchies of directories and files that correspond to
-// the files on a filesystem. You can move through the file system with
-// GFile using gio.File.GetParent() to get an identifier for the parent
-// directory, gio.File.GetChild() to get a child within a directory, and
-// gio.File.ResolveRelativePath() to resolve a relative path between two GFiles.
-// There can be multiple hierarchies, so you may not end up at the same root if
-// you repeatedly call gio.File.GetParent() on two different files.
+// #GFiles make up hierarchies of directories and files that correspond
+// to the files on a filesystem. You can move through the file system
+// with #GFile using g_file_get_parent() to get an identifier for the
+// parent directory, g_file_get_child() to get a child within a directory,
+// g_file_resolve_relative_path() to resolve a relative path between two
+// #GFiles. There can be multiple hierarchies, so you may not end up at the same
+// root if you repeatedly call g_file_get_parent() on two different files.
 //
-// All GFiles have a basename (get with gio.File.GetBasename()). These names are
+// All #GFiles have a basename (get with g_file_get_basename()). These names are
 // byte strings that are used to identify the file on the filesystem (relative
 // to its parent directory) and there is no guarantees that they have any
 // particular charset encoding or even make any sense at all. If you want to use
 // filenames in a user interface you should use the display name that you can
 // get by requesting the G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME attribute with
-// gio.File.QueryInfo(). This is guaranteed to be in UTF-8 and can be used in
-// a user interface. But always store the real basename or the GFile to use to
+// g_file_query_info(). This is guaranteed to be in UTF-8 and can be used in a
+// user interface. But always store the real basename or the #GFile to use to
 // actually access the file, because there is no way to go from a display name
 // to the actual name.
 //
-// Using GFile as an identifier has the same weaknesses as using a path in
+// Using #GFile as an identifier has the same weaknesses as using a path in
 // that there may be multiple aliases for the same file. For instance, hard or
-// soft links may cause two different GFiles to refer to the same file. Other
+// soft links may cause two different #GFiles to refer to the same file. Other
 // possible causes for aliases are: case insensitive filesystems, short and
 // long names on FAT/NTFS, or bind mounts in Linux. If you want to check if two
-// GFiles point to the same file you can query for the G_FILE_ATTRIBUTE_ID_FILE
-// attribute. Note that GFile does some trivial canonicalization of pathnames
+// #GFiles point to the same file you can query for the G_FILE_ATTRIBUTE_ID_FILE
+// attribute. Note that #GFile does some trivial canonicalization of pathnames
 // passed in, so that trivial differences in the path string used at creation
-// (duplicated slashes, slash at end of path, . or .. path segments, etc) does
-// not create different GFiles.
+// (duplicated slashes, slash at end of path, "." or ".." path segments,
+// etc) does not create different #GFiles.
 //
-// Many GFile operations have both synchronous and asynchronous versions to suit
-// your application. Asynchronous versions of synchronous functions simply have
-// _async() appended to their function names. The asynchronous I/O functions
-// call a gio.AsyncReadyCallback which is then used to finalize the operation,
-// producing a gio.AsyncResult which is then passed to the function’s matching
+// Many #GFile operations have both synchronous and asynchronous versions
+// to suit your application. Asynchronous versions of synchronous functions
+// simply have _async() appended to their function names. The asynchronous I/O
+// functions call a ReadyCallback which is then used to finalize the operation,
+// producing a GAsyncResult which is then passed to the function's matching
 // _finish() operation.
 //
-// It is highly recommended to use asynchronous calls when running within
-// a shared main loop, such as in the main thread of an application.
-// This avoids I/O operations blocking other sources on the main loop from
-// being dispatched. Synchronous I/O operations should be performed from
-// worker threads. See the introduction to asynchronous programming section
-// (overview.html#asynchronous-programming) for more.
+// It is highly recommended to use asynchronous calls when running within a
+// shared main loop, such as in the main thread of an application. This avoids
+// I/O operations blocking other sources on the main loop from being dispatched.
+// Synchronous I/O operations should be performed from worker threads. See the
+// [introduction to asynchronous programming section][async-programming] for
+// more.
 //
-// Some GFile operations almost always take a noticeable amount of time,
+// Some #GFile operations almost always take a noticeable amount of time,
 // and so do not have synchronous analogs. Notable cases include:
 //
-// - gio.File.MountMountable() to mount a mountable file.
+// - g_file_mount_mountable() to mount a mountable file.
 //
-// - gio.File.UnmountMountableWithOperation() to unmount a mountable file.
+// - g_file_unmount_mountable_with_operation() to unmount a mountable file.
 //
-// - gio.File.EjectMountableWithOperation() to eject a mountable file.
+// - g_file_eject_mountable_with_operation() to eject a mountable file.
 //
 // # Entity Tags
 //
-// One notable feature of GFiles are entity tags, or ‘etags’ for short.
+// One notable feature of #GFiles are entity tags, or "etags" for short.
 // Entity tags are somewhat like a more abstract version of the traditional
 // mtime, and can be used to quickly determine if the file has been modified
 // from the version on the file system. See the HTTP 1.1 specification
-// (http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) for HTTP ETag
+// (http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) for HTTP Etag
 // headers, which are a very similar concept.
 //
 // File wraps an interface. This means the user can get the
@@ -21505,6 +21329,8 @@ type Filer interface {
 	// BuildAttributeListForCopy prepares the file attribute query string for
 	// copying to file.
 	BuildAttributeListForCopy(ctx context.Context, flags FileCopyFlags) (string, error)
+	// Copy copies the file source to the location specified by destination.
+	Copy(ctx context.Context, destination Filer, flags FileCopyFlags, progressCallback FileProgressCallback) error
 	// CopyAttributes copies the file attributes from source to destination.
 	CopyAttributes(ctx context.Context, destination Filer, flags FileCopyFlags) error
 	// CopyFinish finishes copying the file started with g_file_copy_async().
@@ -21644,6 +21470,12 @@ type Filer interface {
 	MountMountable(ctx context.Context, flags MountMountFlags, mountOperation *MountOperation, callback AsyncReadyCallback)
 	// MountMountableFinish finishes a mount operation.
 	MountMountableFinish(result AsyncResulter) (*File, error)
+	// Move tries to move the file or directory source to the location specified
+	// by destination.
+	Move(ctx context.Context, destination Filer, flags FileCopyFlags, progressCallback FileProgressCallback) error
+	// MoveAsync: asynchronously moves a file source to the location of
+	// destination.
+	MoveAsync(ctx context.Context, destination Filer, flags FileCopyFlags, ioPriority int, progressCallback FileProgressCallback, callback AsyncReadyCallback)
 	// MoveFinish finishes an asynchronous file movement, started with
 	// g_file_move_async().
 	MoveFinish(result AsyncResulter) error
@@ -21886,7 +21718,7 @@ func (file *File) AppendTo(ctx context.Context, flags FileCreateFlags) (*FileOut
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags: set of CreateFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) AppendToAsync(ctx context.Context, flags FileCreateFlags, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg3 *C.GCancellable       // out
@@ -22000,6 +21832,93 @@ func (file *File) BuildAttributeListForCopy(ctx context.Context, flags FileCopyF
 	}
 
 	return _utf8, _goerr
+}
+
+// Copy copies the file source to the location specified by destination. Can not
+// handle recursive copies of directories.
+//
+// If the flag G_FILE_COPY_OVERWRITE is specified an already existing
+// destination file is overwritten.
+//
+// If the flag G_FILE_COPY_NOFOLLOW_SYMLINKS is specified then symlinks will
+// be copied as symlinks, otherwise the target of the source symlink will be
+// copied.
+//
+// If the flag G_FILE_COPY_ALL_METADATA is specified then all the metadata
+// that is possible to copy is copied, not just the default subset (which,
+// for instance, does not include the owner, see Info).
+//
+// If cancellable is not NULL, then the operation can be cancelled by triggering
+// the cancellable object from another thread. If the operation was cancelled,
+// the error G_IO_ERROR_CANCELLED will be returned.
+//
+// If progress_callback is not NULL, then the operation can be monitored by
+// setting this to a ProgressCallback function. progress_callback_data will be
+// passed to this function. It is guaranteed that this callback will be called
+// after all data has been transferred with the total number of bytes copied
+// during the operation.
+//
+// If the source file does not exist, then the G_IO_ERROR_NOT_FOUND error is
+// returned, independent on the status of the destination.
+//
+// If G_FILE_COPY_OVERWRITE is not specified and the target exists, then the
+// error G_IO_ERROR_EXISTS is returned.
+//
+// If trying to overwrite a file over a directory, the G_IO_ERROR_IS_DIRECTORY
+// error is returned. If trying to overwrite a directory with a directory the
+// G_IO_ERROR_WOULD_MERGE error is returned.
+//
+// If the source is a directory and the target does not exist,
+// or G_FILE_COPY_OVERWRITE is specified and the target is a file, then the
+// G_IO_ERROR_WOULD_RECURSE error is returned.
+//
+// If you are interested in copying the #GFile object itself (not the on-disk
+// file), see g_file_dup().
+//
+// The function takes the following parameters:
+//
+//   - ctx (optional): optional #GCancellable object, NULL to ignore.
+//   - destination #GFile.
+//   - flags: set of CopyFlags.
+//   - progressCallback (optional): function to callback with progress
+//     information, or NULL if progress information is not needed.
+func (source *File) Copy(ctx context.Context, destination Filer, flags FileCopyFlags, progressCallback FileProgressCallback) error {
+	var _arg0 *C.GFile                // out
+	var _arg3 *C.GCancellable         // out
+	var _arg1 *C.GFile                // out
+	var _arg2 C.GFileCopyFlags        // out
+	var _arg4 C.GFileProgressCallback // out
+	var _arg5 C.gpointer
+	var _cerr *C.GError // in
+
+	_arg0 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(source).Native()))
+	{
+		cancellable := gcancel.GCancellableFromContext(ctx)
+		defer runtime.KeepAlive(cancellable)
+		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
+	}
+	_arg1 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(destination).Native()))
+	_arg2 = C.GFileCopyFlags(flags)
+	if progressCallback != nil {
+		_arg4 = (*[0]byte)(C._gotk4_gio2_FileProgressCallback)
+		_arg5 = C.gpointer(gbox.Assign(progressCallback))
+		defer gbox.Delete(uintptr(_arg5))
+	}
+
+	C.g_file_copy(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, &_cerr)
+	runtime.KeepAlive(source)
+	runtime.KeepAlive(ctx)
+	runtime.KeepAlive(destination)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(progressCallback)
+
+	var _goerr error // out
+
+	if _cerr != nil {
+		_goerr = gerror.Take(unsafe.Pointer(_cerr))
+	}
+
+	return _goerr
 }
 
 // CopyAttributes copies the file attributes from source to destination.
@@ -22143,7 +22062,7 @@ func (file *File) Create(ctx context.Context, flags FileCreateFlags) (*FileOutpu
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags: set of CreateFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) CreateAsync(ctx context.Context, flags FileCreateFlags, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg3 *C.GCancellable       // out
@@ -22283,7 +22202,7 @@ func (file *File) CreateReadwrite(ctx context.Context, flags FileCreateFlags) (*
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags: set of CreateFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) CreateReadwriteAsync(ctx context.Context, flags FileCreateFlags, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg3 *C.GCancellable       // out
@@ -22502,7 +22421,7 @@ func (file *File) Dup() *File {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags affecting the operation.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied, or NULL.
 func (file *File) EjectMountable(ctx context.Context, flags MountUnmountFlags, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg2 *C.GCancellable       // out
@@ -22572,7 +22491,7 @@ func (file *File) EjectMountableFinish(result AsyncResulter) error {
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags affecting the operation.
 //   - mountOperation (optional): Operation, or NULL to avoid user interaction.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied, or NULL.
 func (file *File) EjectMountableWithOperation(ctx context.Context, flags MountUnmountFlags, mountOperation *MountOperation, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg3 *C.GCancellable       // out
@@ -22715,7 +22634,7 @@ func (file *File) EnumerateChildren(ctx context.Context, attributes string, flag
 //   - attributes: attribute query string.
 //   - flags: set of QueryInfoFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) EnumerateChildrenAsync(ctx context.Context, attributes string, flags FileQueryInfoFlags, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg4 *C.GCancellable       // out
@@ -22877,7 +22796,7 @@ func (file *File) FindEnclosingMount(ctx context.Context) (*Mount, error) {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) FindEnclosingMountAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg2 *C.GCancellable       // out
@@ -23488,7 +23407,7 @@ func (file *File) LoadBytes(ctx context.Context) (string, *glib.Bytes, error) {
 // The function takes the following parameters:
 //
 //   - ctx (optional) or NULL.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) LoadBytesAsync(ctx context.Context, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg1 *C.GCancellable       // out
@@ -24344,7 +24263,7 @@ func (location *File) MountEnclosingVolumeFinish(result AsyncResulter) error {
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags affecting the operation.
 //   - mountOperation (optional): Operation, or NULL to avoid user interaction.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied, or NULL.
 func (file *File) MountMountable(ctx context.Context, flags MountMountFlags, mountOperation *MountOperation, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg3 *C.GCancellable       // out
@@ -24411,6 +24330,144 @@ func (file *File) MountMountableFinish(result AsyncResulter) (*File, error) {
 	}
 
 	return _ret, _goerr
+}
+
+// Move tries to move the file or directory source to the location specified
+// by destination. If native move operations are supported then this is used,
+// otherwise a copy + delete fallback is used. The native implementation
+// may support moving directories (for instance on moves inside the same
+// filesystem), but the fallback code does not.
+//
+// If the flag G_FILE_COPY_OVERWRITE is specified an already existing
+// destination file is overwritten.
+//
+// If cancellable is not NULL, then the operation can be cancelled by triggering
+// the cancellable object from another thread. If the operation was cancelled,
+// the error G_IO_ERROR_CANCELLED will be returned.
+//
+// If progress_callback is not NULL, then the operation can be monitored by
+// setting this to a ProgressCallback function. progress_callback_data will be
+// passed to this function. It is guaranteed that this callback will be called
+// after all data has been transferred with the total number of bytes copied
+// during the operation.
+//
+// If the source file does not exist, then the G_IO_ERROR_NOT_FOUND error is
+// returned, independent on the status of the destination.
+//
+// If G_FILE_COPY_OVERWRITE is not specified and the target exists, then the
+// error G_IO_ERROR_EXISTS is returned.
+//
+// If trying to overwrite a file over a directory, the G_IO_ERROR_IS_DIRECTORY
+// error is returned. If trying to overwrite a directory with a directory the
+// G_IO_ERROR_WOULD_MERGE error is returned.
+//
+// If the source is a directory and the target does not exist,
+// or G_FILE_COPY_OVERWRITE is specified and the target is a file, then the
+// G_IO_ERROR_WOULD_RECURSE error may be returned (if the native move operation
+// isn't available).
+//
+// The function takes the following parameters:
+//
+//   - ctx (optional): optional #GCancellable object, NULL to ignore.
+//   - destination pointing to the destination location.
+//   - flags: set of CopyFlags.
+//   - progressCallback (optional): ProgressCallback function for updates.
+func (source *File) Move(ctx context.Context, destination Filer, flags FileCopyFlags, progressCallback FileProgressCallback) error {
+	var _arg0 *C.GFile                // out
+	var _arg3 *C.GCancellable         // out
+	var _arg1 *C.GFile                // out
+	var _arg2 C.GFileCopyFlags        // out
+	var _arg4 C.GFileProgressCallback // out
+	var _arg5 C.gpointer
+	var _cerr *C.GError // in
+
+	_arg0 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(source).Native()))
+	{
+		cancellable := gcancel.GCancellableFromContext(ctx)
+		defer runtime.KeepAlive(cancellable)
+		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
+	}
+	_arg1 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(destination).Native()))
+	_arg2 = C.GFileCopyFlags(flags)
+	if progressCallback != nil {
+		_arg4 = (*[0]byte)(C._gotk4_gio2_FileProgressCallback)
+		_arg5 = C.gpointer(gbox.Assign(progressCallback))
+		defer gbox.Delete(uintptr(_arg5))
+	}
+
+	C.g_file_move(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, &_cerr)
+	runtime.KeepAlive(source)
+	runtime.KeepAlive(ctx)
+	runtime.KeepAlive(destination)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(progressCallback)
+
+	var _goerr error // out
+
+	if _cerr != nil {
+		_goerr = gerror.Take(unsafe.Pointer(_cerr))
+	}
+
+	return _goerr
+}
+
+// MoveAsync: asynchronously moves a file source to the location of destination.
+// For details of the behaviour, see g_file_move().
+//
+// If progress_callback is not NULL, then that function that will be called just
+// like in g_file_move(). The callback will run in the default main context of
+// the thread calling g_file_move_async() — the same context as callback is run
+// in.
+//
+// When the operation is finished, callback will be called. You can then call
+// g_file_move_finish() to get the result of the operation.
+//
+// The function takes the following parameters:
+//
+//   - ctx (optional): optional #GCancellable object, NULL to ignore.
+//   - destination pointing to the destination location.
+//   - flags: set of CopyFlags.
+//   - ioPriority: [I/O priority][io-priority] of the request.
+//   - progressCallback (optional): ProgressCallback function for updates.
+//   - callback (optional) to call when the request is satisfied.
+func (source *File) MoveAsync(ctx context.Context, destination Filer, flags FileCopyFlags, ioPriority int, progressCallback FileProgressCallback, callback AsyncReadyCallback) {
+	var _arg0 *C.GFile                // out
+	var _arg4 *C.GCancellable         // out
+	var _arg1 *C.GFile                // out
+	var _arg2 C.GFileCopyFlags        // out
+	var _arg3 C.int                   // out
+	var _arg5 C.GFileProgressCallback // out
+	var _arg6 C.gpointer
+	var _arg7 C.GAsyncReadyCallback // out
+	var _arg8 C.gpointer
+
+	_arg0 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(source).Native()))
+	{
+		cancellable := gcancel.GCancellableFromContext(ctx)
+		defer runtime.KeepAlive(cancellable)
+		_arg4 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
+	}
+	_arg1 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(destination).Native()))
+	_arg2 = C.GFileCopyFlags(flags)
+	_arg3 = C.int(ioPriority)
+	if progressCallback != nil {
+		_arg5 = (*[0]byte)(C._gotk4_gio2_FileProgressCallback)
+		_arg6 = C.gpointer(gbox.Assign(progressCallback))
+		defer gbox.Delete(uintptr(_arg6))
+	}
+	if callback != nil {
+		_arg7 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
+		_arg8 = C.gpointer(gbox.AssignOnce(callback))
+	}
+
+	C.g_file_move_async(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7, _arg8)
+	runtime.KeepAlive(source)
+	runtime.KeepAlive(ctx)
+	runtime.KeepAlive(destination)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(ioPriority)
+	runtime.KeepAlive(progressCallback)
+	runtime.KeepAlive(callback)
 }
 
 // MoveFinish finishes an asynchronous file movement, started with
@@ -24502,7 +24559,7 @@ func (file *File) OpenReadwrite(ctx context.Context) (*FileIOStream, error) {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) OpenReadwriteAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg2 *C.GCancellable       // out
@@ -24946,7 +25003,7 @@ func (file *File) QueryFilesystemInfo(ctx context.Context, attributes string) (*
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - attributes: attribute query string.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) QueryFilesystemInfoAsync(ctx context.Context, attributes string, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg3 *C.GCancellable       // out
@@ -25100,7 +25157,7 @@ func (file *File) QueryInfo(ctx context.Context, attributes string, flags FileQu
 //   - attributes: attribute query string.
 //   - flags: set of QueryInfoFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) QueryInfoAsync(ctx context.Context, attributes string, flags FileQueryInfoFlags, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg4 *C.GCancellable       // out
@@ -25332,7 +25389,7 @@ func (file *File) Read(ctx context.Context) (*FileInputStream, error) {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) ReadAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg2 *C.GCancellable       // out
@@ -25435,7 +25492,7 @@ func (file *File) ReadFinish(res AsyncResulter) (*FileInputStream, error) {
 // The function takes the following parameters:
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
-//   - etag (optional): optional entity tag (#entity-tags) for the current
+//   - etag (optional): optional [entity tag][gfile-etag] for the current
 //     #GFile, or LL to ignore.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
@@ -25498,12 +25555,12 @@ func (file *File) Replace(ctx context.Context, etag string, makeBackup bool, fla
 // The function takes the following parameters:
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
-//   - etag (optional): entity tag (#entity-tags) for the current #GFile,
-//     or NULL to ignore.
+//   - etag (optional): [entity tag][gfile-etag] for the current #GFile, or NULL
+//     to ignore.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) ReplaceAsync(ctx context.Context, etag string, makeBackup bool, flags FileCreateFlags, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg5 *C.GCancellable       // out
@@ -25565,13 +25622,13 @@ func (file *File) ReplaceAsync(ctx context.Context, etag string, makeBackup bool
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - contents: string containing the new contents for file.
-//   - etag (optional): old entity-tag (#entity-tags) for the document, or NULL.
+//   - etag (optional): old [entity-tag][gfile-etag] for the document, or NULL.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
 //
 // The function returns the following values:
 //
-//   - newEtag (optional): location to a new entity tag (#entity-tags) for the
+//   - newEtag (optional): location to a new [entity tag][gfile-etag] for the
 //     document. This should be freed with g_free() when no longer needed,
 //     or NULL.
 func (file *File) ReplaceContents(ctx context.Context, contents, etag string, makeBackup bool, flags FileCreateFlags) (string, error) {
@@ -25649,7 +25706,7 @@ func (file *File) ReplaceContents(ctx context.Context, contents, etag string, ma
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - contents: string of contents to replace the file with.
-//   - etag (optional): new entity tag (#entity-tags) for the file, or NULL.
+//   - etag (optional): new [entity tag][gfile-etag] for the file, or NULL.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
 //   - callback (optional) to call when the request is satisfied.
@@ -25710,7 +25767,7 @@ func (file *File) ReplaceContentsAsync(ctx context.Context, contents, etag strin
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - contents: #GBytes.
-//   - etag (optional): new entity tag (#entity-tags) for the file, or NULL.
+//   - etag (optional): new [entity tag][gfile-etag] for the file, or NULL.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
 //   - callback (optional) to call when the request is satisfied.
@@ -25764,7 +25821,7 @@ func (file *File) ReplaceContentsBytesAsync(ctx context.Context, contents *glib.
 //
 // The function returns the following values:
 //
-//   - newEtag (optional): location of a new entity tag (#entity-tags) for the
+//   - newEtag (optional): location of a new [entity tag][gfile-etag] for the
 //     document. This should be freed with g_free() when it is no longer needed,
 //     or NULL.
 func (file *File) ReplaceContentsFinish(res AsyncResulter) (string, error) {
@@ -25843,7 +25900,7 @@ func (file *File) ReplaceFinish(res AsyncResulter) (*FileOutputStream, error) {
 // The function takes the following parameters:
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
-//   - etag (optional): optional entity tag (#entity-tags) for the current
+//   - etag (optional): optional [entity tag][gfile-etag] for the current
 //     #GFile, or LL to ignore.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
@@ -25906,12 +25963,12 @@ func (file *File) ReplaceReadwrite(ctx context.Context, etag string, makeBackup 
 // The function takes the following parameters:
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
-//   - etag (optional): entity tag (#entity-tags) for the current #GFile,
-//     or NULL to ignore.
+//   - etag (optional): [entity tag][gfile-etag] for the current #GFile, or NULL
+//     to ignore.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) ReplaceReadwriteAsync(ctx context.Context, etag string, makeBackup bool, flags FileCreateFlags, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg5 *C.GCancellable       // out
@@ -26382,7 +26439,7 @@ func (file *File) SetAttributeUint64(ctx context.Context, attribute string, valu
 //   - info: Info.
 //   - flags: QueryInfoFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional): ReadyCallback.
 func (file *File) SetAttributesAsync(ctx context.Context, info *FileInfo, flags FileQueryInfoFlags, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg4 *C.GCancellable       // out
@@ -26567,7 +26624,7 @@ func (file *File) SetDisplayName(ctx context.Context, displayName string) (*File
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - displayName: string.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) SetDisplayNameAsync(ctx context.Context, displayName string, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg3 *C.GCancellable       // out
@@ -26926,7 +26983,7 @@ func (file *File) TrashFinish(result AsyncResulter) error {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags affecting the operation.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied, or NULL.
 func (file *File) UnmountMountable(ctx context.Context, flags MountUnmountFlags, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg2 *C.GCancellable       // out
@@ -26999,7 +27056,7 @@ func (file *File) UnmountMountableFinish(result AsyncResulter) error {
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags affecting the operation.
 //   - mountOperation (optional): Operation, or NULL to avoid user interaction.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied, or NULL.
 func (file *File) UnmountMountableWithOperation(ctx context.Context, flags MountUnmountFlags, mountOperation *MountOperation, callback AsyncReadyCallback) {
 	var _arg0 *C.GFile              // out
 	var _arg3 *C.GCancellable       // out
@@ -27133,7 +27190,7 @@ func (file *File) appendTo(ctx context.Context, flags FileCreateFlags) (*FileOut
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags: set of CreateFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) appendToAsync(ctx context.Context, flags FileCreateFlags, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.append_to_async
@@ -27202,6 +27259,96 @@ func (file *File) appendToFinish(res AsyncResulter) (*FileOutputStream, error) {
 	}
 
 	return _fileOutputStream, _goerr
+}
+
+// Copy copies the file source to the location specified by destination. Can not
+// handle recursive copies of directories.
+//
+// If the flag G_FILE_COPY_OVERWRITE is specified an already existing
+// destination file is overwritten.
+//
+// If the flag G_FILE_COPY_NOFOLLOW_SYMLINKS is specified then symlinks will
+// be copied as symlinks, otherwise the target of the source symlink will be
+// copied.
+//
+// If the flag G_FILE_COPY_ALL_METADATA is specified then all the metadata
+// that is possible to copy is copied, not just the default subset (which,
+// for instance, does not include the owner, see Info).
+//
+// If cancellable is not NULL, then the operation can be cancelled by triggering
+// the cancellable object from another thread. If the operation was cancelled,
+// the error G_IO_ERROR_CANCELLED will be returned.
+//
+// If progress_callback is not NULL, then the operation can be monitored by
+// setting this to a ProgressCallback function. progress_callback_data will be
+// passed to this function. It is guaranteed that this callback will be called
+// after all data has been transferred with the total number of bytes copied
+// during the operation.
+//
+// If the source file does not exist, then the G_IO_ERROR_NOT_FOUND error is
+// returned, independent on the status of the destination.
+//
+// If G_FILE_COPY_OVERWRITE is not specified and the target exists, then the
+// error G_IO_ERROR_EXISTS is returned.
+//
+// If trying to overwrite a file over a directory, the G_IO_ERROR_IS_DIRECTORY
+// error is returned. If trying to overwrite a directory with a directory the
+// G_IO_ERROR_WOULD_MERGE error is returned.
+//
+// If the source is a directory and the target does not exist,
+// or G_FILE_COPY_OVERWRITE is specified and the target is a file, then the
+// G_IO_ERROR_WOULD_RECURSE error is returned.
+//
+// If you are interested in copying the #GFile object itself (not the on-disk
+// file), see g_file_dup().
+//
+// The function takes the following parameters:
+//
+//   - ctx (optional): optional #GCancellable object, NULL to ignore.
+//   - destination #GFile.
+//   - flags: set of CopyFlags.
+//   - progressCallback (optional): function to callback with progress
+//     information, or NULL if progress information is not needed.
+func (source *File) copy(ctx context.Context, destination Filer, flags FileCopyFlags, progressCallback FileProgressCallback) error {
+	gclass := (*C.GFileIface)(coreglib.PeekParentClass(source))
+	fnarg := gclass.copy
+
+	var _arg0 *C.GFile                // out
+	var _arg3 *C.GCancellable         // out
+	var _arg1 *C.GFile                // out
+	var _arg2 C.GFileCopyFlags        // out
+	var _arg4 C.GFileProgressCallback // out
+	var _arg5 C.gpointer
+	var _cerr *C.GError // in
+
+	_arg0 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(source).Native()))
+	{
+		cancellable := gcancel.GCancellableFromContext(ctx)
+		defer runtime.KeepAlive(cancellable)
+		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
+	}
+	_arg1 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(destination).Native()))
+	_arg2 = C.GFileCopyFlags(flags)
+	if progressCallback != nil {
+		_arg4 = (*[0]byte)(C._gotk4_gio2_FileProgressCallback)
+		_arg5 = C.gpointer(gbox.Assign(progressCallback))
+		defer gbox.Delete(uintptr(_arg5))
+	}
+
+	C._gotk4_gio2_File_virtual_copy(unsafe.Pointer(fnarg), _arg0, _arg1, _arg2, _arg3, _arg4, _arg5, &_cerr)
+	runtime.KeepAlive(source)
+	runtime.KeepAlive(ctx)
+	runtime.KeepAlive(destination)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(progressCallback)
+
+	var _goerr error // out
+
+	if _cerr != nil {
+		_goerr = gerror.Take(unsafe.Pointer(_cerr))
+	}
+
+	return _goerr
 }
 
 // copyFinish finishes copying the file started with g_file_copy_async().
@@ -27307,7 +27454,7 @@ func (file *File) create(ctx context.Context, flags FileCreateFlags) (*FileOutpu
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags: set of CreateFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) createAsync(ctx context.Context, flags FileCreateFlags, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.create_async
@@ -27456,7 +27603,7 @@ func (file *File) createReadwrite(ctx context.Context, flags FileCreateFlags) (*
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags: set of CreateFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) createReadwriteAsync(ctx context.Context, flags FileCreateFlags, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.create_readwrite_async
@@ -27693,7 +27840,7 @@ func (file *File) dup() *File {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags affecting the operation.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied, or NULL.
 func (file *File) ejectMountable(ctx context.Context, flags MountUnmountFlags, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.eject_mountable
@@ -27769,7 +27916,7 @@ func (file *File) ejectMountableFinish(result AsyncResulter) error {
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags affecting the operation.
 //   - mountOperation (optional): Operation, or NULL to avoid user interaction.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied, or NULL.
 func (file *File) ejectMountableWithOperation(ctx context.Context, flags MountUnmountFlags, mountOperation *MountOperation, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.eject_mountable_with_operation
@@ -27921,7 +28068,7 @@ func (file *File) enumerateChildren(ctx context.Context, attributes string, flag
 //   - attributes: attribute query string.
 //   - flags: set of QueryInfoFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) enumerateChildrenAsync(ctx context.Context, attributes string, flags FileQueryInfoFlags, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.enumerate_children_async
@@ -28095,7 +28242,7 @@ func (file *File) findEnclosingMount(ctx context.Context) (*Mount, error) {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) findEnclosingMountAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.find_enclosing_mount_async
@@ -29070,7 +29217,7 @@ func (location *File) mountEnclosingVolumeFinish(result AsyncResulter) error {
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags affecting the operation.
 //   - mountOperation (optional): Operation, or NULL to avoid user interaction.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied, or NULL.
 func (file *File) mountMountable(ctx context.Context, flags MountMountFlags, mountOperation *MountOperation, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.mount_mountable
@@ -29143,6 +29290,150 @@ func (file *File) mountMountableFinish(result AsyncResulter) (*File, error) {
 	}
 
 	return _ret, _goerr
+}
+
+// Move tries to move the file or directory source to the location specified
+// by destination. If native move operations are supported then this is used,
+// otherwise a copy + delete fallback is used. The native implementation
+// may support moving directories (for instance on moves inside the same
+// filesystem), but the fallback code does not.
+//
+// If the flag G_FILE_COPY_OVERWRITE is specified an already existing
+// destination file is overwritten.
+//
+// If cancellable is not NULL, then the operation can be cancelled by triggering
+// the cancellable object from another thread. If the operation was cancelled,
+// the error G_IO_ERROR_CANCELLED will be returned.
+//
+// If progress_callback is not NULL, then the operation can be monitored by
+// setting this to a ProgressCallback function. progress_callback_data will be
+// passed to this function. It is guaranteed that this callback will be called
+// after all data has been transferred with the total number of bytes copied
+// during the operation.
+//
+// If the source file does not exist, then the G_IO_ERROR_NOT_FOUND error is
+// returned, independent on the status of the destination.
+//
+// If G_FILE_COPY_OVERWRITE is not specified and the target exists, then the
+// error G_IO_ERROR_EXISTS is returned.
+//
+// If trying to overwrite a file over a directory, the G_IO_ERROR_IS_DIRECTORY
+// error is returned. If trying to overwrite a directory with a directory the
+// G_IO_ERROR_WOULD_MERGE error is returned.
+//
+// If the source is a directory and the target does not exist,
+// or G_FILE_COPY_OVERWRITE is specified and the target is a file, then the
+// G_IO_ERROR_WOULD_RECURSE error may be returned (if the native move operation
+// isn't available).
+//
+// The function takes the following parameters:
+//
+//   - ctx (optional): optional #GCancellable object, NULL to ignore.
+//   - destination pointing to the destination location.
+//   - flags: set of CopyFlags.
+//   - progressCallback (optional): ProgressCallback function for updates.
+func (source *File) move(ctx context.Context, destination Filer, flags FileCopyFlags, progressCallback FileProgressCallback) error {
+	gclass := (*C.GFileIface)(coreglib.PeekParentClass(source))
+	fnarg := gclass.move
+
+	var _arg0 *C.GFile                // out
+	var _arg3 *C.GCancellable         // out
+	var _arg1 *C.GFile                // out
+	var _arg2 C.GFileCopyFlags        // out
+	var _arg4 C.GFileProgressCallback // out
+	var _arg5 C.gpointer
+	var _cerr *C.GError // in
+
+	_arg0 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(source).Native()))
+	{
+		cancellable := gcancel.GCancellableFromContext(ctx)
+		defer runtime.KeepAlive(cancellable)
+		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
+	}
+	_arg1 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(destination).Native()))
+	_arg2 = C.GFileCopyFlags(flags)
+	if progressCallback != nil {
+		_arg4 = (*[0]byte)(C._gotk4_gio2_FileProgressCallback)
+		_arg5 = C.gpointer(gbox.Assign(progressCallback))
+		defer gbox.Delete(uintptr(_arg5))
+	}
+
+	C._gotk4_gio2_File_virtual_move(unsafe.Pointer(fnarg), _arg0, _arg1, _arg2, _arg3, _arg4, _arg5, &_cerr)
+	runtime.KeepAlive(source)
+	runtime.KeepAlive(ctx)
+	runtime.KeepAlive(destination)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(progressCallback)
+
+	var _goerr error // out
+
+	if _cerr != nil {
+		_goerr = gerror.Take(unsafe.Pointer(_cerr))
+	}
+
+	return _goerr
+}
+
+// moveAsync: asynchronously moves a file source to the location of destination.
+// For details of the behaviour, see g_file_move().
+//
+// If progress_callback is not NULL, then that function that will be called just
+// like in g_file_move(). The callback will run in the default main context of
+// the thread calling g_file_move_async() — the same context as callback is run
+// in.
+//
+// When the operation is finished, callback will be called. You can then call
+// g_file_move_finish() to get the result of the operation.
+//
+// The function takes the following parameters:
+//
+//   - ctx (optional): optional #GCancellable object, NULL to ignore.
+//   - destination pointing to the destination location.
+//   - flags: set of CopyFlags.
+//   - ioPriority: [I/O priority][io-priority] of the request.
+//   - progressCallback (optional): ProgressCallback function for updates.
+//   - callback (optional) to call when the request is satisfied.
+func (source *File) moveAsync(ctx context.Context, destination Filer, flags FileCopyFlags, ioPriority int, progressCallback FileProgressCallback, callback AsyncReadyCallback) {
+	gclass := (*C.GFileIface)(coreglib.PeekParentClass(source))
+	fnarg := gclass.move_async
+
+	var _arg0 *C.GFile                // out
+	var _arg4 *C.GCancellable         // out
+	var _arg1 *C.GFile                // out
+	var _arg2 C.GFileCopyFlags        // out
+	var _arg3 C.int                   // out
+	var _arg5 C.GFileProgressCallback // out
+	var _arg6 C.gpointer
+	var _arg7 C.GAsyncReadyCallback // out
+	var _arg8 C.gpointer
+
+	_arg0 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(source).Native()))
+	{
+		cancellable := gcancel.GCancellableFromContext(ctx)
+		defer runtime.KeepAlive(cancellable)
+		_arg4 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
+	}
+	_arg1 = (*C.GFile)(unsafe.Pointer(coreglib.InternObject(destination).Native()))
+	_arg2 = C.GFileCopyFlags(flags)
+	_arg3 = C.int(ioPriority)
+	if progressCallback != nil {
+		_arg5 = (*[0]byte)(C._gotk4_gio2_FileProgressCallback)
+		_arg6 = C.gpointer(gbox.Assign(progressCallback))
+		defer gbox.Delete(uintptr(_arg6))
+	}
+	if callback != nil {
+		_arg7 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
+		_arg8 = C.gpointer(gbox.AssignOnce(callback))
+	}
+
+	C._gotk4_gio2_File_virtual_move_async(unsafe.Pointer(fnarg), _arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7, _arg8)
+	runtime.KeepAlive(source)
+	runtime.KeepAlive(ctx)
+	runtime.KeepAlive(destination)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(ioPriority)
+	runtime.KeepAlive(progressCallback)
+	runtime.KeepAlive(callback)
 }
 
 // moveFinish finishes an asynchronous file movement, started with
@@ -29240,7 +29531,7 @@ func (file *File) openReadwrite(ctx context.Context) (*FileIOStream, error) {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) openReadwriteAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.open_readwrite_async
@@ -29507,7 +29798,7 @@ func (file *File) queryFilesystemInfo(ctx context.Context, attributes string) (*
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - attributes: attribute query string.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) queryFilesystemInfoAsync(ctx context.Context, attributes string, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.query_filesystem_info_async
@@ -29670,7 +29961,7 @@ func (file *File) queryInfo(ctx context.Context, attributes string, flags FileQu
 //   - attributes: attribute query string.
 //   - flags: set of QueryInfoFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) queryInfoAsync(ctx context.Context, attributes string, flags FileQueryInfoFlags, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.query_info_async
@@ -29866,7 +30157,7 @@ func (file *File) queryWritableNamespaces(ctx context.Context) (*FileAttributeIn
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) readAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.read_async
@@ -30026,7 +30317,7 @@ func (file *File) readFn(ctx context.Context) (*FileInputStream, error) {
 // The function takes the following parameters:
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
-//   - etag (optional): optional entity tag (#entity-tags) for the current
+//   - etag (optional): optional [entity tag][gfile-etag] for the current
 //     #GFile, or LL to ignore.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
@@ -30092,12 +30383,12 @@ func (file *File) replace(ctx context.Context, etag string, makeBackup bool, fla
 // The function takes the following parameters:
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
-//   - etag (optional): entity tag (#entity-tags) for the current #GFile,
-//     or NULL to ignore.
+//   - etag (optional): [entity tag][gfile-etag] for the current #GFile, or NULL
+//     to ignore.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) replaceAsync(ctx context.Context, etag string, makeBackup bool, flags FileCreateFlags, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.replace_async
@@ -30193,7 +30484,7 @@ func (file *File) replaceFinish(res AsyncResulter) (*FileOutputStream, error) {
 // The function takes the following parameters:
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
-//   - etag (optional): optional entity tag (#entity-tags) for the current
+//   - etag (optional): optional [entity tag][gfile-etag] for the current
 //     #GFile, or LL to ignore.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
@@ -30259,12 +30550,12 @@ func (file *File) replaceReadwrite(ctx context.Context, etag string, makeBackup 
 // The function takes the following parameters:
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
-//   - etag (optional): entity tag (#entity-tags) for the current #GFile,
-//     or NULL to ignore.
+//   - etag (optional): [entity tag][gfile-etag] for the current #GFile, or NULL
+//     to ignore.
 //   - makeBackup: TRUE if a backup should be created.
 //   - flags: set of CreateFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) replaceReadwriteAsync(ctx context.Context, etag string, makeBackup bool, flags FileCreateFlags, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.replace_readwrite_async
@@ -30456,7 +30747,7 @@ func (file *File) setAttribute(ctx context.Context, attribute string, typ FileAt
 //   - info: Info.
 //   - flags: QueryInfoFlags.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional): ReadyCallback.
 func (file *File) setAttributesAsync(ctx context.Context, info *FileInfo, flags FileQueryInfoFlags, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.set_attributes_async
@@ -30653,7 +30944,7 @@ func (file *File) setDisplayName(ctx context.Context, displayName string) (*File
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - displayName: string.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (file *File) setDisplayNameAsync(ctx context.Context, displayName string, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.set_display_name_async
@@ -31013,7 +31304,7 @@ func (file *File) trashFinish(result AsyncResulter) error {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags affecting the operation.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied, or NULL.
 func (file *File) unmountMountable(ctx context.Context, flags MountUnmountFlags, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.unmount_mountable
@@ -31092,7 +31383,7 @@ func (file *File) unmountMountableFinish(result AsyncResulter) error {
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - flags affecting the operation.
 //   - mountOperation (optional): Operation, or NULL to avoid user interaction.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied, or NULL.
 func (file *File) unmountMountableWithOperation(ctx context.Context, flags MountUnmountFlags, mountOperation *MountOperation, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIface)(coreglib.PeekParentClass(file))
 	fnarg := gclass.unmount_mountable_with_operation
@@ -31158,47 +31449,6 @@ func (file *File) unmountMountableWithOperationFinish(result AsyncResulter) erro
 	}
 
 	return _goerr
-}
-
-// NewFileBuildFilenamev constructs a #GFile from a vector of elements using the
-// correct separator for filenames.
-//
-// Using this function is equivalent to calling g_build_filenamev(), followed by
-// g_file_new_for_path() on the result.
-//
-// The function takes the following parameters:
-//
-//   - args: NULL-terminated array of strings containing the path elements.
-//
-// The function returns the following values:
-//
-//   - file: new #GFile.
-func NewFileBuildFilenamev(args []string) *File {
-	var _arg1 **C.gchar // out
-	var _cret *C.GFile  // in
-
-	{
-		_arg1 = (**C.gchar)(C.calloc(C.size_t((len(args) + 1)), C.size_t(unsafe.Sizeof(uint(0)))))
-		defer C.free(unsafe.Pointer(_arg1))
-		{
-			out := unsafe.Slice(_arg1, len(args)+1)
-			var zero *C.gchar
-			out[len(args)] = zero
-			for i := range args {
-				out[i] = (*C.gchar)(unsafe.Pointer(C.CString(args[i])))
-				defer C.free(unsafe.Pointer(out[i]))
-			}
-		}
-	}
-
-	_cret = C.g_file_new_build_filenamev(_arg1)
-	runtime.KeepAlive(args)
-
-	var _file *File // out
-
-	_file = wrapFile(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-
-	return _file
 }
 
 // NewFileForCommandlineArg creates a #GFile with the given argument from
@@ -31568,32 +31818,30 @@ func FileParseName(parseName string) *File {
 	return _file
 }
 
-// Icon: GIcon is a very minimal interface for icons. It provides functions for
+// Icon is a very minimal interface for icons. It provides functions for
 // checking the equality of two icons, hashing of icons and serializing an icon
 // to and from strings.
 //
-// GIcon does not provide the actual pixmap for the icon as this is out of GIO's
-// scope, however implementations of GIcon may contain the name of an icon (see
-// gio.ThemedIcon), or the path to an icon (see gio.LoadableIcon).
+// #GIcon does not provide the actual pixmap for the icon as this is out of
+// GIO's scope, however implementations of #GIcon may contain the name of an
+// icon (see Icon), or the path to an icon (see Icon).
 //
-// To obtain a hash of a GIcon, see gio.Icon.Hash().
+// To obtain a hash of a #GIcon, see g_icon_hash().
 //
-// To check if two GIcons are equal, see gio.Icon.Equal().
+// To check if two #GIcons are equal, see g_icon_equal().
 //
-// For serializing a GIcon, use gio.Icon.Serialize() and gio.Icon().Deserialize.
+// For serializing a #GIcon, use g_icon_serialize() and g_icon_deserialize().
 //
-// If you want to consume GIcon (for example, in a toolkit) you
-// must be prepared to handle at least the three following cases:
-// gio.LoadableIcon, gio.ThemedIcon and gio.EmblemedIcon. It may also
-// make sense to have fast-paths for other cases (like handling GdkPixbuf
-// (https://docs.gtk.org/gdk-pixbuf/class.Pixbuf.html) directly, for example)
-// but all compliant GIcon implementations outside of GIO must implement
-// gio.LoadableIcon.
+// If you want to consume #GIcon (for example, in a toolkit) you must be
+// prepared to handle at least the three following cases: Icon, Icon and Icon.
+// It may also make sense to have fast-paths for other cases (like handling
+// Pixbuf directly, for example) but all compliant #GIcon implementations
+// outside of GIO must implement Icon.
 //
-// If your application or library provides one or more GIcon implementations you
-// need to ensure that your new implementation also implements gio.LoadableIcon.
-// Additionally, you must provide an implementation of gio.Icon.Serialize() that
-// gives a result that is understood by gio.Icon().Deserialize, yielding one of
+// If your application or library provides one or more #GIcon implementations
+// you need to ensure that your new implementation also implements Icon.
+// Additionally, you must provide an implementation of g_icon_serialize() that
+// gives a result that is understood by g_icon_deserialize(), yielding one of
 // the built-in icon types.
 //
 // Icon wraps an interface. This means the user can get the
@@ -31613,8 +31861,6 @@ type Iconner interface {
 
 	// Equal checks if two icons are equal.
 	Equal(icon2 Iconner) bool
-	// Hash gets a hash for an icon.
-	Hash() uint
 	// Serialize serializes a #GIcon into a #GVariant.
 	Serialize() *glib.Variant
 	// String generates a textual representation of icon that can be used for
@@ -31667,28 +31913,6 @@ func (icon1 *Icon) Equal(icon2 Iconner) bool {
 	}
 
 	return _ok
-}
-
-// Hash gets a hash for an icon.
-//
-// The function returns the following values:
-//
-//   - guint containing a hash for the icon, suitable for use in a Table or
-//     similar data structure.
-func (icon *Icon) Hash() uint {
-	var _arg0 C.gconstpointer // out
-	var _cret C.guint         // in
-
-	_arg0 = *(*C.gconstpointer)(unsafe.Pointer(coreglib.InternObject(icon).Native()))
-
-	_cret = C.g_icon_hash(_arg0)
-	runtime.KeepAlive(icon)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
 }
 
 // Serialize serializes a #GIcon into a #GVariant. An equivalent #GIcon can
@@ -31891,6 +32115,32 @@ func IconDeserialize(value *glib.Variant) *Icon {
 	return _icon
 }
 
+// IconHash gets a hash for an icon.
+//
+// The function takes the following parameters:
+//
+//   - icon to an icon object.
+//
+// The function returns the following values:
+//
+//   - guint containing a hash for the icon, suitable for use in a Table or
+//     similar data structure.
+func IconHash(icon unsafe.Pointer) uint {
+	var _arg1 C.gconstpointer // out
+	var _cret C.guint         // in
+
+	_arg1 = (C.gconstpointer)(unsafe.Pointer(icon))
+
+	_cret = C.g_icon_hash(_arg1)
+	runtime.KeepAlive(icon)
+
+	var _guint uint // out
+
+	_guint = uint(_cret)
+
+	return _guint
+}
+
 // NewIconForString: generate a #GIcon instance from str. This function can fail
 // if str is not valid - see g_icon_to_string() for discussion.
 //
@@ -31927,22 +32177,22 @@ func NewIconForString(str string) (*Icon, error) {
 	return _icon, _goerr
 }
 
-// Initable: GInitable is implemented by objects that can fail during
-// initialization. If an object implements this interface then it must
-// be initialized as the first thing after construction, either via
-// gio.Initable.Init() or gio.AsyncInitable.InitAsync() (the latter is only
-// available if it also implements gio.AsyncInitable).
+// Initable is implemented by objects that can fail during initialization.
+// If an object implements this interface then it must be initialized as
+// the first thing after construction, either via g_initable_init() or
+// g_async_initable_init_async() (the latter is only available if it also
+// implements Initable).
 //
 // If the object is not initialized, or initialization returns with an error,
 // then all operations on the object except g_object_ref() and g_object_unref()
 // are considered to be invalid, and have undefined behaviour. They will often
-// fail with glib.Critical() or glib.Warning(), but this must not be relied on.
+// fail with g_critical() or g_warning(), but this must not be relied on.
 //
 // Users of objects implementing this are not intended to use the interface
 // method directly, instead it will be used automatically in various ways.
-// For C applications you generally just call gio.Initable().New directly, or
-// indirectly via a foo_thing_new() wrapper. This will call gio.Initable.Init()
-// under the cover, returning NULL and setting a GError on failure (at which
+// For C applications you generally just call g_initable_new() directly,
+// or indirectly via a foo_thing_new() wrapper. This will call g_initable_init()
+// under the cover, returning NULL and setting a #GError on failure (at which
 // point the instance is unreferenced).
 //
 // For bindings in languages where the native constructor supports exceptions
@@ -32116,62 +32366,61 @@ func (initable *Initable) init(ctx context.Context) error {
 	return _goerr
 }
 
-// ListModel: GListModel is an interface that represents a mutable list of
-// gobject.Object. Its main intention is as a model for various widgets in user
-// interfaces, such as list views, but it can also be used as a convenient
-// method of returning lists of data, with support for updates.
+// ListModel is an interface that represents a mutable list of #GObjects.
+// Its main intention is as a model for various widgets in user interfaces, such
+// as list views, but it can also be used as a convenient method of returning
+// lists of data, with support for updates.
 //
-// Each object in the list may also report changes in itself via some mechanism
-// (normally the gobject.Object::notify signal). Taken together with the
-// gio.ListModel::items-changed signal, this provides for a list that can
-// change its membership, and in which the members can change their individual
-// properties.
+// Each object in the list may also report changes in itself via some
+// mechanism (normally the #GObject::notify signal). Taken together with the
+// Model::items-changed signal, this provides for a list that can change its
+// membership, and in which the members can change their individual properties.
 //
 // A good example would be the list of visible wireless network access points,
 // where each access point can report dynamic properties such as signal
 // strength.
 //
-// It is important to note that the GListModel itself does not report changes
-// to the individual items. It only reports changes to the list membership.
-// If you want to observe changes to the objects themselves then you need to
-// connect signals to the objects that you are interested in.
+// It is important to note that the Model itself does not report changes to the
+// individual items. It only reports changes to the list membership. If you want
+// to observe changes to the objects themselves then you need to connect signals
+// to the objects that you are interested in.
 //
-// All items in a GListModel are of (or derived from) the same type.
-// gio.ListModel.GetItemType() returns that type. The type may be an interface,
+// All items in a Model are of (or derived from) the same type.
+// g_list_model_get_item_type() returns that type. The type may be an interface,
 // in which case all objects in the list must implement it.
 //
-// The semantics are close to that of an array: gio.ListModel.GetNItems()
-// returns the number of items in the list and gio.ListModel.GetItem() returns
+// The semantics are close to that of an array: g_list_model_get_n_items()
+// returns the number of items in the list and g_list_model_get_item() returns
 // an item at a (0-based) position. In order to allow implementations to
 // calculate the list length lazily, you can also iterate over items: starting
-// from 0, repeatedly call gio.ListModel.GetItem() until it returns NULL.
+// from 0, repeatedly call g_list_model_get_item() until it returns NULL.
 //
 // An implementation may create objects lazily, but must take care to return the
 // same object for a given position until all references to it are gone.
 //
 // On the other side, a consumer is expected only to hold references on objects
-// that are currently ‘user visible’, in order to facilitate the maximum level
+// that are currently "user visible", in order to facilitate the maximum level
 // of laziness in the implementation of the list and to reduce the required
 // number of signal connections at a given time.
 //
 // This interface is intended only to be used from a single thread.
 // The thread in which it is appropriate to use it depends on the particular
 // implementation, but typically it will be from the thread that owns the
-// thread-default main context (see glib.MainContext.PushThreadDefault()) in
-// effect at the time that the model was created.
+// [thread-default main context][g-main-context-push-thread-default] in effect
+// at the time that the model was created.
 //
-// Over time, it has established itself as good practice for list model
+// Over time, it has established itself as good practice for listmodel
 // implementations to provide properties item-type and n-items to ease
 // working with them. While it is not required, it is recommended that
 // implementations provide these two properties. They should return the values
-// of gio.ListModel.GetItemType() and gio.ListModel.GetNItems() respectively and
-// be defined as such:
+// of g_list_model_get_item_type() and g_list_model_get_n_items() respectively
+// and be defined as such:
 //
 //	properties[PROP_ITEM_TYPE] =
-//	  g_param_spec_gtype ("item-type", NULL, NULL, G_TYPE_OBJECT,
+//	  g_param_spec_gtype ("item-type", "", "", G_TYPE_OBJECT,
 //	                      G_PARAM_CONSTRUCT_ONLY | G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
 //	properties[PROP_N_ITEMS] =
-//	  g_param_spec_uint ("n-items", NULL, NULL, 0, G_MAXUINT, 0,
+//	  g_param_spec_uint ("n-items", "", "", 0, G_MAXUINT, 0,
 //	                     G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);.
 //
 // ListModel wraps an interface. This means the user can get the
@@ -32365,8 +32614,6 @@ func (list *ListModel) ItemsChanged(position, removed, added uint) {
 // NULL is never returned for an index that is smaller than the length of the
 // list. See g_list_model_get_n_items().
 //
-// The same #GObject instance may not appear more than once in a Model.
-//
 // The function takes the following parameters:
 //
 //   - position of the item to fetch.
@@ -32454,8 +32701,8 @@ func (list *ListModel) nItems() uint {
 	return _guint
 }
 
-// LoadableIcon: GLoadableIcon extends the gio.Icon interface and adds the
-// ability to load icons from streams.
+// LoadableIcon extends the #GIcon interface and adds the ability to load icons
+// from streams.
 //
 // LoadableIcon wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -32567,7 +32814,7 @@ func (icon *LoadableIcon) Load(ctx context.Context, size int) (string, InputStre
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - size: integer.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (icon *LoadableIcon) LoadAsync(ctx context.Context, size int, callback AsyncReadyCallback) {
 	var _arg0 *C.GLoadableIcon      // out
 	var _arg2 *C.GCancellable       // out
@@ -32729,7 +32976,7 @@ func (icon *LoadableIcon) load(ctx context.Context, size int) (string, InputStre
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - size: integer.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (icon *LoadableIcon) loadAsync(ctx context.Context, size int, callback AsyncReadyCallback) {
 	gclass := (*C.GLoadableIconIface)(coreglib.PeekParentClass(icon))
 	fnarg := gclass.load_async
@@ -32820,10 +33067,10 @@ func (icon *LoadableIcon) loadFinish(res AsyncResulter) (string, InputStreamer, 
 	return _typ, _inputStream, _goerr
 }
 
-// MemoryMonitor: GMemoryMonitor will monitor system memory and suggest
-// to the application when to free memory so as to leave more room for
-// other applications. It is implemented on Linux using the Low Memory
-// Monitor (https://gitlab.freedesktop.org/hadess/low-memory-monitor/) (API
+// MemoryMonitor will monitor system memory and suggest to the
+// application when to free memory so as to leave more room for other
+// applications. It is implemented on Linux using the Low Memory Monitor
+// (https://gitlab.freedesktop.org/hadess/low-memory-monitor/) (API
 // documentation (https://hadess.pages.freedesktop.org/low-memory-monitor/)).
 //
 // There is also an implementation for use inside Flatpak sandboxes.
@@ -32831,20 +33078,20 @@ func (icon *LoadableIcon) loadFinish(res AsyncResulter) (string, InputStreamer, 
 // Possible actions to take when the signal is received are:
 //
 //   - Free caches
-//   - Save files that haven’t been looked at in a while to disk, ready to be
+//   - Save files that haven't been looked at in a while to disk, ready to be
 //     reopened when needed
 //   - Run a garbage collection cycle
 //   - Try and compress fragmented allocations
 //   - Exit on idle if the process has no reason to stay around
-//   - Call malloc_trim(3) (man:malloc_trim(3)) to return cached heap pages to
-//     the kernel (if supported by your libc)
+//   - Call malloc_trim(3) (man:malloc_trim) to return cached heap pages to the
+//     kernel (if supported by your libc)
 //
 // Note that some actions may not always improve system performance,
 // and so should be profiled for your application. malloc_trim(), for example,
 // may make future heap allocations slower (due to releasing cached heap pages
 // back to the kernel).
 //
-// See gio.MemoryMonitorWarningLevel for details on the various warning levels.
+// See MonitorWarningLevel for details on the various warning levels.
 //
 //	static void
 //	warning_cb (GMemoryMonitor *m, GMemoryMonitorWarningLevel level)
@@ -32864,8 +33111,8 @@ func (icon *LoadableIcon) loadFinish(res AsyncResulter) (string, InputStreamer, 
 //	  return m;
 //	}
 //
-// Don’t forget to disconnect the gio.MemoryMonitor::low-memory-warning signal,
-// and unref the GMemoryMonitor itself when exiting.
+// Don't forget to disconnect the Monitor::low-memory-warning signal, and unref
+// the Monitor itself when exiting.
 //
 // MemoryMonitor wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -32913,8 +33160,6 @@ func (v *MemoryMonitor) ConnectLowMemoryWarning(f func(level MemoryMonitorWarnin
 	return coreglib.ConnectGeneratedClosure(v, "low-memory-warning", false, unsafe.Pointer(C._gotk4_gio2_MemoryMonitor_ConnectLowMemoryWarning), f)
 }
 
-// lowMemoryWarning: virtual function pointer for the
-// Monitor::low-memory-warning signal.
 func (monitor *MemoryMonitor) lowMemoryWarning(level MemoryMonitorWarningLevel) {
 	gclass := (*C.GMemoryMonitorInterface)(coreglib.PeekParentClass(monitor))
 	fnarg := gclass.low_memory_warning
@@ -32948,26 +33193,24 @@ func MemoryMonitorDupDefault() *MemoryMonitor {
 	return _memoryMonitor
 }
 
-// Mount: GMount interface represents user-visible mounts. Note, when porting
-// from GnomeVFS (migrating-gnome-vfs.html), GMount is the moral equivalent of
-// GnomeVFSVolume.
+// Mount interface represents user-visible mounts. Note, when porting from
+// GnomeVFS, #GMount is the moral equivalent of VFSVolume.
 //
-// GMount is a ‘mounted’ filesystem that you can access. Mounted is in quotes
-// because it’s not the same as a UNIX mount, it might be a GVFS mount,
+// #GMount is a "mounted" filesystem that you can access. Mounted is in quotes
+// because it's not the same as a unix mount, it might be a gvfs mount,
 // but you can still access the files on it if you use GIO. Might or might not
 // be related to a volume object.
 //
-// Unmounting a GMount instance is an asynchronous operation. For more
-// information about asynchronous operations, see gio.AsyncResult and gio.Task.
-// To unmount a GMount instance, first call gio.Mount.UnmountWithOperation()
-// with (at least) the GMount instance and a gio.AsyncReadyCallback. The
-// callback will be fired when the operation has resolved (either with success
-// or failure), and a gio.AsyncResult structure will be passed to the callback.
-// That callback should then call gio.Mount.UnmountWithOperationFinish()
-// with the GMount and the gio.AsyncResult data to see if the
-// operation was completed successfully. If an error is present when
-// gio.Mount.UnmountWithOperationFinish() is called, then it will be filled with
-// any error information.
+// Unmounting a #GMount instance is an asynchronous operation. For more
+// information about asynchronous operations, see Result and #GTask.
+// To unmount a #GMount instance, first call g_mount_unmount_with_operation()
+// with (at least) the #GMount instance and a ReadyCallback. The callback will
+// be fired when the operation has resolved (either with success or failure),
+// and a Result structure will be passed to the callback. That callback should
+// then call g_mount_unmount_with_operation_finish() with the #GMount and the
+// Result data to see if the operation was completed successfully. If an error
+// is present when g_mount_unmount_with_operation_finish() is called, then it
+// will be filled with any error information.
 //
 // Mount wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -33974,7 +34217,6 @@ func (mount *Mount) canUnmount() bool {
 	return _ok
 }
 
-// Changed: changed signal that is emitted when the mount's state has changed.
 func (mount *Mount) changed() {
 	gclass := (*C.GMountIface)(coreglib.PeekParentClass(mount))
 	fnarg := gclass.changed
@@ -34552,9 +34794,6 @@ func (mount *Mount) guessContentTypeSync(ctx context.Context, forceRescan bool) 
 	return _utf8s, _goerr
 }
 
-// preUnmount: ::pre-unmount signal that is emitted when the #GMount will soon
-// be emitted. If the recipient is somehow holding the mount open by keeping an
-// open file on it it should close the file.
 func (mount *Mount) preUnmount() {
 	gclass := (*C.GMountIface)(coreglib.PeekParentClass(mount))
 	fnarg := gclass.pre_unmount
@@ -34795,9 +35034,6 @@ func (mount *Mount) unmountWithOperationFinish(result AsyncResulter) error {
 	return _goerr
 }
 
-// Unmounted signal that is emitted when the #GMount have been unmounted.
-// If the recipient is holding references to the object they should release them
-// so the object can be finalized.
 func (mount *Mount) unmounted() {
 	gclass := (*C.GMountIface)(coreglib.PeekParentClass(mount))
 	fnarg := gclass.unmounted
@@ -34810,9 +35046,9 @@ func (mount *Mount) unmounted() {
 	runtime.KeepAlive(mount)
 }
 
-// NetworkMonitor: GNetworkMonitor provides an easy-to-use cross-platform API
-// for monitoring network connectivity. On Linux, the available implementations
-// are based on the kernel's netlink interface and on NetworkManager.
+// NetworkMonitor provides an easy-to-use cross-platform API for monitoring
+// network connectivity. On Linux, the available implementations are based on
+// the kernel's netlink interface and on NetworkManager.
 //
 // There is also an implementation for use inside Flatpak sandboxes.
 //
@@ -34930,7 +35166,7 @@ func (monitor *NetworkMonitor) CanReach(ctx context.Context, connectable SocketC
 //
 //   - ctx (optional) or NULL.
 //   - connectable: Connectable.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (monitor *NetworkMonitor) CanReachAsync(ctx context.Context, connectable SocketConnectabler, callback AsyncReadyCallback) {
 	var _arg0 *C.GNetworkMonitor    // out
 	var _arg2 *C.GCancellable       // out
@@ -35137,7 +35373,7 @@ func (monitor *NetworkMonitor) canReach(ctx context.Context, connectable SocketC
 //
 //   - ctx (optional) or NULL.
 //   - connectable: Connectable.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (monitor *NetworkMonitor) canReachAsync(ctx context.Context, connectable SocketConnectabler, callback AsyncReadyCallback) {
 	gclass := (*C.GNetworkMonitorInterface)(coreglib.PeekParentClass(monitor))
 	fnarg := gclass.can_reach_async
@@ -35197,8 +35433,6 @@ func (monitor *NetworkMonitor) canReachFinish(result AsyncResulter) error {
 	return _goerr
 }
 
-// networkChanged: virtual function pointer for the
-// GNetworkMonitor::network-changed signal.
 func (monitor *NetworkMonitor) networkChanged(networkAvailable bool) {
 	gclass := (*C.GNetworkMonitorInterface)(coreglib.PeekParentClass(monitor))
 	fnarg := gclass.network_changed
@@ -35234,15 +35468,9 @@ func NetworkMonitorGetDefault() *NetworkMonitor {
 	return _networkMonitor
 }
 
-// PollableInputStream: GPollableInputStream is implemented by gio.InputStreams
-// that can be polled for readiness to read. This can be used when interfacing
-// with a non-GIO API that expects UNIX-file-descriptor-style asynchronous I/O
-// rather than GIO-style.
-//
-// Some classes may implement GPollableInputStream but have only certain
-// instances of that class be pollable. If gio.PollableInputStream.CanPoll()
-// returns false, then the behavior of other GPollableInputStream methods is
-// undefined.
+// PollableInputStream is implemented by Streams that can be polled for
+// readiness to read. This can be used when interfacing with a non-GIO API that
+// expects UNIX-file-descriptor-style asynchronous I/O rather than GIO-style.
 //
 // PollableInputStream wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -35323,9 +35551,6 @@ func (stream *PollableInputStream) CanPoll() bool {
 // so you should use g_pollable_input_stream_read_nonblocking() rather than
 // g_input_stream_read() from the callback.
 //
-// The behaviour of this method is undefined if
-// g_pollable_input_stream_can_poll() returns FALSE for stream.
-//
 // The function takes the following parameters:
 //
 //   - ctx (optional) or NULL.
@@ -35370,9 +35595,6 @@ func (stream *PollableInputStream) CreateSource(ctx context.Context) *glib.Sourc
 // always use g_pollable_input_stream_read_nonblocking(), which will return a
 // G_IO_ERROR_WOULD_BLOCK error rather than blocking.
 //
-// The behaviour of this method is undefined if
-// g_pollable_input_stream_can_poll() returns FALSE for stream.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if stream is readable, FALSE if not. If an error has occurred
@@ -35406,9 +35628,6 @@ func (stream *PollableInputStream) IsReadable() bool {
 // to cancel it. However, it will return an error if cancellable has already
 // been cancelled when you call, which may happen if you call this method after
 // a source triggers due to having been cancelled.
-//
-// The behaviour of this method is undefined if
-// g_pollable_input_stream_can_poll() returns FALSE for stream.
 //
 // The function takes the following parameters:
 //
@@ -35496,9 +35715,6 @@ func (stream *PollableInputStream) canPoll() bool {
 // so you should use g_pollable_input_stream_read_nonblocking() rather than
 // g_input_stream_read() from the callback.
 //
-// The behaviour of this method is undefined if
-// g_pollable_input_stream_can_poll() returns FALSE for stream.
-//
 // The function takes the following parameters:
 //
 //   - ctx (optional) or NULL.
@@ -35546,9 +35762,6 @@ func (stream *PollableInputStream) createSource(ctx context.Context) *glib.Sourc
 // always use g_pollable_input_stream_read_nonblocking(), which will return a
 // G_IO_ERROR_WOULD_BLOCK error rather than blocking.
 //
-// The behaviour of this method is undefined if
-// g_pollable_input_stream_can_poll() returns FALSE for stream.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if stream is readable, FALSE if not. If an error has occurred
@@ -35585,9 +35798,6 @@ func (stream *PollableInputStream) isReadable() bool {
 // to cancel it. However, it will return an error if cancellable has already
 // been cancelled when you call, which may happen if you call this method after
 // a source triggers due to having been cancelled.
-//
-// The behaviour of this method is undefined if
-// g_pollable_input_stream_can_poll() returns FALSE for stream.
 //
 // The function takes the following parameters:
 //
@@ -35629,15 +35839,9 @@ func (stream *PollableInputStream) readNonblocking(buffer []byte) (int, error) {
 	return _gssize, _goerr
 }
 
-// PollableOutputStream: GPollableOutputStream is implemented by
-// gio.OutputStreams that can be polled for readiness to write. This can be used
-// when interfacing with a non-GIO API that expects UNIX-file-descriptor-style
-// asynchronous I/O rather than GIO-style.
-//
-// Some classes may implement GPollableOutputStream but have only certain
-// instances of that class be pollable. If gio.PollableOutputStream.CanPoll()
-// returns false, then the behavior of other GPollableOutputStream methods is
-// undefined.
+// PollableOutputStream is implemented by Streams that can be polled for
+// readiness to write. This can be used when interfacing with a non-GIO API that
+// expects UNIX-file-descriptor-style asynchronous I/O rather than GIO-style.
 //
 // PollableOutputStream wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -35721,9 +35925,6 @@ func (stream *PollableOutputStream) CanPoll() bool {
 // so you should use g_pollable_output_stream_write_nonblocking() rather than
 // g_output_stream_write() from the callback.
 //
-// The behaviour of this method is undefined if
-// g_pollable_output_stream_can_poll() returns FALSE for stream.
-//
 // The function takes the following parameters:
 //
 //   - ctx (optional) or NULL.
@@ -35768,9 +35969,6 @@ func (stream *PollableOutputStream) CreateSource(ctx context.Context) *glib.Sour
 // always use g_pollable_output_stream_write_nonblocking(), which will return a
 // G_IO_ERROR_WOULD_BLOCK error rather than blocking.
 //
-// The behaviour of this method is undefined if
-// g_pollable_output_stream_can_poll() returns FALSE for stream.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if stream is writable, FALSE if not. If an error has occurred
@@ -35808,9 +36006,6 @@ func (stream *PollableOutputStream) IsWritable() bool {
 // Also note that if G_IO_ERROR_WOULD_BLOCK is returned some underlying
 // transports like D/TLS require that you re-send the same buffer and count in
 // the next write call.
-//
-// The behaviour of this method is undefined if
-// g_pollable_output_stream_can_poll() returns FALSE for stream.
 //
 // The function takes the following parameters:
 //
@@ -35871,9 +36066,6 @@ func (stream *PollableOutputStream) WriteNonblocking(ctx context.Context, buffer
 // Also note that if G_POLLABLE_RETURN_WOULD_BLOCK is returned some underlying
 // transports like D/TLS require that you re-send the same vectors and n_vectors
 // in the next write call.
-//
-// The behaviour of this method is undefined if
-// g_pollable_output_stream_can_poll() returns FALSE for stream.
 //
 // The function takes the following parameters:
 //
@@ -35972,9 +36164,6 @@ func (stream *PollableOutputStream) canPoll() bool {
 // so you should use g_pollable_output_stream_write_nonblocking() rather than
 // g_output_stream_write() from the callback.
 //
-// The behaviour of this method is undefined if
-// g_pollable_output_stream_can_poll() returns FALSE for stream.
-//
 // The function takes the following parameters:
 //
 //   - ctx (optional) or NULL.
@@ -36022,9 +36211,6 @@ func (stream *PollableOutputStream) createSource(ctx context.Context) *glib.Sour
 // always use g_pollable_output_stream_write_nonblocking(), which will return a
 // G_IO_ERROR_WOULD_BLOCK error rather than blocking.
 //
-// The behaviour of this method is undefined if
-// g_pollable_output_stream_can_poll() returns FALSE for stream.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if stream is writable, FALSE if not. If an error has occurred
@@ -36065,9 +36251,6 @@ func (stream *PollableOutputStream) isWritable() bool {
 // Also note that if G_IO_ERROR_WOULD_BLOCK is returned some underlying
 // transports like D/TLS require that you re-send the same buffer and count in
 // the next write call.
-//
-// The behaviour of this method is undefined if
-// g_pollable_output_stream_can_poll() returns FALSE for stream.
 //
 // The function takes the following parameters:
 //
@@ -36124,9 +36307,6 @@ func (stream *PollableOutputStream) writeNonblocking(buffer []byte) (int, error)
 // transports like D/TLS require that you re-send the same vectors and n_vectors
 // in the next write call.
 //
-// The behaviour of this method is undefined if
-// g_pollable_output_stream_can_poll() returns FALSE for stream.
-//
 // The function takes the following parameters:
 //
 //   - vectors: buffer containing the Vectors to write.
@@ -36182,10 +36362,10 @@ func (stream *PollableOutputStream) writevNonblocking(vectors []OutputVector) (u
 type PowerProfileMonitorOverrider interface {
 }
 
-// PowerProfileMonitor: GPowerProfileMonitor makes it possible for applications
-// as well as OS components to monitor system power profiles and act upon them.
-// It currently only exports whether the system is in “Power Saver” mode (known
-// as “Low Power” mode on some systems).
+// PowerProfileMonitor makes it possible for applications as well as OS
+// components to monitor system power profiles and act upon them. It currently
+// only exports whether the system is in “Power Saver” mode (known as “Low
+// Power” mode on some systems).
 //
 // When in “Low Power” mode, it is recommended that applications:
 //
@@ -36205,9 +36385,8 @@ type PowerProfileMonitorOverrider interface {
 // background activity or activity at all), sysprof to inspect CPU usage,
 // and intel_gpu_time to profile GPU usage.
 //
-// Don’t forget to disconnect the gobject.Object::notify signal
-// for gio.PowerProfileMonitor:power-saver-enabled, and unref the
-// GPowerProfileMonitor itself when exiting.
+// Don't forget to disconnect the ProfileMonitor::notify::power-saver-enabled
+// signal, and unref the ProfileMonitor itself when exiting.
 //
 // PowerProfileMonitor wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -36287,11 +36466,11 @@ func PowerProfileMonitorDupDefault() *PowerProfileMonitor {
 	return _powerProfileMonitor
 }
 
-// Proxy: GProxy handles connecting to a remote host via a given type of proxy
-// server. It is implemented by the gio-proxy extension point. The extensions
+// Proxy handles connecting to a remote host via a given type of proxy server.
+// It is implemented by the 'gio-proxy' extension point. The extensions
 // are named after their proxy protocol name. As an example, a SOCKS5 proxy
-// implementation can be retrieved with the name socks5 using the function
-// gio.IOExtensionPoint.GetExtensionByName().
+// implementation can be retrieved with the name 'socks5' using the function
+// g_io_extension_point_get_extension_by_name().
 //
 // Proxy wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -36733,14 +36912,13 @@ func ProxyGetDefaultForProtocol(protocol string) *Proxy {
 	return _proxy
 }
 
-// ProxyResolver: GProxyResolver provides synchronous and asynchronous network
-// proxy resolution. GProxyResolver is used within gio.SocketClient through the
-// method gio.SocketConnectable.ProxyEnumerate().
+// ProxyResolver provides synchronous and asynchronous network proxy
+// resolution. Resolver is used within Client through the method
+// g_socket_connectable_proxy_enumerate().
 //
-// Implementations of GProxyResolver based on libproxy
-// (https://github.com/libproxy/libproxy) and GNOME settings can be found in
-// glib-networking (https://gitlab.gnome.org/GNOME/glib-networking). GIO comes
-// with an implementation for use inside Flatpak portals.
+// Implementations of Resolver based on libproxy and GNOME settings can be found
+// in glib-networking. GIO comes with an implementation for use inside Flatpak
+// portals.
 //
 // ProxyResolver wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -36808,8 +36986,8 @@ func (resolver *ProxyResolver) IsSupported() bool {
 
 // Lookup looks into the system proxy configuration to determine what proxy,
 // if any, to use to connect to uri. The returned proxy URIs are of the form
-// <protocol>://[user[:password]@]host[:port] or direct://, where <protocol>
-// could be http, rtsp, socks or other proxying protocol.
+// <protocol>://[user[:password]@]host:port or direct://, where <protocol> could
+// be http, rtsp, socks or other proxying protocol.
 //
 // If you don't know what network protocol is being used on the socket,
 // you should use none as the URI protocol. In this case, the resolver might
@@ -36989,8 +37167,8 @@ func (resolver *ProxyResolver) isSupported() bool {
 
 // Lookup looks into the system proxy configuration to determine what proxy,
 // if any, to use to connect to uri. The returned proxy URIs are of the form
-// <protocol>://[user[:password]@]host[:port] or direct://, where <protocol>
-// could be http, rtsp, socks or other proxying protocol.
+// <protocol>://[user[:password]@]host:port or direct://, where <protocol> could
+// be http, rtsp, socks or other proxying protocol.
 //
 // If you don't know what network protocol is being used on the socket,
 // you should use none as the URI protocol. In this case, the resolver might
@@ -37167,24 +37345,23 @@ func ProxyResolverGetDefault() *ProxyResolver {
 	return _proxyResolver
 }
 
-// RemoteActionGroup: GRemoteActionGroup interface is implemented by
-// gio.ActionGroup instances that either transmit action invocations to other
-// processes or receive action invocations in the local process from other
-// processes.
+// RemoteActionGroup interface is implemented by Group instances that either
+// transmit action invocations to other processes or receive action invocations
+// in the local process from other processes.
 //
-// The interface has _full variants of the two methods on gio.ActionGroup
-// used to activate actions: gio.ActionGroup.ActivateAction() and
-// gio.ActionGroup.ChangeActionState(). These variants allow a ‘platform data’
-// glib.Variant to be specified: a dictionary providing context for the action
+// The interface has _full variants of the two methods on Group
+// used to activate actions: g_action_group_activate_action() and
+// g_action_group_change_action_state(). These variants allow a "platform data"
+// #GVariant to be specified: a dictionary providing context for the action
 // invocation (for example: timestamps, startup notification IDs, etc).
 //
-// gio.DBusActionGroup implements GRemoteActionGroup. This provides a mechanism
-// to send platform data for action invocations over D-Bus.
+// BusActionGroup implements ActionGroup. This provides a mechanism to send
+// platform data for action invocations over D-Bus.
 //
-// Additionally, gio.DBusConnection.ExportActionGroup() will check if the
-// exported gio.ActionGroup implements GRemoteActionGroup and use the _full
-// variants of the calls if available. This provides a mechanism by which to
-// receive platform data for action invocations that arrive by way of D-Bus.
+// Additionally, g_dbus_connection_export_action_group() will check if the
+// exported Group implements ActionGroup and use the _full variants of the calls
+// if available. This provides a mechanism by which to receive platform data for
+// action invocations that arrive by way of D-Bus.
 //
 // RemoteActionGroup wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -37365,18 +37542,18 @@ func (remote *RemoteActionGroup) changeActionStateFull(actionName string, value,
 	runtime.KeepAlive(platformData)
 }
 
-// Seekable: GSeekable is implemented by streams (implementations of
-// gio.InputStream or gio.OutputStream) that support seeking.
+// Seekable is implemented by streams (implementations of Stream or Stream) that
+// support seeking.
 //
 // Seekable streams largely fall into two categories: resizable and fixed-size.
 //
-// GSeekable on fixed-sized streams is approximately the same as POSIX lseek()
-// (man:lseek(2)) on a block device (for example: attempting to seek past the
-// end of the device is an error). Fixed streams typically cannot be truncated.
+// #GSeekable on fixed-sized streams is approximately the same as POSIX lseek()
+// on a block device (for example: attempting to seek past the end of the device
+// is an error). Fixed streams typically cannot be truncated.
 //
-// GSeekable on resizable streams is approximately the same as POSIX lseek()
-// (man:lseek(2)) on a normal file. Seeking past the end and writing data will
-// usually cause the stream to resize by introducing zero bytes.
+// #GSeekable on resizable streams is approximately the same as POSIX lseek() on
+// a normal file. Seeking past the end and writing data will usually cause the
+// stream to resize by introducing zero bytes.
 //
 // Seekable wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -37758,10 +37935,9 @@ func (seekable *Seekable) truncateFn(ctx context.Context, offset int64) error {
 }
 
 // SocketConnectable objects that describe one or more potential
-// socket endpoints implement GSocketConnectable. Callers can then use
-// gio.SocketConnectable.Enumerate() to get a gio.SocketAddressEnumerator to try
-// out each socket address in turn until one succeeds, as shown in the sample
-// code below.
+// socket endpoints implement Connectable. Callers can then use
+// g_socket_connectable_enumerate() to get a AddressEnumerator to try out each
+// socket address in turn until one succeeds, as shown in the sample code below.
 //
 //	MyConnectionType *
 //	connect_to_host (const char    *hostname,
@@ -38072,8 +38248,6 @@ func (connectable *SocketConnectable) str() string {
 }
 
 // TLSBackend: TLS (Transport Layer Security, aka SSL) and DTLS backend.
-// This is an internal type used to coordinate the different classes implemented
-// by a TLS backend.
 //
 // TLSBackend wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -38485,8 +38659,8 @@ func TLSBackendGetDefault() *TLSBackend {
 	return _tlsBackend
 }
 
-// TLSClientConnection: GTlsClientConnection is the client-side subclass of
-// gio.TLSConnection, representing a client-side TLS connection.
+// TLSClientConnection is the client-side subclass of Connection, representing a
+// client-side TLS connection.
 //
 // TLSClientConnection wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -38822,9 +38996,9 @@ func NewTLSClientConnection(baseIoStream IOStreamer, serverIdentity SocketConnec
 type TLSFileDatabaseOverrider interface {
 }
 
-// TLSFileDatabase: GTlsFileDatabase is implemented by gio.TLSDatabase objects
-// which load their certificate information from a file. It is an interface
-// which TLS library specific subtypes implement.
+// TLSFileDatabase is implemented by Database objects which load their
+// certificate information from a file. It is an interface which TLS library
+// specific subtypes implement.
 //
 // TLSFileDatabase wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -38908,8 +39082,8 @@ func NewTLSFileDatabase(anchors string) (*TLSFileDatabase, error) {
 type TLSServerConnectionOverrider interface {
 }
 
-// TLSServerConnection: GTlsServerConnection is the server-side subclass of
-// gio.TLSConnection, representing a server-side TLS connection.
+// TLSServerConnection is the server-side subclass of Connection, representing a
+// server-side TLS connection.
 //
 // TLSServerConnection wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -38998,44 +39172,37 @@ func NewTLSServerConnection(baseIoStream IOStreamer, certificate TLSCertificater
 	return _tlsServerConnection, _goerr
 }
 
-// Volume: GVolume interface represents user-visible objects that can be
-// mounted. Note, when porting from GnomeVFS (migrating-gnome-vfs.html), GVolume
-// is the moral equivalent of GnomeVFSDrive.
+// Volume interface represents user-visible objects that can be mounted. Note,
+// when porting from GnomeVFS, #GVolume is the moral equivalent of VFSDrive.
 //
-// Mounting a GVolume instance is an asynchronous operation. For more
-// information about asynchronous operations, see gio.AsyncResult and gio.Task.
-// To mount a GVolume, first call gio.Volume.Mount() with (at least)
-// the GVolume instance, optionally a gio.MountOperation object and a
-// gio.AsyncReadyCallback.
+// Mounting a #GVolume instance is an asynchronous operation. For more
+// information about asynchronous operations, see Result and #GTask. To mount a
+// #GVolume, first call g_volume_mount() with (at least) the #GVolume instance,
+// optionally a Operation object and a ReadyCallback.
 //
-// Typically, one will only want to pass NULL for the gio.MountOperation
-// if automounting all volumes when a desktop session starts since it’s not
-// desirable to put up a lot of dialogs asking for credentials.
+// Typically, one will only want to pass NULL for the Operation if automounting
+// all volumes when a desktop session starts since it's not desirable to put up
+// a lot of dialogs asking for credentials.
 //
 // The callback will be fired when the operation has resolved (either with
-// success or failure), and a gio.AsyncResult instance will be passed to
-// the callback. That callback should then call gio.Volume.MountFinish()
-// with the GVolume instance and the gio.AsyncResult data to see if the
-// operation was completed successfully. If a glib.Error is present when
-// gio.Volume.MountFinish() is called, then it will be filled with any error
-// information.
+// success or failure), and a Result instance will be passed to the callback.
+// That callback should then call g_volume_mount_finish() with the #GVolume
+// instance and the Result data to see if the operation was completed
+// successfully. If an error is present when g_volume_mount_finish() is called,
+// then it will be filled with any error information.
 //
 // # Volume Identifiers
 //
 // It is sometimes necessary to directly access the underlying operating system
 // object behind a volume (e.g. for passing a volume to an application via the
-// command line). For this purpose, GIO allows to obtain an ‘identifier’ for
+// commandline). For this purpose, GIO allows to obtain an 'identifier' for
 // the volume. There can be different kinds of identifiers, such as Hal UDIs,
 // filesystem labels, traditional Unix devices (e.g. /dev/sda2), UUIDs.
 // GIO uses predefined strings as names for the different kinds of identifiers:
 // G_VOLUME_IDENTIFIER_KIND_UUID, G_VOLUME_IDENTIFIER_KIND_LABEL, etc. Use
-// gio.Volume.GetIdentifier() to obtain an identifier for a volume.
+// g_volume_get_identifier() to obtain an identifier for a volume.
 //
-// Note that G_VOLUME_IDENTIFIER_KIND_HAL_UDI will only be available
-// when the GVFS hal volume monitor is in use. Other volume monitors will
-// generally be able to provide the G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE
-// identifier, which can be used to obtain a hal device by means of
-// libhal_manager_find_device_string_match().
+//	Note that G_VOLUME_IDENTIFIER_KIND_HAL_UDI will only be available when the gvfs hal volume monitor is in use. Other volume monitors will generally be able to provide the G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE identifier, which can be used to obtain a hal device by means of libhal_manager_find_device_string_match().
 //
 // Volume wraps an interface. This means the user can get the
 // underlying type by calling Cast().
@@ -39064,7 +39231,7 @@ type Volumer interface {
 	EjectWithOperation(ctx context.Context, flags MountUnmountFlags, mountOperation *MountOperation, callback AsyncReadyCallback)
 	// EjectWithOperationFinish finishes ejecting a volume.
 	EjectWithOperationFinish(result AsyncResulter) error
-	// EnumerateIdentifiers gets the kinds of identifiers (#volume-identifiers)
+	// EnumerateIdentifiers gets the kinds of [identifiers][volume-identifier]
 	// that volume has.
 	EnumerateIdentifiers() []string
 	// ActivationRoot gets the activation root for a #GVolume if it is known
@@ -39306,7 +39473,7 @@ func (volume *Volume) EjectWithOperationFinish(result AsyncResulter) error {
 	return _goerr
 }
 
-// EnumerateIdentifiers gets the kinds of identifiers (#volume-identifiers)
+// EnumerateIdentifiers gets the kinds of [identifiers][volume-identifier]
 // that volume has. Use g_volume_get_identifier() to obtain the identifiers
 // themselves.
 //
@@ -39428,7 +39595,7 @@ func (volume *Volume) Icon() *Icon {
 }
 
 // Identifier gets the identifier of the given kind for volume. See the
-// introduction (#volume-identifiers) for more information about volume
+// [introduction][volume-identifier] for more information about volume
 // identifiers.
 //
 // The function takes the following parameters:
@@ -39730,7 +39897,6 @@ func (volume *Volume) canMount() bool {
 	return _ok
 }
 
-// Changed: changed signal that is emitted when the volume's state has changed.
 func (volume *Volume) changed() {
 	gclass := (*C.GVolumeIface)(coreglib.PeekParentClass(volume))
 	fnarg := gclass.changed
@@ -39891,7 +40057,7 @@ func (volume *Volume) ejectWithOperationFinish(result AsyncResulter) error {
 	return _goerr
 }
 
-// enumerateIdentifiers gets the kinds of identifiers (#volume-identifiers)
+// enumerateIdentifiers gets the kinds of [identifiers][volume-identifier]
 // that volume has. Use g_volume_get_identifier() to obtain the identifiers
 // themselves.
 //
@@ -40025,7 +40191,7 @@ func (volume *Volume) icon() *Icon {
 }
 
 // Identifier gets the identifier of the given kind for volume. See the
-// introduction (#volume-identifiers) for more information about volume
+// [introduction][volume-identifier] for more information about volume
 // identifiers.
 //
 // The function takes the following parameters:
@@ -40276,9 +40442,6 @@ func (volume *Volume) mountFn(ctx context.Context, flags MountMountFlags, mountO
 	runtime.KeepAlive(callback)
 }
 
-// Removed signal that is emitted when the #GVolume have been removed. If the
-// recipient is holding references to the object they should release them so the
-// object can be finalized.
 func (volume *Volume) removed() {
 	gclass := (*C.GVolumeIface)(coreglib.PeekParentClass(volume))
 	fnarg := gclass.removed
@@ -40317,49 +40480,21 @@ func (volume *Volume) shouldAutomount() bool {
 	return _ok
 }
 
-// AppInfoMonitor: GAppInfoMonitor monitors application information for changes.
+// AppInfoMonitor is a very simple object used for monitoring the app info
+// database for changes (ie: newly installed or removed applications).
 //
-// GAppInfoMonitor is a very simple object used for monitoring the app info
-// database for changes (newly installed or removed applications).
-//
-// Call gio.AppInfoMonitor().Get to get a GAppInfoMonitor and connect to the
-// gio.AppInfoMonitor::changed signal. The signal will be emitted once when
-// the app info database changes, and will not be emitted again until after
-// the next call to gio.AppInfo().GetAll or another g_app_info_*() function.
-// This is because monitoring the app info database for changes is expensive.
-//
-// The following functions will re-arm the gio.AppInfoMonitor::changed signal so
-// it can be emitted again:
-//
-//   - gio.AppInfo().GetAll
-//   - gio.AppInfo().GetAllForType
-//   - gio.AppInfo().GetDefaultForType
-//   - gio.AppInfo().GetFallbackForType
-//   - gio.AppInfo().GetRecommendedForType
-//   - g_desktop_app_info_get_implementations()
-//     (../gio-unix/type_func.DesktopAppInfo.get_implementation.html)
-//   - g_desktop_app_info_new() (../gio-unix/ctor.DesktopAppInfo.new.html)
-//   - g_desktop_app_info_new_from_filename()
-//     (../gio-unix/ctor.DesktopAppInfo.new_from_filename.html)
-//   - g_desktop_app_info_new_from_keyfile()
-//     (../gio-unix/ctor.DesktopAppInfo.new_from_keyfile.html)
-//   - g_desktop_app_info_search()
-//     (../gio-unix/type_func.DesktopAppInfo.search.html)
-//
-// The latter functions are available if using GDesktopAppInfo
-// (../gio-unix/class.DesktopAppInfo.html) from gio-unix-2.0.pc (GIR namespace
-// GioUnix-2.0).
+// Call g_app_info_monitor_get() to get a InfoMonitor and connect to the
+// "changed" signal.
 //
 // In the usual case, applications should try to make note of the change
 // (doing things like invalidating caches) but not act on it. In particular,
-// applications should avoid making calls to GAppInfo APIs in response to
-// the change signal, deferring these until the time that the updated data is
-// actually required. The exception to this case is when application information
-// is actually being displayed on the screen (for example, during a search or
-// when the list of all applications is shown). The reason for this is that
-// changes to the list of installed applications often come in groups (like
-// during system updates) and rescanning the list on every change is pointless
-// and expensive.
+// applications should avoid making calls to Info APIs in response to the change
+// signal, deferring these until the time that the data is actually required.
+// The exception to this case is when application information is actually
+// being displayed on the screen (eg: during a search or when the list of all
+// applications is shown). The reason for this is that changes to the list of
+// installed applications often come in groups (like during system updates) and
+// rescanning the list on every change is pointless and expensive.
 type AppInfoMonitor struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -40379,8 +40514,8 @@ func marshalAppInfoMonitor(p uintptr) (interface{}, error) {
 	return wrapAppInfoMonitor(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
 }
 
-// ConnectChanged: signal emitted when the app info database changes, when
-// applications are installed or removed.
+// ConnectChanged: signal emitted when the app info database for changes (ie:
+// newly installed or removed applications).
 func (v *AppInfoMonitor) ConnectChanged(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(v, "changed", false, unsafe.Pointer(C._gotk4_gio2_AppInfoMonitor_ConnectChanged), f)
 }
@@ -40391,10 +40526,6 @@ func (v *AppInfoMonitor) ConnectChanged(f func()) coreglib.SignalHandle {
 // The InfoMonitor will emit a "changed" signal in the thread-default main
 // context whenever the list of installed applications (as reported by
 // g_app_info_get_all()) may have changed.
-//
-// The InfoMonitor::changed signal will only be emitted once until
-// g_app_info_get_all() (or another g_app_info_*() function) is called. Doing so
-// will re-arm the signal ready to notify about the next change.
 //
 // You must only call g_object_unref() on the return value from under the same
 // main context as you created it.
@@ -40430,26 +40561,16 @@ type AppLaunchContextOverrides struct {
 	//   - utf8 (optional): display string for the display.
 	Display func(info AppInfor, files []Filer) string
 	// StartupNotifyID initiates startup notification for the application and
-	// returns the XDG_ACTIVATION_TOKEN or DESKTOP_STARTUP_ID for the launched
-	// operation, if supported.
+	// returns the DESKTOP_STARTUP_ID for the launched operation, if supported.
 	//
-	// The returned token may be referred to equivalently as an
-	// ‘activation token’ (using Wayland terminology) or a ‘startup
-	// sequence ID’ (using X11 terminology). The two are interoperable
-	// (https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/staging/xdg-activation/x11-interoperation.rst).
-	//
-	// Activation tokens are defined in the XDG Activation
-	// Protocol (https://wayland.app/protocols/xdg-activation-v1),
-	// and startup notification IDs are defined in the
-	// freedesktop.org Startup Notification Protocol
+	// Startup notification IDs are defined in the
+	// FreeDesktop.Org Startup Notifications standard
 	// (http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt).
-	//
-	// Support for the XDG Activation Protocol was added in GLib 2.76.
 	//
 	// The function takes the following parameters:
 	//
 	//   - info: Info.
-	//   - files of #GFile objects.
+	//   - files of of #GFile objects.
 	//
 	// The function returns the following values:
 	//
@@ -40701,25 +40822,16 @@ func (context *AppLaunchContext) Environment() []string {
 }
 
 // StartupNotifyID initiates startup notification for the application and
-// returns the XDG_ACTIVATION_TOKEN or DESKTOP_STARTUP_ID for the launched
-// operation, if supported.
+// returns the DESKTOP_STARTUP_ID for the launched operation, if supported.
 //
-// The returned token may be referred to equivalently as an
-// ‘activation token’ (using Wayland terminology) or a ‘startup
-// sequence ID’ (using X11 terminology). The two are interoperable
-// (https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/staging/xdg-activation/x11-interoperation.rst).
-//
-// Activation tokens are defined in the XDG Activation Protocol
-// (https://wayland.app/protocols/xdg-activation-v1), and startup notification
-// IDs are defined in the freedesktop.org Startup Notification Protocol
+// Startup notification IDs are defined in the
+// FreeDesktop.Org Startup Notifications standard
 // (http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt).
-//
-// Support for the XDG Activation Protocol was added in GLib 2.76.
 //
 // The function takes the following parameters:
 //
 //   - info: Info.
-//   - files of #GFile objects.
+//   - files of of #GFile objects.
 //
 // The function returns the following values:
 //
@@ -40867,25 +40979,16 @@ func (context *AppLaunchContext) display(info AppInfor, files []Filer) string {
 }
 
 // startupNotifyID initiates startup notification for the application and
-// returns the XDG_ACTIVATION_TOKEN or DESKTOP_STARTUP_ID for the launched
-// operation, if supported.
+// returns the DESKTOP_STARTUP_ID for the launched operation, if supported.
 //
-// The returned token may be referred to equivalently as an
-// ‘activation token’ (using Wayland terminology) or a ‘startup
-// sequence ID’ (using X11 terminology). The two are interoperable
-// (https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/staging/xdg-activation/x11-interoperation.rst).
-//
-// Activation tokens are defined in the XDG Activation Protocol
-// (https://wayland.app/protocols/xdg-activation-v1), and startup notification
-// IDs are defined in the freedesktop.org Startup Notification Protocol
+// Startup notification IDs are defined in the
+// FreeDesktop.Org Startup Notifications standard
 // (http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt).
-//
-// Support for the XDG Activation Protocol was added in GLib 2.76.
 //
 // The function takes the following parameters:
 //
 //   - info: Info.
-//   - files of #GFile objects.
+//   - files of of #GFile objects.
 //
 // The function returns the following values:
 //
@@ -41001,49 +41104,23 @@ type ApplicationOverrides struct {
 	// emitted in the primary instance.
 	//
 	// The application must be registered before calling this function.
-	Activate func()
-	// AddPlatformData: invoked (locally) to add 'platform data' to be sent to
-	// the primary instance when activating, opening or invoking actions.
+	Activate        func()
 	AddPlatformData func(builder *glib.VariantBuilder)
-	// AfterEmit: invoked on the primary instance after 'activate', 'open',
-	// 'command-line' or any action invocation, gets the 'platform data' from
-	// the calling instance.
-	AfterEmit func(platformData *glib.Variant)
-	// BeforeEmit: invoked on the primary instance before 'activate', 'open',
-	// 'command-line' or any action invocation, gets the 'platform data' from
-	// the calling instance.
-	BeforeEmit func(platformData *glib.Variant)
-	// CommandLine: invoked on the primary instance when a command-line is not
-	// handled locally.
-	CommandLine func(commandLine *ApplicationCommandLine) int
-	// DBusRegister: invoked locally during registration, if the application
-	// is using its D-Bus backend. You can use this to export extra objects
-	// on the bus, that need to exist before the application tries to own the
-	// bus name. The function is passed the BusConnection to to session bus,
-	// and the object path that #GApplication will use to export its D-Bus API.
-	// If this function returns TRUE, registration will proceed; otherwise
-	// registration will abort. Since: 2.34.
-	//
+	AfterEmit       func(platformData *glib.Variant)
+	BeforeEmit      func(platformData *glib.Variant)
+	CommandLine     func(commandLine *ApplicationCommandLine) int
 	// The function takes the following parameters:
 	//
 	//   - connection
 	//   - objectPath
 	DBusRegister func(connection *DBusConnection, objectPath string) error
-	// DBusUnregister: invoked locally during unregistration, if the application
-	// is using its D-Bus backend. Use this to undo anything done by the
-	// dbus_register vfunc. Since: 2.34.
-	//
 	// The function takes the following parameters:
 	//
 	//   - connection
 	//   - objectPath
-	DBusUnregister func(connection *DBusConnection, objectPath string)
-	// HandleLocalOptions: invoked locally after the parsing of the commandline
-	// options has occurred. Since: 2.40.
+	DBusUnregister     func(connection *DBusConnection, objectPath string)
 	HandleLocalOptions func(options *glib.VariantDict) int
-	// NameLost: invoked when another instance is taking over the name. Since:
-	// 2.60.
-	NameLost func() bool
+	NameLost           func() bool
 	// Open opens the given files.
 	//
 	// In essence, this results in the #GApplication::open signal being emitted
@@ -41063,21 +41140,11 @@ type ApplicationOverrides struct {
 	//
 	//   - files: array of #GFiles to open.
 	//   - hint (or ""), but never NULL.
-	Open func(files []Filer, hint string)
-	// QuitMainloop: used to be invoked on the primary instance when the use
-	// count of the application drops to zero (and after any inactivity timeout,
-	// if requested). Not used anymore since 2.32.
+	Open         func(files []Filer, hint string)
 	QuitMainloop func()
-	// RunMainloop: used to be invoked on the primary instance from
-	// g_application_run() if the use-count is non-zero. Since 2.32,
-	// GApplication is iterating the main context directly and is not using
-	// run_mainloop anymore.
-	RunMainloop func()
-	// Shutdown: invoked only on the registered primary instance immediately
-	// after the main loop terminates.
-	Shutdown func()
-	// Startup: invoked on the primary instance immediately after registration.
-	Startup func()
+	RunMainloop  func()
+	Shutdown     func()
+	Startup      func()
 }
 
 func defaultApplicationOverrides(v *Application) ApplicationOverrides {
@@ -41099,19 +41166,17 @@ func defaultApplicationOverrides(v *Application) ApplicationOverrides {
 	}
 }
 
-// Application: GApplication is the core class for application support.
-//
-// A GApplication is the foundation of an application. It wraps some low-level
+// Application is the foundation of an application. It wraps some low-level
 // platform-specific services and is intended to act as the foundation for
-// higher-level application classes such as GtkApplication or MxApplication. In
+// higher-level application classes such as Application or Application. In
 // general, you should not use this class outside of a higher level framework.
 //
-// GApplication provides convenient life-cycle management by maintaining a "use
+// GApplication provides convenient life cycle management by maintaining a "use
 // count" for the primary application instance. The use count can be changed
-// using gio.Application.Hold() and gio.Application.Release(). If it drops to
-// zero, the application exits. Higher-level classes such as GtkApplication
-// employ the use count to ensure that the application stays alive as long as it
-// has any opened windows.
+// using g_application_hold() and g_application_release(). If it drops to zero,
+// the application exits. Higher-level classes such as Application employ the
+// use count to ensure that the application stays alive as long as it has any
+// opened windows.
 //
 // Another feature that GApplication (optionally) provides is process
 // uniqueness. Applications can make use of this functionality by providing a
@@ -41123,23 +41188,23 @@ func defaultApplicationOverrides(v *Application) ApplicationOverrides {
 // called the "primary instance"; for non-unique applications this is always the
 // current instance. On Linux, the D-Bus session bus is used for communication.
 //
-// The use of GApplication differs from some other commonly-used uniqueness
+// The use of #GApplication differs from some other commonly-used uniqueness
 // libraries (such as libunique) in important ways. The application is not
 // expected to manually register itself and check if it is the primary instance.
-// Instead, the main() function of a GApplication should do very little more
+// Instead, the main() function of a #GApplication should do very little more
 // than instantiating the application instance, possibly connecting signal
-// handlers, then calling gio.Application.Run(). All checks for uniqueness
+// handlers, then calling g_application_run(). All checks for uniqueness
 // are done internally. If the application is the primary instance then the
 // startup signal is emitted and the mainloop runs. If the application is
 // not the primary instance then a signal is sent to the primary instance and
-// gio.Application.Run() promptly returns. See the code examples below.
+// g_application_run() promptly returns. See the code examples below.
 //
 // If used, the expected form of an application identifier
-// is the same as that of a D-Bus well-known bus name
+// is the same as that of of a D-Bus well-known bus name
 // (https://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-names-bus).
 // Examples include: com.example.MyApp, org.example.internal_apps.Calculator,
 // org._7_zip.Archiver. For details on valid application identifiers, see
-// gio.Application().IDIsValid.
+// g_application_id_is_valid().
 //
 // On Linux, the application identifier is claimed as a well-known bus name on
 // the user's session bus. This means that the uniqueness of your application
@@ -41150,21 +41215,17 @@ func defaultApplicationOverrides(v *Application) ApplicationOverrides {
 // GDBus, method calls can be dispatched at any time (even if a main loop is
 // not running). For this reason, you must ensure that any object paths that you
 // wish to register are registered before #GApplication attempts to acquire the
-// bus name of your application (which happens in gio.Application.Register()).
-// Unfortunately, this means that you cannot use gio.Application:is-remote to
-// decide if you want to register object paths.
+// bus name of your application (which happens in g_application_register()).
+// Unfortunately, this means that you cannot use g_application_get_is_remote()
+// to decide if you want to register object paths.
 //
-// GApplication also implements the gio.ActionGroup and gio.ActionMap
-// interfaces and lets you easily export actions by adding them with
-// gio.ActionMap.AddAction(). When invoking an action by calling
-// gio.ActionGroup.ActivateAction() on the application, it is always invoked
-// in the primary instance. The actions are also exported on the session bus,
-// and GIO provides the gio.DBusActionGroup wrapper to conveniently access
-// them remotely. GIO provides a gio.DBusMenuModel wrapper for remote access to
-// exported gio.MenuModels.
-//
-// Note: Due to the fact that actions are exported on the session bus, using
-// maybe parameters is not supported, since D-Bus does not support maybe types.
+// GApplication also implements the Group and Map interfaces and lets you easily
+// export actions by adding them with g_action_map_add_action(). When invoking
+// an action by calling g_action_group_activate_action() on the application, it
+// is always invoked in the primary instance. The actions are also exported on
+// the session bus, and GIO provides the BusActionGroup wrapper to conveniently
+// access them remotely. GIO provides a BusMenuModel wrapper for remote access
+// to exported Models.
 //
 // There is a number of different entry points into a GApplication:
 //
@@ -41176,31 +41237,30 @@ func defaultApplicationOverrides(v *Application) ApplicationOverrides {
 //
 // - via activating an action
 //
-// The gio.Application::startup signal lets you handle the application
+// The #GApplication::startup signal lets you handle the application
 // initialization for all of these in a single place.
 //
 // Regardless of which of these entry points is used to start the application,
 // GApplication passes some ‘platform data’ from the launching instance
-// to the primary instance, in the form of a glib.Variant dictionary
+// to the primary instance, in the form of a #GVariant dictionary
 // mapping strings to variants. To use platform data, override the
-// gio.Application.BeforeEmit() or gio.Application.AfterEmit() virtual functions
-// in your GApplication subclass. When dealing with gio.ApplicationCommandLine
-// objects, the platform data is directly available via
-// gio.ApplicationCommandLine.GetCwd(), gio.ApplicationCommandLine.GetEnviron()
-// and gio.ApplicationCommandLine.GetPlatformData().
+// before_emit or after_emit virtual functions in your #GApplication
+// subclass. When dealing with CommandLine objects, the platform data
+// is directly available via g_application_command_line_get_cwd(),
+// g_application_command_line_get_environ() and
+// g_application_command_line_get_platform_data().
 //
 // As the name indicates, the platform data may vary depending on the
-// operating system, but it always includes the current directory (key cwd),
-// and optionally the environment (ie the set of environment variables and
-// their values) of the calling process (key environ). The environment is only
-// added to the platform data if the G_APPLICATION_SEND_ENVIRONMENT flag is set.
-// GApplication subclasses can add their own platform data by overriding
-// the gio.Application.AddPlatformData() virtual function. For instance,
-// GtkApplication adds startup notification data in this way.
+// operating system, but it always includes the current directory (key "cwd"),
+// and optionally the environment (ie the set of environment variables and their
+// values) of the calling process (key "environ"). The environment is only added
+// to the platform data if the G_APPLICATION_SEND_ENVIRONMENT flag is set.
+// #GApplication subclasses can add their own platform data by overriding the
+// add_platform_data virtual function. For instance, Application adds startup
+// notification data in this way.
 //
-// To parse commandline arguments you may handle the
-// gio.Application::command-line signal or override the
-// gio.Application.LocalCommandLine() virtual funcion, to parse them in either
+// To parse commandline arguments you may handle the #GApplication::command-line
+// signal or override the local_command_line() vfunc, to parse them in either
 // the primary instance or the local instance, respectively.
 //
 // For an example of opening files with a
@@ -41517,10 +41577,8 @@ func (application *Application) AddMainOption(longName string, shortName byte, f
 // non-callback Entry. This results in the argument in question being packed
 // into a Dict which is also passed to #GApplication::handle-local-options,
 // where it can be inspected and modified. If G_APPLICATION_HANDLES_COMMAND_LINE
-// is set, then the resulting dictionary is sent to the primary instance,
-// where g_application_command_line_get_options_dict() will return it.
-// As it has been passed outside the process at this point, the types of all
-// values in the options dict must be checked before being used. This "packing"
+// is set, then the resulting dictionary is sent to the primary instance, where
+// g_application_command_line_get_options_dict() will return it. This "packing"
 // is done according to the type of the argument -- booleans for normal flags,
 // strings for strings, bytestrings for filenames, etc. The packing only occurs
 // if the flag is given (ie: we do not pack a "false" #GVariant in the case that
@@ -41569,7 +41627,7 @@ func (application *Application) AddMainOption(longName string, shortName byte, f
 //
 // The function takes the following parameters:
 //
-//   - entries: the main options for the application.
+//   - entries: a NULL-terminated list of Entrys.
 func (application *Application) AddMainOptionEntries(entries []glib.OptionEntry) {
 	var _arg0 *C.GApplication // out
 	var _arg1 *C.GOptionEntry // out
@@ -41905,33 +41963,10 @@ func (application *Application) ResourceBasePath() string {
 	return _utf8
 }
 
-// Version gets the version of application.
-//
-// The function returns the following values:
-//
-//   - utf8 (optional): version of application.
-func (application *Application) Version() string {
-	var _arg0 *C.GApplication // out
-	var _cret *C.gchar        // in
-
-	_arg0 = (*C.GApplication)(unsafe.Pointer(coreglib.InternObject(application).Native()))
-
-	_cret = C.g_application_get_version(_arg0)
-	runtime.KeepAlive(application)
-
-	var _utf8 string // out
-
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	}
-
-	return _utf8
-}
-
 // Hold increases the use count of application.
 //
 // Use this function to indicate that the application has a reason to continue
-// to run. For example, g_application_hold() is called by GTK when a toplevel
+// to run. For example, g_application_hold() is called by GTK+ when a toplevel
 // window is on the screen.
 //
 // To cancel the hold, call g_application_release().
@@ -42233,8 +42268,6 @@ func (application *Application) Run(argv []string) int {
 // If notification is no longer relevant, it can be withdrawn with
 // g_application_withdraw_notification().
 //
-// It is an error to call this function if application has no application ID.
-//
 // The function takes the following parameters:
 //
 //   - id (optional) of the notification, or NULL.
@@ -42493,28 +42526,6 @@ func (application *Application) SetResourceBasePath(resourcePath string) {
 	runtime.KeepAlive(resourcePath)
 }
 
-// SetVersion sets the version number of application. This will be used to
-// implement a --version command line argument
-//
-// The application version can only be modified if application has not yet been
-// registered.
-//
-// The function takes the following parameters:
-//
-//   - version of application.
-func (application *Application) SetVersion(version string) {
-	var _arg0 *C.GApplication // out
-	var _arg1 *C.gchar        // out
-
-	_arg0 = (*C.GApplication)(unsafe.Pointer(coreglib.InternObject(application).Native()))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(version)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.g_application_set_version(_arg0, _arg1)
-	runtime.KeepAlive(application)
-	runtime.KeepAlive(version)
-}
-
 // UnbindBusyProperty destroys a binding between property and
 // the busy state of application that was previously created with
 // g_application_bind_busy_property().
@@ -42602,8 +42613,6 @@ func (application *Application) activate() {
 	runtime.KeepAlive(application)
 }
 
-// addPlatformData: invoked (locally) to add 'platform data' to be sent to the
-// primary instance when activating, opening or invoking actions.
 func (application *Application) addPlatformData(builder *glib.VariantBuilder) {
 	gclass := (*C.GApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.add_platform_data
@@ -42619,9 +42628,6 @@ func (application *Application) addPlatformData(builder *glib.VariantBuilder) {
 	runtime.KeepAlive(builder)
 }
 
-// afterEmit: invoked on the primary instance after 'activate', 'open',
-// 'command-line' or any action invocation, gets the 'platform data' from the
-// calling instance.
 func (application *Application) afterEmit(platformData *glib.Variant) {
 	gclass := (*C.GApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.after_emit
@@ -42637,9 +42643,6 @@ func (application *Application) afterEmit(platformData *glib.Variant) {
 	runtime.KeepAlive(platformData)
 }
 
-// beforeEmit: invoked on the primary instance before 'activate', 'open',
-// 'command-line' or any action invocation, gets the 'platform data' from the
-// calling instance.
 func (application *Application) beforeEmit(platformData *glib.Variant) {
 	gclass := (*C.GApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.before_emit
@@ -42655,8 +42658,6 @@ func (application *Application) beforeEmit(platformData *glib.Variant) {
 	runtime.KeepAlive(platformData)
 }
 
-// commandLine: invoked on the primary instance when a command-line is not
-// handled locally.
 func (application *Application) commandLine(commandLine *ApplicationCommandLine) int {
 	gclass := (*C.GApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.command_line
@@ -42679,14 +42680,6 @@ func (application *Application) commandLine(commandLine *ApplicationCommandLine)
 	return _gint
 }
 
-// dBusRegister: invoked locally during registration, if the application is
-// using its D-Bus backend. You can use this to export extra objects on the bus,
-// that need to exist before the application tries to own the bus name. The
-// function is passed the BusConnection to to session bus, and the object path
-// that #GApplication will use to export its D-Bus API. If this function returns
-// TRUE, registration will proceed; otherwise registration will abort. Since:
-// 2.34.
-//
 // The function takes the following parameters:
 //
 //   - connection
@@ -42719,10 +42712,6 @@ func (application *Application) dBusRegister(connection *DBusConnection, objectP
 	return _goerr
 }
 
-// dBusUnregister: invoked locally during unregistration, if the application is
-// using its D-Bus backend. Use this to undo anything done by the dbus_register
-// vfunc. Since: 2.34.
-//
 // The function takes the following parameters:
 //
 //   - connection
@@ -42746,8 +42735,6 @@ func (application *Application) dBusUnregister(connection *DBusConnection, objec
 	runtime.KeepAlive(objectPath)
 }
 
-// handleLocalOptions: invoked locally after the parsing of the commandline
-// options has occurred. Since: 2.40.
 func (application *Application) handleLocalOptions(options *glib.VariantDict) int {
 	gclass := (*C.GApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.handle_local_options
@@ -42770,7 +42757,6 @@ func (application *Application) handleLocalOptions(options *glib.VariantDict) in
 	return _gint
 }
 
-// nameLost: invoked when another instance is taking over the name. Since: 2.60.
 func (application *Application) nameLost() bool {
 	gclass := (*C.GApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.name_lost
@@ -42839,9 +42825,6 @@ func (application *Application) open(files []Filer, hint string) {
 	runtime.KeepAlive(hint)
 }
 
-// quitMainloop: used to be invoked on the primary instance when the use
-// count of the application drops to zero (and after any inactivity timeout,
-// if requested). Not used anymore since 2.32.
 func (application *Application) quitMainloop() {
 	gclass := (*C.GApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.quit_mainloop
@@ -42854,9 +42837,6 @@ func (application *Application) quitMainloop() {
 	runtime.KeepAlive(application)
 }
 
-// runMainloop: used to be invoked on the primary instance from
-// g_application_run() if the use-count is non-zero. Since 2.32, GApplication is
-// iterating the main context directly and is not using run_mainloop anymore.
 func (application *Application) runMainloop() {
 	gclass := (*C.GApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.run_mainloop
@@ -42869,8 +42849,6 @@ func (application *Application) runMainloop() {
 	runtime.KeepAlive(application)
 }
 
-// Shutdown: invoked only on the registered primary instance immediately after
-// the main loop terminates.
 func (application *Application) shutdown() {
 	gclass := (*C.GApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.shutdown
@@ -42883,7 +42861,6 @@ func (application *Application) shutdown() {
 	runtime.KeepAlive(application)
 }
 
-// Startup: invoked on the primary instance immediately after registration.
 func (application *Application) startup() {
 	gclass := (*C.GApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.startup
@@ -42997,21 +42974,6 @@ func ApplicationIDIsValid(applicationId string) bool {
 
 // ApplicationCommandLineOverrides contains methods that are overridable.
 type ApplicationCommandLineOverrides struct {
-	// Done signals that command line processing is completed.
-	//
-	// For remote invocation, it causes the invoking process to terminate.
-	//
-	// For local invocation, it does nothing.
-	//
-	// This method should be called in the gio.Application::command-line
-	// handler, after the exit status is set and all messages are printed.
-	//
-	// After this call, g_application_command_line_set_exit_status() has no
-	// effect. Subsequent calls to this method are no-ops.
-	//
-	// This method is automatically called when the CommandLine object is
-	// disposed — so you can omit the call in non-garbage collected languages.
-	Done func()
 	// Stdin gets the stdin of the invoking process.
 	//
 	// The Stream can be used to read data passed to the standard input of
@@ -43025,47 +42987,22 @@ type ApplicationCommandLineOverrides struct {
 	// The function returns the following values:
 	//
 	//   - inputStream (optional) for stdin.
-	Stdin func() InputStreamer
-	// PrintLiteral prints a message using the stdout print handler in the
-	// invoking process.
-	//
-	// Unlike g_application_command_line_print(), message is not a
-	// printf()-style format string. Use this function if message contains
-	// text you don't have control over, that could include printf() escape
-	// sequences.
-	//
-	// The function takes the following parameters:
-	//
-	//   - message: message.
-	PrintLiteral func(message string)
-	// PrinterrLiteral prints a message using the stderr print handler in the
-	// invoking process.
-	//
-	// Unlike g_application_command_line_printerr(), message is not a
-	// printf()-style format string. Use this function if message contains
-	// text you don't have control over, that could include printf() escape
-	// sequences.
-	//
-	// The function takes the following parameters:
-	//
-	//   - message: message.
+	Stdin           func() InputStreamer
+	PrintLiteral    func(message string)
 	PrinterrLiteral func(message string)
 }
 
 func defaultApplicationCommandLineOverrides(v *ApplicationCommandLine) ApplicationCommandLineOverrides {
 	return ApplicationCommandLineOverrides{
-		Done:            v.done,
 		Stdin:           v.stdin,
 		PrintLiteral:    v.printLiteral,
 		PrinterrLiteral: v.printerrLiteral,
 	}
 }
 
-// ApplicationCommandLine: GApplicationCommandLine represents a command-line
-// invocation of an application.
-//
-// It is created by gio.Application and emitted in the
-// gio.Application::command-line signal and virtual function.
+// ApplicationCommandLine represents a command-line invocation of
+// an application. It is created by #GApplication and emitted in the
+// #GApplication::command-line signal and virtual function.
 //
 // The class contains the list of arguments that the program was invoked with.
 // It is also possible to query if the commandline invocation was local (ie:
@@ -43073,114 +43010,28 @@ func defaultApplicationCommandLineOverrides(v *ApplicationCommandLine) Applicati
 // remote (ie: some other process forwarded the commandline to this process).
 //
 // The GApplicationCommandLine object can provide the argc and argv
-// parameters for use with the glib.OptionContext command-line parsing API,
-// with the gio.ApplicationCommandLine.GetArguments() function. See
+// parameters for use with the Context command-line parsing API,
+// with the g_application_command_line_get_arguments() function. See
 // [gapplication-example-cmdline3.c][gapplication-example-cmdline3] for an
 // example.
 //
-// The exit status of the originally-invoked process may be set and messages can
-// be printed to stdout or stderr of that process.
+// The exit status of the originally-invoked process may be set and messages
+// can be printed to stdout or stderr of that process. The lifecycle of the
+// originally-invoked process is tied to the lifecycle of this object (ie:
+// the process exits when the last reference is dropped).
 //
-// For remote invocation, the originally-invoked process exits when
-// gio.ApplicationCommandLine.Done() method is called. This method is also
-// automatically called when the object is disposed.
-//
-// The main use for GApplicationCommandLine (and the
-// gio.Application::command-line signal) is 'Emacs server' like use cases: You
-// can set the EDITOR environment variable to have e.g. git use your favourite
-// editor to edit commit messages, and if you already have an instance of the
-// editor running, the editing will happen in the running instance, instead of
-// opening a new one. An important aspect of this use case is that the process
-// that gets started by git does not return until the editing is done.
+// The main use for CommandLine (and the #GApplication::command-line signal) is
+// 'Emacs server' like use cases: You can set the EDITOR environment variable
+// to have e.g. git use your favourite editor to edit commit messages, and if
+// you already have an instance of the editor running, the editing will happen
+// in the running instance, instead of opening a new one. An important aspect of
+// this use case is that the process that gets started by git does not return
+// until the editing is done.
 //
 // Normally, the commandline is completely handled in the
-// gio.Application::command-line handler. The launching instance exits once the
+// #GApplication::command-line handler. The launching instance exits once the
 // signal handler in the primary instance has returned, and the return value of
 // the signal handler becomes the exit status of the launching instance.
-//
-//	static int
-//	command_line (GApplication            *application,
-//	              GApplicationCommandLine *cmdline)
-//	{
-//	  gchar **argv;
-//	  gint argc;
-//	  gint i;
-//
-//	  argv = g_application_command_line_get_arguments (cmdline, &argc);
-//
-//	  g_application_command_line_print (cmdline,
-//	                                    "This text is written back\n"
-//	                                    "to stdout of the caller\n");
-//
-//	  for (i = 0; i < argc; i++)
-//	    g_print ("argument d: s\n", i, argv[i]);
-//
-//	  g_strfreev (argv);
-//
-//	  return 0;
-//	}
-//
-// The complete example can be found here: gapplication-example-cmdline.c
-// (https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gapplication-example-cmdline.c)
-//
-// In more complicated cases, the handling of the commandline can be split
-// between the launcher and the primary instance.
-//
-//	static gboolean
-//	 test_local_cmdline (GApplication   *application,
-//	                     gchar        ***arguments,
-//	                     gint           *exit_status)
-//	{
-//	  gint i, j;
-//	  gchar **argv;
-//
-//	  argv = *arguments;
-//
-//	  if (argv[0] == NULL)
-//	    {
-//	      *exit_status = 0;
-//	      return FALSE;
-//	    }
-//
-//	  i = 1;
-//	  while (argv[i])
-//	    {
-//	      if (g_str_has_prefix (argv[i], "--local-"))
-//	        {
-//	          g_print ("handling argument s locally\n", argv[i]);
-//	          g_free (argv[i]);
-//	          for (j = i; argv[j]; j++)
-//	            argv[j] = argv[j + 1];
-//	        }
-//	      else
-//	        {
-//	          g_print ("not handling argument s locally\n", argv[i]);
-//	          i++;
-//	        }
-//	    }
-//
-//	  *exit_status = 0;
-//
-//	  return FALSE;
-//	}
-//
-//	static void
-//	test_application_class_init (TestApplicationClass *class)
-//	{
-//	  G_APPLICATION_CLASS (class)->local_command_line = test_local_cmdline;
-//
-//	  ...
-//	}
-//
-// In this example of split commandline handling, options that start
-// with --local- are handled locally, all other options are passed to the
-// gio.Application::command-line handler which runs in the primary instance.
-//
-// The complete example can be found here: gapplication-example-cmdline2.c
-// (https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gapplication-example-cmdline2.c)
-//
-// If handling the commandline requires a lot of work, it may be better to defer
-// it.
 //
 //	static gboolean
 //	my_cmdline_handler (gpointer data)
@@ -43213,10 +43064,10 @@ func defaultApplicationCommandLineOverrides(v *ApplicationCommandLine) Applicati
 //	}
 //
 // In this example the commandline is not completely handled before the
-// gio.Application::command-line handler returns. Instead, we keep a reference
-// to the GApplicationCommandLine object and handle it later (in this example,
-// in an idle). Note that it is necessary to hold the application until you are
-// done with the commandline.
+// #GApplication::command-line handler returns. Instead, we keep a reference
+// to the CommandLine object and handle it later (in this example, in an idle).
+// Note that it is necessary to hold the application until you are done with the
+// commandline.
 //
 // The complete example can be found here: gapplication-example-cmdline3.c
 // (https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gapplication-example-cmdline3.c).
@@ -43240,10 +43091,6 @@ func init() {
 
 func initApplicationCommandLineClass(gclass unsafe.Pointer, overrides ApplicationCommandLineOverrides, classInitFunc func(*ApplicationCommandLineClass)) {
 	pclass := (*C.GApplicationCommandLineClass)(unsafe.Pointer(C.g_type_check_class_cast((*C.GTypeClass)(gclass), C.GType(GTypeApplicationCommandLine))))
-
-	if overrides.Done != nil {
-		pclass.done = (*[0]byte)(C._gotk4_gio2_ApplicationCommandLineClass_done)
-	}
 
 	if overrides.Stdin != nil {
 		pclass.get_stdin = (*[0]byte)(C._gotk4_gio2_ApplicationCommandLineClass_get_stdin)
@@ -43305,29 +43152,6 @@ func (cmdline *ApplicationCommandLine) CreateFileForArg(arg string) *File {
 	_file = wrapFile(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
 
 	return _file
-}
-
-// Done signals that command line processing is completed.
-//
-// For remote invocation, it causes the invoking process to terminate.
-//
-// For local invocation, it does nothing.
-//
-// This method should be called in the gio.Application::command-line handler,
-// after the exit status is set and all messages are printed.
-//
-// After this call, g_application_command_line_set_exit_status() has no effect.
-// Subsequent calls to this method are no-ops.
-//
-// This method is automatically called when the CommandLine object is disposed —
-// so you can omit the call in non-garbage collected languages.
-func (cmdline *ApplicationCommandLine) Done() {
-	var _arg0 *C.GApplicationCommandLine // out
-
-	_arg0 = (*C.GApplicationCommandLine)(unsafe.Pointer(coreglib.InternObject(cmdline).Native()))
-
-	C.g_application_command_line_done(_arg0)
-	runtime.KeepAlive(cmdline)
 }
 
 // Arguments gets the list of arguments that was passed on the command line.
@@ -43491,7 +43315,7 @@ func (cmdline *ApplicationCommandLine) IsRemote() bool {
 	return _ok
 }
 
-// OptionsDict gets the options that were passed to
+// OptionsDict gets the options there were passed to
 // g_application_command_line().
 //
 // If you did not override local_command_line() then these are the same options
@@ -43501,9 +43325,6 @@ func (cmdline *ApplicationCommandLine) IsRemote() bool {
 //
 // If no options were sent then an empty dictionary is returned so that you
 // don't need to check for NULL.
-//
-// The data has been passed via an untrusted external process, so the types of
-// all values must be checked before being used.
 //
 // The function returns the following values:
 //
@@ -43537,9 +43358,6 @@ func (cmdline *ApplicationCommandLine) OptionsDict() *glib.VariantDict {
 // This is a #GVariant dictionary containing information about the context in
 // which the invocation occurred. It typically contains information like the
 // current working directory and the startup notification ID.
-//
-// It comes from an untrusted external process and hence the types of all values
-// must be validated before being used.
 //
 // For local invocation, it will be NULL.
 //
@@ -43655,52 +43473,6 @@ func (cmdline *ApplicationCommandLine) env(name string) string {
 	return _utf8
 }
 
-// PrintLiteral prints a message using the stdout print handler in the invoking
-// process.
-//
-// Unlike g_application_command_line_print(), message is not a printf()-style
-// format string. Use this function if message contains text you don't have
-// control over, that could include printf() escape sequences.
-//
-// The function takes the following parameters:
-//
-//   - message: message.
-func (cmdline *ApplicationCommandLine) PrintLiteral(message string) {
-	var _arg0 *C.GApplicationCommandLine // out
-	var _arg1 *C.gchar                   // out
-
-	_arg0 = (*C.GApplicationCommandLine)(unsafe.Pointer(coreglib.InternObject(cmdline).Native()))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(message)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.g_application_command_line_print_literal(_arg0, _arg1)
-	runtime.KeepAlive(cmdline)
-	runtime.KeepAlive(message)
-}
-
-// PrinterrLiteral prints a message using the stderr print handler in the
-// invoking process.
-//
-// Unlike g_application_command_line_printerr(), message is not a printf()-style
-// format string. Use this function if message contains text you don't have
-// control over, that could include printf() escape sequences.
-//
-// The function takes the following parameters:
-//
-//   - message: message.
-func (cmdline *ApplicationCommandLine) PrinterrLiteral(message string) {
-	var _arg0 *C.GApplicationCommandLine // out
-	var _arg1 *C.gchar                   // out
-
-	_arg0 = (*C.GApplicationCommandLine)(unsafe.Pointer(coreglib.InternObject(cmdline).Native()))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(message)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.g_application_command_line_printerr_literal(_arg0, _arg1)
-	runtime.KeepAlive(cmdline)
-	runtime.KeepAlive(message)
-}
-
 // SetExitStatus sets the exit status that will be used when the invoking
 // process exits.
 //
@@ -43721,8 +43493,6 @@ func (cmdline *ApplicationCommandLine) PrinterrLiteral(message string) {
 // in a certain sense, and the exit status is always zero. If the application
 // use count is zero, though, the exit status of the local CommandLine is used.
 //
-// This method is a no-op if g_application_command_line_done() has been called.
-//
 // The function takes the following parameters:
 //
 //   - exitStatus: exit status.
@@ -43736,32 +43506,6 @@ func (cmdline *ApplicationCommandLine) SetExitStatus(exitStatus int) {
 	C.g_application_command_line_set_exit_status(_arg0, _arg1)
 	runtime.KeepAlive(cmdline)
 	runtime.KeepAlive(exitStatus)
-}
-
-// Done signals that command line processing is completed.
-//
-// For remote invocation, it causes the invoking process to terminate.
-//
-// For local invocation, it does nothing.
-//
-// This method should be called in the gio.Application::command-line handler,
-// after the exit status is set and all messages are printed.
-//
-// After this call, g_application_command_line_set_exit_status() has no effect.
-// Subsequent calls to this method are no-ops.
-//
-// This method is automatically called when the CommandLine object is disposed —
-// so you can omit the call in non-garbage collected languages.
-func (cmdline *ApplicationCommandLine) done() {
-	gclass := (*C.GApplicationCommandLineClass)(coreglib.PeekParentClass(cmdline))
-	fnarg := gclass.done
-
-	var _arg0 *C.GApplicationCommandLine // out
-
-	_arg0 = (*C.GApplicationCommandLine)(unsafe.Pointer(coreglib.InternObject(cmdline).Native()))
-
-	C._gotk4_gio2_ApplicationCommandLine_virtual_done(unsafe.Pointer(fnarg), _arg0)
-	runtime.KeepAlive(cmdline)
 }
 
 // Stdin gets the stdin of the invoking process.
@@ -43811,16 +43555,6 @@ func (cmdline *ApplicationCommandLine) stdin() InputStreamer {
 	return _inputStream
 }
 
-// printLiteral prints a message using the stdout print handler in the invoking
-// process.
-//
-// Unlike g_application_command_line_print(), message is not a printf()-style
-// format string. Use this function if message contains text you don't have
-// control over, that could include printf() escape sequences.
-//
-// The function takes the following parameters:
-//
-//   - message: message.
 func (cmdline *ApplicationCommandLine) printLiteral(message string) {
 	gclass := (*C.GApplicationCommandLineClass)(coreglib.PeekParentClass(cmdline))
 	fnarg := gclass.print_literal
@@ -43837,16 +43571,6 @@ func (cmdline *ApplicationCommandLine) printLiteral(message string) {
 	runtime.KeepAlive(message)
 }
 
-// printerrLiteral prints a message using the stderr print handler in the
-// invoking process.
-//
-// Unlike g_application_command_line_printerr(), message is not a printf()-style
-// format string. Use this function if message contains text you don't have
-// control over, that could include printf() escape sequences.
-//
-// The function takes the following parameters:
-//
-//   - message: message.
 func (cmdline *ApplicationCommandLine) printerrLiteral(message string) {
 	gclass := (*C.GApplicationCommandLineClass)(coreglib.PeekParentClass(cmdline))
 	fnarg := gclass.printerr_literal
@@ -43922,17 +43646,17 @@ func defaultBufferedInputStreamOverrides(v *BufferedInputStream) BufferedInputSt
 // BufferedInputStream: buffered input stream implements InputStream and
 // provides for buffered reads.
 //
-// By default, GBufferedInputStream's buffer size is set at 4 kilobytes.
+// By default, InputStream's buffer size is set at 4 kilobytes.
 //
-// To create a buffered input stream, use gio.BufferedInputStream.New,
-// or gio.BufferedInputStream.NewSized to specify the buffer's size at
+// To create a buffered input stream, use g_buffered_input_stream_new(),
+// or g_buffered_input_stream_new_sized() to specify the buffer's size at
 // construction.
 //
 // To get the size of a buffer within a buffered input stream, use
-// gio.BufferedInputStream.GetBufferSize(). To change the size of a buffered
-// input stream's buffer, use gio.BufferedInputStream.SetBufferSize(). Note that
-// the buffer's size cannot be reduced below the size of the data within the
-// buffer.
+// g_buffered_input_stream_get_buffer_size(). To change the size of a buffered
+// input stream's buffer, use g_buffered_input_stream_set_buffer_size(). Note
+// that the buffer's size cannot be reduced below the size of the data within
+// the buffer.
 type BufferedInputStream struct {
 	_ [0]func() // equal guard
 	FilterInputStream
@@ -44512,20 +44236,20 @@ func defaultBufferedOutputStreamOverrides(v *BufferedOutputStream) BufferedOutpu
 	return BufferedOutputStreamOverrides{}
 }
 
-// BufferedOutputStream: buffered output stream implements
-// gio.FilterOutputStream and provides for buffered writes.
+// BufferedOutputStream: buffered output stream implements OutputStream and
+// provides for buffered writes.
 //
-// By default, GBufferedOutputStream's buffer size is set at 4 kilobytes.
+// By default, OutputStream's buffer size is set at 4 kilobytes.
 //
-// To create a buffered output stream, use gio.BufferedOutputStream.New,
-// or gio.BufferedOutputStream.NewSized to specify the buffer's size at
+// To create a buffered output stream, use g_buffered_output_stream_new(),
+// or g_buffered_output_stream_new_sized() to specify the buffer's size at
 // construction.
 //
 // To get the size of a buffer within a buffered input stream, use
-// gio.BufferedOutputStream.GetBufferSize(). To change the size of a buffered
-// output stream's buffer, use gio.BufferedOutputStream.SetBufferSize(). Note
-// that the buffer's size cannot be reduced below the size of the data within
-// the buffer.
+// g_buffered_output_stream_get_buffer_size(). To change the size of a buffered
+// output stream's buffer, use g_buffered_output_stream_set_buffer_size().
+// Note that the buffer's size cannot be reduced below the size of the data
+// within the buffer.
 type BufferedOutputStream struct {
 	_ [0]func() // equal guard
 	FilterOutputStream
@@ -44709,8 +44433,8 @@ func (stream *BufferedOutputStream) SetBufferSize(size uint) {
 	runtime.KeepAlive(size)
 }
 
-// BytesIcon: GBytesIcon specifies an image held in memory in a common format
-// (usually PNG) to be used as icon.
+// BytesIcon specifies an image held in memory in a common format (usually png)
+// to be used as icon.
 type BytesIcon struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -44804,10 +44528,8 @@ func defaultCancellableOverrides(v *Cancellable) CancellableOverrides {
 	}
 }
 
-// Cancellable: GCancellable allows operations to be cancelled.
-//
-// GCancellable is a thread-safe operation cancellation stack used throughout
-// GIO to allow for cancellation of synchronous and asynchronous operations.
+// Cancellable is a thread-safe operation cancellation stack used throughout GIO
+// to allow for cancellation of synchronous and asynchronous operations.
 type Cancellable struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -45215,8 +44937,7 @@ func defaultCharsetConverterOverrides(v *CharsetConverter) CharsetConverterOverr
 	return CharsetConverterOverrides{}
 }
 
-// CharsetConverter: GCharsetConverter is an implementation of gio.Converter
-// based on glib.IConv.
+// CharsetConverter is an implementation of #GConverter based on GIConv.
 type CharsetConverter struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -45368,10 +45089,10 @@ func defaultConverterInputStreamOverrides(v *ConverterInputStream) ConverterInpu
 	return ConverterInputStreamOverrides{}
 }
 
-// ConverterInputStream: converter input stream implements gio.InputStream and
-// allows conversion of data of various types during reading.
+// ConverterInputStream: converter input stream implements Stream and allows
+// conversion of data of various types during reading.
 //
-// As of GLib 2.34, GConverterInputStream implements gio.PollableInputStream.
+// As of GLib 2.34, InputStream implements InputStream.
 type ConverterInputStream struct {
 	_ [0]func() // equal guard
 	FilterInputStream
@@ -45485,10 +45206,10 @@ func defaultConverterOutputStreamOverrides(v *ConverterOutputStream) ConverterOu
 	return ConverterOutputStreamOverrides{}
 }
 
-// ConverterOutputStream: converter output stream implements gio.OutputStream
-// and allows conversion of data of various types during reading.
+// ConverterOutputStream: converter output stream implements Stream and allows
+// conversion of data of various types during reading.
 //
-// As of GLib 2.34, GConverterOutputStream implements gio.PollableOutputStream.
+// As of GLib 2.34, OutputStream implements OutputStream.
 type ConverterOutputStream struct {
 	_ [0]func() // equal guard
 	FilterOutputStream
@@ -45594,23 +45315,20 @@ func (converterStream *ConverterOutputStream) Converter() *Converter {
 	return _converter
 }
 
-// Credentials: GCredentials type is a reference-counted wrapper for native
-// credentials.
-//
-// The information in GCredentials is typically used for identifying,
-// authenticating and authorizing other processes.
+// Credentials type is a reference-counted wrapper for native credentials. This
+// information is typically used for identifying, authenticating and authorizing
+// other processes.
 //
 // Some operating systems supports looking up the credentials of the remote peer
-// of a communication endpoint - see e.g. gio.Socket.GetCredentials().
+// of a communication endpoint - see e.g. g_socket_get_credentials().
 //
 // Some operating systems supports securely sending and
 // receiving credentials over a Unix Domain Socket, see
-// gio.UnixCredentialsMessage, gio.UnixConnection.SendCredentials() and
-// gio.UnixConnection.ReceiveCredentials() for details.
+// CredentialsMessage, g_unix_connection_send_credentials() and
+// g_unix_connection_receive_credentials() for details.
 //
-// On Linux, the native credential type is a struct ucred - see the
-// unix(7) man page (man:unix(7)) for details. This corresponds to
-// G_CREDENTIALS_TYPE_LINUX_UCRED.
+// On Linux, the native credential type is a struct ucred - see the unix(7) man
+// page for details. This corresponds to G_CREDENTIALS_TYPE_LINUX_UCRED.
 //
 // On Apple operating systems (including iOS, tvOS, and macOS),
 // the native credential type is a struct xucred. This corresponds to
@@ -45745,11 +45463,9 @@ func (credentials *Credentials) String() string {
 	return _utf8
 }
 
-// DBusActionGroup: GDBusActionGroup is an implementation of the gio.ActionGroup
-// interface.
-//
-// GDBusActionGroup can be used as a proxy for an action group that is exported
-// over D-Bus with gio.DBusConnection.ExportActionGroup().
+// DBusActionGroup is an implementation of the Group interface that can
+// be used as a proxy for an action group that is exported over D-Bus with
+// g_dbus_connection_export_action_group().
 type DBusActionGroup struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -45826,41 +45542,18 @@ func DBusActionGroupGet(connection *DBusConnection, busName, objectPath string) 
 	return _dBusActionGroup
 }
 
-// DBusAuthObserver: GDBusAuthObserver provides a mechanism for participating in
-// how a gio.DBusServer (or a gio.DBusConnection) authenticates remote peers.
-//
-// Simply instantiate a GDBusAuthObserver and connect to the signals you are
-// interested in. Note that new signals may be added in the future.
+// DBusAuthObserver type provides a mechanism for participating in how a
+// BusServer (or a BusConnection) authenticates remote peers. Simply instantiate
+// a BusAuthObserver and connect to the signals you are interested in. Note that
+// new signals may be added in the future
 //
 // # Controlling Authentication Mechanisms
 //
-// By default, a GDBusServer or server-side GDBusConnection will allow any
+// By default, a BusServer or server-side BusConnection will allow any
 // authentication mechanism to be used. If you only want to allow D-Bus
 // connections with the EXTERNAL mechanism, which makes use of credentials
 // passing and is the recommended mechanism for modern Unix platforms such as
 // Linux and the BSD family, you would use a signal handler like this:
-//
-//	static gboolean
-//	on_allow_mechanism (GDBusAuthObserver *observer,
-//	                    const gchar       *mechanism,
-//	                    gpointer           user_data)
-//	{
-//	  if (g_strcmp0 (mechanism, "EXTERNAL") == 0)
-//	    {
-//	      return TRUE;
-//	    }
-//
-//	  return FALSE;
-//	}
-//
-// # Controlling Authorization
-//
-// By default, a GDBusServer or server-side GDBusConnection will accept
-// connections from any successfully authenticated user (but not from anonymous
-// connections using the ANONYMOUS mechanism). If you only want to allow D-Bus
-// connections from processes owned by the same uid as the server, since GLib
-// 2.68, you should use the G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER
-// flag. It’s equivalent to the following signal handler:
 //
 //	static gboolean
 //	on_authorize_authenticated_peer (GDBusAuthObserver *observer,
@@ -45998,37 +45691,33 @@ func (observer *DBusAuthObserver) AuthorizeAuthenticatedPeer(stream IOStreamer, 
 	return _ok
 }
 
-// DBusConnection: GDBusConnection type is used for D-Bus connections to remote
-// peers such as a message buses.
-//
-// It is a low-level API that offers a lot of flexibility. For instance,
-// it lets you establish a connection over any transport that can by represented
-// as a gio.IOStream.
+// DBusConnection type is used for D-Bus connections to remote peers such as
+// a message buses. It is a low-level API that offers a lot of flexibility.
+// For instance, it lets you establish a connection over any transport that can
+// by represented as a OStream.
 //
 // This class is rarely used directly in D-Bus clients. If you are writing
-// a D-Bus client, it is often easier to use the gio.BusOwnName(),
-// gio.BusWatchName() or gio.DBusProxy().NewForBus APIs.
+// a D-Bus client, it is often easier to use the g_bus_own_name(),
+// g_bus_watch_name() or g_dbus_proxy_new_for_bus() APIs.
 //
 // As an exception to the usual GLib rule that a particular object must not be
-// used by two threads at the same time, GDBusConnections methods may be called
-// from any thread. This is so that gio.BusGet() and gio.BusGetSync() can safely
-// return the same GDBusConnection when called from any thread.
+// used by two threads at the same time, BusConnection's methods may be called
+// from any thread. This is so that g_bus_get() and g_bus_get_sync() can safely
+// return the same BusConnection when called from any thread.
 //
-// Most of the ways to obtain a GDBusConnection automatically initialize
-// it (i.e. connect to D-Bus): for instance, gio.DBusConnection().New
-// and gio.BusGet(), and the synchronous versions of those methods,
-// give you an initialized connection. Language bindings for GIO should use
-// gio.Initable().New or gio.AsyncInitable().NewAsync, which also initialize the
-// connection.
+// Most of the ways to obtain a BusConnection automatically initialize it (i.e.
+// connect to D-Bus): for instance, g_dbus_connection_new() and g_bus_get(),
+// and the synchronous versions of those methods, give you an initialized
+// connection. Language bindings for GIO should use g_initable_new() or
+// g_async_initable_new_async(), which also initialize the connection.
 //
-// If you construct an uninitialized GDBusConnection, such as via
-// gobject.Object.New, you must initialize it via gio.Initable.Init() or
-// gio.AsyncInitable.InitAsync() before using its methods or properties.
-// Calling methods or accessing properties on a GDBusConnection that has not
-// completed initialization successfully is considered to be invalid, and leads
-// to undefined behaviour. In particular, if initialization fails with a GError,
-// the only valid thing you can do with that GDBusConnection is to free it with
-// gobject.Object.Unref().
+// If you construct an uninitialized BusConnection, such as via g_object_new(),
+// you must initialize it via g_initable_init() or g_async_initable_init_async()
+// before using its methods or properties. Calling methods or accessing
+// properties on a BusConnection that has not completed initialization
+// successfully is considered to be invalid, and leads to undefined behaviour.
+// In particular, if initialization fails with a #GError, the only valid thing
+// you can do with that BusConnection is to free it with g_object_unref().
 //
 // # An example D-Bus server
 //
@@ -46853,10 +46542,6 @@ func (connection *DBusConnection) ExportActionGroup(objectPath string, actionGro
 // constraint is violated, the export will fail and 0 will be returned (with
 // error set accordingly).
 //
-// Exporting menus with sections containing more than
-// G_MENU_EXPORTER_MAX_SECTION_SIZE items is not supported and results in
-// undefined behavior.
-//
 // You can unexport the menu model using g_dbus_connection_unexport_menu_model()
 // with the return value of this function.
 //
@@ -47604,8 +47289,8 @@ func (connection *DBusConnection) SetExitOnClose(exitOnClose bool) {
 	runtime.KeepAlive(exitOnClose)
 }
 
-// SignalSubscribe subscribes to signals on connection and invokes callback
-// whenever the signal is received. Note that callback will be invoked in the
+// SignalSubscribe subscribes to signals on connection and invokes callback with
+// a whenever the signal is received. Note that callback will be invoked in the
 // [thread-default main context][g-main-context-push-thread-default] of the
 // thread you are calling this method from.
 //
@@ -48003,9 +47688,7 @@ type DBusInterfaceSkeletonOverrides struct {
 	// and emit the org.freedesktop.DBus.Properties.PropertiesChanged signal
 	// later (e.g. in an idle handler). This technique is useful for collapsing
 	// multiple property changes into one.
-	Flush func()
-	// GAuthorizeMethod: signal class handler for the
-	// BusInterfaceSkeleton::g-authorize-method signal.
+	Flush            func()
 	GAuthorizeMethod func(invocation *DBusMethodInvocation) bool
 	// Info gets D-Bus introspection information for the D-Bus interface
 	// implemented by interface_.
@@ -48021,15 +47704,6 @@ type DBusInterfaceSkeletonOverrides struct {
 	//   - variant of type ['a{sv}'][G-VARIANT-TYPE-VARDICT:CAPS]. Free with
 	//     g_variant_unref().
 	Properties func() *glib.Variant
-	// Vtable gets the interface vtable for the D-Bus interface implemented
-	// by interface_. The returned function pointers should expect interface_
-	// itself to be passed as user_data.
-	//
-	// The function returns the following values:
-	//
-	//   - dBusInterfaceVTable: vtable of the D-Bus interface implemented by the
-	//     skeleton.
-	Vtable func() *DBusInterfaceVTable
 }
 
 func defaultDBusInterfaceSkeletonOverrides(v *DBusInterfaceSkeleton) DBusInterfaceSkeletonOverrides {
@@ -48038,7 +47712,6 @@ func defaultDBusInterfaceSkeletonOverrides(v *DBusInterfaceSkeleton) DBusInterfa
 		GAuthorizeMethod: v.gAuthorizeMethod,
 		Info:             v.info,
 		Properties:       v.properties,
-		Vtable:           v.vtable,
 	}
 }
 
@@ -48092,10 +47765,6 @@ func initDBusInterfaceSkeletonClass(gclass unsafe.Pointer, overrides DBusInterfa
 
 	if overrides.Properties != nil {
 		pclass.get_properties = (*[0]byte)(C._gotk4_gio2_DBusInterfaceSkeletonClass_get_properties)
-	}
-
-	if overrides.Vtable != nil {
-		pclass.get_vtable = (*[0]byte)(C._gotk4_gio2_DBusInterfaceSkeletonClass_get_vtable)
 	}
 
 	if classInitFunc != nil {
@@ -48369,30 +48038,6 @@ func (interface_ *DBusInterfaceSkeleton) Properties() *glib.Variant {
 	return _variant
 }
 
-// Vtable gets the interface vtable for the D-Bus interface implemented by
-// interface_. The returned function pointers should expect interface_ itself to
-// be passed as user_data.
-//
-// The function returns the following values:
-//
-//   - dBusInterfaceVTable: vtable of the D-Bus interface implemented by the
-//     skeleton.
-func (interface_ *DBusInterfaceSkeleton) Vtable() *DBusInterfaceVTable {
-	var _arg0 *C.GDBusInterfaceSkeleton // out
-	var _cret *C.GDBusInterfaceVTable   // in
-
-	_arg0 = (*C.GDBusInterfaceSkeleton)(unsafe.Pointer(coreglib.InternObject(interface_).Native()))
-
-	_cret = C.g_dbus_interface_skeleton_get_vtable(_arg0)
-	runtime.KeepAlive(interface_)
-
-	var _dBusInterfaceVTable *DBusInterfaceVTable // out
-
-	_dBusInterfaceVTable = (*DBusInterfaceVTable)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-
-	return _dBusInterfaceVTable
-}
-
 // HasConnection checks if interface_ is exported on connection.
 //
 // The function takes the following parameters:
@@ -48492,8 +48137,6 @@ func (interface_ *DBusInterfaceSkeleton) flush() {
 	runtime.KeepAlive(interface_)
 }
 
-// gAuthorizeMethod: signal class handler for the
-// BusInterfaceSkeleton::g-authorize-method signal.
 func (interface_ *DBusInterfaceSkeleton) gAuthorizeMethod(invocation *DBusMethodInvocation) bool {
 	gclass := (*C.GDBusInterfaceSkeletonClass)(coreglib.PeekParentClass(interface_))
 	fnarg := gclass.g_authorize_method
@@ -48581,36 +48224,9 @@ func (interface_ *DBusInterfaceSkeleton) properties() *glib.Variant {
 	return _variant
 }
 
-// Vtable gets the interface vtable for the D-Bus interface implemented by
-// interface_. The returned function pointers should expect interface_ itself to
-// be passed as user_data.
-//
-// The function returns the following values:
-//
-//   - dBusInterfaceVTable: vtable of the D-Bus interface implemented by the
-//     skeleton.
-func (interface_ *DBusInterfaceSkeleton) vtable() *DBusInterfaceVTable {
-	gclass := (*C.GDBusInterfaceSkeletonClass)(coreglib.PeekParentClass(interface_))
-	fnarg := gclass.get_vtable
-
-	var _arg0 *C.GDBusInterfaceSkeleton // out
-	var _cret *C.GDBusInterfaceVTable   // in
-
-	_arg0 = (*C.GDBusInterfaceSkeleton)(unsafe.Pointer(coreglib.InternObject(interface_).Native()))
-
-	_cret = C._gotk4_gio2_DBusInterfaceSkeleton_virtual_get_vtable(unsafe.Pointer(fnarg), _arg0)
-	runtime.KeepAlive(interface_)
-
-	var _dBusInterfaceVTable *DBusInterfaceVTable // out
-
-	_dBusInterfaceVTable = (*DBusInterfaceVTable)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-
-	return _dBusInterfaceVTable
-}
-
-// DBusMenuModel: GDBusMenuModel is an implementation of gio.MenuModel that
-// can be used as a proxy for a menu model that is exported over D-Bus with
-// gio.DBusConnection.ExportMenuModel().
+// DBusMenuModel is an implementation of Model that can be used
+// as a proxy for a menu model that is exported over D-Bus with
+// g_dbus_connection_export_menu_model().
 type DBusMenuModel struct {
 	_ [0]func() // equal guard
 	MenuModel
@@ -48678,7 +48294,7 @@ func DBusMenuModelGet(connection *DBusConnection, busName, objectPath string) *D
 }
 
 // DBusMessage: type for representing D-Bus messages that can be sent or
-// received on a gio.DBusConnection.
+// received on a BusConnection.
 type DBusMessage struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -48873,9 +48489,6 @@ func (message *DBusMessage) Copy() (*DBusMessage, error) {
 
 // Arg0: convenience to get the first item in the body of message.
 //
-// See gio.DBusMessage.GetArg0Path() for returning object-path-typed arg0
-// values.
-//
 // The function returns the following values:
 //
 //   - utf8 (optional): string item or NULL if the first item in the body of
@@ -48887,32 +48500,6 @@ func (message *DBusMessage) Arg0() string {
 	_arg0 = (*C.GDBusMessage)(unsafe.Pointer(coreglib.InternObject(message).Native()))
 
 	_cret = C.g_dbus_message_get_arg0(_arg0)
-	runtime.KeepAlive(message)
-
-	var _utf8 string // out
-
-	if _cret != nil {
-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	}
-
-	return _utf8
-}
-
-// Arg0Path: convenience to get the first item in the body of message.
-//
-// See gio.DBusMessage.GetArg0() for returning string-typed arg0 values.
-//
-// The function returns the following values:
-//
-//   - utf8 (optional): object path item or NULL if the first item in the body
-//     of message is not an object path.
-func (message *DBusMessage) Arg0Path() string {
-	var _arg0 *C.GDBusMessage // out
-	var _cret *C.gchar        // in
-
-	_arg0 = (*C.GDBusMessage)(unsafe.Pointer(coreglib.InternObject(message).Native()))
-
-	_cret = C.g_dbus_message_get_arg0_path(_arg0)
 	runtime.KeepAlive(message)
 
 	var _utf8 string // out
@@ -49438,7 +49025,7 @@ func (methodCallMessage *DBusMessage) NewMethodReply() *DBusMessage {
 //
 // The function returns the following values:
 //
-//   - utf8: string that should be freed with glib.Free().
+//   - utf8: string that should be freed with g_free().
 func (message *DBusMessage) Print(indent uint) string {
 	var _arg0 *C.GDBusMessage // out
 	var _arg1 C.guint         // out
@@ -49842,13 +49429,13 @@ func DBusMessageBytesNeeded(blob []byte) (int, error) {
 	return _gssize, _goerr
 }
 
-// DBusMethodInvocation instances of the GDBusMethodInvocation class are used
+// DBusMethodInvocation instances of the BusMethodInvocation class are used
 // when handling D-Bus method calls. It provides a way to asynchronously return
 // results and errors.
 //
-// The normal way to obtain a GDBusMethodInvocation object is to receive it as
-// an argument to the handle_method_call() function in a gio.DBusInterfaceVTable
-// that was passed to gio.DBusConnection.RegisterObject().
+// The normal way to obtain a BusMethodInvocation object is to receive it as an
+// argument to the handle_method_call() function in a BusInterfaceVTable that
+// was passed to g_dbus_connection_register_object().
 type DBusMethodInvocation struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -50242,9 +49829,6 @@ func (invocation *DBusMethodInvocation) ReturnValue(parameters *glib.Variant) {
 
 // DBusObjectManagerClientOverrides contains methods that are overridable.
 type DBusObjectManagerClientOverrides struct {
-	// InterfaceProxySignal: signal class handler for the
-	// BusObjectManagerClient::interface-proxy-signal signal.
-	//
 	// The function takes the following parameters:
 	//
 	//   - objectProxy
@@ -50261,73 +49845,69 @@ func defaultDBusObjectManagerClientOverrides(v *DBusObjectManagerClient) DBusObj
 	}
 }
 
-// DBusObjectManagerClient: GDBusObjectManagerClient is used
-// to create, monitor and delete object proxies for remote
-// objects exported by a gio.DBusObjectManagerServer (or any
-// code implementing the org.freedesktop.DBus.ObjectManager
+// DBusObjectManagerClient is used to create, monitor and delete object
+// proxies for remote objects exported by a BusObjectManagerServer
+// (or any code implementing the org.freedesktop.DBus.ObjectManager
 // (http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-objectmanager)
 // interface).
 //
 // Once an instance of this type has been created, you can connect to the
-// gio.DBusObjectManager::object-added and gio.DBusObjectManager::object-removed
-// signals and inspect the gio.DBusObjectProxy objects returned by
-// gio.DBusObjectManager.GetObjects().
+// BusObjectManager::object-added and BusObjectManager::object-removed
+// signals and inspect the BusObjectProxy objects returned by
+// g_dbus_object_manager_get_objects().
 //
-// If the name for a GDBusObjectManagerClient is not owned by anyone at
-// object construction time, the default behavior is to request the message
-// bus to launch an owner for the name. This behavior can be disabled using
-// the G_DBUS_OBJECT_MANAGER_CLIENT_FLAGS_DO_NOT_AUTO_START flag. It’s also
+// If the name for a BusObjectManagerClient is not owned by anyone at object
+// construction time, the default behavior is to request the message bus
+// to launch an owner for the name. This behavior can be disabled using the
+// G_DBUS_OBJECT_MANAGER_CLIENT_FLAGS_DO_NOT_AUTO_START flag. It's also
 // worth noting that this only works if the name of interest is activatable
 // in the first place. E.g. in some cases it is not possible to launch an
-// owner for the requested name. In this case, GDBusObjectManagerClient object
+// owner for the requested name. In this case, BusObjectManagerClient object
 // construction still succeeds but there will be no object proxies (e.g.
-// gio.DBusObjectManager.GetObjects() returns the empty list) and the
-// gio.DBusObjectManagerClient:name-owner property is NULL.
+// g_dbus_object_manager_get_objects() returns the empty list) and the
+// BusObjectManagerClient:name-owner property is NULL.
 //
 // The owner of the requested name can come and go (for example consider a
-// system service being restarted) – GDBusObjectManagerClient handles this
-// case too; simply connect to the gobject.Object::notify signal to watch for
-// changes on the gio.DBusObjectManagerClient:name-owner property. When the name
-// owner vanishes, the behavior is that gio.DBusObjectManagerClient:name-owner
-// is set to NULL (this includes emission of the gobject.Object::notify
-// signal) and then gio.DBusObjectManager::object-removed signals
-// are synthesized for all currently existing object proxies. Since
-// gio.DBusObjectManagerClient:name-owner is NULL when this happens,
-// you can use this information to disambiguate a synthesized signal from a
-// genuine signal caused by object removal on the remote gio.DBusObjectManager.
-// Similarly, when a new name owner appears, gio.DBusObjectManager::object-added
-// signals are synthesized while gio.DBusObjectManagerClient:name-owner
-// is still NULL. Only when all object proxies have been added, the
-// gio.DBusObjectManagerClient:name-owner is set to the new name owner (this
-// includes emission of the gobject.Object::notify signal). Furthermore,
-// you are guaranteed that gio.DBusObjectManagerClient:name-owner will alternate
+// system service being restarted) – BusObjectManagerClient handles this
+// case too; simply connect to the #GObject::notify signal to watch for
+// changes on the BusObjectManagerClient:name-owner property. When the name
+// owner vanishes, the behavior is that BusObjectManagerClient:name-owner
+// is set to NULL (this includes emission of the #GObject::notify signal)
+// and then BusObjectManager::object-removed signals are synthesized for all
+// currently existing object proxies. Since BusObjectManagerClient:name-owner
+// is NULL when this happens, you can use this information to disambiguate
+// a synthesized signal from a genuine signal caused by object removal on
+// the remote BusObjectManager. Similarly, when a new name owner appears,
+// BusObjectManager::object-added signals are synthesized while
+// BusObjectManagerClient:name-owner is still NULL. Only when all object proxies
+// have been added, the BusObjectManagerClient:name-owner is set to the new name
+// owner (this includes emission of the #GObject::notify signal). Furthermore,
+// you are guaranteed that BusObjectManagerClient:name-owner will alternate
 // between a name owner (e.g. :1.42) and NULL even in the case where the name of
 // interest is atomically replaced
 //
-// Ultimately, GDBusObjectManagerClient is used to obtain
-// gio.DBusProxy instances. All signals (including the
-// org.freedesktop.DBus.Properties::PropertiesChanged signal) delivered to
-// gio.DBusProxy instances are guaranteed to originate from the name owner.
-// This guarantee along with the behavior described above, means that certain
-// race conditions including the “half the proxy is from the old owner and the
-// other half is from the new owner” problem cannot happen.
+// Ultimately, BusObjectManagerClient is used to obtain BusProxy instances.
+// All signals (including the org.freedesktop.DBus.Properties::PropertiesChanged
+// signal) delivered to BusProxy instances are guaranteed to originate from
+// the name owner. This guarantee along with the behavior described above,
+// means that certain race conditions including the "half the proxy is from the
+// old owner and the other half is from the new owner" problem cannot happen.
 //
-// To avoid having the application connect to signals on the
-// returned gio.DBusObjectProxy and gio.DBusProxy objects, the
-// gio.DBusObject::interface-added, gio.DBusObject::interface-removed,
-// gio.DBusProxy::g-properties-changed and gio.DBusProxy::g-signal signals
-// are also emitted on the GDBusObjectManagerClient instance managing these
-// objects. The signals emitted are gio.DBusObjectManager::interface-added,
-// gio.DBusObjectManager::interface-removed,
-// gio.DBusObjectManagerClient::interface-proxy-properties-changed and
-// gio.DBusObjectManagerClient::interface-proxy-signal.
+// To avoid having the application connect to signals on the returned
+// BusObjectProxy and BusProxy objects, the BusObject::interface-added,
+// BusObject::interface-removed, BusProxy::g-properties-changed and
+// BusProxy::g-signal signals are also emitted on the BusObjectManagerClient
+// instance managing these objects. The signals emitted are
+// BusObjectManager::interface-added, BusObjectManager::interface-removed,
+// BusObjectManagerClient::interface-proxy-properties-changed and
+// BusObjectManagerClient::interface-proxy-signal.
 //
-// Note that all callbacks and signals are emitted in the thread-default
-// main context (see glib.MainContext.PushThreadDefault()) that the
-// GDBusObjectManagerClient object was constructed in. Additionally,
-// the gio.DBusObjectProxy and gio.DBusProxy objects originating from the
-// GDBusObjectManagerClient object will be created in the same context and,
-// consequently, will deliver signals in the same main loop.
+// Note that all callbacks and signals are emitted in the [thread-default main
+// context][g-main-context-push-thread-default] that the BusObjectManagerClient
+// object was constructed in. Additionally, the BusObjectProxy and BusProxy
+// objects originating from the BusObjectManagerClient object will be created
+// in the same context and, consequently, will deliver signals in the same main
+// loop.
 type DBusObjectManagerClient struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -50475,6 +50055,149 @@ func NewDBusObjectManagerClientForBusFinish(res AsyncResulter) (*DBusObjectManag
 	return _dBusObjectManagerClient, _goerr
 }
 
+// NewDBusObjectManagerClientForBusSync: like
+// g_dbus_object_manager_client_new_sync() but takes a Type instead of a
+// BusConnection.
+//
+// This is a synchronous failable constructor - the calling thread is blocked
+// until a reply is received. See g_dbus_object_manager_client_new_for_bus() for
+// the asynchronous version.
+//
+// The function takes the following parameters:
+//
+//   - ctx (optional) or NULL.
+//   - busType: Type.
+//   - flags: zero or more flags from the BusObjectManagerClientFlags
+//     enumeration.
+//   - name: owner of the control object (unique or well-known name).
+//   - objectPath: object path of the control object.
+//   - getProxyTypeFunc (optional) function or NULL to always construct BusProxy
+//     proxies.
+//
+// The function returns the following values:
+//
+//   - dBusObjectManagerClient: a BusObjectManagerClient object or NULL if error
+//     is set. Free with g_object_unref().
+func NewDBusObjectManagerClientForBusSync(ctx context.Context, busType BusType, flags DBusObjectManagerClientFlags, name, objectPath string, getProxyTypeFunc DBusProxyTypeFunc) (*DBusObjectManagerClient, error) {
+	var _arg8 *C.GCancellable                 // out
+	var _arg1 C.GBusType                      // out
+	var _arg2 C.GDBusObjectManagerClientFlags // out
+	var _arg3 *C.gchar                        // out
+	var _arg4 *C.gchar                        // out
+	var _arg5 C.GDBusProxyTypeFunc            // out
+	var _arg6 C.gpointer
+	var _arg7 C.GDestroyNotify
+	var _cret *C.GDBusObjectManager // in
+	var _cerr *C.GError             // in
+
+	{
+		cancellable := gcancel.GCancellableFromContext(ctx)
+		defer runtime.KeepAlive(cancellable)
+		_arg8 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
+	}
+	_arg1 = C.GBusType(busType)
+	_arg2 = C.GDBusObjectManagerClientFlags(flags)
+	_arg3 = (*C.gchar)(unsafe.Pointer(C.CString(name)))
+	defer C.free(unsafe.Pointer(_arg3))
+	_arg4 = (*C.gchar)(unsafe.Pointer(C.CString(objectPath)))
+	defer C.free(unsafe.Pointer(_arg4))
+	if getProxyTypeFunc != nil {
+		_arg5 = (*[0]byte)(C._gotk4_gio2_DBusProxyTypeFunc)
+		_arg6 = C.gpointer(gbox.Assign(getProxyTypeFunc))
+		_arg7 = (C.GDestroyNotify)((*[0]byte)(C.callbackDelete))
+	}
+
+	_cret = C.g_dbus_object_manager_client_new_for_bus_sync(_arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7, _arg8, &_cerr)
+	runtime.KeepAlive(ctx)
+	runtime.KeepAlive(busType)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(name)
+	runtime.KeepAlive(objectPath)
+	runtime.KeepAlive(getProxyTypeFunc)
+
+	var _dBusObjectManagerClient *DBusObjectManagerClient // out
+	var _goerr error                                      // out
+
+	_dBusObjectManagerClient = wrapDBusObjectManagerClient(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
+	if _cerr != nil {
+		_goerr = gerror.Take(unsafe.Pointer(_cerr))
+	}
+
+	return _dBusObjectManagerClient, _goerr
+}
+
+// NewDBusObjectManagerClientSync creates a new BusObjectManagerClient object.
+//
+// This is a synchronous failable constructor - the calling thread is blocked
+// until a reply is received. See g_dbus_object_manager_client_new() for the
+// asynchronous version.
+//
+// The function takes the following parameters:
+//
+//   - ctx (optional) or NULL.
+//   - connection: BusConnection.
+//   - flags: zero or more flags from the BusObjectManagerClientFlags
+//     enumeration.
+//   - name (optional): owner of the control object (unique or well-known name),
+//     or NULL when not using a message bus connection.
+//   - objectPath: object path of the control object.
+//   - getProxyTypeFunc (optional) function or NULL to always construct BusProxy
+//     proxies.
+//
+// The function returns the following values:
+//
+//   - dBusObjectManagerClient: a BusObjectManagerClient object or NULL if error
+//     is set. Free with g_object_unref().
+func NewDBusObjectManagerClientSync(ctx context.Context, connection *DBusConnection, flags DBusObjectManagerClientFlags, name, objectPath string, getProxyTypeFunc DBusProxyTypeFunc) (*DBusObjectManagerClient, error) {
+	var _arg8 *C.GCancellable                 // out
+	var _arg1 *C.GDBusConnection              // out
+	var _arg2 C.GDBusObjectManagerClientFlags // out
+	var _arg3 *C.gchar                        // out
+	var _arg4 *C.gchar                        // out
+	var _arg5 C.GDBusProxyTypeFunc            // out
+	var _arg6 C.gpointer
+	var _arg7 C.GDestroyNotify
+	var _cret *C.GDBusObjectManager // in
+	var _cerr *C.GError             // in
+
+	{
+		cancellable := gcancel.GCancellableFromContext(ctx)
+		defer runtime.KeepAlive(cancellable)
+		_arg8 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
+	}
+	_arg1 = (*C.GDBusConnection)(unsafe.Pointer(coreglib.InternObject(connection).Native()))
+	_arg2 = C.GDBusObjectManagerClientFlags(flags)
+	if name != "" {
+		_arg3 = (*C.gchar)(unsafe.Pointer(C.CString(name)))
+		defer C.free(unsafe.Pointer(_arg3))
+	}
+	_arg4 = (*C.gchar)(unsafe.Pointer(C.CString(objectPath)))
+	defer C.free(unsafe.Pointer(_arg4))
+	if getProxyTypeFunc != nil {
+		_arg5 = (*[0]byte)(C._gotk4_gio2_DBusProxyTypeFunc)
+		_arg6 = C.gpointer(gbox.Assign(getProxyTypeFunc))
+		_arg7 = (C.GDestroyNotify)((*[0]byte)(C.callbackDelete))
+	}
+
+	_cret = C.g_dbus_object_manager_client_new_sync(_arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7, _arg8, &_cerr)
+	runtime.KeepAlive(ctx)
+	runtime.KeepAlive(connection)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(name)
+	runtime.KeepAlive(objectPath)
+	runtime.KeepAlive(getProxyTypeFunc)
+
+	var _dBusObjectManagerClient *DBusObjectManagerClient // out
+	var _goerr error                                      // out
+
+	_dBusObjectManagerClient = wrapDBusObjectManagerClient(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
+	if _cerr != nil {
+		_goerr = gerror.Take(unsafe.Pointer(_cerr))
+	}
+
+	return _dBusObjectManagerClient, _goerr
+}
+
 // Connection gets the BusConnection used by manager.
 //
 // The function returns the following values:
@@ -50568,9 +50291,6 @@ func (manager *DBusObjectManagerClient) NameOwner() string {
 	return _utf8
 }
 
-// interfaceProxySignal: signal class handler for the
-// BusObjectManagerClient::interface-proxy-signal signal.
-//
 // The function takes the following parameters:
 //
 //   - objectProxy
@@ -50607,6 +50327,134 @@ func (manager *DBusObjectManagerClient) interfaceProxySignal(objectProxy *DBusOb
 	runtime.KeepAlive(parameters)
 }
 
+// NewDBusObjectManagerClient: asynchronously creates a new
+// BusObjectManagerClient object.
+//
+// This is an asynchronous failable constructor. When the result
+// is ready, callback will be invoked in the [thread-default main
+// context][g-main-context-push-thread-default] of the thread you are calling
+// this method from. You can then call g_dbus_object_manager_client_new_finish()
+// to get the result. See g_dbus_object_manager_client_new_sync() for the
+// synchronous version.
+//
+// The function takes the following parameters:
+//
+//   - ctx (optional) or NULL.
+//   - connection: BusConnection.
+//   - flags: zero or more flags from the BusObjectManagerClientFlags
+//     enumeration.
+//   - name: owner of the control object (unique or well-known name).
+//   - objectPath: object path of the control object.
+//   - getProxyTypeFunc (optional) function or NULL to always construct BusProxy
+//     proxies.
+//   - callback (optional) to call when the request is satisfied.
+func NewDBusObjectManagerClient(ctx context.Context, connection *DBusConnection, flags DBusObjectManagerClientFlags, name, objectPath string, getProxyTypeFunc DBusProxyTypeFunc, callback AsyncReadyCallback) {
+	var _arg8 *C.GCancellable                 // out
+	var _arg1 *C.GDBusConnection              // out
+	var _arg2 C.GDBusObjectManagerClientFlags // out
+	var _arg3 *C.gchar                        // out
+	var _arg4 *C.gchar                        // out
+	var _arg5 C.GDBusProxyTypeFunc            // out
+	var _arg6 C.gpointer
+	var _arg7 C.GDestroyNotify
+	var _arg9 C.GAsyncReadyCallback // out
+	var _arg10 C.gpointer
+
+	{
+		cancellable := gcancel.GCancellableFromContext(ctx)
+		defer runtime.KeepAlive(cancellable)
+		_arg8 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
+	}
+	_arg1 = (*C.GDBusConnection)(unsafe.Pointer(coreglib.InternObject(connection).Native()))
+	_arg2 = C.GDBusObjectManagerClientFlags(flags)
+	_arg3 = (*C.gchar)(unsafe.Pointer(C.CString(name)))
+	defer C.free(unsafe.Pointer(_arg3))
+	_arg4 = (*C.gchar)(unsafe.Pointer(C.CString(objectPath)))
+	defer C.free(unsafe.Pointer(_arg4))
+	if getProxyTypeFunc != nil {
+		_arg5 = (*[0]byte)(C._gotk4_gio2_DBusProxyTypeFunc)
+		_arg6 = C.gpointer(gbox.Assign(getProxyTypeFunc))
+		_arg7 = (C.GDestroyNotify)((*[0]byte)(C.callbackDelete))
+	}
+	if callback != nil {
+		_arg9 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
+		_arg10 = C.gpointer(gbox.AssignOnce(callback))
+	}
+
+	C.g_dbus_object_manager_client_new(_arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7, _arg8, _arg9, _arg10)
+	runtime.KeepAlive(ctx)
+	runtime.KeepAlive(connection)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(name)
+	runtime.KeepAlive(objectPath)
+	runtime.KeepAlive(getProxyTypeFunc)
+	runtime.KeepAlive(callback)
+}
+
+// NewDBusObjectManagerClientForBus: like g_dbus_object_manager_client_new() but
+// takes a Type instead of a BusConnection.
+//
+// This is an asynchronous failable constructor. When the result
+// is ready, callback will be invoked in the [thread-default
+// main loop][g-main-context-push-thread-default] of the
+// thread you are calling this method from. You can then call
+// g_dbus_object_manager_client_new_for_bus_finish() to get the result. See
+// g_dbus_object_manager_client_new_for_bus_sync() for the synchronous version.
+//
+// The function takes the following parameters:
+//
+//   - ctx (optional) or NULL.
+//   - busType: Type.
+//   - flags: zero or more flags from the BusObjectManagerClientFlags
+//     enumeration.
+//   - name: owner of the control object (unique or well-known name).
+//   - objectPath: object path of the control object.
+//   - getProxyTypeFunc (optional) function or NULL to always construct BusProxy
+//     proxies.
+//   - callback (optional) to call when the request is satisfied.
+func NewDBusObjectManagerClientForBus(ctx context.Context, busType BusType, flags DBusObjectManagerClientFlags, name, objectPath string, getProxyTypeFunc DBusProxyTypeFunc, callback AsyncReadyCallback) {
+	var _arg8 *C.GCancellable                 // out
+	var _arg1 C.GBusType                      // out
+	var _arg2 C.GDBusObjectManagerClientFlags // out
+	var _arg3 *C.gchar                        // out
+	var _arg4 *C.gchar                        // out
+	var _arg5 C.GDBusProxyTypeFunc            // out
+	var _arg6 C.gpointer
+	var _arg7 C.GDestroyNotify
+	var _arg9 C.GAsyncReadyCallback // out
+	var _arg10 C.gpointer
+
+	{
+		cancellable := gcancel.GCancellableFromContext(ctx)
+		defer runtime.KeepAlive(cancellable)
+		_arg8 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
+	}
+	_arg1 = C.GBusType(busType)
+	_arg2 = C.GDBusObjectManagerClientFlags(flags)
+	_arg3 = (*C.gchar)(unsafe.Pointer(C.CString(name)))
+	defer C.free(unsafe.Pointer(_arg3))
+	_arg4 = (*C.gchar)(unsafe.Pointer(C.CString(objectPath)))
+	defer C.free(unsafe.Pointer(_arg4))
+	if getProxyTypeFunc != nil {
+		_arg5 = (*[0]byte)(C._gotk4_gio2_DBusProxyTypeFunc)
+		_arg6 = C.gpointer(gbox.Assign(getProxyTypeFunc))
+		_arg7 = (C.GDestroyNotify)((*[0]byte)(C.callbackDelete))
+	}
+	if callback != nil {
+		_arg9 = (*[0]byte)(C._gotk4_gio2_AsyncReadyCallback)
+		_arg10 = C.gpointer(gbox.AssignOnce(callback))
+	}
+
+	C.g_dbus_object_manager_client_new_for_bus(_arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7, _arg8, _arg9, _arg10)
+	runtime.KeepAlive(ctx)
+	runtime.KeepAlive(busType)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(name)
+	runtime.KeepAlive(objectPath)
+	runtime.KeepAlive(getProxyTypeFunc)
+	runtime.KeepAlive(callback)
+}
+
 // DBusObjectManagerServerOverrides contains methods that are overridable.
 type DBusObjectManagerServerOverrides struct {
 }
@@ -50615,9 +50463,8 @@ func defaultDBusObjectManagerServerOverrides(v *DBusObjectManagerServer) DBusObj
 	return DBusObjectManagerServerOverrides{}
 }
 
-// DBusObjectManagerServer: GDBusObjectManagerServer
-// is used to export gio.DBusObject instances using
-// the standardized org.freedesktop.DBus.ObjectManager
+// DBusObjectManagerServer is used to export BusObject instances
+// using the standardized org.freedesktop.DBus.ObjectManager
 // (http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-objectmanager)
 // interface. For example, remote D-Bus clients can get all objects and
 // properties in a single call. Additionally, any change in the object hierarchy
@@ -50633,8 +50480,8 @@ func defaultDBusObjectManagerServerOverrides(v *DBusObjectManagerServer) DBusObj
 // It is supported, but not recommended, to export an object manager at the root
 // path, /.
 //
-// See gio.DBusObjectManagerClient for the client-side code that is intended to
-// be used with GDBusObjectManagerServer or any D-Bus object implementing the
+// See BusObjectManagerClient for the client-side code that is intended to
+// be used with BusObjectManagerServer or any D-Bus object implementing the
 // org.freedesktop.DBus.ObjectManager interface.
 type DBusObjectManagerServer struct {
 	_ [0]func() // equal guard
@@ -50871,10 +50718,9 @@ func defaultDBusObjectProxyOverrides(v *DBusObjectProxy) DBusObjectProxyOverride
 	return DBusObjectProxyOverrides{}
 }
 
-// DBusObjectProxy: GDBusObjectProxy is an object used to represent a remote
-// object with one or more D-Bus interfaces. Normally, you don’t instantiate a
-// GDBusObjectProxy yourself — typically gio.DBusObjectManagerClient is used to
-// obtain it.
+// DBusObjectProxy is an object used to represent a remote object with one or
+// more D-Bus interfaces. Normally, you don't instantiate a BusObjectProxy
+// yourself - typically BusObjectManagerClient is used to obtain it.
 type DBusObjectProxy struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -50969,9 +50815,6 @@ func (proxy *DBusObjectProxy) Connection() *DBusConnection {
 
 // DBusObjectSkeletonOverrides contains methods that are overridable.
 type DBusObjectSkeletonOverrides struct {
-	// AuthorizeMethod: signal class handler for the
-	// BusObjectSkeleton::authorize-method signal.
-	//
 	// The function takes the following parameters:
 	//
 	//   - interface_
@@ -50985,11 +50828,11 @@ func defaultDBusObjectSkeletonOverrides(v *DBusObjectSkeleton) DBusObjectSkeleto
 	}
 }
 
-// DBusObjectSkeleton: GDBusObjectSkeleton instance is essentially a group of
-// D-Bus interfaces. The set of exported interfaces on the object may be dynamic
-// and change at runtime.
+// DBusObjectSkeleton instance is essentially a group of D-Bus interfaces.
+// The set of exported interfaces on the object may be dynamic and change at
+// runtime.
 //
-// This type is intended to be used with gio.DBusObjectManager.
+// This type is intended to be used with BusObjectManager.
 type DBusObjectSkeleton struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -51165,9 +51008,6 @@ func (object *DBusObjectSkeleton) SetObjectPath(objectPath string) {
 	runtime.KeepAlive(objectPath)
 }
 
-// authorizeMethod: signal class handler for the
-// BusObjectSkeleton::authorize-method signal.
-//
 // The function takes the following parameters:
 //
 //   - interface_
@@ -51201,8 +51041,6 @@ func (object *DBusObjectSkeleton) authorizeMethod(interface_ DBusInterfaceSkelet
 
 // DBusProxyOverrides contains methods that are overridable.
 type DBusProxyOverrides struct {
-	// GSignal: signal class handler for the BusProxy::g-signal signal.
-	//
 	// The function takes the following parameters:
 	//
 	//   - senderName
@@ -51217,44 +51055,44 @@ func defaultDBusProxyOverrides(v *DBusProxy) DBusProxyOverrides {
 	}
 }
 
-// DBusProxy: GDBusProxy is a base class used for proxies to access a D-Bus
-// interface on a remote object. A GDBusProxy can be constructed for both
-// well-known and unique names.
+// DBusProxy is a base class used for proxies to access a D-Bus interface on a
+// remote object. A BusProxy can be constructed for both well-known and unique
+// names.
 //
-// By default, GDBusProxy will cache all properties (and listen to changes) of
-// the remote object, and proxy all signals that get emitted. This behaviour can
-// be changed by passing suitable gio.DBusProxyFlags when the proxy is created.
+// By default, BusProxy will cache all properties (and listen to changes) of
+// the remote object, and proxy all signals that get emitted. This behaviour
+// can be changed by passing suitable BusProxyFlags when the proxy is created.
 // If the proxy is for a well-known name, the property cache is flushed when the
 // name owner vanishes and reloaded when a name owner appears.
 //
-// The unique name owner of the proxy’s name is tracked and can be read from
-// gio.DBusProxy:g-name-owner. Connect to the gobject.Object::notify signal to
-// get notified of changes. Additionally, only signals and property changes
-// emitted from the current name owner are considered and calls are always
-// sent to the current name owner. This avoids a number of race conditions
-// when the name is lost by one owner and claimed by another. However,
-// if no name owner currently exists, then calls will be sent to the well-known
-// name which may result in the message bus launching an owner (unless
-// G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START is set).
+// The unique name owner of the proxy's name is tracked and can be read from
+// BusProxy:g-name-owner. Connect to the #GObject::notify signal to get notified
+// of changes. Additionally, only signals and property changes emitted from the
+// current name owner are considered and calls are always sent to the current
+// name owner. This avoids a number of race conditions when the name is lost by
+// one owner and claimed by another. However, if no name owner currently exists,
+// then calls will be sent to the well-known name which may result in the
+// message bus launching an owner (unless G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START
+// is set).
 //
 // If the proxy is for a stateless D-Bus service, where the name owner may be
-// started and stopped between calls, the gio.DBusProxy:g-name-owner tracking
-// of GDBusProxy will cause the proxy to drop signal and property changes from
-// the service after it has restarted for the first time. When interacting with
-// a stateless D-Bus service, do not use GDBusProxy — use direct D-Bus method
-// calls and signal connections.
+// started and stopped between calls, the BusProxy:g-name-owner tracking of
+// BusProxy will cause the proxy to drop signal and property changes from the
+// service after it has restarted for the first time. When interacting with a
+// stateless D-Bus service, do not use BusProxy — use direct D-Bus method calls
+// and signal connections.
 //
-// The generic gio.DBusProxy::g-properties-changed and gio.DBusProxy::g-signal
-// signals are not very convenient to work with. Therefore, the recommended
-// way of working with proxies is to subclass GDBusProxy, and have more
-// natural properties and signals in your derived class. This example
-// (migrating-gdbus.html#using-gdbus-codegen) shows how this can easily be done
-// using the gdbus-codegen (gdbus-codegen.html) tool.
+// The generic BusProxy::g-properties-changed and BusProxy::g-signal signals are
+// not very convenient to work with. Therefore, the recommended way of working
+// with proxies is to subclass BusProxy, and have more natural properties and
+// signals in your derived class. This [example][gdbus-example-gdbus-codegen]
+// shows how this can easily be done using the [gdbus-codegen][gdbus-codegen]
+// tool.
 //
-// A GDBusProxy instance can be used from multiple threads but note that all
-// signals (e.g. gio.DBusProxy::g-signal, gio.DBusProxy::g-properties-changed
-// and gobject.Object::notify) are emitted in the thread-default main context
-// (see glib.MainContext.PushThreadDefault()) of the thread where the instance
+// A BusProxy instance can be used from multiple threads but note that
+// all signals (e.g. BusProxy::g-signal, BusProxy::g-properties-changed
+// and #GObject::notify) are emitted in the [thread-default main
+// context][g-main-context-push-thread-default] of the thread where the instance
 // was constructed.
 //
 // An example using a proxy for a well-known name
@@ -52152,8 +51990,6 @@ func (proxy *DBusProxy) SetInterfaceInfo(info *DBusInterfaceInfo) {
 	runtime.KeepAlive(info)
 }
 
-// gSignal: signal class handler for the BusProxy::g-signal signal.
-//
 // The function takes the following parameters:
 //
 //   - senderName
@@ -52326,26 +52162,25 @@ func NewDBusProxyForBus(ctx context.Context, busType BusType, flags DBusProxyFla
 	runtime.KeepAlive(callback)
 }
 
-// DBusServer: GDBusServer is a helper for listening to and accepting
-// D-Bus connections. This can be used to create a new D-Bus server,
-// allowing two peers to use the D-Bus protocol for their own specialized
-// communication. A server instance provided in this way will not perform
-// message routing or implement the org.freedesktop.DBus interface
-// (https://dbus.freedesktop.org/doc/dbus-specification.html#message-bus-messages).
+// DBusServer is a helper for listening to and accepting D-Bus connections.
+// This can be used to create a new D-Bus server, allowing two peers to use the
+// D-Bus protocol for their own specialized communication. A server instance
+// provided in this way will not perform message routing or implement the
+// org.freedesktop.DBus interface.
 //
 // To just export an object on a well-known name on a message bus, such as the
-// session or system bus, you should instead use gio.BusOwnName().
+// session or system bus, you should instead use g_bus_own_name().
 //
 // An example of peer-to-peer communication with
 // GDBus can be found in gdbus-example-peer.c
 // (https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gdbus-example-peer.c).
 //
-// Note that a minimal GDBusServer will accept connections from any peer. In
-// many use-cases it will be necessary to add a gio.DBusAuthObserver that only
-// accepts connections that have successfully authenticated as the same user
-// that is running the GDBusServer. Since GLib 2.68 this can be achieved more
-// simply by passing the G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER
-// flag to the server.
+// Note that a minimal BusServer will accept connections from any peer. In many
+// use-cases it will be necessary to add a BusAuthObserver that only accepts
+// connections that have successfully authenticated as the same user that is
+// running the BusServer. Since GLib 2.68 this can be achieved more simply by
+// passing the G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER flag to the
+// server.
 type DBusServer struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -52584,8 +52419,8 @@ func defaultDataInputStreamOverrides(v *DataInputStream) DataInputStreamOverride
 	return DataInputStreamOverrides{}
 }
 
-// DataInputStream: data input stream implements gio.InputStream and includes
-// functions for reading structured data directly from a binary input stream.
+// DataInputStream: data input stream implements Stream and includes functions
+// for reading structured data directly from a binary input stream.
 type DataInputStream struct {
 	_ [0]func() // equal guard
 	BufferedInputStream
@@ -53625,8 +53460,8 @@ func defaultDataOutputStreamOverrides(v *DataOutputStream) DataOutputStreamOverr
 	return DataOutputStreamOverrides{}
 }
 
-// DataOutputStream: data output stream implements gio.OutputStream and includes
-// functions for writing data directly to an output stream.
+// DataOutputStream: data output stream implements Stream and includes functions
+// for writing data directly to an output stream.
 type DataOutputStream struct {
 	_ [0]func() // equal guard
 	FilterOutputStream
@@ -54009,7 +53844,6 @@ func (stream *DataOutputStream) SetByteOrder(order DataStreamByteOrder) {
 
 // DebugControllerDBusOverrides contains methods that are overridable.
 type DebugControllerDBusOverrides struct {
-	// Authorize: default handler for the ControllerDBus::authorize signal.
 	Authorize func(invocation *DBusMethodInvocation) bool
 }
 
@@ -54019,49 +53853,27 @@ func defaultDebugControllerDBusOverrides(v *DebugControllerDBus) DebugController
 	}
 }
 
-// DebugControllerDBus: GDebugControllerDBus is an implementation of
-// gio.DebugController which exposes debug settings as a D-Bus object.
+// DebugControllerDBus is an implementation of Controller which exposes debug
+// settings as a D-Bus object.
 //
-// It is a gio.Initable object, and will register an object at
-// /org/gtk/Debugging on the bus given as gio.DebugControllerDBus:connection
-// once it’s initialized. The object will be unregistered when the last
-// reference to the GDebugControllerDBus is dropped.
+// It is a #GInitable object, and will register an object at /org/gtk/Debugging
+// on the bus given as ControllerDBus:connection once it’s initialized.
+// The object will be unregistered when the last reference to the ControllerDBus
+// is dropped.
 //
 // This D-Bus object can be used by remote processes to enable or
 // disable debug output in this process. Remote processes calling
 // org.gtk.Debugging.SetDebugEnabled() will affect the value of
-// gio.DebugController:debug-enabled and, by default, glib.LogGetDebugEnabled().
+// Controller:debug-enabled and, by default, g_log_get_debug_enabled(). default.
 //
-// By default, no processes are allowed to call SetDebugEnabled() unless a
-// gio.DebugControllerDBus::authorize signal handler is installed. This is
-// because the process may be privileged, or might expose sensitive information
-// in its debug output. You may want to restrict the ability to enable debug
-// output to privileged users or processes.
+// By default, all processes will be able to call SetDebugEnabled(). If this
+// process is privileged, or might expose sensitive information in its debug
+// output, you may want to restrict the ability to enable debug output to
+// privileged users or processes.
 //
 // One option is to install a D-Bus security policy which restricts
 // access to SetDebugEnabled(), installing something like the following in
 // $datadir/dbus-1/system.d/:
-//
-//	<?xml version="1.0"?> <!--*-nxml-*-->
-//	<!DOCTYPE busconfig PUBLIC "-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
-//	     "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
-//	<busconfig>
-//	  <policy user="root">
-//	    <allow send_destination="com.example.MyService" send_interface="org.gtk.Debugging"/>
-//	  </policy>
-//	  <policy context="default">
-//	    <deny send_destination="com.example.MyService" send_interface="org.gtk.Debugging"/>
-//	  </policy>
-//	</busconfig>
-//
-// This will prevent the SetDebugEnabled() method from being called by all
-// except root. It will not prevent the DebugEnabled property from being read,
-// as it’s accessed through the org.freedesktop.DBus.Properties interface.
-//
-// Another option is to use polkit to allow or deny requests on a case-by-case
-// basis, allowing for the possibility of dynamic authorisation. To do this,
-// connect to the gio.DebugControllerDBus::authorize signal and query polkit in
-// it:
 //
 //	g_autoptr(GError) child_error = NULL;
 //	g_autoptr(GDBusConnection) connection = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, NULL);
@@ -54264,7 +54076,6 @@ func (self *DebugControllerDBus) Stop() {
 	runtime.KeepAlive(self)
 }
 
-// Authorize: default handler for the ControllerDBus::authorize signal.
 func (controller *DebugControllerDBus) authorize(invocation *DBusMethodInvocation) bool {
 	gclass := (*C.GDebugControllerDBusClass)(coreglib.PeekParentClass(controller))
 	fnarg := gclass.authorize
@@ -54289,9 +54100,8 @@ func (controller *DebugControllerDBus) authorize(invocation *DBusMethodInvocatio
 	return _ok
 }
 
-// Emblem: GEmblem is an implementation of gio.Icon that supports having an
-// emblem, which is an icon with additional properties. It can than be added to
-// a gio.EmblemedIcon.
+// Emblem is an implementation of #GIcon that supports having an emblem,
+// which is an icon with additional properties. It can than be added to a Icon.
 //
 // Currently, only metainformation about the emblem's origin is supported.
 // More may be added in the future.
@@ -54424,12 +54234,12 @@ func defaultEmblemedIconOverrides(v *EmblemedIcon) EmblemedIconOverrides {
 	return EmblemedIconOverrides{}
 }
 
-// EmblemedIcon: GEmblemedIcon is an implementation of gio.Icon that supports
-// adding an emblem to an icon. Adding multiple emblems to an icon is ensured
-// via gio.EmblemedIcon.AddEmblem().
+// EmblemedIcon is an implementation of #GIcon that supports adding an
+// emblem to an icon. Adding multiple emblems to an icon is ensured via
+// g_emblemed_icon_add_emblem().
 //
-// Note that GEmblemedIcon allows no control over the position of the emblems.
-// See also gio.Emblem for more information.
+// Note that Icon allows no control over the position of the emblems. See also
+// #GEmblem for more information.
 type EmblemedIcon struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -54639,19 +54449,18 @@ func defaultFileEnumeratorOverrides(v *FileEnumerator) FileEnumeratorOverrides {
 	}
 }
 
-// FileEnumerator: GFileEnumerator allows you to operate on a set of gio.File
-// objects, returning a gio.FileInfo structure for each file enumerated (e.g.
-// gio.File.EnumerateChildren() will return a GFileEnumerator for each of the
-// children within a directory).
+// FileEnumerator allows you to operate on a set of #GFiles, returning a Info
+// structure for each file enumerated (e.g. g_file_enumerate_children() will
+// return a Enumerator for each of the children within a directory).
 //
-// To get the next file's information from a GFileEnumerator,
-// use gio.FileEnumerator.NextFile() or its asynchronous version,
-// gio.FileEnumerator.NextFilesAsync(). Note that the asynchronous version will
-// return a list of gio.FileInfo objects, whereas the synchronous will only
-// return the next file in the enumerator.
+// To get the next file's information from a Enumerator,
+// use g_file_enumerator_next_file() or its asynchronous version,
+// g_file_enumerator_next_files_async(). Note that the asynchronous version will
+// return a list of Infos, whereas the synchronous will only return the next
+// file in the enumerator.
 //
-// The ordering of returned files is unspecified for non-Unix platforms; for
-// more information, see glib.Dir.ReadName(). On Unix, when operating on local
+// The ordering of returned files is unspecified for non-Unix platforms;
+// for more information, see g_dir_read_name(). On Unix, when operating on local
 // files, returned files will be sorted by inode number. Effectively you can
 // assume that the ordering of returned files will be stable between successive
 // calls (and applications) assuming the directory is unchanged.
@@ -54659,10 +54468,10 @@ func defaultFileEnumeratorOverrides(v *FileEnumerator) FileEnumeratorOverrides {
 // If your application needs a specific ordering, such as by name or
 // modification time, you will have to implement that in your application code.
 //
-// To close a GFileEnumerator, use gio.FileEnumerator.Close(), or its
-// asynchronous version, gio.FileEnumerator.CloseAsync(). Once a GFileEnumerator
-// is closed, no further actions may be performed on it, and it should be freed
-// with gobject.Object.Unref().
+// To close a Enumerator, use g_file_enumerator_close(), or its asynchronous
+// version, g_file_enumerator_close_async(). Once a Enumerator is closed,
+// no further actions may be performed on it, and it should be freed with
+// g_object_unref().
 type FileEnumerator struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -54762,7 +54571,7 @@ func (enumerator *FileEnumerator) Close(ctx context.Context) error {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (enumerator *FileEnumerator) CloseAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFileEnumerator    // out
 	var _arg2 *C.GCancellable       // out
@@ -55058,66 +54867,22 @@ func (enumerator *FileEnumerator) NextFile(ctx context.Context) (*FileInfo, erro
 }
 
 // NextFilesAsync: request information for a number of files from the enumerator
-// asynchronously. When all I/O for the operation is finished the callback will
+// asynchronously. When all i/o for the operation is finished the callback will
 // be called with the requested information.
 //
 // See the documentation of Enumerator for information about the order of
 // returned files.
 //
-// Once the end of the enumerator is reached, or if an error occurs, the
-// callback will be called with an empty list. In this case, the previous call
-// to g_file_enumerator_next_files_async() will typically have returned fewer
-// than num_files items.
-//
-// If a request is cancelled the callback will be called with
-// G_IO_ERROR_CANCELLED.
-//
-// This leads to the following pseudo-code usage:
-//
-//	g_autoptr(GFile) dir = get_directory ();
-//	g_autoptr(GFileEnumerator) enumerator = NULL;
-//	g_autolist(GFileInfo) files = NULL;
-//	g_autoptr(GError) local_error = NULL;
-//
-//	enumerator = yield g_file_enumerate_children_async (dir,
-//	                                                    G_FILE_ATTRIBUTE_STANDARD_NAME ","
-//	                                                    G_FILE_ATTRIBUTE_STANDARD_TYPE,
-//	                                                    G_FILE_QUERY_INFO_NONE,
-//	                                                    G_PRIORITY_DEFAULT,
-//	                                                    cancellable,
-//	                                                    …,
-//	                                                    &local_error);
-//	if (enumerator == NULL)
-//	  g_error ("Error enumerating: s", local_error->message);
-//
-//	// Loop until no files are returned, either because the end of the enumerator
-//	// has been reached, or an error was returned.
-//	do
-//	  {
-//	    files = yield g_file_enumerator_next_files_async (enumerator,
-//	                                                      5,  // number of files to request
-//	                                                      G_PRIORITY_DEFAULT,
-//	                                                      cancellable,
-//	                                                      …,
-//	                                                      &local_error);
-//
-//	    // Process the returned files, but don’t assume that exactly 5 were returned.
-//	    for (GList *l = files; l != NULL; l = l->next)
-//	      {
-//	        GFileInfo *info = l->data;
-//	        handle_file_info (info);
-//	      }
-//	  }
-//	while (files != NULL);
-//
-//	if (local_error != NULL &&
-//	    !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
-//	  g_error ("Error while enumerating: s", local_error->message);
+// The callback can be called with less than num_files files in case of error or
+// at the end of the enumerator. In case of a partial error the callback will
+// be called with any succeeding items and no error, and on the next request the
+// error will be reported. If a request is cancelled the callback will be called
+// with G_IO_ERROR_CANCELLED.
 //
 // During an async request no other sync and async calls are allowed, and will
 // result in G_IO_ERROR_PENDING errors.
 //
-// Any outstanding I/O request with higher priority (lower numerical value)
+// Any outstanding i/o request with higher priority (lower numerical value)
 // will be executed before an outstanding request with lower priority. Default
 // priority is G_PRIORITY_DEFAULT.
 //
@@ -55126,7 +54891,7 @@ func (enumerator *FileEnumerator) NextFile(ctx context.Context) (*FileInfo, erro
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - numFiles: number of file info objects to request.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (enumerator *FileEnumerator) NextFilesAsync(ctx context.Context, numFiles, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFileEnumerator    // out
 	var _arg3 *C.GCancellable       // out
@@ -55227,7 +54992,7 @@ func (enumerator *FileEnumerator) SetPending(pending bool) {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (enumerator *FileEnumerator) closeAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileEnumeratorClass)(coreglib.PeekParentClass(enumerator))
 	fnarg := gclass.close_async
@@ -55377,66 +55142,22 @@ func (enumerator *FileEnumerator) nextFile(ctx context.Context) (*FileInfo, erro
 }
 
 // nextFilesAsync: request information for a number of files from the enumerator
-// asynchronously. When all I/O for the operation is finished the callback will
+// asynchronously. When all i/o for the operation is finished the callback will
 // be called with the requested information.
 //
 // See the documentation of Enumerator for information about the order of
 // returned files.
 //
-// Once the end of the enumerator is reached, or if an error occurs, the
-// callback will be called with an empty list. In this case, the previous call
-// to g_file_enumerator_next_files_async() will typically have returned fewer
-// than num_files items.
-//
-// If a request is cancelled the callback will be called with
-// G_IO_ERROR_CANCELLED.
-//
-// This leads to the following pseudo-code usage:
-//
-//	g_autoptr(GFile) dir = get_directory ();
-//	g_autoptr(GFileEnumerator) enumerator = NULL;
-//	g_autolist(GFileInfo) files = NULL;
-//	g_autoptr(GError) local_error = NULL;
-//
-//	enumerator = yield g_file_enumerate_children_async (dir,
-//	                                                    G_FILE_ATTRIBUTE_STANDARD_NAME ","
-//	                                                    G_FILE_ATTRIBUTE_STANDARD_TYPE,
-//	                                                    G_FILE_QUERY_INFO_NONE,
-//	                                                    G_PRIORITY_DEFAULT,
-//	                                                    cancellable,
-//	                                                    …,
-//	                                                    &local_error);
-//	if (enumerator == NULL)
-//	  g_error ("Error enumerating: s", local_error->message);
-//
-//	// Loop until no files are returned, either because the end of the enumerator
-//	// has been reached, or an error was returned.
-//	do
-//	  {
-//	    files = yield g_file_enumerator_next_files_async (enumerator,
-//	                                                      5,  // number of files to request
-//	                                                      G_PRIORITY_DEFAULT,
-//	                                                      cancellable,
-//	                                                      …,
-//	                                                      &local_error);
-//
-//	    // Process the returned files, but don’t assume that exactly 5 were returned.
-//	    for (GList *l = files; l != NULL; l = l->next)
-//	      {
-//	        GFileInfo *info = l->data;
-//	        handle_file_info (info);
-//	      }
-//	  }
-//	while (files != NULL);
-//
-//	if (local_error != NULL &&
-//	    !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
-//	  g_error ("Error while enumerating: s", local_error->message);
+// The callback can be called with less than num_files files in case of error or
+// at the end of the enumerator. In case of a partial error the callback will
+// be called with any succeeding items and no error, and on the next request the
+// error will be reported. If a request is cancelled the callback will be called
+// with G_IO_ERROR_CANCELLED.
 //
 // During an async request no other sync and async calls are allowed, and will
 // result in G_IO_ERROR_PENDING errors.
 //
-// Any outstanding I/O request with higher priority (lower numerical value)
+// Any outstanding i/o request with higher priority (lower numerical value)
 // will be executed before an outstanding request with lower priority. Default
 // priority is G_PRIORITY_DEFAULT.
 //
@@ -55445,7 +55166,7 @@ func (enumerator *FileEnumerator) nextFile(ctx context.Context) (*FileInfo, erro
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - numFiles: number of file info objects to request.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (enumerator *FileEnumerator) nextFilesAsync(ctx context.Context, numFiles, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileEnumeratorClass)(coreglib.PeekParentClass(enumerator))
 	fnarg := gclass.next_files_async
@@ -55598,24 +55319,23 @@ func defaultFileIOStreamOverrides(v *FileIOStream) FileIOStreamOverrides {
 	}
 }
 
-// FileIOStream: GFileIOStream provides I/O streams that both read and write to
-// the same file handle.
+// FileIOStream provides io streams that both read and write to the same file
+// handle.
 //
-// GFileIOStream implements gio.Seekable, which allows the I/O stream to jump
+// GFileIOStream implements #GSeekable, which allows the io stream to jump
 // to arbitrary positions in the file and to truncate the file, provided the
 // filesystem of the file supports these operations.
 //
-// To find the position of a file I/O stream, use gio.Seekable.Tell().
+// To find the position of a file io stream, use g_seekable_tell().
 //
-// To find out if a file I/O stream supports seeking,
-// use gio.Seekable.CanSeek(). To position a file I/O stream, use
-// gio.Seekable.Seek(). To find out if a file I/O stream supports truncating,
-// use gio.Seekable.CanTruncate(). To truncate a file I/O stream, use
-// gio.Seekable.Truncate().
+// To find out if a file io stream supports seeking, use g_seekable_can_seek().
+// To position a file io stream, use g_seekable_seek(). To find out if a file io
+// stream supports truncating, use g_seekable_can_truncate(). To truncate a file
+// io stream, use g_seekable_truncate().
 //
-// The default implementation of all the GFileIOStream operations and the
-// implementation of gio.Seekable just call into the same operations on the
-// output stream.
+// The default implementation of all the IOStream operations and the
+// implementation of #GSeekable just call into the same operations on the output
+// stream.
 type FileIOStream struct {
 	_ [0]func() // equal guard
 	IOStream
@@ -55788,9 +55508,8 @@ func (stream *FileIOStream) QueryInfo(ctx context.Context, attributes string) (*
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - attributes: file attribute query string.
-//   - ioPriority: I/O priority (iface.AsyncResult.html#io-priority) of the
-//     request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - ioPriority: [I/O priority][gio-GIOScheduler] of the request.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *FileIOStream) QueryInfoAsync(ctx context.Context, attributes string, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFileIOStream      // out
 	var _arg3 *C.GCancellable       // out
@@ -55996,9 +55715,8 @@ func (stream *FileIOStream) queryInfo(ctx context.Context, attributes string) (*
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - attributes: file attribute query string.
-//   - ioPriority: I/O priority (iface.AsyncResult.html#io-priority) of the
-//     request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - ioPriority: [I/O priority][gio-GIOScheduler] of the request.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *FileIOStream) queryInfoAsync(ctx context.Context, attributes string, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileIOStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.query_info_async
@@ -56162,10 +55880,7 @@ func (stream *FileIOStream) truncateFn(ctx context.Context, size int64) error {
 	return _goerr
 }
 
-// FileIcon: GFileIcon specifies an icon by pointing to an image file to be used
-// as icon.
-//
-// It implements gio.LoadableIcon.
+// FileIcon specifies an icon by pointing to an image file to be used as icon.
 type FileIcon struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -56238,43 +55953,34 @@ func (icon *FileIcon) File() *File {
 	return _file
 }
 
-// FileInfo stores information about a file system object referenced by a
-// gio.File.
+// FileInfo: functionality for manipulating basic metadata for files. Info
+// implements methods for getting information that all files should contain,
+// and allows for manipulation of extended attributes.
 //
-// Functionality for manipulating basic metadata for files. GFileInfo implements
-// methods for getting information that all files should contain, and allows for
-// manipulation of extended attributes.
-//
-// See file-attributes.html (file attributes) for more information on how GIO
+// See [GFileAttribute][gio-GFileAttribute] for more information on how GIO
 // handles file attributes.
 //
-// To obtain a GFileInfo for a gio.File, use gio.File.QueryInfo() (or its
-// async variant). To obtain a GFileInfo for a file input or output stream,
-// use gio.FileInputStream.QueryInfo() or gio.FileOutputStream.QueryInfo() (or
+// To obtain a Info for a #GFile, use g_file_query_info() (or its async
+// variant). To obtain a Info for a file input or output stream, use
+// g_file_input_stream_query_info() or g_file_output_stream_query_info() (or
 // their async variants).
 //
 // To change the actual attributes of a file, you should then set the
-// attribute in the GFileInfo and call gio.File.SetAttributesFromInfo() or
-// gio.File.SetAttributesAsync() on a GFile.
+// attribute in the Info and call g_file_set_attributes_from_info() or
+// g_file_set_attributes_async() on a GFile.
 //
 // However, not all attributes can be changed in the file. For instance,
-// the actual size of a file cannot be changed via gio.FileInfo.SetSize().
-// You may call gio.File.QuerySettableAttributes() and
-// gio.File.QueryWritableNamespaces() to discover the settable attributes of a
+// the actual size of a file cannot be changed via g_file_info_set_size().
+// You may call g_file_query_settable_attributes() and
+// g_file_query_writable_namespaces() to discover the settable attributes of a
 // particular file at runtime.
 //
-// The direct accessors, such as gio.FileInfo.GetName(), are slightly
+// The direct accessors, such as g_file_info_get_name(), are slightly
 // more optimized than the generic attribute accessors, such as
-// gio.FileInfo.GetAttributeByteString().This optimization will matter only if
+// g_file_info_get_attribute_byte_string().This optimization will matter only if
 // calling the API in a tight loop.
 //
-// It is an error to call these accessors without specifying their required file
-// attributes when creating the GFileInfo. Use gio.FileInfo.HasAttribute() or
-// gio.FileInfo.ListAttributes() to check what attributes are specified for a
-// GFileInfo.
-//
-// gio.FileAttributeMatcher allows for searching through a GFileInfo for
-// attributes.
+// AttributeMatcher allows for searching through a Info for attributes.
 type FileInfo struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -56364,9 +56070,9 @@ func (other *FileInfo) Dup() *FileInfo {
 // AccessDateTime gets the access time of the current info and returns it as a
 // Time.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_TIME_ACCESS. If G_FILE_ATTRIBUTE_TIME_ACCESS_USEC is
-// provided, the resulting Time will additionally have microsecond precision.
+// This requires the G_FILE_ATTRIBUTE_TIME_ACCESS attribute. If
+// G_FILE_ATTRIBUTE_TIME_ACCESS_USEC is provided, the resulting Time will have
+// microsecond precision.
 //
 // If nanosecond precision is needed, G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC must be
 // queried separately using g_file_info_get_attribute_uint32().
@@ -56398,7 +56104,7 @@ func (info *FileInfo) AccessDateTime() *glib.DateTime {
 	return _dateTime
 }
 
-// AttributeAsString gets the value of an attribute, formatted as a string.
+// AttributeAsString gets the value of a attribute, formatted as a string.
 // This escapes things as needed to make the string valid UTF-8.
 //
 // The function takes the following parameters:
@@ -56540,43 +56246,6 @@ func (info *FileInfo) AttributeData(attribute string) (FileAttributeType, unsafe
 	}
 
 	return _typ, _valuePp, _status, _ok
-}
-
-// AttributeFilePath gets the value of a byte string attribute as a file path.
-//
-// If the attribute does not contain a byte string, NULL will be returned.
-//
-// This function is meant to be used by language bindings that have specific
-// handling for Unix paths.
-//
-// The function takes the following parameters:
-//
-//   - attribute: file attribute key.
-//
-// The function returns the following values:
-//
-//   - filename (optional) contents of the attribute value as a file path,
-//     or NULL otherwise.
-func (info *FileInfo) AttributeFilePath(attribute string) string {
-	var _arg0 *C.GFileInfo // out
-	var _arg1 *C.char      // out
-	var _cret *C.char      // in
-
-	_arg0 = (*C.GFileInfo)(unsafe.Pointer(coreglib.InternObject(info).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(attribute)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_file_info_get_attribute_file_path(_arg0, _arg1)
-	runtime.KeepAlive(info)
-	runtime.KeepAlive(attribute)
-
-	var _filename string // out
-
-	if _cret != nil {
-		_filename = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	}
-
-	return _filename
 }
 
 // AttributeInt32 gets a signed 32-bit integer contained within the attribute.
@@ -56875,9 +56544,6 @@ func (info *FileInfo) AttributeUint64(attribute string) uint64 {
 
 // ContentType gets the file's content type.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE.
-//
 // The function returns the following values:
 //
 //   - utf8 (optional): string containing the file's content type, or NULL if
@@ -56903,9 +56569,9 @@ func (info *FileInfo) ContentType() string {
 // CreationDateTime gets the creation time of the current info and returns it as
 // a Time.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_TIME_CREATED. If G_FILE_ATTRIBUTE_TIME_CREATED_USEC is
-// provided, the resulting Time will additionally have microsecond precision.
+// This requires the G_FILE_ATTRIBUTE_TIME_CREATED attribute. If
+// G_FILE_ATTRIBUTE_TIME_CREATED_USEC is provided, the resulting Time will have
+// microsecond precision.
 //
 // If nanosecond precision is needed, G_FILE_ATTRIBUTE_TIME_CREATED_NSEC must be
 // queried separately using g_file_info_get_attribute_uint32().
@@ -56971,9 +56637,6 @@ func (info *FileInfo) DeletionDate() *glib.DateTime {
 // DisplayName gets a display name for a file. This is guaranteed to always be
 // set.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME.
-//
 // The function returns the following values:
 //
 //   - utf8: string containing the display name.
@@ -56995,9 +56658,6 @@ func (info *FileInfo) DisplayName() string {
 
 // EditName gets the edit name for a file.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME.
-//
 // The function returns the following values:
 //
 //   - utf8: string containing the edit name.
@@ -57017,10 +56677,7 @@ func (info *FileInfo) EditName() string {
 	return _utf8
 }
 
-// ETag gets the entity tag (iface.File.html#entity-tags) for a given Info.
-// See G_FILE_ATTRIBUTE_ETAG_VALUE.
-//
-// It is an error to call this if the Info does not contain
+// ETag gets the [entity tag][gfile-etag] for a given Info. See
 // G_FILE_ATTRIBUTE_ETAG_VALUE.
 //
 // The function returns the following values:
@@ -57049,9 +56706,6 @@ func (info *FileInfo) ETag() string {
 // symlink, etc). This is different from the file's content type, see
 // g_file_info_get_content_type().
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_TYPE.
-//
 // The function returns the following values:
 //
 //   - fileType for the given file.
@@ -57072,9 +56726,6 @@ func (info *FileInfo) FileType() FileType {
 }
 
 // Icon gets the icon for a file.
-//
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_ICON.
 //
 // The function returns the following values:
 //
@@ -57099,9 +56750,6 @@ func (info *FileInfo) Icon() *Icon {
 
 // IsBackup checks if a file is a backup file.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if file is a backup file, FALSE otherwise.
@@ -57125,9 +56773,6 @@ func (info *FileInfo) IsBackup() bool {
 
 // IsHidden checks if a file is hidden.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN.
-//
 // The function returns the following values:
 //
 //   - ok: TRUE if the file is a hidden file, FALSE otherwise.
@@ -57150,9 +56795,6 @@ func (info *FileInfo) IsHidden() bool {
 }
 
 // IsSymlink checks if a file is a symlink.
-//
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK.
 //
 // The function returns the following values:
 //
@@ -57178,9 +56820,9 @@ func (info *FileInfo) IsSymlink() bool {
 // ModificationDateTime gets the modification time of the current info and
 // returns it as a Time.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_TIME_MODIFIED. If G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC is
-// provided, the resulting Time will additionally have microsecond precision.
+// This requires the G_FILE_ATTRIBUTE_TIME_MODIFIED attribute. If
+// G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC is provided, the resulting Time will have
+// microsecond precision.
 //
 // If nanosecond precision is needed, G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC must
 // be queried separately using g_file_info_get_attribute_uint32().
@@ -57215,10 +56857,6 @@ func (info *FileInfo) ModificationDateTime() *glib.DateTime {
 // ModificationTime gets the modification time of the current info and sets it
 // in result.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_TIME_MODIFIED. If G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC is
-// provided it will be used too.
-//
 // Deprecated: Use g_file_info_get_modification_date_time() instead, as Val is
 // deprecated due to the year 2038 problem.
 //
@@ -57243,9 +56881,6 @@ func (info *FileInfo) ModificationTime() *glib.TimeVal {
 
 // Name gets the name for a file. This is guaranteed to always be set.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_NAME.
-//
 // The function returns the following values:
 //
 //   - filename: string containing the file name.
@@ -57269,9 +56904,6 @@ func (info *FileInfo) Name() string {
 // value of the G_FILE_ATTRIBUTE_STANDARD_SIZE attribute and is converted from
 // #guint64 to #goffset before returning the result.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_SIZE.
-//
 // The function returns the following values:
 //
 //   - gint64 containing the file's size (in bytes).
@@ -57294,9 +56926,6 @@ func (info *FileInfo) Size() int64 {
 // SortOrder gets the value of the sort_order attribute from the Info.
 // See G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER.
-//
 // The function returns the following values:
 //
 //   - gint32 containing the value of the "standard::sort_order" attribute.
@@ -57317,9 +56946,6 @@ func (info *FileInfo) SortOrder() int32 {
 }
 
 // SymbolicIcon gets the symbolic icon for a file.
-//
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON.
 //
 // The function returns the following values:
 //
@@ -57344,12 +56970,9 @@ func (info *FileInfo) SymbolicIcon() *Icon {
 
 // SymlinkTarget gets the symlink target for a given Info.
 //
-// It is an error to call this if the Info does not contain
-// G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET.
-//
 // The function returns the following values:
 //
-//   - filename (optional): string containing the symlink target.
+//   - utf8 (optional): string containing the symlink target.
 func (info *FileInfo) SymlinkTarget() string {
 	var _arg0 *C.GFileInfo // out
 	var _cret *C.char      // in
@@ -57359,13 +56982,13 @@ func (info *FileInfo) SymlinkTarget() string {
 	_cret = C.g_file_info_get_symlink_target(_arg0)
 	runtime.KeepAlive(info)
 
-	var _filename string // out
+	var _utf8 string // out
 
 	if _cret != nil {
-		_filename = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
+		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
 	}
 
-	return _filename
+	return _utf8
 }
 
 // HasAttribute checks if a file info structure has an attribute named
@@ -57591,33 +57214,6 @@ func (info *FileInfo) SetAttributeByteString(attribute, attrValue string) {
 	defer C.free(unsafe.Pointer(_arg2))
 
 	C.g_file_info_set_attribute_byte_string(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(info)
-	runtime.KeepAlive(attribute)
-	runtime.KeepAlive(attrValue)
-}
-
-// SetAttributeFilePath sets the attribute to contain the given attr_value,
-// if possible.
-//
-// This function is meant to be used by language bindings that have specific
-// handling for Unix paths.
-//
-// The function takes the following parameters:
-//
-//   - attribute: file attribute key.
-//   - attrValue: file path.
-func (info *FileInfo) SetAttributeFilePath(attribute, attrValue string) {
-	var _arg0 *C.GFileInfo // out
-	var _arg1 *C.char      // out
-	var _arg2 *C.char      // out
-
-	_arg0 = (*C.GFileInfo)(unsafe.Pointer(coreglib.InternObject(info).Native()))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(attribute)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.char)(unsafe.Pointer(C.CString(attrValue)))
-	defer C.free(unsafe.Pointer(_arg2))
-
-	C.g_file_info_set_attribute_file_path(_arg0, _arg1, _arg2)
 	runtime.KeepAlive(info)
 	runtime.KeepAlive(attribute)
 	runtime.KeepAlive(attrValue)
@@ -58205,15 +57801,14 @@ func defaultFileInputStreamOverrides(v *FileInputStream) FileInputStreamOverride
 	}
 }
 
-// FileInputStream: GFileInputStream provides input streams that take their
-// content from a file.
+// FileInputStream provides input streams that take their content from a file.
 //
-// GFileInputStream implements gio.Seekable, which allows the input stream
+// GFileInputStream implements #GSeekable, which allows the input stream
 // to jump to arbitrary positions in the file, provided the filesystem
 // of the file allows it. To find the position of a file input stream,
-// use gio.Seekable.Tell(). To find out if a file input stream supports
-// seeking, use gio.Seekable.CanSeek(). To position a file input stream,
-// use gio.Seekable.Seek().
+// use g_seekable_tell(). To find out if a file input stream supports seeking,
+// use g_seekable_can_seek(). To position a file input stream, use
+// g_seekable_seek().
 type FileInputStream struct {
 	_ [0]func() // equal guard
 	InputStream
@@ -58343,7 +57938,7 @@ func (stream *FileInputStream) QueryInfo(ctx context.Context, attributes string)
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - attributes: file attribute query string.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *FileInputStream) QueryInfoAsync(ctx context.Context, attributes string, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFileInputStream   // out
 	var _arg3 *C.GCancellable       // out
@@ -58493,7 +58088,7 @@ func (stream *FileInputStream) queryInfo(ctx context.Context, attributes string)
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - attributes: file attribute query string.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *FileInputStream) queryInfoAsync(ctx context.Context, attributes string, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileInputStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.query_info_async
@@ -58646,13 +58241,13 @@ func defaultFileMonitorOverrides(v *FileMonitor) FileMonitorOverrides {
 
 // FileMonitor monitors a file or directory for changes.
 //
-// To obtain a GFileMonitor for a file or directory, use gio.File.Monitor(),
-// gio.File.MonitorFile(), or gio.File.MonitorDirectory().
+// To obtain a Monitor for a file or directory, use g_file_monitor(),
+// g_file_monitor_file(), or g_file_monitor_directory().
 //
 // To get informed about changes to the file or directory you are monitoring,
-// connect to the gio.FileMonitor::changed signal. The signal will be emitted in
-// the thread-default main context (see glib.MainContext.PushThreadDefault()) of
-// the thread that the monitor was created in (though if the global default main
+// connect to the Monitor::changed signal. The signal will be emitted in the
+// [thread-default main context][g-main-context-push-thread-default] of the
+// thread that the monitor was created in (though if the global default main
 // context is blocked, this may cause notifications to be blocked even if the
 // thread-default context is still running).
 type FileMonitor struct {
@@ -58973,19 +58568,17 @@ func defaultFileOutputStreamOverrides(v *FileOutputStream) FileOutputStreamOverr
 	}
 }
 
-// FileOutputStream: GFileOutputStream provides output streams that write their
-// content to a file.
+// FileOutputStream provides output streams that write their content to a file.
 //
-// GFileOutputStream implements gio.Seekable, which allows the output stream to
+// GFileOutputStream implements #GSeekable, which allows the output stream to
 // jump to arbitrary positions in the file and to truncate the file, provided
 // the filesystem of the file supports these operations.
 //
-// To find the position of a file output stream, use gio.Seekable.Tell().
-// To find out if a file output stream supports seeking,
-// use gio.Seekable.CanSeek().To position a file output stream, use
-// gio.Seekable.Seek(). To find out if a file output stream supports truncating,
-// use gio.Seekable.CanTruncate(). To truncate a file output stream, use
-// gio.Seekable.Truncate().
+// To find the position of a file output stream, use g_seekable_tell(). To find
+// out if a file output stream supports seeking, use g_seekable_can_seek().To
+// position a file output stream, use g_seekable_seek(). To find out if a file
+// output stream supports truncating, use g_seekable_can_truncate(). To truncate
+// a file output stream, use g_seekable_truncate().
 type FileOutputStream struct {
 	_ [0]func() // equal guard
 	OutputStream
@@ -59158,8 +58751,7 @@ func (stream *FileOutputStream) QueryInfo(ctx context.Context, attributes string
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - attributes: file attribute query string.
-//   - ioPriority: I/O priority (iface.AsyncResult.html#io-priority) of the
-//     request.
+//   - ioPriority: [I/O priority][gio-GIOScheduler] of the request.
 //   - callback (optional) to call when the request is satisfied.
 func (stream *FileOutputStream) QueryInfoAsync(ctx context.Context, attributes string, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GFileOutputStream  // out
@@ -59366,8 +58958,7 @@ func (stream *FileOutputStream) queryInfo(ctx context.Context, attributes string
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - attributes: file attribute query string.
-//   - ioPriority: I/O priority (iface.AsyncResult.html#io-priority) of the
-//     request.
+//   - ioPriority: [I/O priority][gio-GIOScheduler] of the request.
 //   - callback (optional) to call when the request is satisfied.
 func (stream *FileOutputStream) queryInfoAsync(ctx context.Context, attributes string, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GFileOutputStreamClass)(coreglib.PeekParentClass(stream))
@@ -60053,52 +59644,50 @@ func defaultIOStreamOverrides(v *IOStream) IOStreamOverrides {
 	}
 }
 
-// IOStream: GIOStream represents an object that has both read and write
-// streams. Generally the two streams act as separate input and output streams,
-// but they share some common resources and state. For instance, for seekable
-// streams, both streams may use the same position.
+// IOStream represents an object that has both read and write streams.
+// Generally the two streams act as separate input and output streams, but they
+// share some common resources and state. For instance, for seekable streams,
+// both streams may use the same position.
 //
-// Examples of GIOStream objects are gio.SocketConnection, which represents a
-// two-way network connection; and gio.FileIOStream, which represents a file
-// handle opened in read-write mode.
+// Examples of OStream objects are Connection, which represents a two-way
+// network connection; and IOStream, which represents a file handle opened in
+// read-write mode.
 //
 // To do the actual reading and writing you need to get the substreams with
-// gio.IOStream.GetInputStream() and gio.IOStream.GetOutputStream().
+// g_io_stream_get_input_stream() and g_io_stream_get_output_stream().
 //
-// The GIOStream object owns the input and the output streams, not the other way
-// around, so keeping the substreams alive will not keep the GIOStream object
-// alive. If the GIOStream object is freed it will be closed, thus closing the
+// The OStream object owns the input and the output streams, not the other way
+// around, so keeping the substreams alive will not keep the OStream object
+// alive. If the OStream object is freed it will be closed, thus closing the
 // substreams, so even if the substreams stay alive they will always return
 // G_IO_ERROR_CLOSED for all operations.
 //
-// To close a stream use gio.IOStream.Close() which will close the common stream
-// object and also the individual substreams. You can also close the substreams
-// themselves. In most cases this only marks the substream as closed, so further
-// I/O on it fails but common state in the GIOStream may still be open. However,
-// some streams may support ‘half-closed’ states where one direction of the
-// stream is actually shut down.
+// To close a stream use g_io_stream_close() which will close the common
+// stream object and also the individual substreams. You can also close the
+// substreams themselves. In most cases this only marks the substream as closed,
+// so further I/O on it fails but common state in the OStream may still be open.
+// However, some streams may support "half-closed" states where one direction of
+// the stream is actually shut down.
 //
-// Operations on GIOStreams cannot be started while another operation on the
-// GIOStream or its substreams is in progress. Specifically, an application
-// can read from the gio.InputStream and write to the gio.OutputStream
-// simultaneously (either in separate threads, or as asynchronous operations
-// in the same thread), but an application cannot start any GIOStream operation
-// while there is a GIOStream, GInputStream or GOutputStream operation in
-// progress, and an application can’t start any GInputStream or GOutputStream
-// operation while there is a GIOStream operation in progress.
+// Operations on OStreams cannot be started while another operation on the
+// OStream or its substreams is in progress. Specifically, an application
+// can read from the Stream and write to the Stream simultaneously (either in
+// separate threads, or as asynchronous operations in the same thread), but an
+// application cannot start any OStream operation while there is a OStream,
+// Stream or Stream operation in progress, and an application can’t start any
+// Stream or Stream operation while there is a OStream operation in progress.
 //
-// This is a product of individual stream operations being associated with a
-// given glib.MainContext (the thread-default context at the time the operation
-// was started), rather than entire streams being associated with a single
-// GMainContext.
+// This is a product of individual stream operations being associated with
+// a given Context (the thread-default context at the time the operation was
+// started), rather than entire streams being associated with a single Context.
 //
-// GIO may run operations on GIOStreams from other (worker) threads, and this
-// may be exposed to application code in the behaviour of wrapper streams,
-// such as gio.BufferedInputStream or gio.TLSConnection. With such wrapper APIs,
-// application code may only run operations on the base (wrapped) stream when
-// the wrapper stream is idle. Note that the semantics of such operations may
-// not be well-defined due to the state the wrapper stream leaves the base
-// stream in (though they are guaranteed not to crash).
+// GIO may run operations on OStreams from other (worker) threads, and this may
+// be exposed to application code in the behaviour of wrapper streams, such as
+// InputStream or Connection. With such wrapper APIs, application code may only
+// run operations on the base (wrapped) stream when the wrapper stream is idle.
+// Note that the semantics of such operations may not be well-defined due to
+// the state the wrapper stream leaves the base stream in (though they are
+// guaranteed not to crash).
 type IOStream struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -60257,7 +59846,7 @@ func (stream *IOStream) Close(ctx context.Context) error {
 //
 //   - ctx (optional): optional cancellable object.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *IOStream) CloseAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GIOStream          // out
 	var _arg2 *C.GCancellable       // out
@@ -60464,7 +60053,7 @@ func (stream *IOStream) SetPending() error {
 //   - stream2: OStream.
 //   - flags: set of OStreamSpliceFlags.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional): ReadyCallback.
 func (stream1 *IOStream) SpliceAsync(ctx context.Context, stream2 IOStreamer, flags IOStreamSpliceFlags, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GIOStream           // out
 	var _arg4 *C.GCancellable        // out
@@ -60511,7 +60100,7 @@ func (stream1 *IOStream) SpliceAsync(ctx context.Context, stream2 IOStreamer, fl
 //
 //   - ctx (optional): optional cancellable object.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *IOStream) closeAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GIOStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.close_async
@@ -60719,14 +60308,13 @@ func defaultInetAddressOverrides(v *InetAddress) InetAddressOverrides {
 	}
 }
 
-// InetAddress: GInetAddress represents an IPv4 or IPv6 internet address.
-// Use gio.Resolver.LookupByName() or gio.Resolver.LookupByNameAsync() to look
-// up the GInetAddress for a hostname. Use gio.Resolver.LookupByAddress()
-// or gio.Resolver.LookupByAddressAsync() to look up the hostname for a
-// GInetAddress.
+// InetAddress represents an IPv4 or IPv6 internet address. Use
+// g_resolver_lookup_by_name() or g_resolver_lookup_by_name_async() to look
+// up the Address for a hostname. Use g_resolver_lookup_by_address() or
+// g_resolver_lookup_by_address_async() to look up the hostname for a Address.
 //
-// To actually connect to a remote host, you will need a gio.InetSocketAddress
-// (which includes a GInetAddress as well as a port number).
+// To actually connect to a remote host, you will need a SocketAddress (which
+// includes a Address as well as a port number).
 type InetAddress struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -61217,10 +60805,10 @@ func defaultInetAddressMaskOverrides(v *InetAddressMask) InetAddressMaskOverride
 	return InetAddressMaskOverrides{}
 }
 
-// InetAddressMask: GInetAddressMask represents a range of IPv4 or IPv6
-// addresses described by a base address and a length indicating how many bits
-// of the base address are relevant for matching purposes. These are often given
-// in string form. For example, 10.0.0.0/8, or fe80::/10.
+// InetAddressMask represents a range of IPv4 or IPv6 addresses described by a
+// base address and a length indicating how many bits of the base address are
+// relevant for matching purposes. These are often given in string form. Eg,
+// "10.0.0.0/8", or "fe80::/10".
 type InetAddressMask struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -61484,11 +61072,8 @@ func defaultInetSocketAddressOverrides(v *InetSocketAddress) InetSocketAddressOv
 	return InetSocketAddressOverrides{}
 }
 
-// InetSocketAddress: IPv4 or IPv6 socket address. That is, the combination of a
-// gio.InetAddress and a port number.
-//
-// In UNIX terms, GInetSocketAddress corresponds to a struct sockaddr_in or
-// struct sockaddr_in6 (man:sockaddr(3type)).
+// InetSocketAddress: IPv4 or IPv6 socket address; that is, the combination of a
+// Address and a port number.
 type InetSocketAddress struct {
 	_ [0]func() // equal guard
 	SocketAddress
@@ -61749,17 +61334,15 @@ func defaultInputStreamOverrides(v *InputStream) InputStreamOverrides {
 	}
 }
 
-// InputStream: GInputStream is a base class for implementing streaming input.
-//
-// It has functions to read from a stream (gio.InputStream.Read()),
-// to close a stream (gio.InputStream.Close()) and to skip some content
-// (gio.InputStream.Skip()).
+// InputStream has functions to read from a stream (g_input_stream_read()),
+// to close a stream (g_input_stream_close()) and to skip some content
+// (g_input_stream_skip()).
 //
 // To copy the content of an input stream to an output stream without manually
-// handling the reads and writes, use gio.OutputStream.Splice().
+// handling the reads and writes, use g_output_stream_splice().
 //
-// See the documentation for gio.IOStream for details of thread safety of
-// streaming APIs.
+// See the documentation for OStream for details of thread safety of streaming
+// APIs.
 //
 // All of these functions have async variants too.
 type InputStream struct {
@@ -61916,7 +61499,7 @@ func (stream *InputStream) Close(ctx context.Context) error {
 //
 //   - ctx (optional): optional cancellable object.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *InputStream) CloseAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GInputStream       // out
 	var _arg2 *C.GCancellable       // out
@@ -62164,7 +61747,7 @@ func (stream *InputStream) ReadAll(ctx context.Context, buffer []byte) (uint, er
 //   - buffer: a buffer to read data into (which should be at least count bytes
 //     long).
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *InputStream) ReadAllAsync(ctx context.Context, buffer []byte, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GInputStream // out
 	var _arg4 *C.GCancellable // out
@@ -62271,7 +61854,7 @@ func (stream *InputStream) ReadAllFinish(result AsyncResulter) (uint, error) {
 //   - buffer: a buffer to read data into (which should be at least count bytes
 //     long).
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *InputStream) ReadAsync(ctx context.Context, buffer []byte, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GInputStream // out
 	var _arg4 *C.GCancellable // out
@@ -62397,7 +61980,7 @@ func (stream *InputStream) ReadBytes(ctx context.Context, count uint) (*glib.Byt
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - count: number of bytes that will be read from the stream.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *InputStream) ReadBytesAsync(ctx context.Context, count uint, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GInputStream       // out
 	var _arg3 *C.GCancellable       // out
@@ -62603,7 +62186,7 @@ func (stream *InputStream) Skip(ctx context.Context, count uint) (int, error) {
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - count: number of bytes that will be skipped from the stream.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *InputStream) SkipAsync(ctx context.Context, count uint, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GInputStream       // out
 	var _arg3 *C.GCancellable       // out
@@ -62681,7 +62264,7 @@ func (stream *InputStream) SkipFinish(result AsyncResulter) (int, error) {
 //
 //   - ctx (optional): optional cancellable object.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *InputStream) closeAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GInputStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.close_async
@@ -62800,7 +62383,7 @@ func (stream *InputStream) closeFn(ctx context.Context) error {
 //   - buffer (optional): a buffer to read data into (which should be at least
 //     count bytes long).
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *InputStream) readAsync(ctx context.Context, buffer []byte, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GInputStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.read_async
@@ -62960,7 +62543,7 @@ func (stream *InputStream) skip(ctx context.Context, count uint) (int, error) {
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - count: number of bytes that will be skipped from the stream.
 //   - ioPriority: [I/O priority][io-priority] of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *InputStream) skipAsync(ctx context.Context, count uint, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GInputStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.skip_async
@@ -63037,8 +62620,8 @@ func defaultListStoreOverrides(v *ListStore) ListStoreOverrides {
 	return ListStoreOverrides{}
 }
 
-// ListStore: GListStore is a simple implementation of gio.ListModel that stores
-// all items in memory.
+// ListStore is a simple implementation of Model that stores all items in
+// memory.
 //
 // It provides insertions, deletions, and lookups in logarithmic time with a
 // fast path for the common case of iterating the list linearly.
@@ -63173,13 +62756,9 @@ func (store *ListStore) Find(item *coreglib.Object) (uint, bool) {
 // FindWithEqualFuncFull: like g_list_store_find_with_equal_func() but with an
 // additional user_data that is passed to equal_func.
 //
-// item is always passed as second parameter to equal_func.
-//
-// Since GLib 2.76 it is possible to pass NULL for item.
-//
 // The function takes the following parameters:
 //
-//   - item (optional): item.
+//   - item: item.
 //   - equalFunc: custom equality check function.
 //
 // The function returns the following values:
@@ -63392,10 +62971,10 @@ func defaultMemoryInputStreamOverrides(v *MemoryInputStream) MemoryInputStreamOv
 	return MemoryInputStreamOverrides{}
 }
 
-// MemoryInputStream: GMemoryInputStream is a class for using arbitrary memory
-// chunks as input for GIO streaming input operations.
+// MemoryInputStream is a class for using arbitrary memory chunks as input for
+// GIO streaming input operations.
 //
-// As of GLib 2.34, GMemoryInputStream implements gio.PollableInputStream.
+// As of GLib 2.34, InputStream implements InputStream.
 type MemoryInputStream struct {
 	_ [0]func() // equal guard
 	InputStream
@@ -63515,11 +63094,11 @@ func defaultMemoryOutputStreamOverrides(v *MemoryOutputStream) MemoryOutputStrea
 	return MemoryOutputStreamOverrides{}
 }
 
-// MemoryOutputStream: GMemoryOutputStream is a class for using arbitrary memory
-// chunks as output for GIO streaming output operations.
+// MemoryOutputStream is a class for using arbitrary memory chunks as output for
+// GIO streaming output operations.
 //
-// As of GLib 2.34, GMemoryOutputStream trivially implements
-// gio.PollableOutputStream: it always polls as ready.
+// As of GLib 2.34, OutputStream trivially implements OutputStream: it always
+// polls as ready.
 type MemoryOutputStream struct {
 	_ [0]func() // equal guard
 	OutputStream
@@ -63720,13 +63299,13 @@ func (ostream *MemoryOutputStream) StealData() unsafe.Pointer {
 	return _gpointer
 }
 
-// Menu: GMenu is a simple implementation of gio.MenuModel. You populate a GMenu
-// by adding gio.MenuItem instances to it.
+// Menu is a simple implementation of Model. You populate a #GMenu by adding
+// Item instances to it.
 //
-// There are some convenience functions to allow you to directly add items
-// (avoiding gio.MenuItem) for the common cases. To add a regular item,
-// use gio.Menu.Insert(). To add a section, use gio.Menu.InsertSection().
-// To add a submenu, use gio.Menu.InsertSubmenu().
+// There are some convenience functions to allow you to directly add
+// items (avoiding Item) for the common cases. To add a regular item,
+// use g_menu_insert(). To add a section, use g_menu_insert_section(). To add a
+// submenu, use g_menu_insert_submenu().
 type Menu struct {
 	_ [0]func() // equal guard
 	MenuModel
@@ -65426,19 +65005,18 @@ func defaultMenuModelOverrides(v *MenuModel) MenuModelOverrides {
 	}
 }
 
-// MenuModel: GMenuModel represents the contents of a menu — an ordered
-// list of menu items. The items are associated with actions, which can be
-// activated through them. Items can be grouped in sections, and may have
-// submenus associated with them. Both items and sections usually have some
-// representation data, such as labels or icons. The type of the associated
-// action (ie whether it is stateful, and what kind of state it has) can
-// influence the representation of the item.
+// MenuModel represents the contents of a menu -- an ordered list of menu items.
+// The items are associated with actions, which can be activated through them.
+// Items can be grouped in sections, and may have submenus associated with them.
+// Both items and sections usually have some representation data, such as labels
+// or icons. The type of the associated action (ie whether it is stateful,
+// and what kind of state it has) can influence the representation of the item.
 //
-// The conceptual model of menus in GMenuModel is hierarchical: sections and
-// submenus are again represented by GMenuModels. Menus themselves do not define
-// their own roles. Rather, the role of a particular GMenuModel is defined by
-// the item that references it (or, in the case of the ‘root’ menu, is defined
-// by the context in which it is used).
+// The conceptual model of menus in Model is hierarchical: sections and submenus
+// are again represented by Models. Menus themselves do not define their own
+// roles. Rather, the role of a particular Model is defined by the item that
+// references it (or, in the case of the 'root' menu, is defined by the context
+// in which it is used).
 //
 // As an example, consider the visible portions of this menu:
 //
@@ -65446,7 +65024,7 @@ func defaultMenuModelOverrides(v *MenuModel) MenuModelOverrides {
 //
 // ! (menu-example.png)
 //
-// There are 8 ‘menus’ visible in the screenshot: one menubar, two submenus and
+// There are 8 "menus" visible in the screenshot: one menubar, two submenus and
 // 5 sections:
 //
 // - the toplevel menubar (containing 4 items)
@@ -65465,48 +65043,48 @@ func defaultMenuModelOverrides(v *MenuModel) MenuModelOverrides {
 //
 // - the Markup section (containing 2 items)
 //
-// The example (#a-menu-example) illustrates the conceptual connection between
-// these 8 menus. Each large block in the figure represents a menu and the
-// smaller blocks within the large block represent items in that menu. Some
-// items contain references to other menus.
+// The [example][menu-model] illustrates the conceptual connection between these
+// 8 menus. Each large block in the figure represents a menu and the smaller
+// blocks within the large block represent items in that menu. Some items
+// contain references to other menus.
 //
 // # A menu example
 //
 // ! (menu-model.png)
 //
-// Notice that the separators visible in the example (#an-example-menu) appear
-// nowhere in the menu model (#a-menu-example). This is because separators
-// are not explicitly represented in the menu model. Instead, a separator is
-// inserted between any two non-empty sections of a menu. Section items can have
-// labels just like any other item. In that case, a display system may show a
-// section header instead of a separator.
+// Notice that the separators visible in the [example][menu-example] appear
+// nowhere in the [menu model][menu-model]. This is because separators are not
+// explicitly represented in the menu model. Instead, a separator is inserted
+// between any two non-empty sections of a menu. Section items can have labels
+// just like any other item. In that case, a display system may show a section
+// header instead of a separator.
 //
 // The motivation for this abstract model of application controls is that
 // modern user interfaces tend to make these controls available outside
 // the application. Examples include global menus, jumplists, dash boards,
-// etc. To support such uses, it is necessary to ‘export’ information about
-// actions and their representation in menus, which is exactly what the action
-// group exporter and the menu model exporter do for gio.ActionGroup and
-// gio.MenuModel. The client-side counterparts to make use of the exported
-// information are gio.DBusActionGroup and gio.DBusMenuModel.
+// etc. To support such uses, it is necessary to 'export' information about
+// actions and their representation in menus, which is exactly what the
+// [GActionGroup exporter][gio-GActionGroup-exporter] and the [GMenuModel
+// exporter][gio-GMenuModel-exporter] do for Group and Model. The client-side
+// counterparts to make use of the exported information are BusActionGroup and
+// BusMenuModel.
 //
-// The API of GMenuModel is very generic, with iterators for the attributes
-// and links of an item, see gio.MenuModel.IterateItemAttributes() and
-// gio.MenuModel.IterateItemLinks(). The ‘standard’ attributes and link types
+// The API of Model is very generic, with iterators for the attributes
+// and links of an item, see g_menu_model_iterate_item_attributes() and
+// g_menu_model_iterate_item_links(). The 'standard' attributes and link types
 // have predefined names: G_MENU_ATTRIBUTE_LABEL, G_MENU_ATTRIBUTE_ACTION,
 // G_MENU_ATTRIBUTE_TARGET, G_MENU_LINK_SECTION and G_MENU_LINK_SUBMENU.
 //
-// Items in a GMenuModel represent active controls if they refer to
-// an action that can get activated when the user interacts with the
-// menu item. The reference to the action is encoded by the string ID
-// in the G_MENU_ATTRIBUTE_ACTION attribute. An action ID uniquely
-// identifies an action in an action group. Which action group(s) provide
-// actions depends on the context in which the menu model is used. E.g.
-// when the model is exported as the application menu of a GtkApplication
-// (https://docs.gtk.org/gtk4/class.Application.html), actions can be
-// application-wide or window-specific (and thus come from two different action
-// groups). By convention, the application-wide actions have names that start
-// with app., while the names of window-specific actions start with win..
+// Items in a Model represent active controls if they refer to an action that
+// can get activated when the user interacts with the menu item. The reference
+// to the action is encoded by the string id in the G_MENU_ATTRIBUTE_ACTION
+// attribute. An action id uniquely identifies an action in an action group.
+// Which action group(s) provide actions depends on the context in which the
+// menu model is used. E.g. when the model is exported as the application
+// menu of a Application, actions can be application-wide or window-specific
+// (and thus come from two different action groups). By convention, the
+// application-wide actions have names that start with "app.", while the names
+// of window-specific actions start with "win.".
 //
 // While a wide variety of stateful actions is possible, the following is
 // the minimum that is expected to be supported by all users of exported menu
@@ -65526,12 +65104,12 @@ func defaultMenuModelOverrides(v *MenuModel) MenuModelOverrides {
 //
 // # Boolean State
 //
-// An action with a boolean state will most typically be used with a ‘toggle’ or
-// ‘switch’ menu item. The state can be set directly, but activating the action
+// An action with a boolean state will most typically be used with a "toggle" or
+// "switch" menu item. The state can be set directly, but activating the action
 // (with no parameter) results in the state being toggled.
 //
 // Selecting a toggle menu item will activate the action. The menu item should
-// be rendered as ‘checked’ when the state is true.
+// be rendered as "checked" when the state is true.
 //
 // # String Parameter and State
 //
@@ -65543,7 +65121,7 @@ func defaultMenuModelOverrides(v *MenuModel) MenuModelOverrides {
 // Radio menu items, in addition to being associated with the action, will
 // have a target value. Selecting that menu item will result in activation of
 // the action with the target value as the parameter. The menu item should be
-// rendered as ‘selected’ when the state of the action is equal to the target
+// rendered as "selected" when the state of the action is equal to the target
 // value of the menu item.
 type MenuModel struct {
 	_ [0]func() // equal guard
@@ -66358,26 +65936,26 @@ func defaultMountOperationOverrides(v *MountOperation) MountOperationOverrides {
 	}
 }
 
-// MountOperation: GMountOperation provides a mechanism for interacting
-// with the user. It can be used for authenticating mountable operations,
-// such as loop mounting files, hard drive partitions or server locations.
-// It can also be used to ask the user questions or show a list of applications
-// preventing unmount or eject operations from completing.
+// MountOperation provides a mechanism for interacting with the user. It can be
+// used for authenticating mountable operations, such as loop mounting files,
+// hard drive partitions or server locations. It can also be used to ask the
+// user questions or show a list of applications preventing unmount or eject
+// operations from completing.
 //
-// Note that GMountOperation is used for more than just gio.Mount objects – for
-// example it is also used in gio.Drive.Start() and gio.Drive.Stop().
+// Note that Operation is used for more than just #GMount objects – for example
+// it is also used in g_drive_start() and g_drive_stop().
 //
-// Users should instantiate a subclass of this that implements all the
-// various callbacks to show the required dialogs, such as GtkMountOperation
-// (https://docs.gtk.org/gtk4/class.MountOperation.html). If no user interaction
-// is desired (for example when automounting filesystems at login time), usually
-// NULL can be passed, see each method taking a GMountOperation for details.
+// Users should instantiate a subclass of this that implements all the various
+// callbacks to show the required dialogs, such as MountOperation. If no user
+// interaction is desired (for example when automounting filesystems at login
+// time), usually NULL can be passed, see each method taking a Operation for
+// details.
 //
-// Throughout the API, the term ‘TCRYPT’ is used to mean ‘compatible with
-// TrueCrypt and VeraCrypt’. TrueCrypt (https://en.wikipedia.org/wiki/TrueCrypt)
-// is a discontinued system for encrypting file containers, partitions or whole
-// disks, typically used with Windows. VeraCrypt (https://www.veracrypt.fr/) is
-// a maintained fork of TrueCrypt with various improvements and auditing fixes.
+// The term ‘TCRYPT’ is used to mean ‘compatible with TrueCrypt and VeraCrypt’.
+// TrueCrypt (https://en.wikipedia.org/wiki/TrueCrypt) is a discontinued system
+// for encrypting file containers, partitions or whole disks, typically used
+// with Windows. VeraCrypt (https://www.veracrypt.fr/) is a maintained fork of
+// TrueCrypt with various improvements and auditing fixes.
 type MountOperation struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -67034,9 +66612,6 @@ func defaultNativeSocketAddressOverrides(v *NativeSocketAddress) NativeSocketAdd
 }
 
 // NativeSocketAddress: socket address of some unknown native type.
-//
-// This corresponds to a general struct sockaddr of a type not otherwise handled
-// by GLib.
 type NativeSocketAddress struct {
 	_ [0]func() // equal guard
 	SocketAddress
@@ -67179,14 +66754,14 @@ func defaultNetworkAddressOverrides(v *NetworkAddress) NetworkAddressOverrides {
 	return NetworkAddressOverrides{}
 }
 
-// NetworkAddress: GNetworkAddress provides an easy way to resolve a hostname
-// and then attempt to connect to that host, handling the possibility of
-// multiple IP addresses and multiple address families.
+// NetworkAddress provides an easy way to resolve a hostname and then attempt to
+// connect to that host, handling the possibility of multiple IP addresses and
+// multiple address families.
 //
 // The enumeration results of resolved addresses *may* be cached as long as this
 // object is kept alive which may have unexpected results if alive for too long.
 //
-// See gio.SocketConnectable for an example of using the connectable interface.
+// See Connectable for an example of using the connectable interface.
 type NetworkAddress struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -67465,13 +67040,13 @@ func defaultNetworkServiceOverrides(v *NetworkService) NetworkServiceOverrides {
 	return NetworkServiceOverrides{}
 }
 
-// NetworkService: like gio.NetworkAddress does with hostnames, GNetworkService
-// provides an easy way to resolve a SRV record, and then attempt to connect
-// to one of the hosts that implements that service, handling service
-// priority/weighting, multiple IP addresses, and multiple address families.
+// NetworkService: like Address does with hostnames, Service provides an easy
+// way to resolve a SRV record, and then attempt to connect to one of the hosts
+// that implements that service, handling service priority/weighting, multiple
+// IP addresses, and multiple address families.
 //
-// See gio.SrvTarget for more information about SRV records, and see
-// gio.SocketConnectable for an example of using the connectable interface.
+// See Target for more information about SRV records, and see Connectable for an
+// example of using the connectable interface.
 type NetworkService struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -67655,48 +67230,48 @@ func (srv *NetworkService) SetScheme(scheme string) {
 	runtime.KeepAlive(scheme)
 }
 
-// Notification: GNotification is a mechanism for creating a notification to
-// be shown to the user — typically as a pop-up notification presented by the
-// desktop environment shell.
+// Notification is a mechanism for creating a notification to be shown to
+// the user -- typically as a pop-up notification presented by the desktop
+// environment shell.
 //
-// The key difference between GNotification and other similar APIs is that, if
-// supported by the desktop environment, notifications sent with GNotification
+// The key difference between #GNotification and other similar APIs is that, if
+// supported by the desktop environment, notifications sent with #GNotification
 // will persist after the application has exited, and even across system
 // reboots.
 //
 // Since the user may click on a notification while the application is not
-// running, applications using GNotification should be able to be started as a
-// D-Bus service, using gio.Application.
+// running, applications using #GNotification should be able to be started as a
+// D-Bus service, using #GApplication.
 //
-// In order for GNotification to work, the application must have installed a
+// In order for #GNotification to work, the application must have installed a
 // .desktop file. For example:
 //
 //	[Desktop Entry]
-//	Name=Test Application
-//	Comment=Description of what Test Application does
-//	Exec=gnome-test-application
-//	Icon=org.gnome.TestApplication
-//	Terminal=false
-//	Type=Application
-//	Categories=GNOME;GTK;TestApplication Category;
-//	StartupNotify=true
-//	DBusActivatable=true
-//	X-GNOME-UsesNotifications=true
+//	 Name=Test Application
+//	 Comment=Description of what Test Application does
+//	 Exec=gnome-test-application
+//	 Icon=org.gnome.TestApplication
+//	 Terminal=false
+//	 Type=Application
+//	 Categories=GNOME;GTK;TestApplication Category;
+//	 StartupNotify=true
+//	 DBusActivatable=true
+//	 X-GNOME-UsesNotifications=true
 //
 // The X-GNOME-UsesNotifications key indicates to GNOME Control Center that this
 // application uses notifications, so it can be listed in the Control Center’s
 // ‘Notifications’ panel.
 //
 // The .desktop file must be named as org.gnome.TestApplication.desktop,
-// where org.gnome.TestApplication is the ID passed to gio.Application.New.
+// where org.gnome.TestApplication is the ID passed to g_application_new().
 //
 // User interaction with a notification (either the default action, or buttons)
-// must be associated with actions on the application (ie: app. actions).
+// must be associated with actions on the application (ie: "app." actions).
 // It is not possible to route user interaction through the notification itself,
 // because the object will not exist if the application is autostarted as a
 // result of a notification being clicked.
 //
-// A notification can be sent with gio.Application.SendNotification().
+// A notification can be sent with g_application_send_notification().
 type Notification struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -67887,7 +67462,6 @@ func (notification *Notification) SetDefaultAction(detailedAction string) {
 // application-wide action (start with "app.").
 //
 // If target is non-NULL, action will be activated with target as its parameter.
-// If target is floating, it will be consumed.
 //
 // When no default action is set, the application that the notification was sent
 // on is activated.
@@ -68081,24 +67655,17 @@ func defaultOutputStreamOverrides(v *OutputStream) OutputStreamOverrides {
 	}
 }
 
-// OutputStream: GOutputStream is a base class for implementing streaming
-// output.
-//
-// It has functions to write to a stream (gio.OutputStream.Write()),
-// to close a stream (gio.OutputStream.Close()) and to flush pending writes
-// (gio.OutputStream.Flush()).
+// OutputStream has functions to write to a stream (g_output_stream_write()),
+// to close a stream (g_output_stream_close()) and to flush pending writes
+// (g_output_stream_flush()).
 //
 // To copy the content of an input stream to an output stream without manually
-// handling the reads and writes, use gio.OutputStream.Splice().
+// handling the reads and writes, use g_output_stream_splice().
 //
-// See the documentation for gio.IOStream for details of thread safety of
-// streaming APIs.
+// See the documentation for OStream for details of thread safety of streaming
+// APIs.
 //
 // All of these functions have async variants too.
-//
-// All classes derived from GOutputStream *should* implement synchronous
-// writing, splicing, flushing and closing streams, but *may* implement
-// asynchronous versions.
 type OutputStream struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -68270,7 +67837,7 @@ func (stream *OutputStream) Close(ctx context.Context) error {
 //
 //   - ctx (optional): optional cancellable object.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) CloseAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GOutputStream      // out
 	var _arg2 *C.GCancellable       // out
@@ -68371,7 +67938,7 @@ func (stream *OutputStream) Flush(ctx context.Context) error {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) FlushAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GOutputStream      // out
 	var _arg2 *C.GCancellable       // out
@@ -68576,7 +68143,7 @@ func (stream *OutputStream) Splice(ctx context.Context, source InputStreamer, fl
 //   - source: Stream.
 //   - flags: set of StreamSpliceFlags.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional): ReadyCallback.
 func (stream *OutputStream) SpliceAsync(ctx context.Context, source InputStreamer, flags OutputStreamSpliceFlags, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GOutputStream           // out
 	var _arg4 *C.GCancellable            // out
@@ -68791,7 +68358,7 @@ func (stream *OutputStream) WriteAll(ctx context.Context, buffer []byte) (uint, 
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - buffer containing the data to write.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) WriteAllAsync(ctx context.Context, buffer []byte, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GOutputStream // out
 	var _arg4 *C.GCancellable  // out
@@ -68907,7 +68474,7 @@ func (stream *OutputStream) WriteAllFinish(result AsyncResulter) (uint, error) {
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - buffer containing the data to write.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) WriteAsync(ctx context.Context, buffer []byte, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GOutputStream // out
 	var _arg4 *C.GCancellable  // out
@@ -69009,7 +68576,7 @@ func (stream *OutputStream) WriteBytes(ctx context.Context, bytes *glib.Bytes) (
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - bytes to write.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) WriteBytesAsync(ctx context.Context, bytes *glib.Bytes, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GOutputStream      // out
 	var _arg3 *C.GCancellable       // out
@@ -69271,7 +68838,7 @@ func (stream *OutputStream) WritevAll(ctx context.Context, vectors []OutputVecto
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - vectors: buffer containing the Vectors to write.
 //   - ioPriority: i/O priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) WritevAllAsync(ctx context.Context, vectors []OutputVector, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GOutputStream // out
 	var _arg4 *C.GCancellable  // out
@@ -69388,7 +68955,7 @@ func (stream *OutputStream) WritevAllFinish(result AsyncResulter) (uint, error) 
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - vectors: buffer containing the Vectors to write.
 //   - ioPriority: i/O priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) WritevAsync(ctx context.Context, vectors []OutputVector, ioPriority int, callback AsyncReadyCallback) {
 	var _arg0 *C.GOutputStream // out
 	var _arg4 *C.GCancellable  // out
@@ -69476,7 +69043,7 @@ func (stream *OutputStream) WritevFinish(result AsyncResulter) (uint, error) {
 //
 //   - ctx (optional): optional cancellable object.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) closeAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GOutputStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.close_async
@@ -69614,7 +69181,7 @@ func (stream *OutputStream) flush(ctx context.Context) error {
 //
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) flushAsync(ctx context.Context, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GOutputStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.flush_async
@@ -69737,7 +69304,7 @@ func (stream *OutputStream) splice(ctx context.Context, source InputStreamer, fl
 //   - source: Stream.
 //   - flags: set of StreamSpliceFlags.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional): ReadyCallback.
 func (stream *OutputStream) spliceAsync(ctx context.Context, source InputStreamer, flags OutputStreamSpliceFlags, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GOutputStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.splice_async
@@ -69851,7 +69418,7 @@ func (stream *OutputStream) spliceFinish(result AsyncResulter) (int, error) {
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - buffer (optional) containing the data to write.
 //   - ioPriority: io priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) writeAsync(ctx context.Context, buffer []byte, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GOutputStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.write_async
@@ -70026,7 +69593,7 @@ func (stream *OutputStream) writeFn(ctx context.Context, buffer []byte) (int, er
 //   - ctx (optional): optional #GCancellable object, NULL to ignore.
 //   - vectors: buffer containing the Vectors to write.
 //   - ioPriority: i/O priority of the request.
-//   - callback (optional): ReadyCallback to call when the request is satisfied.
+//   - callback (optional) to call when the request is satisfied.
 func (stream *OutputStream) writevAsync(ctx context.Context, vectors []OutputVector, ioPriority int, callback AsyncReadyCallback) {
 	gclass := (*C.GOutputStreamClass)(coreglib.PeekParentClass(stream))
 	fnarg := gclass.writev_async
@@ -70254,8 +69821,8 @@ func defaultPermissionOverrides(v *Permission) PermissionOverrides {
 	}
 }
 
-// Permission: GPermission represents the status of the caller’s permission to
-// perform a certain action.
+// Permission represents the status of the caller's permission to perform a
+// certain action.
 //
 // You can query if the action is currently allowed and if it is possible to
 // acquire the permission so that the action will be allowed in the future.
@@ -70263,9 +69830,9 @@ func defaultPermissionOverrides(v *Permission) PermissionOverrides {
 // There is also an API to actually acquire the permission and one to release
 // it.
 //
-// As an example, a GPermission might represent the ability for the user to
-// write to a gio.Settings object. This GPermission object could then be used
-// to decide if it is appropriate to show a “Click here to unlock” button in a
+// As an example, a #GPermission might represent the ability for the user to
+// write to a #GSettings object. This #GPermission object could then be used
+// to decide if it is appropriate to show a "Click here to unlock" button in a
 // dialog and to provide the mechanism to invoke when that button is clicked.
 type Permission struct {
 	_ [0]func() // equal guard
@@ -70888,27 +70455,27 @@ func (permission *Permission) releaseFinish(result AsyncResulter) error {
 	return _goerr
 }
 
-// PropertyAction: GPropertyAction is a way to get a gio.Action with a state
-// value reflecting and controlling the value of a gobject.Object property.
+// PropertyAction is a way to get a #GAction with a state value reflecting and
+// controlling the value of a #GObject property.
 //
 // The state of the action will correspond to the value of the property.
 // Changing it will change the property (assuming the requested value matches
-// the requirements as specified in the gobject.ParamSpec).
+// the requirements as specified in the Spec).
 //
 // Only the most common types are presently supported. Booleans are mapped to
 // booleans, strings to strings, signed/unsigned integers to int32/uint32 and
 // floats and doubles to doubles.
 //
 // If the property is an enum then the state will be string-typed and conversion
-// will automatically be performed between the enum value and ‘nick’ string as
-// per the gobject.EnumValue table.
+// will automatically be performed between the enum value and "nick" string as
+// per the Value table.
 //
 // Flags types are not currently supported.
 //
 // Properties of object types, boxed types and pointer types are not supported
 // and probably never will be.
 //
-// Properties of glib.Variant types are not currently supported.
+// Properties of #GVariant types are not currently supported.
 //
 // If the property is boolean-valued then the action will have a NULL parameter
 // type, and activating the action (with no parameter) will toggle the value of
@@ -70919,26 +70486,23 @@ func (permission *Permission) releaseFinish(result AsyncResulter) error {
 //
 // The general idea here is to reduce the number of locations where a particular
 // piece of state is kept (and therefore has to be synchronised between).
-// GPropertyAction does not have a separate state that is kept in sync with the
-// property value — its state is the property value.
+// Action does not have a separate state that is kept in sync with the property
+// value -- its state is the property value.
 //
-// For example, it might be useful to create a gio.Action
-// corresponding to the visible-child-name property of a GtkStack
-// (https://docs.gtk.org/gtk4/class.Stack.html) so that the current page can
-// be switched from a menu. The active radio indication in the menu is then
-// directly determined from the active page of the GtkStack.
+// For example, it might be useful to create a #GAction corresponding to the
+// "visible-child-name" property of a Stack so that the current page can be
+// switched from a menu. The active radio indication in the menu is then
+// directly determined from the active page of the Stack.
 //
-// An anti-example would be binding the active-id property on a GtkComboBox
-// (https://docs.gtk.org/gtk4/class.ComboBox.html). This is because the state of
-// the combo box itself is probably uninteresting and is actually being used to
-// control something else.
+// An anti-example would be binding the "active-id" property on a ComboBox.
+// This is because the state of the combobox itself is probably uninteresting
+// and is actually being used to control something else.
 //
-// Another anti-example would be to bind to the visible-child-name property
-// of a GtkStack (https://docs.gtk.org/gtk4/class.Stack.html) if this value is
-// actually stored in gio.Settings. In that case, the real source of the value
-// is* gio.Settings. If you want a gio.Action to control a setting stored in
-// gio.Settings, see gio.Settings.CreateAction() instead, and possibly combine
-// its use with gio.Settings.Bind().
+// Another anti-example would be to bind to the "visible-child-name" property
+// of a Stack if this value is actually stored in #GSettings. In that case,
+// the real source of the value is #GSettings. If you want a #GAction to control
+// a setting stored in #GSettings, see g_settings_create_action() instead,
+// and possibly combine its use with g_settings_bind().
 type PropertyAction struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -71013,8 +70577,7 @@ func defaultProxyAddressOverrides(v *ProxyAddress) ProxyAddressOverrides {
 	return ProxyAddressOverrides{}
 }
 
-// ProxyAddress: gio.InetSocketAddress representing a connection via a proxy
-// server.
+// ProxyAddress: support for proxied SocketAddress.
 type ProxyAddress struct {
 	_ [0]func() // equal guard
 	InetSocketAddress
@@ -71285,16 +70848,14 @@ func defaultProxyAddressEnumeratorOverrides(v *ProxyAddressEnumerator) ProxyAddr
 	return ProxyAddressEnumeratorOverrides{}
 }
 
-// ProxyAddressEnumerator: GProxyAddressEnumerator is a wrapper around
-// gio.SocketAddressEnumerator which takes the gio.SocketAddress
-// instances returned by the gio.SocketAddressEnumerator and
-// wraps them in gio.ProxyAddress instances, using the given
-// gio.ProxyAddressEnumerator:proxy-resolver.
+// ProxyAddressEnumerator is a wrapper around AddressEnumerator which takes the
+// Address instances returned by the AddressEnumerator and wraps them in Address
+// instances, using the given AddressEnumerator:proxy-resolver.
 //
 // This enumerator will be returned (for example, by
-// gio.SocketConnectable.Enumerate()) as appropriate when a proxy is configured;
-// there should be no need to manually wrap a gio.SocketAddressEnumerator
-// instance with one.
+// g_socket_connectable_enumerate()) as appropriate when a proxy is configured;
+// there should be no need to manually wrap a AddressEnumerator instance with
+// one.
 type ProxyAddressEnumerator struct {
 	_ [0]func() // equal guard
 	SocketAddressEnumerator
@@ -71525,24 +71086,14 @@ func defaultResolverOverrides(v *Resolver) ResolverOverrides {
 	}
 }
 
-// Resolver: object that handles DNS resolution. Use gio.Resolver().GetDefault
-// to get the default resolver.
+// Resolver provides cancellable synchronous and asynchronous DNS
+// resolution, for hostnames (g_resolver_lookup_by_address(),
+// g_resolver_lookup_by_name() and their async variants) and SRV (service)
+// records (g_resolver_lookup_service()).
 //
-// GResolver provides cancellable synchronous and asynchronous
-// DNS resolution, for hostnames (gio.Resolver.LookupByAddress(),
-// gio.Resolver.LookupByName() and their async variants) and SRV (service)
-// records (gio.Resolver.LookupService()).
-//
-// gio.NetworkAddress and gio.NetworkService provide wrappers around GResolver
-// functionality that also implement gio.SocketConnectable, making it easy to
-// connect to a remote host/service.
-//
-// The default resolver (see gio.Resolver().GetDefault) has a timeout of 30s
-// set on it since GLib 2.78. Earlier versions of GLib did not support resolver
-// timeouts.
-//
-// This is an abstract type; subclasses of it implement different resolvers for
-// different platforms and situations.
+// Address and Service provide wrappers around #GResolver functionality
+// that also implement Connectable, making it easy to connect to a remote
+// host/service.
 type Resolver struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -71644,28 +71195,6 @@ func BaseResolver(obj Resolverer) *Resolver {
 // configuration has changed.
 func (resolver *Resolver) ConnectReload(f func()) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(resolver, "reload", false, unsafe.Pointer(C._gotk4_gio2_Resolver_ConnectReload), f)
-}
-
-// Timeout: get the timeout applied to all resolver lookups. See
-// #GResolver:timeout.
-//
-// The function returns the following values:
-//
-//   - guint: resolver timeout, in milliseconds, or 0 for no timeout.
-func (resolver *Resolver) Timeout() uint {
-	var _arg0 *C.GResolver // out
-	var _cret C.unsigned   // in
-
-	_arg0 = (*C.GResolver)(unsafe.Pointer(coreglib.InternObject(resolver).Native()))
-
-	_cret = C.g_resolver_get_timeout(_arg0)
-	runtime.KeepAlive(resolver)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
 }
 
 // LookupByAddress: synchronously reverse-resolves address to determine its
@@ -72447,24 +71976,6 @@ func (resolver *Resolver) SetDefault() {
 	runtime.KeepAlive(resolver)
 }
 
-// SetTimeout: set the timeout applied to all resolver lookups. See
-// #GResolver:timeout.
-//
-// The function takes the following parameters:
-//
-//   - timeoutMs: timeout in milliseconds, or 0 for no timeouts.
-func (resolver *Resolver) SetTimeout(timeoutMs uint) {
-	var _arg0 *C.GResolver // out
-	var _arg1 C.unsigned   // out
-
-	_arg0 = (*C.GResolver)(unsafe.Pointer(coreglib.InternObject(resolver).Native()))
-	_arg1 = C.unsigned(timeoutMs)
-
-	C.g_resolver_set_timeout(_arg0, _arg1)
-	runtime.KeepAlive(resolver)
-	runtime.KeepAlive(timeoutMs)
-}
-
 // lookupByAddress: synchronously reverse-resolves address to determine its
 // associated hostname.
 //
@@ -73238,24 +72749,23 @@ func defaultSettingsOverrides(v *Settings) SettingsOverrides {
 	}
 }
 
-// Settings: GSettings class provides a convenient API for storing and
-// retrieving application settings.
+// Settings class provides a convenient API for storing and retrieving
+// application settings.
 //
-// Reads and writes can be considered to be non-blocking. Reading settings
-// with GSettings is typically extremely fast: on approximately the same order
-// of magnitude (but slower than) a glib.HashTable lookup. Writing settings
-// is also extremely fast in terms of time to return to your application,
-// but can be extremely expensive for other threads and other processes.
-// Many settings backends (including dconf) have lazy initialisation which means
-// in the common case of the user using their computer without modifying any
-// settings a lot of work can be avoided. For dconf, the D-Bus service doesn’t
-// even need to be started in this case. For this reason, you should only ever
-// modify GSettings keys in response to explicit user action. Particular care
-// should be paid to ensure that modifications are not made during startup
-// — for example, when setting the initial value of preferences widgets. The
-// built-in gio.Settings.Bind() functionality is careful not to write settings
-// in response to notify signals as a result of modifications that it makes to
-// widgets.
+// Reads and writes can be considered to be non-blocking. Reading settings with
+// #GSettings is typically extremely fast: on approximately the same order
+// of magnitude (but slower than) a Table lookup. Writing settings is also
+// extremely fast in terms of time to return to your application, but can be
+// extremely expensive for other threads and other processes. Many settings
+// backends (including dconf) have lazy initialisation which means in the common
+// case of the user using their computer without modifying any settings a lot
+// of work can be avoided. For dconf, the D-Bus service doesn't even need to be
+// started in this case. For this reason, you should only ever modify #GSettings
+// keys in response to explicit user action. Particular care should be paid
+// to ensure that modifications are not made during startup -- for example,
+// when setting the initial value of preferences widgets. The built-in
+// g_settings_bind() functionality is careful not to write settings in response
+// to notify signals as a result of modifications that it makes to widgets.
 //
 // When creating a GSettings instance, you have to specify a schema that
 // describes the keys in your settings and their types and default values,
@@ -73263,23 +72773,23 @@ func defaultSettingsOverrides(v *Settings) SettingsOverrides {
 //
 // Normally, a schema has a fixed path that determines where the settings are
 // stored in the conceptual global tree of settings. However, schemas can also
-// be ‘relocatable (#relocatable-schemas)’, i.e. not equipped with a fixed path.
-// This is useful e.g. when the schema describes an ‘account’, and you want to
-// be able to store a arbitrary number of accounts.
+// be '[relocatable][gsettings-relocatable]', i.e. not equipped with a fixed
+// path. This is useful e.g. when the schema describes an 'account', and you
+// want to be able to store a arbitrary number of accounts.
 //
-// Paths must start with and end with a forward slash character (/) and must
-// not contain two sequential slash characters. Paths should be chosen based
-// on a domain name associated with the program or library to which the
-// settings belong. Examples of paths are /org/gtk/settings/file-chooser/ and
-// /ca/desrt/dconf-editor/. Paths should not start with /apps/, /desktop/ or
-// /system/ as they often did in GConf.
+// Paths must start with and end with a forward slash character ('/') and
+// must not contain two sequential slash characters. Paths should be chosen
+// based on a domain name associated with the program or library to which the
+// settings belong. Examples of paths are "/org/gtk/settings/file-chooser/" and
+// "/ca/desrt/dconf-editor/". Paths should not start with "/apps/", "/desktop/"
+// or "/system/" as they often did in GConf.
 //
 // Unlike other configuration systems (like GConf), GSettings does not restrict
-// keys to basic types like strings and numbers. GSettings stores values as
-// glib.Variant, and allows any glib.VariantType for keys. Key names are
-// restricted to lowercase characters, numbers and -. Furthermore, the names
-// must begin with a lowercase character, must not end with a -, and must not
-// contain consecutive dashes.
+// keys to basic types like strings and numbers. GSettings stores values
+// as #GVariant, and allows any Type for keys. Key names are restricted to
+// lowercase characters, numbers and '-'. Furthermore, the names must begin
+// with a lowercase character, must not end with a '-', and must not contain
+// consecutive dashes.
 //
 // Similar to GConf, the default values in GSettings schemas can be localized,
 // but the localized values are stored in gettext catalogs and looked up
@@ -73308,32 +72818,33 @@ func defaultSettingsOverrides(v *Settings) SettingsOverrides {
 //	<default l10n='messages' context='Banned words'>['bad', 'words']</default>
 //
 // Translations of default values must remain syntactically valid serialized
-// glib.Variants (e.g. retaining any surrounding quotation marks) or runtime
-// errors will occur.
+// #GVariants (e.g. retaining any surrounding quotation marks) or runtime errors
+// will occur.
 //
 // GSettings uses schemas in a compact binary form that is created by the
-// glib-compile-schemas (glib-compile-schemas.html) utility. The input is a
-// schema description in an XML format.
+// [glib-compile-schemas][glib-compile-schemas] utility. The input is a schema
+// description in an XML format.
 //
 // A DTD for the gschema XML format can be found here: gschema.dtd
 // (https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/gschema.dtd)
 //
-// The glib-compile-schemas (glib-compile-schemas.html) tool expects schema
-// files to have the extension .gschema.xml.
+// The [glib-compile-schemas][glib-compile-schemas] tool expects schema files to
+// have the extension .gschema.xml.
 //
-// At runtime, schemas are identified by their ID (as specified in the
-// id attribute of the <schema> element). The convention for schema IDs
+// At runtime, schemas are identified by their id (as specified in the
+// id attribute of the <schema> element). The convention for schema ids
 // is to use a dotted name, similar in style to a D-Bus bus name, e.g.
-// org.gnome.SessionManager. In particular, if the settings are for a specific
-// service that owns a D-Bus bus name, the D-Bus bus name and schema ID should
-// match. For schemas which deal with settings not associated with one named
-// application, the ID should not use StudlyCaps, e.g. org.gnome.font-rendering.
+// "org.gnome.SessionManager". In particular, if the settings are for a
+// specific service that owns a D-Bus bus name, the D-Bus bus name and schema
+// id should match. For schemas which deal with settings not associated
+// with one named application, the id should not use StudlyCaps, e.g.
+// "org.gnome.font-rendering".
 //
-// In addition to glib.Variant types, keys can have types that have enumerated
+// In addition to #GVariant types, keys can have types that have enumerated
 // types. These can be described by a <choice>, <enum> or <flags> element,
-// as seen in the second example below. The underlying type of such a key is
-// string, but you can use gio.Settings.GetEnum(), gio.Settings.SetEnum(),
-// gio.Settings.GetFlags(), gio.Settings.SetFlags() access the numeric values
+// as seen in the [example][schema-enumerated]. The underlying type of such a
+// key is string, but you can use g_settings_get_enum(), g_settings_set_enum(),
+// g_settings_get_flags(), g_settings_set_flags() access the numeric values
 // corresponding to the string value of enum and flags keys.
 //
 // An example for default value:
@@ -73411,11 +72922,11 @@ func defaultSettingsOverrides(v *Settings) SettingsOverrides {
 // Default values are defined in the schemas that get installed by an
 // application. Sometimes, it is necessary for a vendor or distributor to adjust
 // these defaults. Since patching the XML source for the schema is inconvenient
-// and error-prone, glib-compile-schemas (glib-compile-schemas.html) reads
-// so-called ‘vendor override’ files. These are keyfiles in the same directory
-// as the XML schema sources which can override default values. The schema ID
-// serves as the group name in the key file, and the values are expected in
-// serialized glib.Variant form, as in the following example:
+// and error-prone, [glib-compile-schemas][glib-compile-schemas] reads so-called
+// vendor override' files. These are keyfiles in the same directory as the XML
+// schema sources which can override default values. The schema id serves as
+// the group name in the key file, and the values are expected in serialized
+// GVariant form, as in the following example:
 //
 //	[org.gtk.Example]
 //	key1='string'
@@ -73426,25 +72937,24 @@ func defaultSettingsOverrides(v *Settings) SettingsOverrides {
 //
 // # Binding
 //
-// A very convenient feature of GSettings lets you bind gobject.Object
-// properties directly to settings, using gio.Settings.Bind(). Once a
-// gobject.Object property has been bound to a setting, changes on either side
-// are automatically propagated to the other side. GSettings handles details
-// like mapping between gobject.Object and glib.Variant types, and preventing
-// infinite cycles.
+// A very convenient feature of GSettings lets you bind #GObject properties
+// directly to settings, using g_settings_bind(). Once a GObject property has
+// been bound to a setting, changes on either side are automatically propagated
+// to the other side. GSettings handles details like mapping between GObject and
+// GVariant types, and preventing infinite cycles.
 //
 // This makes it very easy to hook up a preferences dialog to the underlying
 // settings. To make this even more convenient, GSettings looks for a boolean
-// property with the name sensitivity and automatically binds it to the
-// writability of the bound setting. If this ‘magic’ gets in the way, it can be
+// property with the name "sensitivity" and automatically binds it to the
+// writability of the bound setting. If this 'magic' gets in the way, it can be
 // suppressed with the G_SETTINGS_BIND_NO_SENSITIVITY flag.
 //
 // # Relocatable schemas
 //
 // A relocatable schema is one with no path attribute specified on its <schema>
-// element. By using gio.Settings.NewWithPath, a GSettings object can be
+// element. By using g_settings_new_with_path(), a #GSettings object can be
 // instantiated for a relocatable schema, assigning a path to the instance.
-// Paths passed to gio.Settings.NewWithPath will typically be constructed
+// Paths passed to g_settings_new_with_path() will typically be constructed
 // dynamically from a constant prefix plus some form of instance identifier; but
 // they must still be valid GSettings paths. Paths could also be constant and
 // used with a globally installed schema originating from a dependency library.
@@ -75373,9 +74883,11 @@ func SettingsUnbind(object *coreglib.Object, property string) {
 	runtime.KeepAlive(property)
 }
 
-// SimpleAction: GSimpleAction is the obvious simple implementation of the
-// gio.Action interface. This is the easiest way to create an action for
-// purposes of adding it to a gio.SimpleActionGroup.
+// SimpleAction is the obvious simple implementation of the #GAction interface.
+// This is the easiest way to create an action for purposes of adding it to a
+// ActionGroup.
+//
+// See also Action.
 type SimpleAction struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -75607,8 +75119,8 @@ func defaultSimpleActionGroupOverrides(v *SimpleActionGroup) SimpleActionGroupOv
 	return SimpleActionGroupOverrides{}
 }
 
-// SimpleActionGroup: GSimpleActionGroup is a hash table filled with gio.Action
-// objects, implementing the gio.ActionGroup and gio.ActionMap interfaces.
+// SimpleActionGroup is a hash table filled with #GAction objects, implementing
+// the Group and Map interfaces.
 type SimpleActionGroup struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -75782,69 +75294,69 @@ func (simple *SimpleActionGroup) Remove(actionName string) {
 	runtime.KeepAlive(actionName)
 }
 
-// SimpleAsyncResult as of GLib 2.46, GSimpleAsyncResult is deprecated in favor
-// of gio.Task, which provides a simpler API.
+// SimpleAsyncResult as of GLib 2.46, AsyncResult is deprecated in favor of
+// #GTask, which provides a simpler API.
 //
-// GSimpleAsyncResult implements gio.AsyncResult.
+// AsyncResult implements Result.
 //
-// GSimpleAsyncResult handles gio.AsyncReadyCallbacks, error reporting,
-// operation cancellation and the final state of an operation, completely
-// transparent to the application. Results can be returned as a pointer e.g.
-// for functions that return data that is collected asynchronously, a boolean
-// value for checking the success or failure of an operation, or a gssize for
-// operations which return the number of bytes modified by the operation;
-// all of the simple return cases are covered.
+// GSimpleAsyncResult handles ReadyCallbacks, error reporting, operation
+// cancellation and the final state of an operation, completely transparent to
+// the application. Results can be returned as a pointer e.g. for functions that
+// return data that is collected asynchronously, a boolean value for checking
+// the success or failure of an operation, or a #gssize for operations which
+// return the number of bytes modified by the operation; all of the simple
+// return cases are covered.
 //
 // Most of the time, an application will not need to know of the details of this
-// API; it is handled transparently, and any necessary operations are handled
-// by gio.AsyncResult’s interface. However, if implementing a new GIO module,
-// for writing language bindings, or for complex applications that need better
-// control of how asynchronous operations are completed, it is important to
-// understand this functionality.
+// API; it is handled transparently, and any necessary operations are handled by
+// Result's interface. However, if implementing a new GIO module, for writing
+// language bindings, or for complex applications that need better control of
+// how asynchronous operations are completed, it is important to understand this
+// functionality.
 //
 // GSimpleAsyncResults are tagged with the calling function to ensure that
 // asynchronous functions and their finishing functions are used together
 // correctly.
 //
-// To create a new GSimpleAsyncResult, call gio.SimpleAsyncResult.New.
-// If the result needs to be created for a GError, use
-// gio.SimpleAsyncResult.NewFromError or gio.SimpleAsyncResult.NewTakeError.
-// If a GError is not available (e.g. the asynchronous operation doesn’t
-// take a GError argument), but the result still needs to be created
-// for an error condition, use gio.SimpleAsyncResult.NewError (or
-// gio.SimpleAsyncResult.SetErrorVa() if your application or binding requires
-// passing a variable argument list directly), and the error can then be
-// propagated through the use of gio.SimpleAsyncResult.PropagateError().
+// To create a new AsyncResult, call g_simple_async_result_new(). If the result
+// needs to be created for a #GError, use g_simple_async_result_new_from_error()
+// or g_simple_async_result_new_take_error(). If a #GError is not available
+// (e.g. the asynchronous operation's doesn't take a #GError argument),
+// but the result still needs to be created for an error condition, use
+// g_simple_async_result_new_error() (or g_simple_async_result_set_error_va()
+// if your application or binding requires passing a variable argument
+// list directly), and the error can then be propagated through the use of
+// g_simple_async_result_propagate_error().
 //
-// An asynchronous operation can be made to ignore a cancellation event
-// by calling gio.SimpleAsyncResult.SetHandleCancellation() with a
-// GSimpleAsyncResult for the operation and FALSE. This is useful for operations
-// that are dangerous to cancel, such as close (which would cause a leak if
-// cancelled before being run).
+// An asynchronous operation can be made to ignore a cancellation event by
+// calling g_simple_async_result_set_handle_cancellation() with a AsyncResult
+// for the operation and FALSE. This is useful for operations that are dangerous
+// to cancel, such as close (which would cause a leak if cancelled before being
+// run).
 //
-// GSimpleAsyncResult can integrate into GLib’s event loop, glib.MainLoop,
-// or it can use glib.Threads. gio.SimpleAsyncResult.Complete() will
-// finish an I/O task directly from the point where it is called.
-// gio.SimpleAsyncResult.CompleteInIdle() will finish it from an idle handler in
-// the thread-default main context (see glib.MainContext.PushThreadDefault())
-// where the GSimpleAsyncResult was created. gio.SimpleAsyncResult.RunInThread()
-// will run the job in a separate thread and then use
-// gio.SimpleAsyncResult.CompleteInIdle() to deliver the result.
+// GSimpleAsyncResult can integrate into GLib's event loop, Loop, or it can use
+// #GThreads. g_simple_async_result_complete() will finish an I/O task directly
+// from the point where it is called. g_simple_async_result_complete_in_idle()
+// will finish it from an idle handler in the [thread-default main
+// context][g-main-context-push-thread-default] where the AsyncResult was
+// created. g_simple_async_result_run_in_thread() will run the job in a separate
+// thread and then use g_simple_async_result_complete_in_idle() to deliver the
+// result.
 //
 // To set the results of an asynchronous function,
-// gio.SimpleAsyncResult.SetOpResGpointer(),
-// gio.SimpleAsyncResult.SetOpResGboolean(), and
-// gio.SimpleAsyncResult.SetOpResGssize() are provided, setting the operation's
-// result to a gpointer, gboolean, or gssize, respectively.
+// g_simple_async_result_set_op_res_gpointer(),
+// g_simple_async_result_set_op_res_gboolean(), and
+// g_simple_async_result_set_op_res_gssize() are provided, setting the
+// operation's result to a gpointer, gboolean, or gssize, respectively.
 //
-// Likewise, to get the result of an asynchronous
-// function, gio.SimpleAsyncResult.GetOpResGpointer(),
-// gio.SimpleAsyncResult.GetOpResGboolean(), and
-// gio.SimpleAsyncResult.GetOpResGssize() are provided, getting the operation’s
-// result as a gpointer, gboolean, and gssize, respectively.
+// Likewise, to get the result of an asynchronous function,
+// g_simple_async_result_get_op_res_gpointer(),
+// g_simple_async_result_get_op_res_gboolean(), and
+// g_simple_async_result_get_op_res_gssize() are provided, getting the
+// operation's result as a gpointer, gboolean, and gssize, respectively.
 //
-// For the details of the requirements implementations must respect, see
-// gio.AsyncResult. A typical implementation of an asynchronous operation using
+// For the details of the requirements implementations must respect,
+// see Result. A typical implementation of an asynchronous operation using
 // GSimpleAsyncResult looks something like this:
 //
 //	static void
@@ -76342,15 +75854,13 @@ func SimpleAsyncResultIsValid(result AsyncResulter, source *coreglib.Object, sou
 	return _ok
 }
 
-// SimpleIOStream: GSimpleIOStream creates a gio.IOStream from an arbitrary
-// gio.InputStream and gio.OutputStream. This allows any pair of input and
-// output streams to be used with gio.IOStream methods.
+// SimpleIOStream creates a OStream from an arbitrary Stream and Stream. This
+// allows any pair of input and output streams to be used with OStream methods.
 //
-// This is useful when you obtained a gio.InputStream and a gio.OutputStream
-// by other means, for instance creating them with platform specific methods as
-// g_unix_input_stream_new() (../gio-unix/ctor.UnixInputStream.new.html) (from
-// gio-unix-2.0.pc / GioUnix-2.0), and you want to take advantage of the methods
-// provided by gio.IOStream.
+// This is useful when you obtained a Stream and a Stream by other means,
+// for instance creating them with platform specific methods as
+// g_unix_input_stream_new() or g_win32_input_stream_new(), and you want to take
+// advantage of the methods provided by OStream.
 type SimpleIOStream struct {
 	_ [0]func() // equal guard
 	IOStream
@@ -76402,12 +75912,11 @@ func NewSimpleIOStream(inputStream InputStreamer, outputStream OutputStreamer) *
 	return _simpleIOStream
 }
 
-// SimplePermission: GSimplePermission is a trivial implementation of
-// gio.Permission that represents a permission that is either always or never
-// allowed. The value is given at construction and doesn’t change.
+// SimplePermission is a trivial implementation of #GPermission that represents
+// a permission that is either always or never allowed. The value is given at
+// construction and doesn't change.
 //
-// Calling gio.Permission.Acquire() or gio.Permission.Release() on a
-// GSimplePermission will result in errors.
+// Calling request or release will result in errors.
 type SimplePermission struct {
 	_ [0]func() // equal guard
 	Permission
@@ -76465,14 +75974,13 @@ func defaultSimpleProxyResolverOverrides(v *SimpleProxyResolver) SimpleProxyReso
 	return SimpleProxyResolverOverrides{}
 }
 
-// SimpleProxyResolver: GSimpleProxyResolver is a simple gio.ProxyResolver
-// implementation that handles a single default proxy, multiple
-// URI-scheme-specific proxies, and a list of hosts that proxies should not be
-// used for.
+// SimpleProxyResolver is a simple Resolver implementation that handles a single
+// default proxy, multiple URI-scheme-specific proxies, and a list of hosts that
+// proxies should not be used for.
 //
-// GSimpleProxyResolver is never the default proxy resolver, but it can be used
-// as the base class for another proxy resolver implementation, or it can be
-// created and used manually, such as with gio.SocketClient.SetProxyResolver().
+// ProxyResolver is never the default proxy resolver, but it can be used as the
+// base class for another proxy resolver implementation, or it can be created
+// and used manually, such as with g_socket_client_set_proxy_resolver().
 type SimpleProxyResolver struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -76622,31 +76130,30 @@ func defaultSocketOverrides(v *Socket) SocketOverrides {
 	return SocketOverrides{}
 }
 
-// Socket: GSocket is a low-level networking primitive. It is a more or less
-// direct mapping of the BSD socket API in a portable GObject based API.
-// It supports both the UNIX socket implementations and winsock2 on Windows.
+// Socket is a low-level networking primitive. It is a more or less direct
+// mapping of the BSD socket API in a portable GObject based API. It supports
+// both the UNIX socket implementations and winsock2 on Windows.
 //
-// GSocket is the platform independent base upon which the higher level
+// #GSocket is the platform independent base upon which the higher level
 // network primitives are based. Applications are not typically meant to use it
-// directly, but rather through classes like gio.SocketClient, gio.SocketService
-// and gio.SocketConnection. However there may be cases where direct use of
-// GSocket is useful.
+// directly, but rather through classes like Client, Service and Connection.
+// However there may be cases where direct use of #GSocket is useful.
 //
-// GSocket implements the gio.Initable interface, so if it is manually
-// constructed by e.g. gobject.Object.New you must call gio.Initable.Init()
-// and check the results before using the object. This is done automatically in
-// gio.Socket.New and gio.Socket.NewFromFd, so these functions can return NULL.
+// #GSocket implements the #GInitable interface, so if it is manually
+// constructed by e.g. g_object_new() you must call g_initable_init() and
+// check the results before using the object. This is done automatically in
+// g_socket_new() and g_socket_new_from_fd(), so these functions can return
+// NULL.
 //
-// Sockets operate in two general modes, blocking or non-blocking.
-// When in blocking mode all operations (which don’t take an explicit
-// blocking parameter) block until the requested operation is finished
-// or there is an error. In non-blocking mode all calls that would block
-// return immediately with a G_IO_ERROR_WOULD_BLOCK error. To know when a
-// call would successfully run you can call gio.Socket.ConditionCheck(),
-// or gio.Socket.ConditionWait(). You can also use gio.Socket.CreateSource()
-// and attach it to a glib.MainContext to get callbacks when I/O is possible.
-// Note that all sockets are always set to non blocking mode in the system,
-// and blocking mode is emulated in GSocket.
+// Sockets operate in two general modes, blocking or non-blocking. When
+// in blocking mode all operations (which don’t take an explicit blocking
+// parameter) block until the requested operation is finished or there is an
+// error. In non-blocking mode all calls that would block return immediately
+// with a G_IO_ERROR_WOULD_BLOCK error. To know when a call would successfully
+// run you can call g_socket_condition_check(), or g_socket_condition_wait().
+// You can also use g_socket_create_source() and attach it to a Context to get
+// callbacks when I/O is possible. Note that all sockets are always set to non
+// blocking mode in the system, and blocking mode is emulated in GSocket.
 //
 // When working in non-blocking mode applications should always be able to
 // handle getting a G_IO_ERROR_WOULD_BLOCK error even when some other function
@@ -76655,7 +76162,7 @@ func defaultSocketOverrides(v *Socket) SocketOverrides {
 // For instance, on Windows a socket is always seen as writable until a write
 // returns G_IO_ERROR_WOULD_BLOCK.
 //
-// GSockets can be either connection oriented or datagram based. For connection
+// #GSockets can be either connection oriented or datagram based. For connection
 // oriented types you must first establish a connection by either connecting to
 // an address or accepting a connection from another address. For connectionless
 // socket types the target/source address is specified or received in each I/O
@@ -76663,32 +76170,15 @@ func defaultSocketOverrides(v *Socket) SocketOverrides {
 //
 // All socket file descriptors are set to be close-on-exec.
 //
-// Note that creating a GSocket causes the signal SIGPIPE to be ignored for the
+// Note that creating a #GSocket causes the signal SIGPIPE to be ignored for the
 // remainder of the program. If you are writing a command-line utility that uses
-// GSocket, you may need to take into account the fact that your program will
+// #GSocket, you may need to take into account the fact that your program will
 // not automatically be killed if it tries to write to stdout after it has been
 // closed.
 //
-// Like most other APIs in GLib, GSocket is not inherently thread safe.
-// To use a GSocket concurrently from multiple threads, you must implement your
+// Like most other APIs in GLib, #GSocket is not inherently thread safe.
+// To use a #GSocket concurrently from multiple threads, you must implement your
 // own locking.
-//
-// # Nagle’s algorithm
-//
-// Since GLib 2.80, GSocket will automatically set the TCP_NODELAY option
-// on all G_SOCKET_TYPE_STREAM sockets. This disables Nagle’s algorithm
-// (https://en.wikipedia.org/wiki/Nagle27s_algorithm) as it typically does more
-// harm than good on modern networks.
-//
-// If your application needs Nagle’s algorithm enabled, call
-// gio.Socket.SetOption() after constructing a GSocket to enable it:
-//
-//	socket = g_socket_new (…, G_SOCKET_TYPE_STREAM, …);
-//	if (socket != NULL)
-//	  {
-//	    g_socket_set_option (socket, IPPROTO_TCP, TCP_NODELAY, FALSE, &local_error);
-//	    // handle error if needed
-//	  }.
 type Socket struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -78023,150 +77513,6 @@ func (socket *Socket) Receive(ctx context.Context, buffer []byte) (int, error) {
 	return _gssize, _goerr
 }
 
-// ReceiveBytes receives data (up to size bytes) from a socket.
-//
-// This function is a variant of gio.Socket.Receive() which returns a glib.Bytes
-// rather than a plain buffer.
-//
-// Pass -1 to timeout_us to block indefinitely until data is received (or the
-// connection is closed, or there is an error). Pass 0 to use the default
-// timeout from gio.Socket:timeout, or pass a positive number to wait for that
-// many microseconds for data before returning G_IO_ERROR_TIMED_OUT.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional): GCancellable, or NULL.
-//   - size: number of bytes you want to read from the socket.
-//   - timeoutUs: timeout to wait for, in microseconds, or -1 to block
-//     indefinitely.
-//
-// The function returns the following values:
-//
-//   - bytes buffer containing the received bytes, or NULL on error.
-func (socket *Socket) ReceiveBytes(ctx context.Context, size uint, timeoutUs int64) (*glib.Bytes, error) {
-	var _arg0 *C.GSocket      // out
-	var _arg3 *C.GCancellable // out
-	var _arg1 C.gsize         // out
-	var _arg2 C.gint64        // out
-	var _cret *C.GBytes       // in
-	var _cerr *C.GError       // in
-
-	_arg0 = (*C.GSocket)(unsafe.Pointer(coreglib.InternObject(socket).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg3 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	_arg1 = C.gsize(size)
-	_arg2 = C.gint64(timeoutUs)
-
-	_cret = C.g_socket_receive_bytes(_arg0, _arg1, _arg2, _arg3, &_cerr)
-	runtime.KeepAlive(socket)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(size)
-	runtime.KeepAlive(timeoutUs)
-
-	var _bytes *glib.Bytes // out
-	var _goerr error       // out
-
-	_bytes = (*glib.Bytes)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_bytes)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_bytes_unref((*C.GBytes)(intern.C))
-		},
-	)
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _bytes, _goerr
-}
-
-// ReceiveBytesFrom: receive data (up to size bytes) from a socket.
-//
-// This function is a variant of gio.Socket.ReceiveFrom() which returns a
-// glib.Bytes rather than a plain buffer.
-//
-// If address is non-NULL then address will be set equal to the source address
-// of the received packet.
-//
-// The address is owned by the caller.
-//
-// Pass -1 to timeout_us to block indefinitely until data is received (or the
-// connection is closed, or there is an error). Pass 0 to use the default
-// timeout from gio.Socket:timeout, or pass a positive number to wait for that
-// many microseconds for data before returning G_IO_ERROR_TIMED_OUT.
-//
-// The function takes the following parameters:
-//
-//   - ctx (optional) or NULL.
-//   - size: number of bytes you want to read from the socket.
-//   - timeoutUs: timeout to wait for, in microseconds, or -1 to block
-//     indefinitely.
-//
-// The function returns the following values:
-//
-//   - address (optional): return location for a Address.
-//   - bytes buffer containing the received bytes, or NULL on error.
-func (socket *Socket) ReceiveBytesFrom(ctx context.Context, size uint, timeoutUs int64) (SocketAddresser, *glib.Bytes, error) {
-	var _arg0 *C.GSocket        // out
-	var _arg4 *C.GCancellable   // out
-	var _arg1 *C.GSocketAddress // in
-	var _arg2 C.gsize           // out
-	var _arg3 C.gint64          // out
-	var _cret *C.GBytes         // in
-	var _cerr *C.GError         // in
-
-	_arg0 = (*C.GSocket)(unsafe.Pointer(coreglib.InternObject(socket).Native()))
-	{
-		cancellable := gcancel.GCancellableFromContext(ctx)
-		defer runtime.KeepAlive(cancellable)
-		_arg4 = (*C.GCancellable)(unsafe.Pointer(cancellable.Native()))
-	}
-	_arg2 = C.gsize(size)
-	_arg3 = C.gint64(timeoutUs)
-
-	_cret = C.g_socket_receive_bytes_from(_arg0, &_arg1, _arg2, _arg3, _arg4, &_cerr)
-	runtime.KeepAlive(socket)
-	runtime.KeepAlive(ctx)
-	runtime.KeepAlive(size)
-	runtime.KeepAlive(timeoutUs)
-
-	var _address SocketAddresser // out
-	var _bytes *glib.Bytes       // out
-	var _goerr error             // out
-
-	if _arg1 != nil {
-		{
-			objptr := unsafe.Pointer(_arg1)
-
-			object := coreglib.AssumeOwnership(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(SocketAddresser)
-				return ok
-			})
-			rv, ok := casted.(SocketAddresser)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gio.SocketAddresser")
-			}
-			_address = rv
-		}
-	}
-	_bytes = (*glib.Bytes)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_bytes)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_bytes_unref((*C.GBytes)(intern.C))
-		},
-	)
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _address, _bytes, _goerr
-}
-
 // ReceiveFrom: receive data (up to size bytes) from a socket.
 //
 // If address is non-NULL then address will be set equal to the source address
@@ -79216,10 +78562,9 @@ func defaultSocketAddressOverrides(v *SocketAddress) SocketAddressOverrides {
 	}
 }
 
-// SocketAddress: GSocketAddress is the equivalent of struct sockaddr
-// (man:sockaddr(3type)) and its subtypes in the BSD sockets API. This
-// is an abstract class; use gio.InetSocketAddress for internet sockets,
-// or gio.UnixSocketAddress for UNIX domain sockets.
+// SocketAddress is the equivalent of struct sockaddr in the BSD sockets API.
+// This is an abstract class; use SocketAddress for internet sockets,
+// or SocketAddress for UNIX domain sockets.
 type SocketAddress struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -79540,19 +78885,18 @@ func defaultSocketAddressEnumeratorOverrides(v *SocketAddressEnumerator) SocketA
 	}
 }
 
-// SocketAddressEnumerator: GSocketAddressEnumerator is an enumerator type for
-// gio.SocketAddress instances. It is returned by enumeration functions such as
-// gio.SocketConnectable.Enumerate(), which returns a GSocketAddressEnumerator
-// to list each gio.SocketAddress which could be used to connect to that
-// gio.SocketConnectable.
+// SocketAddressEnumerator is an enumerator type for Address instances. It is
+// returned by enumeration functions such as g_socket_connectable_enumerate(),
+// which returns a AddressEnumerator to list each Address which could be used to
+// connect to that Connectable.
 //
 // Enumeration is typically a blocking operation, so the
-// asynchronous methods gio.SocketAddressEnumerator.NextAsync() and
-// gio.SocketAddressEnumerator.NextFinish() should be used where possible.
+// asynchronous methods g_socket_address_enumerator_next_async() and
+// g_socket_address_enumerator_next_finish() should be used where possible.
 //
-// Each GSocketAddressEnumerator can only be enumerated once. Once
-// gio.SocketAddressEnumerator.Next() has returned NULL, further enumeration
-// with that GSocketAddressEnumerator is not possible, and it can be unreffed.
+// Each AddressEnumerator can only be enumerated once. Once
+// g_socket_address_enumerator_next() has returned NULL, further enumeration
+// with that AddressEnumerator is not possible, and it can be unreffed.
 type SocketAddressEnumerator struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -79939,19 +79283,18 @@ func defaultSocketClientOverrides(v *SocketClient) SocketClientOverrides {
 	}
 }
 
-// SocketClient: GSocketClient is a lightweight high-level utility class for
-// connecting to a network host using a connection oriented socket type.
+// SocketClient is a lightweight high-level utility class for connecting to a
+// network host using a connection oriented socket type.
 //
-// You create a GSocketClient object, set any options you want, and then call
-// a sync or async connect operation, which returns a gio.SocketConnection
-// subclass on success.
+// You create a Client object, set any options you want, and then call a sync or
+// async connect operation, which returns a Connection subclass on success.
 //
-// The type of the gio.SocketConnection object returned depends on the type of
-// the underlying socket that is in use. For instance, for a TCP/IP connection
-// it will be a gio.TCPConnection.
+// The type of the Connection object returned depends on the type of the
+// underlying socket that is in use. For instance, for a TCP/IP connection it
+// will be a Connection.
 //
-// As GSocketClient is a lightweight object, you don't need to cache it. You can
-// just create a new one any time you need one.
+// As Client is a lightweight object, you don't need to cache it. You can just
+// create a new one any time you need one.
 type SocketClient struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -81134,22 +80477,21 @@ func defaultSocketConnectionOverrides(v *SocketConnection) SocketConnectionOverr
 	return SocketConnectionOverrides{}
 }
 
-// SocketConnection: GSocketConnection is a gio.IOStream for a connected socket.
-// They can be created either by gio.SocketClient when connecting to a host,
-// or by gio.SocketListener when accepting a new client.
+// SocketConnection is a OStream for a connected socket. They can be created
+// either by Client when connecting to a host, or by Listener when accepting a
+// new client.
 //
-// The type of the GSocketConnection object returned from these calls depends on
-// the type of the underlying socket that is in use. For instance, for a TCP/IP
-// connection it will be a gio.TCPConnection.
+// The type of the Connection object returned from these calls depends on the
+// type of the underlying socket that is in use. For instance, for a TCP/IP
+// connection it will be a Connection.
 //
 // Choosing what type of object to construct is done with the socket connection
-// factory, and it is possible for third parties to register custom socket
+// factory, and it is possible for 3rd parties to register custom socket
 // connection types for specific combination of socket family/type/protocol
-// using gio.SocketConnection().FactoryRegisterType.
+// using g_socket_connection_factory_register_type().
 //
-// To close a GSocketConnection, use gio.IOStream.Close(). Closing both
-// substreams of the gio.IOStream separately will not close the underlying
-// gio.Socket.
+// To close a Connection, use g_io_stream_close(). Closing both substreams of
+// the OStream separately will not close the underlying #GSocket.
 type SocketConnection struct {
 	_ [0]func() // equal guard
 	IOStream
@@ -81226,10 +80568,6 @@ func (connection *SocketConnection) ConnectSocketConnection(ctx context.Context,
 //
 // This clears the #GSocket:blocking flag on connection's underlying socket if
 // it is currently set.
-//
-// If #GSocket:timeout is set, the operation will time out and return
-// G_IO_ERROR_TIMED_OUT after that period. Otherwise, it will continue
-// indefinitely until operating system timeouts (if any) are hit.
 //
 // Use g_socket_connection_connect_finish() to retrieve the result.
 //
@@ -81512,7 +80850,6 @@ type SocketControlMessageOverrides struct {
 	//
 	//   - gsize: number of bytes required.
 	Size func() uint
-	// Type gets the protocol specific type of the message.
 	Type func() int
 	// Serialize converts the data in the message to bytes placed in the
 	// message.
@@ -81535,24 +80872,24 @@ func defaultSocketControlMessageOverrides(v *SocketControlMessage) SocketControl
 	}
 }
 
-// SocketControlMessage: GSocketControlMessage is a special-purpose utility
-// message that can be sent to or received from a gio.Socket. These types of
-// messages are often called ‘ancillary data’.
+// SocketControlMessage is a special-purpose utility message that can be sent
+// to or received from a #GSocket. These types of messages are often called
+// "ancillary data".
 //
 // The message can represent some sort of special instruction to or information
 // from the socket or can represent a special kind of transfer to the peer (for
 // example, sending a file descriptor over a UNIX socket).
 //
-// These messages are sent with gio.Socket.SendMessage() and received with
-// gio.Socket.ReceiveMessage().
+// These messages are sent with g_socket_send_message() and received with
+// g_socket_receive_message().
 //
 // To extend the set of control message that can be sent, subclass this class
 // and override the get_size, get_level, get_type and serialize methods.
 //
-// To extend the set of control messages that can be received, subclass
-// this class and implement the deserialize method. Also, make sure your
-// class is registered with the gobject.Type type system before calling
-// gio.Socket.ReceiveMessage() to read such a message.
+// To extend the set of control messages that can be received,
+// subclass this class and implement the deserialize method. Also, make
+// sure your class is registered with the GType typesystem before calling
+// g_socket_receive_message() to read such a message.
 type SocketControlMessage struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -81762,7 +81099,6 @@ func (message *SocketControlMessage) size() uint {
 	return _gsize
 }
 
-// Typ gets the protocol specific type of the message.
 func (message *SocketControlMessage) typ() int {
 	gclass := (*C.GSocketControlMessageClass)(coreglib.PeekParentClass(message))
 	fnarg := gclass.get_type
@@ -81821,7 +81157,7 @@ func (message *SocketControlMessage) serialize(data unsafe.Pointer) {
 //
 // The function returns the following values:
 //
-//   - socketControlMessage (optional): deserialized message or NULL.
+//   - socketControlMessage: deserialized message or NULL.
 func SocketControlMessageDeserialize(level, typ int, data []byte) SocketControlMessager {
 	var _arg1 C.int      // out
 	var _arg2 C.int      // out
@@ -81843,21 +81179,22 @@ func SocketControlMessageDeserialize(level, typ int, data []byte) SocketControlM
 
 	var _socketControlMessage SocketControlMessager // out
 
-	if _cret != nil {
-		{
-			objptr := unsafe.Pointer(_cret)
-
-			object := coreglib.AssumeOwnership(objptr)
-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
-				_, ok := obj.(SocketControlMessager)
-				return ok
-			})
-			rv, ok := casted.(SocketControlMessager)
-			if !ok {
-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching gio.SocketControlMessager")
-			}
-			_socketControlMessage = rv
+	{
+		objptr := unsafe.Pointer(_cret)
+		if objptr == nil {
+			panic("object of type gio.SocketControlMessager is nil")
 		}
+
+		object := coreglib.AssumeOwnership(objptr)
+		casted := object.WalkCast(func(obj coreglib.Objector) bool {
+			_, ok := obj.(SocketControlMessager)
+			return ok
+		})
+		rv, ok := casted.(SocketControlMessager)
+		if !ok {
+			panic("no marshaler for " + object.TypeFromInstance().String() + " matching gio.SocketControlMessager")
+		}
+		_socketControlMessage = rv
 	}
 
 	return _socketControlMessage
@@ -81865,8 +81202,6 @@ func SocketControlMessageDeserialize(level, typ int, data []byte) SocketControlM
 
 // SocketListenerOverrides contains methods that are overridable.
 type SocketListenerOverrides struct {
-	// Changed: virtual method called when the set of socket listened to
-	// changes.
 	Changed func()
 	// The function takes the following parameters:
 	//
@@ -81882,19 +81217,17 @@ func defaultSocketListenerOverrides(v *SocketListener) SocketListenerOverrides {
 	}
 }
 
-// SocketListener: GSocketListener is an object that keeps track of a set of
-// server sockets and helps you accept sockets from any of the socket, either
-// sync or async.
+// SocketListener is an object that keeps track of a set of server sockets and
+// helps you accept sockets from any of the socket, either sync or async.
 //
-// Add addresses and ports to listen on using gio.SocketListener.AddAddress()
-// and gio.SocketListener.AddInetPort(). These will be listened on until
-// gio.SocketListener.Close() is called. Dropping your final reference to the
-// GSocketListener will not cause gio.SocketListener.Close() to be called
-// implicitly, as some references to the GSocketListener may be held internally.
+// Add addresses and ports to listen on using g_socket_listener_add_address()
+// and g_socket_listener_add_inet_port(). These will be listened on until
+// g_socket_listener_close() is called. Dropping your final reference to the
+// Listener will not cause g_socket_listener_close() to be called implicitly,
+// as some references to the Listener may be held internally.
 //
-// If you want to implement a network server, also look at gio.SocketService and
-// gio.ThreadedSocketService which are subclasses of GSocketListener that make
-// this even easier.
+// If you want to implement a network server, also look at Service and
+// SocketService which are subclasses of Listener that make this even easier.
 type SocketListener struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -82459,7 +81792,6 @@ func (listener *SocketListener) SetBacklog(listenBacklog int) {
 	runtime.KeepAlive(listenBacklog)
 }
 
-// Changed: virtual method called when the set of socket listened to changes.
 func (listener *SocketListener) changed() {
 	gclass := (*C.GSocketListenerClass)(coreglib.PeekParentClass(listener))
 	fnarg := gclass.changed
@@ -82496,8 +81828,6 @@ func (listener *SocketListener) event(event SocketListenerEvent, socket *Socket)
 
 // SocketServiceOverrides contains methods that are overridable.
 type SocketServiceOverrides struct {
-	// Incoming: signal emitted when new connections are accepted.
-	//
 	// The function takes the following parameters:
 	//
 	//   - connection
@@ -82511,29 +81841,28 @@ func defaultSocketServiceOverrides(v *SocketService) SocketServiceOverrides {
 	}
 }
 
-// SocketService: GSocketService is an object that represents a service that is
-// provided to the network or over local sockets. When a new connection is made
-// to the service the gio.SocketService::incoming signal is emitted.
+// SocketService is an object that represents a service that is provided to the
+// network or over local sockets. When a new connection is made to the service
+// the Service::incoming signal is emitted.
 //
-// A GSocketService is a subclass of gio.SocketListener and you need to add the
-// addresses you want to accept connections on with the gio.SocketListener APIs.
+// A Service is a subclass of Listener and you need to add the addresses you
+// want to accept connections on with the Listener APIs.
 //
-// There are two options for implementing a network service based
-// on GSocketService. The first is to create the service using
-// gio.SocketService.New and to connect to the gio.SocketService::incoming
-// signal. The second is to subclass GSocketService and override the default
-// signal handler implementation.
+// There are two options for implementing a network service based on Service.
+// The first is to create the service using g_socket_service_new() and to
+// connect to the Service::incoming signal. The second is to subclass Service
+// and override the default signal handler implementation.
 //
 // In either case, the handler must immediately return, or else it will block
 // additional incoming connections from being serviced. If you are interested
 // in writing connection handlers that contain blocking code then see
-// gio.ThreadedSocketService.
+// SocketService.
 //
-// The socket service runs on the main loop of the thread-default context (see
-// glib.MainContext.PushThreadDefault()) of the thread it is created in, and is
-// not threadsafe in general. However, the calls to start and stop the service
-// are thread-safe so these can be used from threads that handle incoming
-// clients.
+// The socket service runs on the main loop of the [thread-default
+// context][g-main-context-push-thread-default-context] of the thread it is
+// created in, and is not threadsafe in general. However, the calls to start
+// and stop the service are thread-safe so these can be used from threads that
+// handle incoming clients.
 type SocketService struct {
 	_ [0]func() // equal guard
 	SocketListener
@@ -82674,8 +82003,6 @@ func (service *SocketService) Stop() {
 	runtime.KeepAlive(service)
 }
 
-// Incoming: signal emitted when new connections are accepted.
-//
 // The function takes the following parameters:
 //
 //   - connection
@@ -82707,352 +82034,28 @@ func (service *SocketService) incoming(connection *SocketConnection, sourceObjec
 	return _ok
 }
 
-// Task: GTask represents and manages a cancellable ‘task’.
+// Task represents and manages a cancellable "task".
 //
 // # Asynchronous operations
 //
-// The most common usage of GTask is as a gio.AsyncResult, to manage data during
-// an asynchronous operation. You call gio.Task.New in the ‘start’ method,
-// followed by gio.Task.SetTaskData() and the like if you need to keep some
+// The most common usage of #GTask is as a Result, to manage data during
+// an asynchronous operation. You call g_task_new() in the "start" method,
+// followed by g_task_set_task_data() and the like if you need to keep some
 // additional data associated with the task, and then pass the task object
 // around through your asynchronous operation. Eventually, you will call a
-// method such as gio.Task.ReturnPointer() or gio.Task.ReturnError(), which will
-// save the value you give it and then invoke the task’s callback function in
-// the thread-default main context (see glib.MainContext.PushThreadDefault())
-// where it was created (waiting until the next iteration of the main
-// loop first, if necessary). The caller will pass the GTask back to the
-// operation’s finish function (as a gio.AsyncResult), and you can use
-// gio.Task.PropagatePointer() or the like to extract the return value.
+// method such as g_task_return_pointer() or g_task_return_error(), which will
+// save the value you give it and then invoke the task's callback function in
+// the [thread-default main context][g-main-context-push-thread-default] where
+// it was created (waiting until the next iteration of the main loop first,
+// if necessary). The caller will pass the #GTask back to the operation's finish
+// function (as a Result), and you can use g_task_propagate_pointer() or the
+// like to extract the return value.
 //
-// Using GTask requires the thread-default glib.MainContext from when the GTask
-// was constructed to be running at least until the task has completed and its
-// data has been freed.
+// Using #GTask requires the thread-default Context from when the #GTask was
+// constructed to be running at least until the task has completed and its data
+// has been freed.
 //
-// If a GTask has been constructed and its callback set, it is an error to not
-// call g_task_return_*() on it. GLib will warn at runtime if this happens
-// (since 2.76).
-//
-// Here is an example for using GTask as a gio.AsyncResult:
-//
-//	typedef struct {
-//	  CakeFrostingType frosting;
-//	  char *message;
-//	} DecorationData;
-//
-//	static void
-//	decoration_data_free (DecorationData *decoration)
-//	{
-//	  g_free (decoration->message);
-//	  g_slice_free (DecorationData, decoration);
-//	}
-//
-//	static void
-//	baked_cb (Cake     *cake,
-//	          gpointer  user_data)
-//	{
-//	  GTask *task = user_data;
-//	  DecorationData *decoration = g_task_get_task_data (task);
-//	  GError *error = NULL;
-//
-//	  if (cake == NULL)
-//	    {
-//	      g_task_return_new_error (task, BAKER_ERROR, BAKER_ERROR_NO_FLOUR,
-//	                               "Go to the supermarket");
-//	      g_object_unref (task);
-//	      return;
-//	    }
-//
-//	  if (!cake_decorate (cake, decoration->frosting, decoration->message, &error))
-//	    {
-//	      g_object_unref (cake);
-//	      // g_task_return_error() takes ownership of error
-//	      g_task_return_error (task, error);
-//	      g_object_unref (task);
-//	      return;
-//	    }
-//
-//	  g_task_return_pointer (task, cake, g_object_unref);
-//	  g_object_unref (task);
-//	}
-//
-//	void
-//	baker_bake_cake_async (Baker               *self,
-//	                       guint                radius,
-//	                       CakeFlavor           flavor,
-//	                       CakeFrostingType     frosting,
-//	                       const char          *message,
-//	                       GCancellable        *cancellable,
-//	                       GAsyncReadyCallback  callback,
-//	                       gpointer             user_data)
-//	{
-//	  GTask *task;
-//	  DecorationData *decoration;
-//	  Cake  *cake;
-//
-//	  task = g_task_new (self, cancellable, callback, user_data);
-//	  if (radius < 3)
-//	    {
-//	      g_task_return_new_error (task, BAKER_ERROR, BAKER_ERROR_TOO_SMALL,
-//	                               "ucm radius cakes are silly",
-//	                               radius);
-//	      g_object_unref (task);
-//	      return;
-//	    }
-//
-//	  cake = _baker_get_cached_cake (self, radius, flavor, frosting, message);
-//	  if (cake != NULL)
-//	    {
-//	      // _baker_get_cached_cake() returns a reffed cake
-//	      g_task_return_pointer (task, cake, g_object_unref);
-//	      g_object_unref (task);
-//	      return;
-//	    }
-//
-//	  decoration = g_slice_new (DecorationData);
-//	  decoration->frosting = frosting;
-//	  decoration->message = g_strdup (message);
-//	  g_task_set_task_data (task, decoration, (GDestroyNotify) decoration_data_free);
-//
-//	  _baker_begin_cake (self, radius, flavor, cancellable, baked_cb, task);
-//	}
-//
-//	Cake *
-//	baker_bake_cake_finish (Baker         *self,
-//	                        GAsyncResult  *result,
-//	                        GError       **error)
-//	{
-//	  g_return_val_if_fail (g_task_is_valid (result, self), NULL);
-//
-//	  return g_task_propagate_pointer (G_TASK (result), error);
-//	}
-//
-// # Chained asynchronous operations
-//
-// GTask also tries to simplify asynchronous operations that internally chain
-// together several smaller asynchronous operations. gio.Task.GetCancellable(),
-// gio.Task.GetContext(), and gio.Task.GetPriority() allow you to get
-// back the task’s gio.Cancellable, glib.MainContext, and I/O priority
-// (iface.AsyncResult.html#io-priority) when starting a new subtask, so you
-// don’t have to keep track of them yourself. gio.Task.AttachSource() simplifies
-// the case of waiting for a source to fire (automatically using the correct
-// glib.MainContext and priority).
-//
-// Here is an example for chained asynchronous operations:
-//
-//	typedef struct {
-//	  Cake *cake;
-//	  CakeFrostingType frosting;
-//	  char *message;
-//	} BakingData;
-//
-//	static void
-//	decoration_data_free (BakingData *bd)
-//	{
-//	  if (bd->cake)
-//	    g_object_unref (bd->cake);
-//	  g_free (bd->message);
-//	  g_slice_free (BakingData, bd);
-//	}
-//
-//	static void
-//	decorated_cb (Cake         *cake,
-//	              GAsyncResult *result,
-//	              gpointer      user_data)
-//	{
-//	  GTask *task = user_data;
-//	  GError *error = NULL;
-//
-//	  if (!cake_decorate_finish (cake, result, &error))
-//	    {
-//	      g_object_unref (cake);
-//	      g_task_return_error (task, error);
-//	      g_object_unref (task);
-//	      return;
-//	    }
-//
-//	  // baking_data_free() will drop its ref on the cake, so we have to
-//	  // take another here to give to the caller.
-//	  g_task_return_pointer (task, g_object_ref (cake), g_object_unref);
-//	  g_object_unref (task);
-//	}
-//
-//	static gboolean
-//	decorator_ready (gpointer user_data)
-//	{
-//	  GTask *task = user_data;
-//	  BakingData *bd = g_task_get_task_data (task);
-//
-//	  cake_decorate_async (bd->cake, bd->frosting, bd->message,
-//	                       g_task_get_cancellable (task),
-//	                       decorated_cb, task);
-//
-//	  return G_SOURCE_REMOVE;
-//	}
-//
-//	static void
-//	baked_cb (Cake     *cake,
-//	          gpointer  user_data)
-//	{
-//	  GTask *task = user_data;
-//	  BakingData *bd = g_task_get_task_data (task);
-//	  GError *error = NULL;
-//
-//	  if (cake == NULL)
-//	    {
-//	      g_task_return_new_error (task, BAKER_ERROR, BAKER_ERROR_NO_FLOUR,
-//	                               "Go to the supermarket");
-//	      g_object_unref (task);
-//	      return;
-//	    }
-//
-//	  bd->cake = cake;
-//
-//	  // Bail out now if the user has already cancelled
-//	  if (g_task_return_error_if_cancelled (task))
-//	    {
-//	      g_object_unref (task);
-//	      return;
-//	    }
-//
-//	  if (cake_decorator_available (cake))
-//	    decorator_ready (task);
-//	  else
-//	    {
-//	      GSource *source;
-//
-//	      source = cake_decorator_wait_source_new (cake);
-//	      // Attach source to task’s GMainContext and have it call
-//	      // decorator_ready() when it is ready.
-//	      g_task_attach_source (task, source, decorator_ready);
-//	      g_source_unref (source);
-//	    }
-//	}
-//
-//	void
-//	baker_bake_cake_async (Baker               *self,
-//	                       guint                radius,
-//	                       CakeFlavor           flavor,
-//	                       CakeFrostingType     frosting,
-//	                       const char          *message,
-//	                       gint                 priority,
-//	                       GCancellable        *cancellable,
-//	                       GAsyncReadyCallback  callback,
-//	                       gpointer             user_data)
-//	{
-//	  GTask *task;
-//	  BakingData *bd;
-//
-//	  task = g_task_new (self, cancellable, callback, user_data);
-//	  g_task_set_priority (task, priority);
-//
-//	  bd = g_slice_new0 (BakingData);
-//	  bd->frosting = frosting;
-//	  bd->message = g_strdup (message);
-//	  g_task_set_task_data (task, bd, (GDestroyNotify) baking_data_free);
-//
-//	  _baker_begin_cake (self, radius, flavor, cancellable, baked_cb, task);
-//	}
-//
-//	Cake *
-//	baker_bake_cake_finish (Baker         *self,
-//	                        GAsyncResult  *result,
-//	                        GError       **error)
-//	{
-//	  g_return_val_if_fail (g_task_is_valid (result, self), NULL);
-//
-//	  return g_task_propagate_pointer (G_TASK (result), error);
-//	}
-//
-// # Asynchronous operations from synchronous ones
-//
-// You can use gio.Task.RunInThread() to turn a synchronous operation into
-// an asynchronous one, by running it in a thread. When it completes,
-// the result will be dispatched to the thread-default main context (see
-// glib.MainContext.PushThreadDefault()) where the GTask was created.
-//
-// Running a task in a thread:
-//
-//	typedef struct {
-//	  guint radius;
-//	  CakeFlavor flavor;
-//	  CakeFrostingType frosting;
-//	  char *message;
-//	} CakeData;
-//
-//	static void
-//	cake_data_free (CakeData *cake_data)
-//	{
-//	  g_free (cake_data->message);
-//	  g_slice_free (CakeData, cake_data);
-//	}
-//
-//	static void
-//	bake_cake_thread (GTask         *task,
-//	                  gpointer       source_object,
-//	                  gpointer       task_data,
-//	                  GCancellable  *cancellable)
-//	{
-//	  Baker *self = source_object;
-//	  CakeData *cake_data = task_data;
-//	  Cake *cake;
-//	  GError *error = NULL;
-//
-//	  cake = bake_cake (baker, cake_data->radius, cake_data->flavor,
-//	                    cake_data->frosting, cake_data->message,
-//	                    cancellable, &error);
-//	  if (cake)
-//	    g_task_return_pointer (task, cake, g_object_unref);
-//	  else
-//	    g_task_return_error (task, error);
-//	}
-//
-//	void
-//	baker_bake_cake_async (Baker               *self,
-//	                       guint                radius,
-//	                       CakeFlavor           flavor,
-//	                       CakeFrostingType     frosting,
-//	                       const char          *message,
-//	                       GCancellable        *cancellable,
-//	                       GAsyncReadyCallback  callback,
-//	                       gpointer             user_data)
-//	{
-//	  CakeData *cake_data;
-//	  GTask *task;
-//
-//	  cake_data = g_slice_new (CakeData);
-//	  cake_data->radius = radius;
-//	  cake_data->flavor = flavor;
-//	  cake_data->frosting = frosting;
-//	  cake_data->message = g_strdup (message);
-//	  task = g_task_new (self, cancellable, callback, user_data);
-//	  g_task_set_task_data (task, cake_data, (GDestroyNotify) cake_data_free);
-//	  g_task_run_in_thread (task, bake_cake_thread);
-//	  g_object_unref (task);
-//	}
-//
-//	Cake *
-//	baker_bake_cake_finish (Baker         *self,
-//	                        GAsyncResult  *result,
-//	                        GError       **error)
-//	{
-//	  g_return_val_if_fail (g_task_is_valid (result, self), NULL);
-//
-//	  return g_task_propagate_pointer (G_TASK (result), error);
-//	}
-//
-// # Adding cancellability to uncancellable tasks
-//
-// Finally, gio.Task.RunInThread() and gio.Task.RunInThreadSync() can
-// be used to turn an uncancellable operation into a cancellable one.
-// If you call gio.Task.SetReturnOnCancel(), passing TRUE, then if the task’s
-// gio.Cancellable is cancelled, it will return control back to the caller
-// immediately, while allowing the task thread to continue running in the
-// background (and simply discarding its result when it finally does finish).
-// Provided that the task thread is careful about how it uses locks and other
-// externally-visible resources, this allows you to make ‘GLib-friendly’
-// asynchronous and cancellable synchronous variants of blocking APIs.
-//
-// Cancelling a task:
+// Here is an example for using GTask as a GAsyncResult:
 //
 //	static void
 //	bake_cake_thread (GTask         *task,
@@ -83074,8 +82077,8 @@ func (service *SocketService) incoming(connection *SocketConnection, sourceObjec
 //	      return;
 //	    }
 //
-//	  // If the task has already been cancelled, then we don’t want to add
-//	  // the cake to the cake cache. Likewise, we don’t  want to have the
+//	  // If the task has already been cancelled, then we don't want to add
+//	  // the cake to the cake cache. Likewise, we don't  want to have the
 //	  // task get cancelled in the middle of updating the cache.
 //	  // g_task_set_return_on_cancel() will return TRUE here if it managed
 //	  // to disable return-on-cancel, or FALSE if the task was cancelled
@@ -83083,11 +82086,11 @@ func (service *SocketService) incoming(connection *SocketConnection, sourceObjec
 //	  if (g_task_set_return_on_cancel (task, FALSE))
 //	    {
 //	      // If the caller cancels at this point, their
-//	      // GAsyncReadyCallback won’t be invoked until we return,
-//	      // so we don’t have to worry that this code will run at
+//	      // GAsyncReadyCallback won't be invoked until we return,
+//	      // so we don't have to worry that this code will run at
 //	      // the same time as that code does. But if there were
 //	      // other functions that might look at the cake cache,
-//	      // then we’d probably need a GMutex here as well.
+//	      // then we'd probably need a GMutex here as well.
 //	      baker_add_cake_to_cache (baker, cake);
 //	      g_task_return_pointer (task, cake, g_object_unref);
 //	    }
@@ -83143,75 +82146,55 @@ func (service *SocketService) incoming(connection *SocketConnection, sourceObjec
 //	  return cake;
 //	}
 //
-// # Porting from gio.SimpleAsyncResult
+// # Porting from GSimpleAsyncResult
 //
-// GTask’s API attempts to be simpler than gio.SimpleAsyncResult’s in several
-// ways:
+// #GTask's API attempts to be simpler than AsyncResult's in several ways:
 //
-// - You can save task-specific data with gio.Task.SetTaskData(), and
-// retrieve it later with gio.Task.GetTaskData(). This replaces the abuse
-// of gio.SimpleAsyncResult.SetOpResGpointer() for the same purpose with
-// gio.SimpleAsyncResult.
+// - You can save task-specific data with g_task_set_task_data(), and
+// retrieve it later with g_task_get_task_data(). This replaces the abuse
+// of g_simple_async_result_set_op_res_gpointer() for the same purpose with
+// AsyncResult.
 //
-// - In addition to the task data, GTask also keeps track of the priority
-// (iface.AsyncResult.html#io-priority), gio.Cancellable, and glib.MainContext
-// associated with the task, so tasks that consist of a chain of simpler
-// asynchronous operations will have easy access to those values when starting
-// each sub-task.
+// - In addition to the task data, #GTask also keeps track of the
+// [priority][io-priority], #GCancellable, and Context associated with the task,
+// so tasks that consist of a chain of simpler asynchronous operations will have
+// easy access to those values when starting each sub-task.
 //
-// - gio.Task.ReturnErrorIfCancelled() provides simplified handling
+// - g_task_return_error_if_cancelled() provides simplified handling
 // for cancellation. In addition, cancellation overrides any other
-// GTask return value by default, like gio.SimpleAsyncResult does when
-// gio.SimpleAsyncResult.SetCheckCancellable() is called. (You can use
-// gio.Task.SetCheckCancellable() to turn off that behavior.) On the other hand,
-// gio.Task.RunInThread() guarantees that it will always run your task_func,
-// even if the task’s gio.Cancellable is already cancelled before the
-// task gets a chance to run; you can start your task_func with a
-// gio.Task.ReturnErrorIfCancelled() check if you need the old behavior.
+// #GTask return value by default, like AsyncResult does when
+// g_simple_async_result_set_check_cancellable() is called. (You can use
+// g_task_set_check_cancellable() to turn off that behavior.) On the other
+// hand, g_task_run_in_thread() guarantees that it will always run your
+// task_func, even if the task's #GCancellable is already cancelled before
+// the task gets a chance to run; you can start your task_func with a
+// g_task_return_error_if_cancelled() check if you need the old behavior.
 //
-// - The ‘return’ methods (eg, gio.Task.ReturnPointer()) automatically cause
-// the task to be ‘completed’ as well, and there is no need to worry about the
-// ‘complete’ vs ‘complete in idle’ distinction. (GTask automatically figures
-// out whether the task’s callback can be invoked directly, or if it needs to be
-// sent to another glib.MainContext, or delayed until the next iteration of the
-// current glib.MainContext.)
+// - The "return" methods (eg, g_task_return_pointer()) automatically cause
+// the task to be "completed" as well, and there is no need to worry about the
+// "complete" vs "complete in idle" distinction. (#GTask automatically figures
+// out whether the task's callback can be invoked directly, or if it needs to be
+// sent to another Context, or delayed until the next iteration of the current
+// Context.)
 //
-// - The ‘finish’ functions for GTask based operations are generally
-// much simpler than gio.SimpleAsyncResult ones, normally consisting of
-// only a single call to gio.Task.PropagatePointer() or the like. Since
-// gio.Task.PropagatePointer() ‘steals’ the return value from the GTask, it is
-// not necessary to juggle pointers around to prevent it from being freed twice.
+// - The "finish" functions for #GTask based operations are generally much
+// simpler than AsyncResult ones, normally consisting of only a single call to
+// g_task_propagate_pointer() or the like. Since g_task_propagate_pointer()
+// "steals" the return value from the #GTask, it is not necessary to juggle
+// pointers around to prevent it from being freed twice.
 //
-// - With gio.SimpleAsyncResult, it was common to call
-// gio.SimpleAsyncResult.PropagateError() from the _finish() wrapper function,
+// - With AsyncResult, it was common to call
+// g_simple_async_result_propagate_error() from the _finish() wrapper function,
 // and have virtual method implementations only deal with successful returns.
 // This behavior is deprecated, because it makes it difficult for a subclass
-// to chain to a parent class’s async methods. Instead, the wrapper function
-// should just be a simple wrapper, and the virtual method should call an
-// appropriate g_task_propagate_ function. Note that wrapper methods can now use
-// gio.AsyncResult.LegacyPropagateError() to do old-style gio.SimpleAsyncResult
-// error-returning behavior, and gio.AsyncResult.IsTagged() to check
-// if a result is tagged as having come from the _async() wrapper
-// function (for ‘short-circuit’ results, such as when passing 0 to
-// gio.InputStream.ReadAsync()).
-//
-// # Thread-safety considerations
-//
-// Due to some infelicities in the API design, there is a thread-safety concern
-// that users of GTask have to be aware of:
-//
-// If the main thread drops its last reference to the source object or the task
-// data before the task is finalized, then the finalizers of these objects may
-// be called on the worker thread.
-//
-// This is a problem if the finalizers use non-threadsafe API, and can lead to
-// hard-to-debug crashes. Possible workarounds include:
-//
-// - Clear task data in a signal handler for notify::completed
-//
-// - Keep iterating a main context in the main thread and defer dropping
-// the reference to the source object to that main context when the task is
-// finalized.
+// to chain to a parent class's async methods. Instead, the wrapper function
+// should just be a simple wrapper, and the virtual method should call
+// an appropriate g_task_propagate_ function. Note that wrapper methods
+// can now use g_async_result_legacy_propagate_error() to do old-style
+// AsyncResult error-returning behavior, and g_async_result_is_tagged()
+// to check if a result is tagged as having come from the _async() wrapper
+// function (for "short-circuit" results, such as when passing 0 to
+// g_input_stream_read_async()).
 type Task struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -83295,7 +82278,7 @@ func NewTask(ctx context.Context, sourceObject *coreglib.Object, callback AsyncR
 //
 // The function returns the following values:
 //
-//   - cancellable (optional) task's #GCancellable.
+//   - cancellable task's #GCancellable.
 func (task *Task) Cancellable() *Cancellable {
 	var _arg0 *C.GTask        // out
 	var _cret *C.GCancellable // in
@@ -83307,9 +82290,7 @@ func (task *Task) Cancellable() *Cancellable {
 
 	var _cancellable *Cancellable // out
 
-	if _cret != nil {
-		_cancellable = wrapCancellable(coreglib.Take(unsafe.Pointer(_cret)))
-	}
+	_cancellable = wrapCancellable(coreglib.Take(unsafe.Pointer(_cret)))
 
 	return _cancellable
 }
@@ -83698,7 +82679,7 @@ func (task *Task) ReturnBoolean(result bool) {
 // error is still valid after calling this. Call g_error_copy() on the error if
 // you need to keep a local copy as well.
 //
-// See also gio.Task.ReturnNewError(), gio.Task.ReturnNewErrorLiteral().
+// See also g_task_return_new_error().
 //
 // The function takes the following parameters:
 //
@@ -83758,38 +82739,6 @@ func (task *Task) ReturnInt(result int) {
 	C.g_task_return_int(_arg0, _arg1)
 	runtime.KeepAlive(task)
 	runtime.KeepAlive(result)
-}
-
-// ReturnNewErrorLiteral sets task’s result to a new glib.Error created from
-// domain, code, message and completes the task.
-//
-// See gio.Task.ReturnPointer() for more discussion of exactly what ‘completing
-// the task’ means.
-//
-// See also gio.Task.ReturnNewError().
-//
-// The function takes the following parameters:
-//
-//   - domain: #GQuark.
-//   - code: error code.
-//   - message: error message.
-func (task *Task) ReturnNewErrorLiteral(domain glib.Quark, code int, message string) {
-	var _arg0 *C.GTask // out
-	var _arg1 C.GQuark // out
-	var _arg2 C.gint   // out
-	var _arg3 *C.char  // out
-
-	_arg0 = (*C.GTask)(unsafe.Pointer(coreglib.InternObject(task).Native()))
-	_arg1 = C.GQuark(domain)
-	_arg2 = C.gint(code)
-	_arg3 = (*C.char)(unsafe.Pointer(C.CString(message)))
-	defer C.free(unsafe.Pointer(_arg3))
-
-	C.g_task_return_new_error_literal(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(task)
-	runtime.KeepAlive(domain)
-	runtime.KeepAlive(code)
-	runtime.KeepAlive(message)
 }
 
 // ReturnValue sets task's result to result (by copying it) and completes the
@@ -83889,7 +82838,7 @@ func (task *Task) SetName(name string) {
 //
 // The function takes the following parameters:
 //
-//   - priority: priority (iface.AsyncResult.html#io-priority) of the request.
+//   - priority: [priority][io-priority] of the request.
 func (task *Task) SetPriority(priority int) {
 	var _arg0 *C.GTask // out
 	var _arg1 C.gint   // out
@@ -83986,29 +82935,6 @@ func (task *Task) SetSourceTag(sourceTag unsafe.Pointer) {
 	runtime.KeepAlive(sourceTag)
 }
 
-// SetStaticName sets task’s name, used in debugging and profiling.
-//
-// This is a variant of g_task_set_name() that avoids copying name.
-//
-// The function takes the following parameters:
-//
-//   - name (optional): human readable name for the task. Must be a string
-//     literal.
-func (task *Task) SetStaticName(name string) {
-	var _arg0 *C.GTask // out
-	var _arg1 *C.gchar // out
-
-	_arg0 = (*C.GTask)(unsafe.Pointer(coreglib.InternObject(task).Native()))
-	if name != "" {
-		_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(name)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	C.g_task_set_static_name(_arg0, _arg1)
-	runtime.KeepAlive(task)
-	runtime.KeepAlive(name)
-}
-
 // TaskIsValid checks that result is a #GTask, and that source_object is its
 // source object (or that source_object is NULL and result has no source
 // object). This can be used in g_return_if_fail() checks.
@@ -84090,8 +83016,8 @@ func defaultTCPConnectionOverrides(v *TCPConnection) TCPConnectionOverrides {
 	return TCPConnectionOverrides{}
 }
 
-// TCPConnection: this is the subclass of gio.SocketConnection that is created
-// for TCP/IP sockets.
+// TCPConnection: this is the subclass of Connection that is created for TCP/IP
+// sockets.
 type TCPConnection struct {
 	_ [0]func() // equal guard
 	SocketConnection
@@ -84191,11 +83117,10 @@ func defaultTCPWrapperConnectionOverrides(v *TCPWrapperConnection) TCPWrapperCon
 	return TCPWrapperConnectionOverrides{}
 }
 
-// TCPWrapperConnection: GTcpWrapperConnection can be used to wrap a
-// gio.IOStream that is based on a gio.Socket, but which is not actually a
-// gio.SocketConnection. This is used by gio.SocketClient so that it can always
-// return a gio.SocketConnection, even when the connection it has actually
-// created is not directly a gio.SocketConnection.
+// TCPWrapperConnection can be used to wrap a OStream that is based on a
+// #GSocket, but which is not actually a Connection. This is used by Client
+// so that it can always return a Connection, even when the connection it has
+// actually created is not directly a Connection.
 type TCPWrapperConnection struct {
 	_ [0]func() // equal guard
 	TCPConnection
@@ -84305,23 +83230,21 @@ func (conn *TCPWrapperConnection) BaseIOStream() IOStreamer {
 }
 
 // TestDBus: helper class for testing code which uses D-Bus without touching the
-// user’s session bus.
+// user's session bus.
 //
-// Note that GTestDBus modifies the user’s environment, calling setenv()
-// (man:setenv(3)). This is not thread-safe, so all GTestDBus calls should be
-// completed before threads are spawned, or should have appropriate locking to
-// ensure no access conflicts to environment variables shared between GTestDBus
-// and other threads.
+// Note that DBus modifies the user’s environment, calling setenv(). This is
+// not thread-safe, so all DBus calls should be completed before threads are
+// spawned, or should have appropriate locking to ensure no access conflicts to
+// environment variables shared between DBus and other threads.
 //
 // # Creating unit tests using GTestDBus
 //
 // Testing of D-Bus services can be tricky because normally we only ever run
 // D-Bus services over an existing instance of the D-Bus daemon thus we usually
-// don’t activate D-Bus services that are not yet installed into the target
-// system. The GTestDBus object makes this easier for us by taking care of
-// the lower level tasks such as running a private D-Bus daemon and looking up
-// uninstalled services in customizable locations, typically in your source code
-// tree.
+// don't activate D-Bus services that are not yet installed into the target
+// system. The DBus object makes this easier for us by taking care of the lower
+// level tasks such as running a private D-Bus daemon and looking up uninstalled
+// services in customizable locations, typically in your source code tree.
 //
 // The first thing you will need is a separate service description file for the
 // D-Bus daemon. Typically a services subdirectory of your tests directory is a
@@ -84341,26 +83264,26 @@ func (conn *TCPWrapperConnection) BaseIOStream() IOStreamer {
 // this is done with autotools with an added preprocessor flag specified to
 // compile your tests such as:
 //
-//	-DTEST_SERVICES=\""$(abs_top_builddir)/tests/services"\"
+//	   -DTEST_SERVICES=\""$(abs_top_builddir)/tests/services"\"
 //
-// Once you have a service definition file which is local to your source tree,
-// you can proceed to set up a GTest fixture using the GTestDBus scaffolding.
+//	Once you have a service definition file which is local to your source tree,
+//
+// you can proceed to set up a GTest fixture using the DBus scaffolding.
 //
 // An example of a test fixture for D-Bus services
 // can be found here: gdbus-test-fixture.c
 // (https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gdbus-test-fixture.c)
 //
 // Note that these examples only deal with isolating the D-Bus aspect of your
-// service. To successfully run isolated unit tests on your service you may
-// need some additional modifications to your test case fixture. For example;
-// if your service uses gio.Settings and installs a schema then it is important
-// that your test service not load the schema in the ordinary installed location
-// (chances are that your service and schema files are not yet installed,
-// or worse; there is an older version of the schema file sitting in the install
-// location).
+// service. To successfully run isolated unit tests on your service you may need
+// some additional modifications to your test case fixture. For example; if your
+// service uses GSettings and installs a schema then it is important that your
+// test service not load the schema in the ordinary installed location (chances
+// are that your service and schema files are not yet installed, or worse; there
+// is an older version of the schema file sitting in the install location).
 //
 // Most of the time we can work around these obstacles using the environment.
-// Since the environment is inherited by the D-Bus daemon created by GTestDBus
+// Since the environment is inherited by the D-Bus daemon created by DBus
 // and then in turn inherited by any services the D-Bus daemon activates,
 // using the setup routine for your fixture is a practical place to help sandbox
 // your runtime environment. For the rather typical GSettings case we can work
@@ -84541,14 +83464,12 @@ func TestDBusUnset() {
 	C.g_test_dbus_unset()
 }
 
-// ThemedIcon: GThemedIcon is an implementation of gio.Icon that supports icon
-// themes.
-//
-// GThemedIcon contains a list of all of the icons present in an icon theme,
-// so that icons can be looked up quickly. GThemedIcon does not provide
-// actual pixmaps for icons, just the icon names. Ideally something like
-// gtk.IconTheme.ChooseIcon() should be used to resolve the list of names so
-// that fallback icons work nicely with themes that inherit other themes.
+// ThemedIcon is an implementation of #GIcon that supports icon themes. Icon
+// contains a list of all of the icons present in an icon theme, so that icons
+// can be looked up quickly. Icon does not provide actual pixmaps for icons,
+// just the icon names. Ideally something like gtk_icon_theme_choose_icon()
+// should be used to resolve the list of names so that fallback icons work
+// nicely with themes that inherit other themes.
 type ThemedIcon struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -84748,25 +83669,6 @@ func (icon *ThemedIcon) PrependName(iconname string) {
 	runtime.KeepAlive(iconname)
 }
 
-// ThreadedResolver is an implementation of #GResolver which calls the libc
-// lookup functions in threads to allow them to run asynchronously.
-type ThreadedResolver struct {
-	_ [0]func() // equal guard
-	Resolver
-}
-
-var (
-	_ Resolverer = (*ThreadedResolver)(nil)
-)
-
-func wrapThreadedResolver(obj *coreglib.Object) *ThreadedResolver {
-	return &ThreadedResolver{
-		Resolver: Resolver{
-			Object: obj,
-		},
-	}
-}
-
 // ThreadedSocketServiceOverrides contains methods that are overridable.
 type ThreadedSocketServiceOverrides struct {
 	// The function takes the following parameters:
@@ -84782,21 +83684,19 @@ func defaultThreadedSocketServiceOverrides(v *ThreadedSocketService) ThreadedSoc
 	}
 }
 
-// ThreadedSocketService: GThreadedSocketService is a simple subclass
-// of gio.SocketService that handles incoming connections by creating
-// a worker thread and dispatching the connection to it by emitting the
-// gio.ThreadedSocketService::run signal in the new thread.
+// ThreadedSocketService is a simple subclass of Service that handles incoming
+// connections by creating a worker thread and dispatching the connection to it
+// by emitting the SocketService::run signal in the new thread.
 //
-// The signal handler may perform blocking I/O and need not return until the
+// The signal handler may perform blocking IO and need not return until the
 // connection is closed.
 //
 // The service is implemented using a thread pool, so there is a limited amount
 // of threads available to serve incoming requests. The service automatically
-// stops the gio.SocketService from accepting new connections when all threads
-// are busy.
+// stops the Service from accepting new connections when all threads are busy.
 //
-// As with gio.SocketService, you may connect to gio.ThreadedSocketService::run,
-// or subclass and override the default handler.
+// As with Service, you may connect to SocketService::run, or subclass and
+// override the default handler.
 type ThreadedSocketService struct {
 	_ [0]func() // equal guard
 	SocketService
@@ -84961,7 +83861,7 @@ func defaultTLSCertificateOverrides(v *TLSCertificate) TLSCertificateOverrides {
 // TLSCertificate: certificate used for TLS authentication and encryption.
 // This can represent either a certificate only (eg, the certificate received
 // by a client from a server), or the combination of a certificate and a private
-// key (which is needed when acting as a gio.TLSServerConnection).
+// key (which is needed when acting as a ServerConnection).
 type TLSCertificate struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -85684,15 +84584,11 @@ func TLSCertificateListNewFromFile(file string) ([]TLSCertificater, error) {
 
 // TLSConnectionOverrides contains methods that are overridable.
 type TLSConnectionOverrides struct {
-	// AcceptCertificate: check whether to accept a certificate.
-	//
 	// The function takes the following parameters:
 	//
 	//   - peerCert
 	//   - errors
 	AcceptCertificate func(peerCert TLSCertificater, errors TLSCertificateFlags) bool
-	// BindingData: retrieve TLS channel binding data (Since: 2.66).
-	//
 	// The function takes the following parameters:
 	//
 	//   - typ
@@ -85762,12 +84658,12 @@ func defaultTLSConnectionOverrides(v *TLSConnection) TLSConnectionOverrides {
 	}
 }
 
-// TLSConnection: GTlsConnection is the base TLS connection class type,
-// which wraps a gio.IOStream and provides TLS encryption on top of it. Its
-// subclasses, gio.TLSClientConnection and gio.TLSServerConnection, implement
-// client-side and server-side TLS, respectively.
+// TLSConnection is the base TLS connection class type, which wraps a OStream
+// and provides TLS encryption on top of it. Its subclasses, ClientConnection
+// and ServerConnection, implement client-side and server-side TLS,
+// respectively.
 //
-// For DTLS (Datagram TLS) support, see gio.DTLSConnection.
+// For DTLS (Datagram TLS) support, see Connection.
 type TLSConnection struct {
 	_ [0]func() // equal guard
 	IOStream
@@ -86625,8 +85521,6 @@ func (conn *TLSConnection) SetUseSystemCertDB(useSystemCertdb bool) {
 	runtime.KeepAlive(useSystemCertdb)
 }
 
-// acceptCertificate: check whether to accept a certificate.
-//
 // The function takes the following parameters:
 //
 //   - peerCert
@@ -86658,8 +85552,6 @@ func (connection *TLSConnection) acceptCertificate(peerCert TLSCertificater, err
 	return _ok
 }
 
-// bindingData: retrieve TLS channel binding data (Since: 2.66).
-//
 // The function takes the following parameters:
 //
 //   - typ
@@ -87103,15 +85995,15 @@ func defaultTLSDatabaseOverrides(v *TLSDatabase) TLSDatabaseOverrides {
 	}
 }
 
-// TLSDatabase: GTlsDatabase is used to look up certificates and other
-// information from a certificate or key store. It is an abstract base class
-// which TLS library specific subtypes override.
+// TLSDatabase is used to look up certificates and other information from a
+// certificate or key store. It is an abstract base class which TLS library
+// specific subtypes override.
 //
-// A GTlsDatabase may be accessed from multiple threads by the TLS backend.
+// A Database may be accessed from multiple threads by the TLS backend.
 // All implementations are required to be fully thread-safe.
 //
-// Most common client applications will not directly interact with GTlsDatabase.
-// It is used internally by gio.TLSConnection.
+// Most common client applications will not directly interact with Database.
+// It is used internally by Connection.
 type TLSDatabase struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -87695,7 +86587,7 @@ func (self *TLSDatabase) LookupCertificatesIssuedBy(ctx context.Context, issuerR
 // g_tls_database_lookup_certificates_issued_by() for more information.
 //
 // The database may choose to hold a reference to the issuer byte array for
-// the duration of this asynchronous operation. The byte array should not be
+// the duration of of this asynchronous operation. The byte array should not be
 // modified during this time.
 //
 // The function takes the following parameters:
@@ -88529,7 +87421,7 @@ func (self *TLSDatabase) lookupCertificatesIssuedBy(ctx context.Context, issuerR
 // g_tls_database_lookup_certificates_issued_by() for more information.
 //
 // The database may choose to hold a reference to the issuer byte array for
-// the duration of this asynchronous operation. The byte array should not be
+// the duration of of this asynchronous operation. The byte array should not be
 // modified during this time.
 //
 // The function takes the following parameters:
@@ -88969,23 +87861,22 @@ func defaultTLSInteractionOverrides(v *TLSInteraction) TLSInteractionOverrides {
 	}
 }
 
-// TLSInteraction: GTlsInteraction provides a mechanism for the TLS connection
-// and database code to interact with the user. It can be used to ask the user
-// for passwords.
+// TLSInteraction provides a mechanism for the TLS connection and database code
+// to interact with the user. It can be used to ask the user for passwords.
 //
-// To use a GTlsInteraction with a TLS connection use
-// gio.TLSConnection.SetInteraction().
+// To use a Interaction with a TLS connection use
+// g_tls_connection_set_interaction().
 //
 // Callers should instantiate a derived class that implements the various
 // interaction methods to show the required dialogs.
 //
 // Callers should use the 'invoke' functions like
-// gio.TLSInteraction.InvokeAskPassword() to run interaction methods. These
+// g_tls_interaction_invoke_ask_password() to run interaction methods. These
 // functions make sure that the interaction is invoked in the main loop and not
 // in the current thread, if the current thread is not running the main loop.
 //
 // Derived classes can choose to implement whichever interactions methods
-// they’d like to support by overriding those virtual methods in their class
+// they'd like to support by overriding those virtual methods in their class
 // initialization function. Any interactions not implemented will return
 // G_TLS_INTERACTION_UNHANDLED. If a derived class implements an async method,
 // it must also implement the corresponding finish method.
@@ -89768,8 +88659,6 @@ func (interaction *TLSInteraction) requestCertificateFinish(result AsyncResulter
 
 // TLSPasswordOverrides contains methods that are overridable.
 type TLSPasswordOverrides struct {
-	// DefaultWarning: virtual method for g_tls_password_get_warning() if no
-	// value has been set using g_tls_password_set_warning().
 	DefaultWarning func() string
 	// Value: get the password value. If length is not NULL then it will be
 	// filled in with the length of the password value. (Note that the password
@@ -89789,8 +88678,7 @@ func defaultTLSPasswordOverrides(v *TLSPassword) TLSPasswordOverrides {
 	}
 }
 
-// TLSPassword: abstract interface representing a password used in TLS. Often
-// used in user interaction such as unlocking a key storage token.
+// TLSPassword holds a password used in TLS.
 type TLSPassword struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -90041,8 +88929,6 @@ func (password *TLSPassword) SetWarning(warning string) {
 	runtime.KeepAlive(warning)
 }
 
-// defaultWarning: virtual method for g_tls_password_get_warning() if no value
-// has been set using g_tls_password_set_warning().
 func (password *TLSPassword) defaultWarning() string {
 	gclass := (*C.GTlsPasswordClass)(coreglib.PeekParentClass(password))
 	fnarg := gclass.get_default_warning
@@ -90889,13 +89775,13 @@ func defaultVolumeMonitorOverrides(v *VolumeMonitor) VolumeMonitorOverrides {
 	}
 }
 
-// VolumeMonitor: GVolumeMonitor is for listing the user interesting devices and
-// volumes on the computer. In other words, what a file selector or file manager
-// would show in a sidebar.
+// VolumeMonitor is for listing the user interesting devices and volumes on the
+// computer. In other words, what a file selector or file manager would show in
+// a sidebar.
 //
-// GVolumeMonitor is not thread-default-context aware (see
-// glib.MainContext.PushThreadDefault()), and so should not be used other than
-// from the main thread, with no thread-default-context active.
+// Monitor is not [thread-default-context
+// aware][g-main-context-push-thread-default], and so should not be used other
+// than from the main thread, with no thread-default-context active.
 //
 // In order to receive updates about volumes and mounts monitored through GVFS,
 // a main loop must be running.
@@ -91656,8 +90542,8 @@ func defaultZlibCompressorOverrides(v *ZlibCompressor) ZlibCompressorOverrides {
 	return ZlibCompressorOverrides{}
 }
 
-// ZlibCompressor: GZlibCompressor is an implementation of gio.Converter that
-// compresses data using zlib.
+// ZlibCompressor is an implementation of #GConverter that compresses data using
+// zlib.
 type ZlibCompressor struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -91784,8 +90670,8 @@ func defaultZlibDecompressorOverrides(v *ZlibDecompressor) ZlibDecompressorOverr
 	return ZlibDecompressorOverrides{}
 }
 
-// ZlibDecompressor: GZlibDecompressor is an implementation of gio.Converter
-// that decompresses data compressed with zlib.
+// ZlibDecompressor is an implementation of #GConverter that decompresses data
+// compressed with zlib.
 type ZlibDecompressor struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -91939,7 +90825,7 @@ type actionGroupInterface struct {
 	native *C.GActionGroupInterface
 }
 
-// ActionInterface: virtual function table for gio.Action.
+// ActionInterface: virtual function table for #GAction.
 //
 // An instance of this type is always passed by reference.
 type ActionInterface struct {
@@ -93800,7 +92686,7 @@ func (matcher *FileAttributeMatcher) Matches(attribute string) bool {
 	return _ok
 }
 
-// MatchesOnly checks if an attribute matcher only matches a given attribute.
+// MatchesOnly checks if a attribute matcher only matches a given attribute.
 // Always returns FALSE if "*" was used when creating the matcher.
 //
 // The function takes the following parameters:
@@ -94618,20 +93504,18 @@ type resolverClass struct {
 
 // Resource applications and libraries often contain binary or textual data
 // that is really part of the application, rather than user data. For instance
-// GtkBuilder (https://docs.gtk.org/gtk4/class.Builder.html) .ui files,
-// splashscreen images, gio.Menu markup XML, CSS files, icons, etc. These are
-// often shipped as files in $datadir/appname, or manually included as literal
-// strings in the code.
+// Builder .ui files, splashscreen images, GMenu markup XML, CSS files, icons,
+// etc. These are often shipped as files in $datadir/appname, or manually
+// included as literal strings in the code.
 //
-// The GResource API and the glib-compile-resources
-// (glib-compile-resources.html) program provide a convenient and efficient
-// alternative to this which has some nice properties. You maintain the files as
-// normal files, so it’s easy to edit them, but during the build the files are
-// combined into a binary bundle that is linked into the executable. This means
-// that loading the resource files are efficient (as they are already in memory,
-// shared with other instances) and simple (no need to check for things like
-// I/O errors or locate the files in the filesystem). It also makes it easier to
-// create relocatable applications.
+// The #GResource API and the [glib-compile-resources][glib-compile-resources]
+// program provide a convenient and efficient alternative to this which has some
+// nice properties. You maintain the files as normal files, so its easy to edit
+// them, but during the build the files are combined into a binary bundle that
+// is linked into the executable. This means that loading the resource files are
+// efficient (as they are already in memory, shared with other instances) and
+// simple (no need to check for things like I/O errors or locate the files in
+// the filesystem). It also makes it easier to create relocatable applications.
 //
 // Resource files can also be marked as compressed. Such files will be included
 // in the resource bundle in a compressed form, but will be automatically
@@ -94642,30 +93526,28 @@ type resolverClass struct {
 // the preprocess attribute to a comma-separated list of preprocessing options.
 // The only options currently supported are:
 //
-//   - xml-stripblanks which will use the xmllint (man:xmllint(1)) command
-//     to strip ignorable whitespace from the XML file. For this to work, the
-//     XMLLINT environment variable must be set to the full path to the xmllint
-//     executable, or xmllint must be in the PATH; otherwise the preprocessing
-//     step is skipped.
+// xml-stripblanks which will use the xmllint command to strip ignorable
+// whitespace from the XML file. For this to work, the XMLLINT environment
+// variable must be set to the full path to the xmllint executable, or xmllint
+// must be in the PATH; otherwise the preprocessing step is skipped.
 //
-//   - to-pixdata (deprecated since gdk-pixbuf 2.32) which will use the
-//     gdk-pixbuf-pixdata command to convert images to the GdkPixdata
-//     (https://docs.gtk.org/gdk-pixbuf/class.Pixdata.html) format,
-//     which allows you to create pixbufs directly using the data inside
-//     the resource file, rather than an (uncompressed) copy of it.
-//     For this, the gdk-pixbuf-pixdata program must be in the PATH, or the
-//     GDK_PIXBUF_PIXDATA environment variable must be set to the full path to
-//     the gdk-pixbuf-pixdata executable; otherwise the resource compiler will
-//     abort. to-pixdata has been deprecated since gdk-pixbuf 2.32, as GResource
-//     supports embedding modern image formats just as well. Instead of using
-//     it, embed a PNG or SVG file in your GResource.
+// to-pixdata (deprecated since gdk-pixbuf 2.32) which will use the
+// gdk-pixbuf-pixdata command to convert images to the Pixdata format,
+// which allows you to create pixbufs directly using the data inside the
+// resource file, rather than an (uncompressed) copy of it. For this,
+// the gdk-pixbuf-pixdata program must be in the PATH, or the GDK_PIXBUF_PIXDATA
+// environment variable must be set to the full path to the gdk-pixbuf-pixdata
+// executable; otherwise the resource compiler will abort. to-pixdata has been
+// deprecated since gdk-pixbuf 2.32, as #GResource supports embedding modern
+// image formats just as well. Instead of using it, embed a PNG or SVG file in
+// your #GResource.
 //
-//   - json-stripblanks which will use the json-glib-format
-//     (man:json-glib-format(1)) command to strip ignorable whitespace from
-//     the JSON file. For this to work, the JSON_GLIB_FORMAT environment
-//     variable must be set to the full path to the json-glib-format executable,
-//     or it must be in the PATH; otherwise the preprocessing step is skipped.
-//     In addition, at least version 1.6 of json-glib-format is required.
+// json-stripblanks which will use the json-glib-format command to
+// strip ignorable whitespace from the JSON file. For this to work,
+// the JSON_GLIB_FORMAT environment variable must be set to the full path
+// to the json-glib-format executable, or it must be in the PATH; otherwise
+// the preprocessing step is skipped. In addition, at least version 1.6 of
+// json-glib-format is required.
 //
 // Resource files will be exported in the GResource namespace using the
 // combination of the given prefix and the filename from the file element.
@@ -94674,10 +93556,10 @@ type resolverClass struct {
 // include files from a different source directory without exposing the source
 // directory in the resource namespace, as in the example below.
 //
-// Resource bundles are created by the glib-compile-resources
-// (glib-compile-resources.html) program which takes an XML file that describes
-// the bundle, and a set of files that the XML references. These are combined
-// into a binary resource bundle.
+// Resource bundles are created by the
+// [glib-compile-resources][glib-compile-resources] program which takes an XML
+// file that describes the bundle, and a set of files that the XML references.
+// These are combined into a binary resource bundle.
 //
 // An example resource description:
 //
@@ -94701,37 +93583,35 @@ type resolverClass struct {
 // Note that all resources in the process share the same namespace, so use
 // Java-style path prefixes (like in the above example) to avoid conflicts.
 //
-// You can then use glib-compile-resources (glib-compile-resources.html)
-// to compile the XML to a binary bundle that you can load with
-// gio.Resource().Load. However, it’s more common to use the --generate-source
-// and --generate-header arguments to create a source file and header to
-// link directly into your application. This will generate get_resource(),
-// register_resource() and unregister_resource() functions,
-// prefixed by the --c-name argument passed to glib-compile-resources
-// (glib-compile-resources.html). get_resource() returns the generated GResource
-// object. The register and unregister functions register the resource so its
-// files can be accessed using gio.ResourcesLookupData().
+// You can then use [glib-compile-resources][glib-compile-resources] to compile
+// the XML to a binary bundle that you can load with g_resource_load().
+// However, its more common to use the --generate-source and --generate-header
+// arguments to create a source file and header to link directly into your
+// application. This will generate get_resource(), register_resource() and
+// unregister_resource() functions, prefixed by the --c-name argument passed to
+// [glib-compile-resources][glib-compile-resources]. get_resource() returns the
+// generated #GResource object. The register and unregister functions register
+// the resource so its files can be accessed using g_resources_lookup_data().
 //
-// Once a GResource has been created and registered all the data in
+// Once a #GResource has been created and registered all the data in
 // it can be accessed globally in the process by using API calls like
-// gio.ResourcesOpenStream() to stream the data or gio.ResourcesLookupData()
+// g_resources_open_stream() to stream the data or g_resources_lookup_data()
 // to get a direct pointer to the data. You can also use URIs like
-// resource:///org/gtk/Example/data/splashscreen.png with gio.File to access the
+// "resource:///org/gtk/Example/data/splashscreen.png" with #GFile to access the
 // resource data.
 //
-// Some higher-level APIs, such as GtkApplication
-// (https://docs.gtk.org/gtk4/class.Application.html), will automatically
-// load resources from certain well-known paths in the resource namespace as a
+// Some higher-level APIs, such as Application, will automatically load
+// resources from certain well-known paths in the resource namespace as a
 // convenience. See the documentation for those APIs for details.
 //
-// There are two forms of the generated source, the default version uses the
-// compiler support for constructor and destructor functions (where available)
-// to automatically create and register the GResource on startup or library load
-// time. If you pass --manual-register, two functions to register/unregister the
-// resource are created instead. This requires an explicit initialization call
-// in your application/library, but it works on all platforms, even on the minor
-// ones where constructors are not supported. (Constructor support is available
-// for at least Win32, Mac OS and Linux.)
+// There are two forms of the generated source, the default version uses
+// the compiler support for constructor and destructor functions (where
+// available) to automatically create and register the #GResource on startup
+// or library load time. If you pass --manual-register, two functions to
+// register/unregister the resource are created instead. This requires an
+// explicit initialization call in your application/library, but it works on
+// all platforms, even on the minor ones where constructors are not supported.
+// (Constructor support is available for at least Win32, Mac OS and Linux.)
 //
 // Note that resource data can point directly into the data segment of e.g.
 // a library, so if you are unloading libraries during runtime you need to be
@@ -94739,8 +93619,6 @@ type resolverClass struct {
 // goes away when the library is unloaded. However, in practice this is not
 // generally a problem, since most resource accesses are for your own resources,
 // and resource data is often used once, during parsing, and then released.
-//
-// # Overlays
 //
 // When debugging a program or testing a change to an installed version,
 // it is often useful to be able to replace resources in the program or library,
@@ -94766,10 +93644,10 @@ type resolverClass struct {
 // replacement, which means that if a file is not found at that path, the
 // built-in version will be used instead. Whiteouts are not currently supported.
 //
-// Substitutions must start with a slash, and must not contain a trailing slash
-// before the =. The path after the slash should ideally be absolute, but this
-// is not strictly required. It is possible to overlay the location of a single
-// resource with an individual file.
+// Substitutions must start with a slash, and must not contain a trailing
+// slash before the '='. The path after the slash should ideally be absolute,
+// but this is not strictly required. It is possible to overlay the location of
+// a single resource with an individual file.
 //
 // An instance of this type is always passed by reference.
 type Resource struct {
@@ -95113,75 +93991,20 @@ func (s *SettingsClass) Padding() [20]unsafe.Pointer {
 	return _v
 }
 
-// SettingsSchema: gio.SettingsSchemaSource and GSettingsSchema APIs provide a
-// mechanism for advanced control over the loading of schemas and a mechanism
-// for introspecting their content.
+// SettingsSchema and Schema APIs provide a mechanism for advanced control over
+// the loading of schemas and a mechanism for introspecting their content.
 //
 // Plugin loading systems that wish to provide plugins a way to access settings
 // face the problem of how to make the schemas for these settings visible to
 // GSettings. Typically, a plugin will want to ship the schema along with itself
 // and it won't be installed into the standard system directories for schemas.
 //
-// gio.SettingsSchemaSource provides a mechanism for dealing with this by
-// allowing the creation of a new ‘schema source’ from which schemas can be
-// acquired. This schema source can then become part of the metadata associated
-// with the plugin and queried whenever the plugin requires access to some
-// settings.
+// SchemaSource provides a mechanism for dealing with this by allowing the
+// creation of a new 'schema source' from which schemas can be acquired.
+// This schema source can then become part of the metadata associated with the
+// plugin and queried whenever the plugin requires access to some settings.
 //
 // Consider the following example:
-//
-//	typedef struct
-//	{
-//	   …
-//	   GSettingsSchemaSource *schema_source;
-//	   …
-//	} Plugin;
-//
-//	Plugin *
-//	initialise_plugin (const gchar *dir)
-//	{
-//	  Plugin *plugin;
-//
-//	  …
-//
-//	  plugin->schema_source =
-//	    g_settings_schema_source_new_from_directory (dir,
-//	      g_settings_schema_source_get_default (), FALSE, NULL);
-//
-//	  …
-//
-//	  return plugin;
-//	}
-//
-//	…
-//
-//	GSettings *
-//	plugin_get_settings (Plugin      *plugin,
-//	                     const gchar *schema_id)
-//	{
-//	  GSettingsSchema *schema;
-//
-//	  if (schema_id == NULL)
-//	    schema_id = plugin->identifier;
-//
-//	  schema = g_settings_schema_source_lookup (plugin->schema_source,
-//	                                            schema_id, FALSE);
-//
-//	  if (schema == NULL)
-//	    {
-//	      … disable the plugin or abort, etc …
-//	    }
-//
-//	  return g_settings_new_full (schema, NULL, NULL);
-//	}
-//
-// The code above shows how hooks should be added to the code that initialises
-// (or enables) the plugin to create the schema source and how an API can be
-// added to the plugin system to provide a convenient way for the plugin to
-// access its settings, using the schemas that it ships.
-//
-// From the standpoint of the plugin, it would need to ensure that it ships a
-// gschemas.compiled file as part of itself, and then simply do the following:
 //
 //	{
 //	  GSettings *settings;
@@ -95189,7 +94012,7 @@ func (s *SettingsClass) Padding() [20]unsafe.Pointer {
 //
 //	  settings = plugin_get_settings (self, NULL);
 //	  some_value = g_settings_get_int (settings, "some-value");
-//	  …
+//	  ...
 //	}
 //
 // It's also possible that the plugin system expects the schema source files
@@ -96013,21 +94836,18 @@ func (s *SocketServiceClass) ParentClass() *SocketListenerClass {
 	return _v
 }
 
-// SrvTarget: single target host/port that a network service is running on.
+// SrvTarget: SRV (service) records are used by some network protocols to
+// provide service-specific aliasing and load-balancing. For example, XMPP
+// (Jabber) uses SRV records to locate the XMPP server for a domain; rather than
+// connecting directly to "example.com" or assuming a specific server hostname
+// like "xmpp.example.com", an XMPP client would look up the "xmpp-client" SRV
+// record for "example.com", and then connect to whatever host was pointed to by
+// that record.
 //
-// SRV (service) records are used by some network protocols to provide
-// service-specific aliasing and load-balancing. For example, XMPP (Jabber) uses
-// SRV records to locate the XMPP server for a domain; rather than connecting
-// directly to ‘example.com’ or assuming a specific server hostname like
-// ‘xmpp.example.com’, an XMPP client would look up the xmpp-client SRV record
-// for ‘example.com’, and then connect to whatever host was pointed to by that
-// record.
-//
-// You can use gio.Resolver.LookupService() or gio.Resolver.LookupServiceAsync()
-// to find the GSrvTargets for a given service. However, if you are simply
-// planning to connect to the remote service, you can use gio.NetworkService’s
-// gio.SocketConnectable interface and not need to worry about GSrvTarget at
-// all.
+// You can use g_resolver_lookup_service() or g_resolver_lookup_service_async()
+// to find the Targets for a given service. However, if you are simply planning
+// to connect to the remote service, you can use Service's Connectable interface
+// and not need to worry about Target at all.
 //
 // An instance of this type is always passed by reference.
 type SrvTarget struct {

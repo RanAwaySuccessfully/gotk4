@@ -26,28 +26,20 @@ import (
 // #include <glib-object.h>
 // #include <glib.h>
 // extern void callbackDelete(gpointer);
+// extern void _gotk4_glib2_SpawnChildSetupFunc(gpointer);
 // extern void _gotk4_glib2_LogFunc(gchar*, GLogLevelFlags, gchar*, gpointer);
-// extern void _gotk4_glib2_HFunc(gpointer, gpointer, gpointer);
-// extern void _gotk4_glib2_Func(gpointer, gpointer);
-// extern gint _gotk4_glib2_CompareDataFunc(gconstpointer, gconstpointer, gpointer);
+// extern gchar* _gotk4_glib2_TranslateFunc(gchar*, gpointer);
 // extern gboolean _gotk4_glib2_SourceFunc(gpointer);
-// extern gboolean _gotk4_glib2_HRFunc(gpointer, gpointer, gpointer);
+// extern gboolean _gotk4_glib2_IOFunc(GIOChannel*, GIOCondition, gpointer);
 // extern GLogWriterOutput _gotk4_glib2_LogWriterFunc(GLogLevelFlags, GLogField*, gsize, gpointer);
 import "C"
 
 // GType values.
 var (
-	GTypeNormalizeMode      = coreglib.Type(C.g_normalize_mode_get_type())
-	GTypeUnicodeBreakType   = coreglib.Type(C.g_unicode_break_type_get_type())
-	GTypeUnicodeScript      = coreglib.Type(C.g_unicode_script_get_type())
-	GTypeUnicodeType        = coreglib.Type(C.g_unicode_type_get_type())
 	GTypeIOCondition        = coreglib.Type(C.g_io_condition_get_type())
-	GTypeBookmarkFile       = coreglib.Type(C.g_bookmark_file_get_type())
 	GTypeChecksum           = coreglib.Type(C.g_checksum_get_type())
 	GTypeDateTime           = coreglib.Type(C.g_date_time_get_type())
-	GTypeDir                = coreglib.Type(C.g_dir_get_type())
 	GTypeHashTable          = coreglib.Type(C.g_hash_table_get_type())
-	GTypeHMAC               = coreglib.Type(C.g_hmac_get_type())
 	GTypeIOChannel          = coreglib.Type(C.g_io_channel_get_type())
 	GTypeKeyFile            = coreglib.Type(C.g_key_file_get_type())
 	GTypeMainContext        = coreglib.Type(C.g_main_context_get_type())
@@ -57,7 +49,6 @@ var (
 	GTypeMatchInfo          = coreglib.Type(C.g_match_info_get_type())
 	GTypeOptionGroup        = coreglib.Type(C.g_option_group_get_type())
 	GTypePatternSpec        = coreglib.Type(C.g_pattern_spec_get_type())
-	GTypeRand               = coreglib.Type(C.g_rand_get_type())
 	GTypeRegex              = coreglib.Type(C.g_regex_get_type())
 	GTypeSource             = coreglib.Type(C.g_source_get_type())
 	GTypeTimeZone           = coreglib.Type(C.g_time_zone_get_type())
@@ -71,17 +62,10 @@ var (
 
 func init() {
 	coreglib.RegisterGValueMarshalers([]coreglib.TypeMarshaler{
-		coreglib.TypeMarshaler{T: GTypeNormalizeMode, F: marshalNormalizeMode},
-		coreglib.TypeMarshaler{T: GTypeUnicodeBreakType, F: marshalUnicodeBreakType},
-		coreglib.TypeMarshaler{T: GTypeUnicodeScript, F: marshalUnicodeScript},
-		coreglib.TypeMarshaler{T: GTypeUnicodeType, F: marshalUnicodeType},
 		coreglib.TypeMarshaler{T: GTypeIOCondition, F: marshalIOCondition},
-		coreglib.TypeMarshaler{T: GTypeBookmarkFile, F: marshalBookmarkFile},
 		coreglib.TypeMarshaler{T: GTypeChecksum, F: marshalChecksum},
 		coreglib.TypeMarshaler{T: GTypeDateTime, F: marshalDateTime},
-		coreglib.TypeMarshaler{T: GTypeDir, F: marshalDir},
 		coreglib.TypeMarshaler{T: GTypeHashTable, F: marshalHashTable},
-		coreglib.TypeMarshaler{T: GTypeHMAC, F: marshalHMAC},
 		coreglib.TypeMarshaler{T: GTypeIOChannel, F: marshalIOChannel},
 		coreglib.TypeMarshaler{T: GTypeKeyFile, F: marshalKeyFile},
 		coreglib.TypeMarshaler{T: GTypeMainContext, F: marshalMainContext},
@@ -91,7 +75,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeMatchInfo, F: marshalMatchInfo},
 		coreglib.TypeMarshaler{T: GTypeOptionGroup, F: marshalOptionGroup},
 		coreglib.TypeMarshaler{T: GTypePatternSpec, F: marshalPatternSpec},
-		coreglib.TypeMarshaler{T: GTypeRand, F: marshalRand},
 		coreglib.TypeMarshaler{T: GTypeRegex, F: marshalRegex},
 		coreglib.TypeMarshaler{T: GTypeSource, F: marshalSource},
 		coreglib.TypeMarshaler{T: GTypeTimeZone, F: marshalTimeZone},
@@ -104,15 +87,10 @@ func init() {
 	})
 }
 
-const ALLOCATOR_LIST = 1
-const ALLOCATOR_NODE = 3
-const ALLOCATOR_SLIST = 2
-const ALLOC_AND_FREE = 2
-const ALLOC_ONLY = 1
 const ANALYZER_ANALYZING = 1
 
 // ASCII_DTOSTR_BUF_SIZE: good size for a buffer to be passed into
-// glib.ASCIIDtostr(). It is guaranteed to be enough for all output of that
+// g_ascii_dtostr(). It is guaranteed to be enough for all output of that
 // function on systems with 64bit IEEE-compatible doubles.
 //
 // The typical usage would be something like:
@@ -122,24 +100,8 @@ const ANALYZER_ANALYZING = 1
 //	fprintf (out, "value=s\n", g_ascii_dtostr (buf, sizeof (buf), value));.
 const ASCII_DTOSTR_BUF_SIZE = 39
 
-// ATOMIC_REF_COUNT_INIT evaluates to the initial reference count for
-// gatomicrefcount.
-//
-// This macro is useful for initializing gatomicrefcount fields inside
-// structures, for instance:
-//
-//	typedef struct {
-//	  gatomicrefcount ref_count;
-//	  char *name;
-//	  char *address;
-//	} Person;
-//
-//	static const Person default_person = {
-//	  .ref_count = G_ATOMIC_REF_COUNT_INIT,
-//	  .name = "Default name",
-//	  .address = "Default address",
-//	};.
-const ATOMIC_REF_COUNT_INIT = 1
+// BIG_ENDIAN specifies one of the possible types of byte order. See
+// G_BYTE_ORDER.
 const BIG_ENDIAN = 4321
 
 // CSET_A_2_Z: set of uppercase ASCII alphabet characters. Used for specifying
@@ -153,7 +115,6 @@ const CSET_DIGITS = "0123456789"
 // CSET_a_2_z: set of lowercase ASCII alphabet characters. Used for specifying
 // valid identifier characters in Config.
 const CSET_a_2_z = "abcdefghijklmnopqrstuvwxyz"
-const C_STD_VERSION = 199000
 
 // DATALIST_FLAGS_MASK: bitmask that restricts the possible flags
 // passed to g_datalist_set_flags(). Passing a flags value where flags &
@@ -168,16 +129,76 @@ const DATE_BAD_JULIAN = 0
 
 // DATE_BAD_YEAR represents an invalid year.
 const DATE_BAD_YEAR = 0
+
+// DIR_SEPARATOR: directory separator character. This is '/' on UNIX machines
+// and '\' under Windows.
 const DIR_SEPARATOR = 47
+
+// DIR_SEPARATOR_S: directory separator as a string. This is "/" on UNIX
+// machines and "\" under Windows.
 const DIR_SEPARATOR_S = "/"
+
+// E: base of natural logarithms.
 const E = 2.718282
+
+// GINT16_FORMAT: this is the platform dependent conversion specifier for
+// scanning and printing values of type #gint16. It is a string literal,
+// but doesn't include the percent-sign, such that you can add precision and
+// length modifiers between percent-sign and conversion specifier.
+//
+//	gint16 in;
+//	gint32 out;
+//	sscanf ("42", "%" G_GINT16_FORMAT, &in)
+//	out = in * 1000;
+//	g_print ("%" G_GINT32_FORMAT, out);.
 const GINT16_FORMAT = "hi"
+
+// GINT16_MODIFIER: platform dependent length modifier for conversion specifiers
+// for scanning and printing values of type #gint16 or #guint16. It is a
+// string literal, but doesn't include the percent-sign, such that you can add
+// precision and length modifiers between percent-sign and conversion specifier
+// and append a conversion specifier.
+//
+// The following example prints "0x7b";
+//
+//	gint16 value = 123;
+//	g_print ("%#" G_GINT16_MODIFIER "x", value);.
 const GINT16_MODIFIER = "h"
+
+// GINT32_FORMAT: this is the platform dependent conversion specifier for
+// scanning and printing values of type #gint32. See also G_GINT16_FORMAT.
 const GINT32_FORMAT = "i"
+
+// GINT32_MODIFIER: platform dependent length modifier for conversion specifiers
+// for scanning and printing values of type #gint32 or #guint32. It is a string
+// literal. See also G_GINT16_MODIFIER.
 const GINT32_MODIFIER = ""
+
+// GINT64_FORMAT: this is the platform dependent conversion specifier for
+// scanning and printing values of type #gint64. See also G_GINT16_FORMAT.
+//
+// Some platforms do not support scanning and printing 64-bit integers,
+// even though the types are supported. On such platforms G_GINT64_FORMAT is
+// not defined. Note that scanf() may not support 64-bit integers, even if
+// G_GINT64_FORMAT is defined. Due to its weak error handling, scanf() is not
+// recommended for parsing anyway; consider using g_ascii_strtoull() instead.
 const GINT64_FORMAT = "li"
+
+// GINT64_MODIFIER: platform dependent length modifier for conversion specifiers
+// for scanning and printing values of type #gint64 or #guint64. It is a string
+// literal.
+//
+// Some platforms do not support printing 64-bit integers, even though the types
+// are supported. On such platforms G_GINT64_MODIFIER is not defined.
 const GINT64_MODIFIER = "l"
+
+// GINTPTR_FORMAT: this is the platform dependent conversion specifier for
+// scanning and printing values of type #gintptr.
 const GINTPTR_FORMAT = "li"
+
+// GINTPTR_MODIFIER: platform dependent length modifier for conversion
+// specifiers for scanning and printing values of type #gintptr or #guintptr.
+// It is a string literal.
 const GINTPTR_MODIFIER = "l"
 
 // GNUC_FUNCTION expands to "" on all modern compilers, and to __FUNCTION__ on
@@ -191,16 +212,49 @@ const GNUC_FUNCTION = ""
 //
 // Deprecated: Use G_STRFUNC() instead.
 const GNUC_PRETTY_FUNCTION = ""
+
+// GSIZE_FORMAT: this is the platform dependent conversion specifier for
+// scanning and printing values of type #gsize. See also G_GINT16_FORMAT.
 const GSIZE_FORMAT = "lu"
+
+// GSIZE_MODIFIER: platform dependent length modifier for conversion specifiers
+// for scanning and printing values of type #gsize. It is a string literal.
 const GSIZE_MODIFIER = "l"
+
+// GSSIZE_FORMAT: this is the platform dependent conversion specifier for
+// scanning and printing values of type #gssize. See also G_GINT16_FORMAT.
 const GSSIZE_FORMAT = "li"
+
+// GSSIZE_MODIFIER: platform dependent length modifier for conversion specifiers
+// for scanning and printing values of type #gssize. It is a string literal.
 const GSSIZE_MODIFIER = "l"
+
+// GUINT16_FORMAT: this is the platform dependent conversion specifier for
+// scanning and printing values of type #guint16. See also G_GINT16_FORMAT.
 const GUINT16_FORMAT = "hu"
+
+// GUINT32_FORMAT: this is the platform dependent conversion specifier for
+// scanning and printing values of type #guint32. See also G_GINT16_FORMAT.
 const GUINT32_FORMAT = "u"
+
+// GUINT64_FORMAT: this is the platform dependent conversion specifier for
+// scanning and printing values of type #guint64. See also G_GINT16_FORMAT.
+//
+// Some platforms do not support scanning and printing 64-bit integers,
+// even though the types are supported. On such platforms G_GUINT64_FORMAT
+// is not defined. Note that scanf() may not support 64-bit integers, even if
+// G_GINT64_FORMAT is defined. Due to its weak error handling, scanf() is not
+// recommended for parsing anyway; consider using g_ascii_strtoull() instead.
 const GUINT64_FORMAT = "lu"
+
+// GUINTPTR_FORMAT: this is the platform dependent conversion specifier for
+// scanning and printing values of type #guintptr.
 const GUINTPTR_FORMAT = "lu"
 const HAVE_GINT64 = 1
 const HAVE_GNUC_VARARGS = 1
+
+// HAVE_GNUC_VISIBILITY: defined to 1 if gcc-style visibility handling is
+// supported.
 const HAVE_GNUC_VISIBILITY = 1
 const HAVE_GROWING_STACK = 0
 const HAVE_ISO_VARARGS = 1
@@ -209,7 +263,13 @@ const HAVE_ISO_VARARGS = 1
 // internal use be the #GHook implementation, i.e. 1 << G_HOOK_FLAG_USER_SHIFT
 // is the first bit which can be used for application-defined flags.
 const HOOK_FLAG_USER_SHIFT = 4
+
+// IEEE754_DOUBLE_BIAS bias by which exponents in double-precision floats are
+// offset.
 const IEEE754_DOUBLE_BIAS = 1023
+
+// IEEE754_FLOAT_BIAS bias by which exponents in single-precision floats are
+// offset.
 const IEEE754_FLOAT_BIAS = 127
 
 // KEY_FILE_DESKTOP_GROUP: name of the main group of a desktop
@@ -335,9 +395,19 @@ const KEY_FILE_DESKTOP_TYPE_DIRECTORY = "Directory"
 // KEY_FILE_DESKTOP_TYPE_LINK: value of the G_KEY_FILE_DESKTOP_KEY_TYPE,
 // key for desktop entries representing links to documents.
 const KEY_FILE_DESKTOP_TYPE_LINK = "Link"
+
+// LITTLE_ENDIAN specifies one of the possible types of byte order. See
+// G_BYTE_ORDER.
 const LITTLE_ENDIAN = 1234
+
+// LN10: natural logarithm of 10.
 const LN10 = 2.302585
+
+// LN2: natural logarithm of 2.
 const LN2 = 0.693147
+
+// LOG_2_BASE_10: multiplying the base 2 exponent by this number yields the base
+// 10 exponent.
 const LOG_2_BASE_10 = 0.301030
 
 // LOG_DOMAIN defines the log domain. See Log Domains (#log-domains).
@@ -354,7 +424,7 @@ const LOG_2_BASE_10 = 0.301030
 // not advisable, as it cannot be filtered against using the G_MESSAGES_DEBUG
 // environment variable.
 //
-// For example, GTK uses this in its Makefile.am:
+// For example, GTK+ uses this in its Makefile.am:
 //
 //	AM_CPPFLAGS = -DG_LOG_DOMAIN=\"Gtk\"
 //
@@ -364,8 +434,8 @@ const LOG_DOMAIN = 0
 
 // LOG_FATAL_MASK: GLib log levels that are considered fatal by default.
 //
-// This is not used if structured logging is enabled; see Using Structured
-// Logging (logging.html#using-structured-logging).
+// This is not used if structured logging is enabled; see [Using Structured
+// Logging][using-structured-logging].
 const LOG_FATAL_MASK = 5
 
 // LOG_LEVEL_USER_SHIFT: log levels below 1<<G_LOG_LEVEL_USER_SHIFT are used by
@@ -377,20 +447,36 @@ const LOG_LEVEL_USER_SHIFT = 8
 // Like #glib_major_version, but from the headers used at application compile
 // time, rather than from the library linked against at application run time.
 const MAJOR_VERSION = 2
+
+// MAXINT16: maximum value which can be held in a #gint16.
 const MAXINT16 = 32767
+
+// MAXINT32: maximum value which can be held in a #gint32.
 const MAXINT32 = 2147483647
+
+// MAXINT64: maximum value which can be held in a #gint64.
 const MAXINT64 = 9223372036854775807
+
+// MAXINT8: maximum value which can be held in a #gint8.
 const MAXINT8 = 127
+
+// MAXUINT16: maximum value which can be held in a #guint16.
 const MAXUINT16 = 65535
+
+// MAXUINT32: maximum value which can be held in a #guint32.
 const MAXUINT32 = 4294967295
+
+// MAXUINT64: maximum value which can be held in a #guint64.
 const MAXUINT64 = 18446744073709551615
+
+// MAXUINT8: maximum value which can be held in a #guint8.
 const MAXUINT8 = 255
 
 // MICRO_VERSION: micro version number of the GLib library.
 //
 // Like #gtk_micro_version, but from the headers used at application compile
 // time, rather than from the library linked against at application run time.
-const MICRO_VERSION = 2
+const MICRO_VERSION = 4
 
 // MININT16: minimum value which can be held in a #gint16.
 const MININT16 = -32768
@@ -408,7 +494,7 @@ const MININT8 = -128
 //
 // Like #gtk_minor_version, but from the headers used at application compile
 // time, rather than from the library linked against at application run time.
-const MINOR_VERSION = 80
+const MINOR_VERSION = 74
 const MODULE_SUFFIX = "so"
 
 // OPTION_REMAINING: if a long option in the main group has this name,
@@ -419,13 +505,22 @@ const MODULE_SUFFIX = "so"
 //
 //	Using G_OPTION_REMAINING instead of simply scanning argv for leftover arguments has the advantage that GOption takes care of necessary encoding conversions for strings or filenames.
 const OPTION_REMAINING = ""
+
+// PDP_ENDIAN specifies one of the possible types of byte order (currently
+// unused). See G_BYTE_ORDER.
 const PDP_ENDIAN = 3412
+
+// PI: value of pi (ratio of circle's circumference to its diameter).
 const PI = 3.141593
 
 // PID_FORMAT: format specifier that can be used in printf()-style format
 // strings when printing a #GPid.
 const PID_FORMAT = "i"
+
+// PI_2: pi divided by 2.
 const PI_2 = 1.570796
+
+// PI_4: pi divided by 4.
 const PI_4 = 0.785398
 
 // POLLFD_FORMAT: format specifier that can be used in printf()-style format
@@ -445,12 +540,12 @@ const PRIORITY_DEFAULT_IDLE = 200
 
 // PRIORITY_HIGH: use this for high priority event sources.
 //
-// It is not used within GLib or GTK.
+// It is not used within GLib or GTK+.
 const PRIORITY_HIGH = -100
 
 // PRIORITY_HIGH_IDLE: use this for high priority idle functions.
 //
-// GTK uses G_PRIORITY_HIGH_IDLE + 10 for resizing operations, and
+// GTK+ uses G_PRIORITY_HIGH_IDLE + 10 for resizing operations, and
 // G_PRIORITY_HIGH_IDLE + 20 for redrawing operations. (This is done to ensure
 // that any pending resizes are processed before any pending redraws, so that
 // widgets are not redrawn twice unnecessarily.).
@@ -458,27 +553,15 @@ const PRIORITY_HIGH_IDLE = 100
 
 // PRIORITY_LOW: use this for very low priority background tasks.
 //
-// It is not used within GLib or GTK.
+// It is not used within GLib or GTK+.
 const PRIORITY_LOW = 300
 
-// REF_COUNT_INIT evaluates to the initial reference count for grefcount.
-//
-// This macro is useful for initializing grefcount fields inside structures,
-// for instance:
-//
-//	typedef struct {
-//	  grefcount ref_count;
-//	  char *name;
-//	  char *address;
-//	} Person;
-//
-//	static const Person default_person = {
-//	  .ref_count = G_REF_COUNT_INIT,
-//	  .name = "Default name",
-//	  .address = "Default address",
-//	};.
-const REF_COUNT_INIT = -1
+// SEARCHPATH_SEPARATOR: search path separator character. This is ':' on UNIX
+// machines and ';' under Windows.
 const SEARCHPATH_SEPARATOR = 58
+
+// SEARCHPATH_SEPARATOR_S: search path separator as a string. This is ":" on
+// UNIX machines and ";" under Windows.
 const SEARCHPATH_SEPARATOR_S = ":"
 const SIZEOF_LONG = 8
 const SIZEOF_SIZE_T = 8
@@ -492,9 +575,11 @@ const SOURCE_CONTINUE = true
 // SOURCE_REMOVE: use this macro as the return value of a Func to remove the
 // #GSource from the main loop.
 const SOURCE_REMOVE = false
+
+// SQRT2: square root of two.
 const SQRT2 = 1.414214
 
-// STR_DELIMITERS: standard delimiters, used in glib.Strdelimit().
+// STR_DELIMITERS: standard delimiters, used in g_strdelimit().
 const STR_DELIMITERS = "_-|> <."
 const SYSDEF_AF_INET = 2
 const SYSDEF_AF_INET6 = 10
@@ -579,28 +664,7 @@ const WIN32_MSG_HANDLE = 19981206
 const macro__has_attribute___noreturn__ = 0
 
 // Quark is a non-zero integer which uniquely identifies a particular string.
-//
 // A GQuark value of zero is associated to NULL.
-//
-// Given either the string or the GQuark identifier it is possible to retrieve
-// the other.
-//
-// Quarks are used for both datasets and keyed data lists
-// (datalist-and-dataset.html).
-//
-// To create a new quark from a string, use glib.QuarkFromString() or
-// glib.QuarkFromStaticString().
-//
-// To find the string corresponding to a given GQuark, use glib.QuarkToString().
-//
-// To find the GQuark corresponding to a given string, use
-// glib.QuarkTryString().
-//
-// Another use for the string pool maintained for the quark functions is
-// string interning, using glib.InternString() or glib.InternStaticString().
-// An interned string is a canonical representation for a string. One important
-// advantage of interned strings is that they can be compared for equality by a
-// simple pointer comparison, rather than using strcmp().
 type Quark = uint32
 
 // TimeSpan: value representing an interval of time, in microseconds.
@@ -1203,10 +1267,6 @@ const (
 	// NormalizeNFKC: another name for G_NORMALIZE_ALL_COMPOSE.
 	NormalizeNFKC NormalizeMode = 3
 )
-
-func marshalNormalizeMode(p uintptr) (interface{}, error) {
-	return NormalizeMode(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
 
 // String returns the name in string for NormalizeMode.
 func (n NormalizeMode) String() string {
@@ -1938,11 +1998,12 @@ func (t TraverseType) String() string {
 
 // UnicodeBreakType: these are the possible line break classifications.
 //
-// Since new Unicode versions may add new types here, applications
+// Since new unicode versions may add new types here, applications
 // should be ready to handle unknown values. They may be regarded as
 // G_UNICODE_BREAK_UNKNOWN.
 //
-// See Unicode Line Breaking Algorithm (https://www.unicode.org/reports/tr14/).
+// See Unicode Line Breaking Algorithm
+// (http://www.unicode.org/unicode/reports/tr14/).
 type UnicodeBreakType C.gint
 
 const (
@@ -2037,21 +2098,7 @@ const (
 	UnicodeBreakEmojiModifier UnicodeBreakType = 41
 	// UnicodeBreakZeroWidthJoiner: zero Width Joiner (ZWJ). Since: 2.50.
 	UnicodeBreakZeroWidthJoiner UnicodeBreakType = 42
-	// UnicodeBreakAksara: aksara (AK). Since:
-	// 2.80 G_UNICODE_BREAK_AKSARA_PRE_BASE (AP). Since:
-	// 2.80 G_UNICODE_BREAK_AKSARA_START (AS). Since: 2.80
-	// G_UNICODE_BREAK_VIRAMA_FINAL (VF). Since: 2.80 G_UNICODE_BREAK_VIRAMA
-	// (VI). Since: 2.80.
-	UnicodeBreakAksara        UnicodeBreakType = 43
-	UnicodeBreakAksaraPreBase UnicodeBreakType = 44
-	UnicodeBreakAksaraStart   UnicodeBreakType = 45
-	UnicodeBreakViramaFinal   UnicodeBreakType = 46
-	UnicodeBreakVirama        UnicodeBreakType = 47
 )
-
-func marshalUnicodeBreakType(p uintptr) (interface{}, error) {
-	return UnicodeBreakType(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
 
 // String returns the name in string for UnicodeBreakType.
 func (u UnicodeBreakType) String() string {
@@ -2142,16 +2189,6 @@ func (u UnicodeBreakType) String() string {
 		return "EmojiModifier"
 	case UnicodeBreakZeroWidthJoiner:
 		return "ZeroWidthJoiner"
-	case UnicodeBreakAksara:
-		return "Aksara"
-	case UnicodeBreakAksaraPreBase:
-		return "AksaraPreBase"
-	case UnicodeBreakAksaraStart:
-		return "AksaraStart"
-	case UnicodeBreakViramaFinal:
-		return "ViramaFinal"
-	case UnicodeBreakVirama:
-		return "Virama"
 	default:
 		return fmt.Sprintf("UnicodeBreakType(%d)", u)
 	}
@@ -2503,10 +2540,6 @@ const (
 	UnicodeScriptNagMundari UnicodeScript = 164
 )
 
-func marshalUnicodeScript(p uintptr) (interface{}, error) {
-	return UnicodeScript(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
 // String returns the name in string for UnicodeScript.
 func (u UnicodeScript) String() string {
 	switch u {
@@ -2847,74 +2880,6 @@ func (u UnicodeScript) String() string {
 	}
 }
 
-// UnicodeScriptFromISO15924 looks up the Unicode script for iso15924. ISO 15924
-// assigns four-letter codes to scripts. For example, the code for Arabic is
-// 'Arab'. This function accepts four letter codes encoded as a guint32 in a
-// big-endian fashion. That is, the code expected for Arabic is 0x41726162 (0x41
-// is ASCII code for 'A', 0x72 is ASCII code for 'r', etc).
-//
-// See Codes for the representation of names of scripts
-// (http://unicode.org/iso15924/codelists.html) for details.
-//
-// The function takes the following parameters:
-//
-//   - iso15924: unicode script.
-//
-// The function returns the following values:
-//
-//   - unicodeScript: unicode script for iso15924, or of
-//     G_UNICODE_SCRIPT_INVALID_CODE if iso15924 is zero and
-//     G_UNICODE_SCRIPT_UNKNOWN if iso15924 is unknown.
-func UnicodeScriptFromISO15924(iso15924 uint32) UnicodeScript {
-	var _arg1 C.guint32        // out
-	var _cret C.GUnicodeScript // in
-
-	_arg1 = C.guint32(iso15924)
-
-	_cret = C.g_unicode_script_from_iso15924(_arg1)
-	runtime.KeepAlive(iso15924)
-
-	var _unicodeScript UnicodeScript // out
-
-	_unicodeScript = UnicodeScript(_cret)
-
-	return _unicodeScript
-}
-
-// UnicodeScriptToISO15924 looks up the ISO 15924 code for script. ISO 15924
-// assigns four-letter codes to scripts. For example, the code for Arabic is
-// 'Arab'. The four letter codes are encoded as a guint32 by this function in a
-// big-endian fashion. That is, the code returned for Arabic is 0x41726162 (0x41
-// is ASCII code for 'A', 0x72 is ASCII code for 'r', etc).
-//
-// See Codes for the representation of names of scripts
-// (http://unicode.org/iso15924/codelists.html) for details.
-//
-// The function takes the following parameters:
-//
-//   - script: unicode script.
-//
-// The function returns the following values:
-//
-//   - guint32: ISO 15924 code for script, encoded as an integer, of zero if
-//     script is G_UNICODE_SCRIPT_INVALID_CODE or ISO 15924 code 'Zzzz' (script
-//     code for UNKNOWN) if script is not understood.
-func UnicodeScriptToISO15924(script UnicodeScript) uint32 {
-	var _arg1 C.GUnicodeScript // out
-	var _cret C.guint32        // in
-
-	_arg1 = C.GUnicodeScript(script)
-
-	_cret = C.g_unicode_script_to_iso15924(_arg1)
-	runtime.KeepAlive(script)
-
-	var _guint32 uint32 // out
-
-	_guint32 = uint32(_cret)
-
-	return _guint32
-}
-
 // UnicodeType: these are the possible character classifications
 // from the Unicode specification. See Unicode Character Database
 // (http://www.unicode.org/reports/tr44/Category_Values).
@@ -2985,10 +2950,6 @@ const (
 	// UnicodeSpaceSeparator: general category "Separator, Space" (Zs).
 	UnicodeSpaceSeparator
 )
-
-func marshalUnicodeType(p uintptr) (interface{}, error) {
-	return UnicodeType(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
 
 // String returns the name in string for UnicodeType.
 func (u UnicodeType) String() string {
@@ -3494,7 +3455,7 @@ const (
 	// sizes should be reported in the normal SI units.
 	FormatSizeIecUnits FormatSizeFlags = 0b10
 	// FormatSizeBits: set the size as a quantity in bits, rather than bytes,
-	// and return units in bits. For example, ‘Mbit’ rather than ‘MB’.
+	// and return units in bits. For example, ‘Mb’ rather than ‘MB’.
 	FormatSizeBits FormatSizeFlags = 0b100
 	// FormatSizeOnlyValue: return only value, without unit; this should not be
 	// used together with G_FORMAT_SIZE_LONG_FORMAT nor G_FORMAT_SIZE_ONLY_UNIT.
@@ -3749,7 +3710,7 @@ func (k KeyFileFlags) Has(other KeyFileFlags) bool {
 // LogLevelFlags flags specifying the level of log messages.
 //
 // It is possible to change how GLib treats messages of the various levels using
-// glib.LogSetHandler() and glib.LogSetFatalMask().
+// g_log_set_handler() and g_log_set_fatal_mask().
 type LogLevelFlags C.guint
 
 const (
@@ -3757,20 +3718,20 @@ const (
 	LogFlagRecursion LogLevelFlags = 0b1
 	// LogFlagFatal: internal flag.
 	LogFlagFatal LogLevelFlags = 0b10
-	// LogLevelError: log level for errors, see glib.Error(). This level is also
-	// used for messages produced by glib.Assert().
+	// LogLevelError: log level for errors, see g_error(). This level is also
+	// used for messages produced by g_assert().
 	LogLevelError LogLevelFlags = 0b100
 	// LogLevelCritical: log level for critical warning messages,
-	// see glib.Critical(). This level is also used for messages produced by
-	// glib.ReturnIfFail() and glib.ReturnValIfFail().
+	// see g_critical(). This level is also used for messages produced by
+	// g_return_if_fail() and g_return_val_if_fail().
 	LogLevelCritical LogLevelFlags = 0b1000
-	// LogLevelWarning: log level for warnings, see glib.Warning().
+	// LogLevelWarning: log level for warnings, see g_warning().
 	LogLevelWarning LogLevelFlags = 0b10000
-	// LogLevelMessage: log level for messages, see glib.Message().
+	// LogLevelMessage: log level for messages, see g_message().
 	LogLevelMessage LogLevelFlags = 0b100000
-	// LogLevelInfo: log level for informational messages, see glib.Info().
+	// LogLevelInfo: log level for informational messages, see g_info().
 	LogLevelInfo LogLevelFlags = 0b1000000
-	// LogLevelDebug: log level for debug messages, see glib.Debug().
+	// LogLevelDebug: log level for debug messages, see g_debug().
 	LogLevelDebug LogLevelFlags = 0b10000000
 )
 
@@ -4762,6 +4723,10 @@ func (u URIParamsFlags) Has(other URIParamsFlags) bool {
 // first value comes after the second.
 type CompareDataFunc func(a, b unsafe.Pointer) (gint int)
 
+// CopyFunc: function of this signature is used to copy the node data when doing
+// a deep-copy of a tree.
+type CopyFunc func(src unsafe.Pointer) (gpointer unsafe.Pointer)
+
 // EqualFuncFull specifies the type of a function used to test two values for
 // equality. The function should return TRUE if both values are equal and FALSE
 // otherwise.
@@ -4785,16 +4750,21 @@ type HFunc func(key, value unsafe.Pointer)
 // should be removed from the Table.
 type HRFunc func(key, value unsafe.Pointer) (ok bool)
 
+// IOFunc specifies the type of function passed to g_io_add_watch() or
+// g_io_add_watch_full(), which is called when the requested condition on a
+// OChannel is satisfied.
+type IOFunc func(source *IOChannel, condition IOCondition) (ok bool)
+
 // LogFunc specifies the prototype of log handler functions.
 //
-// The default log handler, glib.LogDefaultHandler(), automatically appends a
+// The default log handler, g_log_default_handler(), automatically appends a
 // new-line character to message when printing it. It is advised that any custom
 // log handler functions behave similarly, so that logging calls in user code
 // do not need modifying to add a new-line character to the message if the log
 // handler is changed.
 //
-// This is not used if structured logging is enabled; see Using Structured
-// Logging (logging.html#using-structured-logging).
+// This is not used if structured logging is enabled; see [Using Structured
+// Logging][using-structured-logging].
 type LogFunc func(logDomain string, logLevel LogLevelFlags, message string)
 
 // LogWriterFunc: writer function for log entries. A log entry is a collection
@@ -4817,6 +4787,21 @@ type LogFunc func(logDomain string, logLevel LogLevelFlags, message string)
 // chained and fall back to simpler handlers in case of failure.
 type LogWriterFunc func(logLevel LogLevelFlags, fields []LogField) (logWriterOutput LogWriterOutput)
 
+// NodeForEachFunc specifies the type of function passed to
+// g_node_children_foreach(). The function is called with each child node,
+// together with the user data passed to g_node_children_foreach().
+type NodeForEachFunc func(node *Node)
+
+// NodeTraverseFunc specifies the type of function passed to g_node_traverse().
+// The function is called with each of the nodes visited, together with the
+// user data passed to g_node_traverse(). If the function returns TRUE, then the
+// traversal is stopped.
+type NodeTraverseFunc func(node *Node) (ok bool)
+
+// OptionArgFunc: type of function to be passed as callback for
+// G_OPTION_ARG_CALLBACK options.
+type OptionArgFunc func(optionName, value string) (_goerr error)
+
 // SourceFunc specifies the type of function passed to g_timeout_add(),
 // g_timeout_add_full(), g_idle_add(), and g_idle_add_full().
 //
@@ -4830,6 +4815,44 @@ type SourceFunc func() (ok bool)
 //
 // See: g_idle_add_once(), g_timeout_add_once().
 type SourceOnceFunc func()
+
+// SpawnChildSetupFunc specifies the type of the setup function passed to
+// g_spawn_async(), g_spawn_sync() and g_spawn_async_with_pipes(), which can,
+// in very limited ways, be used to affect the child's execution.
+//
+// On POSIX platforms, the function is called in the child after GLib has
+// performed all the setup it plans to perform, but before calling exec().
+// Actions taken in this function will only affect the child, not the parent.
+//
+// On Windows, the function is called in the parent. Its usefulness on Windows
+// is thus questionable. In many cases executing the child setup function in
+// the parent can have ill effects, and you should be very careful when porting
+// software to Windows that uses child setup functions.
+//
+// However, even on POSIX, you are extremely limited in what you can safely do
+// from a ChildSetupFunc, because any mutexes that were held by other threads
+// in the parent process at the time of the fork() will still be locked in the
+// child process, and they will never be unlocked (since the threads that held
+// them don't exist in the child). POSIX allows only async-signal-safe functions
+// (see signal(7)) to be called in the child between fork() and exec(), which
+// drastically limits the usefulness of child setup functions.
+//
+// In particular, it is not safe to call any function which may call malloc(),
+// which includes POSIX functions such as setenv(). If you need to set
+// up the child environment differently from the parent, you should use
+// g_get_environ(), g_environ_setenv(), and g_environ_unsetenv(), and then pass
+// the complete environment list to the g_spawn... function.
+type SpawnChildSetupFunc func()
+
+// TranslateFunc: type of functions which are used to translate user-visible
+// strings, for <option>--help</option> output.
+type TranslateFunc func(str string) (utf8 string)
+
+// TraverseFunc specifies the type of function passed to g_tree_traverse().
+// It is passed the key and value of each node, together with the user_data
+// parameter passed to g_tree_traverse(). If the function returns TRUE,
+// the traversal is stopped.
+type TraverseFunc func(key, value unsafe.Pointer) (ok bool)
 
 // The function takes the following parameters:
 //
@@ -4986,18 +5009,9 @@ func BitStorage(number uint32) uint {
 	return _guint
 }
 
-func BlowChunks() {
-	C.g_blow_chunks()
-}
-
-// BuildFilenamev creates a filename from a vector of elements using the correct
-// separator for the current platform.
-//
-// This function behaves exactly like g_build_filename(), but takes the path
+// BuildFilenamev behaves exactly like g_build_filename(), but takes the path
 // elements as a string array, instead of varargs. This function is mainly meant
 // for language bindings.
-//
-// If you are building a path programmatically you may want to use Buf instead.
 //
 // The function takes the following parameters:
 //
@@ -5005,7 +5019,7 @@ func BlowChunks() {
 //
 // The function returns the following values:
 //
-//   - filename: newly allocated path.
+//   - filename: newly-allocated string that must be freed with g_free().
 func BuildFilenamev(args []string) string {
 	var _arg1 **C.gchar // out
 	var _cret *C.gchar  // in
@@ -5036,9 +5050,8 @@ func BuildFilenamev(args []string) string {
 }
 
 // BuildPathv behaves exactly like g_build_path(), but takes the path elements
-// as a string array, instead of variadic arguments.
-//
-// This function is mainly meant for language bindings.
+// as a string array, instead of varargs. This function is mainly meant for
+// language bindings.
 //
 // The function takes the following parameters:
 //
@@ -5635,11 +5648,11 @@ func Dcgettext(domain, msgid string, category int) string {
 // translations for the current locale.
 //
 // The advantage of using this function over dgettext() proper is that libraries
-// using this function (like GTK) will not use translations if the application
+// using this function (like GTK+) will not use translations if the application
 // using the library does not have translations for the current locale.
 // This results in a consistent English-only interface instead of one having
 // partial translations. For this feature to work, the call to textdomain() and
-// setlocale() should precede any g_dgettext() invocations. For GTK, it means
+// setlocale() should precede any g_dgettext() invocations. For GTK+, it means
 // calling textdomain() before gtk_init or its variants.
 //
 // This function disables translations if and only if upon its first call all
@@ -5657,7 +5670,7 @@ func Dcgettext(domain, msgid string, category int) string {
 //
 // Note that this behavior may not be desired for example if an application has
 // its untranslated messages in a language other than English. In those cases
-// the application should call textdomain() after initializing GTK.
+// the application should call textdomain() after initializing GTK+.
 //
 // Applications should normally not use this function directly, but use the _()
 // macro for translations.
@@ -6284,27 +6297,9 @@ func FileOpenTmp(tmpl string) (string, int, error) {
 	return _nameUsed, _gint, _goerr
 }
 
-// FileReadLink reads the contents of the symbolic link filename like the POSIX
-// readlink() function.
-//
-// The returned string is in the encoding used for filenames. Use
-// g_filename_to_utf8() to convert it to UTF-8.
-//
-// The returned string may also be a relative path. Use g_build_filename() to
-// convert it to an absolute path:
-//
-//	g_autoptr(GError) local_error = NULL;
-//	g_autofree gchar *link_target = g_file_read_link ("/etc/localtime", &local_error);
-//
-//	if (local_error != NULL)
-//	  g_error ("Error reading link: s", local_error->message);
-//
-//	if (!g_path_is_absolute (link_target))
-//	  {
-//	    g_autofree gchar *absolute_link_target = g_build_filename ("/etc", link_target, NULL);
-//	    g_free (link_target);
-//	    link_target = g_steal_pointer (&absolute_link_target);
-//	  }.
+// FileReadLink reads the contents of the symbolic link filename like the
+// POSIX readlink() function. The returned string is in the encoding used for
+// filenames. Use g_filename_to_utf8() to convert it to UTF-8.
 //
 // The function takes the following parameters:
 //
@@ -6481,34 +6476,17 @@ func FileSetContentsFull(filename, contents string, flags FileSetContentsFlags, 
 // Note, that for a dangling symbolic link g_file_test() will return TRUE for
 // G_FILE_TEST_IS_SYMLINK and FALSE for all other flags.
 //
-// You should never use g_file_test() to test whether it is safe to
-// perform an operation, because there is always the possibility of the
-// condition changing before you actually perform the operation, see TOCTOU
-// (https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use).
-//
-// For example, you might think you could use G_FILE_TEST_IS_SYMLINK to know
-// whether it is safe to write to a file without being tricked into writing into
-// a different location. It doesn't work!
+// You should never use g_file_test() to test whether it is safe to perform an
+// operation, because there is always the possibility of the condition changing
+// before you actually perform the operation. For example, you might think you
+// could use G_FILE_TEST_IS_SYMLINK to know whether it is safe to write to a
+// file without being tricked into writing into a different location. It doesn't
+// work!
 //
 //	// DON'T DO THIS
 //	if (!g_file_test (filename, G_FILE_TEST_IS_SYMLINK))
 //	  {
 //	    fd = g_open (filename, O_WRONLY);
-//	    // write to fd
-//	  }
-//
-//	// DO THIS INSTEAD
-//	fd = g_open (filename, O_WRONLY | O_NOFOLLOW | O_CLOEXEC);
-//	if (fd == -1)
-//	  {
-//	    // check error
-//	    if (errno == ELOOP)
-//	      // file is a symlink and can be ignored
-//	    else
-//	      // handle errors as before
-//	  }
-//	else
-//	  {
 //	    // write to fd
 //	  }
 //
@@ -6643,11 +6621,6 @@ func FilenameDisplayName(filename string) string {
 
 // FilenameFromURI converts an escaped ASCII-encoded URI to a local filename in
 // the encoding used for filenames.
-//
-// Since GLib 2.78, the query string and fragment can be present in the URI,
-// but are not part of the resulting filename. We take inspiration from
-// https://url.spec.whatwg.org/#file-state, but we don't support the entire
-// standard.
 //
 // The function takes the following parameters:
 //
@@ -7036,8 +7009,7 @@ func GetApplicationName() string {
 //
 // On Linux, the character set is found by consulting nl_langinfo() if
 // available. If not, the environment variables LC_ALL, LC_CTYPE, LANG and
-// CHARSET are queried in order. nl_langinfo() returns the C locale if no locale
-// has been loaded by setlocale().
+// CHARSET are queried in order.
 //
 // The return value is TRUE if the locale's encoding is UTF-8, in that case you
 // can perhaps avoid calling g_convert().
@@ -7542,7 +7514,7 @@ func GetOsInfo(keyName string) string {
 // in contrast to g_get_application_name().
 //
 // If you are using #GApplication the program name is set in
-// g_application_run(). In case of GDK or GTK it is set in gdk_init(), which is
+// g_application_run(). In case of GDK or GTK+ it is set in gdk_init(), which is
 // called by gtk_init() and the Application::startup handler. The program name
 // is found by taking the last component of argv[0].
 //
@@ -8419,6 +8391,52 @@ func InternString(str string) string {
 	return _utf8
 }
 
+// IOAddWatch adds the OChannel into the default main loop context with the
+// given priority.
+//
+// This internally creates a main loop source using g_io_create_watch() and
+// attaches it to the main loop context with g_source_attach(). You can do these
+// steps manually if you need greater control.
+//
+// The function takes the following parameters:
+//
+//   - channel: OChannel.
+//   - priority of the OChannel source.
+//   - condition to watch for.
+//   - fn: function to call when the condition is satisfied.
+//
+// The function returns the following values:
+//
+//   - guint: event source id.
+func IOAddWatch(channel *IOChannel, priority int, condition IOCondition, fn IOFunc) uint {
+	var _arg1 *C.GIOChannel  // out
+	var _arg2 C.gint         // out
+	var _arg3 C.GIOCondition // out
+	var _arg4 C.GIOFunc      // out
+	var _arg5 C.gpointer
+	var _arg6 C.GDestroyNotify
+	var _cret C.guint // in
+
+	_arg1 = (*C.GIOChannel)(gextras.StructNative(unsafe.Pointer(channel)))
+	_arg2 = C.gint(priority)
+	_arg3 = C.GIOCondition(condition)
+	_arg4 = (*[0]byte)(C._gotk4_glib2_IOFunc)
+	_arg5 = C.gpointer(gbox.Assign(fn))
+	_arg6 = (C.GDestroyNotify)((*[0]byte)(C.callbackDelete))
+
+	_cret = C.g_io_add_watch_full(_arg1, _arg2, _arg3, _arg4, _arg5, _arg6)
+	runtime.KeepAlive(channel)
+	runtime.KeepAlive(priority)
+	runtime.KeepAlive(condition)
+	runtime.KeepAlive(fn)
+
+	var _guint uint // out
+
+	_guint = uint(_cret)
+
+	return _guint
+}
+
 // IOCreateWatch creates a #GSource that's dispatched when condition is met for
 // the given channel. For example, if condition is G_IO_IN, the source will be
 // dispatched when there's data available for reading.
@@ -8620,32 +8638,29 @@ func LocaleToUTF8(opsysstring string) (bytesRead, bytesWritten uint, utf8 string
 }
 
 // LogDefaultHandler: default log handler set up by GLib;
-// glib.LogSetDefaultHandler() allows to install an alternate default log
-// handler.
-//
-// This is used if no log handler has been set for the particular log domain
-// and log level combination. It outputs the message to stderr or stdout and if
-// the log level is fatal it calls glib.BREAKPOINT(). It automatically prints
-// a new-line character after the message, so one does not need to be manually
-// included in message.
+// g_log_set_default_handler() allows to install an alternate default log
+// handler. This is used if no log handler has been set for the particular log
+// domain and log level combination. It outputs the message to stderr or stdout
+// and if the log level is fatal it calls G_BREAKPOINT(). It automatically
+// prints a new-line character after the message, so one does not need to be
+// manually included in message.
 //
 // The behavior of this log handler can be influenced by a number of environment
 // variables:
 //
-//   - G_MESSAGES_PREFIXED: A :-separated list of log levels for which messages
-//     should be prefixed by the program name and PID of the application.
-//   - G_MESSAGES_DEBUG: A space-separated list of log domains for which debug
-//     and informational messages are printed. By default these messages
-//     are not printed. If you need to set the allowed domains at runtime,
-//     use glib.LogWriterDefaultSetDebugDomains().
+// - G_MESSAGES_PREFIXED: A :-separated list of log levels for which messages
+// should be prefixed by the program name and PID of the application.
 //
-// stderr is used for levels glib.LogLevelFlags.LEVELERROR,
-// glib.LogLevelFlags.LEVELCRITICAL, glib.LogLevelFlags.LEVELWARNING and
-// glib.LogLevelFlags.LEVELMESSAGE. stdout is used for the rest, unless stderr
-// was requested by glib.LogWriterDefaultSetUseStderr().
+// - G_MESSAGES_DEBUG: A space-separated list of log domains for which debug
+// and informational messages are printed. By default these messages are not
+// printed.
 //
-// This has no effect if structured logging is enabled; see Using Structured
-// Logging (logging.html#using-structured-logging).
+// stderr is used for levels G_LOG_LEVEL_ERROR, G_LOG_LEVEL_CRITICAL,
+// G_LOG_LEVEL_WARNING and G_LOG_LEVEL_MESSAGE. stdout is used for the rest,
+// unless stderr was requested by g_log_writer_default_set_use_stderr().
+//
+// This has no effect if structured logging is enabled; see [Using Structured
+// Logging][using-structured-logging].
 //
 // The function takes the following parameters:
 //
@@ -8653,7 +8668,7 @@ func LocaleToUTF8(opsysstring string) (bytesRead, bytesWritten uint, utf8 string
 //     "" application domain.
 //   - logLevel: level of the message.
 //   - message (optional): message.
-//   - unusedData (optional): data passed from glib.Log() which is unused.
+//   - unusedData (optional): data passed from g_log() which is unused.
 func LogDefaultHandler(logDomain string, logLevel LogLevelFlags, message string, unusedData unsafe.Pointer) {
 	var _arg1 *C.gchar         // out
 	var _arg2 C.GLogLevelFlags // out
@@ -8681,13 +8696,12 @@ func LogDefaultHandler(logDomain string, logLevel LogLevelFlags, message string,
 // LogGetDebugEnabled: return whether debug output from the GLib logging system
 // is enabled.
 //
-// Note that this should not be used to conditionalise calls to glib.Debug()
-// or other logging functions; it should only be used from glib.LogWriterFunc
+// Note that this should not be used to conditionalise calls to g_debug()
+// or other logging functions; it should only be used from GLogWriterFunc
 // implementations.
 //
-// Note also that the value of this does not depend on G_MESSAGES_DEBUG,
-// nor glib.LogWriterDefaultSetDebugDomains(); see the docs for
-// glib.LogSetDebugEnabled().
+// Note also that the value of this does not depend on G_MESSAGES_DEBUG; see the
+// docs for g_log_set_debug_enabled().
 //
 // The function returns the following values:
 //
@@ -8708,13 +8722,13 @@ func LogGetDebugEnabled() bool {
 
 // LogRemoveHandler removes the log handler.
 //
-// This has no effect if structured logging is enabled; see Using Structured
-// Logging (logging.html#using-structured-logging).
+// This has no effect if structured logging is enabled; see [Using Structured
+// Logging][using-structured-logging].
 //
 // The function takes the following parameters:
 //
 //   - logDomain: log domain.
-//   - handlerId: ID of the handler, which was returned in glib.LogSetHandler().
+//   - handlerId: id of the handler, which was returned in g_log_set_handler().
 func LogRemoveHandler(logDomain string, handlerId uint) {
 	var _arg1 *C.gchar // out
 	var _arg2 C.guint  // out
@@ -8728,12 +8742,10 @@ func LogRemoveHandler(logDomain string, handlerId uint) {
 	runtime.KeepAlive(handlerId)
 }
 
-// LogSetAlwaysFatal sets the message levels which are always fatal, in any log
-// domain.
-//
-// When a message with any of these levels is logged the program
-// terminates. You can only set the levels defined by GLib to be fatal.
-// glib.LogLevelFlags.LEVELERROR is always fatal.
+// LogSetAlwaysFatal sets the message levels which are always fatal,
+// in any log domain. When a message with any of these levels is logged the
+// program terminates. You can only set the levels defined by GLib to be fatal.
+// G_LOG_LEVEL_ERROR is always fatal.
 //
 // You can also make some message levels fatal at runtime by setting the G_DEBUG
 // environment variable (see Running GLib Applications (glib-running.html)).
@@ -8741,10 +8753,10 @@ func LogRemoveHandler(logDomain string, handlerId uint) {
 // Libraries should not call this function, as it affects all messages logged by
 // a process, including those from other libraries.
 //
-// Structured log messages (using glib.LogStructured() and
-// glib.LogStructuredArray()) are fatal only if the default log writer is used;
+// Structured log messages (using g_log_structured() and
+// g_log_structured_array()) are fatal only if the default log writer is used;
 // otherwise it is up to the writer function to determine which log messages are
-// fatal. See Using Structured Logging (logging.html#using-structured-logging).
+// fatal. See [Using Structured Logging][using-structured-logging].
 //
 // The function takes the following parameters:
 //
@@ -8770,12 +8782,10 @@ func LogSetAlwaysFatal(fatalMask LogLevelFlags) LogLevelFlags {
 	return _logLevelFlags
 }
 
-// LogSetDebugEnabled: enable or disable debug output from the GLib logging
-// system for all domains.
-//
-// This value interacts disjunctively with G_MESSAGES_DEBUG and
-// glib.LogWriterDefaultSetDebugDomains() — if any of them would allow a debug
-// message to be outputted, it will be.
+// LogSetDebugEnabled: enable or disable debug output from the GLib
+// logging system for all domains. This value interacts disjunctively with
+// G_MESSAGES_DEBUG — if either of them would allow a debug message to be
+// outputted, it will be.
 //
 // Note that this should not be used from within library code to enable debug
 // output — it is intended for external use.
@@ -8795,20 +8805,18 @@ func LogSetDebugEnabled(enabled bool) {
 }
 
 // LogSetFatalMask sets the log levels which are fatal in the given domain.
+// G_LOG_LEVEL_ERROR is always fatal.
 //
-// glib.LogLevelFlags.LEVELERROR is always fatal.
-//
-// This has no effect on structured log messages (using glib.LogStructured()
-// or glib.LogStructuredArray()). To change the fatal behaviour for
+// This has no effect on structured log messages (using g_log_structured()
+// or g_log_structured_array()). To change the fatal behaviour for
 // specific log messages, programs must install a custom log writer
-// function using glib.LogSetWriterFunc(). See Using Structured Logging
-// (logging.html#using-structured-logging).
+// function using g_log_set_writer_func(). See [Using Structured
+// Logging][using-structured-logging].
 //
-// This function is mostly intended to be used with
-// glib.LogLevelFlags.LEVELCRITICAL. You should typically not set
-// glib.LogLevelFlags.LEVELWARNING, glib.LogLevelFlags.LEVELMESSAGE,
-// glib.LogLevelFlags.LEVELINFO or glib.LogLevelFlags.LEVELDEBUG as fatal except
-// inside of test programs.
+// This function is mostly intended to be used with G_LOG_LEVEL_CRITICAL.
+// You should typically not set G_LOG_LEVEL_WARNING, G_LOG_LEVEL_MESSAGE,
+// G_LOG_LEVEL_INFO or G_LOG_LEVEL_DEBUG as fatal except inside of test
+// programs.
 //
 // The function takes the following parameters:
 //
@@ -8838,22 +8846,19 @@ func LogSetFatalMask(logDomain string, fatalMask LogLevelFlags) LogLevelFlags {
 	return _logLevelFlags
 }
 
-// LogStructuredArray: log a message with structured data.
+// LogStructuredArray: log a message with structured data. The message
+// will be passed through to the log writer set by the application using
+// g_log_set_writer_func(). If the message is fatal (i.e. its log level is
+// G_LOG_LEVEL_ERROR), the program will be aborted at the end of this function.
 //
-// The message will be passed through to the log writer set by the application
-// using glib.LogSetWriterFunc(). If the message is fatal (i.e. its log level
-// is glib.LogLevelFlags.LEVELERROR), the program will be aborted at the end of
-// this function.
-//
-// See glib.LogStructured() for more documentation.
+// See g_log_structured() for more documentation.
 //
 // This assumes that log_level is already present in fields (typically as the
 // PRIORITY field).
 //
 // The function takes the following parameters:
 //
-//   - logLevel: log level, either from glib.LogLevelFlags, or a user-defined
-//     level.
+//   - logLevel: log level, either from LevelFlags, or a user-defined level.
 //   - fields: key–value pairs of structured data to add to the log message.
 func LogStructuredArray(logLevel LogLevelFlags, fields []LogField) {
 	var _arg1 C.GLogLevelFlags // out
@@ -8876,32 +8881,29 @@ func LogStructuredArray(logLevel LogLevelFlags, fields []LogField) {
 	runtime.KeepAlive(fields)
 }
 
-// LogVariant: log a message with structured data, accepting the data within a
-// glib.Variant.
-//
-// This version is especially useful for use in other languages, via
-// introspection.
+// LogVariant: log a message with structured data, accepting the data within
+// a #GVariant. This version is especially useful for use in other languages,
+// via introspection.
 //
 // The only mandatory item in the fields dictionary is the "MESSAGE" which must
 // contain the text shown to the user.
 //
-// The values in the fields dictionary are likely to be of type
-// G_VARIANT_TYPE_STRING. Array of bytes (G_VARIANT_TYPE_BYTESTRING) is
+// The values in the fields dictionary are likely to be of type String
+// (G_VARIANT_TYPE_STRING). Array of bytes (G_VARIANT_TYPE_BYTESTRING) is
 // also supported. In this case the message is handled as binary and will
 // be forwarded to the log writer as such. The size of the array should not
 // be higher than G_MAXSSIZE. Otherwise it will be truncated to this size.
-// For other types glib.Variant.Print() will be used to convert the value into a
+// For other types g_variant_print() will be used to convert the value into a
 // string.
 //
 // For more details on its usage and about the parameters, see
-// glib.LogStructured().
+// g_log_structured().
 //
 // The function takes the following parameters:
 //
 //   - logDomain (optional): log domain, usually G_LOG_DOMAIN.
-//   - logLevel: log level, either from glib.LogLevelFlags, or a user-defined
-//     level.
-//   - fields: dictionary (glib.Variant of the type G_VARIANT_TYPE_VARDICT)
+//   - logLevel: log level, either from LevelFlags, or a user-defined level.
+//   - fields: dictionary (#GVariant of the type G_VARIANT_TYPE_VARDICT)
 //     containing the key-value pairs of message data.
 func LogVariant(logDomain string, logLevel LogLevelFlags, fields *Variant) {
 	var _arg1 *C.gchar         // out
@@ -8922,40 +8924,35 @@ func LogVariant(logDomain string, logLevel LogLevelFlags, fields *Variant) {
 }
 
 // LogWriterDefault: format a structured log message and output it to the
-// default log destination for the platform.
-//
-// On Linux, this is typically the systemd journal, falling back to stdout or
-// stderr if running from the terminal or if output is being redirected to a
-// file.
+// default log destination for the platform. On Linux, this is typically
+// the systemd journal, falling back to stdout or stderr if running from the
+// terminal or if output is being redirected to a file.
 //
 // Support for other platform-specific logging mechanisms may be added in
 // future. Distributors of GLib may modify this function to impose their own
 // (documented) platform-specific log writing policies.
 //
-// This is suitable for use as a glib.LogWriterFunc, and is the default writer
-// used if no other is set using glib.LogSetWriterFunc().
+// This is suitable for use as a WriterFunc, and is the default writer used if
+// no other is set using g_log_set_writer_func().
 //
-// As with glib.LogDefaultHandler(), this function drops debug and
-// informational messages unless their log domain (or all) is listed in the
-// space-separated G_MESSAGES_DEBUG environment variable, or set at runtime by
-// glib.LogWriterDefaultSetDebugDomains().
+// As with g_log_default_handler(), this function drops debug and informational
+// messages unless their log domain (or all) is listed in the space-separated
+// G_MESSAGES_DEBUG environment variable.
 //
-// glib.LogWriterDefault() uses the mask set by glib.LogSetAlwaysFatal() to
-// determine which messages are fatal. When using a custom writer function
-// instead it is up to the writer function to determine which log messages are
-// fatal.
+// g_log_writer_default() uses the mask set by g_log_set_always_fatal() to
+// determine which messages are fatal. When using a custom writer func instead
+// it is up to the writer function to determine which log messages are fatal.
 //
 // The function takes the following parameters:
 //
-//   - logLevel: log level, either from glib.LogLevelFlags, or a user-defined
-//     level.
+//   - logLevel: log level, either from LevelFlags, or a user-defined level.
 //   - fields: key–value pairs of structured data forming the log message.
-//   - userData (optional): user data passed to glib.LogSetWriterFunc().
+//   - userData (optional): user data passed to g_log_set_writer_func().
 //
 // The function returns the following values:
 //
-//   - logWriterOutput: glib.LogWriterOutput.HANDLED on success,
-//     glib.LogWriterOutput.UNHANDLED otherwise.
+//   - logWriterOutput: G_LOG_WRITER_HANDLED on success, G_LOG_WRITER_UNHANDLED
+//     otherwise.
 func LogWriterDefault(logLevel LogLevelFlags, fields []LogField, userData unsafe.Pointer) LogWriterOutput {
 	var _arg1 C.GLogLevelFlags // out
 	var _arg2 *C.GLogField     // out
@@ -8987,17 +8984,15 @@ func LogWriterDefault(logLevel LogLevelFlags, fields []LogField, userData unsafe
 	return _logWriterOutput
 }
 
-// LogWriterDefaultSetUseStderr: configure whether the built-in log functions
-// will output all log messages to stderr.
+// LogWriterDefaultSetUseStderr: configure whether the built-in log
+// functions (g_log_default_handler() for the old-style API, and both
+// g_log_writer_default() and g_log_writer_standard_streams() for the structured
+// API) will output all log messages to stderr.
 //
-// The built-in log functions are glib.LogDefaultHandler() for the old-style
-// API, and both glib.LogWriterDefault() and glib.LogWriterStandardStreams() for
-// the structured API.
-//
-// By default, log messages of levels glib.LogLevelFlags.LEVELINFO and
-// glib.LogLevelFlags.LEVELDEBUG are sent to stdout, and other log messages are
-// sent to stderr. This is problematic for applications that intend to reserve
-// stdout for structured output such as JSON or XML.
+// By default, log messages of levels G_LOG_LEVEL_INFO and G_LOG_LEVEL_DEBUG
+// are sent to stdout, and other log messages are sent to stderr. This is
+// problematic for applications that intend to reserve stdout for structured
+// output such as JSON or XML.
 //
 // This function sets global state. It is not thread-aware, and should be called
 // at the very start of a program, before creating any other threads or creating
@@ -9018,42 +9013,33 @@ func LogWriterDefaultSetUseStderr(useStderr bool) {
 	runtime.KeepAlive(useStderr)
 }
 
-// LogWriterDefaultWouldDrop: check whether glib.LogWriterDefault() and
-// glib.LogDefaultHandler() would ignore a message with the given domain and
+// LogWriterDefaultWouldDrop: check whether g_log_writer_default() and
+// g_log_default_handler() would ignore a message with the given domain and
 // level.
 //
-// As with glib.LogDefaultHandler(), this function drops debug and
-// informational messages unless their log domain (or all) is listed
-// in the space-separated G_MESSAGES_DEBUG environment variable, or by
-// glib.LogWriterDefaultSetDebugDomains().
+// As with g_log_default_handler(), this function drops debug and informational
+// messages unless their log domain (or all) is listed in the space-separated
+// G_MESSAGES_DEBUG environment variable.
 //
 // This can be used when implementing log writers with the same filtering
 // behaviour as the default, but a different destination or output format:
 //
-//	if (g_log_writer_default_would_drop (log_level, log_domain))
-//	  return G_LOG_WRITER_HANDLED;
-//	]|
+//	if (!g_log_writer_default_would_drop (G_LOG_LEVEL_DEBUG, G_LOG_DOMAIN))
+//	  {
+//	    gchar *result = expensive_computation (my_object);
 //
-//	or to skip an expensive computation if it is only needed for a debugging
-//	message, and G_MESSAGES_DEBUG is not set:
-//
-// c if (!g_log_writer_default_would_drop (G_LOG_LEVEL_DEBUG, G_LOG_DOMAIN)) {
-// g_autofree gchar *result = expensive_computation (my_object);
-//
-//	  g_debug ("my_object result: s", result);
-//	}.
-//
-// `
+//	    g_debug ("my_object result: s", result);
+//	    g_free (result);
+//	  }.
 //
 // The function takes the following parameters:
 //
-//   - logLevel: log level, either from glib.LogLevelFlags, or a user-defined
-//     level.
+//   - logLevel: log level, either from LevelFlags, or a user-defined level.
 //   - logDomain (optional): log domain.
 //
 // The function returns the following values:
 //
-//   - ok: TRUE if the log message would be dropped by GLib’s default log
+//   - ok: TRUE if the log message would be dropped by GLib's default log
 //     handlers.
 func LogWriterDefaultWouldDrop(logLevel LogLevelFlags, logDomain string) bool {
 	var _arg1 C.GLogLevelFlags // out
@@ -9080,11 +9066,10 @@ func LogWriterDefaultWouldDrop(logLevel LogLevelFlags, logDomain string) bool {
 }
 
 // LogWriterFormatFields: format a structured log message as a string suitable
-// for outputting to the terminal (or elsewhere).
-//
-// This will include the values of all fields it knows how to interpret,
-// which includes MESSAGE and GLIB_DOMAIN (see the documentation for
-// glib.LogStructured()). It does not include values from unknown fields.
+// for outputting to the terminal (or elsewhere). This will include the
+// values of all fields it knows how to interpret, which includes MESSAGE and
+// GLIB_DOMAIN (see the documentation for g_log_structured()). It does not
+// include values from unknown fields.
 //
 // The returned string does **not** have a trailing new-line character. It is
 // encoded in the character set of the current locale, which is not necessarily
@@ -9092,11 +9077,9 @@ func LogWriterDefaultWouldDrop(logLevel LogLevelFlags, logDomain string) bool {
 //
 // The function takes the following parameters:
 //
-//   - logLevel: log level, either from glib.LogLevelFlags, or a user-defined
-//     level.
+//   - logLevel: log level, either from LevelFlags, or a user-defined level.
 //   - fields: key–value pairs of structured data forming the log message.
-//   - useColor: TRUE to use ANSI color escape sequences
-//     (https://en.wikipedia.org/wiki/ANSI_escape_code) when formatting the
+//   - useColor: TRUE to use ANSI color escape sequences when formatting the
 //     message, FALSE to not.
 //
 // The function returns the following values:
@@ -9172,27 +9155,25 @@ func LogWriterIsJournald(outputFd int) bool {
 }
 
 // LogWriterJournald: format a structured log message and send it to the systemd
-// journal as a set of key–value pairs.
+// journal as a set of key–value pairs. All fields are sent to the journal,
+// but if a field has length zero (indicating program-specific data) then only
+// its key will be sent.
 //
-// All fields are sent to the journal, but if a field has length zero
-// (indicating program-specific data) then only its key will be sent.
-//
-// This is suitable for use as a glib.LogWriterFunc.
+// This is suitable for use as a WriterFunc.
 //
 // If GLib has been compiled without systemd support, this function is still
-// defined, but will always return glib.LogWriterOutput.UNHANDLED.
+// defined, but will always return G_LOG_WRITER_UNHANDLED.
 //
 // The function takes the following parameters:
 //
-//   - logLevel: log level, either from glib.LogLevelFlags, or a user-defined
-//     level.
+//   - logLevel: log level, either from LevelFlags, or a user-defined level.
 //   - fields: key–value pairs of structured data forming the log message.
-//   - userData (optional): user data passed to glib.LogSetWriterFunc().
+//   - userData (optional): user data passed to g_log_set_writer_func().
 //
 // The function returns the following values:
 //
-//   - logWriterOutput: glib.LogWriterOutput.HANDLED on success,
-//     glib.LogWriterOutput.UNHANDLED otherwise.
+//   - logWriterOutput: G_LOG_WRITER_HANDLED on success, G_LOG_WRITER_UNHANDLED
+//     otherwise.
 func LogWriterJournald(logLevel LogLevelFlags, fields []LogField, userData unsafe.Pointer) LogWriterOutput {
 	var _arg1 C.GLogLevelFlags // out
 	var _arg2 *C.GLogField     // out
@@ -9225,33 +9206,29 @@ func LogWriterJournald(logLevel LogLevelFlags, fields []LogField, userData unsaf
 }
 
 // LogWriterStandardStreams: format a structured log message and print it to
-// either stdout or stderr, depending on its log level.
-//
-// glib.LogLevelFlags.LEVELINFO and glib.LogLevelFlags.LEVELDEBUG
-// messages are sent to stdout, or to stderr if requested by
-// glib.LogWriterDefaultSetUseStderr(); all other log levels are sent to stderr.
-// Only fields which are understood by this function are included in the
+// either stdout or stderr, depending on its log level. G_LOG_LEVEL_INFO and
+// G_LOG_LEVEL_DEBUG messages are sent to stdout, or to stderr if requested
+// by g_log_writer_default_set_use_stderr(); all other log levels are sent to
+// stderr. Only fields which are understood by this function are included in the
 // formatted string which is printed.
 //
-// If the output stream supports ANSI color escape sequences
-// (https://en.wikipedia.org/wiki/ANSI_escape_code), they will be used in the
-// output.
+// If the output stream supports ANSI color escape sequences, they will be used
+// in the output.
 //
 // A trailing new-line character is added to the log message when it is printed.
 //
-// This is suitable for use as a glib.LogWriterFunc.
+// This is suitable for use as a WriterFunc.
 //
 // The function takes the following parameters:
 //
-//   - logLevel: log level, either from glib.LogLevelFlags, or a user-defined
-//     level.
+//   - logLevel: log level, either from LevelFlags, or a user-defined level.
 //   - fields: key–value pairs of structured data forming the log message.
-//   - userData (optional): user data passed to glib.LogSetWriterFunc().
+//   - userData (optional): user data passed to g_log_set_writer_func().
 //
 // The function returns the following values:
 //
-//   - logWriterOutput: glib.LogWriterOutput.HANDLED on success,
-//     glib.LogWriterOutput.UNHANDLED otherwise.
+//   - logWriterOutput: G_LOG_WRITER_HANDLED on success, G_LOG_WRITER_UNHANDLED
+//     otherwise.
 func LogWriterStandardStreams(logLevel LogLevelFlags, fields []LogField, userData unsafe.Pointer) LogWriterOutput {
 	var _arg1 C.GLogLevelFlags // out
 	var _arg2 *C.GLogField     // out
@@ -9283,11 +9260,9 @@ func LogWriterStandardStreams(logLevel LogLevelFlags, fields []LogField, userDat
 	return _logWriterOutput
 }
 
-// LogWriterSupportsColor: check whether the given output_fd
-// file descriptor supports ANSI color escape sequences
-// (https://en.wikipedia.org/wiki/ANSI_escape_code).
-//
-// If so, they can safely be used when formatting log messages.
+// LogWriterSupportsColor: check whether the given output_fd file descriptor
+// supports ANSI color escape sequences. If so, they can safely be used when
+// formatting log messages.
 //
 // The function takes the following parameters:
 //
@@ -9312,61 +9287,6 @@ func LogWriterSupportsColor(outputFd int) bool {
 	}
 
 	return _ok
-}
-
-// LogWriterSyslog: format a structured log message and send it to the syslog
-// daemon. Only fields which are understood by this function are included in the
-// formatted string which is printed.
-//
-// Log facility will be defined via the SYSLOG_FACILITY field and accepts the
-// following values: "auth", "daemon", and "user". If SYSLOG_FACILITY is not
-// specified, LOG_USER facility will be used.
-//
-// This is suitable for use as a glib.LogWriterFunc.
-//
-// If syslog is not supported, this function is still defined, but will always
-// return glib.LogWriterOutput.UNHANDLED.
-//
-// The function takes the following parameters:
-//
-//   - logLevel: log level, either from glib.LogLevelFlags, or a user-defined
-//     level.
-//   - fields: key–value pairs of structured data forming the log message.
-//   - userData (optional): user data passed to glib.LogSetWriterFunc().
-//
-// The function returns the following values:
-//
-//   - logWriterOutput: glib.LogWriterOutput.HANDLED on success,
-//     glib.LogWriterOutput.UNHANDLED otherwise.
-func LogWriterSyslog(logLevel LogLevelFlags, fields []LogField, userData unsafe.Pointer) LogWriterOutput {
-	var _arg1 C.GLogLevelFlags // out
-	var _arg2 *C.GLogField     // out
-	var _arg3 C.gsize
-	var _arg4 C.gpointer         // out
-	var _cret C.GLogWriterOutput // in
-
-	_arg1 = C.GLogLevelFlags(logLevel)
-	_arg3 = (C.gsize)(len(fields))
-	_arg2 = (*C.GLogField)(C.calloc(C.size_t(len(fields)), C.size_t(C.sizeof_GLogField)))
-	defer C.free(unsafe.Pointer(_arg2))
-	{
-		out := unsafe.Slice((*C.GLogField)(_arg2), len(fields))
-		for i := range fields {
-			out[i] = *(*C.GLogField)(gextras.StructNative(unsafe.Pointer((&fields[i]))))
-		}
-	}
-	_arg4 = (C.gpointer)(unsafe.Pointer(userData))
-
-	_cret = C.g_log_writer_syslog(_arg1, _arg2, _arg3, _arg4)
-	runtime.KeepAlive(logLevel)
-	runtime.KeepAlive(fields)
-	runtime.KeepAlive(userData)
-
-	var _logWriterOutput LogWriterOutput // out
-
-	_logWriterOutput = LogWriterOutput(_cret)
-
-	return _logWriterOutput
 }
 
 // MainCurrentSource returns the currently firing source for this thread.
@@ -9579,7 +9499,7 @@ func OptionErrorQuark() Quark {
 }
 
 // ParseDebugString parses a string containing debugging options into a guint
-// containing bit flags. This is used within GDK and GTK to parse the debug
+// containing bit flags. This is used within GDK and GTK+ to parse the debug
 // options passed on the command line or through environment variables.
 //
 // If string is equal to "all", all flags are set. Any flags specified along
@@ -9809,38 +9729,6 @@ func PatternMatchSimple(pattern, str string) bool {
 	return _ok
 }
 
-// QsortWithData: this is just like the standard C qsort() function, but the
-// comparison routine accepts a user data argument.
-//
-// This is guaranteed to be a stable sort since version 2.32.
-//
-// The function takes the following parameters:
-//
-//   - pbase: start of array to sort.
-//   - totalElems elements in the array.
-//   - size of each element.
-//   - compareFunc: function to compare elements.
-func QsortWithData(pbase unsafe.Pointer, totalElems int, size uint, compareFunc CompareDataFunc) {
-	var _arg1 C.gconstpointer    // out
-	var _arg2 C.gint             // out
-	var _arg3 C.gsize            // out
-	var _arg4 C.GCompareDataFunc // out
-	var _arg5 C.gpointer
-
-	_arg1 = (C.gconstpointer)(unsafe.Pointer(pbase))
-	_arg2 = C.gint(totalElems)
-	_arg3 = C.gsize(size)
-	_arg4 = (*[0]byte)(C._gotk4_glib2_CompareDataFunc)
-	_arg5 = C.gpointer(gbox.Assign(compareFunc))
-	defer gbox.Delete(uintptr(_arg5))
-
-	C.g_qsort_with_data(_arg1, _arg2, _arg3, _arg4, _arg5)
-	runtime.KeepAlive(pbase)
-	runtime.KeepAlive(totalElems)
-	runtime.KeepAlive(size)
-	runtime.KeepAlive(compareFunc)
-}
-
 // QuarkFromStaticString gets the #GQuark identifying the given (static) string.
 // If the string does not currently have an associated #GQuark, a new #GQuark is
 // created, linked to the given string.
@@ -9851,7 +9739,7 @@ func QsortWithData(pbase unsafe.Pointer, totalElems int, size uint, compareFunc 
 // the program terminates. It can be used with statically allocated strings in
 // the main program, but not with statically allocated memory in dynamically
 // loaded modules, if you expect to ever unload the module again (e.g. do not
-// use this function in GTK theme engines).
+// use this function in GTK+ theme engines).
 //
 // This function must not be used before library constructors have finished
 // running. In particular, this means it cannot be used to initialize global
@@ -10129,7 +10017,7 @@ func SetApplicationName(applicationName string) {
 // in contrast to g_set_application_name().
 //
 // If you are using #GApplication the program name is set in
-// g_application_run(). In case of GDK or GTK it is set in gdk_init(), which is
+// g_application_run(). In case of GDK or GTK+ it is set in gdk_init(), which is
 // called by gtk_init() and the Application::startup handler. The program name
 // is found by taking the last component of argv[0].
 //
@@ -10646,6 +10534,147 @@ func SpawnExitErrorQuark() Quark {
 	return _quark
 }
 
+// SpawnSync executes a child synchronously (waits for the child to exit before
+// returning).
+//
+// All output from the child is stored in standard_output and standard_error,
+// if those parameters are non-NULL. Note that you must set the
+// G_SPAWN_STDOUT_TO_DEV_NULL and G_SPAWN_STDERR_TO_DEV_NULL flags when passing
+// NULL for standard_output and standard_error.
+//
+// If wait_status is non-NULL, the platform-specific status of the child is
+// stored there; see the documentation of g_spawn_check_wait_status() for how to
+// use and interpret this. On Unix platforms, note that it is usually not equal
+// to the integer passed to exit() or returned from main().
+//
+// Note that it is invalid to pass G_SPAWN_DO_NOT_REAP_CHILD in flags, and on
+// POSIX platforms, the same restrictions as for g_child_watch_source_new()
+// apply.
+//
+// If an error occurs, no data is returned in standard_output, standard_error,
+// or wait_status.
+//
+// This function calls g_spawn_async_with_pipes() internally; see that function
+// for full details on the other parameters and details on how these functions
+// work on Windows.
+//
+// The function takes the following parameters:
+//
+//   - workingDirectory (optional) child's current working directory, or NULL to
+//     inherit parent's.
+//   - argv: child's argument vector, which must be non-empty and
+//     NULL-terminated.
+//   - envp (optional): child's environment, or NULL to inherit parent's.
+//   - flags from Flags.
+//   - childSetup (optional): function to run in the child just before exec().
+//
+// The function returns the following values:
+//
+//   - standardOutput (optional): return location for child output, or NULL.
+//   - standardError (optional): return location for child error messages,
+//     or NULL.
+//   - waitStatus (optional): return location for child wait status, as returned
+//     by waitpid(), or NULL.
+func SpawnSync(workingDirectory string, argv, envp []string, flags SpawnFlags, childSetup SpawnChildSetupFunc) (standardOutput, standardError []byte, waitStatus int, goerr error) {
+	var _arg1 *C.gchar               // out
+	var _arg2 **C.gchar              // out
+	var _arg3 **C.gchar              // out
+	var _arg4 C.GSpawnFlags          // out
+	var _arg5 C.GSpawnChildSetupFunc // out
+	var _arg6 C.gpointer
+	var _arg7 *C.gchar  // in
+	var _arg8 *C.gchar  // in
+	var _arg9 C.gint    // in
+	var _cerr *C.GError // in
+
+	if workingDirectory != "" {
+		_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(workingDirectory)))
+		defer C.free(unsafe.Pointer(_arg1))
+	}
+	{
+		_arg2 = (**C.gchar)(C.calloc(C.size_t((len(argv) + 1)), C.size_t(unsafe.Sizeof(uint(0)))))
+		defer C.free(unsafe.Pointer(_arg2))
+		{
+			out := unsafe.Slice(_arg2, len(argv)+1)
+			var zero *C.gchar
+			out[len(argv)] = zero
+			for i := range argv {
+				out[i] = (*C.gchar)(unsafe.Pointer(C.CString(argv[i])))
+				defer C.free(unsafe.Pointer(out[i]))
+			}
+		}
+	}
+	{
+		_arg3 = (**C.gchar)(C.calloc(C.size_t((len(envp) + 1)), C.size_t(unsafe.Sizeof(uint(0)))))
+		defer C.free(unsafe.Pointer(_arg3))
+		{
+			out := unsafe.Slice(_arg3, len(envp)+1)
+			var zero *C.gchar
+			out[len(envp)] = zero
+			for i := range envp {
+				out[i] = (*C.gchar)(unsafe.Pointer(C.CString(envp[i])))
+				defer C.free(unsafe.Pointer(out[i]))
+			}
+		}
+	}
+	_arg4 = C.GSpawnFlags(flags)
+	if childSetup != nil {
+		_arg5 = (*[0]byte)(C._gotk4_glib2_SpawnChildSetupFunc)
+		_arg6 = C.gpointer(gbox.AssignOnce(childSetup))
+	}
+
+	C.g_spawn_sync(_arg1, _arg2, _arg3, _arg4, _arg5, _arg6, &_arg7, &_arg8, &_arg9, &_cerr)
+	runtime.KeepAlive(workingDirectory)
+	runtime.KeepAlive(argv)
+	runtime.KeepAlive(envp)
+	runtime.KeepAlive(flags)
+	runtime.KeepAlive(childSetup)
+
+	var _standardOutput []byte // out
+	var _standardError []byte  // out
+	var _waitStatus int        // out
+	var _goerr error           // out
+
+	if _arg7 != nil {
+		defer C.free(unsafe.Pointer(_arg7))
+		{
+			var i int
+			var z C.gchar
+			for p := _arg7; *p != z; p = &unsafe.Slice(p, 2)[1] {
+				i++
+			}
+
+			src := unsafe.Slice(_arg7, i)
+			_standardOutput = make([]byte, i)
+			for i := range src {
+				_standardOutput[i] = byte(src[i])
+			}
+		}
+	}
+	if _arg8 != nil {
+		defer C.free(unsafe.Pointer(_arg8))
+		{
+			var i int
+			var z C.gchar
+			for p := _arg8; *p != z; p = &unsafe.Slice(p, 2)[1] {
+				i++
+			}
+
+			src := unsafe.Slice(_arg8, i)
+			_standardError = make([]byte, i)
+			for i := range src {
+				_standardError[i] = byte(src[i])
+			}
+		}
+	}
+	_waitStatus = int(_arg9)
+	if _cerr != nil {
+		_goerr = gerror.Take(unsafe.Pointer(_cerr))
+	}
+
+	return _standardOutput, _standardError, _waitStatus, _goerr
+}
+
 // StrEqual compares two strings for byte-by-byte equality and returns TRUE if
 // they are equal. It can be passed to g_hash_table_new() as the key_equal_func
 // parameter, when using non-NULL strings as keys in a Table.
@@ -10847,6 +10876,8 @@ func TimeoutSourceNewSeconds(interval uint) *Source {
 // The function takes the following parameters:
 //
 //   - str: UCS-4 encoded string.
+//   - len: maximum length (number of characters) of str to use. If len < 0,
+//     then the string is nul-terminated.
 //
 // The function returns the following values:
 //
@@ -10857,21 +10888,20 @@ func TimeoutSourceNewSeconds(interval uint) *Source {
 //   - guint16: pointer to a newly allocated UTF-16 string. This value must be
 //     freed with g_free(). If an error occurs, NULL will be returned and error
 //     set.
-func UCS4ToUTF16(str []uint32) (itemsRead, itemsWritten int32, guint16 *uint16, goerr error) {
-	var _arg1 *C.gunichar // out
-	var _arg2 C.glong
+func UCS4ToUTF16(str *uint32, len int32) (itemsRead, itemsWritten int32, guint16 *uint16, goerr error) {
+	var _arg1 *C.gunichar  // out
+	var _arg2 C.glong      // out
 	var _arg3 C.glong      // in
 	var _arg4 C.glong      // in
 	var _cret *C.gunichar2 // in
 	var _cerr *C.GError    // in
 
-	_arg2 = (C.glong)(len(str))
-	if len(str) > 0 {
-		_arg1 = (*C.gunichar)(unsafe.Pointer(&str[0]))
-	}
+	_arg1 = (*C.gunichar)(unsafe.Pointer(str))
+	_arg2 = C.glong(len)
 
 	_cret = C.g_ucs4_to_utf16(_arg1, _arg2, &_arg3, &_arg4, &_cerr)
 	runtime.KeepAlive(str)
+	runtime.KeepAlive(len)
 
 	var _itemsRead int32    // out
 	var _itemsWritten int32 // out
@@ -10894,6 +10924,8 @@ func UCS4ToUTF16(str []uint32) (itemsRead, itemsWritten int32, guint16 *uint16, 
 // The function takes the following parameters:
 //
 //   - str: UCS-4 encoded string.
+//   - len: maximum length (number of characters) of str to use. If len < 0,
+//     then the string is nul-terminated.
 //
 // The function returns the following values:
 //
@@ -10905,21 +10937,20 @@ func UCS4ToUTF16(str []uint32) (itemsRead, itemsWritten int32, guint16 *uint16, 
 //     with g_free(). If an error occurs, NULL will be returned and error set.
 //     In that case, items_read will be set to the position of the first invalid
 //     input character.
-func UCS4ToUTF8(str []uint32) (itemsRead, itemsWritten int32, utf8 string, goerr error) {
+func UCS4ToUTF8(str *uint32, len int32) (itemsRead, itemsWritten int32, utf8 string, goerr error) {
 	var _arg1 *C.gunichar // out
-	var _arg2 C.glong
-	var _arg3 C.glong   // in
-	var _arg4 C.glong   // in
-	var _cret *C.gchar  // in
-	var _cerr *C.GError // in
+	var _arg2 C.glong     // out
+	var _arg3 C.glong     // in
+	var _arg4 C.glong     // in
+	var _cret *C.gchar    // in
+	var _cerr *C.GError   // in
 
-	_arg2 = (C.glong)(len(str))
-	if len(str) > 0 {
-		_arg1 = (*C.gunichar)(unsafe.Pointer(&str[0]))
-	}
+	_arg1 = (*C.gunichar)(unsafe.Pointer(str))
+	_arg2 = C.glong(len)
 
 	_cret = C.g_ucs4_to_utf8(_arg1, _arg2, &_arg3, &_arg4, &_cerr)
 	runtime.KeepAlive(str)
+	runtime.KeepAlive(len)
 
 	var _itemsRead int32    // out
 	var _itemsWritten int32 // out
@@ -11182,30 +11213,30 @@ func UnicharFullyDecompose(ch uint32, compat bool, resultLen uint) (uint32, uint
 // The function takes the following parameters:
 //
 //   - ch: unicode character.
+//   - mirroredCh: location to store the mirrored character.
 //
 // The function returns the following values:
 //
-//   - mirroredCh: location to store the mirrored character.
 //   - ok: TRUE if ch has a mirrored character, FALSE otherwise.
-func UnicharGetMirrorChar(ch uint32) (uint32, bool) {
-	var _arg1 C.gunichar // out
-	var _arg2 C.gunichar // in
-	var _cret C.gboolean // in
+func UnicharGetMirrorChar(ch uint32, mirroredCh *uint32) bool {
+	var _arg1 C.gunichar  // out
+	var _arg2 *C.gunichar // out
+	var _cret C.gboolean  // in
 
 	_arg1 = C.gunichar(ch)
+	_arg2 = (*C.gunichar)(unsafe.Pointer(mirroredCh))
 
-	_cret = C.g_unichar_get_mirror_char(_arg1, &_arg2)
+	_cret = C.g_unichar_get_mirror_char(_arg1, _arg2)
 	runtime.KeepAlive(ch)
+	runtime.KeepAlive(mirroredCh)
 
-	var _mirroredCh uint32 // out
-	var _ok bool           // out
+	var _ok bool // out
 
-	_mirroredCh = uint32(_arg2)
 	if _cret != 0 {
 		_ok = true
 	}
 
-	return _mirroredCh, _ok
+	return _ok
 }
 
 // UnicharGetScript looks up the Script for a particular character (as defined
@@ -11943,17 +11974,85 @@ func UnicodeCanonicalDecomposition(ch uint32, resultLen *uint) *uint32 {
 // The function takes the following parameters:
 //
 //   - str: UCS-4 encoded string.
-func UnicodeCanonicalOrdering(str []uint32) {
+//   - len: maximum length of string to use.
+func UnicodeCanonicalOrdering(str *uint32, len uint) {
 	var _arg1 *C.gunichar // out
-	var _arg2 C.gsize
+	var _arg2 C.gsize     // out
 
-	_arg2 = (C.gsize)(len(str))
-	if len(str) > 0 {
-		_arg1 = (*C.gunichar)(unsafe.Pointer(&str[0]))
-	}
+	_arg1 = (*C.gunichar)(unsafe.Pointer(str))
+	_arg2 = C.gsize(len)
 
 	C.g_unicode_canonical_ordering(_arg1, _arg2)
 	runtime.KeepAlive(str)
+	runtime.KeepAlive(len)
+}
+
+// UnicodeScriptFromISO15924 looks up the Unicode script for iso15924. ISO 15924
+// assigns four-letter codes to scripts. For example, the code for Arabic is
+// 'Arab'. This function accepts four letter codes encoded as a guint32 in a
+// big-endian fashion. That is, the code expected for Arabic is 0x41726162 (0x41
+// is ASCII code for 'A', 0x72 is ASCII code for 'r', etc).
+//
+// See Codes for the representation of names of scripts
+// (http://unicode.org/iso15924/codelists.html) for details.
+//
+// The function takes the following parameters:
+//
+//   - iso15924: unicode script.
+//
+// The function returns the following values:
+//
+//   - unicodeScript: unicode script for iso15924, or of
+//     G_UNICODE_SCRIPT_INVALID_CODE if iso15924 is zero and
+//     G_UNICODE_SCRIPT_UNKNOWN if iso15924 is unknown.
+func UnicodeScriptFromISO15924(iso15924 uint32) UnicodeScript {
+	var _arg1 C.guint32        // out
+	var _cret C.GUnicodeScript // in
+
+	_arg1 = C.guint32(iso15924)
+
+	_cret = C.g_unicode_script_from_iso15924(_arg1)
+	runtime.KeepAlive(iso15924)
+
+	var _unicodeScript UnicodeScript // out
+
+	_unicodeScript = UnicodeScript(_cret)
+
+	return _unicodeScript
+}
+
+// UnicodeScriptToISO15924 looks up the ISO 15924 code for script. ISO 15924
+// assigns four-letter codes to scripts. For example, the code for Arabic is
+// 'Arab'. The four letter codes are encoded as a guint32 by this function in a
+// big-endian fashion. That is, the code returned for Arabic is 0x41726162 (0x41
+// is ASCII code for 'A', 0x72 is ASCII code for 'r', etc).
+//
+// See Codes for the representation of names of scripts
+// (http://unicode.org/iso15924/codelists.html) for details.
+//
+// The function takes the following parameters:
+//
+//   - script: unicode script.
+//
+// The function returns the following values:
+//
+//   - guint32: ISO 15924 code for script, encoded as an integer, of zero if
+//     script is G_UNICODE_SCRIPT_INVALID_CODE or ISO 15924 code 'Zzzz' (script
+//     code for UNKNOWN) if script is not understood.
+func UnicodeScriptToISO15924(script UnicodeScript) uint32 {
+	var _arg1 C.GUnicodeScript // out
+	var _cret C.guint32        // in
+
+	_arg1 = C.GUnicodeScript(script)
+
+	_cret = C.g_unicode_script_to_iso15924(_arg1)
+	runtime.KeepAlive(script)
+
+	var _guint32 uint32 // out
+
+	_guint32 = uint32(_cret)
+
+	return _guint32
 }
 
 // Unsetenv removes an environment variable from the environment.
@@ -12010,6 +12109,8 @@ func Usleep(microseconds uint32) {
 // The function takes the following parameters:
 //
 //   - str: UTF-16 encoded string.
+//   - len: maximum length (number of #gunichar2) of str to use. If len < 0,
+//     then the string is nul-terminated.
 //
 // The function returns the following values:
 //
@@ -12022,21 +12123,20 @@ func Usleep(microseconds uint32) {
 //   - gunichar: pointer to a newly allocated UCS-4 string. This value must be
 //     freed with g_free(). If an error occurs, NULL will be returned and error
 //     set.
-func UTF16ToUCS4(str []uint16) (itemsRead, itemsWritten int32, gunichar *uint32, goerr error) {
+func UTF16ToUCS4(str *uint16, len int32) (itemsRead, itemsWritten int32, gunichar *uint32, goerr error) {
 	var _arg1 *C.gunichar2 // out
-	var _arg2 C.glong
-	var _arg3 C.glong     // in
-	var _arg4 C.glong     // in
-	var _cret *C.gunichar // in
-	var _cerr *C.GError   // in
+	var _arg2 C.glong      // out
+	var _arg3 C.glong      // in
+	var _arg4 C.glong      // in
+	var _cret *C.gunichar  // in
+	var _cerr *C.GError    // in
 
-	_arg2 = (C.glong)(len(str))
-	if len(str) > 0 {
-		_arg1 = (*C.gunichar2)(unsafe.Pointer(&str[0]))
-	}
+	_arg1 = (*C.gunichar2)(unsafe.Pointer(str))
+	_arg2 = C.glong(len)
 
 	_cret = C.g_utf16_to_ucs4(_arg1, _arg2, &_arg3, &_arg4, &_cerr)
 	runtime.KeepAlive(str)
+	runtime.KeepAlive(len)
 
 	var _itemsRead int32    // out
 	var _itemsWritten int32 // out
@@ -12068,6 +12168,8 @@ func UTF16ToUCS4(str []uint16) (itemsRead, itemsWritten int32, gunichar *uint32,
 // The function takes the following parameters:
 //
 //   - str: UTF-16 encoded string.
+//   - len: maximum length (number of #gunichar2) of str to use. If len < 0,
+//     then the string is nul-terminated.
 //
 // The function returns the following values:
 //
@@ -12080,21 +12182,20 @@ func UTF16ToUCS4(str []uint16) (itemsRead, itemsWritten int32, gunichar *uint32,
 //     It’s guaranteed to be non-negative.
 //   - utf8: pointer to a newly allocated UTF-8 string. This value must be freed
 //     with g_free(). If an error occurs, NULL will be returned and error set.
-func UTF16ToUTF8(str []uint16) (itemsRead, itemsWritten int32, utf8 string, goerr error) {
+func UTF16ToUTF8(str *uint16, len int32) (itemsRead, itemsWritten int32, utf8 string, goerr error) {
 	var _arg1 *C.gunichar2 // out
-	var _arg2 C.glong
-	var _arg3 C.glong   // in
-	var _arg4 C.glong   // in
-	var _cret *C.gchar  // in
-	var _cerr *C.GError // in
+	var _arg2 C.glong      // out
+	var _arg3 C.glong      // in
+	var _arg4 C.glong      // in
+	var _cret *C.gchar     // in
+	var _cerr *C.GError    // in
 
-	_arg2 = (C.glong)(len(str))
-	if len(str) > 0 {
-		_arg1 = (*C.gunichar2)(unsafe.Pointer(&str[0]))
-	}
+	_arg1 = (*C.gunichar2)(unsafe.Pointer(str))
+	_arg2 = C.glong(len)
 
 	_cret = C.g_utf16_to_utf8(_arg1, _arg2, &_arg3, &_arg4, &_cerr)
 	runtime.KeepAlive(str)
+	runtime.KeepAlive(len)
 
 	var _itemsRead int32    // out
 	var _itemsWritten int32 // out
@@ -13061,42 +13162,6 @@ func UTF8ToUTF16(str string) (itemsRead, itemsWritten int32, guint16 *uint16, go
 	return _itemsRead, _itemsWritten, _guint16, _goerr
 }
 
-// UTF8TruncateMiddle cuts off the middle of the string, preserving half of
-// truncate_length characters at the beginning and half at the end.
-//
-// If string is already short enough, this returns a copy of string.
-// If truncate_length is 0, an empty string is returned.
-//
-// The function takes the following parameters:
-//
-//   - str: nul-terminated UTF-8 encoded string.
-//   - truncateLength: new size of string, in characters, including the ellipsis
-//     character.
-//
-// The function returns the following values:
-//
-//   - utf8: newly-allocated copy of string ellipsized in the middle.
-func UTF8TruncateMiddle(str string, truncateLength uint) string {
-	var _arg1 *C.gchar // out
-	var _arg2 C.gsize  // out
-	var _cret *C.gchar // in
-
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(str)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = C.gsize(truncateLength)
-
-	_cret = C.g_utf8_truncate_middle(_arg1, _arg2)
-	runtime.KeepAlive(str)
-	runtime.KeepAlive(truncateLength)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	defer C.free(unsafe.Pointer(_cret))
-
-	return _utf8
-}
-
 // UTF8Validate validates UTF-8 encoded text. str is the text to validate;
 // if str is nul-terminated, then max_len can be -1, otherwise max_len should
 // be the number of bytes to validate. If end is non-NULL, then the end of
@@ -13107,7 +13172,7 @@ func UTF8TruncateMiddle(str string, truncateLength uint) string {
 // Note that g_utf8_validate() returns FALSE if max_len is positive and any of
 // the max_len bytes are nul.
 //
-// Returns TRUE if all of str was valid. Many GLib and GTK routines require
+// Returns TRUE if all of str was valid. Many GLib and GTK+ routines require
 // valid UTF-8 as input; so data read from a file or the network should be
 // checked with g_utf8_validate() before doing anything else with it.
 //
@@ -13289,1486 +13354,6 @@ func (a *Array) Len() uint {
 func (a *Array) SetLen(len uint) {
 	valptr := &a.native.len
 	*valptr = C.guint(len)
-}
-
-// BookmarkFile: GBookmarkFile lets you parse, edit or create files containing
-// bookmarks.
-//
-// Bookmarks refer to a URI, along with some meta-data about the resource
-// pointed by the URI like its MIME type, the application that is
-// registering the bookmark and the icon that should be used to represent
-// the bookmark. The data is stored using the Desktop Bookmark Specification
-// (http://www.gnome.org/~ebassi/bookmark-spec).
-//
-// The syntax of the bookmark files is described in detail inside the Desktop
-// Bookmark Specification, here is a quick summary: bookmark files use a
-// sub-class of the XML Bookmark Exchange Language specification, consisting
-// of valid UTF-8 encoded XML, under the <xbel> root element; each bookmark is
-// stored inside a <bookmark> element, using its URI: no relative paths can be
-// used inside a bookmark file. The bookmark may have a user defined title and
-// description, to be used instead of the URI. Under the <metadata> element,
-// with its owner attribute set to http://freedesktop.org, is stored the
-// meta-data about a resource pointed by its URI. The meta-data consists of
-// the resource's MIME type; the applications that have registered a bookmark;
-// the groups to which a bookmark belongs to; a visibility flag, used to set the
-// bookmark as "private" to the applications and groups that has it registered;
-// the URI and MIME type of an icon, to be used when displaying the bookmark
-// inside a GUI.
-//
-// Here is an example of a bookmark file: bookmarks.xbel
-// (https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/glib/tests/bookmarks.xbel)
-//
-// A bookmark file might contain more than one bookmark; each bookmark is
-// accessed through its URI.
-//
-// The important caveat of bookmark files is that when you add a new
-// bookmark you must also add the application that is registering it, using
-// glib.BookmarkFile.AddApplication() or glib.BookmarkFile.SetApplicationInfo().
-// If a bookmark has no applications then it won't be dumped when creating
-// the on disk representation, using glib.BookmarkFile.ToData() or
-// glib.BookmarkFile.ToFile().
-//
-// An instance of this type is always passed by reference.
-type BookmarkFile struct {
-	*bookmarkFile
-}
-
-// bookmarkFile is the struct that's finalized.
-type bookmarkFile struct {
-	native *C.GBookmarkFile
-}
-
-func marshalBookmarkFile(p uintptr) (interface{}, error) {
-	b := coreglib.ValueFromNative(unsafe.Pointer(p)).Boxed()
-	return &BookmarkFile{&bookmarkFile{(*C.GBookmarkFile)(b)}}, nil
-}
-
-// NewBookmarkFile constructs a struct BookmarkFile.
-func NewBookmarkFile() *BookmarkFile {
-	var _cret *C.GBookmarkFile // in
-
-	_cret = C.g_bookmark_file_new()
-
-	var _bookmarkFile *BookmarkFile // out
-
-	_bookmarkFile = (*BookmarkFile)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_bookmarkFile)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_bookmark_file_free((*C.GBookmarkFile)(intern.C))
-		},
-	)
-
-	return _bookmarkFile
-}
-
-// AddApplication adds the application with name and exec to the list of
-// applications that have registered a bookmark for uri into bookmark.
-//
-// Every bookmark inside a File must have at least an application registered.
-// Each application must provide a name, a command line useful for launching
-// the bookmark, the number of times the bookmark has been registered by the
-// application and the last time the application registered this bookmark.
-//
-// If name is NULL, the name of the application will be the same returned
-// by g_get_application_name(); if exec is NULL, the command line will be a
-// composition of the program name as returned by g_get_prgname() and the "\u"
-// modifier, which will be expanded to the bookmark's URI.
-//
-// This function will automatically take care of updating the registrations
-// count and timestamping in case an application with the same name had already
-// registered a bookmark for uri inside bookmark.
-//
-// If no bookmark for uri is found, one is created.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - name (optional) of the application registering the bookmark or NULL.
-//   - exec (optional): command line to be used to launch the bookmark or NULL.
-func (bookmark *BookmarkFile) AddApplication(uri string, name string, exec string) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-	var _arg3 *C.gchar         // out
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	if name != "" {
-		_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(name)))
-		defer C.free(unsafe.Pointer(_arg2))
-	}
-	if exec != "" {
-		_arg3 = (*C.gchar)(unsafe.Pointer(C.CString(exec)))
-		defer C.free(unsafe.Pointer(_arg3))
-	}
-
-	C.g_bookmark_file_add_application(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(name)
-	runtime.KeepAlive(exec)
-}
-
-// AddGroup adds group to the list of groups to which the bookmark for uri
-// belongs to.
-//
-// If no bookmark for uri is found then it is created.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - group name to be added.
-func (bookmark *BookmarkFile) AddGroup(uri string, group string) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(group)))
-	defer C.free(unsafe.Pointer(_arg2))
-
-	C.g_bookmark_file_add_group(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(group)
-}
-
-// Copy: deeply copies a bookmark File object to a new one.
-//
-// The function returns the following values:
-//
-//   - bookmarkFile: copy of bookmark. Use g_bookmark_free() when finished using
-//     it.
-func (bookmark *BookmarkFile) Copy() *BookmarkFile {
-	var _arg0 *C.GBookmarkFile // out
-	var _cret *C.GBookmarkFile // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-
-	_cret = C.g_bookmark_file_copy(_arg0)
-	runtime.KeepAlive(bookmark)
-
-	var _bookmarkFile *BookmarkFile // out
-
-	_bookmarkFile = (*BookmarkFile)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_bookmarkFile)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_bookmark_file_free((*C.GBookmarkFile)(intern.C))
-		},
-	)
-
-	return _bookmarkFile
-}
-
-// AddedDateTime gets the time the bookmark for uri was added to bookmark
-//
-// In the event the URI cannot be found, NULL is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//
-// The function returns the following values:
-//
-//   - dateTime: Time.
-func (bookmark *BookmarkFile) AddedDateTime(uri string) (*DateTime, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.char          // out
-	var _cret *C.GDateTime     // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_bookmark_file_get_added_date_time(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _dateTime *DateTime // out
-	var _goerr error        // out
-
-	_dateTime = (*DateTime)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	C.g_date_time_ref(_cret)
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_dateTime)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_date_time_unref((*C.GDateTime)(intern.C))
-		},
-	)
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _dateTime, _goerr
-}
-
-// ApplicationInfo gets the registration information of app_name for the
-// bookmark for uri. See g_bookmark_file_set_application_info() for more
-// information about the returned data.
-//
-// The string returned in app_exec must be freed.
-//
-// In the event the URI cannot be found, FALSE is returned and error is set
-// to G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND. In the event that no application
-// with name app_name has registered a bookmark for uri, FALSE is returned and
-// error is set to G_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED. In the event that
-// unquoting the command line fails, an error of the G_SHELL_ERROR domain is set
-// and FALSE is returned.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - name application's name.
-//
-// The function returns the following values:
-//
-//   - exec (optional): return location for the command line of the application,
-//     or NULL.
-//   - count (optional): return location for the registration count, or NULL.
-//   - stamp (optional): return location for the last registration time,
-//     or NULL.
-func (bookmark *BookmarkFile) ApplicationInfo(uri string, name string) (string, uint, *DateTime, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.char          // out
-	var _arg2 *C.char          // out
-	var _arg3 *C.char          // in
-	var _arg4 C.uint           // in
-	var _arg5 *C.GDateTime     // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.char)(unsafe.Pointer(C.CString(name)))
-	defer C.free(unsafe.Pointer(_arg2))
-
-	C.g_bookmark_file_get_application_info(_arg0, _arg1, _arg2, &_arg3, &_arg4, &_arg5, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(name)
-
-	var _exec string     // out
-	var _count uint      // out
-	var _stamp *DateTime // out
-	var _goerr error     // out
-
-	if _arg3 != nil {
-		_exec = C.GoString((*C.gchar)(unsafe.Pointer(_arg3)))
-		defer C.free(unsafe.Pointer(_arg3))
-	}
-	_count = uint(_arg4)
-	if _arg5 != nil {
-		_stamp = (*DateTime)(gextras.NewStructNative(unsafe.Pointer(_arg5)))
-		C.g_date_time_ref(_arg5)
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_stamp)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.g_date_time_unref((*C.GDateTime)(intern.C))
-			},
-		)
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _exec, _count, _stamp, _goerr
-}
-
-// Applications retrieves the names of the applications that have registered the
-// bookmark for uri.
-//
-// In the event the URI cannot be found, NULL is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//
-// The function returns the following values:
-//
-//   - utf8s: newly allocated NULL-terminated array of strings. Use g_strfreev()
-//     to free it.
-func (bookmark *BookmarkFile) Applications(uri string) ([]string, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _cret **C.gchar        // in
-	var _arg2 C.gsize          // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_bookmark_file_get_applications(_arg0, _arg1, &_arg2, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _utf8s []string // out
-	var _goerr error    // out
-
-	defer C.free(unsafe.Pointer(_cret))
-	{
-		src := unsafe.Slice((**C.gchar)(_cret), _arg2)
-		_utf8s = make([]string, _arg2)
-		for i := 0; i < int(_arg2); i++ {
-			_utf8s[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
-			defer C.free(unsafe.Pointer(src[i]))
-		}
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _utf8s, _goerr
-}
-
-// Description retrieves the description of the bookmark for uri.
-//
-// In the event the URI cannot be found, NULL is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//
-// The function returns the following values:
-//
-//   - utf8: newly allocated string or NULL if the specified URI cannot be
-//     found.
-func (bookmark *BookmarkFile) Description(uri string) (string, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _cret *C.gchar         // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_bookmark_file_get_description(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _utf8 string // out
-	var _goerr error // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	defer C.free(unsafe.Pointer(_cret))
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _utf8, _goerr
-}
-
-// Groups retrieves the list of group names of the bookmark for uri.
-//
-// In the event the URI cannot be found, NULL is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The returned array is NULL terminated, so length may optionally be NULL.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//
-// The function returns the following values:
-//
-//   - utf8s: newly allocated NULL-terminated array of group names. Use
-//     g_strfreev() to free it.
-func (bookmark *BookmarkFile) Groups(uri string) ([]string, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _cret **C.gchar        // in
-	var _arg2 C.gsize          // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_bookmark_file_get_groups(_arg0, _arg1, &_arg2, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _utf8s []string // out
-	var _goerr error    // out
-
-	defer C.free(unsafe.Pointer(_cret))
-	{
-		src := unsafe.Slice((**C.gchar)(_cret), _arg2)
-		_utf8s = make([]string, _arg2)
-		for i := 0; i < int(_arg2); i++ {
-			_utf8s[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
-			defer C.free(unsafe.Pointer(src[i]))
-		}
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _utf8s, _goerr
-}
-
-// Icon gets the icon of the bookmark for uri.
-//
-// In the event the URI cannot be found, FALSE is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//
-// The function returns the following values:
-//
-//   - href (optional): return location for the icon's location or NULL.
-//   - mimeType (optional): return location for the icon's MIME type or NULL.
-func (bookmark *BookmarkFile) Icon(uri string) (href string, mimeType string, goerr error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // in
-	var _arg3 *C.gchar         // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.g_bookmark_file_get_icon(_arg0, _arg1, &_arg2, &_arg3, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _href string     // out
-	var _mimeType string // out
-	var _goerr error     // out
-
-	if _arg2 != nil {
-		_href = C.GoString((*C.gchar)(unsafe.Pointer(_arg2)))
-		defer C.free(unsafe.Pointer(_arg2))
-	}
-	if _arg3 != nil {
-		_mimeType = C.GoString((*C.gchar)(unsafe.Pointer(_arg3)))
-		defer C.free(unsafe.Pointer(_arg3))
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _href, _mimeType, _goerr
-}
-
-// IsPrivate gets whether the private flag of the bookmark for uri is set.
-//
-// In the event the URI cannot be found, FALSE is returned and error
-// is set to G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND. In the event that the
-// private flag cannot be found, FALSE is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_INVALID_VALUE.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-func (bookmark *BookmarkFile) IsPrivate(uri string) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.g_bookmark_file_get_is_private(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// MIMEType retrieves the MIME type of the resource pointed by uri.
-//
-// In the event the URI cannot be found, NULL is returned and error
-// is set to G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND. In the event that
-// the MIME type cannot be found, NULL is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_INVALID_VALUE.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//
-// The function returns the following values:
-//
-//   - utf8: newly allocated string or NULL if the specified URI cannot be
-//     found.
-func (bookmark *BookmarkFile) MIMEType(uri string) (string, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _cret *C.gchar         // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_bookmark_file_get_mime_type(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _utf8 string // out
-	var _goerr error // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	defer C.free(unsafe.Pointer(_cret))
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _utf8, _goerr
-}
-
-// ModifiedDateTime gets the time when the bookmark for uri was last modified.
-//
-// In the event the URI cannot be found, NULL is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//
-// The function returns the following values:
-//
-//   - dateTime: Time.
-func (bookmark *BookmarkFile) ModifiedDateTime(uri string) (*DateTime, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.char          // out
-	var _cret *C.GDateTime     // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_bookmark_file_get_modified_date_time(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _dateTime *DateTime // out
-	var _goerr error        // out
-
-	_dateTime = (*DateTime)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	C.g_date_time_ref(_cret)
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_dateTime)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_date_time_unref((*C.GDateTime)(intern.C))
-		},
-	)
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _dateTime, _goerr
-}
-
-// Size gets the number of bookmarks inside bookmark.
-//
-// The function returns the following values:
-//
-//   - gint: number of bookmarks.
-func (bookmark *BookmarkFile) Size() int {
-	var _arg0 *C.GBookmarkFile // out
-	var _cret C.gint           // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-
-	_cret = C.g_bookmark_file_get_size(_arg0)
-	runtime.KeepAlive(bookmark)
-
-	var _gint int // out
-
-	_gint = int(_cret)
-
-	return _gint
-}
-
-// Title returns the title of the bookmark for uri.
-//
-// If uri is NULL, the title of bookmark is returned.
-//
-// In the event the URI cannot be found, NULL is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The function takes the following parameters:
-//
-//   - uri (optional): valid URI or NULL.
-//
-// The function returns the following values:
-//
-//   - utf8: newly allocated string or NULL if the specified URI cannot be
-//     found.
-func (bookmark *BookmarkFile) Title(uri string) (string, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _cret *C.gchar         // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	if uri != "" {
-		_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	_cret = C.g_bookmark_file_get_title(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _utf8 string // out
-	var _goerr error // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	defer C.free(unsafe.Pointer(_cret))
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _utf8, _goerr
-}
-
-// URIs returns all URIs of the bookmarks in the bookmark file bookmark.
-// The array of returned URIs will be NULL-terminated, so length may optionally
-// be NULL.
-//
-// The function returns the following values:
-//
-//   - utf8s: newly allocated NULL-terminated array of strings. Use g_strfreev()
-//     to free it.
-func (bookmark *BookmarkFile) URIs() []string {
-	var _arg0 *C.GBookmarkFile // out
-	var _cret **C.gchar        // in
-	var _arg1 C.gsize          // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-
-	_cret = C.g_bookmark_file_get_uris(_arg0, &_arg1)
-	runtime.KeepAlive(bookmark)
-
-	var _utf8s []string // out
-
-	defer C.free(unsafe.Pointer(_cret))
-	{
-		src := unsafe.Slice((**C.gchar)(_cret), _arg1)
-		_utf8s = make([]string, _arg1)
-		for i := 0; i < int(_arg1); i++ {
-			_utf8s[i] = C.GoString((*C.gchar)(unsafe.Pointer(src[i])))
-			defer C.free(unsafe.Pointer(src[i]))
-		}
-	}
-
-	return _utf8s
-}
-
-// VisitedDateTime gets the time the bookmark for uri was last visited.
-//
-// In the event the URI cannot be found, NULL is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//
-// The function returns the following values:
-//
-//   - dateTime: Time.
-func (bookmark *BookmarkFile) VisitedDateTime(uri string) (*DateTime, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.char          // out
-	var _cret *C.GDateTime     // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_bookmark_file_get_visited_date_time(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _dateTime *DateTime // out
-	var _goerr error        // out
-
-	_dateTime = (*DateTime)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	C.g_date_time_ref(_cret)
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_dateTime)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_date_time_unref((*C.GDateTime)(intern.C))
-		},
-	)
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _dateTime, _goerr
-}
-
-// HasApplication checks whether the bookmark for uri inside bookmark has been
-// registered by application name.
-//
-// In the event the URI cannot be found, FALSE is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - name of the application.
-func (bookmark *BookmarkFile) HasApplication(uri string, name string) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(name)))
-	defer C.free(unsafe.Pointer(_arg2))
-
-	C.g_bookmark_file_has_application(_arg0, _arg1, _arg2, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(name)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// HasGroup checks whether group appears in the list of groups to which the
-// bookmark for uri belongs to.
-//
-// In the event the URI cannot be found, FALSE is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - group name to be searched.
-func (bookmark *BookmarkFile) HasGroup(uri string, group string) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(group)))
-	defer C.free(unsafe.Pointer(_arg2))
-
-	C.g_bookmark_file_has_group(_arg0, _arg1, _arg2, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(group)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// HasItem looks whether the desktop bookmark has an item with its URI set to
-// uri.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if uri is inside bookmark, FALSE otherwise.
-func (bookmark *BookmarkFile) HasItem(uri string) bool {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_bookmark_file_has_item(_arg0, _arg1)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// LoadFromData loads a bookmark file from memory into an empty File structure.
-// If the object cannot be created then error is set to a FileError.
-//
-// The function takes the following parameters:
-//
-//   - data: desktop bookmarks loaded in memory.
-func (bookmark *BookmarkFile) LoadFromData(data string) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 C.gsize
-	var _cerr *C.GError // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg2 = (C.gsize)(len(data))
-	_arg1 = (*C.gchar)(C.calloc(C.size_t((len(data) + 1)), C.size_t(C.sizeof_gchar)))
-	copy(unsafe.Slice((*byte)(unsafe.Pointer(_arg1)), len(data)), data)
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.g_bookmark_file_load_from_data(_arg0, _arg1, _arg2, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(data)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// LoadFromDataDirs: this function looks for a desktop bookmark file
-// named file in the paths returned from g_get_user_data_dir() and
-// g_get_system_data_dirs(), loads the file into bookmark and returns the file's
-// full path in full_path. If the file could not be loaded then error is set to
-// either a Error or FileError.
-//
-// The function takes the following parameters:
-//
-//   - file: relative path to a filename to open and parse.
-//
-// The function returns the following values:
-//
-//   - fullPath (optional): return location for a string containing the full
-//     path of the file, or NULL.
-func (bookmark *BookmarkFile) LoadFromDataDirs(file string) (string, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(file)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.g_bookmark_file_load_from_data_dirs(_arg0, _arg1, &_arg2, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(file)
-
-	var _fullPath string // out
-	var _goerr error     // out
-
-	if _arg2 != nil {
-		_fullPath = C.GoString((*C.gchar)(unsafe.Pointer(_arg2)))
-		defer C.free(unsafe.Pointer(_arg2))
-	}
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _fullPath, _goerr
-}
-
-// LoadFromFile loads a desktop bookmark file into an empty File structure.
-// If the file could not be loaded then error is set to either a Error or
-// FileError.
-//
-// The function takes the following parameters:
-//
-//   - filename: path of a filename to load, in the GLib file name encoding.
-func (bookmark *BookmarkFile) LoadFromFile(filename string) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(filename)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.g_bookmark_file_load_from_file(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(filename)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// MoveItem changes the URI of a bookmark item from old_uri to new_uri.
-// Any existing bookmark for new_uri will be overwritten. If new_uri is NULL,
-// then the bookmark is removed.
-//
-// In the event the URI cannot be found, FALSE is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
-//
-// The function takes the following parameters:
-//
-//   - oldUri: valid URI.
-//   - newUri (optional): valid URI, or NULL.
-func (bookmark *BookmarkFile) MoveItem(oldUri string, newUri string) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(oldUri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	if newUri != "" {
-		_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(newUri)))
-		defer C.free(unsafe.Pointer(_arg2))
-	}
-
-	C.g_bookmark_file_move_item(_arg0, _arg1, _arg2, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(oldUri)
-	runtime.KeepAlive(newUri)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// RemoveApplication removes application registered with name from the list of
-// applications that have registered a bookmark for uri inside bookmark.
-//
-// In the event the URI cannot be found, FALSE is returned and error is set to
-// G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND. In the event that no application with
-// name app_name has registered a bookmark for uri, FALSE is returned and error
-// is set to G_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - name of the application.
-func (bookmark *BookmarkFile) RemoveApplication(uri string, name string) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(name)))
-	defer C.free(unsafe.Pointer(_arg2))
-
-	C.g_bookmark_file_remove_application(_arg0, _arg1, _arg2, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(name)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// RemoveGroup removes group from the list of groups to which the bookmark for
-// uri belongs to.
-//
-// In the event the URI cannot be found, FALSE is returned and error is set
-// to G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND. In the event no group was defined,
-// FALSE is returned and error is set to G_BOOKMARK_FILE_ERROR_INVALID_VALUE.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - group name to be removed.
-func (bookmark *BookmarkFile) RemoveGroup(uri string, group string) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(group)))
-	defer C.free(unsafe.Pointer(_arg2))
-
-	C.g_bookmark_file_remove_group(_arg0, _arg1, _arg2, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(group)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// RemoveItem removes the bookmark for uri from the bookmark file bookmark.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-func (bookmark *BookmarkFile) RemoveItem(uri string) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.g_bookmark_file_remove_item(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// SetAddedDateTime sets the time the bookmark for uri was added into bookmark.
-//
-// If no bookmark for uri is found then it is created.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - added: Time.
-func (bookmark *BookmarkFile) SetAddedDateTime(uri string, added *DateTime) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.char          // out
-	var _arg2 *C.GDateTime     // out
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.GDateTime)(gextras.StructNative(unsafe.Pointer(added)))
-
-	C.g_bookmark_file_set_added_date_time(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(added)
-}
-
-// SetApplicationInfo sets the meta-data of application name inside the list of
-// applications that have registered a bookmark for uri inside bookmark.
-//
-// You should rarely use this function; use g_bookmark_file_add_application()
-// and g_bookmark_file_remove_application() instead.
-//
-// name can be any UTF-8 encoded string used to identify an application.
-// exec can have one of these two modifiers: "\f", which will be
-// expanded as the local file name retrieved from the bookmark's URI;
-// "\u", which will be expanded as the bookmark's URI. The expansion is
-// done automatically when retrieving the stored command line using the
-// g_bookmark_file_get_application_info() function. count is the number of
-// times the application has registered the bookmark; if is < 0, the current
-// registration count will be increased by one, if is 0, the application with
-// name will be removed from the list of registered applications. stamp is the
-// Unix time of the last registration.
-//
-// If you try to remove an application by setting its registration count to
-// zero, and no bookmark for uri is found, FALSE is returned and error is
-// set to G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND; similarly, in the event that
-// no application name has registered a bookmark for uri, FALSE is returned
-// and error is set to G_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED. Otherwise,
-// if no bookmark for uri is found, one is created.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - name application's name.
-//   - exec application's command line.
-//   - count: number of registrations done for this application.
-//   - stamp (optional): time of the last registration for this application,
-//     which may be NULL if count is 0.
-func (bookmark *BookmarkFile) SetApplicationInfo(uri string, name string, exec string, count int, stamp *DateTime) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.char          // out
-	var _arg2 *C.char          // out
-	var _arg3 *C.char          // out
-	var _arg4 C.int            // out
-	var _arg5 *C.GDateTime     // out
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.char)(unsafe.Pointer(C.CString(name)))
-	defer C.free(unsafe.Pointer(_arg2))
-	_arg3 = (*C.char)(unsafe.Pointer(C.CString(exec)))
-	defer C.free(unsafe.Pointer(_arg3))
-	_arg4 = C.int(count)
-	if stamp != nil {
-		_arg5 = (*C.GDateTime)(gextras.StructNative(unsafe.Pointer(stamp)))
-	}
-
-	C.g_bookmark_file_set_application_info(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(name)
-	runtime.KeepAlive(exec)
-	runtime.KeepAlive(count)
-	runtime.KeepAlive(stamp)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-// SetDescription sets description as the description of the bookmark for uri.
-//
-// If uri is NULL, the description of bookmark is set.
-//
-// If a bookmark for uri cannot be found then it is created.
-//
-// The function takes the following parameters:
-//
-//   - uri (optional): valid URI or NULL.
-//   - description: string.
-func (bookmark *BookmarkFile) SetDescription(uri string, description string) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	if uri != "" {
-		_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-	_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(description)))
-	defer C.free(unsafe.Pointer(_arg2))
-
-	C.g_bookmark_file_set_description(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(description)
-}
-
-// SetGroups sets a list of group names for the item with URI uri. Each
-// previously set group name list is removed.
-//
-// If uri cannot be found then an item for it is created.
-//
-// The function takes the following parameters:
-//
-//   - uri item's URI.
-//   - groups (optional): array of group names, or NULL to remove all groups.
-func (bookmark *BookmarkFile) SetGroups(uri string, groups []string) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 **C.gchar        // out
-	var _arg3 C.gsize
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg3 = (C.gsize)(len(groups))
-	_arg2 = (**C.gchar)(C.calloc(C.size_t(len(groups)), C.size_t(unsafe.Sizeof(uint(0)))))
-	defer C.free(unsafe.Pointer(_arg2))
-	{
-		out := unsafe.Slice((**C.gchar)(_arg2), len(groups))
-		for i := range groups {
-			out[i] = (*C.gchar)(unsafe.Pointer(C.CString(groups[i])))
-			defer C.free(unsafe.Pointer(out[i]))
-		}
-	}
-
-	C.g_bookmark_file_set_groups(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(groups)
-}
-
-// SetIcon sets the icon for the bookmark for uri. If href is NULL, unsets the
-// currently set icon. href can either be a full URL for the icon file or the
-// icon name following the Icon Naming specification.
-//
-// If no bookmark for uri is found one is created.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - href (optional): URI of the icon for the bookmark, or NULL.
-//   - mimeType: MIME type of the icon for the bookmark.
-func (bookmark *BookmarkFile) SetIcon(uri string, href string, mimeType string) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-	var _arg3 *C.gchar         // out
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	if href != "" {
-		_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(href)))
-		defer C.free(unsafe.Pointer(_arg2))
-	}
-	_arg3 = (*C.gchar)(unsafe.Pointer(C.CString(mimeType)))
-	defer C.free(unsafe.Pointer(_arg3))
-
-	C.g_bookmark_file_set_icon(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(href)
-	runtime.KeepAlive(mimeType)
-}
-
-// SetIsPrivate sets the private flag of the bookmark for uri.
-//
-// If a bookmark for uri cannot be found then it is created.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - isPrivate: TRUE if the bookmark should be marked as private.
-func (bookmark *BookmarkFile) SetIsPrivate(uri string, isPrivate bool) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 C.gboolean       // out
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	if isPrivate {
-		_arg2 = C.TRUE
-	}
-
-	C.g_bookmark_file_set_is_private(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(isPrivate)
-}
-
-// SetMIMEType sets mime_type as the MIME type of the bookmark for uri.
-//
-// If a bookmark for uri cannot be found then it is created.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - mimeType: MIME type.
-func (bookmark *BookmarkFile) SetMIMEType(uri string, mimeType string) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(mimeType)))
-	defer C.free(unsafe.Pointer(_arg2))
-
-	C.g_bookmark_file_set_mime_type(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(mimeType)
-}
-
-// SetModifiedDateTime sets the last time the bookmark for uri was last
-// modified.
-//
-// If no bookmark for uri is found then it is created.
-//
-// The "modified" time should only be set when the bookmark's
-// meta-data was actually changed. Every function of File that
-// modifies a bookmark also changes the modification time, except for
-// g_bookmark_file_set_visited_date_time().
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - modified: Time.
-func (bookmark *BookmarkFile) SetModifiedDateTime(uri string, modified *DateTime) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.char          // out
-	var _arg2 *C.GDateTime     // out
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.GDateTime)(gextras.StructNative(unsafe.Pointer(modified)))
-
-	C.g_bookmark_file_set_modified_date_time(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(modified)
-}
-
-// SetTitle sets title as the title of the bookmark for uri inside the bookmark
-// file bookmark.
-//
-// If uri is NULL, the title of bookmark is set.
-//
-// If a bookmark for uri cannot be found then it is created.
-//
-// The function takes the following parameters:
-//
-//   - uri (optional): valid URI or NULL.
-//   - title: UTF-8 encoded string.
-func (bookmark *BookmarkFile) SetTitle(uri string, title string) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // out
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	if uri != "" {
-		_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(uri)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-	_arg2 = (*C.gchar)(unsafe.Pointer(C.CString(title)))
-	defer C.free(unsafe.Pointer(_arg2))
-
-	C.g_bookmark_file_set_title(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(title)
-}
-
-// SetVisitedDateTime sets the time the bookmark for uri was last visited.
-//
-// If no bookmark for uri is found then it is created.
-//
-// The "visited" time should only be set if the bookmark was launched, either
-// using the command line retrieved by g_bookmark_file_get_application_info()
-// or by the default application for the bookmark's MIME type, retrieved using
-// g_bookmark_file_get_mime_type(). Changing the "visited" time does not affect
-// the "modified" time.
-//
-// The function takes the following parameters:
-//
-//   - uri: valid URI.
-//   - visited: Time.
-func (bookmark *BookmarkFile) SetVisitedDateTime(uri string, visited *DateTime) {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.char          // out
-	var _arg2 *C.GDateTime     // out
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(uri)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = (*C.GDateTime)(gextras.StructNative(unsafe.Pointer(visited)))
-
-	C.g_bookmark_file_set_visited_date_time(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(uri)
-	runtime.KeepAlive(visited)
-}
-
-// ToData: this function outputs bookmark as a string.
-//
-// The function returns the following values:
-//
-//   - guint8s: a newly allocated string holding the contents of the File.
-func (bookmark *BookmarkFile) ToData() ([]byte, error) {
-	var _arg0 *C.GBookmarkFile // out
-	var _cret *C.gchar         // in
-	var _arg1 C.gsize          // in
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-
-	_cret = C.g_bookmark_file_to_data(_arg0, &_arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-
-	var _guint8s []byte // out
-	var _goerr error    // out
-
-	defer C.free(unsafe.Pointer(_cret))
-	_guint8s = make([]byte, _arg1)
-	copy(_guint8s, unsafe.Slice((*byte)(unsafe.Pointer(_cret)), _arg1))
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _guint8s, _goerr
-}
-
-// ToFile: this function outputs bookmark into a file. The write process is
-// guaranteed to be atomic by using g_file_set_contents() internally.
-//
-// The function takes the following parameters:
-//
-//   - filename: path of the output file.
-func (bookmark *BookmarkFile) ToFile(filename string) error {
-	var _arg0 *C.GBookmarkFile // out
-	var _arg1 *C.gchar         // out
-	var _cerr *C.GError        // in
-
-	_arg0 = (*C.GBookmarkFile)(gextras.StructNative(unsafe.Pointer(bookmark)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(filename)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	C.g_bookmark_file_to_file(_arg0, _arg1, &_cerr)
-	runtime.KeepAlive(bookmark)
-	runtime.KeepAlive(filename)
-
-	var _goerr error // out
-
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _goerr
-}
-
-func BookmarkFileErrorQuark() Quark {
-	var _cret C.GQuark // in
-
-	_cret = C.g_bookmark_file_error_quark()
-
-	var _quark Quark // out
-
-	_quark = Quark(_cret)
-
-	return _quark
 }
 
 // ByteArray contains the public fields of a GByteArray.
@@ -15116,22 +13701,10 @@ func (bytes *Bytes) NewFromBytes(offset uint, length uint) *Bytes {
 	return _ret
 }
 
-// Checksum: GLib provides a generic API for computing checksums (or ‘digests’)
-// for a sequence of arbitrary bytes, using various hashing algorithms like MD5,
-// SHA-1 and SHA-256. Checksums are commonly used in various environments and
-// specifications.
+// Checksum: opaque structure representing a checksumming operation.
 //
-// To create a new GChecksum, use glib.Checksum.New. To free a GChecksum,
-// use glib.Checksum.Free().
-//
-// GLib supports incremental checksums using the GChecksum data structure,
-// by calling glib.Checksum.Update() as long as there’s data available and
-// then using glib.Checksum.GetString() or glib.Checksum.GetDigest() to
-// compute the checksum and return it either as a string in hexadecimal form,
-// or as a raw sequence of bytes. To compute the checksum for binary blobs
-// and nul-terminated strings in one go, use the convenience functions
-// glib.ComputeChecksumForData() and glib.ComputeChecksumForString(),
-// respectively.
+// To create a new GChecksum, use g_checksum_new(). To free a GChecksum,
+// use g_checksum_free().
 //
 // An instance of this type is always passed by reference.
 type Checksum struct {
@@ -15289,77 +13862,8 @@ func ChecksumTypeGetLength(checksumType ChecksumType) int {
 	return _gssize
 }
 
-// Completion: GCompletion provides support for automatic completion of a
-// string using any group of target strings. It is typically used for file name
-// completion as is common in many UNIX shells.
-//
-// A GCompletion is created using glib.Completion().New. Target items are added
-// and removed with glib.Completion.AddItems(), glib.Completion.RemoveItems()
-// and glib.Completion.ClearItems(). A completion attempt is requested with
-// glib.Completion.Complete() or glib.Completion.CompleteUTF8(). When no longer
-// needed, the GCompletion is freed with glib.Completion.Free().
-//
-// Items in the completion can be simple strings (e.g. filenames),
-// or pointers to arbitrary data structures. If data structures are used you
-// must provide a glib.CompletionFunc in glib.Completion().New, which retrieves
-// the item’s string from the data structure. You can change the way in which
-// strings are compared by setting a different glib.CompletionStrncmpFunc in
-// glib.Completion.SetCompare().
-//
-// GCompletion has been marked as deprecated, since this API is rarely used and
-// not very actively maintained.
-//
-// Deprecated: Rarely used API.
-//
-// An instance of this type is always passed by reference.
-type Completion struct {
-	*completion
-}
-
-// completion is the struct that's finalized.
-type completion struct {
-	native *C.GCompletion
-}
-
-// ClearItems removes all items from the #GCompletion. The items are not freed,
-// so if the memory was dynamically allocated, it should be freed after calling
-// this function.
-//
-// Deprecated: Rarely used API.
-func (cmp *Completion) ClearItems() {
-	var _arg0 *C.GCompletion // out
-
-	_arg0 = (*C.GCompletion)(gextras.StructNative(unsafe.Pointer(cmp)))
-
-	C.g_completion_clear_items(_arg0)
-	runtime.KeepAlive(cmp)
-}
-
-// DateTime: GDateTime is a structure that combines a Gregorian date and time
-// into a single structure.
-//
-// GDateTime provides many conversion and methods to manipulate dates and times.
-// Time precision is provided down to microseconds and the time can range
-// (proleptically) from 0001-01-01 00:00:00 to 9999-12-31 23:59:59.999999.
-// GDateTime follows POSIX time in the sense that it is oblivious to leap
-// seconds.
-//
-// GDateTime is an immutable object; once it has been created it cannot be
-// modified further. All modifiers will create a new GDateTime. Nearly all such
-// functions can fail due to the date or time going out of range, in which case
-// NULL will be returned.
-//
-// GDateTime is reference counted: the reference count is increased by calling
-// glib.DateTime.Ref() and decreased by calling glib.DateTime.Unref().
-// When the reference count drops to 0, the resources allocated by the GDateTime
-// structure are released.
-//
-// Many parts of the API may produce non-obvious results. As an example,
-// adding two months to January 31st will yield March 31st whereas adding one
-// month and then one month again will yield either March 28th or March 29th.
-// Also note that adding 24 hours is not always the same as adding one day
-// (since days containing daylight savings time transitions are either 23 or 25
-// hours in length).
+// DateTime: opaque structure that represents a date and time, including a time
+// zone.
 //
 // An instance of this type is always passed by reference.
 type DateTime struct {
@@ -15525,31 +14029,6 @@ func NewDateTimeFromUnixLocal(t int64) *DateTime {
 	return _dateTime
 }
 
-// NewDateTimeFromUnixLocalUsec constructs a struct DateTime.
-func NewDateTimeFromUnixLocalUsec(usecs int64) *DateTime {
-	var _arg1 C.gint64     // out
-	var _cret *C.GDateTime // in
-
-	_arg1 = C.gint64(usecs)
-
-	_cret = C.g_date_time_new_from_unix_local_usec(_arg1)
-	runtime.KeepAlive(usecs)
-
-	var _dateTime *DateTime // out
-
-	if _cret != nil {
-		_dateTime = (*DateTime)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_dateTime)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.g_date_time_unref((*C.GDateTime)(intern.C))
-			},
-		)
-	}
-
-	return _dateTime
-}
-
 // NewDateTimeFromUnixUTC constructs a struct DateTime.
 func NewDateTimeFromUnixUTC(t int64) *DateTime {
 	var _arg1 C.gint64     // out
@@ -15559,31 +14038,6 @@ func NewDateTimeFromUnixUTC(t int64) *DateTime {
 
 	_cret = C.g_date_time_new_from_unix_utc(_arg1)
 	runtime.KeepAlive(t)
-
-	var _dateTime *DateTime // out
-
-	if _cret != nil {
-		_dateTime = (*DateTime)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_dateTime)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.g_date_time_unref((*C.GDateTime)(intern.C))
-			},
-		)
-	}
-
-	return _dateTime
-}
-
-// NewDateTimeFromUnixUTCUsec constructs a struct DateTime.
-func NewDateTimeFromUnixUTCUsec(usecs int64) *DateTime {
-	var _arg1 C.gint64     // out
-	var _cret *C.GDateTime // in
-
-	_arg1 = C.gint64(usecs)
-
-	_cret = C.g_date_time_new_from_unix_utc_usec(_arg1)
-	runtime.KeepAlive(usecs)
 
 	var _dateTime *DateTime // out
 
@@ -16212,10 +14666,10 @@ func (dt1 *DateTime) Equal(dt2 *DateTime) bool {
 // Format creates a newly allocated string representing the requested format.
 //
 // The format strings understood by this function are a subset of the strftime()
-// format language as specified by C99. The D, U and W conversions are not
-// supported, nor is the E modifier. The GNU extensions k, l, s and P are
-// supported, however, as are the 0, _ and - modifiers. The Python extension f
-// is also supported.
+// format language as specified by C99. The \D, \U and \W conversions are not
+// supported, nor is the 'E' modifier. The GNU extensions \k, \l, \s and \P
+// are supported, however, as are the '0', '_' and '-' modifiers. The Python
+// extension \f is also supported.
 //
 // In contrast to strftime(), this function always produces a UTF-8 string,
 // regardless of the current locale. Note that the rendering of many formats is
@@ -16223,115 +14677,114 @@ func (dt1 *DateTime) Equal(dt2 *DateTime) bool {
 //
 // The following format specifiers are supported:
 //
-// - a: the abbreviated weekday name according to the current locale
+// - \a: the abbreviated weekday name according to the current locale
 //
-// - A: the full weekday name according to the current locale
+// - \A: the full weekday name according to the current locale
 //
-// - b: the abbreviated month name according to the current locale
+// - \b: the abbreviated month name according to the current locale
 //
-// - B: the full month name according to the current locale
+// - \B: the full month name according to the current locale
 //
-// - c: the preferred date and time representation for the current locale
+// - \c: the preferred date and time representation for the current locale
 //
-// - C: the century number (year/100) as a 2-digit integer (00-99)
+// - \C: the century number (year/100) as a 2-digit integer (00-99)
 //
-// - d: the day of the month as a decimal number (range 01 to 31)
+// - \d: the day of the month as a decimal number (range 01 to 31)
 //
-// - e: the day of the month as a decimal number (range 1 to 31); single digits
-// are preceded by a figure space (U+2007)
+// - \e: the day of the month as a decimal number (range 1 to 31); single digits
+// are preceded by a figure space
 //
-// - F: equivalent to Y-m-d (the ISO 8601 date format)
+// - \F: equivalent to Y-m-d (the ISO 8601 date format)
 //
-// - g: the last two digits of the ISO 8601 week-based year as a decimal number
-// (00-99). This works well with V and u.
+// - \g: the last two digits of the ISO 8601 week-based year as a decimal number
+// (00-99). This works well with \V and \u.
 //
-// - G: the ISO 8601 week-based year as a decimal number. This works well with V
-// and u.
+// - \G: the ISO 8601 week-based year as a decimal number. This works well with
+// \V and \u.
 //
-// - h: equivalent to b
+// - \h: equivalent to \b
 //
-// - H: the hour as a decimal number using a 24-hour clock (range 00 to 23)
+// - \H: the hour as a decimal number using a 24-hour clock (range 00 to 23)
 //
-// - I: the hour as a decimal number using a 12-hour clock (range 01 to 12)
+// - \I: the hour as a decimal number using a 12-hour clock (range 01 to 12)
 //
-// - j: the day of the year as a decimal number (range 001 to 366)
+// - \j: the day of the year as a decimal number (range 001 to 366)
 //
-// - k: the hour (24-hour clock) as a decimal number (range 0 to 23); single
-// digits are preceded by a figure space (U+2007)
+// - \k: the hour (24-hour clock) as a decimal number (range 0 to 23); single
+// digits are preceded by a figure space
 //
-// - l: the hour (12-hour clock) as a decimal number (range 1 to 12); single
-// digits are preceded by a figure space (U+2007)
+// - \l: the hour (12-hour clock) as a decimal number (range 1 to 12); single
+// digits are preceded by a figure space
 //
-// - m: the month as a decimal number (range 01 to 12)
+// - \m: the month as a decimal number (range 01 to 12)
 //
-// - M: the minute as a decimal number (range 00 to 59)
+// - \M: the minute as a decimal number (range 00 to 59)
 //
-// - f: the microsecond as a decimal number (range 000000 to 999999)
+// - \f: the microsecond as a decimal number (range 000000 to 999999)
 //
-// - p: either ‘AM’ or ‘PM’ according to the given time value, or the
-// corresponding strings for the current locale. Noon is treated as ‘PM’ and
-// midnight as ‘AM’. Use of this format specifier is discouraged, as many
-// locales have no concept of AM/PM formatting. Use c or X instead.
+// - \p: either "AM" or "PM" according to the given time value, or the
+// corresponding strings for the current locale. Noon is treated as "PM" and
+// midnight as "AM". Use of this format specifier is discouraged, as many
+// locales have no concept of AM/PM formatting. Use \c or \X instead.
 //
-// - P: like p but lowercase: ‘am’ or ‘pm’ or a corresponding string for the
+// - \P: like \p but lowercase: "am" or "pm" or a corresponding string for the
 // current locale. Use of this format specifier is discouraged, as many locales
-// have no concept of AM/PM formatting. Use c or X instead.
+// have no concept of AM/PM formatting. Use \c or \X instead.
 //
-// - r: the time in a.m. or p.m. notation. Use of this format specifier is
-// discouraged, as many locales have no concept of AM/PM formatting. Use c or X
-// instead.
+// - \r: the time in a.m. or p.m. notation. Use of this format specifier is
+// discouraged, as many locales have no concept of AM/PM formatting. Use \c or
+// \X instead.
 //
-// - R: the time in 24-hour notation (H:M)
+// - \R: the time in 24-hour notation (\H:\M)
 //
-// - s: the number of seconds since the Epoch, that is, since 1970-01-01
+// - \s: the number of seconds since the Epoch, that is, since 1970-01-01
 // 00:00:00 UTC
 //
-// - S: the second as a decimal number (range 00 to 60)
+// - \S: the second as a decimal number (range 00 to 60)
 //
-// - t: a tab character
+// - \t: a tab character
 //
-// - T: the time in 24-hour notation with seconds (H:M:S)
+// - \T: the time in 24-hour notation with seconds (\H:\M:\S)
 //
-// - u: the ISO 8601 standard day of the week as a decimal, range 1 to 7,
-// Monday being 1. This works well with G and V.
+// - \u: the ISO 8601 standard day of the week as a decimal, range 1 to 7,
+// Monday being 1. This works well with \G and \V.
 //
-// - V: the ISO 8601 standard week number of the current year as a decimal
+// - \V: the ISO 8601 standard week number of the current year as a decimal
 // number, range 01 to 53, where week 1 is the first week that has at least 4
 // days in the new year. See g_date_time_get_week_of_year(). This works well
-// with G and u.
+// with \G and \u.
 //
-// - w: the day of the week as a decimal, range 0 to 6, Sunday being 0. This is
-// not the ISO 8601 standard format — use u instead.
+// - \w: the day of the week as a decimal, range 0 to 6, Sunday being 0. This is
+// not the ISO 8601 standard format -- use \u instead.
 //
-// - x: the preferred date representation for the current locale without the
+// - \x: the preferred date representation for the current locale without the
 // time
 //
-// - X: the preferred time representation for the current locale without the
+// - \X: the preferred time representation for the current locale without the
 // date
 //
-// - y: the year as a decimal number without the century
+// - \y: the year as a decimal number without the century
 //
-// - Y: the year as a decimal number including the century
+// - \Y: the year as a decimal number including the century
 //
-// - z: the time zone as an offset from UTC (+hhmm)
+// - \z: the time zone as an offset from UTC (+hhmm)
 //
-// - %:z: the time zone as an offset from UTC (+hh:mm). This is a gnulib
+// - \%:z: the time zone as an offset from UTC (+hh:mm). This is a gnulib
 // strftime() extension. Since: 2.38
 //
-// - %::z: the time zone as an offset from UTC (+hh:mm:ss). This is a gnulib
+// - \%::z: the time zone as an offset from UTC (+hh:mm:ss). This is a gnulib
 // strftime() extension. Since: 2.38
 //
-// - %:::z: the time zone as an offset from UTC, with : to necessary precision
+// - \%:::z: the time zone as an offset from UTC, with : to necessary precision
 // (e.g., -04, +05:30). This is a gnulib strftime() extension. Since: 2.38
 //
-// - Z: the time zone or name or abbreviation
+// - \Z: the time zone or name or abbreviation
 //
-// - %%: a literal % character
+// - \%\%: a literal \% character
 //
 // Some conversion specifications can be modified by preceding the conversion
-// specifier by one or more modifier characters.
-//
-// The following modifiers are supported for many of the numeric conversions:
+// specifier by one or more modifier characters. The following modifiers are
+// supported for many of the numeric conversions:
 //
 // - O: Use alternative numeric symbols, if the current locale supports those.
 //
@@ -16344,41 +14797,13 @@ func (dt1 *DateTime) Equal(dt2 *DateTime) bool {
 // - 0: Pad a numeric result with zeros. This overrides the default padding for
 // the specifier.
 //
-// The following modifiers are supported for many of the alphabetic conversions:
-//
-// - ^: Use upper case if possible. This is a gnulib strftime() extension.
-// Since: 2.80
-//
-// - #: Use opposite case if possible. This is a gnulib strftime() extension.
-// Since: 2.80
-//
 // Additionally, when O is used with B, b, or h, it produces the alternative
 // form of a month name. The alternative form should be used when the month
 // name is used without a day number (e.g., standalone). It is required in some
 // languages (Baltic, Slavic, Greek, and more) due to their grammatical rules.
-// For other languages there is no difference. OB is a GNU and BSD strftime()
-// extension expected to be added to the future POSIX specification, Ob and Oh
-// are GNU strftime() extensions. Since: 2.56
-//
-// Since GLib 2.80, when E is used with c, C, x, X, y or Y, the date is
-// formatted using an alternate era representation specific to the locale.
-// This is typically used for the Thai solar calendar or Japanese era names,
-// for example.
-//
-// - Ec: the preferred date and time representation for the current locale,
-// using the alternate era representation
-//
-// - EC: the name of the era
-//
-// - Ex: the preferred date representation for the current locale without the
-// time, using the alternate era representation
-//
-// - EX: the preferred time representation for the current locale without the
-// date, using the alternate era representation
-//
-// - Ey: the year since the beginning of the era denoted by the EC specifier
-//
-// - EY: the full alternative year representation.
+// For other languages there is no difference. \OB is a GNU and BSD strftime()
+// extension expected to be added to the future POSIX specification, \Ob and \Oh
+// are GNU strftime() extensions. Since: 2.56.
 //
 // The function takes the following parameters:
 //
@@ -17043,30 +15468,6 @@ func (datetime *DateTime) ToUnix() int64 {
 	return _gint64
 }
 
-// ToUnixUsec gives the Unix time corresponding to datetime, in microseconds.
-//
-// Unix time is the number of microseconds that have elapsed since 1970-01-01
-// 00:00:00 UTC, regardless of the time zone associated with datetime.
-//
-// The function returns the following values:
-//
-//   - gint64: unix time corresponding to datetime.
-func (datetime *DateTime) ToUnixUsec() int64 {
-	var _arg0 *C.GDateTime // out
-	var _cret C.gint64     // in
-
-	_arg0 = (*C.GDateTime)(gextras.StructNative(unsafe.Pointer(datetime)))
-
-	_cret = C.g_date_time_to_unix_usec(_arg0)
-	runtime.KeepAlive(datetime)
-
-	var _gint64 int64 // out
-
-	_gint64 = int64(_cret)
-
-	return _gint64
-}
-
 // ToUTC creates a new Time corresponding to the same instant in time as
 // datetime, but in UTC.
 //
@@ -17133,161 +15534,6 @@ func (d *DebugKey) Value() uint {
 func (d *DebugKey) SetValue(value uint) {
 	valptr := &d.native.value
 	*valptr = C.guint(value)
-}
-
-// Dir: opaque structure representing an opened directory.
-//
-// An instance of this type is always passed by reference.
-type Dir struct {
-	*dir
-}
-
-// dir is the struct that's finalized.
-type dir struct {
-	native *C.GDir
-}
-
-func marshalDir(p uintptr) (interface{}, error) {
-	b := coreglib.ValueFromNative(unsafe.Pointer(p)).Boxed()
-	return &Dir{&dir{(*C.GDir)(b)}}, nil
-}
-
-// NewDirOpen constructs a struct Dir.
-func NewDirOpen(path string, flags uint) (*Dir, error) {
-	var _arg1 *C.gchar  // out
-	var _arg2 C.guint   // out
-	var _cret *C.GDir   // in
-	var _cerr *C.GError // in
-
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(path)))
-	defer C.free(unsafe.Pointer(_arg1))
-	_arg2 = C.guint(flags)
-
-	_cret = C.g_dir_open(_arg1, _arg2, &_cerr)
-	runtime.KeepAlive(path)
-	runtime.KeepAlive(flags)
-
-	var _dir *Dir    // out
-	var _goerr error // out
-
-	_dir = (*Dir)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_dir)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_dir_unref((*C.GDir)(intern.C))
-		},
-	)
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _dir, _goerr
-}
-
-// Close closes the directory immediately and decrements the reference count.
-//
-// Once the reference count reaches zero, the GDir structure itself will be
-// freed. Prior to GLib 2.80, GDir was not reference counted.
-//
-// It is an error to call any of the GDir methods other than glib.Dir.Ref() and
-// glib.Dir.Unref() on a GDir after calling glib.Dir.Close() on it.
-func (dir *Dir) Close() {
-	var _arg0 *C.GDir // out
-
-	_arg0 = (*C.GDir)(gextras.StructNative(unsafe.Pointer(dir)))
-
-	C.g_dir_close(_arg0)
-	runtime.KeepAlive(dir)
-}
-
-// ReadName retrieves the name of another entry in the directory, or NULL.
-// The order of entries returned from this function is not defined, and may vary
-// by file system or other operating-system dependent factors.
-//
-// NULL may also be returned in case of errors. On Unix, you can check errno to
-// find out if NULL was returned because of an error.
-//
-// On Unix, the '.' and '..' entries are omitted, and the returned name is in
-// the on-disk encoding.
-//
-// On Windows, as is true of all GLib functions which operate on filenames,
-// the returned name is in UTF-8.
-//
-// The function returns the following values:
-//
-//   - filename entry's name or NULL if there are no more entries. The return
-//     value is owned by GLib and must not be modified or freed.
-func (dir *Dir) ReadName() string {
-	var _arg0 *C.GDir  // out
-	var _cret *C.gchar // in
-
-	_arg0 = (*C.GDir)(gextras.StructNative(unsafe.Pointer(dir)))
-
-	_cret = C.g_dir_read_name(_arg0)
-	runtime.KeepAlive(dir)
-
-	var _filename string // out
-
-	_filename = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _filename
-}
-
-// Rewind resets the given directory. The next call to g_dir_read_name() will
-// return the first entry again.
-func (dir *Dir) Rewind() {
-	var _arg0 *C.GDir // out
-
-	_arg0 = (*C.GDir)(gextras.StructNative(unsafe.Pointer(dir)))
-
-	C.g_dir_rewind(_arg0)
-	runtime.KeepAlive(dir)
-}
-
-// DirMakeTmp creates a subdirectory in the preferred directory for temporary
-// files (as returned by g_get_tmp_dir()).
-//
-// tmpl should be a string in the GLib file name encoding containing a sequence
-// of six 'X' characters, as the parameter to g_mkstemp(). However, unlike these
-// functions, the template should only be a basename, no directory components
-// are allowed. If template is NULL, a default template is used.
-//
-// Note that in contrast to g_mkdtemp() (and mkdtemp()) tmpl is not modified,
-// and might thus be a read-only literal string.
-//
-// The function takes the following parameters:
-//
-//   - tmpl (optional): template for directory name, as in g_mkdtemp(), basename
-//     only, or NULL for a default template.
-//
-// The function returns the following values:
-//
-//   - filename: actual name used. This string should be freed with g_free()
-//     when not needed any longer and is is in the GLib file name encoding.
-//     In case of errors, NULL is returned and error will be set.
-func DirMakeTmp(tmpl string) (string, error) {
-	var _arg1 *C.gchar  // out
-	var _cret *C.gchar  // in
-	var _cerr *C.GError // in
-
-	if tmpl != "" {
-		_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(tmpl)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	_cret = C.g_dir_make_tmp(_arg1, &_cerr)
-	runtime.KeepAlive(tmpl)
-
-	var _filename string // out
-	var _goerr error     // out
-
-	_filename = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	defer C.free(unsafe.Pointer(_cret))
-	if _cerr != nil {
-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
-	}
-
-	return _filename, _goerr
 }
 
 // HashTable struct is an opaque data structure to represent a [Hash
@@ -17424,190 +15670,6 @@ func HashTableDestroy(hashTable map[unsafe.Pointer]unsafe.Pointer) {
 
 	C.g_hash_table_destroy(_arg1)
 	runtime.KeepAlive(hashTable)
-}
-
-// HashTableFind calls the given function for key/value pairs in the Table until
-// predicate returns TRUE. The function is passed the key and value of each
-// pair, and the given user_data parameter. The hash table may not be modified
-// while iterating over it (you can't add/remove items).
-//
-// Note, that hash tables are really only optimized for forward lookups, i.e.
-// g_hash_table_lookup(). So code that frequently issues g_hash_table_find()
-// or g_hash_table_foreach() (e.g. in the order of once per every entry in
-// a hash table) should probably be reworked to use additional or different
-// data structures for reverse lookups (keep in mind that an O(n) find/foreach
-// operation issued for all n values in a hash table ends up needing O(n*n)
-// operations).
-//
-// The function takes the following parameters:
-//
-//   - hashTable: Table.
-//   - predicate: function to test the key/value pairs for a certain property.
-//
-// The function returns the following values:
-//
-//   - gpointer (optional): value of the first key/value pair is returned,
-//     for which predicate evaluates to TRUE. If no pair with the requested
-//     property is found, NULL is returned.
-func HashTableFind(hashTable map[unsafe.Pointer]unsafe.Pointer, predicate HRFunc) unsafe.Pointer {
-	var _arg1 *C.GHashTable // out
-	var _arg2 C.GHRFunc     // out
-	var _arg3 C.gpointer
-	var _cret C.gpointer // in
-
-	_arg1 = C.g_hash_table_new_full(nil, nil, (*[0]byte)(C.free), (*[0]byte)(C.free))
-	for ksrc, vsrc := range hashTable {
-		var kdst C.gpointer // out
-		var vdst C.gpointer // out
-		kdst = (C.gpointer)(unsafe.Pointer(ksrc))
-		vdst = (C.gpointer)(unsafe.Pointer(vsrc))
-		C.g_hash_table_insert(_arg1, C.gpointer(unsafe.Pointer(kdst)), C.gpointer(unsafe.Pointer(vdst)))
-	}
-	defer C.g_hash_table_unref(_arg1)
-	_arg2 = (*[0]byte)(C._gotk4_glib2_HRFunc)
-	_arg3 = C.gpointer(gbox.Assign(predicate))
-	defer gbox.Delete(uintptr(_arg3))
-
-	_cret = C.g_hash_table_find(_arg1, _arg2, _arg3)
-	runtime.KeepAlive(hashTable)
-	runtime.KeepAlive(predicate)
-
-	var _gpointer unsafe.Pointer // out
-
-	_gpointer = (unsafe.Pointer)(unsafe.Pointer(_cret))
-
-	return _gpointer
-}
-
-// HashTableForEach calls the given function for each of the key/value pairs
-// in the Table. The function is passed the key and value of each pair,
-// and the given user_data parameter. The hash table may not be modified while
-// iterating over it (you can't add/remove items). To remove all items matching
-// a predicate, use g_hash_table_foreach_remove().
-//
-// The order in which g_hash_table_foreach() iterates over the keys/values in
-// the hash table is not defined.
-//
-// See g_hash_table_find() for performance caveats for linear order searches in
-// contrast to g_hash_table_lookup().
-//
-// The function takes the following parameters:
-//
-//   - hashTable: Table.
-//   - fn: function to call for each key/value pair.
-func HashTableForEach(hashTable map[unsafe.Pointer]unsafe.Pointer, fn HFunc) {
-	var _arg1 *C.GHashTable // out
-	var _arg2 C.GHFunc      // out
-	var _arg3 C.gpointer
-
-	_arg1 = C.g_hash_table_new_full(nil, nil, (*[0]byte)(C.free), (*[0]byte)(C.free))
-	for ksrc, vsrc := range hashTable {
-		var kdst C.gpointer // out
-		var vdst C.gpointer // out
-		kdst = (C.gpointer)(unsafe.Pointer(ksrc))
-		vdst = (C.gpointer)(unsafe.Pointer(vsrc))
-		C.g_hash_table_insert(_arg1, C.gpointer(unsafe.Pointer(kdst)), C.gpointer(unsafe.Pointer(vdst)))
-	}
-	defer C.g_hash_table_unref(_arg1)
-	_arg2 = (*[0]byte)(C._gotk4_glib2_HFunc)
-	_arg3 = C.gpointer(gbox.Assign(fn))
-	defer gbox.Delete(uintptr(_arg3))
-
-	C.g_hash_table_foreach(_arg1, _arg2, _arg3)
-	runtime.KeepAlive(hashTable)
-	runtime.KeepAlive(fn)
-}
-
-// HashTableForEachRemove calls the given function for each key/value pair in
-// the Table. If the function returns TRUE, then the key/value pair is removed
-// from the Table. If you supplied key or value destroy functions when creating
-// the Table, they are used to free the memory allocated for the removed keys
-// and values.
-//
-// See TableIter for an alternative way to loop over the key/value pairs in the
-// hash table.
-//
-// The function takes the following parameters:
-//
-//   - hashTable: Table.
-//   - fn: function to call for each key/value pair.
-//
-// The function returns the following values:
-//
-//   - guint: number of key/value pairs removed.
-func HashTableForEachRemove(hashTable map[unsafe.Pointer]unsafe.Pointer, fn HRFunc) uint {
-	var _arg1 *C.GHashTable // out
-	var _arg2 C.GHRFunc     // out
-	var _arg3 C.gpointer
-	var _cret C.guint // in
-
-	_arg1 = C.g_hash_table_new_full(nil, nil, (*[0]byte)(C.free), (*[0]byte)(C.free))
-	for ksrc, vsrc := range hashTable {
-		var kdst C.gpointer // out
-		var vdst C.gpointer // out
-		kdst = (C.gpointer)(unsafe.Pointer(ksrc))
-		vdst = (C.gpointer)(unsafe.Pointer(vsrc))
-		C.g_hash_table_insert(_arg1, C.gpointer(unsafe.Pointer(kdst)), C.gpointer(unsafe.Pointer(vdst)))
-	}
-	defer C.g_hash_table_unref(_arg1)
-	_arg2 = (*[0]byte)(C._gotk4_glib2_HRFunc)
-	_arg3 = C.gpointer(gbox.Assign(fn))
-	defer gbox.Delete(uintptr(_arg3))
-
-	_cret = C.g_hash_table_foreach_remove(_arg1, _arg2, _arg3)
-	runtime.KeepAlive(hashTable)
-	runtime.KeepAlive(fn)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
-}
-
-// HashTableForEachSteal calls the given function for each key/value pair in the
-// Table. If the function returns TRUE, then the key/value pair is removed from
-// the Table, but no key or value destroy functions are called.
-//
-// See TableIter for an alternative way to loop over the key/value pairs in the
-// hash table.
-//
-// The function takes the following parameters:
-//
-//   - hashTable: Table.
-//   - fn: function to call for each key/value pair.
-//
-// The function returns the following values:
-//
-//   - guint: number of key/value pairs removed.
-func HashTableForEachSteal(hashTable map[unsafe.Pointer]unsafe.Pointer, fn HRFunc) uint {
-	var _arg1 *C.GHashTable // out
-	var _arg2 C.GHRFunc     // out
-	var _arg3 C.gpointer
-	var _cret C.guint // in
-
-	_arg1 = C.g_hash_table_new_full(nil, nil, (*[0]byte)(C.free), (*[0]byte)(C.free))
-	for ksrc, vsrc := range hashTable {
-		var kdst C.gpointer // out
-		var vdst C.gpointer // out
-		kdst = (C.gpointer)(unsafe.Pointer(ksrc))
-		vdst = (C.gpointer)(unsafe.Pointer(vsrc))
-		C.g_hash_table_insert(_arg1, C.gpointer(unsafe.Pointer(kdst)), C.gpointer(unsafe.Pointer(vdst)))
-	}
-	defer C.g_hash_table_unref(_arg1)
-	_arg2 = (*[0]byte)(C._gotk4_glib2_HRFunc)
-	_arg3 = C.gpointer(gbox.Assign(fn))
-	defer gbox.Delete(uintptr(_arg3))
-
-	_cret = C.g_hash_table_foreach_steal(_arg1, _arg2, _arg3)
-	runtime.KeepAlive(hashTable)
-	runtime.KeepAlive(fn)
-
-	var _guint uint // out
-
-	_guint = uint(_cret)
-
-	return _guint
 }
 
 // HashTableInsert inserts a new key and value into a Table.
@@ -17803,6 +15865,49 @@ func NewHashTableSimilar(otherHashTable map[unsafe.Pointer]unsafe.Pointer) map[u
 	return _hashTable
 }
 
+// HashTableRemove removes a key and its associated value from a Table.
+//
+// If the Table was created using g_hash_table_new_full(), the key and value are
+// freed using the supplied destroy functions, otherwise you have to make sure
+// that any dynamically allocated values are freed yourself.
+//
+// The function takes the following parameters:
+//
+//   - hashTable: Table.
+//   - key (optional) to remove.
+//
+// The function returns the following values:
+//
+//   - ok: TRUE if the key was found and removed from the Table.
+func HashTableRemove(hashTable map[unsafe.Pointer]unsafe.Pointer, key unsafe.Pointer) bool {
+	var _arg1 *C.GHashTable   // out
+	var _arg2 C.gconstpointer // out
+	var _cret C.gboolean      // in
+
+	_arg1 = C.g_hash_table_new_full(nil, nil, (*[0]byte)(C.free), (*[0]byte)(C.free))
+	for ksrc, vsrc := range hashTable {
+		var kdst C.gpointer // out
+		var vdst C.gpointer // out
+		kdst = (C.gpointer)(unsafe.Pointer(ksrc))
+		vdst = (C.gpointer)(unsafe.Pointer(vsrc))
+		C.g_hash_table_insert(_arg1, C.gpointer(unsafe.Pointer(kdst)), C.gpointer(unsafe.Pointer(vdst)))
+	}
+	defer C.g_hash_table_unref(_arg1)
+	_arg2 = (C.gconstpointer)(unsafe.Pointer(key))
+
+	_cret = C.g_hash_table_remove(_arg1, _arg2)
+	runtime.KeepAlive(hashTable)
+	runtime.KeepAlive(key)
+
+	var _ok bool // out
+
+	if _cret != 0 {
+		_ok = true
+	}
+
+	return _ok
+}
+
 // HashTableRemoveAll removes all keys and their associated values from a Table.
 //
 // If the Table was created using g_hash_table_new_full(), the keys and values
@@ -17981,17 +16086,11 @@ func HashTableStealAll(hashTable map[unsafe.Pointer]unsafe.Pointer) {
 // was not found, FALSE is returned.
 //
 // If found, the stolen key and value are removed from the hash table without
-// calling the key and value destroy functions, and ownership is transferred
-// to the caller of this method, as with g_hash_table_steal(). That is the
-// case regardless whether stolen_key or stolen_value output parameters are
-// requested.
+// calling the key and value destroy functions, and ownership is transferred to
+// the caller of this method; as with g_hash_table_steal().
 //
 // You can pass NULL for lookup_key, provided the hash and equal functions of
 // hash_table are NULL-safe.
-//
-// The dictionary implementation optimizes for having all values identical to
-// their keys, for example by using g_hash_table_add(). When stealing both the
-// key and the value from such a dictionary, the value will be NULL.
 //
 // The function takes the following parameters:
 //
@@ -18054,36 +16153,6 @@ type HashTableIter struct {
 // hashTableIter is the struct that's finalized.
 type hashTableIter struct {
 	native *C.GHashTableIter
-}
-
-// HashTable returns the Table associated with iter.
-//
-// The function returns the following values:
-//
-//   - hashTable associated with iter.
-func (iter *HashTableIter) HashTable() map[unsafe.Pointer]unsafe.Pointer {
-	var _arg0 *C.GHashTableIter // out
-	var _cret *C.GHashTable     // in
-
-	_arg0 = (*C.GHashTableIter)(gextras.StructNative(unsafe.Pointer(iter)))
-
-	_cret = C.g_hash_table_iter_get_hash_table(_arg0)
-	runtime.KeepAlive(iter)
-
-	var _hashTable map[unsafe.Pointer]unsafe.Pointer // out
-
-	_hashTable = make(map[unsafe.Pointer]unsafe.Pointer, gextras.HashTableSize(unsafe.Pointer(_cret)))
-	gextras.MoveHashTable(unsafe.Pointer(_cret), false, func(k, v unsafe.Pointer) {
-		ksrc := *(*C.gpointer)(k)
-		vsrc := *(*C.gpointer)(v)
-		var kdst unsafe.Pointer // out
-		var vdst unsafe.Pointer // out
-		kdst = (unsafe.Pointer)(unsafe.Pointer(ksrc))
-		vdst = (unsafe.Pointer)(unsafe.Pointer(vsrc))
-		_hashTable[kdst] = vdst
-	})
-
-	return _hashTable
 }
 
 // Init initializes a key/value pair iterator and associates it with hash_table.
@@ -18218,179 +16287,8 @@ func (iter *HashTableIter) Steal() {
 	runtime.KeepAlive(iter)
 }
 
-// HMAC HMACs should be used when producing a cookie or hash based on data
-// and a key. Simple mechanisms for using SHA1 and other algorithms to digest
-// a key and data together are vulnerable to various security issues. HMAC
-// (http://en.wikipedia.org/wiki/HMAC) uses algorithms like SHA1 in a secure way
-// to produce a digest of a key and data.
-//
-// Both the key and data are arbitrary byte arrays of bytes or characters.
-//
-// Support for HMAC Digests has been added in GLib 2.30, and support for SHA-512
-// in GLib 2.42. Support for SHA-384 was added in GLib 2.52.
-//
-// To create a new GHmac, use glib.HMAC.New. To free a GHmac, use
-// glib.HMAC.Unref().
-//
-// An instance of this type is always passed by reference.
-type HMAC struct {
-	*hmaC
-}
-
-// hmaC is the struct that's finalized.
-type hmaC struct {
-	native *C.GHmac
-}
-
-func marshalHMAC(p uintptr) (interface{}, error) {
-	b := coreglib.ValueFromNative(unsafe.Pointer(p)).Boxed()
-	return &HMAC{&hmaC{(*C.GHmac)(b)}}, nil
-}
-
-// NewHMAC constructs a struct HMAC.
-func NewHMAC(digestType ChecksumType, key []byte) *HMAC {
-	var _arg1 C.GChecksumType // out
-	var _arg2 *C.guchar       // out
-	var _arg3 C.gsize
-	var _cret *C.GHmac // in
-
-	_arg1 = C.GChecksumType(digestType)
-	_arg3 = (C.gsize)(len(key))
-	if len(key) > 0 {
-		_arg2 = (*C.guchar)(unsafe.Pointer(&key[0]))
-	}
-
-	_cret = C.g_hmac_new(_arg1, _arg2, _arg3)
-	runtime.KeepAlive(digestType)
-	runtime.KeepAlive(key)
-
-	var _hmac *HMAC // out
-
-	if _cret != nil {
-		_hmac = (*HMAC)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-		runtime.SetFinalizer(
-			gextras.StructIntern(unsafe.Pointer(_hmac)),
-			func(intern *struct{ C unsafe.Pointer }) {
-				C.g_hmac_unref((*C.GHmac)(intern.C))
-			},
-		)
-	}
-
-	return _hmac
-}
-
-// Copy copies a #GHmac. If hmac has been closed, by calling g_hmac_get_string()
-// or g_hmac_get_digest(), the copied HMAC will be closed as well.
-//
-// The function returns the following values:
-//
-//   - ret: copy of the passed #GHmac. Use g_hmac_unref() when finished using
-//     it.
-func (hmac *HMAC) Copy() *HMAC {
-	var _arg0 *C.GHmac // out
-	var _cret *C.GHmac // in
-
-	_arg0 = (*C.GHmac)(gextras.StructNative(unsafe.Pointer(hmac)))
-
-	_cret = C.g_hmac_copy(_arg0)
-	runtime.KeepAlive(hmac)
-
-	var _ret *HMAC // out
-
-	_ret = (*HMAC)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_ret)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_hmac_unref((*C.GHmac)(intern.C))
-		},
-	)
-
-	return _ret
-}
-
-// String gets the HMAC as a hexadecimal string.
-//
-// Once this function has been called the #GHmac can no longer be updated with
-// g_hmac_update().
-//
-// The hexadecimal characters will be lower case.
-//
-// The function returns the following values:
-//
-//   - utf8: hexadecimal representation of the HMAC. The returned string is
-//     owned by the HMAC and should not be modified or freed.
-func (hmac *HMAC) String() string {
-	var _arg0 *C.GHmac // out
-	var _cret *C.gchar // in
-
-	_arg0 = (*C.GHmac)(gextras.StructNative(unsafe.Pointer(hmac)))
-
-	_cret = C.g_hmac_get_string(_arg0)
-	runtime.KeepAlive(hmac)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-
-	return _utf8
-}
-
-// Update feeds data into an existing #GHmac.
-//
-// The HMAC must still be open, that is g_hmac_get_string() or
-// g_hmac_get_digest() must not have been called on hmac.
-//
-// The function takes the following parameters:
-//
-//   - data: buffer used to compute the checksum.
-func (hmac *HMAC) Update(data []byte) {
-	var _arg0 *C.GHmac  // out
-	var _arg1 *C.guchar // out
-	var _arg2 C.gssize
-
-	_arg0 = (*C.GHmac)(gextras.StructNative(unsafe.Pointer(hmac)))
-	_arg2 = (C.gssize)(len(data))
-	if len(data) > 0 {
-		_arg1 = (*C.guchar)(unsafe.Pointer(&data[0]))
-	}
-
-	C.g_hmac_update(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(hmac)
-	runtime.KeepAlive(data)
-}
-
-// IOChannel: GIOChannel data type aims to provide a portable method for using
-// file descriptors, pipes, and sockets, and integrating them into the main
-// event loop (see glib.MainContext). Currently, full support is available on
-// UNIX platforms; support for Windows is only partially complete.
-//
-// To create a new GIOChannel on UNIX systems use glib.IOChannel.NewUnix.
-// This works for plain file descriptors, pipes and sockets. Alternatively,
-// a channel can be created for a file in a system independent manner using
-// glib.IOChannel.NewFile.
-//
-// Once a GIOChannel has been created, it can be used in a generic manner with
-// the functions glib.IOChannel.ReadChars(), glib.IOChannel.WriteChars(),
-// glib.IOChannel.SeekPosition(), and glib.IOChannel.Shutdown().
-//
-// To add a GIOChannel to the main event loop, use glib.IOAddWatch() or
-// glib.IOAddWatchFull(). Here you specify which events you are interested in
-// on the GIOChannel, and provide a function to be called whenever these events
-// occur.
-//
-// GIOChannel instances are created with an initial reference count of 1.
-// glib.IOChannel.Ref() and glib.IOChannel.Unref() can be used to increment
-// or decrement the reference count respectively. When the reference count
-// falls to 0, the GIOChannel is freed. (Though it isn’t closed automatically,
-// unless it was created using glib.IOChannel.NewFile.) Using glib.IOAddWatch()
-// or glib.IOAddWatchFull() increments a channel’s reference count.
-//
-// The new functions glib.IOChannel.ReadChars(), glib.IOChannel.ReadLine(),
-// glib.IOChannel.ReadLineString(), glib.IOChannel.ReadToEnd(),
-// glib.IOChannel.WriteChars(), glib.IOChannel.SeekPosition(), and
-// glib.IOChannel.Flush() should not be mixed with the deprecated functions
-// glib.IOChannel.Read(), glib.IOChannel.Write(), and glib.IOChannel.Seek() on
-// the same channel.
+// IOChannel: data structure representing an IO Channel. The fields should be
+// considered private and should only be accessed with the following functions.
 //
 // An instance of this type is always passed by reference.
 type IOChannel struct {
@@ -18626,28 +16524,31 @@ func (channel *IOChannel) Flags() IOFlags {
 // LineTerm: this returns the string that OChannel uses to determine where in
 // the file a line break occurs. A value of NULL indicates autodetection.
 //
+// The function takes the following parameters:
+//
+//   - length: location to return the length of the line terminator.
+//
 // The function returns the following values:
 //
-//   - length (optional): location to return the length of the line terminator.
 //   - utf8: line termination string. This value is owned by GLib and must not
 //     be freed.
-func (channel *IOChannel) LineTerm() (int, string) {
+func (channel *IOChannel) LineTerm(length *int) string {
 	var _arg0 *C.GIOChannel // out
-	var _arg1 C.gint        // in
+	var _arg1 *C.gint       // out
 	var _cret *C.gchar      // in
 
 	_arg0 = (*C.GIOChannel)(gextras.StructNative(unsafe.Pointer(channel)))
+	_arg1 = (*C.gint)(unsafe.Pointer(length))
 
-	_cret = C.g_io_channel_get_line_term(_arg0, &_arg1)
+	_cret = C.g_io_channel_get_line_term(_arg0, _arg1)
 	runtime.KeepAlive(channel)
+	runtime.KeepAlive(length)
 
-	var _length int  // out
 	var _utf8 string // out
 
-	_length = int(_arg1)
 	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
 
-	return _length, _utf8
+	return _utf8
 }
 
 // Init initializes a OChannel struct.
@@ -19309,133 +17210,8 @@ type ioFuncs struct {
 	native *C.GIOFuncs
 }
 
-// KeyFile: GKeyFile parses .ini-like config files.
-//
-// GKeyFile lets you parse, edit or create files containing groups of key-value
-// pairs, which we call "key files" for lack of a better name. Several
-// freedesktop.org specifications use key files now, e.g the Desktop Entry
-// Specification (http://freedesktop.org/Standards/desktop-entry-spec) and the
-// Icon Theme Specification (http://freedesktop.org/Standards/icon-theme-spec).
-//
-// The syntax of key files is described in detail in the Desktop Entry
-// Specification (http://freedesktop.org/Standards/desktop-entry-spec),
-// here is a quick summary: Key files consists of groups of key-value pairs,
-// interspersed with comments.
-//
-// this is just an example
-//
-// there can be comments before the first group
-//
-//	[First Group]
-//
-//	Name=Key File Example\tthis value shows\nescaping
-//
-// localized strings are stored in multiple key-value pairs
-//
-//	Welcome=Hello
-//	Welcome[de]=Hallo
-//	Welcome[fr_FR]=Bonjour
-//	Welcome[it]=Ciao
-//
-//	[Another Group]
-//
-//	Numbers=2;20;-200;0
-//
-//	Booleans=true;false;true;true
-//
-// Lines beginning with a '#' and blank lines are considered comments.
-//
-// Groups are started by a header line containing the group name enclosed in '['
-// and ']', and ended implicitly by the start of the next group or the end of
-// the file. Each key-value pair must be contained in a group.
-//
-// Key-value pairs generally have the form key=value, with the exception of
-// localized strings, which have the form key[locale]=value, with a locale
-// identifier of the form lang_COUNTRYMODIFIER where COUNTRY and MODIFIER are
-// optional. Space before and after the '=' character are ignored. Newline, tab,
-// carriage return and backslash characters in value are escaped as \n, \t, \r,
-// and \\\\, respectively. To preserve leading spaces in values, these can also
-// be escaped as \s.
-//
-// Key files can store strings (possibly with localized variants), integers,
-// booleans and lists of these. Lists are separated by a separator character,
-// typically ';' or ','. To use the list separator character in a value in a
-// list, it has to be escaped by prefixing it with a backslash.
-//
-// This syntax is obviously inspired by the .ini files commonly met on Windows,
-// but there are some important differences:
-//
-// - .ini files use the ';' character to begin comments, key files use the '#'
-// character.
-//
-// - Key files do not allow for ungrouped keys meaning only comments can precede
-// the first group.
-//
-// - Key files are always encoded in UTF-8.
-//
-// - Key and Group names are case-sensitive. For example, a group called [GROUP]
-// is a different from [group].
-//
-// - .ini files don't have a strongly typed boolean entry type, they only
-// have GetProfileInt(). In key files, only true and false (in lower case) are
-// allowed.
-//
-// Note that in contrast to the Desktop Entry Specification
-// (http://freedesktop.org/Standards/desktop-entry-spec), groups in key files
-// may contain the same key multiple times; the last entry wins. Key files may
-// also contain multiple groups with the same name; they are merged together.
-// Another difference is that keys and group names in key files are not
-// restricted to ASCII characters.
-//
-// Here is an example of loading a key file and reading a value:
-//
-//	g_autoptr(GError) error = NULL;
-//	g_autoptr(GKeyFile) key_file = g_key_file_new ();
-//
-//	if (!g_key_file_load_from_file (key_file, "key-file.ini", flags, &error))
-//	  {
-//	    if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
-//	      g_warning ("Error loading key file: s", error->message);
-//	    return;
-//	  }
-//
-//	g_autofree gchar *val = g_key_file_get_string (key_file, "Group Name", "SomeKey", &error);
-//	if (val == NULL &&
-//	    !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_KEY_NOT_FOUND))
-//	  {
-//	    g_warning ("Error finding key in key file: s", error->message);
-//	    return;
-//	  }
-//	else if (val == NULL)
-//	  {
-//	    // Fall back to a default value.
-//	    val = g_strdup ("default-value");
-//	  }
-//
-// Here is an example of creating and saving a key file:
-//
-//	g_autoptr(GKeyFile) key_file = g_key_file_new ();
-//	const gchar *val = …;
-//	g_autoptr(GError) error = NULL;
-//
-//	g_key_file_set_string (key_file, "Group Name", "SomeKey", val);
-//
-//	// Save as a file.
-//	if (!g_key_file_save_to_file (key_file, "key-file.ini", &error))
-//	  {
-//	    g_warning ("Error saving key file: s", error->message);
-//	    return;
-//	  }
-//
-//	// Or store to a GBytes for use elsewhere.
-//	gsize data_len;
-//	g_autofree guint8 *data = (guint8 *) g_key_file_to_data (key_file, &data_len, &error);
-//	if (data == NULL)
-//	  {
-//	    g_warning ("Error saving key file: s", error->message);
-//	    return;
-//	  }
-//	g_autoptr(GBytes) bytes = g_bytes_new_take (g_steal_pointer (&data), data_len);
+// KeyFile struct contains only private data and should not be accessed
+// directly.
 //
 // An instance of this type is always passed by reference.
 type KeyFile struct {
@@ -21343,9 +19119,7 @@ func NewMainContextWithFlags(flags MainContextFlags) *MainContext {
 //
 // You must be the owner of a context before you can call
 // g_main_context_prepare(), g_main_context_query(), g_main_context_check(),
-// g_main_context_dispatch(), g_main_context_release().
-//
-// Since 2.76 context can be NULL to use the global-default main context.
+// g_main_context_dispatch().
 //
 // The function returns the following values:
 //
@@ -21355,9 +19129,7 @@ func (context *MainContext) Acquire() bool {
 	var _arg0 *C.GMainContext // out
 	var _cret C.gboolean      // in
 
-	if context != nil {
-		_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
-	}
+	_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
 
 	_cret = C.g_main_context_acquire(_arg0)
 	runtime.KeepAlive(context)
@@ -21375,14 +19147,10 @@ func (context *MainContext) Acquire() bool {
 //
 // You must have successfully acquired the context with g_main_context_acquire()
 // before you may call this function.
-//
-// Since 2.76 context can be NULL to use the global-default main context.
 func (context *MainContext) Dispatch() {
 	var _arg0 *C.GMainContext // out
 
-	if context != nil {
-		_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
-	}
+	_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
 
 	C.g_main_context_dispatch(_arg0)
 	runtime.KeepAlive(context)
@@ -21494,9 +19262,7 @@ func (context *MainContext) FindSourceByUserData(userData unsafe.Pointer) *Sourc
 	var _arg1 C.gpointer      // out
 	var _cret *C.GSource      // in
 
-	if context != nil {
-		_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
-	}
+	_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
 	_arg1 = (C.gpointer)(unsafe.Pointer(userData))
 
 	_cret = C.g_main_context_find_source_by_user_data(_arg0, _arg1)
@@ -21563,9 +19329,7 @@ func (context *MainContext) IsOwner() bool {
 	var _arg0 *C.GMainContext // out
 	var _cret C.gboolean      // in
 
-	if context != nil {
-		_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
-	}
+	_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
 
 	_cret = C.g_main_context_is_owner(_arg0)
 	runtime.KeepAlive(context)
@@ -21677,9 +19441,7 @@ func (context *MainContext) Prepare() (int, bool) {
 	var _arg1 C.gint          // in
 	var _cret C.gboolean      // in
 
-	if context != nil {
-		_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
-	}
+	_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
 
 	_cret = C.g_main_context_prepare(_arg0, &_arg1)
 	runtime.KeepAlive(context)
@@ -21698,8 +19460,8 @@ func (context *MainContext) Prepare() (int, bool) {
 // PushThreadDefault acquires context and sets it as the thread-default context
 // for the current thread. This will cause certain asynchronous operations (such
 // as most [gio][gio]-based I/O) which are started in this thread to run under
-// context and deliver their results to its main loop, rather than running under
-// the global default main context in the main thread. Note that calling this
+// context and deliver their results to its main loop, rather than running
+// under the global default context in the main thread. Note that calling this
 // function changes the context returned by g_main_context_get_thread_default(),
 // not the one returned by g_main_context_default(), so it does not affect the
 // context used by functions like g_idle_add().
@@ -21742,15 +19504,10 @@ func (context *MainContext) PushThreadDefault() {
 // with g_main_context_acquire(). If the context was acquired multiple times,
 // the ownership will be released only when g_main_context_release() is called
 // as many times as it was acquired.
-//
-// You must have successfully acquired the context with g_main_context_acquire()
-// before you may call this function.
 func (context *MainContext) Release() {
 	var _arg0 *C.GMainContext // out
 
-	if context != nil {
-		_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
-	}
+	_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
 
 	C.g_main_context_release(_arg0)
 	runtime.KeepAlive(context)
@@ -21774,22 +19531,20 @@ func (context *MainContext) Release() {
 func (context *MainContext) Wakeup() {
 	var _arg0 *C.GMainContext // out
 
-	if context != nil {
-		_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
-	}
+	_arg0 = (*C.GMainContext)(gextras.StructNative(unsafe.Pointer(context)))
 
 	C.g_main_context_wakeup(_arg0)
 	runtime.KeepAlive(context)
 }
 
-// MainContextDefault returns the global-default main context. This is
+// MainContextDefault returns the global default main context. This is
 // the main context used for main loop functions when a main loop is not
 // explicitly specified, and corresponds to the "main" main loop. See also
 // g_main_context_get_thread_default().
 //
 // The function returns the following values:
 //
-//   - mainContext: global-default main context.
+//   - mainContext: global default main context.
 func MainContextDefault() *MainContext {
 	var _cret *C.GMainContext // in
 
@@ -21823,7 +19578,7 @@ func MainContextDefault() *MainContext {
 // The function returns the following values:
 //
 //   - mainContext (optional): thread-default Context, or NULL if the
-//     thread-default context is the global-default main context.
+//     thread-default context is the global default context.
 func MainContextGetThreadDefault() *MainContext {
 	var _cret *C.GMainContext // in
 
@@ -21849,7 +19604,7 @@ func MainContextGetThreadDefault() *MainContext {
 // thread, as with g_main_context_get_thread_default(), but also adds
 // a reference to it with g_main_context_ref(). In addition, unlike
 // g_main_context_get_thread_default(), if the thread-default context is the
-// global-default context, this will return that Context (with a ref added to
+// global default context, this will return that Context (with a ref added to
 // it) rather than returning NULL.
 //
 // The function returns the following values:
@@ -21875,7 +19630,7 @@ func MainContextRefThreadDefault() *MainContext {
 }
 
 // MainLoop: GMainLoop struct is an opaque data type representing the main event
-// loop of a GLib or GTK application.
+// loop of a GLib or GTK+ application.
 //
 // An instance of this type is always passed by reference.
 type MainLoop struct {
@@ -22228,42 +19983,6 @@ func (context *MarkupParseContext) Element() string {
 	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
 
 	return _utf8
-}
-
-// ElementStack retrieves the element stack from the internal state of the
-// parser.
-//
-// The returned List is a list of strings where the first item is the currently
-// open tag (as would be returned by g_markup_parse_context_get_element()) and
-// the next item is its immediate parent.
-//
-// This function is intended to be used in the start_element and end_element
-// handlers where g_markup_parse_context_get_element() would merely return the
-// name of the element that is being processed.
-//
-// The function returns the following values:
-//
-//   - sList: element stack, which must not be modified.
-func (context *MarkupParseContext) ElementStack() []string {
-	var _arg0 *C.GMarkupParseContext // out
-	var _cret *C.GSList              // in
-
-	_arg0 = (*C.GMarkupParseContext)(gextras.StructNative(unsafe.Pointer(context)))
-
-	_cret = C.g_markup_parse_context_get_element_stack(_arg0)
-	runtime.KeepAlive(context)
-
-	var _sList []string // out
-
-	_sList = make([]string, 0, gextras.SListSize(unsafe.Pointer(_cret)))
-	gextras.MoveSList(unsafe.Pointer(_cret), false, func(v unsafe.Pointer) {
-		src := (*C.gchar)(v)
-		var dst string // out
-		dst = C.GoString((*C.gchar)(unsafe.Pointer(src)))
-		_sList = append(_sList, dst)
-	})
-
-	return _sList
 }
 
 // Position retrieves the current line number and the number of the character on
@@ -23236,10 +20955,6 @@ func (node *Node) Unlink() {
 	runtime.KeepAlive(node)
 }
 
-func NodePopAllocator() {
-	C.g_node_pop_allocator()
-}
-
 // OptionEntry struct defines a single option. To have an effect,
 // they must be added to a Group with g_option_context_add_main_entries() or
 // g_option_group_add_entries().
@@ -23395,6 +21110,34 @@ func (group *OptionGroup) AddEntries(entries []OptionEntry) {
 	runtime.KeepAlive(entries)
 }
 
+// SetTranslateFunc sets the function which is used to translate user-visible
+// strings, for --help output. Different groups can use different Funcs. If func
+// is NULL, strings are not translated.
+//
+// If you are using gettext(), you only need to set the translation domain,
+// see g_option_group_set_translation_domain().
+//
+// The function takes the following parameters:
+//
+//   - fn (optional) or NULL.
+func (group *OptionGroup) SetTranslateFunc(fn TranslateFunc) {
+	var _arg0 *C.GOptionGroup  // out
+	var _arg1 C.GTranslateFunc // out
+	var _arg2 C.gpointer
+	var _arg3 C.GDestroyNotify
+
+	_arg0 = (*C.GOptionGroup)(gextras.StructNative(unsafe.Pointer(group)))
+	if fn != nil {
+		_arg1 = (*[0]byte)(C._gotk4_glib2_TranslateFunc)
+		_arg2 = C.gpointer(gbox.Assign(fn))
+		_arg3 = (C.GDestroyNotify)((*[0]byte)(C.callbackDelete))
+	}
+
+	C.g_option_group_set_translate_func(_arg0, _arg1, _arg2, _arg3)
+	runtime.KeepAlive(group)
+	runtime.KeepAlive(fn)
+}
+
 // SetTranslationDomain: convenience function to use gettext() for translating
 // user-visible strings.
 //
@@ -23414,441 +21157,8 @@ func (group *OptionGroup) SetTranslationDomain(domain string) {
 	runtime.KeepAlive(domain)
 }
 
-// PathBuf: GPathBuf is a helper type that allows you to easily build paths
-// from individual elements, using the platform specific conventions for path
-// separators.
-//
-//	g_auto (GPathBuf) path;
-//
-//	g_path_buf_init (&path);
-//
-//	g_path_buf_push (&path, "usr");
-//	g_path_buf_push (&path, "bin");
-//	g_path_buf_push (&path, "echo");
-//
-//	g_autofree char *echo = g_path_buf_to_path (&path);
-//	g_assert_cmpstr (echo, ==, "/usr/bin/echo");
-//
-// You can also load a full path and then operate on its components:
-//
-//	g_auto (GPathBuf) path;
-//
-//	g_path_buf_init_from_path (&path, "/usr/bin/echo");
-//
-//	g_path_buf_pop (&path);
-//	g_path_buf_push (&path, "sh");
-//
-//	g_autofree char *sh = g_path_buf_to_path (&path);
-//	g_assert_cmpstr (sh, ==, "/usr/bin/sh");
-//
-// An instance of this type is always passed by reference.
-type PathBuf struct {
-	*pathBuf
-}
-
-// pathBuf is the struct that's finalized.
-type pathBuf struct {
-	native *C.GPathBuf
-}
-
-// Clear clears the contents of the path buffer.
-//
-// This function should be use to free the resources in a stack-allocated
-// GPathBuf initialized using g_path_buf_init() or g_path_buf_init_from_path().
-func (buf *PathBuf) Clear() {
-	var _arg0 *C.GPathBuf // out
-
-	_arg0 = (*C.GPathBuf)(gextras.StructNative(unsafe.Pointer(buf)))
-
-	C.g_path_buf_clear(_arg0)
-	runtime.KeepAlive(buf)
-}
-
-// ClearToPath clears the contents of the path buffer and returns the built
-// path.
-//
-// This function returns NULL if the GPathBuf is empty.
-//
-// See also: g_path_buf_to_path().
-//
-// The function returns the following values:
-//
-//   - filename (optional): built path.
-func (buf *PathBuf) ClearToPath() string {
-	var _arg0 *C.GPathBuf // out
-	var _cret *C.char     // in
-
-	_arg0 = (*C.GPathBuf)(gextras.StructNative(unsafe.Pointer(buf)))
-
-	_cret = C.g_path_buf_clear_to_path(_arg0)
-	runtime.KeepAlive(buf)
-
-	var _filename string // out
-
-	if _cret != nil {
-		_filename = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-		defer C.free(unsafe.Pointer(_cret))
-	}
-
-	return _filename
-}
-
-// FreeToPath frees a GPathBuf allocated by g_path_buf_new(), and returns the
-// path inside the buffer.
-//
-// This function returns NULL if the GPathBuf is empty.
-//
-// See also: g_path_buf_to_path().
-//
-// The function returns the following values:
-//
-//   - filename (optional): path.
-func (buf *PathBuf) FreeToPath() string {
-	var _arg0 *C.GPathBuf // out
-	var _cret *C.char     // in
-
-	_arg0 = (*C.GPathBuf)(gextras.StructNative(unsafe.Pointer(buf)))
-	runtime.SetFinalizer(gextras.StructIntern(unsafe.Pointer(buf)), nil)
-
-	_cret = C.g_path_buf_free_to_path(_arg0)
-	runtime.KeepAlive(buf)
-
-	var _filename string // out
-
-	if _cret != nil {
-		_filename = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-		defer C.free(unsafe.Pointer(_cret))
-	}
-
-	return _filename
-}
-
-// Init initializes a GPathBuf instance.
-//
-// The function returns the following values:
-//
-//   - pathBuf: initialized path builder.
-func (buf *PathBuf) Init() *PathBuf {
-	var _arg0 *C.GPathBuf // out
-	var _cret *C.GPathBuf // in
-
-	_arg0 = (*C.GPathBuf)(gextras.StructNative(unsafe.Pointer(buf)))
-
-	_cret = C.g_path_buf_init(_arg0)
-	runtime.KeepAlive(buf)
-
-	var _pathBuf *PathBuf // out
-
-	_pathBuf = (*PathBuf)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-
-	return _pathBuf
-}
-
-// InitFromPath initializes a GPathBuf instance with the given path.
-//
-// The function takes the following parameters:
-//
-//   - path (optional): file system path.
-//
-// The function returns the following values:
-//
-//   - pathBuf: initialized path builder.
-func (buf *PathBuf) InitFromPath(path string) *PathBuf {
-	var _arg0 *C.GPathBuf // out
-	var _arg1 *C.char     // out
-	var _cret *C.GPathBuf // in
-
-	_arg0 = (*C.GPathBuf)(gextras.StructNative(unsafe.Pointer(buf)))
-	if path != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(path)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	_cret = C.g_path_buf_init_from_path(_arg0, _arg1)
-	runtime.KeepAlive(buf)
-	runtime.KeepAlive(path)
-
-	var _pathBuf *PathBuf // out
-
-	_pathBuf = (*PathBuf)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-
-	return _pathBuf
-}
-
-// Pop removes the last element of the path buffer.
-//
-// If there is only one element in the path buffer (for example, / on Unix-like
-// operating systems or the drive on Windows systems), it will not be removed
-// and FALSE will be returned instead.
-//
-//	GPathBuf buf, cmp;
-//
-//	g_path_buf_init_from_path (&buf, "/bin/sh");
-//
-//	g_path_buf_pop (&buf);
-//	g_path_buf_init_from_path (&cmp, "/bin");
-//	g_assert_true (g_path_buf_equal (&buf, &cmp));
-//	g_path_buf_clear (&cmp);
-//
-//	g_path_buf_pop (&buf);
-//	g_path_buf_init_from_path (&cmp, "/");
-//	g_assert_true (g_path_buf_equal (&buf, &cmp));
-//	g_path_buf_clear (&cmp);
-//
-//	g_path_buf_clear (&buf);.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the buffer was modified and FALSE otherwise.
-func (buf *PathBuf) Pop() bool {
-	var _arg0 *C.GPathBuf // out
-	var _cret C.gboolean  // in
-
-	_arg0 = (*C.GPathBuf)(gextras.StructNative(unsafe.Pointer(buf)))
-
-	_cret = C.g_path_buf_pop(_arg0)
-	runtime.KeepAlive(buf)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// Push extends the given path buffer with path.
-//
-// If path is absolute, it replaces the current path.
-//
-// If path contains a directory separator, the buffer is extended by as many
-// elements the path provides.
-//
-// On Windows, both forward slashes and backslashes are treated as directory
-// separators. On other platforms, G_DIR_SEPARATOR_S is the only directory
-// separator.
-//
-//	GPathBuf buf, cmp;
-//
-//	g_path_buf_init_from_path (&buf, "/tmp");
-//	g_path_buf_push (&buf, ".X11-unix/X0");
-//	g_path_buf_init_from_path (&cmp, "/tmp/.X11-unix/X0");
-//	g_assert_true (g_path_buf_equal (&buf, &cmp));
-//	g_path_buf_clear (&cmp);
-//
-//	g_path_buf_push (&buf, "/etc/locale.conf");
-//	g_path_buf_init_from_path (&cmp, "/etc/locale.conf");
-//	g_assert_true (g_path_buf_equal (&buf, &cmp));
-//	g_path_buf_clear (&cmp);
-//
-//	g_path_buf_clear (&buf);.
-//
-// The function takes the following parameters:
-//
-//   - path: path.
-//
-// The function returns the following values:
-//
-//   - pathBuf: same pointer to buf, for convenience.
-func (buf *PathBuf) Push(path string) *PathBuf {
-	var _arg0 *C.GPathBuf // out
-	var _arg1 *C.char     // out
-	var _cret *C.GPathBuf // in
-
-	_arg0 = (*C.GPathBuf)(gextras.StructNative(unsafe.Pointer(buf)))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(path)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_path_buf_push(_arg0, _arg1)
-	runtime.KeepAlive(buf)
-	runtime.KeepAlive(path)
-
-	var _pathBuf *PathBuf // out
-
-	_pathBuf = (*PathBuf)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-
-	return _pathBuf
-}
-
-// SetExtension adds an extension to the file name in the path buffer.
-//
-// If extension is NULL, the extension will be unset.
-//
-// If the path buffer does not have a file name set, this function returns FALSE
-// and leaves the path buffer unmodified.
-//
-// The function takes the following parameters:
-//
-//   - extension (optional): file extension.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the extension was replaced, and FALSE otherwise.
-func (buf *PathBuf) SetExtension(extension string) bool {
-	var _arg0 *C.GPathBuf // out
-	var _arg1 *C.char     // out
-	var _cret C.gboolean  // in
-
-	_arg0 = (*C.GPathBuf)(gextras.StructNative(unsafe.Pointer(buf)))
-	if extension != "" {
-		_arg1 = (*C.char)(unsafe.Pointer(C.CString(extension)))
-		defer C.free(unsafe.Pointer(_arg1))
-	}
-
-	_cret = C.g_path_buf_set_extension(_arg0, _arg1)
-	runtime.KeepAlive(buf)
-	runtime.KeepAlive(extension)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// SetFilename sets the file name of the path.
-//
-// If the path buffer is empty, the filename is left unset and this function
-// returns FALSE.
-//
-// If the path buffer only contains the root element (on Unix-like operating
-// systems) or the drive (on Windows), this is the equivalent of pushing the new
-// file_name.
-//
-// If the path buffer contains a path, this is the equivalent of popping the
-// path buffer and pushing file_name, creating a sibling of the original path.
-//
-//	GPathBuf buf, cmp;
-//
-//	g_path_buf_init_from_path (&buf, "/");
-//
-//	g_path_buf_set_filename (&buf, "bar");
-//	g_path_buf_init_from_path (&cmp, "/bar");
-//	g_assert_true (g_path_buf_equal (&buf, &cmp));
-//	g_path_buf_clear (&cmp);
-//
-//	g_path_buf_set_filename (&buf, "baz.txt");
-//	g_path_buf_init_from_path (&cmp, "/baz.txt");
-//	g_assert_true (g_path_buf_equal (&buf, &cmp);
-//	g_path_buf_clear (&cmp);
-//
-//	g_path_buf_clear (&buf);.
-//
-// The function takes the following parameters:
-//
-//   - fileName: file name in the path.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the file name was replaced, and FALSE otherwise.
-func (buf *PathBuf) SetFilename(fileName string) bool {
-	var _arg0 *C.GPathBuf // out
-	var _arg1 *C.char     // out
-	var _cret C.gboolean  // in
-
-	_arg0 = (*C.GPathBuf)(gextras.StructNative(unsafe.Pointer(buf)))
-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(fileName)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_path_buf_set_filename(_arg0, _arg1)
-	runtime.KeepAlive(buf)
-	runtime.KeepAlive(fileName)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// ToPath retrieves the built path from the path buffer.
-//
-// On Windows, the result contains backslashes as directory separators, even if
-// forward slashes were used in input.
-//
-// If the path buffer is empty, this function returns NULL.
-//
-// The function returns the following values:
-//
-//   - filename (optional): path.
-func (buf *PathBuf) ToPath() string {
-	var _arg0 *C.GPathBuf // out
-	var _cret *C.char     // in
-
-	_arg0 = (*C.GPathBuf)(gextras.StructNative(unsafe.Pointer(buf)))
-
-	_cret = C.g_path_buf_to_path(_arg0)
-	runtime.KeepAlive(buf)
-
-	var _filename string // out
-
-	if _cret != nil {
-		_filename = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-		defer C.free(unsafe.Pointer(_cret))
-	}
-
-	return _filename
-}
-
-// PathBufEqual compares two path buffers for equality and returns TRUE if they
-// are equal.
-//
-// The path inside the paths buffers are not going to be normalized,
-// so X/Y/Z/A/.., X/./Y/Z and X/Y/Z are not going to be considered equal.
-//
-// This function can be passed to g_hash_table_new() as the key_equal_func
-// parameter.
-//
-// The function takes the following parameters:
-//
-//   - v1: path buffer to compare.
-//   - v2: path buffer to compare.
-//
-// The function returns the following values:
-//
-//   - ok: TRUE if the two path buffers are equal, and FALSE otherwise.
-func PathBufEqual(v1, v2 unsafe.Pointer) bool {
-	var _arg1 C.gconstpointer // out
-	var _arg2 C.gconstpointer // out
-	var _cret C.gboolean      // in
-
-	_arg1 = (C.gconstpointer)(unsafe.Pointer(v1))
-	_arg2 = (C.gconstpointer)(unsafe.Pointer(v2))
-
-	_cret = C.g_path_buf_equal(_arg1, _arg2)
-	runtime.KeepAlive(v1)
-	runtime.KeepAlive(v2)
-
-	var _ok bool // out
-
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _ok
-}
-
-// PatternSpec: GPatternSpec struct is the 'compiled' form of a glob-style
-// pattern.
-//
-// The glib.PatternMatchSimple() and glib.PatternSpec.Match() functions match
-// a string against a pattern containing '*' and '?' wildcards with similar
-// semantics as the standard glob() function: '*' matches an arbitrary, possibly
-// empty, string, '?' matches an arbitrary character.
-//
-// Note that in contrast to glob(), the '/' character can be matched by the
-// wildcards, there are no '[...]' character ranges and '*' and '?' can not be
-// escaped to include them literally in a pattern.
-//
-// When multiple strings must be matched against the same pattern, it is better
-// to compile the pattern to a glib.PatternSpec using glib.PatternSpec.New and
-// use glib.PatternSpec.MatchString() instead of glib.PatternMatchSimple().
-// This avoids the overhead of repeated pattern compilation.
+// PatternSpec struct is the 'compiled' form of a pattern. This structure is
+// opaque and its fields cannot be accessed directly.
 //
 // An instance of this type is always passed by reference.
 type PatternSpec struct {
@@ -24096,30 +21406,6 @@ func (queue *Queue) Clear() {
 	runtime.KeepAlive(queue)
 }
 
-// ForEach calls func for each element in the queue passing user_data to the
-// function.
-//
-// It is safe for func to remove the element from queue, but it must not modify
-// any part of the queue after that element.
-//
-// The function takes the following parameters:
-//
-//   - fn: function to call for each element's data.
-func (queue *Queue) ForEach(fn Func) {
-	var _arg0 *C.GQueue // out
-	var _arg1 C.GFunc   // out
-	var _arg2 C.gpointer
-
-	_arg0 = (*C.GQueue)(gextras.StructNative(unsafe.Pointer(queue)))
-	_arg1 = (*[0]byte)(C._gotk4_glib2_Func)
-	_arg2 = C.gpointer(gbox.Assign(fn))
-	defer gbox.Delete(uintptr(_arg2))
-
-	C.g_queue_foreach(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(queue)
-	runtime.KeepAlive(fn)
-}
-
 // Length returns the number of items in queue.
 //
 // The function returns the following values:
@@ -24180,34 +21466,6 @@ func (queue *Queue) Init() {
 
 	C.g_queue_init(_arg0)
 	runtime.KeepAlive(queue)
-}
-
-// InsertSorted inserts data into queue using func to determine the new
-// position.
-//
-// The function takes the following parameters:
-//
-//   - data (optional) to insert.
-//   - fn used to compare elements in the queue. It is called with two elements
-//     of the queue and user_data. It should return 0 if the elements are equal,
-//     a negative value if the first element comes before the second, and a
-//     positive value if the second element comes before the first.
-func (queue *Queue) InsertSorted(data unsafe.Pointer, fn CompareDataFunc) {
-	var _arg0 *C.GQueue          // out
-	var _arg1 C.gpointer         // out
-	var _arg2 C.GCompareDataFunc // out
-	var _arg3 C.gpointer
-
-	_arg0 = (*C.GQueue)(gextras.StructNative(unsafe.Pointer(queue)))
-	_arg1 = (C.gpointer)(unsafe.Pointer(data))
-	_arg2 = (*[0]byte)(C._gotk4_glib2_CompareDataFunc)
-	_arg3 = C.gpointer(gbox.Assign(fn))
-	defer gbox.Delete(uintptr(_arg3))
-
-	C.g_queue_insert_sorted(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(queue)
-	runtime.KeepAlive(data)
-	runtime.KeepAlive(fn)
 }
 
 // IsEmpty returns TRUE if the queue is empty.
@@ -24502,300 +21760,8 @@ func (queue *Queue) Reverse() {
 	runtime.KeepAlive(queue)
 }
 
-// Sort sorts queue using compare_func.
-//
-// The function takes the following parameters:
-//
-//   - compareFunc used to sort queue. This function is passed two elements of
-//     the queue and should return 0 if they are equal, a negative value if the
-//     first comes before the second, and a positive value if the second comes
-//     before the first.
-func (queue *Queue) Sort(compareFunc CompareDataFunc) {
-	var _arg0 *C.GQueue          // out
-	var _arg1 C.GCompareDataFunc // out
-	var _arg2 C.gpointer
-
-	_arg0 = (*C.GQueue)(gextras.StructNative(unsafe.Pointer(queue)))
-	_arg1 = (*[0]byte)(C._gotk4_glib2_CompareDataFunc)
-	_arg2 = C.gpointer(gbox.Assign(compareFunc))
-	defer gbox.Delete(uintptr(_arg2))
-
-	C.g_queue_sort(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(queue)
-	runtime.KeepAlive(compareFunc)
-}
-
-// Rand struct is an opaque data structure. It should only be accessed through
-// the g_rand_* functions.
-//
-// An instance of this type is always passed by reference.
-type Rand struct {
-	*rand
-}
-
-// rand is the struct that's finalized.
-type rand struct {
-	native *C.GRand
-}
-
-func marshalRand(p uintptr) (interface{}, error) {
-	b := coreglib.ValueFromNative(unsafe.Pointer(p)).Boxed()
-	return &Rand{&rand{(*C.GRand)(b)}}, nil
-}
-
-// NewRand constructs a struct Rand.
-func NewRand() *Rand {
-	var _cret *C.GRand // in
-
-	_cret = C.g_rand_new()
-
-	var _rand *Rand // out
-
-	_rand = (*Rand)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_rand)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_rand_free((*C.GRand)(intern.C))
-		},
-	)
-
-	return _rand
-}
-
-// NewRandWithSeed constructs a struct Rand.
-func NewRandWithSeed(seed uint32) *Rand {
-	var _arg1 C.guint32 // out
-	var _cret *C.GRand  // in
-
-	_arg1 = C.guint32(seed)
-
-	_cret = C.g_rand_new_with_seed(_arg1)
-	runtime.KeepAlive(seed)
-
-	var _rand *Rand // out
-
-	_rand = (*Rand)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_rand)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_rand_free((*C.GRand)(intern.C))
-		},
-	)
-
-	return _rand
-}
-
-// NewRandWithSeedArray constructs a struct Rand.
-func NewRandWithSeedArray(seed *uint32, seedLength uint) *Rand {
-	var _arg1 *C.guint32 // out
-	var _arg2 C.guint    // out
-	var _cret *C.GRand   // in
-
-	_arg1 = (*C.guint32)(unsafe.Pointer(seed))
-	_arg2 = C.guint(seedLength)
-
-	_cret = C.g_rand_new_with_seed_array(_arg1, _arg2)
-	runtime.KeepAlive(seed)
-	runtime.KeepAlive(seedLength)
-
-	var _rand *Rand // out
-
-	_rand = (*Rand)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_rand)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_rand_free((*C.GRand)(intern.C))
-		},
-	)
-
-	return _rand
-}
-
-// Copy copies a #GRand into a new one with the same exact state as before.
-// This way you can take a snapshot of the random number generator for replaying
-// later.
-//
-// The function returns the following values:
-//
-//   - rand: new #GRand.
-func (rand_ *Rand) Copy() *Rand {
-	var _arg0 *C.GRand // out
-	var _cret *C.GRand // in
-
-	_arg0 = (*C.GRand)(gextras.StructNative(unsafe.Pointer(rand_)))
-
-	_cret = C.g_rand_copy(_arg0)
-	runtime.KeepAlive(rand_)
-
-	var _rand *Rand // out
-
-	_rand = (*Rand)(gextras.NewStructNative(unsafe.Pointer(_cret)))
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_rand)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_rand_free((*C.GRand)(intern.C))
-		},
-	)
-
-	return _rand
-}
-
-// Double returns the next random #gdouble from rand_ equally distributed over
-// the range [0..1).
-//
-// The function returns the following values:
-//
-//   - gdouble: random number.
-func (rand_ *Rand) Double() float64 {
-	var _arg0 *C.GRand  // out
-	var _cret C.gdouble // in
-
-	_arg0 = (*C.GRand)(gextras.StructNative(unsafe.Pointer(rand_)))
-
-	_cret = C.g_rand_double(_arg0)
-	runtime.KeepAlive(rand_)
-
-	var _gdouble float64 // out
-
-	_gdouble = float64(_cret)
-
-	return _gdouble
-}
-
-// DoubleRange returns the next random #gdouble from rand_ equally distributed
-// over the range [begin..end).
-//
-// The function takes the following parameters:
-//
-//   - begin: lower closed bound of the interval.
-//   - end: upper open bound of the interval.
-//
-// The function returns the following values:
-//
-//   - gdouble: random number.
-func (rand_ *Rand) DoubleRange(begin float64, end float64) float64 {
-	var _arg0 *C.GRand  // out
-	var _arg1 C.gdouble // out
-	var _arg2 C.gdouble // out
-	var _cret C.gdouble // in
-
-	_arg0 = (*C.GRand)(gextras.StructNative(unsafe.Pointer(rand_)))
-	_arg1 = C.gdouble(begin)
-	_arg2 = C.gdouble(end)
-
-	_cret = C.g_rand_double_range(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(rand_)
-	runtime.KeepAlive(begin)
-	runtime.KeepAlive(end)
-
-	var _gdouble float64 // out
-
-	_gdouble = float64(_cret)
-
-	return _gdouble
-}
-
-// Int returns the next random #guint32 from rand_ equally distributed over the
-// range [0..2^32-1].
-//
-// The function returns the following values:
-//
-//   - guint32: random number.
-func (rand_ *Rand) Int() uint32 {
-	var _arg0 *C.GRand  // out
-	var _cret C.guint32 // in
-
-	_arg0 = (*C.GRand)(gextras.StructNative(unsafe.Pointer(rand_)))
-
-	_cret = C.g_rand_int(_arg0)
-	runtime.KeepAlive(rand_)
-
-	var _guint32 uint32 // out
-
-	_guint32 = uint32(_cret)
-
-	return _guint32
-}
-
-// IntRange returns the next random #gint32 from rand_ equally distributed over
-// the range [begin..end-1].
-//
-// The function takes the following parameters:
-//
-//   - begin: lower closed bound of the interval.
-//   - end: upper open bound of the interval.
-//
-// The function returns the following values:
-//
-//   - gint32: random number.
-func (rand_ *Rand) IntRange(begin int32, end int32) int32 {
-	var _arg0 *C.GRand // out
-	var _arg1 C.gint32 // out
-	var _arg2 C.gint32 // out
-	var _cret C.gint32 // in
-
-	_arg0 = (*C.GRand)(gextras.StructNative(unsafe.Pointer(rand_)))
-	_arg1 = C.gint32(begin)
-	_arg2 = C.gint32(end)
-
-	_cret = C.g_rand_int_range(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(rand_)
-	runtime.KeepAlive(begin)
-	runtime.KeepAlive(end)
-
-	var _gint32 int32 // out
-
-	_gint32 = int32(_cret)
-
-	return _gint32
-}
-
-// SetSeed sets the seed for the random number generator #GRand to seed.
-//
-// The function takes the following parameters:
-//
-//   - seed: value to reinitialize the random number generator.
-func (rand_ *Rand) SetSeed(seed uint32) {
-	var _arg0 *C.GRand  // out
-	var _arg1 C.guint32 // out
-
-	_arg0 = (*C.GRand)(gextras.StructNative(unsafe.Pointer(rand_)))
-	_arg1 = C.guint32(seed)
-
-	C.g_rand_set_seed(_arg0, _arg1)
-	runtime.KeepAlive(rand_)
-	runtime.KeepAlive(seed)
-}
-
-// SetSeedArray initializes the random number generator by an array of longs.
-// Array can be of arbitrary size, though only the first 624 values are taken.
-// This function is useful if you have many low entropy seeds, or if you require
-// more then 32 bits of actual entropy for your application.
-//
-// The function takes the following parameters:
-//
-//   - seed: array to initialize with.
-//   - seedLength: length of array.
-func (rand_ *Rand) SetSeedArray(seed *uint32, seedLength uint) {
-	var _arg0 *C.GRand   // out
-	var _arg1 *C.guint32 // out
-	var _arg2 C.guint    // out
-
-	_arg0 = (*C.GRand)(gextras.StructNative(unsafe.Pointer(rand_)))
-	_arg1 = (*C.guint32)(unsafe.Pointer(seed))
-	_arg2 = C.guint(seedLength)
-
-	C.g_rand_set_seed_array(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(rand_)
-	runtime.KeepAlive(seed)
-	runtime.KeepAlive(seedLength)
-}
-
-// Regex: GRegex is the "compiled" form of a regular expression pattern.
-//
-// GRegex implements regular expression pattern matching using syntax and
-// semantics similar to Perl regular expression. See the PCRE documentation
-// (man:pcrepattern(3)) for the syntax definition.
+// Regex: g_regex_*() functions implement regular expression pattern matching
+// using syntax and semantics similar to Perl regular expression.
 //
 // Some functions accept a start_position argument, setting it differs from just
 // passing over a shortened string and setting G_REGEX_MATCH_NOTBOL in the case
@@ -24835,9 +21801,21 @@ func (rand_ *Rand) SetSeedArray(seed *uint32, seedLength uint) {
 // is set, and an unescaped "#" outside a character class is encountered.
 // This indicates a comment that lasts until after the next newline.
 //
-// Creating and manipulating the same GRegex structure from different threads is
-// not a problem as GRegex does not modify its internal state between creation
-// and destruction, on the other hand GMatchInfo is not threadsafe.
+// When setting the G_REGEX_JAVASCRIPT_COMPAT flag, pattern syntax and pattern
+// matching is changed to be compatible with the way that regular expressions
+// work in JavaScript. More precisely, a lonely ']' character in the pattern is
+// a syntax error; the '\x' escape only allows 0 to 2 hexadecimal digits, and
+// you must use the '\u' escape sequence with 4 hex digits to specify a unicode
+// codepoint instead of '\x' or 'x{....}'. If '\x' or '\u' are not followed
+// by the specified number of hex digits, they match 'x' and 'u' literally;
+// also '\U' always matches 'U' instead of being an error in the pattern.
+// Finally, pattern matching is modified so that back references to an unset
+// subpattern group produces a match with the empty string instead of an error.
+// See pcreapi(3) for more information.
+//
+// Creating and manipulating the same #GRegex structure from different threads
+// is not a problem as #GRegex does not modify its internal state between
+// creation and destruction, on the other hand Info is not threadsafe.
 //
 // The regular expressions low-level functionalities are obtained through the
 // excellent PCRE (http://www.pcre.org/) library written by Philip Hazel.
@@ -25372,41 +22350,6 @@ func RegexEscapeNUL(str string) string {
 	return _utf8
 }
 
-// RegexEscapeString escapes the special characters used for regular expressions
-// in string, for instance "a.b*c" becomes "a\.b\*c". This function is useful to
-// dynamically generate regular expressions.
-//
-// string can contain nul characters that are replaced with "\0", in this case
-// remember to specify the correct length of string in length.
-//
-// The function takes the following parameters:
-//
-//   - str: string to escape.
-//
-// The function returns the following values:
-//
-//   - utf8: newly-allocated escaped string.
-func RegexEscapeString(str string) string {
-	var _arg1 *C.gchar // out
-	var _arg2 C.gint
-	var _cret *C.gchar // in
-
-	_arg2 = (C.gint)(len(str))
-	_arg1 = (*C.gchar)(C.calloc(C.size_t((len(str) + 1)), C.size_t(C.sizeof_gchar)))
-	copy(unsafe.Slice((*byte)(unsafe.Pointer(_arg1)), len(str)), str)
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.g_regex_escape_string(_arg1, _arg2)
-	runtime.KeepAlive(str)
-
-	var _utf8 string // out
-
-	_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
-	defer C.free(unsafe.Pointer(_cret))
-
-	return _utf8
-}
-
 // RegexMatchSimple scans for a match in string for pattern.
 //
 // This function is equivalent to g_regex_match() but it does not require to
@@ -25533,7 +22476,7 @@ func RegexSplitSimple(pattern, str string, compileOptions RegexCompileFlags, mat
 	return _utf8s
 }
 
-// Scanner: GScanner provides a general-purpose lexical scanner.
+// Scanner: data structure representing a lexical scanner.
 //
 // You should set input_name after creating the scanner, since it is used by
 // the default message handler when displaying warnings and errors. If you are
@@ -25803,32 +22746,6 @@ func (scanner *Scanner) ScopeAddSymbol(scopeId uint, symbol string, value unsafe
 	runtime.KeepAlive(scopeId)
 	runtime.KeepAlive(symbol)
 	runtime.KeepAlive(value)
-}
-
-// ScopeForEachSymbol calls the given function for each of the symbol/value
-// pairs in the given scope of the #GScanner. The function is passed the symbol
-// and value of each pair, and the given user_data parameter.
-//
-// The function takes the following parameters:
-//
-//   - scopeId: scope id.
-//   - fn: function to call for each symbol/value pair.
-func (scanner *Scanner) ScopeForEachSymbol(scopeId uint, fn HFunc) {
-	var _arg0 *C.GScanner // out
-	var _arg1 C.guint     // out
-	var _arg2 C.GHFunc    // out
-	var _arg3 C.gpointer
-
-	_arg0 = (*C.GScanner)(gextras.StructNative(unsafe.Pointer(scanner)))
-	_arg1 = C.guint(scopeId)
-	_arg2 = (*[0]byte)(C._gotk4_glib2_HFunc)
-	_arg3 = C.gpointer(gbox.Assign(fn))
-	defer gbox.Delete(uintptr(_arg3))
-
-	C.g_scanner_scope_foreach_symbol(_arg0, _arg1, _arg2, _arg3)
-	runtime.KeepAlive(scanner)
-	runtime.KeepAlive(scopeId)
-	runtime.KeepAlive(fn)
 }
 
 // ScopeLookupSymbol looks up a symbol in a scope and return its value. If the
@@ -26116,8 +23033,7 @@ func (source *Source) AddChildSource(childSource *Source) {
 //
 // The function takes the following parameters:
 //
-//   - context (optional) (if NULL, the global-default main context will be
-//     used).
+//   - context (optional) (if NULL, the default context will be used).
 //
 // The function returns the following values:
 //
@@ -26323,8 +23239,8 @@ func (source *Source) Priority() int {
 // ReadyTime gets the "ready time" of source, as set by
 // g_source_set_ready_time().
 //
-// Any time before or equal to the current monotonic time (including 0) is an
-// indication that the source will fire immediately.
+// Any time before the current monotonic time (including 0) is an indication
+// that the source will fire immediately.
 //
 // The function returns the following values:
 //
@@ -26553,7 +23469,7 @@ func (source *Source) SetFuncs(funcs *SourceFuncs) {
 // defaults to LL.
 //
 // The source name should describe in a human-readable way what the source does.
-// For example, "X11 event queue" or "GTK repaint idle handler" or whatever it
+// For example, "X11 event queue" or "GTK+ repaint idle handler" or whatever it
 // is.
 //
 // It is permitted to call this function multiple times, but is not recommended
@@ -26997,31 +23913,7 @@ func TimeValFromISO8601(isoDate string) (*TimeVal, bool) {
 	return _time_, _ok
 }
 
-// TimeZone: GTimeZone represents a time zone, at no particular point in time.
-//
-// The GTimeZone struct is refcounted and immutable.
-//
-// Each time zone has an identifier (for example, ‘Europe/London’) which
-// is platform dependent. See glib.TimeZone.New for information on the
-// identifier formats. The identifier of a time zone can be retrieved using
-// glib.TimeZone.GetIdentifier().
-//
-// A time zone contains a number of intervals. Each interval has an abbreviation
-// to describe it (for example, ‘PDT’), an offset to UTC and a flag indicating
-// if the daylight savings time is in effect during that interval. A time
-// zone always has at least one interval — interval 0. Note that interval
-// abbreviations are not the same as time zone identifiers (apart from ‘UTC’),
-// and cannot be passed to glib.TimeZone.New.
-//
-// Every UTC time is contained within exactly one interval, but a given
-// local time may be contained within zero, one or two intervals (due to
-// incontinuities associated with daylight savings time).
-//
-// An interval may refer to a specific period of time (eg: the duration of
-// daylight savings time during 2010) or it may refer to many periods of time
-// that share the same properties (eg: all periods of daylight savings time). It
-// is also possible (usually for political reasons) that some properties (like
-// the abbreviation) change between intervals without other properties changing.
+// TimeZone is an opaque structure whose members cannot be accessed directly.
 //
 // An instance of this type is always passed by reference.
 type TimeZone struct {
@@ -27151,6 +24043,51 @@ func NewTimeZoneUTC() *TimeZone {
 	)
 
 	return _timeZone
+}
+
+// AdjustTime finds an interval within tz that corresponds to the given time_,
+// possibly adjusting time_ if required to fit into an interval. The meaning of
+// time_ depends on type.
+//
+// This function is similar to g_time_zone_find_interval(), with the difference
+// that it always succeeds (by making the adjustments described below).
+//
+// In any of the cases where g_time_zone_find_interval() succeeds then this
+// function returns the same value, without modifying time_.
+//
+// This function may, however, modify time_ in order to deal with non-existent
+// times. If the non-existent local time_ of 02:30 were requested on March 14th
+// 2010 in Toronto then this function would adjust time_ to be 03:00 and return
+// the interval containing the adjusted time.
+//
+// The function takes the following parameters:
+//
+//   - typ of time_.
+//   - time_: pointer to a number of seconds since January 1, 1970.
+//
+// The function returns the following values:
+//
+//   - gint: interval containing time_, never -1.
+func (tz *TimeZone) AdjustTime(typ TimeType, time_ *int64) int {
+	var _arg0 *C.GTimeZone // out
+	var _arg1 C.GTimeType  // out
+	var _arg2 *C.gint64    // out
+	var _cret C.gint       // in
+
+	_arg0 = (*C.GTimeZone)(gextras.StructNative(unsafe.Pointer(tz)))
+	_arg1 = C.GTimeType(typ)
+	_arg2 = (*C.gint64)(unsafe.Pointer(time_))
+
+	_cret = C.g_time_zone_adjust_time(_arg0, _arg1, _arg2)
+	runtime.KeepAlive(tz)
+	runtime.KeepAlive(typ)
+	runtime.KeepAlive(time_)
+
+	var _gint int // out
+
+	_gint = int(_cret)
+
+	return _gint
 }
 
 // FindInterval finds an interval within tz that corresponds to the given time_.
@@ -27482,11 +24419,7 @@ func (tree *Tree) LookupExtended(lookupKey unsafe.Pointer) (origKey unsafe.Point
 //
 // The function returns the following values:
 //
-//   - gint: number of nodes in tree
-//
-//     The node counter value type is really a #guint, but it is returned as a
-//     #gint due to backward compatibility issues (can be cast back to #guint to
-//     support its full range of values).
+//   - gint: number of nodes in tree.
 func (tree *Tree) Nnodes() int {
 	var _arg0 *C.GTree // out
 	var _cret C.gint   // in
@@ -27609,157 +24542,17 @@ func (tree *Tree) Steal(key unsafe.Pointer) bool {
 	return _ok
 }
 
-// Tuples struct is used to return records (or tuples) from the #GRelation
-// by g_relation_select(). It only contains one public member - the number
-// of records that matched. To access the matched records, you must use
-// g_tuples_index().
-//
-// Deprecated: Rarely used API.
-//
-// An instance of this type is always passed by reference.
-type Tuples struct {
-	*tuples
-}
-
-// tuples is the struct that's finalized.
-type tuples struct {
-	native *C.GTuples
-}
-
-// NewTuples creates a new Tuples instance from the given
-// fields. Beware that this function allocates on the Go heap; be careful
-// when using it!
-func NewTuples(len uint) Tuples {
-	var f0 C.guint // out
-	f0 = C.guint(len)
-
-	v := C.GTuples{
-		len: f0,
-	}
-
-	return *(*Tuples)(gextras.NewStructNative(unsafe.Pointer(&v)))
-}
-
-// Len: number of records that matched.
-func (t *Tuples) Len() uint {
-	valptr := &t.native.len
-	var _v uint // out
-	_v = uint(*valptr)
-	return _v
-}
-
-// Len: number of records that matched.
-func (t *Tuples) SetLen(len uint) {
-	valptr := &t.native.len
-	*valptr = C.guint(len)
-}
-
-// Destroy frees the records which were returned by g_relation_select().
-// This should always be called after g_relation_select() when you are finished
-// with the records. The records are not removed from the #GRelation.
-//
-// Deprecated: Rarely used API.
-func (tuples *Tuples) Destroy() {
-	var _arg0 *C.GTuples // out
-
-	_arg0 = (*C.GTuples)(gextras.StructNative(unsafe.Pointer(tuples)))
-
-	C.g_tuples_destroy(_arg0)
-	runtime.KeepAlive(tuples)
-}
-
-// Index gets a field from the records returned by g_relation_select().
-// It returns the given field of the record at the given index. The returned
-// value should not be changed.
-//
-// Deprecated: Rarely used API.
-//
-// The function takes the following parameters:
-//
-//   - index_: index of the record.
-//   - field to return.
-//
-// The function returns the following values:
-//
-//   - gpointer (optional): field of the record.
-func (tuples *Tuples) Index(index_ int, field int) unsafe.Pointer {
-	var _arg0 *C.GTuples // out
-	var _arg1 C.gint     // out
-	var _arg2 C.gint     // out
-	var _cret C.gpointer // in
-
-	_arg0 = (*C.GTuples)(gextras.StructNative(unsafe.Pointer(tuples)))
-	_arg1 = C.gint(index_)
-	_arg2 = C.gint(field)
-
-	_cret = C.g_tuples_index(_arg0, _arg1, _arg2)
-	runtime.KeepAlive(tuples)
-	runtime.KeepAlive(index_)
-	runtime.KeepAlive(field)
-
-	var _gpointer unsafe.Pointer // out
-
-	_gpointer = (unsafe.Pointer)(unsafe.Pointer(_cret))
-
-	return _gpointer
-}
-
-// URI: GUri type and related functions can be used to parse URIs into their
+// URI type and related functions can be used to parse URIs into their
 // components, and build valid URIs from individual components.
 //
-// Since GUri only represents absolute URIs, all GUris will have a URI scheme,
-// so glib.URI.GetScheme() will always return a non-NULL answer. Likewise,
-// by definition, all URIs have a path component, so glib.URI.GetPath() will
-// always return a non-NULL string (which may be empty).
-//
-// If the URI string has an ‘authority’ component
-// (https://tools.ietf.org/html/rfc3986#section-3) (that is, if the scheme is
-// followed by :// rather than just :), then the GUri will contain a hostname,
-// and possibly a port and ‘userinfo’. Additionally, depending on how the GUri
-// was constructed/parsed (for example, using the G_URI_FLAGS_HAS_PASSWORD and
-// G_URI_FLAGS_HAS_AUTH_PARAMS flags), the userinfo may be split out into a
-// username, password, and additional authorization-related parameters.
-//
-// Normally, the components of a GUri will have all %-encoded characters
-// decoded. However, if you construct/parse a GUri with G_URI_FLAGS_ENCODED,
-// then the %-encoding will be preserved instead in the userinfo,
-// path, and query fields (and in the host field if also created with
-// G_URI_FLAGS_NON_DNS). In particular, this is necessary if the URI may contain
-// binary data or non-UTF-8 text, or if decoding the components might change the
-// interpretation of the URI.
-//
-// For example, with the encoded flag:
-//
-//	g_autoptr(GUri) uri = g_uri_parse ("http://host/path?query=http3A2F2Fhost2Fpath3Fparam3Dvalue", G_URI_FLAGS_ENCODED, &err);
-//	g_assert_cmpstr (g_uri_get_query (uri), ==, "query=http3A2F2Fhost2Fpath3Fparam3Dvalue");
-//
-// While the default %-decoding behaviour would give:
-//
-//	g_autoptr(GUri) uri = g_uri_parse ("http://host/path?query=http3A2F2Fhost2Fpath3Fparam3Dvalue", G_URI_FLAGS_NONE, &err);
-//	g_assert_cmpstr (g_uri_get_query (uri), ==, "query=http://host/path?param=value");
-//
-// During decoding, if an invalid UTF-8 string is encountered, parsing will fail
-// with an error indicating the bad string location:
-//
-//	g_autoptr(GUri) uri = g_uri_parse ("http://host/path?query=http3A2F2Fhost2Fpath3Fbad3D00alue", G_URI_FLAGS_NONE, &err);
-//	g_assert_error (err, G_URI_ERROR, G_URI_ERROR_BAD_QUERY);
-//
-// You should pass G_URI_FLAGS_ENCODED or G_URI_FLAGS_ENCODED_QUERY if you need
-// to handle that case manually. In particular, if the query string contains =
-// characters that are %-encoded, you should let glib.URI().ParseParams do the
-// decoding once of the query.
-//
-// GUri is immutable once constructed, and can safely be accessed from multiple
-// threads. Its reference counting is atomic.
-//
-// Note that the scope of GUri is to help manipulate URIs in various
-// applications, following RFC 3986 (https://tools.ietf.org/html/rfc3986).
+// Note that #GUri scope is to help manipulate URIs in various applications,
+// following RFC 3986 (https://tools.ietf.org/html/rfc3986).
 // In particular, it doesn't intend to cover web browser needs,
-// and doesn’t implement the WHATWG URL (https://url.spec.whatwg.org/)
+// and doesn't implement the WHATWG URL (https://url.spec.whatwg.org/)
 // standard. No APIs are provided to help prevent homograph attacks
-// (https://en.wikipedia.org/wiki/IDN_homograph_attack), so GUri is not suitable
-// for formatting URIs for display to the user for making security-sensitive
-// decisions.
+// (https://en.wikipedia.org/wiki/IDN_homograph_attack), so #GUri is
+// not suitable for formatting URIs for display to the user for making
+// security-sensitive decisions.
 //
 // # Relative and absolute URIs
 //
@@ -27781,75 +24574,74 @@ func (tuples *Tuples) Index(index_ int, field int) unsafe.Pointer {
 //
 // Absolute URIs have a scheme specified. Any other components of the URI which
 // are missing are specified as explicitly unset in the URI, rather than being
-// resolved relative to a base URI using glib.URI.ParseRelative().
+// resolved relative to a base URI using g_uri_parse_relative().
 //
 // For example, a valid absolute URI is file:///home/bob or
 // https://search.com?query=string.
 //
-// A GUri instance is always an absolute URI. A string may be an absolute URI
+// A #GUri instance is always an absolute URI. A string may be an absolute URI
 // or a relative reference; see the documentation for individual functions as to
 // what forms they accept.
 //
 // # Parsing URIs
 //
-// The most minimalist APIs for parsing URIs are glib.URI().Split and
-// glib.URI().SplitWithUser. These split a URI into its component parts,
-// and return the parts; the difference between the two is that glib.URI().Split
-// treats the ‘userinfo’ component of the URI as a single element, while
-// glib.URI().SplitWithUser can (depending on the glib.URIFlags you pass)
-// treat it as containing a username, password, and authentication parameters.
-// Alternatively, glib.URI().SplitNetwork can be used when you are only
-// interested in the components that are needed to initiate a network connection
-// to the service (scheme, host, and port).
+// The most minimalist APIs for parsing URIs are g_uri_split() and
+// g_uri_split_with_user(). These split a URI into its component parts,
+// and return the parts; the difference between the two is that g_uri_split()
+// treats the ‘userinfo’ component of the URI as a single element,
+// while g_uri_split_with_user() can (depending on the Flags you pass) treat
+// it as containing a username, password, and authentication parameters.
+// Alternatively, g_uri_split_network() can be used when you are only interested
+// in the components that are needed to initiate a network connection to the
+// service (scheme, host, and port).
 //
-// glib.URI().Parse is similar to glib.URI().Split, but instead of returning
-// individual strings, it returns a GUri structure (and it requires that the URI
-// be an absolute URI).
+// g_uri_parse() is similar to g_uri_split(), but instead of returning
+// individual strings, it returns a #GUri structure (and it requires that the
+// URI be an absolute URI).
 //
-// glib.URI().ResolveRelative and glib.URI.ParseRelative() allow you to resolve
-// a relative URI relative to a base URI. glib.URI().ResolveRelative takes two
-// strings and returns a string, and glib.URI.ParseRelative() takes a GUri and a
-// string and returns a GUri.
+// g_uri_resolve_relative() and g_uri_parse_relative() allow you to resolve
+// a relative URI relative to a base URI. g_uri_resolve_relative() takes two
+// strings and returns a string, and g_uri_parse_relative() takes a #GUri and a
+// string and returns a #GUri.
 //
-// All of the parsing functions take a glib.URIFlags argument describing exactly
-// how to parse the URI; see the documentation for that type for more details on
-// the specific flags that you can pass. If you need to choose different flags
-// based on the type of URI, you can use glib.URI().PeekScheme on the URI string
-// to check the scheme first, and use that to decide what flags to parse it
-// with.
+// All of the parsing functions take a Flags argument describing exactly how to
+// parse the URI; see the documentation for that type for more details on the
+// specific flags that you can pass. If you need to choose different flags based
+// on the type of URI, you can use g_uri_peek_scheme() on the URI string to
+// check the scheme first, and use that to decide what flags to parse it with.
 //
 // For example, you might want to use G_URI_PARAMS_WWW_FORM when parsing the
-// params for a web URI, so compare the result of glib.URI().PeekScheme against
+// params for a web URI, so compare the result of g_uri_peek_scheme() against
 // http and https.
 //
 // # Building URIs
 //
-// glib.URI().Join and glib.URI().JoinWithUser can be used to construct
-// valid URI strings from a set of component strings. They are the inverse of
-// glib.URI().Split and glib.URI().SplitWithUser.
+// g_uri_join() and g_uri_join_with_user() can be used to construct valid
+// URI strings from a set of component strings. They are the inverse of
+// g_uri_split() and g_uri_split_with_user().
 //
-// Similarly, glib.URI().Build and glib.URI().BuildWithUser can be used to
-// construct a GUri from a set of component strings.
+// Similarly, g_uri_build() and g_uri_build_with_user() can be used to construct
+// a #GUri from a set of component strings.
 //
-// As with the parsing functions, the building functions take a glib.URIFlags
-// argument. In particular, it is important to keep in mind whether the URI
-// components you are using are already %-encoded. If so, you must pass the
-// G_URI_FLAGS_ENCODED flag.
+// As with the parsing functions, the building functions take a Flags argument.
+// In particular, it is important to keep in mind whether the URI components you
+// are using are already %-encoded. If so, you must pass the G_URI_FLAGS_ENCODED
+// flag.
 //
 // file:// URIs
 //
 // Note that Windows and Unix both define special rules for parsing file://
 // URIs (involving non-UTF-8 character sets on Unix, and the interpretation
-// of path separators on Windows). GUri does not implement these rules.
-// Use glib.FilenameFromURI() and glib.FilenameToURI() if you want to properly
-// convert between file:// URIs and local filenames.
+// of path separators on Windows). #GUri does not implement these rules. Use
+// g_filename_from_uri() and g_filename_to_uri() if you want to properly convert
+// between file:// URIs and local filenames.
 //
 // # URI Equality
 //
 // Note that there is no g_uri_equal () function, because comparing URIs
-// usefully requires scheme-specific knowledge that GUri does not have. GUri can
-// help with normalization if you use the various encoded glib.URIFlags as well
-// as G_URI_FLAGS_SCHEME_NORMALIZE however it is not comprehensive. For example,
+// usefully requires scheme-specific knowledge that #GUri does not have. #GUri
+// can help with normalization if you use the various encoded Flags as well as
+// G_URI_FLAGS_SCHEME_NORMALIZE however it is not comprehensive. For example,
 // data:,foo and data:;base64,Zm9v resolve to the same thing according to the
 // data: URI specification which GLib does not handle.
 //
@@ -28139,10 +24931,9 @@ func (uri *URI) Userinfo() string {
 	return _utf8
 }
 
-// ParseRelative parses uri_ref according to flags and, if it is a relative
-// URI (#relative-and-absolute-uris), resolves it relative to base_uri.
-// If the result is not a valid absolute URI, it will be discarded, and an error
-// returned.
+// ParseRelative parses uri_ref according to flags and, if it is a [relative
+// URI][relative-absolute-uris], resolves it relative to base_uri. If the result
+// is not a valid absolute URI, it will be discarded, and an error returned.
 //
 // The function takes the following parameters:
 //
@@ -28527,8 +25318,8 @@ func URIEscapeString(unescaped, reservedCharsAllowed string, allowUtf8 bool) str
 	return _utf8
 }
 
-// URIIsValid parses uri_string according to flags, to determine whether it is a
-// valid absolute URI (#relative-and-absolute-uris), i.e. it does not need to be
+// URIIsValid parses uri_string according to flags, to determine whether it is
+// a valid [absolute URI][relative-absolute-uris], i.e. it does not need to be
 // resolved relative to another URI using g_uri_parse_relative().
 //
 // If it’s not a valid URI, an error is returned explaining how it’s invalid.
@@ -28781,8 +25572,8 @@ func URIListExtractURIs(uriList string) []string {
 }
 
 // URIParse parses uri_string according to flags. If the result is not a valid
-// absolute URI (#relative-and-absolute-uris), it will be discarded, and an
-// error returned.
+// [absolute URI][relative-absolute-uris], it will be discarded, and an error
+// returned.
 //
 // The function takes the following parameters:
 //
@@ -28977,10 +25768,10 @@ func URIPeekScheme(uri string) string {
 	return _utf8
 }
 
-// URIResolveRelative parses uri_ref according to flags and, if it is a relative
-// URI (#relative-and-absolute-uris), resolves it relative to base_uri_string.
-// If the result is not a valid absolute URI, it will be discarded, and an error
-// returned.
+// URIResolveRelative parses uri_ref according to flags and, if it is
+// a [relative URI][relative-absolute-uris], resolves it relative to
+// base_uri_string. If the result is not a valid absolute URI, it will be
+// discarded, and an error returned.
 //
 // (If base_uri_string is NULL, this just returns uri_ref, or NULL if uri_ref is
 // invalid or not absolute.).
@@ -29026,8 +25817,8 @@ func URIResolveRelative(baseUriString, uriRef string, flags URIFlags) (string, e
 	return _utf8, _goerr
 }
 
-// URISplit parses uri_ref (which can be an absolute or relative URI
-// (#relative-and-absolute-uris)) according to flags, and returns the pieces.
+// URISplit parses uri_ref (which can be an [absolute or relative
+// URI][relative-absolute-uris]) according to flags, and returns the pieces.
 // Any component that doesn't appear in uri_ref will be returned as NULL (but
 // note that all URIs always have a path component, though it may be the empty
 // string).
@@ -29117,8 +25908,8 @@ func URISplit(uriRef string, flags URIFlags) (scheme, userinfo, host string, por
 	return _scheme, _userinfo, _host, _port, _path, _query, _fragment, _goerr
 }
 
-// URISplitNetwork parses uri_string (which must be an absolute URI
-// (#relative-and-absolute-uris)) according to flags, and returns the pieces
+// URISplitNetwork parses uri_string (which must be an [absolute
+// URI][relative-absolute-uris]) according to flags, and returns the pieces
 // relevant to connecting to a host. See the documentation for g_uri_split()
 // for more details; this is mostly a wrapper around that function with simpler
 // arguments. However, it will return an error if uri_string is a relative URI,
@@ -29172,8 +25963,8 @@ func URISplitNetwork(uriString string, flags URIFlags) (scheme, host string, por
 	return _scheme, _host, _port, _goerr
 }
 
-// URISplitWithUser parses uri_ref (which can be an absolute or relative URI
-// (#relative-and-absolute-uris)) according to flags, and returns the pieces.
+// URISplitWithUser parses uri_ref (which can be an [absolute or relative
+// URI][relative-absolute-uris]) according to flags, and returns the pieces.
 // Any component that doesn't appear in uri_ref will be returned as NULL (but
 // note that all URIs always have a path component, though it may be the empty
 // string).
@@ -29560,90 +26351,87 @@ func (iter *URIParamsIter) Next() (attribute string, value string, goerr error) 
 	return _attribute, _value, _goerr
 }
 
-// Variant: GVariant is a variant datatype; it can contain one or more values
-// along with information about the type of the values.
+// Variant is a variant datatype; it can contain one or more values along with
+// information about the type of the values.
 //
-// A GVariant may contain simple types, like an integer, or a boolean value;
+// A #GVariant may contain simple types, like an integer, or a boolean value;
 // or complex types, like an array of two strings, or a dictionary of key value
-// pairs. A GVariant is also immutable: once it’s been created neither its type
+// pairs. A #GVariant is also immutable: once it's been created neither its type
 // nor its content can be modified further.
 //
 // GVariant is useful whenever data needs to be serialized, for example when
-// sending method parameters in D-Bus, or when saving settings using GSettings
-// (../gio/class.Settings.html).
+// sending method parameters in D-Bus, or when saving settings using GSettings.
 //
-// When creating a new GVariant, you pass the data you want to store in it along
-// with a string representing the type of data you wish to pass to it.
+// When creating a new #GVariant, you pass the data you want to store in it
+// along with a string representing the type of data you wish to pass to it.
 //
-// For instance, if you want to create a GVariant holding an integer value you
+// For instance, if you want to create a #GVariant holding an integer value you
 // can use:
 //
 //	GVariant *v = g_variant_new ("u", 40);
 //
-// The string u in the first argument tells GVariant that the data passed to the
-// constructor (40) is going to be an unsigned integer.
+// The string "u" in the first argument tells #GVariant that the data passed to
+// the constructor (40) is going to be an unsigned integer.
 //
-// More advanced examples of GVariant in use can be found in documentation for
-// GVariant format strings (gvariant-format-strings.html#pointers).
+// More advanced examples of #GVariant in use can be found in documentation for
+// [GVariant format strings][gvariant-format-strings-pointers].
 //
 // The range of possible values is determined by the type.
 //
-// The type system used by GVariant is glib.VariantType.
+// The type system used by #GVariant is Type.
 //
-// GVariant instances always have a type and a value (which are given at
-// construction time). The type and value of a GVariant instance can never
-// change other than by the GVariant itself being destroyed. A GVariant cannot
+// #GVariant instances always have a type and a value (which are given at
+// construction time). The type and value of a #GVariant instance can never
+// change other than by the #GVariant itself being destroyed. A #GVariant cannot
 // contain a pointer.
 //
-// GVariant is reference counted using glib.Variant.Ref() and
-// glib.Variant.Unref(). GVariant also has floating reference counts — see
-// glib.Variant.RefSink().
+// #GVariant is reference counted using g_variant_ref() and g_variant_unref().
+// #GVariant also has floating reference counts -- see g_variant_ref_sink().
 //
-// GVariant is completely threadsafe. A GVariant instance can be concurrently
+// #GVariant is completely threadsafe. A #GVariant instance can be concurrently
 // accessed in any way from any number of threads without problems.
 //
-// GVariant is heavily optimised for dealing with data in serialized form.
+// #GVariant is heavily optimised for dealing with data in serialized form.
 // It works particularly well with data located in memory-mapped files. It can
 // perform nearly all deserialization operations in a small constant time,
-// usually touching only a single memory page. Serialized GVariant data can also
-// be sent over the network.
+// usually touching only a single memory page. Serialized #GVariant data can
+// also be sent over the network.
 //
-// GVariant is largely compatible with D-Bus. Almost all types of GVariant
-// instances can be sent over D-Bus. See glib.VariantType for exceptions.
-// (However, GVariant’s serialization format is not the same as the
-// serialization format of a D-Bus message body: use GDBusMessage
-// (../gio/class.DBusMessage.html), in the GIO library, for those.)
+// #GVariant is largely compatible with D-Bus. Almost all types of #GVariant
+// instances can be sent over D-Bus. See Type for exceptions. (However,
+// #GVariant's serialization format is not the same as the serialization format
+// of a D-Bus message body: use BusMessage, in the gio library, for those.)
 //
-// For space-efficiency, the GVariant serialization format does not
-// automatically include the variant’s length, type or endianness, which
+// For space-efficiency, the #GVariant serialization format does not
+// automatically include the variant's length, type or endianness, which
 // must either be implied from context (such as knowledge that a particular
 // file format always contains a little-endian G_VARIANT_TYPE_VARIANT which
 // occupies the whole length of the file) or supplied out-of-band (for instance,
 // a length, type and/or endianness indicator could be placed at the beginning
 // of a file, network message or network stream).
 //
-// A GVariant’s size is limited mainly by any lower level operating system
-// constraints, such as the number of bits in gsize. For example, it is
-// reasonable to have a 2GB file mapped into memory with glib.MappedFile,
-// and call glib.Variant.NewFromData on it.
+// A #GVariant's size is limited mainly by any lower level operating
+// system constraints, such as the number of bits in #gsize. For example,
+// it is reasonable to have a 2GB file mapped into memory with File, and call
+// g_variant_new_from_data() on it.
 //
-// For convenience to C programmers, GVariant features powerful varargs-based
+// For convenience to C programmers, #GVariant features powerful varargs-based
 // value construction and destruction. This feature is designed to be embedded
 // in other libraries.
 //
-// There is a Python-inspired text language for describing GVariant values.
-// GVariant includes a printer for this language and a parser with type
+// There is a Python-inspired text language for describing #GVariant values.
+// #GVariant includes a printer for this language and a parser with type
 // inferencing.
 //
 // # Memory Use
 //
-// GVariant tries to be quite efficient with respect to memory use. This section
-// gives a rough idea of how much memory is used by the current implementation.
-// The information here is subject to change in the future.
+// #GVariant tries to be quite efficient with respect to memory use.
+// This section gives a rough idea of how much memory is used by the current
+// implementation. The information here is subject to change in the future.
 //
-// The memory allocated by GVariant can be grouped into 4 broad purposes: memory
-// for serialized data, memory for the type information cache, buffer management
-// memory and memory for the GVariant structure itself.
+// The memory allocated by #GVariant can be grouped into 4 broad purposes:
+// memory for serialized data, memory for the type information cache, buffer
+// management memory and memory for the #GVariant structure itself.
 //
 // # Serialized Data Memory
 //
@@ -29653,13 +26441,13 @@ func (iter *URIParamsIter) Next() (attribute string, value string, goerr error) 
 // top-level variant.
 //
 // The amount of memory required to store a boolean is 1 byte. 16, 32 and 64
-// bit integers and double precision floating point numbers use their ‘natural’
+// bit integers and double precision floating point numbers use their "natural"
 // size. Strings (including object path and signature strings) are stored with a
 // nul terminator, and as such use the length of the string plus 1 byte.
 //
-// ‘Maybe’ types use no space at all to represent the null value and use
-// the same amount of space (sometimes plus one byte) as the equivalent
-// non-maybe-typed value to represent the non-null case.
+// Maybe types use no space at all to represent the null value and use the same
+// amount of space (sometimes plus one byte) as the equivalent non-maybe-typed
+// value to represent the non-null case.
 //
 // Arrays use the amount of space required to store each of their members,
 // concatenated. Additionally, if the items stored in an array are not of a
@@ -29680,21 +26468,21 @@ func (iter *URIParamsIter) Next() (attribute string, value string, goerr error) 
 // As an example, consider a dictionary mapping strings to variants. In the case
 // that the dictionary is empty, 0 bytes are required for the serialization.
 //
-// If we add an item ‘width’ that maps to the int32 value of 500 then we will
-// use 4 bytes to store the int32 (so 6 for the variant containing it) and 6
+// If we add an item "width" that maps to the int32 value of 500 then we will
+// use 4 byte to store the int32 (so 6 for the variant containing it) and 6
 // bytes for the string. The variant must be aligned to 8 after the 6 bytes of
-// the string, so that’s 2 extra bytes. 6 (string) + 2 (padding) + 6 (variant)
+// the string, so that's 2 extra bytes. 6 (string) + 2 (padding) + 6 (variant)
 // is 14 bytes used for the dictionary entry. An additional 1 byte is added to
 // the array as a framing offset making a total of 15 bytes.
 //
-// If we add another entry, ‘title’ that maps to a nullable string that happens
+// If we add another entry, "title" that maps to a nullable string that happens
 // to have a value of null, then we use 0 bytes for the null value (and 3 bytes
 // for the variant to contain it along with its type string) plus 6 bytes for
 // the string. Again, we need 2 padding bytes. That makes a total of 6 + 2 + 3 =
 // 11 bytes.
 //
 // We now require extra padding between the two items in the array. After the 14
-// bytes of the first item, that’s 2 bytes required. We now require 2 framing
+// bytes of the first item, that's 2 bytes required. We now require 2 framing
 // offsets for an extra two bytes. 14 + 2 + 11 + 2 = 29 bytes to encode the
 // entire two-item dictionary.
 //
@@ -29704,11 +26492,12 @@ func (iter *URIParamsIter) Next() (attribute string, value string, goerr error) 
 // information structure is kept in the type information cache. The type
 // information structure is required for rapid deserialization.
 //
-// Continuing with the above example, if a GVariant exists with the type a{sv}
-// then a type information struct will exist for a{sv}, {sv}, s, and v. Multiple
-// uses of the same type will share the same type information. Additionally,
-// all single-digit types are stored in read-only static memory and do not
-// contribute to the writable memory footprint of a program using GVariant.
+// Continuing with the above example, if a #GVariant exists with the type
+// "a{sv}" then a type information struct will exist for "a{sv}", "{sv}", "s",
+// and "v". Multiple uses of the same type will share the same type information.
+// Additionally, all single-digit types are stored in read-only static memory
+// and do not contribute to the writable memory footprint of a program using
+// #GVariant.
 //
 // Aside from the type information structures stored in read-only memory,
 // there are two forms of type information. One is used for container types
@@ -29718,21 +26507,21 @@ func (iter *URIParamsIter) Next() (attribute string, value string, goerr error) 
 //
 // Array type info structures are 6 * sizeof (void *), plus the memory required
 // to store the type string itself. This means that on 32-bit systems, the cache
-// entry for a{sv} would require 30 bytes of memory (plus allocation overhead).
+// entry for "a{sv}" would require 30 bytes of memory (plus malloc overhead).
 //
 // Tuple type info structures are 6 * sizeof (void *), plus 4 * sizeof (void *)
 // for each item in the tuple, plus the memory required to store the type string
 // itself. A 2-item tuple, for example, would have a type information structure
 // that consumed writable memory in the size of 14 * sizeof (void *) (plus type
-// string) This means that on 32-bit systems, the cache entry for {sv} would
-// require 61 bytes of memory (plus allocation overhead).
+// string) This means that on 32-bit systems, the cache entry for "{sv}" would
+// require 61 bytes of memory (plus malloc overhead).
 //
-// This means that in total, for our a{sv} example, 91 bytes of type information
-// would be allocated.
+// This means that in total, for our "a{sv}" example, 91 bytes of type
+// information would be allocated.
 //
-// The type information cache, additionally, uses a glib.HashTable to store and
-// look up the cached items and stores a pointer to this hash table in static
-// storage. The hash table is freed when there are zero items in the type cache.
+// The type information cache, additionally, uses a Table to store and look up
+// the cached items and stores a pointer to this hash table in static storage.
+// The hash table is freed when there are zero items in the type cache.
 //
 // Although these sizes may seem large it is important to remember that a
 // program will probably only have a very small number of different types of
@@ -29741,32 +26530,32 @@ func (iter *URIParamsIter) Next() (attribute string, value string, goerr error) 
 //
 // # Buffer Management Memory
 //
-// GVariant uses an internal buffer management structure to deal with the
+// #GVariant uses an internal buffer management structure to deal with the
 // various different possible sources of serialized data that it uses.
-// The buffer is responsible for ensuring that the correct call is made when the
-// data is no longer in use by GVariant. This may involve a glib.Free() or even
-// glib.MappedFile.Unref().
+// The buffer is responsible for ensuring that the correct call is made when
+// the data is no longer in use by #GVariant. This may involve a g_free() or a
+// g_slice_free() or even g_mapped_file_unref().
 //
 // One buffer management structure is used for each chunk of serialized data.
 // The size of the buffer management structure is 4 * (void *). On 32-bit
-// systems, that’s 16 bytes.
+// systems, that's 16 bytes.
 //
 // # GVariant structure
 //
-// The size of a GVariant structure is 6 * (void *). On 32-bit systems, that’s
-// 24 bytes.
+// The size of a #GVariant structure is 6 * (void *). On 32-bit systems,
+// that's 24 bytes.
 //
-// GVariant structures only exist if they are explicitly created with API calls.
-// For example, if a GVariant is constructed out of serialized data for
-// the example given above (with the dictionary) then although there are 9
+// #GVariant structures only exist if they are explicitly created with API
+// calls. For example, if a #GVariant is constructed out of serialized data
+// for the example given above (with the dictionary) then although there are 9
 // individual values that comprise the entire dictionary (two keys, two values,
 // two variants containing the values, two dictionary entries, plus the
-// dictionary itself), only 1 GVariant instance exists — the one referring to
+// dictionary itself), only 1 #GVariant instance exists -- the one referring to
 // the dictionary.
 //
-// If calls are made to start accessing the other values then GVariant instances
-// will exist for those values only for as long as they are in use (ie:
-// until you call glib.Variant.Unref()). The type information is shared.
+// If calls are made to start accessing the other values then #GVariant
+// instances will exist for those values only for as long as they are in use
+// (ie: until you call g_variant_unref()). The type information is shared.
 // The serialized data and the buffer management structure for that serialized
 // data is shared by the child.
 //
@@ -29775,9 +26564,9 @@ func (iter *URIParamsIter) Next() (attribute string, value string, goerr error) 
 // To put the entire example together, for our dictionary mapping strings
 // to variants (with two entries, as given above), we are using 91 bytes of
 // memory for type information, 29 bytes of memory for the serialized data,
-// 16 bytes for buffer management and 24 bytes for the GVariant instance,
-// or a total of 160 bytes, plus allocation overhead. If we were to use
-// glib.Variant.GetChildValue() to access the two dictionary entries, we would
+// 16 bytes for buffer management and 24 bytes for the #GVariant instance,
+// or a total of 160 bytes, plus malloc overhead. If we were to use
+// g_variant_get_child_value() to access the two dictionary entries, we would
 // use an additional 48 bytes. If we were to have other dictionaries of the same
 // type, we would use more memory for the serialized data and buffer management
 // for those dictionaries, but the type information would be shared.
@@ -30466,13 +27255,7 @@ func NewVariantVariant(value *Variant) *Variant {
 // multi-byte numeric data. That include strings, booleans, bytes and containers
 // containing only these things (recursively).
 //
-// While this function can safely handle untrusted, non-normal data,
-// it is recommended to check whether the input is in normal form beforehand,
-// using g_variant_is_normal_form(), and to reject non-normal inputs if your
-// application can be strict about what inputs it rejects.
-//
-// The returned value is always in normal form and is marked as trusted. A full,
-// not floating, reference is returned.
+// The returned value is always in normal form and is marked as trusted.
 //
 // The function returns the following values:
 //
@@ -31250,8 +28033,7 @@ func (value *Variant) Maybe() *Variant {
 // and a new reference to it is returned.
 //
 // If value is found not to be in normal form then a new trusted #GVariant is
-// created with the same value as value. The non-normal parts of value will be
-// replaced with default values which are guaranteed to be in normal form.
+// created with the same value as value.
 //
 // It makes sense to call this function if you've received #GVariant data from
 // untrusted sources and you want to ensure your serialized output is definitely
@@ -32554,92 +29336,82 @@ func (dict *VariantDict) Remove(key string) bool {
 	return _ok
 }
 
-// VariantType: type in the glib.Variant type system.
-//
-// This section introduces the glib.Variant type system. It is based,
-// in large part, on the D-Bus type system, with two major changes
-// and some minor lifting of restrictions. The D-Bus specification
+// VariantType: this section introduces the GVariant type system.
+// It is based, in large part, on the D-Bus type system, with two major
+// changes and some minor lifting of restrictions. The D-Bus specification
 // (http://dbus.freedesktop.org/doc/dbus-specification.html), therefore,
 // provides a significant amount of information that is useful when working with
-// glib.Variant.
+// GVariant.
 //
 // The first major change with respect to the D-Bus type system is the
-// introduction of maybe (or ‘nullable’) types. Any type in glib.Variant can be
-// converted to a maybe type, in which case, nothing (or null) becomes a valid
-// value. Maybe types have been added by introducing the character m to type
-// strings.
+// introduction of maybe (or "nullable") types. Any type in GVariant can be
+// converted to a maybe type, in which case, "nothing" (or "null") becomes a
+// valid value. Maybe types have been added by introducing the character "m" to
+// type strings.
 //
-// The second major change is that the glib.Variant type system supports the
-// concept of ‘indefinite types’ — types that are less specific than the normal
-// types found in D-Bus. For example, it is possible to speak of ‘an array of
-// any type’ in glib.Variant, where the D-Bus type system would require you to
-// speak of ‘an array of integers’ or ‘an array of strings’. Indefinite types
-// have been added by introducing the characters *, ? and r to type strings.
+// The second major change is that the GVariant type system supports the concept
+// of "indefinite types" -- types that are less specific than the normal types
+// found in D-Bus. For example, it is possible to speak of "an array of any
+// type" in GVariant, where the D-Bus type system would require you to speak of
+// "an array of integers" or "an array of strings". Indefinite types have been
+// added by introducing the characters "*", "?" and "r" to type strings.
 //
 // Finally, all arbitrary restrictions relating to the complexity of types are
 // lifted along with the restriction that dictionary entries may only appear
 // nested inside of arrays.
 //
-// Just as in D-Bus, glib.Variant types are described with strings (‘type
-// strings’). Subject to the differences mentioned above, these strings are of
-// the same form as those found in D-Bus. Note, however: D-Bus always works in
-// terms of messages and therefore individual type strings appear nowhere in its
-// interface. Instead, ‘signatures’ are a concatenation of the strings of the
-// type of each argument in a message. glib.Variant deals with single values
-// directly so glib.Variant type strings always describe the type of exactly
-// one value. This means that a D-Bus signature string is generally not a valid
-// glib.Variant type string — except in the case that it is the signature of a
+// Just as in D-Bus, GVariant types are described with strings ("type strings").
+// Subject to the differences mentioned above, these strings are of the same
+// form as those found in D-Bus. Note, however: D-Bus always works in terms
+// of messages and therefore individual type strings appear nowhere in its
+// interface. Instead, "signatures" are a concatenation of the strings of
+// the type of each argument in a message. GVariant deals with single values
+// directly so GVariant type strings always describe the type of exactly one
+// value. This means that a D-Bus signature string is generally not a valid
+// GVariant type string -- except in the case that it is the signature of a
 // message containing exactly one argument.
 //
 // An indefinite type is similar in spirit to what may be called an abstract
 // type in other type systems. No value can exist that has an indefinite type
 // as its type, but values can exist that have types that are subtypes of
-// indefinite types. That is to say, glib.Variant.GetType() will never return an
-// indefinite type, but calling glib.Variant.IsOfType() with an indefinite type
-// may return true. For example, you cannot have a value that represents ‘an
-// array of no particular type’, but you can have an ‘array of integers’ which
-// certainly matches the type of ‘an array of no particular type’, since ‘array
-// of integers’ is a subtype of ‘array of no particular type’.
+// indefinite types. That is to say, g_variant_get_type() will never return an
+// indefinite type, but calling g_variant_is_of_type() with an indefinite type
+// may return TRUE. For example, you cannot have a value that represents "an
+// array of no particular type", but you can have an "array of integers" which
+// certainly matches the type of "an array of no particular type", since "array
+// of integers" is a subtype of "array of no particular type".
 //
-// This is similar to how instances of abstract classes may not directly
-// exist in other type systems, but instances of their non-abstract
-// subtypes may. For example, in GTK, no object that has the type
-// of GtkWidget (https://docs.gtk.org/gtk4/class.Widget.html) can
-// exist (since GtkWidget is an abstract class), but a GtkWindow
-// (https://docs.gtk.org/gtk4/class.Window.html) can certainly be instantiated,
-// and you would say that a GtkWindow is a GtkWidget (since GtkWindow is a
-// subclass of GtkWidget).
-//
-// Two types may not be compared by value; use glib.VariantType.Equal() or
-// glib.VariantType.IsSubtypeOf() May be copied using glib.VariantType.Copy()
-// and freed using glib.VariantType.Free().
+// This is similar to how instances of abstract classes may not directly exist
+// in other type systems, but instances of their non-abstract subtypes may.
+// For example, in GTK, no object that has the type of Bin can exist (since Bin
+// is an abstract class), but a Window can certainly be instantiated, and you
+// would say that the Window is a Bin (since Window is a subclass of Bin).
 //
 // # GVariant Type Strings
 //
-// A glib.Variant type string can be any of the following:
+// A GVariant type string can be any of the following:
 //
 // - any basic type string (listed below)
 //
-// - v, r or *
+// - "v", "r" or "*"
 //
-// - one of the characters a or m, followed by another type string
+// - one of the characters 'a' or 'm', followed by another type string
 //
-// - the character (, followed by a concatenation of zero or more other type
-// strings, followed by the character )
+// - the character '(', followed by a concatenation of zero or more other type
+// strings, followed by the character ')'
 //
-// - the character {, followed by a basic type string (see below), followed by
-// another type string, followed by the character }
+// - the character '{', followed by a basic type string (see below), followed by
+// another type string, followed by the character '}'
 //
-// A basic type string describes a basic type (as per
-// glib.VariantType.IsBasic()) and is always a single character in length.
-// The valid basic type strings are b, y, n, q, i, u, x, t, h, d, s, o, g and ?.
+// A basic type string describes a basic type (as per g_variant_type_is_basic())
+// and is always a single character in length. The valid basic type strings are
+// "b", "y", "n", "q", "i", "u", "x", "t", "h", "d", "s", "o", "g" and "?".
 //
-// The above definition is recursive to arbitrary depth. aaaaai and
-// (ui(nq((y)))s) are both valid type strings, as is a(aa(ui)(qna{ya(yd)})).
-// In order to not hit memory limits, glib.Variant imposes a limit on recursion
+// The above definition is recursive to arbitrary depth. "aaaaai" and
+// "(ui(nq((y)))s)" are both valid type strings, as is "a(aa(ui)(qna{ya(yd)}))".
+// In order to not hit memory limits, #GVariant imposes a limit on recursion
 // depth of 65 nested containers. This is the limit in the D-Bus specification
-// (64) plus one to allow a GDBusMessage (../gio/class.DBusMessage.html) to be
-// nested in a top-level tuple.
+// (64) plus one to allow a BusMessage to be nested in a top-level tuple.
 //
 // The meaning of each of the characters is as follows:
 //
@@ -32681,23 +29453,23 @@ func (dict *VariantDict) Remove(key string) bool {
 // any other type of value.
 //
 // - a: used as a prefix on another type string to mean an array of that type;
-// the type string ai, for example, is the type of an array of signed 32-bit
+// the type string "ai", for example, is the type of an array of signed 32-bit
 // integers.
 //
-// - m: used as a prefix on another type string to mean a ‘maybe’,
-// or ‘nullable’, version of that type; the type string ms, for example, is the
+// - m: used as a prefix on another type string to mean a "maybe", or
+// "nullable", version of that type; the type string "ms", for example, is the
 // type of a value that maybe contains a string, or maybe contains nothing.
 //
 // - (): used to enclose zero or more other concatenated type strings to create
-// a tuple type; the type string (is), for example, is the type of a pair of an
-// integer and a string.
+// a tuple type; the type string "(is)", for example, is the type of a pair of
+// an integer and a string.
 //
 // - r: the type string of G_VARIANT_TYPE_TUPLE; an indefinite type that is a
 // supertype of any tuple type, regardless of the number of items.
 //
 // - {}: used to enclose a basic type string concatenated with another type
 // string to create a dictionary entry type, which usually appears inside of an
-// array to form a dictionary; the type string a{sd}, for example, is the type
+// array to form a dictionary; the type string "a{sd}", for example, is the type
 // of a dictionary that maps strings to double precision floating point values.
 //
 //	The first type (the basic type) is the key type and the second type is
@@ -32706,20 +29478,21 @@ func (dict *VariantDict) Remove(key string) bool {
 //
 // - *: the type string of G_VARIANT_TYPE_ANY; the indefinite type that is a
 // supertype of all types. Note that, as with all type strings, this character
-// represents exactly one type. It cannot be used inside of tuples to mean ‘any
-// number of items’.
+// represents exactly one type. It cannot be used inside of tuples to mean "any
+// number of items".
 //
 // Any type string of a container that contains an indefinite type is, itself,
-// an indefinite type. For example, the type string a* (corresponding to
+// an indefinite type. For example, the type string "a*" (corresponding to
 // G_VARIANT_TYPE_ARRAY) is an indefinite type that is a supertype of every
-// array type. (*s) is a supertype of all tuples that contain exactly two items
-// where the second item is a string.
+// array type. "(*s)" is a supertype of all tuples that contain exactly two
+// items where the second item is a string.
 //
-// a{?*} is an indefinite type that is a supertype of all arrays containing
+// "a{?*}" is an indefinite type that is a supertype of all arrays containing
 // dictionary entries where the key is any basic type and the value is any type
 // at all. This is, by definition, a dictionary, so this type string corresponds
-// to G_VARIANT_TYPE_DICTIONARY. Note that, due to the restriction that the key
-// of a dictionary entry must be a basic type, {**} is not a valid type string.
+// to G_VARIANT_TYPE_DICTIONARY. Note that, due to the restriction that the
+// key of a dictionary entry must be a basic type, "{**}" is not a valid type
+// string.
 //
 // An instance of this type is always passed by reference.
 type VariantType struct {
@@ -33456,15 +30229,15 @@ func (typ *VariantType) Value() *VariantType {
 	return _variantType
 }
 
-func VariantTypeChecked_(typeString string) *VariantType {
+func VariantTypeChecked_(arg0 string) *VariantType {
 	var _arg1 *C.gchar        // out
 	var _cret *C.GVariantType // in
 
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(typeString)))
+	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(arg0)))
 	defer C.free(unsafe.Pointer(_arg1))
 
 	_cret = C.g_variant_type_checked_(_arg1)
-	runtime.KeepAlive(typeString)
+	runtime.KeepAlive(arg0)
 
 	var _variantType *VariantType // out
 

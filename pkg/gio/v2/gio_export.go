@@ -156,6 +156,34 @@ func _gotk4_gio2_BusNameVanishedCallback(arg1 *C.GDBusConnection, arg2 *C.gchar,
 	fn(_connection, _name)
 }
 
+//export _gotk4_gio2_CancellableSourceFunc
+func _gotk4_gio2_CancellableSourceFunc(arg1 *C.GCancellable, arg2 C.gpointer) (cret C.gboolean) {
+	var fn CancellableSourceFunc
+	{
+		v := gbox.Get(uintptr(arg2))
+		if v == nil {
+			panic(`callback not found`)
+		}
+		fn = v.(CancellableSourceFunc)
+	}
+
+	var _cancellable context.Context // out
+
+	if arg1 != nil {
+		_cancellable = gcancel.NewCancellableContext(unsafe.Pointer(arg1))
+	}
+
+	ok := fn(_cancellable)
+
+	var _ bool
+
+	if ok {
+		cret = C.TRUE
+	}
+
+	return cret
+}
+
 //export _gotk4_gio2_DBusInterfaceGetPropertyFunc
 func _gotk4_gio2_DBusInterfaceGetPropertyFunc(arg1 *C.GDBusConnection, arg2 *C.gchar, arg3 *C.gchar, arg4 *C.gchar, arg5 *C.gchar, arg6 **C.GError, arg7 C.gpointer) (cret *C.GVariant) {
 	var fn DBusInterfaceGetPropertyFunc
@@ -305,6 +333,36 @@ func _gotk4_gio2_DBusMessageFilterFunction(arg1 *C.GDBusConnection, arg2 *C.GDBu
 		cret = (*C.GDBusMessage)(unsafe.Pointer(coreglib.InternObject(dBusMessage).Native()))
 		C.g_object_ref(C.gpointer(coreglib.InternObject(dBusMessage).Native()))
 	}
+
+	return cret
+}
+
+//export _gotk4_gio2_DBusProxyTypeFunc
+func _gotk4_gio2_DBusProxyTypeFunc(arg1 *C.GDBusObjectManagerClient, arg2 *C.gchar, arg3 *C.gchar, arg4 C.gpointer) (cret C.GType) {
+	var fn DBusProxyTypeFunc
+	{
+		v := gbox.Get(uintptr(arg4))
+		if v == nil {
+			panic(`callback not found`)
+		}
+		fn = v.(DBusProxyTypeFunc)
+	}
+
+	var _manager *DBusObjectManagerClient // out
+	var _objectPath string                // out
+	var _interfaceName string             // out
+
+	_manager = wrapDBusObjectManagerClient(coreglib.Take(unsafe.Pointer(arg1)))
+	_objectPath = C.GoString((*C.gchar)(unsafe.Pointer(arg2)))
+	if arg3 != nil {
+		_interfaceName = C.GoString((*C.gchar)(unsafe.Pointer(arg3)))
+	}
+
+	gType := fn(_manager, _objectPath, _interfaceName)
+
+	var _ coreglib.Type
+
+	cret = C.GType(gType)
 
 	return cret
 }
@@ -462,6 +520,150 @@ func _gotk4_gio2_DBusSubtreeIntrospectFunc(arg1 *C.GDBusConnection, arg2 *C.gcha
 	return cret
 }
 
+//export _gotk4_gio2_DatagramBasedSourceFunc
+func _gotk4_gio2_DatagramBasedSourceFunc(arg1 *C.GDatagramBased, arg2 C.GIOCondition, arg3 C.gpointer) (cret C.gboolean) {
+	var fn DatagramBasedSourceFunc
+	{
+		v := gbox.Get(uintptr(arg3))
+		if v == nil {
+			panic(`callback not found`)
+		}
+		fn = v.(DatagramBasedSourceFunc)
+	}
+
+	var _datagramBased DatagramBasedder // out
+	var _condition glib.IOCondition     // out
+
+	{
+		objptr := unsafe.Pointer(arg1)
+		if objptr == nil {
+			panic("object of type gio.DatagramBasedder is nil")
+		}
+
+		object := coreglib.Take(objptr)
+		casted := object.WalkCast(func(obj coreglib.Objector) bool {
+			_, ok := obj.(DatagramBasedder)
+			return ok
+		})
+		rv, ok := casted.(DatagramBasedder)
+		if !ok {
+			panic("no marshaler for " + object.TypeFromInstance().String() + " matching gio.DatagramBasedder")
+		}
+		_datagramBased = rv
+	}
+	_condition = glib.IOCondition(arg2)
+
+	ok := fn(_datagramBased, _condition)
+
+	var _ bool
+
+	if ok {
+		cret = C.TRUE
+	}
+
+	return cret
+}
+
+//export _gotk4_gio2_FileMeasureProgressCallback
+func _gotk4_gio2_FileMeasureProgressCallback(arg1 C.gboolean, arg2 C.guint64, arg3 C.guint64, arg4 C.guint64, arg5 C.gpointer) {
+	var fn FileMeasureProgressCallback
+	{
+		v := gbox.Get(uintptr(arg5))
+		if v == nil {
+			panic(`callback not found`)
+		}
+		fn = v.(FileMeasureProgressCallback)
+	}
+
+	var _reporting bool     // out
+	var _currentSize uint64 // out
+	var _numDirs uint64     // out
+	var _numFiles uint64    // out
+
+	if arg1 != 0 {
+		_reporting = true
+	}
+	_currentSize = uint64(arg2)
+	_numDirs = uint64(arg3)
+	_numFiles = uint64(arg4)
+
+	fn(_reporting, _currentSize, _numDirs, _numFiles)
+}
+
+//export _gotk4_gio2_FileProgressCallback
+func _gotk4_gio2_FileProgressCallback(arg1 C.goffset, arg2 C.goffset, arg3 C.gpointer) {
+	var fn FileProgressCallback
+	{
+		v := gbox.Get(uintptr(arg3))
+		if v == nil {
+			panic(`callback not found`)
+		}
+		fn = v.(FileProgressCallback)
+	}
+
+	var _currentNumBytes int64 // out
+	var _totalNumBytes int64   // out
+
+	_currentNumBytes = int64(arg1)
+	_totalNumBytes = int64(arg2)
+
+	fn(_currentNumBytes, _totalNumBytes)
+}
+
+//export _gotk4_gio2_FileReadMoreCallback
+func _gotk4_gio2_FileReadMoreCallback(arg1 *C.char, arg2 C.goffset, arg3 C.gpointer) (cret C.gboolean) {
+	var fn FileReadMoreCallback
+	{
+		v := gbox.Get(uintptr(arg3))
+		if v == nil {
+			panic(`callback not found`)
+		}
+		fn = v.(FileReadMoreCallback)
+	}
+
+	var _fileContents string // out
+	var _fileSize int64      // out
+
+	_fileContents = C.GoString((*C.gchar)(unsafe.Pointer(arg1)))
+	_fileSize = int64(arg2)
+
+	ok := fn(_fileContents, _fileSize)
+
+	var _ bool
+
+	if ok {
+		cret = C.TRUE
+	}
+
+	return cret
+}
+
+//export _gotk4_gio2_PollableSourceFunc
+func _gotk4_gio2_PollableSourceFunc(arg1 *C.GObject, arg2 C.gpointer) (cret C.gboolean) {
+	var fn PollableSourceFunc
+	{
+		v := gbox.Get(uintptr(arg2))
+		if v == nil {
+			panic(`callback not found`)
+		}
+		fn = v.(PollableSourceFunc)
+	}
+
+	var _pollableStream *coreglib.Object // out
+
+	_pollableStream = coreglib.Take(unsafe.Pointer(arg1))
+
+	ok := fn(_pollableStream)
+
+	var _ bool
+
+	if ok {
+		cret = C.TRUE
+	}
+
+	return cret
+}
+
 //export _gotk4_gio2_SettingsBindGetMapping
 func _gotk4_gio2_SettingsBindGetMapping(arg1 *C.GValue, arg2 *C.GVariant, arg3 C.gpointer) (cret C.gboolean) {
 	var fn SettingsBindGetMapping
@@ -551,6 +753,34 @@ func _gotk4_gio2_SettingsGetMapping(arg1 *C.GVariant, arg2 *C.gpointer, arg3 C.g
 	var _ bool
 
 	*arg2 = (C.gpointer)(unsafe.Pointer(result))
+	if ok {
+		cret = C.TRUE
+	}
+
+	return cret
+}
+
+//export _gotk4_gio2_SocketSourceFunc
+func _gotk4_gio2_SocketSourceFunc(arg1 *C.GSocket, arg2 C.GIOCondition, arg3 C.gpointer) (cret C.gboolean) {
+	var fn SocketSourceFunc
+	{
+		v := gbox.Get(uintptr(arg3))
+		if v == nil {
+			panic(`callback not found`)
+		}
+		fn = v.(SocketSourceFunc)
+	}
+
+	var _socket *Socket             // out
+	var _condition glib.IOCondition // out
+
+	_socket = wrapSocket(coreglib.Take(unsafe.Pointer(arg1)))
+	_condition = glib.IOCondition(arg2)
+
+	ok := fn(_socket, _condition)
+
+	var _ bool
+
 	if ok {
 		cret = C.TRUE
 	}
@@ -1980,17 +2210,6 @@ func _gotk4_gio2_Application_ConnectStartup(arg0 C.gpointer, arg1 C.guintptr) {
 	f()
 }
 
-//export _gotk4_gio2_ApplicationCommandLineClass_done
-func _gotk4_gio2_ApplicationCommandLineClass_done(arg0 *C.GApplicationCommandLine) {
-	instance0 := coreglib.Take(unsafe.Pointer(arg0))
-	overrides := coreglib.OverridesFromObj[ApplicationCommandLineOverrides](instance0)
-	if overrides.Done == nil {
-		panic("gotk4: " + instance0.TypeFromInstance().String() + ": expected ApplicationCommandLineOverrides.Done, got none")
-	}
-
-	overrides.Done()
-}
-
 //export _gotk4_gio2_ApplicationCommandLineClass_get_stdin
 func _gotk4_gio2_ApplicationCommandLineClass_get_stdin(arg0 *C.GApplicationCommandLine) (cret *C.GInputStream) {
 	instance0 := coreglib.Take(unsafe.Pointer(arg0))
@@ -2304,23 +2523,6 @@ func _gotk4_gio2_DBusInterfaceSkeletonClass_get_properties(arg0 *C.GDBusInterfac
 	var _ *glib.Variant
 
 	cret = (*C.GVariant)(gextras.StructNative(unsafe.Pointer(variant)))
-
-	return cret
-}
-
-//export _gotk4_gio2_DBusInterfaceSkeletonClass_get_vtable
-func _gotk4_gio2_DBusInterfaceSkeletonClass_get_vtable(arg0 *C.GDBusInterfaceSkeleton) (cret *C.GDBusInterfaceVTable) {
-	instance0 := coreglib.Take(unsafe.Pointer(arg0))
-	overrides := coreglib.OverridesFromObj[DBusInterfaceSkeletonOverrides](instance0)
-	if overrides.Vtable == nil {
-		panic("gotk4: " + instance0.TypeFromInstance().String() + ": expected DBusInterfaceSkeletonOverrides.Vtable, got none")
-	}
-
-	dBusInterfaceVTable := overrides.Vtable()
-
-	var _ *DBusInterfaceVTable
-
-	cret = (*C.GDBusInterfaceVTable)(gextras.StructNative(unsafe.Pointer(dBusInterfaceVTable)))
 
 	return cret
 }

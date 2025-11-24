@@ -14,7 +14,7 @@ import (
 	"github.com/diamondburned/gotk4/pkg/gio/v2"
 )
 
-// #cgo pkg-config: gtk4-x11 gtk4
+// #cgo pkg-config: gtk4-x11
 // #cgo CFLAGS: -Wno-deprecated-declarations
 // #include <stdlib.h>
 // #include <gdk/x11/gdkx.h>
@@ -534,8 +534,6 @@ func (display *X11Display) Screen() *X11Screen {
 
 // StartupNotificationID gets the startup notification ID for a display.
 //
-// Deprecated: since version 4.10.
-//
 // The function returns the following values:
 //
 //   - utf8: startup notification ID for display.
@@ -636,8 +634,6 @@ func (display *X11Display) SetCursorTheme(theme string, size int) {
 // The startup ID is also what is used to signal that the startup
 // is complete (for example, when opening a window or when calling
 // gdk_display_notify_startup_complete()).
-//
-// Deprecated: Using gdk.Toplevel.SetStartupID() is sufficient.
 //
 // The function takes the following parameters:
 //
