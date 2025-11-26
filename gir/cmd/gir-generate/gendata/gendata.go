@@ -243,6 +243,8 @@ var ConversionProcessors = []ConversionProcessor{
 // Filters defines a list of GIR types to be filtered. The map key is the
 // namespace, and the values are list of names.
 var Filters = []FilterMatcher{
+	AbsoluteFilter("C.gsk_ngl_renderer_get_type"),
+	AbsoluteFilter("C.gsk_ngl_renderer_new"),
 	AbsoluteFilter("C.cairo_image_surface_create"),
 	AbsoluteFilter("C.gsk_path_builder_add_cairo_path"),
 

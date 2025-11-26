@@ -52,7 +52,6 @@ var (
 	GTypeGLShaderNode                = coreglib.Type(C.gsk_gl_shader_node_get_type())
 	GTypeInsetShadowNode             = coreglib.Type(C.gsk_inset_shadow_node_get_type())
 	GTypeLinearGradientNode          = coreglib.Type(C.gsk_linear_gradient_node_get_type())
-	GTypeNGLRenderer                 = coreglib.Type(C.gsk_ngl_renderer_get_type())
 	GTypeOpacityNode                 = coreglib.Type(C.gsk_opacity_node_get_type())
 	GTypeOutsetShadowNode            = coreglib.Type(C.gsk_outset_shadow_node_get_type())
 	GTypeRadialGradientNode          = coreglib.Type(C.gsk_radial_gradient_node_get_type())
@@ -95,7 +94,6 @@ func init() {
 		coreglib.TypeMarshaler{T: GTypeGLShaderNode, F: marshalGLShaderNode},
 		coreglib.TypeMarshaler{T: GTypeInsetShadowNode, F: marshalInsetShadowNode},
 		coreglib.TypeMarshaler{T: GTypeLinearGradientNode, F: marshalLinearGradientNode},
-		coreglib.TypeMarshaler{T: GTypeNGLRenderer, F: marshalNGLRenderer},
 		coreglib.TypeMarshaler{T: GTypeOpacityNode, F: marshalOpacityNode},
 		coreglib.TypeMarshaler{T: GTypeOutsetShadowNode, F: marshalOutsetShadowNode},
 		coreglib.TypeMarshaler{T: GTypeRadialGradientNode, F: marshalRadialGradientNode},
@@ -3404,29 +3402,6 @@ func wrapNGLRenderer(obj *coreglib.Object) *NGLRenderer {
 			Object: obj,
 		},
 	}
-}
-
-func marshalNGLRenderer(p uintptr) (interface{}, error) {
-	return wrapNGLRenderer(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
-}
-
-// NewNGLRenderer: same as gsk_gl_renderer_new().
-//
-// Deprecated: Use gsk_gl_renderer_new().
-//
-// The function returns the following values:
-//
-//   - nglRenderer: new GL renderer.
-func NewNGLRenderer() *NGLRenderer {
-	var _cret *C.GskRenderer // in
-
-	_cret = C.gsk_ngl_renderer_new()
-
-	var _nglRenderer *NGLRenderer // out
-
-	_nglRenderer = wrapNGLRenderer(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
-
-	return _nglRenderer
 }
 
 // OpacityNode: render node controlling the opacity of its single child node.
