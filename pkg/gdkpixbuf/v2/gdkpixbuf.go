@@ -50,22 +50,34 @@ import (
 // void _gotk4_gdkpixbuf2_PixbufLoader_virtual_size_prepared(void* fnptr, GdkPixbufLoader* arg0, int arg1, int arg2) {
 //   ((void (*)(GdkPixbufLoader*, int, int))(fnptr))(arg0, arg1, arg2);
 // };
+// GType _gotk4_weak_gdk_colorspace_get_type(void) { return gdk_colorspace_get_type ? gdk_colorspace_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_interp_type_get_type(void) { return gdk_interp_type_get_type ? gdk_interp_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_pixbuf_alpha_mode_get_type(void) { return gdk_pixbuf_alpha_mode_get_type ? gdk_pixbuf_alpha_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_pixbuf_error_get_type(void) { return gdk_pixbuf_error_get_type ? gdk_pixbuf_error_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_pixbuf_rotation_get_type(void) { return gdk_pixbuf_rotation_get_type ? gdk_pixbuf_rotation_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_pixbuf_get_type(void) { return gdk_pixbuf_get_type ? gdk_pixbuf_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_pixbuf_animation_get_type(void) { return gdk_pixbuf_animation_get_type ? gdk_pixbuf_animation_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_pixbuf_animation_iter_get_type(void) { return gdk_pixbuf_animation_iter_get_type ? gdk_pixbuf_animation_iter_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_pixbuf_loader_get_type(void) { return gdk_pixbuf_loader_get_type ? gdk_pixbuf_loader_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_pixbuf_simple_anim_get_type(void) { return gdk_pixbuf_simple_anim_get_type ? gdk_pixbuf_simple_anim_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_pixbuf_simple_anim_iter_get_type(void) { return gdk_pixbuf_simple_anim_iter_get_type ? gdk_pixbuf_simple_anim_iter_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_pixbuf_format_get_type(void) { return gdk_pixbuf_format_get_type ? gdk_pixbuf_format_get_type() : (GType)NULL; };
 import "C"
 
 // GType values.
 var (
-	GTypeColorspace           = coreglib.Type(C.gdk_colorspace_get_type())
-	GTypeInterpType           = coreglib.Type(C.gdk_interp_type_get_type())
-	GTypePixbufAlphaMode      = coreglib.Type(C.gdk_pixbuf_alpha_mode_get_type())
-	GTypePixbufError          = coreglib.Type(C.gdk_pixbuf_error_get_type())
-	GTypePixbufRotation       = coreglib.Type(C.gdk_pixbuf_rotation_get_type())
-	GTypePixbuf               = coreglib.Type(C.gdk_pixbuf_get_type())
-	GTypePixbufAnimation      = coreglib.Type(C.gdk_pixbuf_animation_get_type())
-	GTypePixbufAnimationIter  = coreglib.Type(C.gdk_pixbuf_animation_iter_get_type())
-	GTypePixbufLoader         = coreglib.Type(C.gdk_pixbuf_loader_get_type())
-	GTypePixbufSimpleAnim     = coreglib.Type(C.gdk_pixbuf_simple_anim_get_type())
-	GTypePixbufSimpleAnimIter = coreglib.Type(C.gdk_pixbuf_simple_anim_iter_get_type())
-	GTypePixbufFormat         = coreglib.Type(C.gdk_pixbuf_format_get_type())
+	GTypeColorspace           = coreglib.Type(C._gotk4_weak_gdk_colorspace_get_type())
+	GTypeInterpType           = coreglib.Type(C._gotk4_weak_gdk_interp_type_get_type())
+	GTypePixbufAlphaMode      = coreglib.Type(C._gotk4_weak_gdk_pixbuf_alpha_mode_get_type())
+	GTypePixbufError          = coreglib.Type(C._gotk4_weak_gdk_pixbuf_error_get_type())
+	GTypePixbufRotation       = coreglib.Type(C._gotk4_weak_gdk_pixbuf_rotation_get_type())
+	GTypePixbuf               = coreglib.Type(C._gotk4_weak_gdk_pixbuf_get_type())
+	GTypePixbufAnimation      = coreglib.Type(C._gotk4_weak_gdk_pixbuf_animation_get_type())
+	GTypePixbufAnimationIter  = coreglib.Type(C._gotk4_weak_gdk_pixbuf_animation_iter_get_type())
+	GTypePixbufLoader         = coreglib.Type(C._gotk4_weak_gdk_pixbuf_loader_get_type())
+	GTypePixbufSimpleAnim     = coreglib.Type(C._gotk4_weak_gdk_pixbuf_simple_anim_get_type())
+	GTypePixbufSimpleAnimIter = coreglib.Type(C._gotk4_weak_gdk_pixbuf_simple_anim_iter_get_type())
+	GTypePixbufFormat         = coreglib.Type(C._gotk4_weak_gdk_pixbuf_format_get_type())
 )
 
 func init() {

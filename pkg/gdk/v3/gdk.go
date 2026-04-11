@@ -80,80 +80,150 @@ import (
 // void _gotk4_gdk3_Window_virtual_to_embedder(void* fnptr, GdkWindow* arg0, gdouble arg1, gdouble arg2, gdouble* arg3, gdouble* arg4) {
 //   ((void (*)(GdkWindow*, gdouble, gdouble, gdouble*, gdouble*))(fnptr))(arg0, arg1, arg2, arg3, arg4);
 // };
+// GType _gotk4_weak_gdk_axis_use_get_type(void) { return gdk_axis_use_get_type ? gdk_axis_use_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_byte_order_get_type(void) { return gdk_byte_order_get_type ? gdk_byte_order_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_crossing_mode_get_type(void) { return gdk_crossing_mode_get_type ? gdk_crossing_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_cursor_type_get_type(void) { return gdk_cursor_type_get_type ? gdk_cursor_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_device_pad_feature_get_type(void) { return gdk_device_pad_feature_get_type ? gdk_device_pad_feature_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_device_tool_type_get_type(void) { return gdk_device_tool_type_get_type ? gdk_device_tool_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_device_type_get_type(void) { return gdk_device_type_get_type ? gdk_device_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_drag_cancel_reason_get_type(void) { return gdk_drag_cancel_reason_get_type ? gdk_drag_cancel_reason_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_drag_protocol_get_type(void) { return gdk_drag_protocol_get_type ? gdk_drag_protocol_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_event_type_get_type(void) { return gdk_event_type_get_type ? gdk_event_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_filter_return_get_type(void) { return gdk_filter_return_get_type ? gdk_filter_return_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_fullscreen_mode_get_type(void) { return gdk_fullscreen_mode_get_type ? gdk_fullscreen_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_gl_error_get_type(void) { return gdk_gl_error_get_type ? gdk_gl_error_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_grab_ownership_get_type(void) { return gdk_grab_ownership_get_type ? gdk_grab_ownership_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_grab_status_get_type(void) { return gdk_grab_status_get_type ? gdk_grab_status_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_gravity_get_type(void) { return gdk_gravity_get_type ? gdk_gravity_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_input_mode_get_type(void) { return gdk_input_mode_get_type ? gdk_input_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_input_source_get_type(void) { return gdk_input_source_get_type ? gdk_input_source_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_modifier_intent_get_type(void) { return gdk_modifier_intent_get_type ? gdk_modifier_intent_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_notify_type_get_type(void) { return gdk_notify_type_get_type ? gdk_notify_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_owner_change_get_type(void) { return gdk_owner_change_get_type ? gdk_owner_change_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_prop_mode_get_type(void) { return gdk_prop_mode_get_type ? gdk_prop_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_property_state_get_type(void) { return gdk_property_state_get_type ? gdk_property_state_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_scroll_direction_get_type(void) { return gdk_scroll_direction_get_type ? gdk_scroll_direction_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_setting_action_get_type(void) { return gdk_setting_action_get_type ? gdk_setting_action_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_status_get_type(void) { return gdk_status_get_type ? gdk_status_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_subpixel_layout_get_type(void) { return gdk_subpixel_layout_get_type ? gdk_subpixel_layout_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_touchpad_gesture_phase_get_type(void) { return gdk_touchpad_gesture_phase_get_type ? gdk_touchpad_gesture_phase_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_visibility_state_get_type(void) { return gdk_visibility_state_get_type ? gdk_visibility_state_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_visual_type_get_type(void) { return gdk_visual_type_get_type ? gdk_visual_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_window_edge_get_type(void) { return gdk_window_edge_get_type ? gdk_window_edge_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_window_type_get_type(void) { return gdk_window_type_get_type ? gdk_window_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_window_type_hint_get_type(void) { return gdk_window_type_hint_get_type ? gdk_window_type_hint_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_window_window_class_get_type(void) { return gdk_window_window_class_get_type ? gdk_window_window_class_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_anchor_hints_get_type(void) { return gdk_anchor_hints_get_type ? gdk_anchor_hints_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_axis_flags_get_type(void) { return gdk_axis_flags_get_type ? gdk_axis_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_drag_action_get_type(void) { return gdk_drag_action_get_type ? gdk_drag_action_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_event_mask_get_type(void) { return gdk_event_mask_get_type ? gdk_event_mask_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_frame_clock_phase_get_type(void) { return gdk_frame_clock_phase_get_type ? gdk_frame_clock_phase_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_modifier_type_get_type(void) { return gdk_modifier_type_get_type ? gdk_modifier_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_seat_capabilities_get_type(void) { return gdk_seat_capabilities_get_type ? gdk_seat_capabilities_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_wm_decoration_get_type(void) { return gdk_wm_decoration_get_type ? gdk_wm_decoration_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_wm_function_get_type(void) { return gdk_wm_function_get_type ? gdk_wm_function_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_window_attributes_type_get_type(void) { return gdk_window_attributes_type_get_type ? gdk_window_attributes_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_window_hints_get_type(void) { return gdk_window_hints_get_type ? gdk_window_hints_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_window_state_get_type(void) { return gdk_window_state_get_type ? gdk_window_state_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_device_pad_get_type(void) { return gdk_device_pad_get_type ? gdk_device_pad_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_app_launch_context_get_type(void) { return gdk_app_launch_context_get_type ? gdk_app_launch_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_cursor_get_type(void) { return gdk_cursor_get_type ? gdk_cursor_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_device_get_type(void) { return gdk_device_get_type ? gdk_device_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_device_manager_get_type(void) { return gdk_device_manager_get_type ? gdk_device_manager_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_device_tool_get_type(void) { return gdk_device_tool_get_type ? gdk_device_tool_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_display_get_type(void) { return gdk_display_get_type ? gdk_display_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_display_manager_get_type(void) { return gdk_display_manager_get_type ? gdk_display_manager_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_drag_context_get_type(void) { return gdk_drag_context_get_type ? gdk_drag_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_drawing_context_get_type(void) { return gdk_drawing_context_get_type ? gdk_drawing_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_frame_clock_get_type(void) { return gdk_frame_clock_get_type ? gdk_frame_clock_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_gl_context_get_type(void) { return gdk_gl_context_get_type ? gdk_gl_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_keymap_get_type(void) { return gdk_keymap_get_type ? gdk_keymap_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_monitor_get_type(void) { return gdk_monitor_get_type ? gdk_monitor_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_screen_get_type(void) { return gdk_screen_get_type ? gdk_screen_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_seat_get_type(void) { return gdk_seat_get_type ? gdk_seat_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_visual_get_type(void) { return gdk_visual_get_type ? gdk_visual_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_window_get_type(void) { return gdk_window_get_type ? gdk_window_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_color_get_type(void) { return gdk_color_get_type ? gdk_color_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_event_sequence_get_type(void) { return gdk_event_sequence_get_type ? gdk_event_sequence_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_frame_timings_get_type(void) { return gdk_frame_timings_get_type ? gdk_frame_timings_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_rgba_get_type(void) { return gdk_rgba_get_type ? gdk_rgba_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_rectangle_get_type(void) { return gdk_rectangle_get_type ? gdk_rectangle_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_event_get_type(void) { return gdk_event_get_type ? gdk_event_get_type() : (GType)NULL; };
 import "C"
 
 // GType values.
 var (
-	GTypeAxisUse              = coreglib.Type(C.gdk_axis_use_get_type())
-	GTypeByteOrder            = coreglib.Type(C.gdk_byte_order_get_type())
-	GTypeCrossingMode         = coreglib.Type(C.gdk_crossing_mode_get_type())
-	GTypeCursorType           = coreglib.Type(C.gdk_cursor_type_get_type())
-	GTypeDevicePadFeature     = coreglib.Type(C.gdk_device_pad_feature_get_type())
-	GTypeDeviceToolType       = coreglib.Type(C.gdk_device_tool_type_get_type())
-	GTypeDeviceType           = coreglib.Type(C.gdk_device_type_get_type())
-	GTypeDragCancelReason     = coreglib.Type(C.gdk_drag_cancel_reason_get_type())
-	GTypeDragProtocol         = coreglib.Type(C.gdk_drag_protocol_get_type())
-	GTypeEventType            = coreglib.Type(C.gdk_event_type_get_type())
-	GTypeFilterReturn         = coreglib.Type(C.gdk_filter_return_get_type())
-	GTypeFullscreenMode       = coreglib.Type(C.gdk_fullscreen_mode_get_type())
-	GTypeGLError              = coreglib.Type(C.gdk_gl_error_get_type())
-	GTypeGrabOwnership        = coreglib.Type(C.gdk_grab_ownership_get_type())
-	GTypeGrabStatus           = coreglib.Type(C.gdk_grab_status_get_type())
-	GTypeGravity              = coreglib.Type(C.gdk_gravity_get_type())
-	GTypeInputMode            = coreglib.Type(C.gdk_input_mode_get_type())
-	GTypeInputSource          = coreglib.Type(C.gdk_input_source_get_type())
-	GTypeModifierIntent       = coreglib.Type(C.gdk_modifier_intent_get_type())
-	GTypeNotifyType           = coreglib.Type(C.gdk_notify_type_get_type())
-	GTypeOwnerChange          = coreglib.Type(C.gdk_owner_change_get_type())
-	GTypePropMode             = coreglib.Type(C.gdk_prop_mode_get_type())
-	GTypePropertyState        = coreglib.Type(C.gdk_property_state_get_type())
-	GTypeScrollDirection      = coreglib.Type(C.gdk_scroll_direction_get_type())
-	GTypeSettingAction        = coreglib.Type(C.gdk_setting_action_get_type())
-	GTypeStatus               = coreglib.Type(C.gdk_status_get_type())
-	GTypeSubpixelLayout       = coreglib.Type(C.gdk_subpixel_layout_get_type())
-	GTypeTouchpadGesturePhase = coreglib.Type(C.gdk_touchpad_gesture_phase_get_type())
-	GTypeVisibilityState      = coreglib.Type(C.gdk_visibility_state_get_type())
-	GTypeVisualType           = coreglib.Type(C.gdk_visual_type_get_type())
-	GTypeWindowEdge           = coreglib.Type(C.gdk_window_edge_get_type())
-	GTypeWindowType           = coreglib.Type(C.gdk_window_type_get_type())
-	GTypeWindowTypeHint       = coreglib.Type(C.gdk_window_type_hint_get_type())
-	GTypeWindowWindowClass    = coreglib.Type(C.gdk_window_window_class_get_type())
-	GTypeAnchorHints          = coreglib.Type(C.gdk_anchor_hints_get_type())
-	GTypeAxisFlags            = coreglib.Type(C.gdk_axis_flags_get_type())
-	GTypeDragAction           = coreglib.Type(C.gdk_drag_action_get_type())
-	GTypeEventMask            = coreglib.Type(C.gdk_event_mask_get_type())
-	GTypeFrameClockPhase      = coreglib.Type(C.gdk_frame_clock_phase_get_type())
-	GTypeModifierType         = coreglib.Type(C.gdk_modifier_type_get_type())
-	GTypeSeatCapabilities     = coreglib.Type(C.gdk_seat_capabilities_get_type())
-	GTypeWMDecoration         = coreglib.Type(C.gdk_wm_decoration_get_type())
-	GTypeWMFunction           = coreglib.Type(C.gdk_wm_function_get_type())
-	GTypeWindowAttributesType = coreglib.Type(C.gdk_window_attributes_type_get_type())
-	GTypeWindowHints          = coreglib.Type(C.gdk_window_hints_get_type())
-	GTypeWindowState          = coreglib.Type(C.gdk_window_state_get_type())
-	GTypeDevicePad            = coreglib.Type(C.gdk_device_pad_get_type())
-	GTypeAppLaunchContext     = coreglib.Type(C.gdk_app_launch_context_get_type())
-	GTypeCursor               = coreglib.Type(C.gdk_cursor_get_type())
-	GTypeDevice               = coreglib.Type(C.gdk_device_get_type())
-	GTypeDeviceManager        = coreglib.Type(C.gdk_device_manager_get_type())
-	GTypeDeviceTool           = coreglib.Type(C.gdk_device_tool_get_type())
-	GTypeDisplay              = coreglib.Type(C.gdk_display_get_type())
-	GTypeDisplayManager       = coreglib.Type(C.gdk_display_manager_get_type())
-	GTypeDragContext          = coreglib.Type(C.gdk_drag_context_get_type())
-	GTypeDrawingContext       = coreglib.Type(C.gdk_drawing_context_get_type())
-	GTypeFrameClock           = coreglib.Type(C.gdk_frame_clock_get_type())
-	GTypeGLContext            = coreglib.Type(C.gdk_gl_context_get_type())
-	GTypeKeymap               = coreglib.Type(C.gdk_keymap_get_type())
-	GTypeMonitor              = coreglib.Type(C.gdk_monitor_get_type())
-	GTypeScreen               = coreglib.Type(C.gdk_screen_get_type())
-	GTypeSeat                 = coreglib.Type(C.gdk_seat_get_type())
-	GTypeVisual               = coreglib.Type(C.gdk_visual_get_type())
-	GTypeWindow               = coreglib.Type(C.gdk_window_get_type())
-	GTypeColor                = coreglib.Type(C.gdk_color_get_type())
-	GTypeEventSequence        = coreglib.Type(C.gdk_event_sequence_get_type())
-	GTypeFrameTimings         = coreglib.Type(C.gdk_frame_timings_get_type())
-	GTypeRGBA                 = coreglib.Type(C.gdk_rgba_get_type())
-	GTypeRectangle            = coreglib.Type(C.gdk_rectangle_get_type())
-	GTypeEvent                = coreglib.Type(C.gdk_event_get_type())
+	GTypeAxisUse              = coreglib.Type(C._gotk4_weak_gdk_axis_use_get_type())
+	GTypeByteOrder            = coreglib.Type(C._gotk4_weak_gdk_byte_order_get_type())
+	GTypeCrossingMode         = coreglib.Type(C._gotk4_weak_gdk_crossing_mode_get_type())
+	GTypeCursorType           = coreglib.Type(C._gotk4_weak_gdk_cursor_type_get_type())
+	GTypeDevicePadFeature     = coreglib.Type(C._gotk4_weak_gdk_device_pad_feature_get_type())
+	GTypeDeviceToolType       = coreglib.Type(C._gotk4_weak_gdk_device_tool_type_get_type())
+	GTypeDeviceType           = coreglib.Type(C._gotk4_weak_gdk_device_type_get_type())
+	GTypeDragCancelReason     = coreglib.Type(C._gotk4_weak_gdk_drag_cancel_reason_get_type())
+	GTypeDragProtocol         = coreglib.Type(C._gotk4_weak_gdk_drag_protocol_get_type())
+	GTypeEventType            = coreglib.Type(C._gotk4_weak_gdk_event_type_get_type())
+	GTypeFilterReturn         = coreglib.Type(C._gotk4_weak_gdk_filter_return_get_type())
+	GTypeFullscreenMode       = coreglib.Type(C._gotk4_weak_gdk_fullscreen_mode_get_type())
+	GTypeGLError              = coreglib.Type(C._gotk4_weak_gdk_gl_error_get_type())
+	GTypeGrabOwnership        = coreglib.Type(C._gotk4_weak_gdk_grab_ownership_get_type())
+	GTypeGrabStatus           = coreglib.Type(C._gotk4_weak_gdk_grab_status_get_type())
+	GTypeGravity              = coreglib.Type(C._gotk4_weak_gdk_gravity_get_type())
+	GTypeInputMode            = coreglib.Type(C._gotk4_weak_gdk_input_mode_get_type())
+	GTypeInputSource          = coreglib.Type(C._gotk4_weak_gdk_input_source_get_type())
+	GTypeModifierIntent       = coreglib.Type(C._gotk4_weak_gdk_modifier_intent_get_type())
+	GTypeNotifyType           = coreglib.Type(C._gotk4_weak_gdk_notify_type_get_type())
+	GTypeOwnerChange          = coreglib.Type(C._gotk4_weak_gdk_owner_change_get_type())
+	GTypePropMode             = coreglib.Type(C._gotk4_weak_gdk_prop_mode_get_type())
+	GTypePropertyState        = coreglib.Type(C._gotk4_weak_gdk_property_state_get_type())
+	GTypeScrollDirection      = coreglib.Type(C._gotk4_weak_gdk_scroll_direction_get_type())
+	GTypeSettingAction        = coreglib.Type(C._gotk4_weak_gdk_setting_action_get_type())
+	GTypeStatus               = coreglib.Type(C._gotk4_weak_gdk_status_get_type())
+	GTypeSubpixelLayout       = coreglib.Type(C._gotk4_weak_gdk_subpixel_layout_get_type())
+	GTypeTouchpadGesturePhase = coreglib.Type(C._gotk4_weak_gdk_touchpad_gesture_phase_get_type())
+	GTypeVisibilityState      = coreglib.Type(C._gotk4_weak_gdk_visibility_state_get_type())
+	GTypeVisualType           = coreglib.Type(C._gotk4_weak_gdk_visual_type_get_type())
+	GTypeWindowEdge           = coreglib.Type(C._gotk4_weak_gdk_window_edge_get_type())
+	GTypeWindowType           = coreglib.Type(C._gotk4_weak_gdk_window_type_get_type())
+	GTypeWindowTypeHint       = coreglib.Type(C._gotk4_weak_gdk_window_type_hint_get_type())
+	GTypeWindowWindowClass    = coreglib.Type(C._gotk4_weak_gdk_window_window_class_get_type())
+	GTypeAnchorHints          = coreglib.Type(C._gotk4_weak_gdk_anchor_hints_get_type())
+	GTypeAxisFlags            = coreglib.Type(C._gotk4_weak_gdk_axis_flags_get_type())
+	GTypeDragAction           = coreglib.Type(C._gotk4_weak_gdk_drag_action_get_type())
+	GTypeEventMask            = coreglib.Type(C._gotk4_weak_gdk_event_mask_get_type())
+	GTypeFrameClockPhase      = coreglib.Type(C._gotk4_weak_gdk_frame_clock_phase_get_type())
+	GTypeModifierType         = coreglib.Type(C._gotk4_weak_gdk_modifier_type_get_type())
+	GTypeSeatCapabilities     = coreglib.Type(C._gotk4_weak_gdk_seat_capabilities_get_type())
+	GTypeWMDecoration         = coreglib.Type(C._gotk4_weak_gdk_wm_decoration_get_type())
+	GTypeWMFunction           = coreglib.Type(C._gotk4_weak_gdk_wm_function_get_type())
+	GTypeWindowAttributesType = coreglib.Type(C._gotk4_weak_gdk_window_attributes_type_get_type())
+	GTypeWindowHints          = coreglib.Type(C._gotk4_weak_gdk_window_hints_get_type())
+	GTypeWindowState          = coreglib.Type(C._gotk4_weak_gdk_window_state_get_type())
+	GTypeDevicePad            = coreglib.Type(C._gotk4_weak_gdk_device_pad_get_type())
+	GTypeAppLaunchContext     = coreglib.Type(C._gotk4_weak_gdk_app_launch_context_get_type())
+	GTypeCursor               = coreglib.Type(C._gotk4_weak_gdk_cursor_get_type())
+	GTypeDevice               = coreglib.Type(C._gotk4_weak_gdk_device_get_type())
+	GTypeDeviceManager        = coreglib.Type(C._gotk4_weak_gdk_device_manager_get_type())
+	GTypeDeviceTool           = coreglib.Type(C._gotk4_weak_gdk_device_tool_get_type())
+	GTypeDisplay              = coreglib.Type(C._gotk4_weak_gdk_display_get_type())
+	GTypeDisplayManager       = coreglib.Type(C._gotk4_weak_gdk_display_manager_get_type())
+	GTypeDragContext          = coreglib.Type(C._gotk4_weak_gdk_drag_context_get_type())
+	GTypeDrawingContext       = coreglib.Type(C._gotk4_weak_gdk_drawing_context_get_type())
+	GTypeFrameClock           = coreglib.Type(C._gotk4_weak_gdk_frame_clock_get_type())
+	GTypeGLContext            = coreglib.Type(C._gotk4_weak_gdk_gl_context_get_type())
+	GTypeKeymap               = coreglib.Type(C._gotk4_weak_gdk_keymap_get_type())
+	GTypeMonitor              = coreglib.Type(C._gotk4_weak_gdk_monitor_get_type())
+	GTypeScreen               = coreglib.Type(C._gotk4_weak_gdk_screen_get_type())
+	GTypeSeat                 = coreglib.Type(C._gotk4_weak_gdk_seat_get_type())
+	GTypeVisual               = coreglib.Type(C._gotk4_weak_gdk_visual_get_type())
+	GTypeWindow               = coreglib.Type(C._gotk4_weak_gdk_window_get_type())
+	GTypeColor                = coreglib.Type(C._gotk4_weak_gdk_color_get_type())
+	GTypeEventSequence        = coreglib.Type(C._gotk4_weak_gdk_event_sequence_get_type())
+	GTypeFrameTimings         = coreglib.Type(C._gotk4_weak_gdk_frame_timings_get_type())
+	GTypeRGBA                 = coreglib.Type(C._gotk4_weak_gdk_rgba_get_type())
+	GTypeRectangle            = coreglib.Type(C._gotk4_weak_gdk_rectangle_get_type())
+	GTypeEvent                = coreglib.Type(C._gotk4_weak_gdk_event_get_type())
 )
 
 func init() {
@@ -2533,7 +2603,7 @@ const KEY_zerosuperior = 16785520
 const KEY_zstroke = 16777654
 const MAJOR_VERSION = 3
 const MAX_TIMECOORD_AXES = 128
-const MICRO_VERSION = 38
+const MICRO_VERSION = 41
 const MINOR_VERSION = 24
 
 // PARENT_RELATIVE: special value, indicating that the background for a window

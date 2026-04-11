@@ -3,11 +3,9 @@
 package glib
 
 import (
-	"runtime"
 	"unsafe"
 
 	"github.com/diamondburned/gotk4/pkg/core/gbox"
-	"github.com/diamondburned/gotk4/pkg/core/gerror"
 	"github.com/diamondburned/gotk4/pkg/core/gextras"
 )
 
@@ -37,30 +35,6 @@ func _gotk4_glib2_CompareDataFunc(arg1 C.gconstpointer, arg2 C.gconstpointer, ar
 	var _ int
 
 	cret = C.gint(gint)
-
-	return cret
-}
-
-//export _gotk4_glib2_CopyFunc
-func _gotk4_glib2_CopyFunc(arg1 C.gconstpointer, arg2 C.gpointer) (cret C.gpointer) {
-	var fn CopyFunc
-	{
-		v := gbox.Get(uintptr(arg2))
-		if v == nil {
-			panic(`callback not found`)
-		}
-		fn = v.(CopyFunc)
-	}
-
-	var _src unsafe.Pointer // out
-
-	_src = (unsafe.Pointer)(unsafe.Pointer(arg1))
-
-	gpointer := fn(_src)
-
-	var _ unsafe.Pointer
-
-	cret = (C.gpointer)(unsafe.Pointer(gpointer))
 
 	return cret
 }
@@ -159,41 +133,6 @@ func _gotk4_glib2_HRFunc(arg1 C.gpointer, arg2 C.gpointer, arg3 C.gpointer) (cre
 	return cret
 }
 
-//export _gotk4_glib2_IOFunc
-func _gotk4_glib2_IOFunc(arg1 *C.GIOChannel, arg2 C.GIOCondition, arg3 C.gpointer) (cret C.gboolean) {
-	var fn IOFunc
-	{
-		v := gbox.Get(uintptr(arg3))
-		if v == nil {
-			panic(`callback not found`)
-		}
-		fn = v.(IOFunc)
-	}
-
-	var _source *IOChannel     // out
-	var _condition IOCondition // out
-
-	_source = (*IOChannel)(gextras.NewStructNative(unsafe.Pointer(arg1)))
-	C.g_io_channel_ref(arg1)
-	runtime.SetFinalizer(
-		gextras.StructIntern(unsafe.Pointer(_source)),
-		func(intern *struct{ C unsafe.Pointer }) {
-			C.g_io_channel_unref((*C.GIOChannel)(intern.C))
-		},
-	)
-	_condition = IOCondition(arg2)
-
-	ok := fn(_source, _condition)
-
-	var _ bool
-
-	if ok {
-		cret = C.TRUE
-	}
-
-	return cret
-}
-
 //export _gotk4_glib2_LogFunc
 func _gotk4_glib2_LogFunc(arg1 *C.gchar, arg2 C.GLogLevelFlags, arg3 *C.gchar, arg4 C.gpointer) {
 	var fn LogFunc
@@ -248,78 +187,6 @@ func _gotk4_glib2_LogWriterFunc(arg1 C.GLogLevelFlags, arg2 *C.GLogField, arg3 C
 	return cret
 }
 
-//export _gotk4_glib2_NodeForEachFunc
-func _gotk4_glib2_NodeForEachFunc(arg1 *C.GNode, arg2 C.gpointer) {
-	var fn NodeForEachFunc
-	{
-		v := gbox.Get(uintptr(arg2))
-		if v == nil {
-			panic(`callback not found`)
-		}
-		fn = v.(NodeForEachFunc)
-	}
-
-	var _node *Node // out
-
-	_node = (*Node)(gextras.NewStructNative(unsafe.Pointer(arg1)))
-
-	fn(_node)
-}
-
-//export _gotk4_glib2_NodeTraverseFunc
-func _gotk4_glib2_NodeTraverseFunc(arg1 *C.GNode, arg2 C.gpointer) (cret C.gboolean) {
-	var fn NodeTraverseFunc
-	{
-		v := gbox.Get(uintptr(arg2))
-		if v == nil {
-			panic(`callback not found`)
-		}
-		fn = v.(NodeTraverseFunc)
-	}
-
-	var _node *Node // out
-
-	_node = (*Node)(gextras.NewStructNative(unsafe.Pointer(arg1)))
-
-	ok := fn(_node)
-
-	var _ bool
-
-	if ok {
-		cret = C.TRUE
-	}
-
-	return cret
-}
-
-//export _gotk4_glib2_OptionArgFunc
-func _gotk4_glib2_OptionArgFunc(arg1 *C.gchar, arg2 *C.gchar, arg3 C.gpointer, _cerr **C.GError) (cret C.gboolean) {
-	var fn OptionArgFunc
-	{
-		v := gbox.Get(uintptr(arg3))
-		if v == nil {
-			panic(`callback not found`)
-		}
-		fn = v.(OptionArgFunc)
-	}
-
-	var _optionName string // out
-	var _value string      // out
-
-	_optionName = C.GoString((*C.gchar)(unsafe.Pointer(arg1)))
-	_value = C.GoString((*C.gchar)(unsafe.Pointer(arg2)))
-
-	_goerr := fn(_optionName, _value)
-
-	var _ error
-
-	if _goerr != nil && _cerr != nil {
-		*_cerr = (*C.GError)(gerror.New(_goerr))
-	}
-
-	return cret
-}
-
 //export _gotk4_glib2_SourceFunc
 func _gotk4_glib2_SourceFunc(arg1 C.gpointer) (cret C.gboolean) {
 	var fn SourceFunc
@@ -354,71 +221,4 @@ func _gotk4_glib2_SourceOnceFunc(arg1 C.gpointer) {
 	}
 
 	fn()
-}
-
-//export _gotk4_glib2_SpawnChildSetupFunc
-func _gotk4_glib2_SpawnChildSetupFunc(arg1 C.gpointer) {
-	var fn SpawnChildSetupFunc
-	{
-		v := gbox.Get(uintptr(arg1))
-		if v == nil {
-			panic(`callback not found`)
-		}
-		fn = v.(SpawnChildSetupFunc)
-	}
-
-	fn()
-}
-
-//export _gotk4_glib2_TranslateFunc
-func _gotk4_glib2_TranslateFunc(arg1 *C.gchar, arg2 C.gpointer) (cret *C.gchar) {
-	var fn TranslateFunc
-	{
-		v := gbox.Get(uintptr(arg2))
-		if v == nil {
-			panic(`callback not found`)
-		}
-		fn = v.(TranslateFunc)
-	}
-
-	var _str string // out
-
-	_str = C.GoString((*C.gchar)(unsafe.Pointer(arg1)))
-
-	utf8 := fn(_str)
-
-	var _ string
-
-	cret = (*C.gchar)(unsafe.Pointer(C.CString(utf8)))
-	defer C.free(unsafe.Pointer(cret))
-
-	return cret
-}
-
-//export _gotk4_glib2_TraverseFunc
-func _gotk4_glib2_TraverseFunc(arg1 C.gpointer, arg2 C.gpointer, arg3 C.gpointer) (cret C.gboolean) {
-	var fn TraverseFunc
-	{
-		v := gbox.Get(uintptr(arg3))
-		if v == nil {
-			panic(`callback not found`)
-		}
-		fn = v.(TraverseFunc)
-	}
-
-	var _key unsafe.Pointer   // out
-	var _value unsafe.Pointer // out
-
-	_key = (unsafe.Pointer)(unsafe.Pointer(arg1))
-	_value = (unsafe.Pointer)(unsafe.Pointer(arg2))
-
-	ok := fn(_key, _value)
-
-	var _ bool
-
-	if ok {
-		cret = C.TRUE
-	}
-
-	return cret
 }

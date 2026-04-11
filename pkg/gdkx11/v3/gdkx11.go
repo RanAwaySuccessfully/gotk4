@@ -19,25 +19,40 @@ import (
 // #include <gdk/gdkx.h>
 // #include <glib-object.h>
 // extern void _gotk4_gdkx113_X11Screen_ConnectWindowManagerChanged(gpointer, guintptr);
+// GType _gotk4_weak_gdk_x11_app_launch_context_get_type(void) { return gdk_x11_app_launch_context_get_type ? gdk_x11_app_launch_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_cursor_get_type(void) { return gdk_x11_cursor_get_type ? gdk_x11_cursor_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_device_core_get_type(void) { return gdk_x11_device_core_get_type ? gdk_x11_device_core_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_device_manager_core_get_type(void) { return gdk_x11_device_manager_core_get_type ? gdk_x11_device_manager_core_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_device_manager_xi2_get_type(void) { return gdk_x11_device_manager_xi2_get_type ? gdk_x11_device_manager_xi2_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_device_xi2_get_type(void) { return gdk_x11_device_xi2_get_type ? gdk_x11_device_xi2_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_display_get_type(void) { return gdk_x11_display_get_type ? gdk_x11_display_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_display_manager_get_type(void) { return gdk_x11_display_manager_get_type ? gdk_x11_display_manager_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_drag_context_get_type(void) { return gdk_x11_drag_context_get_type ? gdk_x11_drag_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_gl_context_get_type(void) { return gdk_x11_gl_context_get_type ? gdk_x11_gl_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_keymap_get_type(void) { return gdk_x11_keymap_get_type ? gdk_x11_keymap_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_monitor_get_type(void) { return gdk_x11_monitor_get_type ? gdk_x11_monitor_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_screen_get_type(void) { return gdk_x11_screen_get_type ? gdk_x11_screen_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_visual_get_type(void) { return gdk_x11_visual_get_type ? gdk_x11_visual_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_window_get_type(void) { return gdk_x11_window_get_type ? gdk_x11_window_get_type() : (GType)NULL; };
 import "C"
 
 // GType values.
 var (
-	GTypeX11AppLaunchContext  = coreglib.Type(C.gdk_x11_app_launch_context_get_type())
-	GTypeX11Cursor            = coreglib.Type(C.gdk_x11_cursor_get_type())
-	GTypeX11DeviceCore        = coreglib.Type(C.gdk_x11_device_core_get_type())
-	GTypeX11DeviceManagerCore = coreglib.Type(C.gdk_x11_device_manager_core_get_type())
-	GTypeX11DeviceManagerXI2  = coreglib.Type(C.gdk_x11_device_manager_xi2_get_type())
-	GTypeX11DeviceXI2         = coreglib.Type(C.gdk_x11_device_xi2_get_type())
-	GTypeX11Display           = coreglib.Type(C.gdk_x11_display_get_type())
-	GTypeX11DisplayManager    = coreglib.Type(C.gdk_x11_display_manager_get_type())
-	GTypeX11DragContext       = coreglib.Type(C.gdk_x11_drag_context_get_type())
-	GTypeX11GLContext         = coreglib.Type(C.gdk_x11_gl_context_get_type())
-	GTypeX11Keymap            = coreglib.Type(C.gdk_x11_keymap_get_type())
-	GTypeX11Monitor           = coreglib.Type(C.gdk_x11_monitor_get_type())
-	GTypeX11Screen            = coreglib.Type(C.gdk_x11_screen_get_type())
-	GTypeX11Visual            = coreglib.Type(C.gdk_x11_visual_get_type())
-	GTypeX11Window            = coreglib.Type(C.gdk_x11_window_get_type())
+	GTypeX11AppLaunchContext  = coreglib.Type(C._gotk4_weak_gdk_x11_app_launch_context_get_type())
+	GTypeX11Cursor            = coreglib.Type(C._gotk4_weak_gdk_x11_cursor_get_type())
+	GTypeX11DeviceCore        = coreglib.Type(C._gotk4_weak_gdk_x11_device_core_get_type())
+	GTypeX11DeviceManagerCore = coreglib.Type(C._gotk4_weak_gdk_x11_device_manager_core_get_type())
+	GTypeX11DeviceManagerXI2  = coreglib.Type(C._gotk4_weak_gdk_x11_device_manager_xi2_get_type())
+	GTypeX11DeviceXI2         = coreglib.Type(C._gotk4_weak_gdk_x11_device_xi2_get_type())
+	GTypeX11Display           = coreglib.Type(C._gotk4_weak_gdk_x11_display_get_type())
+	GTypeX11DisplayManager    = coreglib.Type(C._gotk4_weak_gdk_x11_display_manager_get_type())
+	GTypeX11DragContext       = coreglib.Type(C._gotk4_weak_gdk_x11_drag_context_get_type())
+	GTypeX11GLContext         = coreglib.Type(C._gotk4_weak_gdk_x11_gl_context_get_type())
+	GTypeX11Keymap            = coreglib.Type(C._gotk4_weak_gdk_x11_keymap_get_type())
+	GTypeX11Monitor           = coreglib.Type(C._gotk4_weak_gdk_x11_monitor_get_type())
+	GTypeX11Screen            = coreglib.Type(C._gotk4_weak_gdk_x11_screen_get_type())
+	GTypeX11Visual            = coreglib.Type(C._gotk4_weak_gdk_x11_visual_get_type())
+	GTypeX11Window            = coreglib.Type(C._gotk4_weak_gdk_x11_window_get_type())
 )
 
 func init() {

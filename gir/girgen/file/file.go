@@ -44,7 +44,24 @@ func (m Marshaler) GLibType() string {
 	if strings.Contains(m.GLibGetType, ".") {
 		return fmt.Sprintf("coreglib.Type(%s)", m.GLibGetType)
 	}
-	return fmt.Sprintf("coreglib.Type(C.%s())", m.GLibGetType)
+	//return fmt.Sprintf("coreglib.Type(C.%s())", m.GLibGetType)
+	return fmt.Sprintf("coreglib.Type(C._gotk4_weak_%s())", m.GLibGetType)
+}
+
+func (m Marshaler) GLibType_C_HasOverride() bool {
+	if strings.Contains(m.GLibGetType, ".") {
+		return false
+	}
+
+	return true
+}
+
+func (m Marshaler) GLibType_C_Weak() string {
+	return fmt.Sprintf("extern GType %s(void) __attribute__((weak));", m.GLibGetType)
+}
+
+func (m Marshaler) GLibType_C_Func() string {
+	return fmt.Sprintf("GType _gotk4_weak_%s(void) { return %s ? %s() : (GType)NULL; };", m.GLibGetType, m.GLibGetType, m.GLibGetType)
 }
 
 // Header describes the side effects of the conversion, such as importing new

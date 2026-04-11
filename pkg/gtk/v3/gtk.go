@@ -2720,440 +2720,870 @@ import (
 // void _gotk4_gtk3_Window_virtual_set_focus(void* fnptr, GtkWindow* arg0, GtkWidget* arg1) {
 //   ((void (*)(GtkWindow*, GtkWidget*))(fnptr))(arg0, arg1);
 // };
+// GType _gotk4_weak_gtk_align_get_type(void) { return gtk_align_get_type ? gtk_align_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_arrow_placement_get_type(void) { return gtk_arrow_placement_get_type ? gtk_arrow_placement_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_arrow_type_get_type(void) { return gtk_arrow_type_get_type ? gtk_arrow_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_assistant_page_type_get_type(void) { return gtk_assistant_page_type_get_type ? gtk_assistant_page_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_baseline_position_get_type(void) { return gtk_baseline_position_get_type ? gtk_baseline_position_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_border_style_get_type(void) { return gtk_border_style_get_type ? gtk_border_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_builder_error_get_type(void) { return gtk_builder_error_get_type ? gtk_builder_error_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_button_box_style_get_type(void) { return gtk_button_box_style_get_type ? gtk_button_box_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_button_role_get_type(void) { return gtk_button_role_get_type ? gtk_button_role_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_buttons_type_get_type(void) { return gtk_buttons_type_get_type ? gtk_buttons_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_accel_mode_get_type(void) { return gtk_cell_renderer_accel_mode_get_type ? gtk_cell_renderer_accel_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_mode_get_type(void) { return gtk_cell_renderer_mode_get_type ? gtk_cell_renderer_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_corner_type_get_type(void) { return gtk_corner_type_get_type ? gtk_corner_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_css_provider_error_get_type(void) { return gtk_css_provider_error_get_type ? gtk_css_provider_error_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_css_section_type_get_type(void) { return gtk_css_section_type_get_type ? gtk_css_section_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_delete_type_get_type(void) { return gtk_delete_type_get_type ? gtk_delete_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_direction_type_get_type(void) { return gtk_direction_type_get_type ? gtk_direction_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_drag_result_get_type(void) { return gtk_drag_result_get_type ? gtk_drag_result_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_entry_icon_position_get_type(void) { return gtk_entry_icon_position_get_type ? gtk_entry_icon_position_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_event_sequence_state_get_type(void) { return gtk_event_sequence_state_get_type ? gtk_event_sequence_state_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_expander_style_get_type(void) { return gtk_expander_style_get_type ? gtk_expander_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_file_chooser_action_get_type(void) { return gtk_file_chooser_action_get_type ? gtk_file_chooser_action_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_file_chooser_confirmation_get_type(void) { return gtk_file_chooser_confirmation_get_type ? gtk_file_chooser_confirmation_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_file_chooser_error_get_type(void) { return gtk_file_chooser_error_get_type ? gtk_file_chooser_error_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_im_preedit_style_get_type(void) { return gtk_im_preedit_style_get_type ? gtk_im_preedit_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_im_status_style_get_type(void) { return gtk_im_status_style_get_type ? gtk_im_status_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_size_get_type(void) { return gtk_icon_size_get_type ? gtk_icon_size_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_theme_error_get_type(void) { return gtk_icon_theme_error_get_type ? gtk_icon_theme_error_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_view_drop_position_get_type(void) { return gtk_icon_view_drop_position_get_type ? gtk_icon_view_drop_position_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_image_type_get_type(void) { return gtk_image_type_get_type ? gtk_image_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_input_purpose_get_type(void) { return gtk_input_purpose_get_type ? gtk_input_purpose_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_justification_get_type(void) { return gtk_justification_get_type ? gtk_justification_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_level_bar_mode_get_type(void) { return gtk_level_bar_mode_get_type ? gtk_level_bar_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_license_get_type(void) { return gtk_license_get_type ? gtk_license_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_direction_type_get_type(void) { return gtk_menu_direction_type_get_type ? gtk_menu_direction_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_message_type_get_type(void) { return gtk_message_type_get_type ? gtk_message_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_movement_step_get_type(void) { return gtk_movement_step_get_type ? gtk_movement_step_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_notebook_tab_get_type(void) { return gtk_notebook_tab_get_type ? gtk_notebook_tab_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_number_up_layout_get_type(void) { return gtk_number_up_layout_get_type ? gtk_number_up_layout_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_orientation_get_type(void) { return gtk_orientation_get_type ? gtk_orientation_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_pack_direction_get_type(void) { return gtk_pack_direction_get_type ? gtk_pack_direction_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_pack_type_get_type(void) { return gtk_pack_type_get_type ? gtk_pack_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_pad_action_type_get_type(void) { return gtk_pad_action_type_get_type ? gtk_pad_action_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_page_orientation_get_type(void) { return gtk_page_orientation_get_type ? gtk_page_orientation_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_page_set_get_type(void) { return gtk_page_set_get_type ? gtk_page_set_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_pan_direction_get_type(void) { return gtk_pan_direction_get_type ? gtk_pan_direction_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_path_priority_type_get_type(void) { return gtk_path_priority_type_get_type ? gtk_path_priority_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_path_type_get_type(void) { return gtk_path_type_get_type ? gtk_path_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_policy_type_get_type(void) { return gtk_policy_type_get_type ? gtk_policy_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_popover_constraint_get_type(void) { return gtk_popover_constraint_get_type ? gtk_popover_constraint_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_position_type_get_type(void) { return gtk_position_type_get_type ? gtk_position_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_duplex_get_type(void) { return gtk_print_duplex_get_type ? gtk_print_duplex_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_error_get_type(void) { return gtk_print_error_get_type ? gtk_print_error_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_operation_action_get_type(void) { return gtk_print_operation_action_get_type ? gtk_print_operation_action_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_operation_result_get_type(void) { return gtk_print_operation_result_get_type ? gtk_print_operation_result_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_pages_get_type(void) { return gtk_print_pages_get_type ? gtk_print_pages_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_quality_get_type(void) { return gtk_print_quality_get_type ? gtk_print_quality_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_status_get_type(void) { return gtk_print_status_get_type ? gtk_print_status_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_propagation_phase_get_type(void) { return gtk_propagation_phase_get_type ? gtk_propagation_phase_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_rc_token_type_get_type(void) { return gtk_rc_token_type_get_type ? gtk_rc_token_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_chooser_error_get_type(void) { return gtk_recent_chooser_error_get_type ? gtk_recent_chooser_error_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_manager_error_get_type(void) { return gtk_recent_manager_error_get_type ? gtk_recent_manager_error_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_sort_type_get_type(void) { return gtk_recent_sort_type_get_type ? gtk_recent_sort_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_relief_style_get_type(void) { return gtk_relief_style_get_type ? gtk_relief_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_resize_mode_get_type(void) { return gtk_resize_mode_get_type ? gtk_resize_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_response_type_get_type(void) { return gtk_response_type_get_type ? gtk_response_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_revealer_transition_type_get_type(void) { return gtk_revealer_transition_type_get_type ? gtk_revealer_transition_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scroll_step_get_type(void) { return gtk_scroll_step_get_type ? gtk_scroll_step_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scroll_type_get_type(void) { return gtk_scroll_type_get_type ? gtk_scroll_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scrollable_policy_get_type(void) { return gtk_scrollable_policy_get_type ? gtk_scrollable_policy_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_selection_mode_get_type(void) { return gtk_selection_mode_get_type ? gtk_selection_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_sensitivity_type_get_type(void) { return gtk_sensitivity_type_get_type ? gtk_sensitivity_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_shadow_type_get_type(void) { return gtk_shadow_type_get_type ? gtk_shadow_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_shortcut_type_get_type(void) { return gtk_shortcut_type_get_type ? gtk_shortcut_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_size_group_mode_get_type(void) { return gtk_size_group_mode_get_type ? gtk_size_group_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_size_request_mode_get_type(void) { return gtk_size_request_mode_get_type ? gtk_size_request_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_sort_type_get_type(void) { return gtk_sort_type_get_type ? gtk_sort_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_spin_button_update_policy_get_type(void) { return gtk_spin_button_update_policy_get_type ? gtk_spin_button_update_policy_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_spin_type_get_type(void) { return gtk_spin_type_get_type ? gtk_spin_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_stack_transition_type_get_type(void) { return gtk_stack_transition_type_get_type ? gtk_stack_transition_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_state_type_get_type(void) { return gtk_state_type_get_type ? gtk_state_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_buffer_target_info_get_type(void) { return gtk_text_buffer_target_info_get_type ? gtk_text_buffer_target_info_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_direction_get_type(void) { return gtk_text_direction_get_type ? gtk_text_direction_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_extend_selection_get_type(void) { return gtk_text_extend_selection_get_type ? gtk_text_extend_selection_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_view_layer_get_type(void) { return gtk_text_view_layer_get_type ? gtk_text_view_layer_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_window_type_get_type(void) { return gtk_text_window_type_get_type ? gtk_text_window_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_toolbar_space_style_get_type(void) { return gtk_toolbar_space_style_get_type ? gtk_toolbar_space_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_toolbar_style_get_type(void) { return gtk_toolbar_style_get_type ? gtk_toolbar_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_view_column_sizing_get_type(void) { return gtk_tree_view_column_sizing_get_type ? gtk_tree_view_column_sizing_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_view_drop_position_get_type(void) { return gtk_tree_view_drop_position_get_type ? gtk_tree_view_drop_position_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_view_grid_lines_get_type(void) { return gtk_tree_view_grid_lines_get_type ? gtk_tree_view_grid_lines_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_unit_get_type(void) { return gtk_unit_get_type ? gtk_unit_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_widget_help_type_get_type(void) { return gtk_widget_help_type_get_type ? gtk_widget_help_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_window_position_get_type(void) { return gtk_window_position_get_type ? gtk_window_position_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_window_type_get_type(void) { return gtk_window_type_get_type ? gtk_window_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_wrap_mode_get_type(void) { return gtk_wrap_mode_get_type ? gtk_wrap_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_accel_flags_get_type(void) { return gtk_accel_flags_get_type ? gtk_accel_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_application_inhibit_flags_get_type(void) { return gtk_application_inhibit_flags_get_type ? gtk_application_inhibit_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_attach_options_get_type(void) { return gtk_attach_options_get_type ? gtk_attach_options_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_calendar_display_options_get_type(void) { return gtk_calendar_display_options_get_type ? gtk_calendar_display_options_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_state_get_type(void) { return gtk_cell_renderer_state_get_type ? gtk_cell_renderer_state_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_debug_flag_get_type(void) { return gtk_debug_flag_get_type ? gtk_debug_flag_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_dest_defaults_get_type(void) { return gtk_dest_defaults_get_type ? gtk_dest_defaults_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_dialog_flags_get_type(void) { return gtk_dialog_flags_get_type ? gtk_dialog_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_event_controller_scroll_flags_get_type(void) { return gtk_event_controller_scroll_flags_get_type ? gtk_event_controller_scroll_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_file_filter_flags_get_type(void) { return gtk_file_filter_flags_get_type ? gtk_file_filter_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_font_chooser_level_get_type(void) { return gtk_font_chooser_level_get_type ? gtk_font_chooser_level_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_lookup_flags_get_type(void) { return gtk_icon_lookup_flags_get_type ? gtk_icon_lookup_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_input_hints_get_type(void) { return gtk_input_hints_get_type ? gtk_input_hints_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_junction_sides_get_type(void) { return gtk_junction_sides_get_type ? gtk_junction_sides_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_places_open_flags_get_type(void) { return gtk_places_open_flags_get_type ? gtk_places_open_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_rc_flags_get_type(void) { return gtk_rc_flags_get_type ? gtk_rc_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_filter_flags_get_type(void) { return gtk_recent_filter_flags_get_type ? gtk_recent_filter_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_region_flags_get_type(void) { return gtk_region_flags_get_type ? gtk_region_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_state_flags_get_type(void) { return gtk_state_flags_get_type ? gtk_state_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_style_context_print_flags_get_type(void) { return gtk_style_context_print_flags_get_type ? gtk_style_context_print_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_target_flags_get_type(void) { return gtk_target_flags_get_type ? gtk_target_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_search_flags_get_type(void) { return gtk_text_search_flags_get_type ? gtk_text_search_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tool_palette_drag_targets_get_type(void) { return gtk_tool_palette_drag_targets_get_type ? gtk_tool_palette_drag_targets_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_model_flags_get_type(void) { return gtk_tree_model_flags_get_type ? gtk_tree_model_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_ui_manager_item_type_get_type(void) { return gtk_ui_manager_item_type_get_type ? gtk_ui_manager_item_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_actionable_get_type(void) { return gtk_actionable_get_type ? gtk_actionable_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_activatable_get_type(void) { return gtk_activatable_get_type ? gtk_activatable_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_app_chooser_get_type(void) { return gtk_app_chooser_get_type ? gtk_app_chooser_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_buildable_get_type(void) { return gtk_buildable_get_type ? gtk_buildable_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_accessible_parent_get_type(void) { return gtk_cell_accessible_parent_get_type ? gtk_cell_accessible_parent_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_editable_get_type(void) { return gtk_cell_editable_get_type ? gtk_cell_editable_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_layout_get_type(void) { return gtk_cell_layout_get_type ? gtk_cell_layout_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_color_chooser_get_type(void) { return gtk_color_chooser_get_type ? gtk_color_chooser_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_editable_get_type(void) { return gtk_editable_get_type ? gtk_editable_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_file_chooser_get_type(void) { return gtk_file_chooser_get_type ? gtk_file_chooser_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_font_chooser_get_type(void) { return gtk_font_chooser_get_type ? gtk_font_chooser_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_orientable_get_type(void) { return gtk_orientable_get_type ? gtk_orientable_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_operation_preview_get_type(void) { return gtk_print_operation_preview_get_type ? gtk_print_operation_preview_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_chooser_get_type(void) { return gtk_recent_chooser_get_type ? gtk_recent_chooser_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scrollable_get_type(void) { return gtk_scrollable_get_type ? gtk_scrollable_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_style_provider_get_type(void) { return gtk_style_provider_get_type ? gtk_style_provider_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tool_shell_get_type(void) { return gtk_tool_shell_get_type ? gtk_tool_shell_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_drag_dest_get_type(void) { return gtk_tree_drag_dest_get_type ? gtk_tree_drag_dest_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_drag_source_get_type(void) { return gtk_tree_drag_source_get_type ? gtk_tree_drag_source_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_model_get_type(void) { return gtk_tree_model_get_type ? gtk_tree_model_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_sortable_get_type(void) { return gtk_tree_sortable_get_type ? gtk_tree_sortable_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_about_dialog_get_type(void) { return gtk_about_dialog_get_type ? gtk_about_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_accel_group_get_type(void) { return gtk_accel_group_get_type ? gtk_accel_group_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_accel_label_get_type(void) { return gtk_accel_label_get_type ? gtk_accel_label_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_accel_map_get_type(void) { return gtk_accel_map_get_type ? gtk_accel_map_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_accessible_get_type(void) { return gtk_accessible_get_type ? gtk_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_action_get_type(void) { return gtk_action_get_type ? gtk_action_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_action_bar_get_type(void) { return gtk_action_bar_get_type ? gtk_action_bar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_action_group_get_type(void) { return gtk_action_group_get_type ? gtk_action_group_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_adjustment_get_type(void) { return gtk_adjustment_get_type ? gtk_adjustment_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_alignment_get_type(void) { return gtk_alignment_get_type ? gtk_alignment_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_app_chooser_button_get_type(void) { return gtk_app_chooser_button_get_type ? gtk_app_chooser_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_app_chooser_dialog_get_type(void) { return gtk_app_chooser_dialog_get_type ? gtk_app_chooser_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_app_chooser_widget_get_type(void) { return gtk_app_chooser_widget_get_type ? gtk_app_chooser_widget_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_application_get_type(void) { return gtk_application_get_type ? gtk_application_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_application_window_get_type(void) { return gtk_application_window_get_type ? gtk_application_window_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_arrow_get_type(void) { return gtk_arrow_get_type ? gtk_arrow_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_arrow_accessible_get_type(void) { return gtk_arrow_accessible_get_type ? gtk_arrow_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_aspect_frame_get_type(void) { return gtk_aspect_frame_get_type ? gtk_aspect_frame_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_assistant_get_type(void) { return gtk_assistant_get_type ? gtk_assistant_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_bin_get_type(void) { return gtk_bin_get_type ? gtk_bin_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_boolean_cell_accessible_get_type(void) { return gtk_boolean_cell_accessible_get_type ? gtk_boolean_cell_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_box_get_type(void) { return gtk_box_get_type ? gtk_box_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_builder_get_type(void) { return gtk_builder_get_type ? gtk_builder_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_button_get_type(void) { return gtk_button_get_type ? gtk_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_button_accessible_get_type(void) { return gtk_button_accessible_get_type ? gtk_button_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_button_box_get_type(void) { return gtk_button_box_get_type ? gtk_button_box_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_calendar_get_type(void) { return gtk_calendar_get_type ? gtk_calendar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_accessible_get_type(void) { return gtk_cell_accessible_get_type ? gtk_cell_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_area_get_type(void) { return gtk_cell_area_get_type ? gtk_cell_area_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_area_box_get_type(void) { return gtk_cell_area_box_get_type ? gtk_cell_area_box_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_area_context_get_type(void) { return gtk_cell_area_context_get_type ? gtk_cell_area_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_get_type(void) { return gtk_cell_renderer_get_type ? gtk_cell_renderer_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_accel_get_type(void) { return gtk_cell_renderer_accel_get_type ? gtk_cell_renderer_accel_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_combo_get_type(void) { return gtk_cell_renderer_combo_get_type ? gtk_cell_renderer_combo_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_pixbuf_get_type(void) { return gtk_cell_renderer_pixbuf_get_type ? gtk_cell_renderer_pixbuf_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_progress_get_type(void) { return gtk_cell_renderer_progress_get_type ? gtk_cell_renderer_progress_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_spin_get_type(void) { return gtk_cell_renderer_spin_get_type ? gtk_cell_renderer_spin_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_spinner_get_type(void) { return gtk_cell_renderer_spinner_get_type ? gtk_cell_renderer_spinner_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_text_get_type(void) { return gtk_cell_renderer_text_get_type ? gtk_cell_renderer_text_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_renderer_toggle_get_type(void) { return gtk_cell_renderer_toggle_get_type ? gtk_cell_renderer_toggle_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_cell_view_get_type(void) { return gtk_cell_view_get_type ? gtk_cell_view_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_check_button_get_type(void) { return gtk_check_button_get_type ? gtk_check_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_check_menu_item_get_type(void) { return gtk_check_menu_item_get_type ? gtk_check_menu_item_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_check_menu_item_accessible_get_type(void) { return gtk_check_menu_item_accessible_get_type ? gtk_check_menu_item_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_clipboard_get_type(void) { return gtk_clipboard_get_type ? gtk_clipboard_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_color_button_get_type(void) { return gtk_color_button_get_type ? gtk_color_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_color_chooser_dialog_get_type(void) { return gtk_color_chooser_dialog_get_type ? gtk_color_chooser_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_color_chooser_widget_get_type(void) { return gtk_color_chooser_widget_get_type ? gtk_color_chooser_widget_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_color_selection_get_type(void) { return gtk_color_selection_get_type ? gtk_color_selection_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_color_selection_dialog_get_type(void) { return gtk_color_selection_dialog_get_type ? gtk_color_selection_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_combo_box_get_type(void) { return gtk_combo_box_get_type ? gtk_combo_box_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_combo_box_accessible_get_type(void) { return gtk_combo_box_accessible_get_type ? gtk_combo_box_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_combo_box_text_get_type(void) { return gtk_combo_box_text_get_type ? gtk_combo_box_text_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_container_get_type(void) { return gtk_container_get_type ? gtk_container_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_container_accessible_get_type(void) { return gtk_container_accessible_get_type ? gtk_container_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_container_cell_accessible_get_type(void) { return gtk_container_cell_accessible_get_type ? gtk_container_cell_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_css_provider_get_type(void) { return gtk_css_provider_get_type ? gtk_css_provider_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_dialog_get_type(void) { return gtk_dialog_get_type ? gtk_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_drawing_area_get_type(void) { return gtk_drawing_area_get_type ? gtk_drawing_area_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_entry_get_type(void) { return gtk_entry_get_type ? gtk_entry_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_entry_accessible_get_type(void) { return gtk_entry_accessible_get_type ? gtk_entry_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_entry_buffer_get_type(void) { return gtk_entry_buffer_get_type ? gtk_entry_buffer_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_entry_completion_get_type(void) { return gtk_entry_completion_get_type ? gtk_entry_completion_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_entry_icon_accessible_get_type(void) { return gtk_entry_icon_accessible_get_type ? gtk_entry_icon_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_event_box_get_type(void) { return gtk_event_box_get_type ? gtk_event_box_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_event_controller_get_type(void) { return gtk_event_controller_get_type ? gtk_event_controller_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_event_controller_key_get_type(void) { return gtk_event_controller_key_get_type ? gtk_event_controller_key_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_event_controller_motion_get_type(void) { return gtk_event_controller_motion_get_type ? gtk_event_controller_motion_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_event_controller_scroll_get_type(void) { return gtk_event_controller_scroll_get_type ? gtk_event_controller_scroll_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_expander_get_type(void) { return gtk_expander_get_type ? gtk_expander_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_expander_accessible_get_type(void) { return gtk_expander_accessible_get_type ? gtk_expander_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_file_chooser_button_get_type(void) { return gtk_file_chooser_button_get_type ? gtk_file_chooser_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_file_chooser_dialog_get_type(void) { return gtk_file_chooser_dialog_get_type ? gtk_file_chooser_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_file_chooser_native_get_type(void) { return gtk_file_chooser_native_get_type ? gtk_file_chooser_native_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_file_chooser_widget_get_type(void) { return gtk_file_chooser_widget_get_type ? gtk_file_chooser_widget_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_file_filter_get_type(void) { return gtk_file_filter_get_type ? gtk_file_filter_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_fixed_get_type(void) { return gtk_fixed_get_type ? gtk_fixed_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_flow_box_get_type(void) { return gtk_flow_box_get_type ? gtk_flow_box_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_flow_box_accessible_get_type(void) { return gtk_flow_box_accessible_get_type ? gtk_flow_box_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_flow_box_child_get_type(void) { return gtk_flow_box_child_get_type ? gtk_flow_box_child_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_flow_box_child_accessible_get_type(void) { return gtk_flow_box_child_accessible_get_type ? gtk_flow_box_child_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_font_button_get_type(void) { return gtk_font_button_get_type ? gtk_font_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_font_chooser_dialog_get_type(void) { return gtk_font_chooser_dialog_get_type ? gtk_font_chooser_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_font_chooser_widget_get_type(void) { return gtk_font_chooser_widget_get_type ? gtk_font_chooser_widget_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_font_selection_get_type(void) { return gtk_font_selection_get_type ? gtk_font_selection_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_font_selection_dialog_get_type(void) { return gtk_font_selection_dialog_get_type ? gtk_font_selection_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_frame_get_type(void) { return gtk_frame_get_type ? gtk_frame_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_frame_accessible_get_type(void) { return gtk_frame_accessible_get_type ? gtk_frame_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gl_area_get_type(void) { return gtk_gl_area_get_type ? gtk_gl_area_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gesture_get_type(void) { return gtk_gesture_get_type ? gtk_gesture_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gesture_drag_get_type(void) { return gtk_gesture_drag_get_type ? gtk_gesture_drag_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gesture_long_press_get_type(void) { return gtk_gesture_long_press_get_type ? gtk_gesture_long_press_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gesture_multi_press_get_type(void) { return gtk_gesture_multi_press_get_type ? gtk_gesture_multi_press_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gesture_pan_get_type(void) { return gtk_gesture_pan_get_type ? gtk_gesture_pan_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gesture_rotate_get_type(void) { return gtk_gesture_rotate_get_type ? gtk_gesture_rotate_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gesture_single_get_type(void) { return gtk_gesture_single_get_type ? gtk_gesture_single_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gesture_stylus_get_type(void) { return gtk_gesture_stylus_get_type ? gtk_gesture_stylus_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gesture_swipe_get_type(void) { return gtk_gesture_swipe_get_type ? gtk_gesture_swipe_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gesture_zoom_get_type(void) { return gtk_gesture_zoom_get_type ? gtk_gesture_zoom_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_grid_get_type(void) { return gtk_grid_get_type ? gtk_grid_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_hbox_get_type(void) { return gtk_hbox_get_type ? gtk_hbox_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_hbutton_box_get_type(void) { return gtk_hbutton_box_get_type ? gtk_hbutton_box_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_hpaned_get_type(void) { return gtk_hpaned_get_type ? gtk_hpaned_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_hsv_get_type(void) { return gtk_hsv_get_type ? gtk_hsv_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_hscale_get_type(void) { return gtk_hscale_get_type ? gtk_hscale_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_hscrollbar_get_type(void) { return gtk_hscrollbar_get_type ? gtk_hscrollbar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_hseparator_get_type(void) { return gtk_hseparator_get_type ? gtk_hseparator_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_handle_box_get_type(void) { return gtk_handle_box_get_type ? gtk_handle_box_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_header_bar_get_type(void) { return gtk_header_bar_get_type ? gtk_header_bar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_im_context_get_type(void) { return gtk_im_context_get_type ? gtk_im_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_im_context_simple_get_type(void) { return gtk_im_context_simple_get_type ? gtk_im_context_simple_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_im_multicontext_get_type(void) { return gtk_im_multicontext_get_type ? gtk_im_multicontext_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_factory_get_type(void) { return gtk_icon_factory_get_type ? gtk_icon_factory_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_info_get_type(void) { return gtk_icon_info_get_type ? gtk_icon_info_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_theme_get_type(void) { return gtk_icon_theme_get_type ? gtk_icon_theme_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_view_get_type(void) { return gtk_icon_view_get_type ? gtk_icon_view_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_view_accessible_get_type(void) { return gtk_icon_view_accessible_get_type ? gtk_icon_view_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_image_get_type(void) { return gtk_image_get_type ? gtk_image_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_image_accessible_get_type(void) { return gtk_image_accessible_get_type ? gtk_image_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_image_cell_accessible_get_type(void) { return gtk_image_cell_accessible_get_type ? gtk_image_cell_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_image_menu_item_get_type(void) { return gtk_image_menu_item_get_type ? gtk_image_menu_item_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_info_bar_get_type(void) { return gtk_info_bar_get_type ? gtk_info_bar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_invisible_get_type(void) { return gtk_invisible_get_type ? gtk_invisible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_label_get_type(void) { return gtk_label_get_type ? gtk_label_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_label_accessible_get_type(void) { return gtk_label_accessible_get_type ? gtk_label_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_layout_get_type(void) { return gtk_layout_get_type ? gtk_layout_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_level_bar_get_type(void) { return gtk_level_bar_get_type ? gtk_level_bar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_level_bar_accessible_get_type(void) { return gtk_level_bar_accessible_get_type ? gtk_level_bar_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_link_button_get_type(void) { return gtk_link_button_get_type ? gtk_link_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_link_button_accessible_get_type(void) { return gtk_link_button_accessible_get_type ? gtk_link_button_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_list_box_get_type(void) { return gtk_list_box_get_type ? gtk_list_box_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_list_box_accessible_get_type(void) { return gtk_list_box_accessible_get_type ? gtk_list_box_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_list_box_row_get_type(void) { return gtk_list_box_row_get_type ? gtk_list_box_row_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_list_box_row_accessible_get_type(void) { return gtk_list_box_row_accessible_get_type ? gtk_list_box_row_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_list_store_get_type(void) { return gtk_list_store_get_type ? gtk_list_store_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_lock_button_get_type(void) { return gtk_lock_button_get_type ? gtk_lock_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_lock_button_accessible_get_type(void) { return gtk_lock_button_accessible_get_type ? gtk_lock_button_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_get_type(void) { return gtk_menu_get_type ? gtk_menu_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_accessible_get_type(void) { return gtk_menu_accessible_get_type ? gtk_menu_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_bar_get_type(void) { return gtk_menu_bar_get_type ? gtk_menu_bar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_button_get_type(void) { return gtk_menu_button_get_type ? gtk_menu_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_button_accessible_get_type(void) { return gtk_menu_button_accessible_get_type ? gtk_menu_button_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_item_get_type(void) { return gtk_menu_item_get_type ? gtk_menu_item_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_item_accessible_get_type(void) { return gtk_menu_item_accessible_get_type ? gtk_menu_item_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_shell_get_type(void) { return gtk_menu_shell_get_type ? gtk_menu_shell_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_shell_accessible_get_type(void) { return gtk_menu_shell_accessible_get_type ? gtk_menu_shell_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_menu_tool_button_get_type(void) { return gtk_menu_tool_button_get_type ? gtk_menu_tool_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_message_dialog_get_type(void) { return gtk_message_dialog_get_type ? gtk_message_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_misc_get_type(void) { return gtk_misc_get_type ? gtk_misc_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_model_button_get_type(void) { return gtk_model_button_get_type ? gtk_model_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_mount_operation_get_type(void) { return gtk_mount_operation_get_type ? gtk_mount_operation_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_native_dialog_get_type(void) { return gtk_native_dialog_get_type ? gtk_native_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_notebook_get_type(void) { return gtk_notebook_get_type ? gtk_notebook_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_notebook_accessible_get_type(void) { return gtk_notebook_accessible_get_type ? gtk_notebook_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_notebook_page_accessible_get_type(void) { return gtk_notebook_page_accessible_get_type ? gtk_notebook_page_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_numerable_icon_get_type(void) { return gtk_numerable_icon_get_type ? gtk_numerable_icon_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_offscreen_window_get_type(void) { return gtk_offscreen_window_get_type ? gtk_offscreen_window_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_overlay_get_type(void) { return gtk_overlay_get_type ? gtk_overlay_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_pad_controller_get_type(void) { return gtk_pad_controller_get_type ? gtk_pad_controller_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_page_setup_get_type(void) { return gtk_page_setup_get_type ? gtk_page_setup_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_paned_get_type(void) { return gtk_paned_get_type ? gtk_paned_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_paned_accessible_get_type(void) { return gtk_paned_accessible_get_type ? gtk_paned_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_places_sidebar_get_type(void) { return gtk_places_sidebar_get_type ? gtk_places_sidebar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_plug_get_type(void) { return gtk_plug_get_type ? gtk_plug_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_plug_accessible_get_type(void) { return gtk_plug_accessible_get_type ? gtk_plug_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_popover_get_type(void) { return gtk_popover_get_type ? gtk_popover_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_popover_accessible_get_type(void) { return gtk_popover_accessible_get_type ? gtk_popover_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_popover_menu_get_type(void) { return gtk_popover_menu_get_type ? gtk_popover_menu_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_context_get_type(void) { return gtk_print_context_get_type ? gtk_print_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_operation_get_type(void) { return gtk_print_operation_get_type ? gtk_print_operation_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_print_settings_get_type(void) { return gtk_print_settings_get_type ? gtk_print_settings_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_progress_bar_get_type(void) { return gtk_progress_bar_get_type ? gtk_progress_bar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_progress_bar_accessible_get_type(void) { return gtk_progress_bar_accessible_get_type ? gtk_progress_bar_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_radio_action_get_type(void) { return gtk_radio_action_get_type ? gtk_radio_action_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_radio_button_get_type(void) { return gtk_radio_button_get_type ? gtk_radio_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_radio_button_accessible_get_type(void) { return gtk_radio_button_accessible_get_type ? gtk_radio_button_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_radio_menu_item_get_type(void) { return gtk_radio_menu_item_get_type ? gtk_radio_menu_item_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_radio_menu_item_accessible_get_type(void) { return gtk_radio_menu_item_accessible_get_type ? gtk_radio_menu_item_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_radio_tool_button_get_type(void) { return gtk_radio_tool_button_get_type ? gtk_radio_tool_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_range_get_type(void) { return gtk_range_get_type ? gtk_range_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_range_accessible_get_type(void) { return gtk_range_accessible_get_type ? gtk_range_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_rc_style_get_type(void) { return gtk_rc_style_get_type ? gtk_rc_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_action_get_type(void) { return gtk_recent_action_get_type ? gtk_recent_action_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_chooser_dialog_get_type(void) { return gtk_recent_chooser_dialog_get_type ? gtk_recent_chooser_dialog_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_chooser_menu_get_type(void) { return gtk_recent_chooser_menu_get_type ? gtk_recent_chooser_menu_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_chooser_widget_get_type(void) { return gtk_recent_chooser_widget_get_type ? gtk_recent_chooser_widget_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_filter_get_type(void) { return gtk_recent_filter_get_type ? gtk_recent_filter_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_manager_get_type(void) { return gtk_recent_manager_get_type ? gtk_recent_manager_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_renderer_cell_accessible_get_type(void) { return gtk_renderer_cell_accessible_get_type ? gtk_renderer_cell_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_revealer_get_type(void) { return gtk_revealer_get_type ? gtk_revealer_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scale_get_type(void) { return gtk_scale_get_type ? gtk_scale_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scale_accessible_get_type(void) { return gtk_scale_accessible_get_type ? gtk_scale_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scale_button_get_type(void) { return gtk_scale_button_get_type ? gtk_scale_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scale_button_accessible_get_type(void) { return gtk_scale_button_accessible_get_type ? gtk_scale_button_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scrollbar_get_type(void) { return gtk_scrollbar_get_type ? gtk_scrollbar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scrolled_window_get_type(void) { return gtk_scrolled_window_get_type ? gtk_scrolled_window_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_scrolled_window_accessible_get_type(void) { return gtk_scrolled_window_accessible_get_type ? gtk_scrolled_window_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_search_bar_get_type(void) { return gtk_search_bar_get_type ? gtk_search_bar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_search_entry_get_type(void) { return gtk_search_entry_get_type ? gtk_search_entry_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_separator_get_type(void) { return gtk_separator_get_type ? gtk_separator_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_separator_menu_item_get_type(void) { return gtk_separator_menu_item_get_type ? gtk_separator_menu_item_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_separator_tool_item_get_type(void) { return gtk_separator_tool_item_get_type ? gtk_separator_tool_item_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_settings_get_type(void) { return gtk_settings_get_type ? gtk_settings_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_shortcut_label_get_type(void) { return gtk_shortcut_label_get_type ? gtk_shortcut_label_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_shortcuts_group_get_type(void) { return gtk_shortcuts_group_get_type ? gtk_shortcuts_group_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_shortcuts_section_get_type(void) { return gtk_shortcuts_section_get_type ? gtk_shortcuts_section_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_shortcuts_shortcut_get_type(void) { return gtk_shortcuts_shortcut_get_type ? gtk_shortcuts_shortcut_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_shortcuts_window_get_type(void) { return gtk_shortcuts_window_get_type ? gtk_shortcuts_window_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_size_group_get_type(void) { return gtk_size_group_get_type ? gtk_size_group_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_socket_get_type(void) { return gtk_socket_get_type ? gtk_socket_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_socket_accessible_get_type(void) { return gtk_socket_accessible_get_type ? gtk_socket_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_spin_button_get_type(void) { return gtk_spin_button_get_type ? gtk_spin_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_spin_button_accessible_get_type(void) { return gtk_spin_button_accessible_get_type ? gtk_spin_button_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_spinner_get_type(void) { return gtk_spinner_get_type ? gtk_spinner_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_spinner_accessible_get_type(void) { return gtk_spinner_accessible_get_type ? gtk_spinner_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_stack_get_type(void) { return gtk_stack_get_type ? gtk_stack_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_stack_accessible_get_type(void) { return gtk_stack_accessible_get_type ? gtk_stack_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_stack_sidebar_get_type(void) { return gtk_stack_sidebar_get_type ? gtk_stack_sidebar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_stack_switcher_get_type(void) { return gtk_stack_switcher_get_type ? gtk_stack_switcher_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_status_icon_get_type(void) { return gtk_status_icon_get_type ? gtk_status_icon_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_statusbar_get_type(void) { return gtk_statusbar_get_type ? gtk_statusbar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_statusbar_accessible_get_type(void) { return gtk_statusbar_accessible_get_type ? gtk_statusbar_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_style_get_type(void) { return gtk_style_get_type ? gtk_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_style_context_get_type(void) { return gtk_style_context_get_type ? gtk_style_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_style_properties_get_type(void) { return gtk_style_properties_get_type ? gtk_style_properties_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_switch_get_type(void) { return gtk_switch_get_type ? gtk_switch_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_switch_accessible_get_type(void) { return gtk_switch_accessible_get_type ? gtk_switch_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_table_get_type(void) { return gtk_table_get_type ? gtk_table_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tearoff_menu_item_get_type(void) { return gtk_tearoff_menu_item_get_type ? gtk_tearoff_menu_item_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_buffer_get_type(void) { return gtk_text_buffer_get_type ? gtk_text_buffer_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_cell_accessible_get_type(void) { return gtk_text_cell_accessible_get_type ? gtk_text_cell_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_child_anchor_get_type(void) { return gtk_text_child_anchor_get_type ? gtk_text_child_anchor_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_mark_get_type(void) { return gtk_text_mark_get_type ? gtk_text_mark_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_tag_get_type(void) { return gtk_text_tag_get_type ? gtk_text_tag_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_tag_table_get_type(void) { return gtk_text_tag_table_get_type ? gtk_text_tag_table_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_view_get_type(void) { return gtk_text_view_get_type ? gtk_text_view_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_view_accessible_get_type(void) { return gtk_text_view_accessible_get_type ? gtk_text_view_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_theming_engine_get_type(void) { return gtk_theming_engine_get_type ? gtk_theming_engine_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_toggle_action_get_type(void) { return gtk_toggle_action_get_type ? gtk_toggle_action_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_toggle_button_get_type(void) { return gtk_toggle_button_get_type ? gtk_toggle_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_toggle_button_accessible_get_type(void) { return gtk_toggle_button_accessible_get_type ? gtk_toggle_button_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_toggle_tool_button_get_type(void) { return gtk_toggle_tool_button_get_type ? gtk_toggle_tool_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tool_button_get_type(void) { return gtk_tool_button_get_type ? gtk_tool_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tool_item_get_type(void) { return gtk_tool_item_get_type ? gtk_tool_item_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tool_item_group_get_type(void) { return gtk_tool_item_group_get_type ? gtk_tool_item_group_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tool_palette_get_type(void) { return gtk_tool_palette_get_type ? gtk_tool_palette_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_toolbar_get_type(void) { return gtk_toolbar_get_type ? gtk_toolbar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tooltip_get_type(void) { return gtk_tooltip_get_type ? gtk_tooltip_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_toplevel_accessible_get_type(void) { return gtk_toplevel_accessible_get_type ? gtk_toplevel_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_model_filter_get_type(void) { return gtk_tree_model_filter_get_type ? gtk_tree_model_filter_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_model_sort_get_type(void) { return gtk_tree_model_sort_get_type ? gtk_tree_model_sort_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_selection_get_type(void) { return gtk_tree_selection_get_type ? gtk_tree_selection_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_store_get_type(void) { return gtk_tree_store_get_type ? gtk_tree_store_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_view_get_type(void) { return gtk_tree_view_get_type ? gtk_tree_view_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_view_accessible_get_type(void) { return gtk_tree_view_accessible_get_type ? gtk_tree_view_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_view_column_get_type(void) { return gtk_tree_view_column_get_type ? gtk_tree_view_column_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_ui_manager_get_type(void) { return gtk_ui_manager_get_type ? gtk_ui_manager_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_vbox_get_type(void) { return gtk_vbox_get_type ? gtk_vbox_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_vbutton_box_get_type(void) { return gtk_vbutton_box_get_type ? gtk_vbutton_box_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_vpaned_get_type(void) { return gtk_vpaned_get_type ? gtk_vpaned_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_vscale_get_type(void) { return gtk_vscale_get_type ? gtk_vscale_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_vscrollbar_get_type(void) { return gtk_vscrollbar_get_type ? gtk_vscrollbar_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_vseparator_get_type(void) { return gtk_vseparator_get_type ? gtk_vseparator_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_viewport_get_type(void) { return gtk_viewport_get_type ? gtk_viewport_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_volume_button_get_type(void) { return gtk_volume_button_get_type ? gtk_volume_button_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_widget_get_type(void) { return gtk_widget_get_type ? gtk_widget_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_widget_accessible_get_type(void) { return gtk_widget_accessible_get_type ? gtk_widget_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_window_get_type(void) { return gtk_window_get_type ? gtk_window_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_window_accessible_get_type(void) { return gtk_window_accessible_get_type ? gtk_window_accessible_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_window_group_get_type(void) { return gtk_window_group_get_type ? gtk_window_group_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_border_get_type(void) { return gtk_border_get_type ? gtk_border_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_css_section_get_type(void) { return gtk_css_section_get_type ? gtk_css_section_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_gradient_get_type(void) { return gtk_gradient_get_type ? gtk_gradient_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_set_get_type(void) { return gtk_icon_set_get_type ? gtk_icon_set_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_icon_source_get_type(void) { return gtk_icon_source_get_type ? gtk_icon_source_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_paper_size_get_type(void) { return gtk_paper_size_get_type ? gtk_paper_size_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_recent_info_get_type(void) { return gtk_recent_info_get_type ? gtk_recent_info_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_requisition_get_type(void) { return gtk_requisition_get_type ? gtk_requisition_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_selection_data_get_type(void) { return gtk_selection_data_get_type ? gtk_selection_data_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_symbolic_color_get_type(void) { return gtk_symbolic_color_get_type ? gtk_symbolic_color_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_target_entry_get_type(void) { return gtk_target_entry_get_type ? gtk_target_entry_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_target_list_get_type(void) { return gtk_target_list_get_type ? gtk_target_list_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_attributes_get_type(void) { return gtk_text_attributes_get_type ? gtk_text_attributes_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_text_iter_get_type(void) { return gtk_text_iter_get_type ? gtk_text_iter_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_iter_get_type(void) { return gtk_tree_iter_get_type ? gtk_tree_iter_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_path_get_type(void) { return gtk_tree_path_get_type ? gtk_tree_path_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_tree_row_reference_get_type(void) { return gtk_tree_row_reference_get_type ? gtk_tree_row_reference_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gtk_widget_path_get_type(void) { return gtk_widget_path_get_type ? gtk_widget_path_get_type() : (GType)NULL; };
 import "C"
 
 // GType values.
 var (
-	GTypeAlign                      = coreglib.Type(C.gtk_align_get_type())
-	GTypeArrowPlacement             = coreglib.Type(C.gtk_arrow_placement_get_type())
-	GTypeArrowType                  = coreglib.Type(C.gtk_arrow_type_get_type())
-	GTypeAssistantPageType          = coreglib.Type(C.gtk_assistant_page_type_get_type())
-	GTypeBaselinePosition           = coreglib.Type(C.gtk_baseline_position_get_type())
-	GTypeBorderStyle                = coreglib.Type(C.gtk_border_style_get_type())
-	GTypeBuilderError               = coreglib.Type(C.gtk_builder_error_get_type())
-	GTypeButtonBoxStyle             = coreglib.Type(C.gtk_button_box_style_get_type())
-	GTypeButtonRole                 = coreglib.Type(C.gtk_button_role_get_type())
-	GTypeButtonsType                = coreglib.Type(C.gtk_buttons_type_get_type())
-	GTypeCellRendererAccelMode      = coreglib.Type(C.gtk_cell_renderer_accel_mode_get_type())
-	GTypeCellRendererMode           = coreglib.Type(C.gtk_cell_renderer_mode_get_type())
-	GTypeCornerType                 = coreglib.Type(C.gtk_corner_type_get_type())
-	GTypeCSSProviderError           = coreglib.Type(C.gtk_css_provider_error_get_type())
-	GTypeCSSSectionType             = coreglib.Type(C.gtk_css_section_type_get_type())
-	GTypeDeleteType                 = coreglib.Type(C.gtk_delete_type_get_type())
-	GTypeDirectionType              = coreglib.Type(C.gtk_direction_type_get_type())
-	GTypeDragResult                 = coreglib.Type(C.gtk_drag_result_get_type())
-	GTypeEntryIconPosition          = coreglib.Type(C.gtk_entry_icon_position_get_type())
-	GTypeEventSequenceState         = coreglib.Type(C.gtk_event_sequence_state_get_type())
-	GTypeExpanderStyle              = coreglib.Type(C.gtk_expander_style_get_type())
-	GTypeFileChooserAction          = coreglib.Type(C.gtk_file_chooser_action_get_type())
-	GTypeFileChooserConfirmation    = coreglib.Type(C.gtk_file_chooser_confirmation_get_type())
-	GTypeFileChooserError           = coreglib.Type(C.gtk_file_chooser_error_get_type())
-	GTypeIMPreeditStyle             = coreglib.Type(C.gtk_im_preedit_style_get_type())
-	GTypeIMStatusStyle              = coreglib.Type(C.gtk_im_status_style_get_type())
-	GTypeIconSize                   = coreglib.Type(C.gtk_icon_size_get_type())
-	GTypeIconThemeError             = coreglib.Type(C.gtk_icon_theme_error_get_type())
-	GTypeIconViewDropPosition       = coreglib.Type(C.gtk_icon_view_drop_position_get_type())
-	GTypeImageType                  = coreglib.Type(C.gtk_image_type_get_type())
-	GTypeInputPurpose               = coreglib.Type(C.gtk_input_purpose_get_type())
-	GTypeJustification              = coreglib.Type(C.gtk_justification_get_type())
-	GTypeLevelBarMode               = coreglib.Type(C.gtk_level_bar_mode_get_type())
-	GTypeLicense                    = coreglib.Type(C.gtk_license_get_type())
-	GTypeMenuDirectionType          = coreglib.Type(C.gtk_menu_direction_type_get_type())
-	GTypeMessageType                = coreglib.Type(C.gtk_message_type_get_type())
-	GTypeMovementStep               = coreglib.Type(C.gtk_movement_step_get_type())
-	GTypeNotebookTab                = coreglib.Type(C.gtk_notebook_tab_get_type())
-	GTypeNumberUpLayout             = coreglib.Type(C.gtk_number_up_layout_get_type())
-	GTypeOrientation                = coreglib.Type(C.gtk_orientation_get_type())
-	GTypePackDirection              = coreglib.Type(C.gtk_pack_direction_get_type())
-	GTypePackType                   = coreglib.Type(C.gtk_pack_type_get_type())
-	GTypePadActionType              = coreglib.Type(C.gtk_pad_action_type_get_type())
-	GTypePageOrientation            = coreglib.Type(C.gtk_page_orientation_get_type())
-	GTypePageSet                    = coreglib.Type(C.gtk_page_set_get_type())
-	GTypePanDirection               = coreglib.Type(C.gtk_pan_direction_get_type())
-	GTypePathPriorityType           = coreglib.Type(C.gtk_path_priority_type_get_type())
-	GTypePathType                   = coreglib.Type(C.gtk_path_type_get_type())
-	GTypePolicyType                 = coreglib.Type(C.gtk_policy_type_get_type())
-	GTypePopoverConstraint          = coreglib.Type(C.gtk_popover_constraint_get_type())
-	GTypePositionType               = coreglib.Type(C.gtk_position_type_get_type())
-	GTypePrintDuplex                = coreglib.Type(C.gtk_print_duplex_get_type())
-	GTypePrintError                 = coreglib.Type(C.gtk_print_error_get_type())
-	GTypePrintOperationAction       = coreglib.Type(C.gtk_print_operation_action_get_type())
-	GTypePrintOperationResult       = coreglib.Type(C.gtk_print_operation_result_get_type())
-	GTypePrintPages                 = coreglib.Type(C.gtk_print_pages_get_type())
-	GTypePrintQuality               = coreglib.Type(C.gtk_print_quality_get_type())
-	GTypePrintStatus                = coreglib.Type(C.gtk_print_status_get_type())
-	GTypePropagationPhase           = coreglib.Type(C.gtk_propagation_phase_get_type())
-	GTypeRCTokenType                = coreglib.Type(C.gtk_rc_token_type_get_type())
-	GTypeRecentChooserError         = coreglib.Type(C.gtk_recent_chooser_error_get_type())
-	GTypeRecentManagerError         = coreglib.Type(C.gtk_recent_manager_error_get_type())
-	GTypeRecentSortType             = coreglib.Type(C.gtk_recent_sort_type_get_type())
-	GTypeReliefStyle                = coreglib.Type(C.gtk_relief_style_get_type())
-	GTypeResizeMode                 = coreglib.Type(C.gtk_resize_mode_get_type())
-	GTypeResponseType               = coreglib.Type(C.gtk_response_type_get_type())
-	GTypeRevealerTransitionType     = coreglib.Type(C.gtk_revealer_transition_type_get_type())
-	GTypeScrollStep                 = coreglib.Type(C.gtk_scroll_step_get_type())
-	GTypeScrollType                 = coreglib.Type(C.gtk_scroll_type_get_type())
-	GTypeScrollablePolicy           = coreglib.Type(C.gtk_scrollable_policy_get_type())
-	GTypeSelectionMode              = coreglib.Type(C.gtk_selection_mode_get_type())
-	GTypeSensitivityType            = coreglib.Type(C.gtk_sensitivity_type_get_type())
-	GTypeShadowType                 = coreglib.Type(C.gtk_shadow_type_get_type())
-	GTypeShortcutType               = coreglib.Type(C.gtk_shortcut_type_get_type())
-	GTypeSizeGroupMode              = coreglib.Type(C.gtk_size_group_mode_get_type())
-	GTypeSizeRequestMode            = coreglib.Type(C.gtk_size_request_mode_get_type())
-	GTypeSortType                   = coreglib.Type(C.gtk_sort_type_get_type())
-	GTypeSpinButtonUpdatePolicy     = coreglib.Type(C.gtk_spin_button_update_policy_get_type())
-	GTypeSpinType                   = coreglib.Type(C.gtk_spin_type_get_type())
-	GTypeStackTransitionType        = coreglib.Type(C.gtk_stack_transition_type_get_type())
-	GTypeStateType                  = coreglib.Type(C.gtk_state_type_get_type())
-	GTypeTextBufferTargetInfo       = coreglib.Type(C.gtk_text_buffer_target_info_get_type())
-	GTypeTextDirection              = coreglib.Type(C.gtk_text_direction_get_type())
-	GTypeTextExtendSelection        = coreglib.Type(C.gtk_text_extend_selection_get_type())
-	GTypeTextViewLayer              = coreglib.Type(C.gtk_text_view_layer_get_type())
-	GTypeTextWindowType             = coreglib.Type(C.gtk_text_window_type_get_type())
-	GTypeToolbarSpaceStyle          = coreglib.Type(C.gtk_toolbar_space_style_get_type())
-	GTypeToolbarStyle               = coreglib.Type(C.gtk_toolbar_style_get_type())
-	GTypeTreeViewColumnSizing       = coreglib.Type(C.gtk_tree_view_column_sizing_get_type())
-	GTypeTreeViewDropPosition       = coreglib.Type(C.gtk_tree_view_drop_position_get_type())
-	GTypeTreeViewGridLines          = coreglib.Type(C.gtk_tree_view_grid_lines_get_type())
-	GTypeUnit                       = coreglib.Type(C.gtk_unit_get_type())
-	GTypeWidgetHelpType             = coreglib.Type(C.gtk_widget_help_type_get_type())
-	GTypeWindowPosition             = coreglib.Type(C.gtk_window_position_get_type())
-	GTypeWindowType                 = coreglib.Type(C.gtk_window_type_get_type())
-	GTypeWrapMode                   = coreglib.Type(C.gtk_wrap_mode_get_type())
-	GTypeAccelFlags                 = coreglib.Type(C.gtk_accel_flags_get_type())
-	GTypeApplicationInhibitFlags    = coreglib.Type(C.gtk_application_inhibit_flags_get_type())
-	GTypeAttachOptions              = coreglib.Type(C.gtk_attach_options_get_type())
-	GTypeCalendarDisplayOptions     = coreglib.Type(C.gtk_calendar_display_options_get_type())
-	GTypeCellRendererState          = coreglib.Type(C.gtk_cell_renderer_state_get_type())
-	GTypeDebugFlag                  = coreglib.Type(C.gtk_debug_flag_get_type())
-	GTypeDestDefaults               = coreglib.Type(C.gtk_dest_defaults_get_type())
-	GTypeDialogFlags                = coreglib.Type(C.gtk_dialog_flags_get_type())
-	GTypeEventControllerScrollFlags = coreglib.Type(C.gtk_event_controller_scroll_flags_get_type())
-	GTypeFileFilterFlags            = coreglib.Type(C.gtk_file_filter_flags_get_type())
-	GTypeFontChooserLevel           = coreglib.Type(C.gtk_font_chooser_level_get_type())
-	GTypeIconLookupFlags            = coreglib.Type(C.gtk_icon_lookup_flags_get_type())
-	GTypeInputHints                 = coreglib.Type(C.gtk_input_hints_get_type())
-	GTypeJunctionSides              = coreglib.Type(C.gtk_junction_sides_get_type())
-	GTypePlacesOpenFlags            = coreglib.Type(C.gtk_places_open_flags_get_type())
-	GTypeRCFlags                    = coreglib.Type(C.gtk_rc_flags_get_type())
-	GTypeRecentFilterFlags          = coreglib.Type(C.gtk_recent_filter_flags_get_type())
-	GTypeRegionFlags                = coreglib.Type(C.gtk_region_flags_get_type())
-	GTypeStateFlags                 = coreglib.Type(C.gtk_state_flags_get_type())
-	GTypeStyleContextPrintFlags     = coreglib.Type(C.gtk_style_context_print_flags_get_type())
-	GTypeTargetFlags                = coreglib.Type(C.gtk_target_flags_get_type())
-	GTypeTextSearchFlags            = coreglib.Type(C.gtk_text_search_flags_get_type())
-	GTypeToolPaletteDragTargets     = coreglib.Type(C.gtk_tool_palette_drag_targets_get_type())
-	GTypeTreeModelFlags             = coreglib.Type(C.gtk_tree_model_flags_get_type())
-	GTypeUIManagerItemType          = coreglib.Type(C.gtk_ui_manager_item_type_get_type())
-	GTypeActionable                 = coreglib.Type(C.gtk_actionable_get_type())
-	GTypeActivatable                = coreglib.Type(C.gtk_activatable_get_type())
-	GTypeAppChooser                 = coreglib.Type(C.gtk_app_chooser_get_type())
-	GTypeBuildable                  = coreglib.Type(C.gtk_buildable_get_type())
-	GTypeCellAccessibleParent       = coreglib.Type(C.gtk_cell_accessible_parent_get_type())
-	GTypeCellEditable               = coreglib.Type(C.gtk_cell_editable_get_type())
-	GTypeCellLayout                 = coreglib.Type(C.gtk_cell_layout_get_type())
-	GTypeColorChooser               = coreglib.Type(C.gtk_color_chooser_get_type())
-	GTypeEditable                   = coreglib.Type(C.gtk_editable_get_type())
-	GTypeFileChooser                = coreglib.Type(C.gtk_file_chooser_get_type())
-	GTypeFontChooser                = coreglib.Type(C.gtk_font_chooser_get_type())
-	GTypeOrientable                 = coreglib.Type(C.gtk_orientable_get_type())
-	GTypePrintOperationPreview      = coreglib.Type(C.gtk_print_operation_preview_get_type())
-	GTypeRecentChooser              = coreglib.Type(C.gtk_recent_chooser_get_type())
-	GTypeScrollable                 = coreglib.Type(C.gtk_scrollable_get_type())
-	GTypeStyleProvider              = coreglib.Type(C.gtk_style_provider_get_type())
-	GTypeToolShell                  = coreglib.Type(C.gtk_tool_shell_get_type())
-	GTypeTreeDragDest               = coreglib.Type(C.gtk_tree_drag_dest_get_type())
-	GTypeTreeDragSource             = coreglib.Type(C.gtk_tree_drag_source_get_type())
-	GTypeTreeModel                  = coreglib.Type(C.gtk_tree_model_get_type())
-	GTypeTreeSortable               = coreglib.Type(C.gtk_tree_sortable_get_type())
-	GTypeAboutDialog                = coreglib.Type(C.gtk_about_dialog_get_type())
-	GTypeAccelGroup                 = coreglib.Type(C.gtk_accel_group_get_type())
-	GTypeAccelLabel                 = coreglib.Type(C.gtk_accel_label_get_type())
-	GTypeAccelMap                   = coreglib.Type(C.gtk_accel_map_get_type())
-	GTypeAccessible                 = coreglib.Type(C.gtk_accessible_get_type())
-	GTypeAction                     = coreglib.Type(C.gtk_action_get_type())
-	GTypeActionBar                  = coreglib.Type(C.gtk_action_bar_get_type())
-	GTypeActionGroup                = coreglib.Type(C.gtk_action_group_get_type())
-	GTypeAdjustment                 = coreglib.Type(C.gtk_adjustment_get_type())
-	GTypeAlignment                  = coreglib.Type(C.gtk_alignment_get_type())
-	GTypeAppChooserButton           = coreglib.Type(C.gtk_app_chooser_button_get_type())
-	GTypeAppChooserDialog           = coreglib.Type(C.gtk_app_chooser_dialog_get_type())
-	GTypeAppChooserWidget           = coreglib.Type(C.gtk_app_chooser_widget_get_type())
-	GTypeApplication                = coreglib.Type(C.gtk_application_get_type())
-	GTypeApplicationWindow          = coreglib.Type(C.gtk_application_window_get_type())
-	GTypeArrow                      = coreglib.Type(C.gtk_arrow_get_type())
-	GTypeArrowAccessible            = coreglib.Type(C.gtk_arrow_accessible_get_type())
-	GTypeAspectFrame                = coreglib.Type(C.gtk_aspect_frame_get_type())
-	GTypeAssistant                  = coreglib.Type(C.gtk_assistant_get_type())
-	GTypeBin                        = coreglib.Type(C.gtk_bin_get_type())
-	GTypeBooleanCellAccessible      = coreglib.Type(C.gtk_boolean_cell_accessible_get_type())
-	GTypeBox                        = coreglib.Type(C.gtk_box_get_type())
-	GTypeBuilder                    = coreglib.Type(C.gtk_builder_get_type())
-	GTypeButton                     = coreglib.Type(C.gtk_button_get_type())
-	GTypeButtonAccessible           = coreglib.Type(C.gtk_button_accessible_get_type())
-	GTypeButtonBox                  = coreglib.Type(C.gtk_button_box_get_type())
-	GTypeCalendar                   = coreglib.Type(C.gtk_calendar_get_type())
-	GTypeCellAccessible             = coreglib.Type(C.gtk_cell_accessible_get_type())
-	GTypeCellArea                   = coreglib.Type(C.gtk_cell_area_get_type())
-	GTypeCellAreaBox                = coreglib.Type(C.gtk_cell_area_box_get_type())
-	GTypeCellAreaContext            = coreglib.Type(C.gtk_cell_area_context_get_type())
-	GTypeCellRenderer               = coreglib.Type(C.gtk_cell_renderer_get_type())
-	GTypeCellRendererAccel          = coreglib.Type(C.gtk_cell_renderer_accel_get_type())
-	GTypeCellRendererCombo          = coreglib.Type(C.gtk_cell_renderer_combo_get_type())
-	GTypeCellRendererPixbuf         = coreglib.Type(C.gtk_cell_renderer_pixbuf_get_type())
-	GTypeCellRendererProgress       = coreglib.Type(C.gtk_cell_renderer_progress_get_type())
-	GTypeCellRendererSpin           = coreglib.Type(C.gtk_cell_renderer_spin_get_type())
-	GTypeCellRendererSpinner        = coreglib.Type(C.gtk_cell_renderer_spinner_get_type())
-	GTypeCellRendererText           = coreglib.Type(C.gtk_cell_renderer_text_get_type())
-	GTypeCellRendererToggle         = coreglib.Type(C.gtk_cell_renderer_toggle_get_type())
-	GTypeCellView                   = coreglib.Type(C.gtk_cell_view_get_type())
-	GTypeCheckButton                = coreglib.Type(C.gtk_check_button_get_type())
-	GTypeCheckMenuItem              = coreglib.Type(C.gtk_check_menu_item_get_type())
-	GTypeCheckMenuItemAccessible    = coreglib.Type(C.gtk_check_menu_item_accessible_get_type())
-	GTypeClipboard                  = coreglib.Type(C.gtk_clipboard_get_type())
-	GTypeColorButton                = coreglib.Type(C.gtk_color_button_get_type())
-	GTypeColorChooserDialog         = coreglib.Type(C.gtk_color_chooser_dialog_get_type())
-	GTypeColorChooserWidget         = coreglib.Type(C.gtk_color_chooser_widget_get_type())
-	GTypeColorSelection             = coreglib.Type(C.gtk_color_selection_get_type())
-	GTypeColorSelectionDialog       = coreglib.Type(C.gtk_color_selection_dialog_get_type())
-	GTypeComboBox                   = coreglib.Type(C.gtk_combo_box_get_type())
-	GTypeComboBoxAccessible         = coreglib.Type(C.gtk_combo_box_accessible_get_type())
-	GTypeComboBoxText               = coreglib.Type(C.gtk_combo_box_text_get_type())
-	GTypeContainer                  = coreglib.Type(C.gtk_container_get_type())
-	GTypeContainerAccessible        = coreglib.Type(C.gtk_container_accessible_get_type())
-	GTypeContainerCellAccessible    = coreglib.Type(C.gtk_container_cell_accessible_get_type())
-	GTypeCSSProvider                = coreglib.Type(C.gtk_css_provider_get_type())
-	GTypeDialog                     = coreglib.Type(C.gtk_dialog_get_type())
-	GTypeDrawingArea                = coreglib.Type(C.gtk_drawing_area_get_type())
-	GTypeEntry                      = coreglib.Type(C.gtk_entry_get_type())
-	GTypeEntryAccessible            = coreglib.Type(C.gtk_entry_accessible_get_type())
-	GTypeEntryBuffer                = coreglib.Type(C.gtk_entry_buffer_get_type())
-	GTypeEntryCompletion            = coreglib.Type(C.gtk_entry_completion_get_type())
-	GTypeEntryIconAccessible        = coreglib.Type(C.gtk_entry_icon_accessible_get_type())
-	GTypeEventBox                   = coreglib.Type(C.gtk_event_box_get_type())
-	GTypeEventController            = coreglib.Type(C.gtk_event_controller_get_type())
-	GTypeEventControllerKey         = coreglib.Type(C.gtk_event_controller_key_get_type())
-	GTypeEventControllerMotion      = coreglib.Type(C.gtk_event_controller_motion_get_type())
-	GTypeEventControllerScroll      = coreglib.Type(C.gtk_event_controller_scroll_get_type())
-	GTypeExpander                   = coreglib.Type(C.gtk_expander_get_type())
-	GTypeExpanderAccessible         = coreglib.Type(C.gtk_expander_accessible_get_type())
-	GTypeFileChooserButton          = coreglib.Type(C.gtk_file_chooser_button_get_type())
-	GTypeFileChooserDialog          = coreglib.Type(C.gtk_file_chooser_dialog_get_type())
-	GTypeFileChooserNative          = coreglib.Type(C.gtk_file_chooser_native_get_type())
-	GTypeFileChooserWidget          = coreglib.Type(C.gtk_file_chooser_widget_get_type())
-	GTypeFileFilter                 = coreglib.Type(C.gtk_file_filter_get_type())
-	GTypeFixed                      = coreglib.Type(C.gtk_fixed_get_type())
-	GTypeFlowBox                    = coreglib.Type(C.gtk_flow_box_get_type())
-	GTypeFlowBoxAccessible          = coreglib.Type(C.gtk_flow_box_accessible_get_type())
-	GTypeFlowBoxChild               = coreglib.Type(C.gtk_flow_box_child_get_type())
-	GTypeFlowBoxChildAccessible     = coreglib.Type(C.gtk_flow_box_child_accessible_get_type())
-	GTypeFontButton                 = coreglib.Type(C.gtk_font_button_get_type())
-	GTypeFontChooserDialog          = coreglib.Type(C.gtk_font_chooser_dialog_get_type())
-	GTypeFontChooserWidget          = coreglib.Type(C.gtk_font_chooser_widget_get_type())
-	GTypeFontSelection              = coreglib.Type(C.gtk_font_selection_get_type())
-	GTypeFontSelectionDialog        = coreglib.Type(C.gtk_font_selection_dialog_get_type())
-	GTypeFrame                      = coreglib.Type(C.gtk_frame_get_type())
-	GTypeFrameAccessible            = coreglib.Type(C.gtk_frame_accessible_get_type())
-	GTypeGLArea                     = coreglib.Type(C.gtk_gl_area_get_type())
-	GTypeGesture                    = coreglib.Type(C.gtk_gesture_get_type())
-	GTypeGestureDrag                = coreglib.Type(C.gtk_gesture_drag_get_type())
-	GTypeGestureLongPress           = coreglib.Type(C.gtk_gesture_long_press_get_type())
-	GTypeGestureMultiPress          = coreglib.Type(C.gtk_gesture_multi_press_get_type())
-	GTypeGesturePan                 = coreglib.Type(C.gtk_gesture_pan_get_type())
-	GTypeGestureRotate              = coreglib.Type(C.gtk_gesture_rotate_get_type())
-	GTypeGestureSingle              = coreglib.Type(C.gtk_gesture_single_get_type())
-	GTypeGestureStylus              = coreglib.Type(C.gtk_gesture_stylus_get_type())
-	GTypeGestureSwipe               = coreglib.Type(C.gtk_gesture_swipe_get_type())
-	GTypeGestureZoom                = coreglib.Type(C.gtk_gesture_zoom_get_type())
-	GTypeGrid                       = coreglib.Type(C.gtk_grid_get_type())
-	GTypeHBox                       = coreglib.Type(C.gtk_hbox_get_type())
-	GTypeHButtonBox                 = coreglib.Type(C.gtk_hbutton_box_get_type())
-	GTypeHPaned                     = coreglib.Type(C.gtk_hpaned_get_type())
-	GTypeHSV                        = coreglib.Type(C.gtk_hsv_get_type())
-	GTypeHScale                     = coreglib.Type(C.gtk_hscale_get_type())
-	GTypeHScrollbar                 = coreglib.Type(C.gtk_hscrollbar_get_type())
-	GTypeHSeparator                 = coreglib.Type(C.gtk_hseparator_get_type())
-	GTypeHandleBox                  = coreglib.Type(C.gtk_handle_box_get_type())
-	GTypeHeaderBar                  = coreglib.Type(C.gtk_header_bar_get_type())
-	GTypeIMContext                  = coreglib.Type(C.gtk_im_context_get_type())
-	GTypeIMContextSimple            = coreglib.Type(C.gtk_im_context_simple_get_type())
-	GTypeIMMulticontext             = coreglib.Type(C.gtk_im_multicontext_get_type())
-	GTypeIconFactory                = coreglib.Type(C.gtk_icon_factory_get_type())
-	GTypeIconInfo                   = coreglib.Type(C.gtk_icon_info_get_type())
-	GTypeIconTheme                  = coreglib.Type(C.gtk_icon_theme_get_type())
-	GTypeIconView                   = coreglib.Type(C.gtk_icon_view_get_type())
-	GTypeIconViewAccessible         = coreglib.Type(C.gtk_icon_view_accessible_get_type())
-	GTypeImage                      = coreglib.Type(C.gtk_image_get_type())
-	GTypeImageAccessible            = coreglib.Type(C.gtk_image_accessible_get_type())
-	GTypeImageCellAccessible        = coreglib.Type(C.gtk_image_cell_accessible_get_type())
-	GTypeImageMenuItem              = coreglib.Type(C.gtk_image_menu_item_get_type())
-	GTypeInfoBar                    = coreglib.Type(C.gtk_info_bar_get_type())
-	GTypeInvisible                  = coreglib.Type(C.gtk_invisible_get_type())
-	GTypeLabel                      = coreglib.Type(C.gtk_label_get_type())
-	GTypeLabelAccessible            = coreglib.Type(C.gtk_label_accessible_get_type())
-	GTypeLayout                     = coreglib.Type(C.gtk_layout_get_type())
-	GTypeLevelBar                   = coreglib.Type(C.gtk_level_bar_get_type())
-	GTypeLevelBarAccessible         = coreglib.Type(C.gtk_level_bar_accessible_get_type())
-	GTypeLinkButton                 = coreglib.Type(C.gtk_link_button_get_type())
-	GTypeLinkButtonAccessible       = coreglib.Type(C.gtk_link_button_accessible_get_type())
-	GTypeListBox                    = coreglib.Type(C.gtk_list_box_get_type())
-	GTypeListBoxAccessible          = coreglib.Type(C.gtk_list_box_accessible_get_type())
-	GTypeListBoxRow                 = coreglib.Type(C.gtk_list_box_row_get_type())
-	GTypeListBoxRowAccessible       = coreglib.Type(C.gtk_list_box_row_accessible_get_type())
-	GTypeListStore                  = coreglib.Type(C.gtk_list_store_get_type())
-	GTypeLockButton                 = coreglib.Type(C.gtk_lock_button_get_type())
-	GTypeLockButtonAccessible       = coreglib.Type(C.gtk_lock_button_accessible_get_type())
-	GTypeMenu                       = coreglib.Type(C.gtk_menu_get_type())
-	GTypeMenuAccessible             = coreglib.Type(C.gtk_menu_accessible_get_type())
-	GTypeMenuBar                    = coreglib.Type(C.gtk_menu_bar_get_type())
-	GTypeMenuButton                 = coreglib.Type(C.gtk_menu_button_get_type())
-	GTypeMenuButtonAccessible       = coreglib.Type(C.gtk_menu_button_accessible_get_type())
-	GTypeMenuItem                   = coreglib.Type(C.gtk_menu_item_get_type())
-	GTypeMenuItemAccessible         = coreglib.Type(C.gtk_menu_item_accessible_get_type())
-	GTypeMenuShell                  = coreglib.Type(C.gtk_menu_shell_get_type())
-	GTypeMenuShellAccessible        = coreglib.Type(C.gtk_menu_shell_accessible_get_type())
-	GTypeMenuToolButton             = coreglib.Type(C.gtk_menu_tool_button_get_type())
-	GTypeMessageDialog              = coreglib.Type(C.gtk_message_dialog_get_type())
-	GTypeMisc                       = coreglib.Type(C.gtk_misc_get_type())
-	GTypeModelButton                = coreglib.Type(C.gtk_model_button_get_type())
-	GTypeMountOperation             = coreglib.Type(C.gtk_mount_operation_get_type())
-	GTypeNativeDialog               = coreglib.Type(C.gtk_native_dialog_get_type())
-	GTypeNotebook                   = coreglib.Type(C.gtk_notebook_get_type())
-	GTypeNotebookAccessible         = coreglib.Type(C.gtk_notebook_accessible_get_type())
-	GTypeNotebookPageAccessible     = coreglib.Type(C.gtk_notebook_page_accessible_get_type())
-	GTypeNumerableIcon              = coreglib.Type(C.gtk_numerable_icon_get_type())
-	GTypeOffscreenWindow            = coreglib.Type(C.gtk_offscreen_window_get_type())
-	GTypeOverlay                    = coreglib.Type(C.gtk_overlay_get_type())
-	GTypePadController              = coreglib.Type(C.gtk_pad_controller_get_type())
-	GTypePageSetup                  = coreglib.Type(C.gtk_page_setup_get_type())
-	GTypePaned                      = coreglib.Type(C.gtk_paned_get_type())
-	GTypePanedAccessible            = coreglib.Type(C.gtk_paned_accessible_get_type())
-	GTypePlacesSidebar              = coreglib.Type(C.gtk_places_sidebar_get_type())
-	GTypePlug                       = coreglib.Type(C.gtk_plug_get_type())
-	GTypePlugAccessible             = coreglib.Type(C.gtk_plug_accessible_get_type())
-	GTypePopover                    = coreglib.Type(C.gtk_popover_get_type())
-	GTypePopoverAccessible          = coreglib.Type(C.gtk_popover_accessible_get_type())
-	GTypePopoverMenu                = coreglib.Type(C.gtk_popover_menu_get_type())
-	GTypePrintContext               = coreglib.Type(C.gtk_print_context_get_type())
-	GTypePrintOperation             = coreglib.Type(C.gtk_print_operation_get_type())
-	GTypePrintSettings              = coreglib.Type(C.gtk_print_settings_get_type())
-	GTypeProgressBar                = coreglib.Type(C.gtk_progress_bar_get_type())
-	GTypeProgressBarAccessible      = coreglib.Type(C.gtk_progress_bar_accessible_get_type())
-	GTypeRadioAction                = coreglib.Type(C.gtk_radio_action_get_type())
-	GTypeRadioButton                = coreglib.Type(C.gtk_radio_button_get_type())
-	GTypeRadioButtonAccessible      = coreglib.Type(C.gtk_radio_button_accessible_get_type())
-	GTypeRadioMenuItem              = coreglib.Type(C.gtk_radio_menu_item_get_type())
-	GTypeRadioMenuItemAccessible    = coreglib.Type(C.gtk_radio_menu_item_accessible_get_type())
-	GTypeRadioToolButton            = coreglib.Type(C.gtk_radio_tool_button_get_type())
-	GTypeRange                      = coreglib.Type(C.gtk_range_get_type())
-	GTypeRangeAccessible            = coreglib.Type(C.gtk_range_accessible_get_type())
-	GTypeRCStyle                    = coreglib.Type(C.gtk_rc_style_get_type())
-	GTypeRecentAction               = coreglib.Type(C.gtk_recent_action_get_type())
-	GTypeRecentChooserDialog        = coreglib.Type(C.gtk_recent_chooser_dialog_get_type())
-	GTypeRecentChooserMenu          = coreglib.Type(C.gtk_recent_chooser_menu_get_type())
-	GTypeRecentChooserWidget        = coreglib.Type(C.gtk_recent_chooser_widget_get_type())
-	GTypeRecentFilter               = coreglib.Type(C.gtk_recent_filter_get_type())
-	GTypeRecentManager              = coreglib.Type(C.gtk_recent_manager_get_type())
-	GTypeRendererCellAccessible     = coreglib.Type(C.gtk_renderer_cell_accessible_get_type())
-	GTypeRevealer                   = coreglib.Type(C.gtk_revealer_get_type())
-	GTypeScale                      = coreglib.Type(C.gtk_scale_get_type())
-	GTypeScaleAccessible            = coreglib.Type(C.gtk_scale_accessible_get_type())
-	GTypeScaleButton                = coreglib.Type(C.gtk_scale_button_get_type())
-	GTypeScaleButtonAccessible      = coreglib.Type(C.gtk_scale_button_accessible_get_type())
-	GTypeScrollbar                  = coreglib.Type(C.gtk_scrollbar_get_type())
-	GTypeScrolledWindow             = coreglib.Type(C.gtk_scrolled_window_get_type())
-	GTypeScrolledWindowAccessible   = coreglib.Type(C.gtk_scrolled_window_accessible_get_type())
-	GTypeSearchBar                  = coreglib.Type(C.gtk_search_bar_get_type())
-	GTypeSearchEntry                = coreglib.Type(C.gtk_search_entry_get_type())
-	GTypeSeparator                  = coreglib.Type(C.gtk_separator_get_type())
-	GTypeSeparatorMenuItem          = coreglib.Type(C.gtk_separator_menu_item_get_type())
-	GTypeSeparatorToolItem          = coreglib.Type(C.gtk_separator_tool_item_get_type())
-	GTypeSettings                   = coreglib.Type(C.gtk_settings_get_type())
-	GTypeShortcutLabel              = coreglib.Type(C.gtk_shortcut_label_get_type())
-	GTypeShortcutsGroup             = coreglib.Type(C.gtk_shortcuts_group_get_type())
-	GTypeShortcutsSection           = coreglib.Type(C.gtk_shortcuts_section_get_type())
-	GTypeShortcutsShortcut          = coreglib.Type(C.gtk_shortcuts_shortcut_get_type())
-	GTypeShortcutsWindow            = coreglib.Type(C.gtk_shortcuts_window_get_type())
-	GTypeSizeGroup                  = coreglib.Type(C.gtk_size_group_get_type())
-	GTypeSocket                     = coreglib.Type(C.gtk_socket_get_type())
-	GTypeSocketAccessible           = coreglib.Type(C.gtk_socket_accessible_get_type())
-	GTypeSpinButton                 = coreglib.Type(C.gtk_spin_button_get_type())
-	GTypeSpinButtonAccessible       = coreglib.Type(C.gtk_spin_button_accessible_get_type())
-	GTypeSpinner                    = coreglib.Type(C.gtk_spinner_get_type())
-	GTypeSpinnerAccessible          = coreglib.Type(C.gtk_spinner_accessible_get_type())
-	GTypeStack                      = coreglib.Type(C.gtk_stack_get_type())
-	GTypeStackAccessible            = coreglib.Type(C.gtk_stack_accessible_get_type())
-	GTypeStackSidebar               = coreglib.Type(C.gtk_stack_sidebar_get_type())
-	GTypeStackSwitcher              = coreglib.Type(C.gtk_stack_switcher_get_type())
-	GTypeStatusIcon                 = coreglib.Type(C.gtk_status_icon_get_type())
-	GTypeStatusbar                  = coreglib.Type(C.gtk_statusbar_get_type())
-	GTypeStatusbarAccessible        = coreglib.Type(C.gtk_statusbar_accessible_get_type())
-	GTypeStyle                      = coreglib.Type(C.gtk_style_get_type())
-	GTypeStyleContext               = coreglib.Type(C.gtk_style_context_get_type())
-	GTypeStyleProperties            = coreglib.Type(C.gtk_style_properties_get_type())
-	GTypeSwitch                     = coreglib.Type(C.gtk_switch_get_type())
-	GTypeSwitchAccessible           = coreglib.Type(C.gtk_switch_accessible_get_type())
-	GTypeTable                      = coreglib.Type(C.gtk_table_get_type())
-	GTypeTearoffMenuItem            = coreglib.Type(C.gtk_tearoff_menu_item_get_type())
-	GTypeTextBuffer                 = coreglib.Type(C.gtk_text_buffer_get_type())
-	GTypeTextCellAccessible         = coreglib.Type(C.gtk_text_cell_accessible_get_type())
-	GTypeTextChildAnchor            = coreglib.Type(C.gtk_text_child_anchor_get_type())
-	GTypeTextMark                   = coreglib.Type(C.gtk_text_mark_get_type())
-	GTypeTextTag                    = coreglib.Type(C.gtk_text_tag_get_type())
-	GTypeTextTagTable               = coreglib.Type(C.gtk_text_tag_table_get_type())
-	GTypeTextView                   = coreglib.Type(C.gtk_text_view_get_type())
-	GTypeTextViewAccessible         = coreglib.Type(C.gtk_text_view_accessible_get_type())
-	GTypeThemingEngine              = coreglib.Type(C.gtk_theming_engine_get_type())
-	GTypeToggleAction               = coreglib.Type(C.gtk_toggle_action_get_type())
-	GTypeToggleButton               = coreglib.Type(C.gtk_toggle_button_get_type())
-	GTypeToggleButtonAccessible     = coreglib.Type(C.gtk_toggle_button_accessible_get_type())
-	GTypeToggleToolButton           = coreglib.Type(C.gtk_toggle_tool_button_get_type())
-	GTypeToolButton                 = coreglib.Type(C.gtk_tool_button_get_type())
-	GTypeToolItem                   = coreglib.Type(C.gtk_tool_item_get_type())
-	GTypeToolItemGroup              = coreglib.Type(C.gtk_tool_item_group_get_type())
-	GTypeToolPalette                = coreglib.Type(C.gtk_tool_palette_get_type())
-	GTypeToolbar                    = coreglib.Type(C.gtk_toolbar_get_type())
-	GTypeTooltip                    = coreglib.Type(C.gtk_tooltip_get_type())
-	GTypeToplevelAccessible         = coreglib.Type(C.gtk_toplevel_accessible_get_type())
-	GTypeTreeModelFilter            = coreglib.Type(C.gtk_tree_model_filter_get_type())
-	GTypeTreeModelSort              = coreglib.Type(C.gtk_tree_model_sort_get_type())
-	GTypeTreeSelection              = coreglib.Type(C.gtk_tree_selection_get_type())
-	GTypeTreeStore                  = coreglib.Type(C.gtk_tree_store_get_type())
-	GTypeTreeView                   = coreglib.Type(C.gtk_tree_view_get_type())
-	GTypeTreeViewAccessible         = coreglib.Type(C.gtk_tree_view_accessible_get_type())
-	GTypeTreeViewColumn             = coreglib.Type(C.gtk_tree_view_column_get_type())
-	GTypeUIManager                  = coreglib.Type(C.gtk_ui_manager_get_type())
-	GTypeVBox                       = coreglib.Type(C.gtk_vbox_get_type())
-	GTypeVButtonBox                 = coreglib.Type(C.gtk_vbutton_box_get_type())
-	GTypeVPaned                     = coreglib.Type(C.gtk_vpaned_get_type())
-	GTypeVScale                     = coreglib.Type(C.gtk_vscale_get_type())
-	GTypeVScrollbar                 = coreglib.Type(C.gtk_vscrollbar_get_type())
-	GTypeVSeparator                 = coreglib.Type(C.gtk_vseparator_get_type())
-	GTypeViewport                   = coreglib.Type(C.gtk_viewport_get_type())
-	GTypeVolumeButton               = coreglib.Type(C.gtk_volume_button_get_type())
-	GTypeWidget                     = coreglib.Type(C.gtk_widget_get_type())
-	GTypeWidgetAccessible           = coreglib.Type(C.gtk_widget_accessible_get_type())
-	GTypeWindow                     = coreglib.Type(C.gtk_window_get_type())
-	GTypeWindowAccessible           = coreglib.Type(C.gtk_window_accessible_get_type())
-	GTypeWindowGroup                = coreglib.Type(C.gtk_window_group_get_type())
-	GTypeBorder                     = coreglib.Type(C.gtk_border_get_type())
-	GTypeCSSSection                 = coreglib.Type(C.gtk_css_section_get_type())
-	GTypeGradient                   = coreglib.Type(C.gtk_gradient_get_type())
-	GTypeIconSet                    = coreglib.Type(C.gtk_icon_set_get_type())
-	GTypeIconSource                 = coreglib.Type(C.gtk_icon_source_get_type())
-	GTypePaperSize                  = coreglib.Type(C.gtk_paper_size_get_type())
-	GTypeRecentInfo                 = coreglib.Type(C.gtk_recent_info_get_type())
-	GTypeRequisition                = coreglib.Type(C.gtk_requisition_get_type())
-	GTypeSelectionData              = coreglib.Type(C.gtk_selection_data_get_type())
-	GTypeSymbolicColor              = coreglib.Type(C.gtk_symbolic_color_get_type())
-	GTypeTargetEntry                = coreglib.Type(C.gtk_target_entry_get_type())
-	GTypeTargetList                 = coreglib.Type(C.gtk_target_list_get_type())
-	GTypeTextAttributes             = coreglib.Type(C.gtk_text_attributes_get_type())
-	GTypeTextIter                   = coreglib.Type(C.gtk_text_iter_get_type())
-	GTypeTreeIter                   = coreglib.Type(C.gtk_tree_iter_get_type())
-	GTypeTreePath                   = coreglib.Type(C.gtk_tree_path_get_type())
-	GTypeTreeRowReference           = coreglib.Type(C.gtk_tree_row_reference_get_type())
-	GTypeWidgetPath                 = coreglib.Type(C.gtk_widget_path_get_type())
+	GTypeAlign                      = coreglib.Type(C._gotk4_weak_gtk_align_get_type())
+	GTypeArrowPlacement             = coreglib.Type(C._gotk4_weak_gtk_arrow_placement_get_type())
+	GTypeArrowType                  = coreglib.Type(C._gotk4_weak_gtk_arrow_type_get_type())
+	GTypeAssistantPageType          = coreglib.Type(C._gotk4_weak_gtk_assistant_page_type_get_type())
+	GTypeBaselinePosition           = coreglib.Type(C._gotk4_weak_gtk_baseline_position_get_type())
+	GTypeBorderStyle                = coreglib.Type(C._gotk4_weak_gtk_border_style_get_type())
+	GTypeBuilderError               = coreglib.Type(C._gotk4_weak_gtk_builder_error_get_type())
+	GTypeButtonBoxStyle             = coreglib.Type(C._gotk4_weak_gtk_button_box_style_get_type())
+	GTypeButtonRole                 = coreglib.Type(C._gotk4_weak_gtk_button_role_get_type())
+	GTypeButtonsType                = coreglib.Type(C._gotk4_weak_gtk_buttons_type_get_type())
+	GTypeCellRendererAccelMode      = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_accel_mode_get_type())
+	GTypeCellRendererMode           = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_mode_get_type())
+	GTypeCornerType                 = coreglib.Type(C._gotk4_weak_gtk_corner_type_get_type())
+	GTypeCSSProviderError           = coreglib.Type(C._gotk4_weak_gtk_css_provider_error_get_type())
+	GTypeCSSSectionType             = coreglib.Type(C._gotk4_weak_gtk_css_section_type_get_type())
+	GTypeDeleteType                 = coreglib.Type(C._gotk4_weak_gtk_delete_type_get_type())
+	GTypeDirectionType              = coreglib.Type(C._gotk4_weak_gtk_direction_type_get_type())
+	GTypeDragResult                 = coreglib.Type(C._gotk4_weak_gtk_drag_result_get_type())
+	GTypeEntryIconPosition          = coreglib.Type(C._gotk4_weak_gtk_entry_icon_position_get_type())
+	GTypeEventSequenceState         = coreglib.Type(C._gotk4_weak_gtk_event_sequence_state_get_type())
+	GTypeExpanderStyle              = coreglib.Type(C._gotk4_weak_gtk_expander_style_get_type())
+	GTypeFileChooserAction          = coreglib.Type(C._gotk4_weak_gtk_file_chooser_action_get_type())
+	GTypeFileChooserConfirmation    = coreglib.Type(C._gotk4_weak_gtk_file_chooser_confirmation_get_type())
+	GTypeFileChooserError           = coreglib.Type(C._gotk4_weak_gtk_file_chooser_error_get_type())
+	GTypeIMPreeditStyle             = coreglib.Type(C._gotk4_weak_gtk_im_preedit_style_get_type())
+	GTypeIMStatusStyle              = coreglib.Type(C._gotk4_weak_gtk_im_status_style_get_type())
+	GTypeIconSize                   = coreglib.Type(C._gotk4_weak_gtk_icon_size_get_type())
+	GTypeIconThemeError             = coreglib.Type(C._gotk4_weak_gtk_icon_theme_error_get_type())
+	GTypeIconViewDropPosition       = coreglib.Type(C._gotk4_weak_gtk_icon_view_drop_position_get_type())
+	GTypeImageType                  = coreglib.Type(C._gotk4_weak_gtk_image_type_get_type())
+	GTypeInputPurpose               = coreglib.Type(C._gotk4_weak_gtk_input_purpose_get_type())
+	GTypeJustification              = coreglib.Type(C._gotk4_weak_gtk_justification_get_type())
+	GTypeLevelBarMode               = coreglib.Type(C._gotk4_weak_gtk_level_bar_mode_get_type())
+	GTypeLicense                    = coreglib.Type(C._gotk4_weak_gtk_license_get_type())
+	GTypeMenuDirectionType          = coreglib.Type(C._gotk4_weak_gtk_menu_direction_type_get_type())
+	GTypeMessageType                = coreglib.Type(C._gotk4_weak_gtk_message_type_get_type())
+	GTypeMovementStep               = coreglib.Type(C._gotk4_weak_gtk_movement_step_get_type())
+	GTypeNotebookTab                = coreglib.Type(C._gotk4_weak_gtk_notebook_tab_get_type())
+	GTypeNumberUpLayout             = coreglib.Type(C._gotk4_weak_gtk_number_up_layout_get_type())
+	GTypeOrientation                = coreglib.Type(C._gotk4_weak_gtk_orientation_get_type())
+	GTypePackDirection              = coreglib.Type(C._gotk4_weak_gtk_pack_direction_get_type())
+	GTypePackType                   = coreglib.Type(C._gotk4_weak_gtk_pack_type_get_type())
+	GTypePadActionType              = coreglib.Type(C._gotk4_weak_gtk_pad_action_type_get_type())
+	GTypePageOrientation            = coreglib.Type(C._gotk4_weak_gtk_page_orientation_get_type())
+	GTypePageSet                    = coreglib.Type(C._gotk4_weak_gtk_page_set_get_type())
+	GTypePanDirection               = coreglib.Type(C._gotk4_weak_gtk_pan_direction_get_type())
+	GTypePathPriorityType           = coreglib.Type(C._gotk4_weak_gtk_path_priority_type_get_type())
+	GTypePathType                   = coreglib.Type(C._gotk4_weak_gtk_path_type_get_type())
+	GTypePolicyType                 = coreglib.Type(C._gotk4_weak_gtk_policy_type_get_type())
+	GTypePopoverConstraint          = coreglib.Type(C._gotk4_weak_gtk_popover_constraint_get_type())
+	GTypePositionType               = coreglib.Type(C._gotk4_weak_gtk_position_type_get_type())
+	GTypePrintDuplex                = coreglib.Type(C._gotk4_weak_gtk_print_duplex_get_type())
+	GTypePrintError                 = coreglib.Type(C._gotk4_weak_gtk_print_error_get_type())
+	GTypePrintOperationAction       = coreglib.Type(C._gotk4_weak_gtk_print_operation_action_get_type())
+	GTypePrintOperationResult       = coreglib.Type(C._gotk4_weak_gtk_print_operation_result_get_type())
+	GTypePrintPages                 = coreglib.Type(C._gotk4_weak_gtk_print_pages_get_type())
+	GTypePrintQuality               = coreglib.Type(C._gotk4_weak_gtk_print_quality_get_type())
+	GTypePrintStatus                = coreglib.Type(C._gotk4_weak_gtk_print_status_get_type())
+	GTypePropagationPhase           = coreglib.Type(C._gotk4_weak_gtk_propagation_phase_get_type())
+	GTypeRCTokenType                = coreglib.Type(C._gotk4_weak_gtk_rc_token_type_get_type())
+	GTypeRecentChooserError         = coreglib.Type(C._gotk4_weak_gtk_recent_chooser_error_get_type())
+	GTypeRecentManagerError         = coreglib.Type(C._gotk4_weak_gtk_recent_manager_error_get_type())
+	GTypeRecentSortType             = coreglib.Type(C._gotk4_weak_gtk_recent_sort_type_get_type())
+	GTypeReliefStyle                = coreglib.Type(C._gotk4_weak_gtk_relief_style_get_type())
+	GTypeResizeMode                 = coreglib.Type(C._gotk4_weak_gtk_resize_mode_get_type())
+	GTypeResponseType               = coreglib.Type(C._gotk4_weak_gtk_response_type_get_type())
+	GTypeRevealerTransitionType     = coreglib.Type(C._gotk4_weak_gtk_revealer_transition_type_get_type())
+	GTypeScrollStep                 = coreglib.Type(C._gotk4_weak_gtk_scroll_step_get_type())
+	GTypeScrollType                 = coreglib.Type(C._gotk4_weak_gtk_scroll_type_get_type())
+	GTypeScrollablePolicy           = coreglib.Type(C._gotk4_weak_gtk_scrollable_policy_get_type())
+	GTypeSelectionMode              = coreglib.Type(C._gotk4_weak_gtk_selection_mode_get_type())
+	GTypeSensitivityType            = coreglib.Type(C._gotk4_weak_gtk_sensitivity_type_get_type())
+	GTypeShadowType                 = coreglib.Type(C._gotk4_weak_gtk_shadow_type_get_type())
+	GTypeShortcutType               = coreglib.Type(C._gotk4_weak_gtk_shortcut_type_get_type())
+	GTypeSizeGroupMode              = coreglib.Type(C._gotk4_weak_gtk_size_group_mode_get_type())
+	GTypeSizeRequestMode            = coreglib.Type(C._gotk4_weak_gtk_size_request_mode_get_type())
+	GTypeSortType                   = coreglib.Type(C._gotk4_weak_gtk_sort_type_get_type())
+	GTypeSpinButtonUpdatePolicy     = coreglib.Type(C._gotk4_weak_gtk_spin_button_update_policy_get_type())
+	GTypeSpinType                   = coreglib.Type(C._gotk4_weak_gtk_spin_type_get_type())
+	GTypeStackTransitionType        = coreglib.Type(C._gotk4_weak_gtk_stack_transition_type_get_type())
+	GTypeStateType                  = coreglib.Type(C._gotk4_weak_gtk_state_type_get_type())
+	GTypeTextBufferTargetInfo       = coreglib.Type(C._gotk4_weak_gtk_text_buffer_target_info_get_type())
+	GTypeTextDirection              = coreglib.Type(C._gotk4_weak_gtk_text_direction_get_type())
+	GTypeTextExtendSelection        = coreglib.Type(C._gotk4_weak_gtk_text_extend_selection_get_type())
+	GTypeTextViewLayer              = coreglib.Type(C._gotk4_weak_gtk_text_view_layer_get_type())
+	GTypeTextWindowType             = coreglib.Type(C._gotk4_weak_gtk_text_window_type_get_type())
+	GTypeToolbarSpaceStyle          = coreglib.Type(C._gotk4_weak_gtk_toolbar_space_style_get_type())
+	GTypeToolbarStyle               = coreglib.Type(C._gotk4_weak_gtk_toolbar_style_get_type())
+	GTypeTreeViewColumnSizing       = coreglib.Type(C._gotk4_weak_gtk_tree_view_column_sizing_get_type())
+	GTypeTreeViewDropPosition       = coreglib.Type(C._gotk4_weak_gtk_tree_view_drop_position_get_type())
+	GTypeTreeViewGridLines          = coreglib.Type(C._gotk4_weak_gtk_tree_view_grid_lines_get_type())
+	GTypeUnit                       = coreglib.Type(C._gotk4_weak_gtk_unit_get_type())
+	GTypeWidgetHelpType             = coreglib.Type(C._gotk4_weak_gtk_widget_help_type_get_type())
+	GTypeWindowPosition             = coreglib.Type(C._gotk4_weak_gtk_window_position_get_type())
+	GTypeWindowType                 = coreglib.Type(C._gotk4_weak_gtk_window_type_get_type())
+	GTypeWrapMode                   = coreglib.Type(C._gotk4_weak_gtk_wrap_mode_get_type())
+	GTypeAccelFlags                 = coreglib.Type(C._gotk4_weak_gtk_accel_flags_get_type())
+	GTypeApplicationInhibitFlags    = coreglib.Type(C._gotk4_weak_gtk_application_inhibit_flags_get_type())
+	GTypeAttachOptions              = coreglib.Type(C._gotk4_weak_gtk_attach_options_get_type())
+	GTypeCalendarDisplayOptions     = coreglib.Type(C._gotk4_weak_gtk_calendar_display_options_get_type())
+	GTypeCellRendererState          = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_state_get_type())
+	GTypeDebugFlag                  = coreglib.Type(C._gotk4_weak_gtk_debug_flag_get_type())
+	GTypeDestDefaults               = coreglib.Type(C._gotk4_weak_gtk_dest_defaults_get_type())
+	GTypeDialogFlags                = coreglib.Type(C._gotk4_weak_gtk_dialog_flags_get_type())
+	GTypeEventControllerScrollFlags = coreglib.Type(C._gotk4_weak_gtk_event_controller_scroll_flags_get_type())
+	GTypeFileFilterFlags            = coreglib.Type(C._gotk4_weak_gtk_file_filter_flags_get_type())
+	GTypeFontChooserLevel           = coreglib.Type(C._gotk4_weak_gtk_font_chooser_level_get_type())
+	GTypeIconLookupFlags            = coreglib.Type(C._gotk4_weak_gtk_icon_lookup_flags_get_type())
+	GTypeInputHints                 = coreglib.Type(C._gotk4_weak_gtk_input_hints_get_type())
+	GTypeJunctionSides              = coreglib.Type(C._gotk4_weak_gtk_junction_sides_get_type())
+	GTypePlacesOpenFlags            = coreglib.Type(C._gotk4_weak_gtk_places_open_flags_get_type())
+	GTypeRCFlags                    = coreglib.Type(C._gotk4_weak_gtk_rc_flags_get_type())
+	GTypeRecentFilterFlags          = coreglib.Type(C._gotk4_weak_gtk_recent_filter_flags_get_type())
+	GTypeRegionFlags                = coreglib.Type(C._gotk4_weak_gtk_region_flags_get_type())
+	GTypeStateFlags                 = coreglib.Type(C._gotk4_weak_gtk_state_flags_get_type())
+	GTypeStyleContextPrintFlags     = coreglib.Type(C._gotk4_weak_gtk_style_context_print_flags_get_type())
+	GTypeTargetFlags                = coreglib.Type(C._gotk4_weak_gtk_target_flags_get_type())
+	GTypeTextSearchFlags            = coreglib.Type(C._gotk4_weak_gtk_text_search_flags_get_type())
+	GTypeToolPaletteDragTargets     = coreglib.Type(C._gotk4_weak_gtk_tool_palette_drag_targets_get_type())
+	GTypeTreeModelFlags             = coreglib.Type(C._gotk4_weak_gtk_tree_model_flags_get_type())
+	GTypeUIManagerItemType          = coreglib.Type(C._gotk4_weak_gtk_ui_manager_item_type_get_type())
+	GTypeActionable                 = coreglib.Type(C._gotk4_weak_gtk_actionable_get_type())
+	GTypeActivatable                = coreglib.Type(C._gotk4_weak_gtk_activatable_get_type())
+	GTypeAppChooser                 = coreglib.Type(C._gotk4_weak_gtk_app_chooser_get_type())
+	GTypeBuildable                  = coreglib.Type(C._gotk4_weak_gtk_buildable_get_type())
+	GTypeCellAccessibleParent       = coreglib.Type(C._gotk4_weak_gtk_cell_accessible_parent_get_type())
+	GTypeCellEditable               = coreglib.Type(C._gotk4_weak_gtk_cell_editable_get_type())
+	GTypeCellLayout                 = coreglib.Type(C._gotk4_weak_gtk_cell_layout_get_type())
+	GTypeColorChooser               = coreglib.Type(C._gotk4_weak_gtk_color_chooser_get_type())
+	GTypeEditable                   = coreglib.Type(C._gotk4_weak_gtk_editable_get_type())
+	GTypeFileChooser                = coreglib.Type(C._gotk4_weak_gtk_file_chooser_get_type())
+	GTypeFontChooser                = coreglib.Type(C._gotk4_weak_gtk_font_chooser_get_type())
+	GTypeOrientable                 = coreglib.Type(C._gotk4_weak_gtk_orientable_get_type())
+	GTypePrintOperationPreview      = coreglib.Type(C._gotk4_weak_gtk_print_operation_preview_get_type())
+	GTypeRecentChooser              = coreglib.Type(C._gotk4_weak_gtk_recent_chooser_get_type())
+	GTypeScrollable                 = coreglib.Type(C._gotk4_weak_gtk_scrollable_get_type())
+	GTypeStyleProvider              = coreglib.Type(C._gotk4_weak_gtk_style_provider_get_type())
+	GTypeToolShell                  = coreglib.Type(C._gotk4_weak_gtk_tool_shell_get_type())
+	GTypeTreeDragDest               = coreglib.Type(C._gotk4_weak_gtk_tree_drag_dest_get_type())
+	GTypeTreeDragSource             = coreglib.Type(C._gotk4_weak_gtk_tree_drag_source_get_type())
+	GTypeTreeModel                  = coreglib.Type(C._gotk4_weak_gtk_tree_model_get_type())
+	GTypeTreeSortable               = coreglib.Type(C._gotk4_weak_gtk_tree_sortable_get_type())
+	GTypeAboutDialog                = coreglib.Type(C._gotk4_weak_gtk_about_dialog_get_type())
+	GTypeAccelGroup                 = coreglib.Type(C._gotk4_weak_gtk_accel_group_get_type())
+	GTypeAccelLabel                 = coreglib.Type(C._gotk4_weak_gtk_accel_label_get_type())
+	GTypeAccelMap                   = coreglib.Type(C._gotk4_weak_gtk_accel_map_get_type())
+	GTypeAccessible                 = coreglib.Type(C._gotk4_weak_gtk_accessible_get_type())
+	GTypeAction                     = coreglib.Type(C._gotk4_weak_gtk_action_get_type())
+	GTypeActionBar                  = coreglib.Type(C._gotk4_weak_gtk_action_bar_get_type())
+	GTypeActionGroup                = coreglib.Type(C._gotk4_weak_gtk_action_group_get_type())
+	GTypeAdjustment                 = coreglib.Type(C._gotk4_weak_gtk_adjustment_get_type())
+	GTypeAlignment                  = coreglib.Type(C._gotk4_weak_gtk_alignment_get_type())
+	GTypeAppChooserButton           = coreglib.Type(C._gotk4_weak_gtk_app_chooser_button_get_type())
+	GTypeAppChooserDialog           = coreglib.Type(C._gotk4_weak_gtk_app_chooser_dialog_get_type())
+	GTypeAppChooserWidget           = coreglib.Type(C._gotk4_weak_gtk_app_chooser_widget_get_type())
+	GTypeApplication                = coreglib.Type(C._gotk4_weak_gtk_application_get_type())
+	GTypeApplicationWindow          = coreglib.Type(C._gotk4_weak_gtk_application_window_get_type())
+	GTypeArrow                      = coreglib.Type(C._gotk4_weak_gtk_arrow_get_type())
+	GTypeArrowAccessible            = coreglib.Type(C._gotk4_weak_gtk_arrow_accessible_get_type())
+	GTypeAspectFrame                = coreglib.Type(C._gotk4_weak_gtk_aspect_frame_get_type())
+	GTypeAssistant                  = coreglib.Type(C._gotk4_weak_gtk_assistant_get_type())
+	GTypeBin                        = coreglib.Type(C._gotk4_weak_gtk_bin_get_type())
+	GTypeBooleanCellAccessible      = coreglib.Type(C._gotk4_weak_gtk_boolean_cell_accessible_get_type())
+	GTypeBox                        = coreglib.Type(C._gotk4_weak_gtk_box_get_type())
+	GTypeBuilder                    = coreglib.Type(C._gotk4_weak_gtk_builder_get_type())
+	GTypeButton                     = coreglib.Type(C._gotk4_weak_gtk_button_get_type())
+	GTypeButtonAccessible           = coreglib.Type(C._gotk4_weak_gtk_button_accessible_get_type())
+	GTypeButtonBox                  = coreglib.Type(C._gotk4_weak_gtk_button_box_get_type())
+	GTypeCalendar                   = coreglib.Type(C._gotk4_weak_gtk_calendar_get_type())
+	GTypeCellAccessible             = coreglib.Type(C._gotk4_weak_gtk_cell_accessible_get_type())
+	GTypeCellArea                   = coreglib.Type(C._gotk4_weak_gtk_cell_area_get_type())
+	GTypeCellAreaBox                = coreglib.Type(C._gotk4_weak_gtk_cell_area_box_get_type())
+	GTypeCellAreaContext            = coreglib.Type(C._gotk4_weak_gtk_cell_area_context_get_type())
+	GTypeCellRenderer               = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_get_type())
+	GTypeCellRendererAccel          = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_accel_get_type())
+	GTypeCellRendererCombo          = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_combo_get_type())
+	GTypeCellRendererPixbuf         = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_pixbuf_get_type())
+	GTypeCellRendererProgress       = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_progress_get_type())
+	GTypeCellRendererSpin           = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_spin_get_type())
+	GTypeCellRendererSpinner        = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_spinner_get_type())
+	GTypeCellRendererText           = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_text_get_type())
+	GTypeCellRendererToggle         = coreglib.Type(C._gotk4_weak_gtk_cell_renderer_toggle_get_type())
+	GTypeCellView                   = coreglib.Type(C._gotk4_weak_gtk_cell_view_get_type())
+	GTypeCheckButton                = coreglib.Type(C._gotk4_weak_gtk_check_button_get_type())
+	GTypeCheckMenuItem              = coreglib.Type(C._gotk4_weak_gtk_check_menu_item_get_type())
+	GTypeCheckMenuItemAccessible    = coreglib.Type(C._gotk4_weak_gtk_check_menu_item_accessible_get_type())
+	GTypeClipboard                  = coreglib.Type(C._gotk4_weak_gtk_clipboard_get_type())
+	GTypeColorButton                = coreglib.Type(C._gotk4_weak_gtk_color_button_get_type())
+	GTypeColorChooserDialog         = coreglib.Type(C._gotk4_weak_gtk_color_chooser_dialog_get_type())
+	GTypeColorChooserWidget         = coreglib.Type(C._gotk4_weak_gtk_color_chooser_widget_get_type())
+	GTypeColorSelection             = coreglib.Type(C._gotk4_weak_gtk_color_selection_get_type())
+	GTypeColorSelectionDialog       = coreglib.Type(C._gotk4_weak_gtk_color_selection_dialog_get_type())
+	GTypeComboBox                   = coreglib.Type(C._gotk4_weak_gtk_combo_box_get_type())
+	GTypeComboBoxAccessible         = coreglib.Type(C._gotk4_weak_gtk_combo_box_accessible_get_type())
+	GTypeComboBoxText               = coreglib.Type(C._gotk4_weak_gtk_combo_box_text_get_type())
+	GTypeContainer                  = coreglib.Type(C._gotk4_weak_gtk_container_get_type())
+	GTypeContainerAccessible        = coreglib.Type(C._gotk4_weak_gtk_container_accessible_get_type())
+	GTypeContainerCellAccessible    = coreglib.Type(C._gotk4_weak_gtk_container_cell_accessible_get_type())
+	GTypeCSSProvider                = coreglib.Type(C._gotk4_weak_gtk_css_provider_get_type())
+	GTypeDialog                     = coreglib.Type(C._gotk4_weak_gtk_dialog_get_type())
+	GTypeDrawingArea                = coreglib.Type(C._gotk4_weak_gtk_drawing_area_get_type())
+	GTypeEntry                      = coreglib.Type(C._gotk4_weak_gtk_entry_get_type())
+	GTypeEntryAccessible            = coreglib.Type(C._gotk4_weak_gtk_entry_accessible_get_type())
+	GTypeEntryBuffer                = coreglib.Type(C._gotk4_weak_gtk_entry_buffer_get_type())
+	GTypeEntryCompletion            = coreglib.Type(C._gotk4_weak_gtk_entry_completion_get_type())
+	GTypeEntryIconAccessible        = coreglib.Type(C._gotk4_weak_gtk_entry_icon_accessible_get_type())
+	GTypeEventBox                   = coreglib.Type(C._gotk4_weak_gtk_event_box_get_type())
+	GTypeEventController            = coreglib.Type(C._gotk4_weak_gtk_event_controller_get_type())
+	GTypeEventControllerKey         = coreglib.Type(C._gotk4_weak_gtk_event_controller_key_get_type())
+	GTypeEventControllerMotion      = coreglib.Type(C._gotk4_weak_gtk_event_controller_motion_get_type())
+	GTypeEventControllerScroll      = coreglib.Type(C._gotk4_weak_gtk_event_controller_scroll_get_type())
+	GTypeExpander                   = coreglib.Type(C._gotk4_weak_gtk_expander_get_type())
+	GTypeExpanderAccessible         = coreglib.Type(C._gotk4_weak_gtk_expander_accessible_get_type())
+	GTypeFileChooserButton          = coreglib.Type(C._gotk4_weak_gtk_file_chooser_button_get_type())
+	GTypeFileChooserDialog          = coreglib.Type(C._gotk4_weak_gtk_file_chooser_dialog_get_type())
+	GTypeFileChooserNative          = coreglib.Type(C._gotk4_weak_gtk_file_chooser_native_get_type())
+	GTypeFileChooserWidget          = coreglib.Type(C._gotk4_weak_gtk_file_chooser_widget_get_type())
+	GTypeFileFilter                 = coreglib.Type(C._gotk4_weak_gtk_file_filter_get_type())
+	GTypeFixed                      = coreglib.Type(C._gotk4_weak_gtk_fixed_get_type())
+	GTypeFlowBox                    = coreglib.Type(C._gotk4_weak_gtk_flow_box_get_type())
+	GTypeFlowBoxAccessible          = coreglib.Type(C._gotk4_weak_gtk_flow_box_accessible_get_type())
+	GTypeFlowBoxChild               = coreglib.Type(C._gotk4_weak_gtk_flow_box_child_get_type())
+	GTypeFlowBoxChildAccessible     = coreglib.Type(C._gotk4_weak_gtk_flow_box_child_accessible_get_type())
+	GTypeFontButton                 = coreglib.Type(C._gotk4_weak_gtk_font_button_get_type())
+	GTypeFontChooserDialog          = coreglib.Type(C._gotk4_weak_gtk_font_chooser_dialog_get_type())
+	GTypeFontChooserWidget          = coreglib.Type(C._gotk4_weak_gtk_font_chooser_widget_get_type())
+	GTypeFontSelection              = coreglib.Type(C._gotk4_weak_gtk_font_selection_get_type())
+	GTypeFontSelectionDialog        = coreglib.Type(C._gotk4_weak_gtk_font_selection_dialog_get_type())
+	GTypeFrame                      = coreglib.Type(C._gotk4_weak_gtk_frame_get_type())
+	GTypeFrameAccessible            = coreglib.Type(C._gotk4_weak_gtk_frame_accessible_get_type())
+	GTypeGLArea                     = coreglib.Type(C._gotk4_weak_gtk_gl_area_get_type())
+	GTypeGesture                    = coreglib.Type(C._gotk4_weak_gtk_gesture_get_type())
+	GTypeGestureDrag                = coreglib.Type(C._gotk4_weak_gtk_gesture_drag_get_type())
+	GTypeGestureLongPress           = coreglib.Type(C._gotk4_weak_gtk_gesture_long_press_get_type())
+	GTypeGestureMultiPress          = coreglib.Type(C._gotk4_weak_gtk_gesture_multi_press_get_type())
+	GTypeGesturePan                 = coreglib.Type(C._gotk4_weak_gtk_gesture_pan_get_type())
+	GTypeGestureRotate              = coreglib.Type(C._gotk4_weak_gtk_gesture_rotate_get_type())
+	GTypeGestureSingle              = coreglib.Type(C._gotk4_weak_gtk_gesture_single_get_type())
+	GTypeGestureStylus              = coreglib.Type(C._gotk4_weak_gtk_gesture_stylus_get_type())
+	GTypeGestureSwipe               = coreglib.Type(C._gotk4_weak_gtk_gesture_swipe_get_type())
+	GTypeGestureZoom                = coreglib.Type(C._gotk4_weak_gtk_gesture_zoom_get_type())
+	GTypeGrid                       = coreglib.Type(C._gotk4_weak_gtk_grid_get_type())
+	GTypeHBox                       = coreglib.Type(C._gotk4_weak_gtk_hbox_get_type())
+	GTypeHButtonBox                 = coreglib.Type(C._gotk4_weak_gtk_hbutton_box_get_type())
+	GTypeHPaned                     = coreglib.Type(C._gotk4_weak_gtk_hpaned_get_type())
+	GTypeHSV                        = coreglib.Type(C._gotk4_weak_gtk_hsv_get_type())
+	GTypeHScale                     = coreglib.Type(C._gotk4_weak_gtk_hscale_get_type())
+	GTypeHScrollbar                 = coreglib.Type(C._gotk4_weak_gtk_hscrollbar_get_type())
+	GTypeHSeparator                 = coreglib.Type(C._gotk4_weak_gtk_hseparator_get_type())
+	GTypeHandleBox                  = coreglib.Type(C._gotk4_weak_gtk_handle_box_get_type())
+	GTypeHeaderBar                  = coreglib.Type(C._gotk4_weak_gtk_header_bar_get_type())
+	GTypeIMContext                  = coreglib.Type(C._gotk4_weak_gtk_im_context_get_type())
+	GTypeIMContextSimple            = coreglib.Type(C._gotk4_weak_gtk_im_context_simple_get_type())
+	GTypeIMMulticontext             = coreglib.Type(C._gotk4_weak_gtk_im_multicontext_get_type())
+	GTypeIconFactory                = coreglib.Type(C._gotk4_weak_gtk_icon_factory_get_type())
+	GTypeIconInfo                   = coreglib.Type(C._gotk4_weak_gtk_icon_info_get_type())
+	GTypeIconTheme                  = coreglib.Type(C._gotk4_weak_gtk_icon_theme_get_type())
+	GTypeIconView                   = coreglib.Type(C._gotk4_weak_gtk_icon_view_get_type())
+	GTypeIconViewAccessible         = coreglib.Type(C._gotk4_weak_gtk_icon_view_accessible_get_type())
+	GTypeImage                      = coreglib.Type(C._gotk4_weak_gtk_image_get_type())
+	GTypeImageAccessible            = coreglib.Type(C._gotk4_weak_gtk_image_accessible_get_type())
+	GTypeImageCellAccessible        = coreglib.Type(C._gotk4_weak_gtk_image_cell_accessible_get_type())
+	GTypeImageMenuItem              = coreglib.Type(C._gotk4_weak_gtk_image_menu_item_get_type())
+	GTypeInfoBar                    = coreglib.Type(C._gotk4_weak_gtk_info_bar_get_type())
+	GTypeInvisible                  = coreglib.Type(C._gotk4_weak_gtk_invisible_get_type())
+	GTypeLabel                      = coreglib.Type(C._gotk4_weak_gtk_label_get_type())
+	GTypeLabelAccessible            = coreglib.Type(C._gotk4_weak_gtk_label_accessible_get_type())
+	GTypeLayout                     = coreglib.Type(C._gotk4_weak_gtk_layout_get_type())
+	GTypeLevelBar                   = coreglib.Type(C._gotk4_weak_gtk_level_bar_get_type())
+	GTypeLevelBarAccessible         = coreglib.Type(C._gotk4_weak_gtk_level_bar_accessible_get_type())
+	GTypeLinkButton                 = coreglib.Type(C._gotk4_weak_gtk_link_button_get_type())
+	GTypeLinkButtonAccessible       = coreglib.Type(C._gotk4_weak_gtk_link_button_accessible_get_type())
+	GTypeListBox                    = coreglib.Type(C._gotk4_weak_gtk_list_box_get_type())
+	GTypeListBoxAccessible          = coreglib.Type(C._gotk4_weak_gtk_list_box_accessible_get_type())
+	GTypeListBoxRow                 = coreglib.Type(C._gotk4_weak_gtk_list_box_row_get_type())
+	GTypeListBoxRowAccessible       = coreglib.Type(C._gotk4_weak_gtk_list_box_row_accessible_get_type())
+	GTypeListStore                  = coreglib.Type(C._gotk4_weak_gtk_list_store_get_type())
+	GTypeLockButton                 = coreglib.Type(C._gotk4_weak_gtk_lock_button_get_type())
+	GTypeLockButtonAccessible       = coreglib.Type(C._gotk4_weak_gtk_lock_button_accessible_get_type())
+	GTypeMenu                       = coreglib.Type(C._gotk4_weak_gtk_menu_get_type())
+	GTypeMenuAccessible             = coreglib.Type(C._gotk4_weak_gtk_menu_accessible_get_type())
+	GTypeMenuBar                    = coreglib.Type(C._gotk4_weak_gtk_menu_bar_get_type())
+	GTypeMenuButton                 = coreglib.Type(C._gotk4_weak_gtk_menu_button_get_type())
+	GTypeMenuButtonAccessible       = coreglib.Type(C._gotk4_weak_gtk_menu_button_accessible_get_type())
+	GTypeMenuItem                   = coreglib.Type(C._gotk4_weak_gtk_menu_item_get_type())
+	GTypeMenuItemAccessible         = coreglib.Type(C._gotk4_weak_gtk_menu_item_accessible_get_type())
+	GTypeMenuShell                  = coreglib.Type(C._gotk4_weak_gtk_menu_shell_get_type())
+	GTypeMenuShellAccessible        = coreglib.Type(C._gotk4_weak_gtk_menu_shell_accessible_get_type())
+	GTypeMenuToolButton             = coreglib.Type(C._gotk4_weak_gtk_menu_tool_button_get_type())
+	GTypeMessageDialog              = coreglib.Type(C._gotk4_weak_gtk_message_dialog_get_type())
+	GTypeMisc                       = coreglib.Type(C._gotk4_weak_gtk_misc_get_type())
+	GTypeModelButton                = coreglib.Type(C._gotk4_weak_gtk_model_button_get_type())
+	GTypeMountOperation             = coreglib.Type(C._gotk4_weak_gtk_mount_operation_get_type())
+	GTypeNativeDialog               = coreglib.Type(C._gotk4_weak_gtk_native_dialog_get_type())
+	GTypeNotebook                   = coreglib.Type(C._gotk4_weak_gtk_notebook_get_type())
+	GTypeNotebookAccessible         = coreglib.Type(C._gotk4_weak_gtk_notebook_accessible_get_type())
+	GTypeNotebookPageAccessible     = coreglib.Type(C._gotk4_weak_gtk_notebook_page_accessible_get_type())
+	GTypeNumerableIcon              = coreglib.Type(C._gotk4_weak_gtk_numerable_icon_get_type())
+	GTypeOffscreenWindow            = coreglib.Type(C._gotk4_weak_gtk_offscreen_window_get_type())
+	GTypeOverlay                    = coreglib.Type(C._gotk4_weak_gtk_overlay_get_type())
+	GTypePadController              = coreglib.Type(C._gotk4_weak_gtk_pad_controller_get_type())
+	GTypePageSetup                  = coreglib.Type(C._gotk4_weak_gtk_page_setup_get_type())
+	GTypePaned                      = coreglib.Type(C._gotk4_weak_gtk_paned_get_type())
+	GTypePanedAccessible            = coreglib.Type(C._gotk4_weak_gtk_paned_accessible_get_type())
+	GTypePlacesSidebar              = coreglib.Type(C._gotk4_weak_gtk_places_sidebar_get_type())
+	GTypePlug                       = coreglib.Type(C._gotk4_weak_gtk_plug_get_type())
+	GTypePlugAccessible             = coreglib.Type(C._gotk4_weak_gtk_plug_accessible_get_type())
+	GTypePopover                    = coreglib.Type(C._gotk4_weak_gtk_popover_get_type())
+	GTypePopoverAccessible          = coreglib.Type(C._gotk4_weak_gtk_popover_accessible_get_type())
+	GTypePopoverMenu                = coreglib.Type(C._gotk4_weak_gtk_popover_menu_get_type())
+	GTypePrintContext               = coreglib.Type(C._gotk4_weak_gtk_print_context_get_type())
+	GTypePrintOperation             = coreglib.Type(C._gotk4_weak_gtk_print_operation_get_type())
+	GTypePrintSettings              = coreglib.Type(C._gotk4_weak_gtk_print_settings_get_type())
+	GTypeProgressBar                = coreglib.Type(C._gotk4_weak_gtk_progress_bar_get_type())
+	GTypeProgressBarAccessible      = coreglib.Type(C._gotk4_weak_gtk_progress_bar_accessible_get_type())
+	GTypeRadioAction                = coreglib.Type(C._gotk4_weak_gtk_radio_action_get_type())
+	GTypeRadioButton                = coreglib.Type(C._gotk4_weak_gtk_radio_button_get_type())
+	GTypeRadioButtonAccessible      = coreglib.Type(C._gotk4_weak_gtk_radio_button_accessible_get_type())
+	GTypeRadioMenuItem              = coreglib.Type(C._gotk4_weak_gtk_radio_menu_item_get_type())
+	GTypeRadioMenuItemAccessible    = coreglib.Type(C._gotk4_weak_gtk_radio_menu_item_accessible_get_type())
+	GTypeRadioToolButton            = coreglib.Type(C._gotk4_weak_gtk_radio_tool_button_get_type())
+	GTypeRange                      = coreglib.Type(C._gotk4_weak_gtk_range_get_type())
+	GTypeRangeAccessible            = coreglib.Type(C._gotk4_weak_gtk_range_accessible_get_type())
+	GTypeRCStyle                    = coreglib.Type(C._gotk4_weak_gtk_rc_style_get_type())
+	GTypeRecentAction               = coreglib.Type(C._gotk4_weak_gtk_recent_action_get_type())
+	GTypeRecentChooserDialog        = coreglib.Type(C._gotk4_weak_gtk_recent_chooser_dialog_get_type())
+	GTypeRecentChooserMenu          = coreglib.Type(C._gotk4_weak_gtk_recent_chooser_menu_get_type())
+	GTypeRecentChooserWidget        = coreglib.Type(C._gotk4_weak_gtk_recent_chooser_widget_get_type())
+	GTypeRecentFilter               = coreglib.Type(C._gotk4_weak_gtk_recent_filter_get_type())
+	GTypeRecentManager              = coreglib.Type(C._gotk4_weak_gtk_recent_manager_get_type())
+	GTypeRendererCellAccessible     = coreglib.Type(C._gotk4_weak_gtk_renderer_cell_accessible_get_type())
+	GTypeRevealer                   = coreglib.Type(C._gotk4_weak_gtk_revealer_get_type())
+	GTypeScale                      = coreglib.Type(C._gotk4_weak_gtk_scale_get_type())
+	GTypeScaleAccessible            = coreglib.Type(C._gotk4_weak_gtk_scale_accessible_get_type())
+	GTypeScaleButton                = coreglib.Type(C._gotk4_weak_gtk_scale_button_get_type())
+	GTypeScaleButtonAccessible      = coreglib.Type(C._gotk4_weak_gtk_scale_button_accessible_get_type())
+	GTypeScrollbar                  = coreglib.Type(C._gotk4_weak_gtk_scrollbar_get_type())
+	GTypeScrolledWindow             = coreglib.Type(C._gotk4_weak_gtk_scrolled_window_get_type())
+	GTypeScrolledWindowAccessible   = coreglib.Type(C._gotk4_weak_gtk_scrolled_window_accessible_get_type())
+	GTypeSearchBar                  = coreglib.Type(C._gotk4_weak_gtk_search_bar_get_type())
+	GTypeSearchEntry                = coreglib.Type(C._gotk4_weak_gtk_search_entry_get_type())
+	GTypeSeparator                  = coreglib.Type(C._gotk4_weak_gtk_separator_get_type())
+	GTypeSeparatorMenuItem          = coreglib.Type(C._gotk4_weak_gtk_separator_menu_item_get_type())
+	GTypeSeparatorToolItem          = coreglib.Type(C._gotk4_weak_gtk_separator_tool_item_get_type())
+	GTypeSettings                   = coreglib.Type(C._gotk4_weak_gtk_settings_get_type())
+	GTypeShortcutLabel              = coreglib.Type(C._gotk4_weak_gtk_shortcut_label_get_type())
+	GTypeShortcutsGroup             = coreglib.Type(C._gotk4_weak_gtk_shortcuts_group_get_type())
+	GTypeShortcutsSection           = coreglib.Type(C._gotk4_weak_gtk_shortcuts_section_get_type())
+	GTypeShortcutsShortcut          = coreglib.Type(C._gotk4_weak_gtk_shortcuts_shortcut_get_type())
+	GTypeShortcutsWindow            = coreglib.Type(C._gotk4_weak_gtk_shortcuts_window_get_type())
+	GTypeSizeGroup                  = coreglib.Type(C._gotk4_weak_gtk_size_group_get_type())
+	GTypeSocket                     = coreglib.Type(C._gotk4_weak_gtk_socket_get_type())
+	GTypeSocketAccessible           = coreglib.Type(C._gotk4_weak_gtk_socket_accessible_get_type())
+	GTypeSpinButton                 = coreglib.Type(C._gotk4_weak_gtk_spin_button_get_type())
+	GTypeSpinButtonAccessible       = coreglib.Type(C._gotk4_weak_gtk_spin_button_accessible_get_type())
+	GTypeSpinner                    = coreglib.Type(C._gotk4_weak_gtk_spinner_get_type())
+	GTypeSpinnerAccessible          = coreglib.Type(C._gotk4_weak_gtk_spinner_accessible_get_type())
+	GTypeStack                      = coreglib.Type(C._gotk4_weak_gtk_stack_get_type())
+	GTypeStackAccessible            = coreglib.Type(C._gotk4_weak_gtk_stack_accessible_get_type())
+	GTypeStackSidebar               = coreglib.Type(C._gotk4_weak_gtk_stack_sidebar_get_type())
+	GTypeStackSwitcher              = coreglib.Type(C._gotk4_weak_gtk_stack_switcher_get_type())
+	GTypeStatusIcon                 = coreglib.Type(C._gotk4_weak_gtk_status_icon_get_type())
+	GTypeStatusbar                  = coreglib.Type(C._gotk4_weak_gtk_statusbar_get_type())
+	GTypeStatusbarAccessible        = coreglib.Type(C._gotk4_weak_gtk_statusbar_accessible_get_type())
+	GTypeStyle                      = coreglib.Type(C._gotk4_weak_gtk_style_get_type())
+	GTypeStyleContext               = coreglib.Type(C._gotk4_weak_gtk_style_context_get_type())
+	GTypeStyleProperties            = coreglib.Type(C._gotk4_weak_gtk_style_properties_get_type())
+	GTypeSwitch                     = coreglib.Type(C._gotk4_weak_gtk_switch_get_type())
+	GTypeSwitchAccessible           = coreglib.Type(C._gotk4_weak_gtk_switch_accessible_get_type())
+	GTypeTable                      = coreglib.Type(C._gotk4_weak_gtk_table_get_type())
+	GTypeTearoffMenuItem            = coreglib.Type(C._gotk4_weak_gtk_tearoff_menu_item_get_type())
+	GTypeTextBuffer                 = coreglib.Type(C._gotk4_weak_gtk_text_buffer_get_type())
+	GTypeTextCellAccessible         = coreglib.Type(C._gotk4_weak_gtk_text_cell_accessible_get_type())
+	GTypeTextChildAnchor            = coreglib.Type(C._gotk4_weak_gtk_text_child_anchor_get_type())
+	GTypeTextMark                   = coreglib.Type(C._gotk4_weak_gtk_text_mark_get_type())
+	GTypeTextTag                    = coreglib.Type(C._gotk4_weak_gtk_text_tag_get_type())
+	GTypeTextTagTable               = coreglib.Type(C._gotk4_weak_gtk_text_tag_table_get_type())
+	GTypeTextView                   = coreglib.Type(C._gotk4_weak_gtk_text_view_get_type())
+	GTypeTextViewAccessible         = coreglib.Type(C._gotk4_weak_gtk_text_view_accessible_get_type())
+	GTypeThemingEngine              = coreglib.Type(C._gotk4_weak_gtk_theming_engine_get_type())
+	GTypeToggleAction               = coreglib.Type(C._gotk4_weak_gtk_toggle_action_get_type())
+	GTypeToggleButton               = coreglib.Type(C._gotk4_weak_gtk_toggle_button_get_type())
+	GTypeToggleButtonAccessible     = coreglib.Type(C._gotk4_weak_gtk_toggle_button_accessible_get_type())
+	GTypeToggleToolButton           = coreglib.Type(C._gotk4_weak_gtk_toggle_tool_button_get_type())
+	GTypeToolButton                 = coreglib.Type(C._gotk4_weak_gtk_tool_button_get_type())
+	GTypeToolItem                   = coreglib.Type(C._gotk4_weak_gtk_tool_item_get_type())
+	GTypeToolItemGroup              = coreglib.Type(C._gotk4_weak_gtk_tool_item_group_get_type())
+	GTypeToolPalette                = coreglib.Type(C._gotk4_weak_gtk_tool_palette_get_type())
+	GTypeToolbar                    = coreglib.Type(C._gotk4_weak_gtk_toolbar_get_type())
+	GTypeTooltip                    = coreglib.Type(C._gotk4_weak_gtk_tooltip_get_type())
+	GTypeToplevelAccessible         = coreglib.Type(C._gotk4_weak_gtk_toplevel_accessible_get_type())
+	GTypeTreeModelFilter            = coreglib.Type(C._gotk4_weak_gtk_tree_model_filter_get_type())
+	GTypeTreeModelSort              = coreglib.Type(C._gotk4_weak_gtk_tree_model_sort_get_type())
+	GTypeTreeSelection              = coreglib.Type(C._gotk4_weak_gtk_tree_selection_get_type())
+	GTypeTreeStore                  = coreglib.Type(C._gotk4_weak_gtk_tree_store_get_type())
+	GTypeTreeView                   = coreglib.Type(C._gotk4_weak_gtk_tree_view_get_type())
+	GTypeTreeViewAccessible         = coreglib.Type(C._gotk4_weak_gtk_tree_view_accessible_get_type())
+	GTypeTreeViewColumn             = coreglib.Type(C._gotk4_weak_gtk_tree_view_column_get_type())
+	GTypeUIManager                  = coreglib.Type(C._gotk4_weak_gtk_ui_manager_get_type())
+	GTypeVBox                       = coreglib.Type(C._gotk4_weak_gtk_vbox_get_type())
+	GTypeVButtonBox                 = coreglib.Type(C._gotk4_weak_gtk_vbutton_box_get_type())
+	GTypeVPaned                     = coreglib.Type(C._gotk4_weak_gtk_vpaned_get_type())
+	GTypeVScale                     = coreglib.Type(C._gotk4_weak_gtk_vscale_get_type())
+	GTypeVScrollbar                 = coreglib.Type(C._gotk4_weak_gtk_vscrollbar_get_type())
+	GTypeVSeparator                 = coreglib.Type(C._gotk4_weak_gtk_vseparator_get_type())
+	GTypeViewport                   = coreglib.Type(C._gotk4_weak_gtk_viewport_get_type())
+	GTypeVolumeButton               = coreglib.Type(C._gotk4_weak_gtk_volume_button_get_type())
+	GTypeWidget                     = coreglib.Type(C._gotk4_weak_gtk_widget_get_type())
+	GTypeWidgetAccessible           = coreglib.Type(C._gotk4_weak_gtk_widget_accessible_get_type())
+	GTypeWindow                     = coreglib.Type(C._gotk4_weak_gtk_window_get_type())
+	GTypeWindowAccessible           = coreglib.Type(C._gotk4_weak_gtk_window_accessible_get_type())
+	GTypeWindowGroup                = coreglib.Type(C._gotk4_weak_gtk_window_group_get_type())
+	GTypeBorder                     = coreglib.Type(C._gotk4_weak_gtk_border_get_type())
+	GTypeCSSSection                 = coreglib.Type(C._gotk4_weak_gtk_css_section_get_type())
+	GTypeGradient                   = coreglib.Type(C._gotk4_weak_gtk_gradient_get_type())
+	GTypeIconSet                    = coreglib.Type(C._gotk4_weak_gtk_icon_set_get_type())
+	GTypeIconSource                 = coreglib.Type(C._gotk4_weak_gtk_icon_source_get_type())
+	GTypePaperSize                  = coreglib.Type(C._gotk4_weak_gtk_paper_size_get_type())
+	GTypeRecentInfo                 = coreglib.Type(C._gotk4_weak_gtk_recent_info_get_type())
+	GTypeRequisition                = coreglib.Type(C._gotk4_weak_gtk_requisition_get_type())
+	GTypeSelectionData              = coreglib.Type(C._gotk4_weak_gtk_selection_data_get_type())
+	GTypeSymbolicColor              = coreglib.Type(C._gotk4_weak_gtk_symbolic_color_get_type())
+	GTypeTargetEntry                = coreglib.Type(C._gotk4_weak_gtk_target_entry_get_type())
+	GTypeTargetList                 = coreglib.Type(C._gotk4_weak_gtk_target_list_get_type())
+	GTypeTextAttributes             = coreglib.Type(C._gotk4_weak_gtk_text_attributes_get_type())
+	GTypeTextIter                   = coreglib.Type(C._gotk4_weak_gtk_text_iter_get_type())
+	GTypeTreeIter                   = coreglib.Type(C._gotk4_weak_gtk_tree_iter_get_type())
+	GTypeTreePath                   = coreglib.Type(C._gotk4_weak_gtk_tree_path_get_type())
+	GTypeTreeRowReference           = coreglib.Type(C._gotk4_weak_gtk_tree_row_reference_get_type())
+	GTypeWidgetPath                 = coreglib.Type(C._gotk4_weak_gtk_widget_path_get_type())
 )
 
 func init() {
@@ -3594,7 +4024,7 @@ func init() {
 // BINARY_AGE: like gtk_get_binary_age(), but from the headers used at
 // application compile time, rather than from the library linked against at
 // application run time.
-const BINARY_AGE = 2438
+const BINARY_AGE = 2441
 
 // INPUT_ERROR: constant to return from a signal handler for the
 // SpinButton::input signal in case of conversion failure.
@@ -3628,7 +4058,7 @@ const MAX_COMPOSE_LEN = 7
 // MICRO_VERSION: like gtk_get_micro_version(), but from the headers used at
 // application compile time, rather than from the library linked against at
 // application run time.
-const MICRO_VERSION = 38
+const MICRO_VERSION = 41
 
 // MINOR_VERSION: like gtk_get_minor_version(), but from the headers used at
 // application compile time, rather than from the library linked against at
@@ -5373,8 +5803,10 @@ type CellRendererAccelMode C.gint
 const (
 	// CellRendererAccelModeGTK: GTK+ accelerators mode.
 	CellRendererAccelModeGTK CellRendererAccelMode = iota
-	// CellRendererAccelModeOther: other accelerator mode.
+	// CellRendererAccelModeOther: other accelerator mode
+	// GTK_CELL_RENDERER_ACCEL_MODE_MODIFIER_TAP: Bare modifiers mode.
 	CellRendererAccelModeOther
+	CellRendererAccelModeModifierTap
 )
 
 func marshalCellRendererAccelMode(p uintptr) (interface{}, error) {
@@ -5388,6 +5820,8 @@ func (c CellRendererAccelMode) String() string {
 		return "GTK"
 	case CellRendererAccelModeOther:
 		return "Other"
+	case CellRendererAccelModeModifierTap:
+		return "ModifierTap"
 	default:
 		return fmt.Sprintf("CellRendererAccelMode(%d)", c)
 	}
@@ -17281,6 +17715,10 @@ func (activatable *Activatable) syncActionProperties(action *Action) {
 	runtime.KeepAlive(action)
 }
 
+// Update: called to update the activatable when its related action’s properties
+// change. You must check the Activatable:use-action-appearance property only
+// apply action properties that are meant to effect the appearance accordingly.
+//
 // The function takes the following parameters:
 //
 //   - action
@@ -24666,6 +25104,8 @@ func (chooser *RecentChooser) items() []*RecentInfo {
 	return _list
 }
 
+// itemActivated: signal emitted when the user “activates” a recent item in the
+// recent chooser.
 func (chooser *RecentChooser) itemActivated() {
 	gclass := (*C.GtkRecentChooserIface)(coreglib.PeekParentClass(chooser))
 	fnarg := gclass.item_activated
@@ -24774,6 +25214,8 @@ func (chooser *RecentChooser) selectURI(uri string) error {
 	return _goerr
 }
 
+// selectionChanged: signal emitted when there is a change in the set of
+// selected recently used resources.
 func (chooser *RecentChooser) selectionChanged() {
 	gclass := (*C.GtkRecentChooserIface)(coreglib.PeekParentClass(chooser))
 	fnarg := gclass.selection_changed
@@ -25645,6 +26087,7 @@ func (shell *ToolShell) ellipsizeMode() pango.EllipsizeMode {
 	return _ellipsizeMode
 }
 
+// iconSize: mandatory implementation of gtk_tool_shell_get_icon_size().
 func (shell *ToolShell) iconSize() IconSize {
 	gclass := (*C.GtkToolShellIface)(coreglib.PeekParentClass(shell))
 	fnarg := gclass.get_icon_size
@@ -29656,6 +30099,9 @@ func (accelGroup *AccelGroup) Unlock() {
 	runtime.KeepAlive(accelGroup)
 }
 
+// accelChanged: signal emitted when an entry is added to or removed from the
+// accel group.
+//
 // The function takes the following parameters:
 //
 //   - keyval
@@ -33517,6 +33963,9 @@ func (alignment *Alignment) SetPadding(paddingTop, paddingBottom, paddingLeft, p
 
 // AppChooserButtonOverrides contains methods that are overridable.
 type AppChooserButtonOverrides struct {
+	// CustomItemActivated: signal emitted when a custom item, previously added
+	// with gtk_app_chooser_button_append_custom_item(), is activated from the
+	// dropdown menu.
 	CustomItemActivated func(itemName string)
 }
 
@@ -33870,6 +34319,9 @@ func (self *AppChooserButton) SetShowDialogItem(setting bool) {
 	runtime.KeepAlive(setting)
 }
 
+// customItemActivated: signal emitted when a custom item, previously added with
+// gtk_app_chooser_button_append_custom_item(), is activated from the dropdown
+// menu.
 func (self *AppChooserButton) customItemActivated(itemName string) {
 	gclass := (*C.GtkAppChooserButtonClass)(coreglib.PeekParentClass(self))
 	fnarg := gclass.custom_item_activated
@@ -34131,8 +34583,15 @@ func (self *AppChooserDialog) SetHeading(heading string) {
 
 // AppChooserWidgetOverrides contains methods that are overridable.
 type AppChooserWidgetOverrides struct {
+	// ApplicationActivated: signal emitted when an application item is
+	// activated from the widget’s list.
 	ApplicationActivated func(appInfo gio.AppInfor)
-	ApplicationSelected  func(appInfo gio.AppInfor)
+	// ApplicationSelected: signal emitted when an application item is selected
+	// from the widget’s list.
+	ApplicationSelected func(appInfo gio.AppInfor)
+	// PopulatePopup: signal emitted when a context menu is about to popup over
+	// an application item.
+	//
 	// The function takes the following parameters:
 	//
 	//   - menu
@@ -34564,6 +35023,8 @@ func (self *AppChooserWidget) SetShowRecommended(setting bool) {
 	runtime.KeepAlive(setting)
 }
 
+// applicationActivated: signal emitted when an application item is activated
+// from the widget’s list.
 func (self *AppChooserWidget) applicationActivated(appInfo gio.AppInfor) {
 	gclass := (*C.GtkAppChooserWidgetClass)(coreglib.PeekParentClass(self))
 	fnarg := gclass.application_activated
@@ -34579,6 +35040,8 @@ func (self *AppChooserWidget) applicationActivated(appInfo gio.AppInfor) {
 	runtime.KeepAlive(appInfo)
 }
 
+// applicationSelected: signal emitted when an application item is selected from
+// the widget’s list.
 func (self *AppChooserWidget) applicationSelected(appInfo gio.AppInfor) {
 	gclass := (*C.GtkAppChooserWidgetClass)(coreglib.PeekParentClass(self))
 	fnarg := gclass.application_selected
@@ -34594,6 +35057,9 @@ func (self *AppChooserWidget) applicationSelected(appInfo gio.AppInfor) {
 	runtime.KeepAlive(appInfo)
 }
 
+// populatePopup: signal emitted when a context menu is about to popup over an
+// application item.
+//
 // The function takes the following parameters:
 //
 //   - menu
@@ -34618,7 +35084,12 @@ func (self *AppChooserWidget) populatePopup(menu *Menu, appInfo gio.AppInfor) {
 
 // ApplicationOverrides contains methods that are overridable.
 type ApplicationOverrides struct {
-	WindowAdded   func(window *Window)
+	// WindowAdded: signal emitted when a Window is added to application through
+	// gtk_application_add_window().
+	WindowAdded func(window *Window)
+	// WindowRemoved: signal emitted when a Window is removed from application,
+	// either as a side-effect of being destroyed or explicitly through
+	// gtk_application_remove_window().
 	WindowRemoved func(window *Window)
 }
 
@@ -35585,6 +36056,8 @@ func (application *Application) Uninhibit(cookie uint) {
 	runtime.KeepAlive(cookie)
 }
 
+// windowAdded: signal emitted when a Window is added to application through
+// gtk_application_add_window().
 func (application *Application) windowAdded(window *Window) {
 	gclass := (*C.GtkApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.window_added
@@ -35600,6 +36073,9 @@ func (application *Application) windowAdded(window *Window) {
 	runtime.KeepAlive(window)
 }
 
+// windowRemoved: signal emitted when a Window is removed from application,
+// either as a side-effect of being destroyed or explicitly through
+// gtk_application_remove_window().
 func (application *Application) windowRemoved(window *Window) {
 	gclass := (*C.GtkApplicationClass)(coreglib.PeekParentClass(application))
 	fnarg := gclass.window_removed
@@ -36270,9 +36746,15 @@ func (aspectFrame *AspectFrame) Set(xalign, yalign, ratio float32, obeyChild boo
 
 // AssistantOverrides contains methods that are overridable.
 type AssistantOverrides struct {
-	Apply   func()
-	Cancel  func()
-	Close   func()
+	// Apply: signal emitted when the apply button is clicked.
+	Apply func()
+	// Cancel: signal emitted when the cancel button is clicked.
+	Cancel func()
+	// Close: signal emitted either when the close button or last page apply
+	// button is clicked.
+	Close func()
+	// Prepare: signal emitted when a new page is set as the assistant’s current
+	// page, before making the new page visible.
 	Prepare func(page Widgetter)
 }
 
@@ -37128,6 +37610,7 @@ func (assistant *Assistant) UpdateButtonsState() {
 	runtime.KeepAlive(assistant)
 }
 
+// Apply: signal emitted when the apply button is clicked.
 func (assistant *Assistant) apply() {
 	gclass := (*C.GtkAssistantClass)(coreglib.PeekParentClass(assistant))
 	fnarg := gclass.apply
@@ -37140,6 +37623,7 @@ func (assistant *Assistant) apply() {
 	runtime.KeepAlive(assistant)
 }
 
+// Cancel: signal emitted when the cancel button is clicked.
 func (assistant *Assistant) cancel() {
 	gclass := (*C.GtkAssistantClass)(coreglib.PeekParentClass(assistant))
 	fnarg := gclass.cancel
@@ -37152,6 +37636,8 @@ func (assistant *Assistant) cancel() {
 	runtime.KeepAlive(assistant)
 }
 
+// Close: signal emitted either when the close button or last page apply button
+// is clicked.
 func (assistant *Assistant) close() {
 	gclass := (*C.GtkAssistantClass)(coreglib.PeekParentClass(assistant))
 	fnarg := gclass.close
@@ -37164,6 +37650,8 @@ func (assistant *Assistant) close() {
 	runtime.KeepAlive(assistant)
 }
 
+// Prepare: signal emitted when a new page is set as the assistant’s current
+// page, before making the new page visible.
 func (assistant *Assistant) prepare(page Widgetter) {
 	gclass := (*C.GtkAssistantClass)(coreglib.PeekParentClass(assistant))
 	fnarg := gclass.prepare
@@ -38931,6 +39419,9 @@ func (builder *Builder) typeFromName(typeName string) coreglib.Type {
 
 // ButtonOverrides contains methods that are overridable.
 type ButtonOverrides struct {
+	// Activate: signal that causes the button to animate press then release.
+	// Applications should never connect to this signal, but use the clicked
+	// signal.
 	Activate func()
 	// Clicked emits a Button::clicked signal to the given Button.
 	Clicked func()
@@ -39794,6 +40285,8 @@ func (button *Button) SetUseUnderline(useUnderline bool) {
 	runtime.KeepAlive(useUnderline)
 }
 
+// Activate: signal that causes the button to animate press then release.
+// Applications should never connect to this signal, but use the clicked signal.
 func (button *Button) activate() {
 	gclass := (*C.GtkButtonClass)(coreglib.PeekParentClass(button))
 	fnarg := gclass.activate
@@ -44198,8 +44691,12 @@ type CellRendererOverrides struct {
 	// The function returns the following values:
 	//
 	//   - ok: TRUE if the event was consumed/handled.
-	Activate        func(event *gdk.Event, widget Widgetter, path string, backgroundArea, cellArea *gdk.Rectangle, flags CellRendererState) bool
+	Activate func(event *gdk.Event, widget Widgetter, path string, backgroundArea, cellArea *gdk.Rectangle, flags CellRendererState) bool
+	// EditingCanceled: signal gets emitted when the user cancels the process of
+	// editing a cell.
 	EditingCanceled func()
+	// EditingStarted: signal gets emitted when a cell starts to be edited.
+	//
 	// The function takes the following parameters:
 	//
 	//   - editable
@@ -45353,6 +45850,8 @@ func (cell *CellRenderer) activate(event *gdk.Event, widget Widgetter, path stri
 	return _ok
 }
 
+// editingCanceled: signal gets emitted when the user cancels the process of
+// editing a cell.
 func (cell *CellRenderer) editingCanceled() {
 	gclass := (*C.GtkCellRendererClass)(coreglib.PeekParentClass(cell))
 	fnarg := gclass.editing_canceled
@@ -45365,6 +45864,8 @@ func (cell *CellRenderer) editingCanceled() {
 	runtime.KeepAlive(cell)
 }
 
+// editingStarted: signal gets emitted when a cell starts to be edited.
+//
 // The function takes the following parameters:
 //
 //   - editable
@@ -47383,6 +47884,7 @@ func (checkButton *CheckButton) drawIndicator(cr *cairo.Context) {
 
 // CheckMenuItemOverrides contains methods that are overridable.
 type CheckMenuItemOverrides struct {
+	// DrawIndicator: called to draw the check indicator.
 	DrawIndicator func(cr *cairo.Context)
 	// Toggled emits the CheckMenuItem::toggled signal.
 	Toggled func()
@@ -47715,6 +48217,7 @@ func (checkMenuItem *CheckMenuItem) Toggled() {
 	runtime.KeepAlive(checkMenuItem)
 }
 
+// drawIndicator: called to draw the check indicator.
 func (checkMenuItem *CheckMenuItem) drawIndicator(cr *cairo.Context) {
 	gclass := (*C.GtkCheckMenuItemClass)(coreglib.PeekParentClass(checkMenuItem))
 	fnarg := gclass.draw_indicator
@@ -49645,7 +50148,10 @@ func (colorsel *ColorSelectionDialog) ColorSelection() Widgetter {
 
 // ComboBoxOverrides contains methods that are overridable.
 type ComboBoxOverrides struct {
-	Changed         func()
+	// Changed: signal is emitted when the active item is changed.
+	Changed func()
+	// FormatEntryText: signal which allows you to change how the text displayed
+	// in a combo box’s entry is displayed.
 	FormatEntryText func(path string) string
 }
 
@@ -50751,6 +51257,7 @@ func (comboBox *ComboBox) SetWrapWidth(width int) {
 	runtime.KeepAlive(width)
 }
 
+// Changed: signal is emitted when the active item is changed.
 func (comboBox *ComboBox) changed() {
 	gclass := (*C.GtkComboBoxClass)(coreglib.PeekParentClass(comboBox))
 	fnarg := gclass.changed
@@ -50763,6 +51270,8 @@ func (comboBox *ComboBox) changed() {
 	runtime.KeepAlive(comboBox)
 }
 
+// formatEntryText: signal which allows you to change how the text displayed in
+// a combo box’s entry is displayed.
 func (comboBox *ComboBox) formatEntryText(path string) string {
 	gclass := (*C.GtkComboBoxClass)(coreglib.PeekParentClass(comboBox))
 	fnarg := gclass.format_entry_text
@@ -51231,7 +51740,8 @@ type ContainerOverrides struct {
 	// The function takes the following parameters:
 	//
 	//   - widget to be placed inside container.
-	Add         func(widget Widgetter)
+	Add func(widget Widgetter)
+	// CheckResize: signal emitted when a size recalculation is needed.
 	CheckResize func()
 	// ChildType returns the type of the children supported by the container.
 	//
@@ -51241,7 +51751,8 @@ type ContainerOverrides struct {
 	// The function returns the following values:
 	//
 	//   - gType: #GType.
-	ChildType     func() coreglib.Type
+	ChildType func() coreglib.Type
+	// CompositeName gets a widget’s composite name. Deprecated: 3.10.
 	CompositeName func(child Widgetter) string
 	// PathForChild returns a newly created widget path representing all the
 	// widget hierarchy from the toplevel down to and including child.
@@ -52253,6 +52764,7 @@ func (container *Container) add(widget Widgetter) {
 	runtime.KeepAlive(widget)
 }
 
+// checkResize: signal emitted when a size recalculation is needed.
 func (container *Container) checkResize() {
 	gclass := (*C.GtkContainerClass)(coreglib.PeekParentClass(container))
 	fnarg := gclass.check_resize
@@ -52292,6 +52804,7 @@ func (container *Container) childType() coreglib.Type {
 	return _gType
 }
 
+// compositeName gets a widget’s composite name. Deprecated: 3.10.
 func (container *Container) compositeName(child Widgetter) string {
 	gclass := (*C.GtkContainerClass)(coreglib.PeekParentClass(container))
 	fnarg := gclass.composite_name
@@ -52951,6 +53464,8 @@ func CSSProviderGetNamed(name, variant string) *CSSProvider {
 
 // DialogOverrides contains methods that are overridable.
 type DialogOverrides struct {
+	// Close: signal emitted when the user uses a keybinding to close the
+	// dialog.
 	Close func()
 	// Response emits the Dialog::response signal with the given response ID.
 	// Used to indicate that the user has responded to the dialog in some way;
@@ -53508,6 +54023,7 @@ func (dialog *Dialog) SetResponseSensitive(responseId int, setting bool) {
 	runtime.KeepAlive(setting)
 }
 
+// Close: signal emitted when the user uses a keybinding to close the dialog.
 func (dialog *Dialog) close() {
 	gclass := (*C.GtkDialogClass)(coreglib.PeekParentClass(dialog))
 	fnarg := gclass.close
@@ -53692,15 +54208,33 @@ func NewDrawingArea() *DrawingArea {
 
 // EntryOverrides contains methods that are overridable.
 type EntryOverrides struct {
-	Activate      func()
-	Backspace     func()
+	// Activate class handler for the Entry::activate signal. The default
+	// implementation calls gtk_window_activate_default() on the entry’s
+	// top-level window.
+	Activate func()
+	// Backspace class handler for the Entry::backspace signal. The default
+	// implementation deletes the selection or a single character or word.
+	Backspace func()
+	// CopyClipboard class handler for the Entry::copy-clipboard signal.
+	// The default implementation copies the selection, if one exists.
 	CopyClipboard func()
-	CutClipboard  func()
+	// CutClipboard class handler for the Entry::cut-clipboard signal.
+	// The default implementation cuts the selection, if one exists.
+	CutClipboard func()
+	// DeleteFromCursor class handler for the Entry::delete-from-cursor signal.
+	// The default implementation deletes the selection or the specified number
+	// of characters or words.
+	//
 	// The function takes the following parameters:
 	//
 	//   - typ
 	//   - count
 	DeleteFromCursor func(typ DeleteType, count int)
+	// FrameSize: calculate the size of the text area frame, which is its
+	// allocated width and requested height, minus space for margins and
+	// borders, and taking baseline and text height into account. This virtual
+	// function must be non-NULL.
+	//
 	// The function takes the following parameters:
 	//
 	//   - x
@@ -53708,23 +54242,40 @@ type EntryOverrides struct {
 	//   - width
 	//   - height
 	FrameSize func(x, y, width, height *int)
+	// TextAreaSize: calculate the size of the text area, which is its allocated
+	// width and requested height, minus space for margins and borders. This
+	// virtual function must be non-NULL.
+	//
 	// The function takes the following parameters:
 	//
 	//   - x
 	//   - y
 	//   - width
 	//   - height
-	TextAreaSize   func(x, y, width, height *int)
+	TextAreaSize func(x, y, width, height *int)
+	// InsertAtCursor class handler for the Entry::insert-at-cursor signal.
+	// The default implementation inserts text at the cursor.
 	InsertAtCursor func(str string)
 	InsertEmoji    func()
+	// MoveCursor class handler for the Entry::move-cursor signal. The default
+	// implementation specifies the standard Entry cursor movement behavior.
+	//
 	// The function takes the following parameters:
 	//
 	//   - step
 	//   - count
 	//   - extendSelection
-	MoveCursor      func(step MovementStep, count int, extendSelection bool)
-	PasteClipboard  func()
-	PopulatePopup   func(popup Widgetter)
+	MoveCursor func(step MovementStep, count int, extendSelection bool)
+	// PasteClipboard class handler for the Entry::paste-clipboard signal.
+	// The default implementation pastes at the current cursor position or over
+	// the current selection if one exists.
+	PasteClipboard func()
+	// PopulatePopup class handler for the Entry::populate-popup signal.
+	// If non-NULL, this will be called to add additional entries to the context
+	// menu when it is displayed.
+	PopulatePopup func(popup Widgetter)
+	// ToggleOverwrite class handler for the Entry::toggle-overwrite signal.
+	// The default implementation toggles overwrite mode and blinks the cursor.
 	ToggleOverwrite func()
 }
 
@@ -55986,6 +56537,9 @@ func (entry *Entry) UnsetInvisibleChar() {
 	runtime.KeepAlive(entry)
 }
 
+// Activate class handler for the Entry::activate signal. The default
+// implementation calls gtk_window_activate_default() on the entry’s top-level
+// window.
 func (entry *Entry) activate() {
 	gclass := (*C.GtkEntryClass)(coreglib.PeekParentClass(entry))
 	fnarg := gclass.activate
@@ -55998,6 +56552,8 @@ func (entry *Entry) activate() {
 	runtime.KeepAlive(entry)
 }
 
+// Backspace class handler for the Entry::backspace signal. The default
+// implementation deletes the selection or a single character or word.
 func (entry *Entry) backspace() {
 	gclass := (*C.GtkEntryClass)(coreglib.PeekParentClass(entry))
 	fnarg := gclass.backspace
@@ -56010,6 +56566,8 @@ func (entry *Entry) backspace() {
 	runtime.KeepAlive(entry)
 }
 
+// copyClipboard class handler for the Entry::copy-clipboard signal. The default
+// implementation copies the selection, if one exists.
 func (entry *Entry) copyClipboard() {
 	gclass := (*C.GtkEntryClass)(coreglib.PeekParentClass(entry))
 	fnarg := gclass.copy_clipboard
@@ -56022,6 +56580,8 @@ func (entry *Entry) copyClipboard() {
 	runtime.KeepAlive(entry)
 }
 
+// cutClipboard class handler for the Entry::cut-clipboard signal. The default
+// implementation cuts the selection, if one exists.
 func (entry *Entry) cutClipboard() {
 	gclass := (*C.GtkEntryClass)(coreglib.PeekParentClass(entry))
 	fnarg := gclass.cut_clipboard
@@ -56034,6 +56594,10 @@ func (entry *Entry) cutClipboard() {
 	runtime.KeepAlive(entry)
 }
 
+// deleteFromCursor class handler for the Entry::delete-from-cursor signal.
+// The default implementation deletes the selection or the specified number of
+// characters or words.
+//
 // The function takes the following parameters:
 //
 //   - typ
@@ -56056,6 +56620,11 @@ func (entry *Entry) deleteFromCursor(typ DeleteType, count int) {
 	runtime.KeepAlive(count)
 }
 
+// frameSize: calculate the size of the text area frame, which is its
+// allocated width and requested height, minus space for margins and borders,
+// and taking baseline and text height into account. This virtual function must
+// be non-NULL.
+//
 // The function takes the following parameters:
 //
 //   - x
@@ -56086,6 +56655,10 @@ func (entry *Entry) frameSize(x, y, width, height *int) {
 	runtime.KeepAlive(height)
 }
 
+// textAreaSize: calculate the size of the text area, which is its allocated
+// width and requested height, minus space for margins and borders. This virtual
+// function must be non-NULL.
+//
 // The function takes the following parameters:
 //
 //   - x
@@ -56116,6 +56689,8 @@ func (entry *Entry) textAreaSize(x, y, width, height *int) {
 	runtime.KeepAlive(height)
 }
 
+// insertAtCursor class handler for the Entry::insert-at-cursor signal.
+// The default implementation inserts text at the cursor.
 func (entry *Entry) insertAtCursor(str string) {
 	gclass := (*C.GtkEntryClass)(coreglib.PeekParentClass(entry))
 	fnarg := gclass.insert_at_cursor
@@ -56144,6 +56719,9 @@ func (entry *Entry) insertEmoji() {
 	runtime.KeepAlive(entry)
 }
 
+// moveCursor class handler for the Entry::move-cursor signal. The default
+// implementation specifies the standard Entry cursor movement behavior.
+//
 // The function takes the following parameters:
 //
 //   - step
@@ -56172,6 +56750,9 @@ func (entry *Entry) moveCursor(step MovementStep, count int, extendSelection boo
 	runtime.KeepAlive(extendSelection)
 }
 
+// pasteClipboard class handler for the Entry::paste-clipboard signal.
+// The default implementation pastes at the current cursor position or over the
+// current selection if one exists.
 func (entry *Entry) pasteClipboard() {
 	gclass := (*C.GtkEntryClass)(coreglib.PeekParentClass(entry))
 	fnarg := gclass.paste_clipboard
@@ -56184,6 +56765,9 @@ func (entry *Entry) pasteClipboard() {
 	runtime.KeepAlive(entry)
 }
 
+// populatePopup class handler for the Entry::populate-popup signal. If
+// non-NULL, this will be called to add additional entries to the context menu
+// when it is displayed.
 func (entry *Entry) populatePopup(popup Widgetter) {
 	gclass := (*C.GtkEntryClass)(coreglib.PeekParentClass(entry))
 	fnarg := gclass.populate_popup
@@ -56199,6 +56783,8 @@ func (entry *Entry) populatePopup(popup Widgetter) {
 	runtime.KeepAlive(popup)
 }
 
+// toggleOverwrite class handler for the Entry::toggle-overwrite signal.
+// The default implementation toggles overwrite mode and blinks the cursor.
 func (entry *Entry) toggleOverwrite() {
 	gclass := (*C.GtkEntryClass)(coreglib.PeekParentClass(entry))
 	fnarg := gclass.toggle_overwrite
@@ -58581,6 +59167,7 @@ func (scroll *EventControllerScroll) SetFlags(flags EventControllerScrollFlags) 
 
 // ExpanderOverrides contains methods that are overridable.
 type ExpanderOverrides struct {
+	// Activate: keybinding signal is emitted when the user hits the Enter key.
 	Activate func()
 }
 
@@ -59121,6 +59708,7 @@ func (expander *Expander) SetUseUnderline(useUnderline bool) {
 	runtime.KeepAlive(useUnderline)
 }
 
+// Activate: keybinding signal is emitted when the user hits the Enter key.
 func (expander *Expander) activate() {
 	gclass := (*C.GtkExpanderClass)(coreglib.PeekParentClass(expander))
 	fnarg := gclass.activate
@@ -59194,6 +59782,7 @@ func marshalExpanderAccessible(p uintptr) (interface{}, error) {
 
 // FileChooserButtonOverrides contains methods that are overridable.
 type FileChooserButtonOverrides struct {
+	// FileSet: signal emitted when the user selects a file.
 	FileSet func()
 }
 
@@ -59501,6 +60090,7 @@ func (button *FileChooserButton) SetWidthChars(nChars int) {
 	runtime.KeepAlive(nChars)
 }
 
+// fileSet: signal emitted when the user selects a file.
 func (fc *FileChooserButton) fileSet() {
 	gclass := (*C.GtkFileChooserButtonClass)(coreglib.PeekParentClass(fc))
 	fnarg := gclass.file_set
@@ -64022,7 +64612,10 @@ func marshalFrameAccessible(p uintptr) (interface{}, error) {
 
 // GLAreaOverrides contains methods that are overridable.
 type GLAreaOverrides struct {
+	// Render class closure for the GLArea::render signal.
 	Render func(context gdk.GLContexter) bool
+	// Resize class closeure for the GLArea::resize signal.
+	//
 	// The function takes the following parameters:
 	//
 	//   - width
@@ -64607,6 +65200,7 @@ func (area *GLArea) SetUseES(useEs bool) {
 	runtime.KeepAlive(useEs)
 }
 
+// Render class closure for the GLArea::render signal.
 func (area *GLArea) render(context gdk.GLContexter) bool {
 	gclass := (*C.GtkGLAreaClass)(coreglib.PeekParentClass(area))
 	fnarg := gclass.render
@@ -64631,6 +65225,8 @@ func (area *GLArea) render(context gdk.GLContexter) bool {
 	return _ok
 }
 
+// Resize class closeure for the GLArea::resize signal.
+//
 // The function takes the following parameters:
 //
 //   - width
@@ -68024,7 +68620,11 @@ func NewHSeparator() *HSeparator {
 
 // HandleBoxOverrides contains methods that are overridable.
 type HandleBoxOverrides struct {
+	// ChildAttached: signal emitted when the contents of the handlebox are
+	// reattached to the main window. Deprecated: 3.4.
 	ChildAttached func(child Widgetter)
+	// ChildDetached: signal emitted when the contents of the handlebox are
+	// detached from the main window. Deprecated: 3.4.
 	ChildDetached func(child Widgetter)
 }
 
@@ -68314,6 +68914,8 @@ func (handleBox *HandleBox) SetSnapEdge(edge PositionType) {
 	runtime.KeepAlive(edge)
 }
 
+// childAttached: signal emitted when the contents of the handlebox are
+// reattached to the main window. Deprecated: 3.4.
 func (handleBox *HandleBox) childAttached(child Widgetter) {
 	gclass := (*C.GtkHandleBoxClass)(coreglib.PeekParentClass(handleBox))
 	fnarg := gclass.child_attached
@@ -68329,6 +68931,8 @@ func (handleBox *HandleBox) childAttached(child Widgetter) {
 	runtime.KeepAlive(child)
 }
 
+// childDetached: signal emitted when the contents of the handlebox are detached
+// from the main window. Deprecated: 3.4.
 func (handleBox *HandleBox) childDetached(child Widgetter) {
 	gclass := (*C.GtkHandleBoxClass)(coreglib.PeekParentClass(handleBox))
 	fnarg := gclass.child_detached
@@ -68800,6 +69404,7 @@ func wrapHeaderBarAccessible(obj *coreglib.Object) *HeaderBarAccessible {
 
 // IMContextOverrides contains methods that are overridable.
 type IMContextOverrides struct {
+	// Commit: default handler of the IMContext::commit signal.
 	Commit func(str string)
 	// DeleteSurrounding asks the widget that the input context is attached
 	// to to delete characters around the cursor position by emitting the
@@ -68885,14 +69490,19 @@ type IMContextOverrides struct {
 	//     within text.
 	//   - ok: TRUE if surrounding text was provided; in this case you must free
 	//     the result stored in *text.
-	Surrounding    func() (string, int, bool)
+	Surrounding func() (string, int, bool)
+	// PreeditChanged: default handler of the IMContext::preedit-changed signal.
 	PreeditChanged func()
-	PreeditEnd     func()
-	PreeditStart   func()
+	// PreeditEnd: default handler of the IMContext::preedit-end signal.
+	PreeditEnd func()
+	// PreeditStart: default handler of the IMContext::preedit-start signal.
+	PreeditStart func()
 	// Reset: notify the input method that a change such as a change in cursor
 	// position has been made. This will typically cause the input method to
 	// clear the preedit state.
-	Reset               func()
+	Reset func()
+	// RetrieveSurrounding: default handler of the
+	// IMContext::retrieve-surrounding signal.
 	RetrieveSurrounding func() bool
 	// SetClientWindow: set the client window for the input context; this is
 	// the Window in which the input appears. This window is used in order to
@@ -69450,6 +70060,7 @@ func (context *IMContext) SetUsePreedit(usePreedit bool) {
 	runtime.KeepAlive(usePreedit)
 }
 
+// Commit: default handler of the IMContext::commit signal.
 func (context *IMContext) commit(str string) {
 	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.commit
@@ -69677,6 +70288,7 @@ func (context *IMContext) surrounding() (string, int, bool) {
 	return _text, _cursorIndex, _ok
 }
 
+// preeditChanged: default handler of the IMContext::preedit-changed signal.
 func (context *IMContext) preeditChanged() {
 	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.preedit_changed
@@ -69689,6 +70301,7 @@ func (context *IMContext) preeditChanged() {
 	runtime.KeepAlive(context)
 }
 
+// preeditEnd: default handler of the IMContext::preedit-end signal.
 func (context *IMContext) preeditEnd() {
 	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.preedit_end
@@ -69701,6 +70314,7 @@ func (context *IMContext) preeditEnd() {
 	runtime.KeepAlive(context)
 }
 
+// preeditStart: default handler of the IMContext::preedit-start signal.
 func (context *IMContext) preeditStart() {
 	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.preedit_start
@@ -69728,6 +70342,8 @@ func (context *IMContext) reset() {
 	runtime.KeepAlive(context)
 }
 
+// retrieveSurrounding: default handler of the IMContext::retrieve-surrounding
+// signal.
 func (context *IMContext) retrieveSurrounding() bool {
 	gclass := (*C.GtkIMContextClass)(coreglib.PeekParentClass(context))
 	fnarg := gclass.retrieve_surrounding
@@ -71278,6 +71894,9 @@ func (iconInfo *IconInfo) SetRawCoordinates(rawCoordinates bool) {
 
 // IconThemeOverrides contains methods that are overridable.
 type IconThemeOverrides struct {
+	// Changed: signal emitted when the current icon theme is switched or GTK+
+	// detects that a change has occurred in the contents of the current icon
+	// theme.
 	Changed func()
 }
 
@@ -72317,6 +72936,8 @@ func (iconTheme *IconTheme) SetSearchPath(path []string) {
 	runtime.KeepAlive(path)
 }
 
+// Changed: signal emitted when the current icon theme is switched or GTK+
+// detects that a change has occurred in the contents of the current icon theme.
 func (iconTheme *IconTheme) changed() {
 	gclass := (*C.GtkIconThemeClass)(coreglib.PeekParentClass(iconTheme))
 	fnarg := gclass.changed
@@ -78950,6 +79571,7 @@ func marshalLevelBarAccessible(p uintptr) (interface{}, error) {
 
 // LinkButtonOverrides contains methods that are overridable.
 type LinkButtonOverrides struct {
+	// ActivateLink class handler for the LinkButton::activate-link signal.
 	ActivateLink func() bool
 }
 
@@ -79215,6 +79837,7 @@ func (linkButton *LinkButton) SetVisited(visited bool) {
 	runtime.KeepAlive(visited)
 }
 
+// activateLink class handler for the LinkButton::activate-link signal.
 func (button *LinkButton) activateLink() bool {
 	gclass := (*C.GtkLinkButtonClass)(coreglib.PeekParentClass(button))
 	fnarg := gclass.activate_link
@@ -79308,18 +79931,27 @@ func marshalLinkButtonAccessible(p uintptr) (interface{}, error) {
 
 // ListBoxOverrides contains methods that are overridable.
 type ListBoxOverrides struct {
+	// ActivateCursorRow class handler for the ListBox::activate-cursor-row
+	// signal.
 	ActivateCursorRow func()
+	// MoveCursor class handler for the ListBox::move-cursor signal.
+	//
 	// The function takes the following parameters:
 	//
 	//   - step
 	//   - count
-	MoveCursor   func(step MovementStep, count int)
+	MoveCursor func(step MovementStep, count int)
+	// RowActivated class handler for the ListBox::row-activated signal.
 	RowActivated func(row *ListBoxRow)
-	RowSelected  func(row *ListBoxRow)
+	// RowSelected class handler for the ListBox::row-selected signal.
+	RowSelected func(row *ListBoxRow)
 	// SelectAll: select all children of box, if the selection mode allows it.
-	SelectAll           func()
+	SelectAll func()
+	// SelectedRowsChanged class handler for the ListBox::selected-rows-changed
+	// signal.
 	SelectedRowsChanged func()
-	ToggleCursorRow     func()
+	// ToggleCursorRow class handler for the ListBox::toggle-cursor-row signal.
+	ToggleCursorRow func()
 	// UnselectAll: unselect all children of box, if the selection mode allows
 	// it.
 	UnselectAll func()
@@ -80126,6 +80758,7 @@ func (box *ListBox) UnselectRow(row *ListBoxRow) {
 	runtime.KeepAlive(row)
 }
 
+// activateCursorRow class handler for the ListBox::activate-cursor-row signal.
 func (box *ListBox) activateCursorRow() {
 	gclass := (*C.GtkListBoxClass)(coreglib.PeekParentClass(box))
 	fnarg := gclass.activate_cursor_row
@@ -80138,6 +80771,8 @@ func (box *ListBox) activateCursorRow() {
 	runtime.KeepAlive(box)
 }
 
+// moveCursor class handler for the ListBox::move-cursor signal.
+//
 // The function takes the following parameters:
 //
 //   - step
@@ -80160,6 +80795,7 @@ func (box *ListBox) moveCursor(step MovementStep, count int) {
 	runtime.KeepAlive(count)
 }
 
+// rowActivated class handler for the ListBox::row-activated signal.
 func (box *ListBox) rowActivated(row *ListBoxRow) {
 	gclass := (*C.GtkListBoxClass)(coreglib.PeekParentClass(box))
 	fnarg := gclass.row_activated
@@ -80175,6 +80811,7 @@ func (box *ListBox) rowActivated(row *ListBoxRow) {
 	runtime.KeepAlive(row)
 }
 
+// rowSelected class handler for the ListBox::row-selected signal.
 func (box *ListBox) rowSelected(row *ListBoxRow) {
 	gclass := (*C.GtkListBoxClass)(coreglib.PeekParentClass(box))
 	fnarg := gclass.row_selected
@@ -80203,6 +80840,8 @@ func (box *ListBox) selectAll() {
 	runtime.KeepAlive(box)
 }
 
+// selectedRowsChanged class handler for the ListBox::selected-rows-changed
+// signal.
 func (box *ListBox) selectedRowsChanged() {
 	gclass := (*C.GtkListBoxClass)(coreglib.PeekParentClass(box))
 	fnarg := gclass.selected_rows_changed
@@ -80215,6 +80854,7 @@ func (box *ListBox) selectedRowsChanged() {
 	runtime.KeepAlive(box)
 }
 
+// toggleCursorRow class handler for the ListBox::toggle-cursor-row signal.
 func (box *ListBox) toggleCursorRow() {
 	gclass := (*C.GtkListBoxClass)(coreglib.PeekParentClass(box))
 	fnarg := gclass.toggle_cursor_row
@@ -83230,7 +83870,9 @@ func marshalMenuButtonAccessible(p uintptr) (interface{}, error) {
 // MenuItemOverrides contains methods that are overridable.
 type MenuItemOverrides struct {
 	// Activate emits the MenuItem::activate signal on the given item.
-	Activate     func()
+	Activate func()
+	// ActivateItem: signal emitted when the item is activated, but also if the
+	// menu item has a submenu.
 	ActivateItem func()
 	// Deselect emits the MenuItem::deselect signal on the given item.
 	Deselect func()
@@ -83862,6 +84504,8 @@ func (menuItem *MenuItem) activate() {
 	runtime.KeepAlive(menuItem)
 }
 
+// activateItem: signal emitted when the item is activated, but also if the menu
+// item has a submenu.
 func (menuItem *MenuItem) activateItem() {
 	gclass := (*C.GtkMenuItemClass)(coreglib.PeekParentClass(menuItem))
 	fnarg := gclass.activate_item
@@ -84832,6 +85476,7 @@ func marshalMenuShellAccessible(p uintptr) (interface{}, error) {
 
 // MenuToolButtonOverrides contains methods that are overridable.
 type MenuToolButtonOverrides struct {
+	// ShowMenu: signal emitted before the menu is shown.
 	ShowMenu func()
 }
 
@@ -85111,6 +85756,7 @@ func (button *MenuToolButton) SetMenu(menu Widgetter) {
 	runtime.KeepAlive(menu)
 }
 
+// showMenu: signal emitted before the menu is shown.
 func (button *MenuToolButton) showMenu() {
 	gclass := (*C.GtkMenuToolButtonClass)(coreglib.PeekParentClass(button))
 	fnarg := gclass.show_menu
@@ -88731,6 +89377,9 @@ func (offscreen *OffscreenWindow) Surface() *cairo.Surface {
 
 // OverlayOverrides contains methods that are overridable.
 type OverlayOverrides struct {
+	// ChildPosition: signal emitted to determine the position and size of any
+	// overlay child widgets.
+	//
 	// The function takes the following parameters:
 	//
 	//   - widget
@@ -88963,6 +89612,9 @@ func (overlay *Overlay) SetOverlayPassThrough(widget Widgetter, passThrough bool
 	runtime.KeepAlive(passThrough)
 }
 
+// childPosition: signal emitted to determine the position and size of any
+// overlay child widgets.
+//
 // The function takes the following parameters:
 //
 //   - widget
@@ -92037,7 +92689,8 @@ func (popover *Popover) Modal() bool {
 
 // PointingTo: if a rectangle to point to has been set, this function will
 // return TRUE and fill in rect with such rectangle, otherwise it will return
-// FALSE and fill in rect with the attached widget coordinates.
+// FALSE and fill in rect with the attached widget width and height if a widget
+// exists, otherwise it will zero-out rect.
 //
 // The function returns the following values:
 //
@@ -92941,29 +93594,50 @@ func (context *PrintContext) SetCairoContext(cr *cairo.Context, dpiX, dpiY float
 
 // PrintOperationOverrides contains methods that are overridable.
 type PrintOperationOverrides struct {
-	BeginPrint        func(context *PrintContext)
+	// BeginPrint: signal emitted after the user has finished changing print
+	// settings in the dialog, before the actual rendering starts.
+	BeginPrint func(context *PrintContext)
+	// CustomWidgetApply: signal emitted right before “begin-print” if you added
+	// a custom widget in the “create-custom-widget” handler.
 	CustomWidgetApply func(widget Widgetter)
-	Done              func(result PrintOperationResult)
+	// Done: signal emitted when the print operation run has finished doing
+	// everything required for printing.
+	Done func(result PrintOperationResult)
+	// DrawPage: signal emitted for every page that is printed.
+	//
 	// The function takes the following parameters:
 	//
 	//   - context
 	//   - pageNr
 	DrawPage func(context *PrintContext, pageNr int)
+	// EndPrint: signal emitted after all pages have been rendered.
 	EndPrint func(context *PrintContext)
+	// Paginate: signal emitted after the “begin-print” signal, but before the
+	// actual rendering starts.
 	Paginate func(context *PrintContext) bool
+	// Preview: signal emitted when a preview is requested from the native
+	// dialog.
+	//
 	// The function takes the following parameters:
 	//
 	//   - preview
 	//   - context
 	//   - parent
 	Preview func(preview PrintOperationPreviewer, context *PrintContext, parent *Window) bool
+	// RequestPageSetup is emitted once for every page that is printed, to give
+	// the application a chance to modify the page setup.
+	//
 	// The function takes the following parameters:
 	//
 	//   - context
 	//   - pageNr
 	//   - setup
 	RequestPageSetup func(context *PrintContext, pageNr int, setup *PageSetup)
-	StatusChanged    func()
+	// StatusChanged is emitted at between the various phases of the print
+	// operation.
+	StatusChanged func()
+	// UpdateCustomWidget is emitted after change of selected printer.
+	//
 	// The function takes the following parameters:
 	//
 	//   - widget
@@ -94011,6 +94685,8 @@ func (op *PrintOperation) SetUseFullPage(fullPage bool) {
 	runtime.KeepAlive(fullPage)
 }
 
+// beginPrint: signal emitted after the user has finished changing print
+// settings in the dialog, before the actual rendering starts.
 func (operation *PrintOperation) beginPrint(context *PrintContext) {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.begin_print
@@ -94026,6 +94702,8 @@ func (operation *PrintOperation) beginPrint(context *PrintContext) {
 	runtime.KeepAlive(context)
 }
 
+// customWidgetApply: signal emitted right before “begin-print” if you added a
+// custom widget in the “create-custom-widget” handler.
 func (operation *PrintOperation) customWidgetApply(widget Widgetter) {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.custom_widget_apply
@@ -94041,6 +94719,8 @@ func (operation *PrintOperation) customWidgetApply(widget Widgetter) {
 	runtime.KeepAlive(widget)
 }
 
+// Done: signal emitted when the print operation run has finished doing
+// everything required for printing.
 func (operation *PrintOperation) done(result PrintOperationResult) {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.done
@@ -94056,6 +94736,8 @@ func (operation *PrintOperation) done(result PrintOperationResult) {
 	runtime.KeepAlive(result)
 }
 
+// drawPage: signal emitted for every page that is printed.
+//
 // The function takes the following parameters:
 //
 //   - context
@@ -94078,6 +94760,7 @@ func (operation *PrintOperation) drawPage(context *PrintContext, pageNr int) {
 	runtime.KeepAlive(pageNr)
 }
 
+// endPrint: signal emitted after all pages have been rendered.
 func (operation *PrintOperation) endPrint(context *PrintContext) {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.end_print
@@ -94093,6 +94776,8 @@ func (operation *PrintOperation) endPrint(context *PrintContext) {
 	runtime.KeepAlive(context)
 }
 
+// Paginate: signal emitted after the “begin-print” signal, but before the
+// actual rendering starts.
 func (operation *PrintOperation) paginate(context *PrintContext) bool {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.paginate
@@ -94117,6 +94802,8 @@ func (operation *PrintOperation) paginate(context *PrintContext) bool {
 	return _ok
 }
 
+// Preview: signal emitted when a preview is requested from the native dialog.
+//
 // The function takes the following parameters:
 //
 //   - preview
@@ -94152,6 +94839,9 @@ func (operation *PrintOperation) preview(preview PrintOperationPreviewer, contex
 	return _ok
 }
 
+// requestPageSetup is emitted once for every page that is printed, to give the
+// application a chance to modify the page setup.
+//
 // The function takes the following parameters:
 //
 //   - context
@@ -94178,6 +94868,8 @@ func (operation *PrintOperation) requestPageSetup(context *PrintContext, pageNr 
 	runtime.KeepAlive(setup)
 }
 
+// statusChanged is emitted at between the various phases of the print
+// operation.
 func (operation *PrintOperation) statusChanged() {
 	gclass := (*C.GtkPrintOperationClass)(coreglib.PeekParentClass(operation))
 	fnarg := gclass.status_changed
@@ -94190,6 +94882,8 @@ func (operation *PrintOperation) statusChanged() {
 	runtime.KeepAlive(operation)
 }
 
+// updateCustomWidget is emitted after change of selected printer.
+//
 // The function takes the following parameters:
 //
 //   - widget
@@ -102222,7 +102916,12 @@ func NewScrollbar(orientation Orientation, adjustment *Adjustment) *Scrollbar {
 
 // ScrolledWindowOverrides contains methods that are overridable.
 type ScrolledWindowOverrides struct {
+	// MoveFocusOut: keybinding signal which gets emitted when focus is moved
+	// away from the scrolled window by a keybinding.
 	MoveFocusOut func(direction DirectionType)
+	// ScrollChild: keybinding signal which gets emitted when a keybinding that
+	// scrolls is pressed.
+	//
 	// The function takes the following parameters:
 	//
 	//   - scroll
@@ -102237,9 +102936,9 @@ func defaultScrolledWindowOverrides(v *ScrolledWindow) ScrolledWindowOverrides {
 	}
 }
 
-// ScrolledWindow is a container that accepts a single child widget, makes that
-// child scrollable using either internally added scrollbars or externally
-// associated adjustments, and optionally draws a frame around the child.
+// ScrolledWindow is a container that accepts a single child widget and makes
+// that child scrollable using either internally added scrollbars or externally
+// associated adjustments.
 //
 // Widgets with native scrolling support, i.e. those whose classes implement
 // the Scrollable interface, are added directly. For other types of widget,
@@ -103212,6 +103911,8 @@ func (scrolledWindow *ScrolledWindow) UnsetPlacement() {
 	runtime.KeepAlive(scrolledWindow)
 }
 
+// moveFocusOut: keybinding signal which gets emitted when focus is moved away
+// from the scrolled window by a keybinding.
 func (scrolledWindow *ScrolledWindow) moveFocusOut(direction DirectionType) {
 	gclass := (*C.GtkScrolledWindowClass)(coreglib.PeekParentClass(scrolledWindow))
 	fnarg := gclass.move_focus_out
@@ -103227,6 +103928,9 @@ func (scrolledWindow *ScrolledWindow) moveFocusOut(direction DirectionType) {
 	runtime.KeepAlive(direction)
 }
 
+// scrollChild: keybinding signal which gets emitted when a keybinding that
+// scrolls is pressed.
+//
 // The function takes the following parameters:
 //
 //   - scroll
@@ -113080,7 +113784,9 @@ func (props *StyleProperties) UnsetProperty(property string, state StateFlags) {
 
 // SwitchOverrides contains methods that are overridable.
 type SwitchOverrides struct {
+	// Activate: action signal and emitting it causes the switch to animate.
 	Activate func()
+	// StateSet class handler for the ::state-set signal.
 	StateSet func(state bool) bool
 }
 
@@ -113313,6 +114019,7 @@ func (sw *Switch) SetState(state bool) {
 	runtime.KeepAlive(state)
 }
 
+// Activate: action signal and emitting it causes the switch to animate.
 func (sw *Switch) activate() {
 	gclass := (*C.GtkSwitchClass)(coreglib.PeekParentClass(sw))
 	fnarg := gclass.activate
@@ -113325,6 +114032,7 @@ func (sw *Switch) activate() {
 	runtime.KeepAlive(sw)
 }
 
+// stateSet class handler for the ::state-set signal.
 func (sw *Switch) stateSet(state bool) bool {
 	gclass := (*C.GtkSwitchClass)(coreglib.PeekParentClass(sw))
 	fnarg := gclass.state_set
@@ -114088,7 +114796,10 @@ type TextBufferOverrides struct {
 	// add extra calls if you user action consists solely of a single call to
 	// one of those functions.
 	BeginUserAction func()
-	Changed         func()
+	// Changed class handler for the TextBuffer::changed signal.
+	Changed func()
+	// DeleteRange class handler for the TextBuffer::delete-range signal.
+	//
 	// The function takes the following parameters:
 	//
 	//   - start
@@ -114127,20 +114838,28 @@ type TextBufferOverrides struct {
 	//   - iter: location to insert the pixbuf.
 	//   - pixbuf: Pixbuf.
 	InsertPixbuf func(iter *TextIter, pixbuf *gdkpixbuf.Pixbuf)
+	// InsertText class handler for the TextBuffer::insert-text signal.
+	//
 	// The function takes the following parameters:
 	//
 	//   - pos
 	//   - newText
 	//   - newTextLength
-	InsertText  func(pos *TextIter, newText string, newTextLength int)
+	InsertText func(pos *TextIter, newText string, newTextLength int)
+	// MarkDeleted class handler for the TextBuffer::mark-deleted signal.
 	MarkDeleted func(mark *TextMark)
+	// MarkSet class handler for the TextBuffer::mark-set signal.
+	//
 	// The function takes the following parameters:
 	//
 	//   - location
 	//   - mark
-	MarkSet         func(location *TextIter, mark *TextMark)
+	MarkSet func(location *TextIter, mark *TextMark)
+	// ModifiedChanged class handler for the TextBuffer::modified-changed
+	// signal.
 	ModifiedChanged func()
-	PasteDone       func(clipboard *Clipboard)
+	// PasteDone class handler for the TextBuffer::paste-done signal.
+	PasteDone func(clipboard *Clipboard)
 	// RemoveTag emits the “remove-tag” signal. The default handler for the
 	// signal removes all occurrences of tag from the given range. start and end
 	// don’t have to be in order.
@@ -116191,6 +116910,7 @@ func (buffer *TextBuffer) beginUserAction() {
 	runtime.KeepAlive(buffer)
 }
 
+// Changed class handler for the TextBuffer::changed signal.
 func (buffer *TextBuffer) changed() {
 	gclass := (*C.GtkTextBufferClass)(coreglib.PeekParentClass(buffer))
 	fnarg := gclass.changed
@@ -116203,6 +116923,8 @@ func (buffer *TextBuffer) changed() {
 	runtime.KeepAlive(buffer)
 }
 
+// deleteRange class handler for the TextBuffer::delete-range signal.
+//
 // The function takes the following parameters:
 //
 //   - start
@@ -116303,6 +117025,8 @@ func (buffer *TextBuffer) insertPixbuf(iter *TextIter, pixbuf *gdkpixbuf.Pixbuf)
 	runtime.KeepAlive(pixbuf)
 }
 
+// insertText class handler for the TextBuffer::insert-text signal.
+//
 // The function takes the following parameters:
 //
 //   - pos
@@ -116330,6 +117054,7 @@ func (buffer *TextBuffer) insertText(pos *TextIter, newText string, newTextLengt
 	runtime.KeepAlive(newTextLength)
 }
 
+// markDeleted class handler for the TextBuffer::mark-deleted signal.
 func (buffer *TextBuffer) markDeleted(mark *TextMark) {
 	gclass := (*C.GtkTextBufferClass)(coreglib.PeekParentClass(buffer))
 	fnarg := gclass.mark_deleted
@@ -116345,6 +117070,8 @@ func (buffer *TextBuffer) markDeleted(mark *TextMark) {
 	runtime.KeepAlive(mark)
 }
 
+// markSet class handler for the TextBuffer::mark-set signal.
+//
 // The function takes the following parameters:
 //
 //   - location
@@ -116367,6 +117094,7 @@ func (buffer *TextBuffer) markSet(location *TextIter, mark *TextMark) {
 	runtime.KeepAlive(mark)
 }
 
+// modifiedChanged class handler for the TextBuffer::modified-changed signal.
 func (buffer *TextBuffer) modifiedChanged() {
 	gclass := (*C.GtkTextBufferClass)(coreglib.PeekParentClass(buffer))
 	fnarg := gclass.modified_changed
@@ -116379,6 +117107,7 @@ func (buffer *TextBuffer) modifiedChanged() {
 	runtime.KeepAlive(buffer)
 }
 
+// pasteDone class handler for the TextBuffer::paste-done signal.
 func (buffer *TextBuffer) pasteDone(clipboard *Clipboard) {
 	gclass := (*C.GtkTextBufferClass)(coreglib.PeekParentClass(buffer))
 	fnarg := gclass.paste_done
@@ -117452,19 +118181,39 @@ func (table *TextTagTable) tagRemoved(tag *TextTag) {
 
 // TextViewOverrides contains methods that are overridable.
 type TextViewOverrides struct {
-	Backspace     func()
+	// Backspace class handler for the TextView::backspace keybinding signal.
+	Backspace func()
+	// CopyClipboard class handler for the Textview::copy-clipboard keybinding
+	// signal.
 	CopyClipboard func()
-	CutClipboard  func()
+	// CutClipboard class handler for the TextView::cut-clipboard keybinding
+	// signal.
+	CutClipboard func()
+	// DeleteFromCursor class handler for the TextView::delete-from-cursor
+	// keybinding signal.
+	//
 	// The function takes the following parameters:
 	//
 	//   - typ
 	//   - count
 	DeleteFromCursor func(typ DeleteType, count int)
+	// DrawLayer: draw_layer vfunc is called before and after the text view
+	// is drawing its own text. Applications can override this vfunc in a
+	// subclass to draw customized content underneath or above the text.
+	// In the GTK_TEXT_VIEW_LAYER_BELOW_TEXT and GTK_TEXT_VIEW_LAYER_ABOVE_TEXT
+	// the drawing is done in the buffer coordinate space,
+	// but the older (deprecated) layers GTK_TEXT_VIEW_LAYER_BELOW and
+	// GTK_TEXT_VIEW_LAYER_ABOVE work in viewport coordinates, which makes them
+	// unnecessarily hard to use. Since: 3.14.
+	//
 	// The function takes the following parameters:
 	//
 	//   - layer
 	//   - cr
 	DrawLayer func(layer TextViewLayer, cr *cairo.Context)
+	// ExtendSelection class handler for the TextView::extend-selection signal.
+	// Since 3.16.
+	//
 	// The function takes the following parameters:
 	//
 	//   - granularity
@@ -117472,17 +118221,27 @@ type TextViewOverrides struct {
 	//   - start
 	//   - end
 	ExtendSelection func(granularity TextExtendSelection, location, start, end *TextIter) bool
-	InsertAtCursor  func(str string)
-	InsertEmoji     func()
+	// InsertAtCursor class handler for the TextView::insert-at-cursor
+	// keybinding signal.
+	InsertAtCursor func(str string)
+	InsertEmoji    func()
+	// MoveCursor class handler for the TextView::move-cursor keybinding signal.
+	//
 	// The function takes the following parameters:
 	//
 	//   - step
 	//   - count
 	//   - extendSelection
-	MoveCursor      func(step MovementStep, count int, extendSelection bool)
-	PasteClipboard  func()
-	PopulatePopup   func(popup Widgetter)
-	SetAnchor       func()
+	MoveCursor func(step MovementStep, count int, extendSelection bool)
+	// PasteClipboard class handler for the TextView::paste-clipboard keybinding
+	// signal.
+	PasteClipboard func()
+	// PopulatePopup class handler for the TextView::populate-popup signal.
+	PopulatePopup func(popup Widgetter)
+	// SetAnchor class handler for the TextView::set-anchor keybinding signal.
+	SetAnchor func()
+	// ToggleOverwrite class handler for the TextView::toggle-overwrite
+	// keybinding signal.
 	ToggleOverwrite func()
 }
 
@@ -119784,6 +120543,7 @@ func (textView *TextView) WindowToBufferCoords(win TextWindowType, windowX, wind
 	return _bufferX, _bufferY
 }
 
+// Backspace class handler for the TextView::backspace keybinding signal.
 func (textView *TextView) backspace() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.backspace
@@ -119796,6 +120556,8 @@ func (textView *TextView) backspace() {
 	runtime.KeepAlive(textView)
 }
 
+// copyClipboard class handler for the Textview::copy-clipboard keybinding
+// signal.
 func (textView *TextView) copyClipboard() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.copy_clipboard
@@ -119808,6 +120570,7 @@ func (textView *TextView) copyClipboard() {
 	runtime.KeepAlive(textView)
 }
 
+// cutClipboard class handler for the TextView::cut-clipboard keybinding signal.
 func (textView *TextView) cutClipboard() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.cut_clipboard
@@ -119820,6 +120583,9 @@ func (textView *TextView) cutClipboard() {
 	runtime.KeepAlive(textView)
 }
 
+// deleteFromCursor class handler for the TextView::delete-from-cursor
+// keybinding signal.
+//
 // The function takes the following parameters:
 //
 //   - typ
@@ -119842,6 +120608,14 @@ func (textView *TextView) deleteFromCursor(typ DeleteType, count int) {
 	runtime.KeepAlive(count)
 }
 
+// drawLayer: draw_layer vfunc is called before and after the text view
+// is drawing its own text. Applications can override this vfunc in a
+// subclass to draw customized content underneath or above the text. In the
+// GTK_TEXT_VIEW_LAYER_BELOW_TEXT and GTK_TEXT_VIEW_LAYER_ABOVE_TEXT the drawing
+// is done in the buffer coordinate space, but the older (deprecated) layers
+// GTK_TEXT_VIEW_LAYER_BELOW and GTK_TEXT_VIEW_LAYER_ABOVE work in viewport
+// coordinates, which makes them unnecessarily hard to use. Since: 3.14.
+//
 // The function takes the following parameters:
 //
 //   - layer
@@ -119864,6 +120638,9 @@ func (textView *TextView) drawLayer(layer TextViewLayer, cr *cairo.Context) {
 	runtime.KeepAlive(cr)
 }
 
+// extendSelection class handler for the TextView::extend-selection signal.
+// Since 3.16.
+//
 // The function takes the following parameters:
 //
 //   - granularity
@@ -119903,6 +120680,8 @@ func (textView *TextView) extendSelection(granularity TextExtendSelection, locat
 	return _ok
 }
 
+// insertAtCursor class handler for the TextView::insert-at-cursor keybinding
+// signal.
 func (textView *TextView) insertAtCursor(str string) {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.insert_at_cursor
@@ -119931,6 +120710,8 @@ func (textView *TextView) insertEmoji() {
 	runtime.KeepAlive(textView)
 }
 
+// moveCursor class handler for the TextView::move-cursor keybinding signal.
+//
 // The function takes the following parameters:
 //
 //   - step
@@ -119959,6 +120740,8 @@ func (textView *TextView) moveCursor(step MovementStep, count int, extendSelecti
 	runtime.KeepAlive(extendSelection)
 }
 
+// pasteClipboard class handler for the TextView::paste-clipboard keybinding
+// signal.
 func (textView *TextView) pasteClipboard() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.paste_clipboard
@@ -119971,6 +120754,7 @@ func (textView *TextView) pasteClipboard() {
 	runtime.KeepAlive(textView)
 }
 
+// populatePopup class handler for the TextView::populate-popup signal.
 func (textView *TextView) populatePopup(popup Widgetter) {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.populate_popup
@@ -119986,6 +120770,7 @@ func (textView *TextView) populatePopup(popup Widgetter) {
 	runtime.KeepAlive(popup)
 }
 
+// setAnchor class handler for the TextView::set-anchor keybinding signal.
 func (textView *TextView) setAnchor() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.set_anchor
@@ -119998,6 +120783,8 @@ func (textView *TextView) setAnchor() {
 	runtime.KeepAlive(textView)
 }
 
+// toggleOverwrite class handler for the TextView::toggle-overwrite keybinding
+// signal.
 func (textView *TextView) toggleOverwrite() {
 	gclass := (*C.GtkTextViewClass)(coreglib.PeekParentClass(textView))
 	fnarg := gclass.toggle_overwrite
@@ -120081,6 +120868,9 @@ func marshalTextViewAccessible(p uintptr) (interface{}, error) {
 
 // ThemingEngineOverrides contains methods that are overridable.
 type ThemingEngineOverrides struct {
+	// RenderActivity renders an area displaying activity, such as in Spinner,
+	// or ProgressBar.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120089,6 +120879,8 @@ type ThemingEngineOverrides struct {
 	//   - width
 	//   - height
 	RenderActivity func(cr *cairo.Context, x, y, width, height float64)
+	// RenderArrow renders an arrow pointing to a certain direction.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120097,6 +120889,8 @@ type ThemingEngineOverrides struct {
 	//   - y
 	//   - size
 	RenderArrow func(cr *cairo.Context, angle, x, y, size float64)
+	// RenderBackground renders the background area of a widget region.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120105,6 +120899,8 @@ type ThemingEngineOverrides struct {
 	//   - width
 	//   - height
 	RenderBackground func(cr *cairo.Context, x, y, width, height float64)
+	// RenderCheck renders a checkmark, as in CheckButton.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120113,6 +120909,9 @@ type ThemingEngineOverrides struct {
 	//   - width
 	//   - height
 	RenderCheck func(cr *cairo.Context, x, y, width, height float64)
+	// RenderExpander renders an element what will expose/expand part of the UI,
+	// as in Expander.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120121,6 +120920,8 @@ type ThemingEngineOverrides struct {
 	//   - width
 	//   - height
 	RenderExpander func(cr *cairo.Context, x, y, width, height float64)
+	// RenderExtension renders a extension to a box, usually a notebook tab.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120130,6 +120931,8 @@ type ThemingEngineOverrides struct {
 	//   - height
 	//   - gapSide
 	RenderExtension func(cr *cairo.Context, x, y, width, height float64, gapSide PositionType)
+	// RenderFocus renders the focus indicator.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120138,6 +120941,8 @@ type ThemingEngineOverrides struct {
 	//   - width
 	//   - height
 	RenderFocus func(cr *cairo.Context, x, y, width, height float64)
+	// RenderFrame renders the frame around a widget area.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120146,6 +120951,8 @@ type ThemingEngineOverrides struct {
 	//   - width
 	//   - height
 	RenderFrame func(cr *cairo.Context, x, y, width, height float64)
+	// RenderFrameGap renders the frame around a widget area with a gap in it.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120157,6 +120964,8 @@ type ThemingEngineOverrides struct {
 	//   - xy0Gap
 	//   - xy1Gap
 	RenderFrameGap func(cr *cairo.Context, x, y, width, height float64, gapSide PositionType, xy0Gap, xy1Gap float64)
+	// RenderHandle renders a handle to drag UI elements, as in Paned.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120165,6 +120974,8 @@ type ThemingEngineOverrides struct {
 	//   - width
 	//   - height
 	RenderHandle func(cr *cairo.Context, x, y, width, height float64)
+	// RenderIcon renders an icon given as a Pixbuf.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120172,6 +120983,8 @@ type ThemingEngineOverrides struct {
 	//   - x
 	//   - y
 	RenderIcon func(cr *cairo.Context, pixbuf *gdkpixbuf.Pixbuf, x, y float64)
+	// RenderIconSurface renders an icon given as a #cairo_surface_t.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120179,6 +120992,8 @@ type ThemingEngineOverrides struct {
 	//   - x
 	//   - y
 	RenderIconSurface func(cr *cairo.Context, surface *cairo.Surface, x, y float64)
+	// RenderLayout renders a Layout.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120186,6 +121001,8 @@ type ThemingEngineOverrides struct {
 	//   - y
 	//   - layout
 	RenderLayout func(cr *cairo.Context, x, y float64, layout *pango.Layout)
+	// RenderLine renders a line between two points.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120194,6 +121011,8 @@ type ThemingEngineOverrides struct {
 	//   - x1
 	//   - y1
 	RenderLine func(cr *cairo.Context, x0, y0, x1, y1 float64)
+	// RenderOption renders an option, as in RadioButton.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120202,6 +121021,8 @@ type ThemingEngineOverrides struct {
 	//   - width
 	//   - height
 	RenderOption func(cr *cairo.Context, x, y, width, height float64)
+	// RenderSlider renders a slider control, as in Scale.
+	//
 	// The function takes the following parameters:
 	//
 	//   - cr
@@ -120908,6 +121729,9 @@ func (engine *ThemingEngine) StateIsRunning(state StateType) (float64, bool) {
 	return _progress, _ok
 }
 
+// renderActivity renders an area displaying activity, such as in Spinner,
+// or ProgressBar.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -120942,6 +121766,8 @@ func (engine *ThemingEngine) renderActivity(cr *cairo.Context, x, y, width, heig
 	runtime.KeepAlive(height)
 }
 
+// renderArrow renders an arrow pointing to a certain direction.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -120976,6 +121802,8 @@ func (engine *ThemingEngine) renderArrow(cr *cairo.Context, angle, x, y, size fl
 	runtime.KeepAlive(size)
 }
 
+// renderBackground renders the background area of a widget region.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121010,6 +121838,8 @@ func (engine *ThemingEngine) renderBackground(cr *cairo.Context, x, y, width, he
 	runtime.KeepAlive(height)
 }
 
+// renderCheck renders a checkmark, as in CheckButton.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121044,6 +121874,9 @@ func (engine *ThemingEngine) renderCheck(cr *cairo.Context, x, y, width, height 
 	runtime.KeepAlive(height)
 }
 
+// renderExpander renders an element what will expose/expand part of the UI,
+// as in Expander.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121078,6 +121911,8 @@ func (engine *ThemingEngine) renderExpander(cr *cairo.Context, x, y, width, heig
 	runtime.KeepAlive(height)
 }
 
+// renderExtension renders a extension to a box, usually a notebook tab.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121116,6 +121951,8 @@ func (engine *ThemingEngine) renderExtension(cr *cairo.Context, x, y, width, hei
 	runtime.KeepAlive(gapSide)
 }
 
+// renderFocus renders the focus indicator.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121150,6 +121987,8 @@ func (engine *ThemingEngine) renderFocus(cr *cairo.Context, x, y, width, height 
 	runtime.KeepAlive(height)
 }
 
+// renderFrame renders the frame around a widget area.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121184,6 +122023,8 @@ func (engine *ThemingEngine) renderFrame(cr *cairo.Context, x, y, width, height 
 	runtime.KeepAlive(height)
 }
 
+// renderFrameGap renders the frame around a widget area with a gap in it.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121230,6 +122071,8 @@ func (engine *ThemingEngine) renderFrameGap(cr *cairo.Context, x, y, width, heig
 	runtime.KeepAlive(xy1Gap)
 }
 
+// renderHandle renders a handle to drag UI elements, as in Paned.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121264,6 +122107,8 @@ func (engine *ThemingEngine) renderHandle(cr *cairo.Context, x, y, width, height
 	runtime.KeepAlive(height)
 }
 
+// renderIcon renders an icon given as a Pixbuf.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121294,6 +122139,8 @@ func (engine *ThemingEngine) renderIcon(cr *cairo.Context, pixbuf *gdkpixbuf.Pix
 	runtime.KeepAlive(y)
 }
 
+// renderIconSurface renders an icon given as a #cairo_surface_t.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121324,6 +122171,8 @@ func (engine *ThemingEngine) renderIconSurface(cr *cairo.Context, surface *cairo
 	runtime.KeepAlive(y)
 }
 
+// renderLayout renders a Layout.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121354,6 +122203,8 @@ func (engine *ThemingEngine) renderLayout(cr *cairo.Context, x, y float64, layou
 	runtime.KeepAlive(layout)
 }
 
+// renderLine renders a line between two points.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121388,6 +122239,8 @@ func (engine *ThemingEngine) renderLine(cr *cairo.Context, x0, y0, x1, y1 float6
 	runtime.KeepAlive(y1)
 }
 
+// renderOption renders an option, as in RadioButton.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -121422,6 +122275,8 @@ func (engine *ThemingEngine) renderOption(cr *cairo.Context, x, y, width, height
 	runtime.KeepAlive(height)
 }
 
+// renderSlider renders a slider control, as in Scale.
+//
 // The function takes the following parameters:
 //
 //   - cr
@@ -122198,6 +123053,7 @@ func marshalToggleButtonAccessible(p uintptr) (interface{}, error) {
 
 // ToggleToolButtonOverrides contains methods that are overridable.
 type ToggleToolButtonOverrides struct {
+	// Toggled: signal emitted whenever the toggle tool button changes state.
 	Toggled func()
 }
 
@@ -122393,6 +123249,7 @@ func (button *ToggleToolButton) SetActive(isActive bool) {
 	runtime.KeepAlive(isActive)
 }
 
+// Toggled: signal emitted whenever the toggle tool button changes state.
 func (button *ToggleToolButton) toggled() {
 	gclass := (*C.GtkToggleToolButtonClass)(coreglib.PeekParentClass(button))
 	fnarg := gclass.toggled
@@ -122407,6 +123264,8 @@ func (button *ToggleToolButton) toggled() {
 
 // ToolButtonOverrides contains methods that are overridable.
 type ToolButtonOverrides struct {
+	// Clicked: signal emitted when the tool button is clicked with the mouse or
+	// activated with the keyboard.
 	Clicked func()
 }
 
@@ -122909,6 +123768,8 @@ func (button *ToolButton) SetUseUnderline(useUnderline bool) {
 	runtime.KeepAlive(useUnderline)
 }
 
+// Clicked: signal emitted when the tool button is clicked with the mouse or
+// activated with the keyboard.
 func (toolItem *ToolButton) clicked() {
 	gclass := (*C.GtkToolButtonClass)(coreglib.PeekParentClass(toolItem))
 	fnarg := gclass.clicked
@@ -122923,6 +123784,9 @@ func (toolItem *ToolButton) clicked() {
 
 // ToolItemOverrides contains methods that are overridable.
 type ToolItemOverrides struct {
+	// CreateMenuProxy: signal emitted when the toolbar needs information from
+	// tool_item about whether the item should appear in the toolbar overflow
+	// menu.
 	CreateMenuProxy func() bool
 	// ToolbarReconfigured emits the signal ToolItem::toolbar_reconfigured on
 	// tool_item. Toolbar and other ToolShell implementations use this function
@@ -123727,6 +124591,8 @@ func (toolItem *ToolItem) ToolbarReconfigured() {
 	runtime.KeepAlive(toolItem)
 }
 
+// createMenuProxy: signal emitted when the toolbar needs information from
+// tool_item about whether the item should appear in the toolbar overflow menu.
 func (toolItem *ToolItem) createMenuProxy() bool {
 	gclass := (*C.GtkToolItemClass)(coreglib.PeekParentClass(toolItem))
 	fnarg := gclass.create_menu_proxy
@@ -126720,6 +127586,7 @@ func (treeModelSort *TreeModelSort) ResetDefaultSortFunc() {
 
 // TreeSelectionOverrides contains methods that are overridable.
 type TreeSelectionOverrides struct {
+	// Changed: signal emitted whenever the selection has (possibly) changed.
 	Changed func()
 }
 
@@ -127217,6 +128084,7 @@ func (selection *TreeSelection) UnselectRange(startPath, endPath *TreePath) {
 	runtime.KeepAlive(endPath)
 }
 
+// Changed: signal emitted whenever the selection has (possibly) changed.
 func (selection *TreeSelection) changed() {
 	gclass := (*C.GtkTreeSelectionClass)(coreglib.PeekParentClass(selection))
 	fnarg := gclass.changed
@@ -134774,6 +135642,20 @@ type WidgetOverrides struct {
 	//   - minimumBaseline
 	//   - naturalBaseline
 	AdjustBaselineRequest func(minimumBaseline, naturalBaseline *int)
+	// AdjustSizeAllocation: convert an initial size allocation assigned
+	// by a Container using gtk_widget_size_allocate(), into an actual size
+	// allocation to be used by the widget. adjust_size_allocation adjusts
+	// to a child widget’s actual allocation from what a parent container
+	// computed for the child. The adjusted allocation must be entirely within
+	// the original allocation. In any custom implementation, chain up to the
+	// default Widget implementation of this method, which applies the margin
+	// and alignment properties of Widget. Chain up before performing your own
+	// adjustments so your own adjustments remove more allocation after the
+	// Widget base class has already removed margin and alignment. The natural
+	// size passed in should be adjusted in the same way as the allocated size,
+	// which allows adjustments to perform alignments or other changes based on
+	// natural size.
+	//
 	// The function takes the following parameters:
 	//
 	//   - orientation
@@ -134782,13 +135664,32 @@ type WidgetOverrides struct {
 	//   - allocatedPos
 	//   - allocatedSize
 	AdjustSizeAllocation func(orientation Orientation, minimumSize, naturalSize, allocatedPos, allocatedSize *int)
+	// AdjustSizeRequest: convert an initial size request from a widget's
+	// SizeRequestMode virtual method implementations into a size request to be
+	// used by parent containers in laying out the widget. adjust_size_request
+	// adjusts from a child widget's original request to what a parent container
+	// should use for layout. The for_size argument will be -1 if the request
+	// should not be for a particular size in the opposing orientation,
+	// i.e. if the request is not height-for-width or width-for-height.
+	// If for_size is greater than -1, it is the proposed allocation in the
+	// opposing orientation that we need the request for. Implementations of
+	// adjust_size_request should chain up to the default implementation,
+	// which applies Widget’s margin properties and imposes any values from
+	// gtk_widget_set_size_request(). Chaining up should be last, after your
+	// subclass adjusts the request, so Widget can apply constraints and add the
+	// margin properly.
+	//
 	// The function takes the following parameters:
 	//
 	//   - orientation
 	//   - minimumSize
 	//   - naturalSize
-	AdjustSizeRequest  func(orientation Orientation, minimumSize, naturalSize *int)
-	ButtonPressEvent   func(event *gdk.EventButton) bool
+	AdjustSizeRequest func(orientation Orientation, minimumSize, naturalSize *int)
+	// ButtonPressEvent: signal will be emitted when a button (typically from a
+	// mouse) is pressed.
+	ButtonPressEvent func(event *gdk.EventButton) bool
+	// ButtonReleaseEvent: signal will be emitted when a button (typically from
+	// a mouse) is released.
 	ButtonReleaseEvent func(event *gdk.EventButton) bool
 	// CanActivateAccel determines whether an accelerator that activates
 	// the signal identified by signal_id can currently be activated.
@@ -134804,11 +135705,19 @@ type WidgetOverrides struct {
 	// The function returns the following values:
 	//
 	//   - ok: TRUE if the accelerator can be activated.
-	CanActivateAccel  func(signalId uint) bool
+	CanActivateAccel func(signalId uint) bool
+	// CompositedChanged: signal emitted when the composited status of widgets
+	// screen changes. See gdk_screen_is_composited().
 	CompositedChanged func()
-	ConfigureEvent    func(event *gdk.EventConfigure) bool
-	DamageEvent       func(event *gdk.EventExpose) bool
-	DeleteEvent       func(event *gdk.EventAny) bool
+	// ConfigureEvent: signal will be emitted when the size, position or
+	// stacking of the widget’s window has changed.
+	ConfigureEvent func(event *gdk.EventConfigure) bool
+	// DamageEvent: signal emitted when a redirected window belonging to widget
+	// gets drawn into.
+	DamageEvent func(event *gdk.EventExpose) bool
+	// DeleteEvent: signal emitted if a user requests that a toplevel window is
+	// closed.
+	DeleteEvent func(event *gdk.EventAny) bool
 	// Destroy destroys a widget.
 	//
 	// When a widget is destroyed all references it holds on other objects will
@@ -134840,11 +135749,20 @@ type WidgetOverrides struct {
 	// on child widgets.
 	//
 	// See also: gtk_container_remove().
-	Destroy          func()
-	DestroyEvent     func(event *gdk.EventAny) bool
+	Destroy func()
+	// DestroyEvent: signal is emitted when a Window is destroyed.
+	DestroyEvent func(event *gdk.EventAny) bool
+	// DirectionChanged: signal emitted when the text direction of a widget
+	// changes.
 	DirectionChanged func(previousDirection TextDirection)
-	DragBegin        func(context *gdk.DragContext)
-	DragDataDelete   func(context *gdk.DragContext)
+	// DragBegin: signal emitted on the drag source when a drag is started.
+	DragBegin func(context *gdk.DragContext)
+	// DragDataDelete: signal emitted on the drag source when a drag with the
+	// action GDK_ACTION_MOVE is successfully completed.
+	DragDataDelete func(context *gdk.DragContext)
+	// DragDataGet: signal emitted on the drag source when the drop site
+	// requests the data which is dragged.
+	//
 	// The function takes the following parameters:
 	//
 	//   - context
@@ -134852,6 +135770,9 @@ type WidgetOverrides struct {
 	//   - info
 	//   - time_
 	DragDataGet func(context *gdk.DragContext, selectionData *SelectionData, info, time_ uint)
+	// DragDataReceived: signal emitted on the drop site when the dragged data
+	// has been received.
+	//
 	// The function takes the following parameters:
 	//
 	//   - context
@@ -134861,6 +135782,9 @@ type WidgetOverrides struct {
 	//   - info
 	//   - time_
 	DragDataReceived func(context *gdk.DragContext, x, y int, selectionData *SelectionData, info, time_ uint)
+	// DragDrop: signal emitted on the drop site when the user drops the data
+	// onto the widget.
+	//
 	// The function takes the following parameters:
 	//
 	//   - context
@@ -134868,25 +135792,37 @@ type WidgetOverrides struct {
 	//   - y
 	//   - time_
 	DragDrop func(context *gdk.DragContext, x, y int, time_ uint) bool
-	DragEnd  func(context *gdk.DragContext)
+	// DragEnd: signal emitted on the drag source when a drag is finished.
+	DragEnd func(context *gdk.DragContext)
+	// DragFailed: signal emitted on the drag source when a drag has failed.
+	//
 	// The function takes the following parameters:
 	//
 	//   - context
 	//   - result
 	DragFailed func(context *gdk.DragContext, result DragResult) bool
+	// DragLeave: signal emitted on the drop site when the cursor leaves the
+	// widget.
+	//
 	// The function takes the following parameters:
 	//
 	//   - context
 	//   - time_
 	DragLeave func(context *gdk.DragContext, time_ uint)
+	// DragMotion: signal emitted on the drop site when the user moves the
+	// cursor over the widget during a drag.
+	//
 	// The function takes the following parameters:
 	//
 	//   - context
 	//   - x
 	//   - y
 	//   - time_
-	DragMotion       func(context *gdk.DragContext, x, y int, time_ uint) bool
-	Draw             func(cr *cairo.Context) bool
+	DragMotion func(context *gdk.DragContext, x, y int, time_ uint) bool
+	// Draw: signal emitted when a widget is supposed to render itself.
+	Draw func(cr *cairo.Context) bool
+	// EnterNotifyEvent: signal event will be emitted when the pointer enters
+	// the widget’s window.
 	EnterNotifyEvent func(event *gdk.EventCrossing) bool
 	// Event: rarely-used function. This function is used to emit the event
 	// signals on a widget (those signals should never be emitted without using
@@ -134904,9 +135840,13 @@ type WidgetOverrides struct {
 	//
 	//   - ok: return from the event signal emission (TRUE if the event was
 	//     handled).
-	Event         func(event *gdk.Event) bool
-	Focus         func(direction DirectionType) bool
-	FocusInEvent  func(event *gdk.EventFocus) bool
+	Event func(event *gdk.Event) bool
+	Focus func(direction DirectionType) bool
+	// FocusInEvent: signal emitted when the keyboard focus enters the widget’s
+	// window.
+	FocusInEvent func(event *gdk.EventFocus) bool
+	// FocusOutEvent: signal emitted when the keyboard focus leaves the widget’s
+	// window.
 	FocusOutEvent func(event *gdk.EventFocus) bool
 	// Accessible returns the accessible object that describes the widget to an
 	// assistive technology.
@@ -135036,7 +135976,9 @@ type WidgetOverrides struct {
 	// The function returns the following values:
 	//
 	//   - sizeRequestMode preferred by widget.
-	RequestMode     func() SizeRequestMode
+	RequestMode func() SizeRequestMode
+	// GrabBrokenEvent: signal emitted when a pointer or keyboard grab on a
+	// window belonging to widget gets broken.
 	GrabBrokenEvent func(event *gdk.EventGrabBroken) bool
 	// GrabFocus causes widget to have the keyboard focus for the Window it's
 	// inside. widget must be a focusable widget, such as a Entry; something
@@ -135048,14 +135990,21 @@ type WidgetOverrides struct {
 	// The widget also needs to be realized and mapped. This is indicated by the
 	// related signals. Grabbing the focus immediately after creating the widget
 	// will likely fail and cause critical warnings.
-	GrabFocus  func()
+	GrabFocus func()
+	// GrabNotify: signal emitted when a widget becomes shadowed by a GTK+ grab
+	// (not a pointer or keyboard grab) on another widget, or when it becomes
+	// unshadowed due to a grab being removed.
 	GrabNotify func(wasGrabbed bool)
 	// Hide reverses the effects of gtk_widget_show(), causing the widget to be
 	// hidden (invisible to the user).
-	Hide             func()
+	Hide func()
+	// HierarchyChanged: signal emitted when the anchored state of a widget
+	// changes.
 	HierarchyChanged func(previousToplevel Widgetter)
-	KeyPressEvent    func(event *gdk.EventKey) bool
-	KeyReleaseEvent  func(event *gdk.EventKey) bool
+	// KeyPressEvent: signal emitted when a key is pressed.
+	KeyPressEvent func(event *gdk.EventKey) bool
+	// KeyReleaseEvent: signal is emitted when a key is released.
+	KeyReleaseEvent func(event *gdk.EventKey) bool
 	// KeynavFailed: this function should be called whenever keyboard
 	// navigation within a single widget hits a boundary. The function
 	// emits the Widget::keynav-failed signal on the widget and its return
@@ -135092,11 +136041,14 @@ type WidgetOverrides struct {
 	//   - ok: TRUE if stopping keyboard navigation is fine, FALSE if the
 	//     emitting widget should try to handle the keyboard navigation attempt
 	//     in its parent container(s).
-	KeynavFailed     func(direction DirectionType) bool
+	KeynavFailed func(direction DirectionType) bool
+	// LeaveNotifyEvent will be emitted when the pointer leaves the widget’s
+	// window.
 	LeaveNotifyEvent func(event *gdk.EventCrossing) bool
 	// Map: this function is only for use in widget implementations. Causes a
 	// widget to be mapped if it isn’t already.
-	Map      func()
+	Map func()
+	// MapEvent: signal emitted when the widget’s window is mapped.
 	MapEvent func(event *gdk.EventAny) bool
 	// MnemonicActivate emits the Widget::mnemonic-activate signal.
 	//
@@ -135107,14 +136059,25 @@ type WidgetOverrides struct {
 	// The function returns the following values:
 	//
 	//   - ok: TRUE if the signal has been handled.
-	MnemonicActivate    func(groupCycling bool) bool
-	MotionNotifyEvent   func(event *gdk.EventMotion) bool
-	MoveFocus           func(direction DirectionType)
-	ParentSet           func(previousParent Widgetter)
-	PopupMenu           func() bool
+	MnemonicActivate func(groupCycling bool) bool
+	// MotionNotifyEvent: signal emitted when the pointer moves over the
+	// widget’s Window.
+	MotionNotifyEvent func(event *gdk.EventMotion) bool
+	// MoveFocus: signal emitted when a change of focus is requested.
+	MoveFocus func(direction DirectionType)
+	// ParentSet: signal emitted when a new parent has been set on a widget.
+	ParentSet func(previousParent Widgetter)
+	// PopupMenu: signal emitted whenever a widget should pop up a context menu.
+	PopupMenu func() bool
+	// PropertyNotifyEvent: signal will be emitted when a property on the
+	// widget’s window has been changed or deleted.
 	PropertyNotifyEvent func(event *gdk.EventProperty) bool
 	ProximityInEvent    func(event *gdk.EventProximity) bool
 	ProximityOutEvent   func(event *gdk.EventProximity) bool
+	// QueryTooltip: signal emitted when “has-tooltip” is TRUE and the hover
+	// timeout has expired with the cursor hovering “above” widget; or emitted
+	// when widget got focus in keyboard mode.
+	//
 	// The function takes the following parameters:
 	//
 	//   - x
@@ -135152,9 +136115,13 @@ type WidgetOverrides struct {
 	// a better approach is to connect to a signal that will be called after
 	// the widget is realized automatically, such as Widget::draw. Or simply
 	// g_signal_connect () to the Widget::realize signal.
-	Realize             func()
-	ScreenChanged       func(previousScreen *gdk.Screen)
-	ScrollEvent         func(event *gdk.EventScroll) bool
+	Realize func()
+	// ScreenChanged: signal emitted when the screen of a widget has changed.
+	ScreenChanged func(previousScreen *gdk.Screen)
+	// ScrollEvent: signal emitted when a button in the 4 to 7 range is pressed.
+	ScrollEvent func(event *gdk.EventScroll) bool
+	// SelectionClearEvent: signal will be emitted when the the widget’s window
+	// has lost ownership of a selection.
 	SelectionClearEvent func(event *gdk.EventSelection) bool
 	// The function takes the following parameters:
 	//
@@ -135167,7 +136134,9 @@ type WidgetOverrides struct {
 	//
 	//   - selectionData
 	//   - time_
-	SelectionReceived     func(selectionData *SelectionData, time_ uint)
+	SelectionReceived func(selectionData *SelectionData, time_ uint)
+	// SelectionRequestEvent: signal will be emitted when another client
+	// requests ownership of the selection owned by the widget's window.
 	SelectionRequestEvent func(event *gdk.EventSelection) bool
 	// Show flags a widget to be displayed. Any widget that isn’t shown will not
 	// appear on the screen. If you want to show all the widgets in a container,
@@ -135200,22 +136169,36 @@ type WidgetOverrides struct {
 	// The function takes the following parameters:
 	//
 	//   - allocation: position and size to be allocated to widget.
-	SizeAllocate      func(allocation *Allocation)
-	StateChanged      func(previousState StateType)
+	SizeAllocate func(allocation *Allocation)
+	// StateChanged: signal emitted when the widget state changes. Deprecated:
+	// 3.0.
+	StateChanged func(previousState StateType)
+	// StateFlagsChanged: signal emitted when the widget state changes,
+	// see gtk_widget_get_state_flags().
 	StateFlagsChanged func(previousStateFlags StateFlags)
-	StyleSet          func(previousStyle *Style)
-	StyleUpdated      func()
-	TouchEvent        func(event *gdk.EventTouch) bool
+	// StyleSet: signal emitted when a new style has been set on a widget.
+	// Deprecated: 3.0.
+	StyleSet func(previousStyle *Style)
+	// StyleUpdated: signal emitted when the GtkStyleContext of a widget is
+	// changed.
+	StyleUpdated func()
+	// TouchEvent: signal emitted when a touch event happens.
+	TouchEvent func(event *gdk.EventTouch) bool
 	// Unmap: this function is only for use in widget implementations. Causes a
 	// widget to be unmapped if it’s currently mapped.
-	Unmap      func()
+	Unmap func()
+	// UnmapEvent: signal will be emitted when the widget’s window is unmapped.
 	UnmapEvent func(event *gdk.EventAny) bool
 	// Unrealize: this function is only useful in widget implementations.
 	// Causes a widget to be unrealized (frees all GDK resources associated with
 	// the widget, such as widget->window).
-	Unrealize             func()
+	Unrealize func()
+	// VisibilityNotifyEvent: signal emitted when the widget’s window is
+	// obscured or unobscured.
 	VisibilityNotifyEvent func(event *gdk.EventVisibility) bool
-	WindowStateEvent      func(event *gdk.EventWindowState) bool
+	// WindowStateEvent: signal emitted when the state of the toplevel window
+	// associated to the widget changes.
+	WindowStateEvent func(event *gdk.EventWindowState) bool
 }
 
 func defaultWidgetOverrides(v *Widget) WidgetOverrides {
@@ -143618,6 +144601,19 @@ func (widget *Widget) adjustBaselineRequest(minimumBaseline, naturalBaseline *in
 	runtime.KeepAlive(naturalBaseline)
 }
 
+// adjustSizeAllocation: convert an initial size allocation assigned by a
+// Container using gtk_widget_size_allocate(), into an actual size allocation
+// to be used by the widget. adjust_size_allocation adjusts to a child widget’s
+// actual allocation from what a parent container computed for the child.
+// The adjusted allocation must be entirely within the original allocation.
+// In any custom implementation, chain up to the default Widget implementation
+// of this method, which applies the margin and alignment properties of Widget.
+// Chain up before performing your own adjustments so your own adjustments
+// remove more allocation after the Widget base class has already removed margin
+// and alignment. The natural size passed in should be adjusted in the same
+// way as the allocated size, which allows adjustments to perform alignments or
+// other changes based on natural size.
+//
 // The function takes the following parameters:
 //
 //   - orientation
@@ -143652,6 +144648,20 @@ func (widget *Widget) adjustSizeAllocation(orientation Orientation, minimumSize,
 	runtime.KeepAlive(allocatedSize)
 }
 
+// adjustSizeRequest: convert an initial size request from a widget's
+// SizeRequestMode virtual method implementations into a size request to be used
+// by parent containers in laying out the widget. adjust_size_request adjusts
+// from a child widget's original request to what a parent container should use
+// for layout. The for_size argument will be -1 if the request should not be
+// for a particular size in the opposing orientation, i.e. if the request is
+// not height-for-width or width-for-height. If for_size is greater than -1,
+// it is the proposed allocation in the opposing orientation that we need the
+// request for. Implementations of adjust_size_request should chain up to the
+// default implementation, which applies Widget’s margin properties and imposes
+// any values from gtk_widget_set_size_request(). Chaining up should be last,
+// after your subclass adjusts the request, so Widget can apply constraints and
+// add the margin properly.
+//
 // The function takes the following parameters:
 //
 //   - orientation
@@ -143678,6 +144688,8 @@ func (widget *Widget) adjustSizeRequest(orientation Orientation, minimumSize, na
 	runtime.KeepAlive(naturalSize)
 }
 
+// buttonPressEvent: signal will be emitted when a button (typically from a
+// mouse) is pressed.
 func (widget *Widget) buttonPressEvent(event *gdk.EventButton) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.button_press_event
@@ -143702,6 +144714,8 @@ func (widget *Widget) buttonPressEvent(event *gdk.EventButton) bool {
 	return _ok
 }
 
+// buttonReleaseEvent: signal will be emitted when a button (typically from a
+// mouse) is released.
 func (widget *Widget) buttonReleaseEvent(event *gdk.EventButton) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.button_release_event
@@ -143764,6 +144778,8 @@ func (widget *Widget) canActivateAccel(signalId uint) bool {
 	return _ok
 }
 
+// compositedChanged: signal emitted when the composited status of widgets
+// screen changes. See gdk_screen_is_composited().
 func (widget *Widget) compositedChanged() {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.composited_changed
@@ -143776,6 +144792,8 @@ func (widget *Widget) compositedChanged() {
 	runtime.KeepAlive(widget)
 }
 
+// configureEvent: signal will be emitted when the size, position or stacking of
+// the widget’s window has changed.
 func (widget *Widget) configureEvent(event *gdk.EventConfigure) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.configure_event
@@ -143800,6 +144818,8 @@ func (widget *Widget) configureEvent(event *gdk.EventConfigure) bool {
 	return _ok
 }
 
+// damageEvent: signal emitted when a redirected window belonging to widget gets
+// drawn into.
 func (widget *Widget) damageEvent(event *gdk.EventExpose) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.damage_event
@@ -143824,6 +144844,8 @@ func (widget *Widget) damageEvent(event *gdk.EventExpose) bool {
 	return _ok
 }
 
+// deleteEvent: signal emitted if a user requests that a toplevel window is
+// closed.
 func (widget *Widget) deleteEvent(event *gdk.EventAny) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.delete_event
@@ -143888,6 +144910,7 @@ func (widget *Widget) destroy() {
 	runtime.KeepAlive(widget)
 }
 
+// destroyEvent: signal is emitted when a Window is destroyed.
 func (widget *Widget) destroyEvent(event *gdk.EventAny) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.destroy_event
@@ -143912,6 +144935,7 @@ func (widget *Widget) destroyEvent(event *gdk.EventAny) bool {
 	return _ok
 }
 
+// directionChanged: signal emitted when the text direction of a widget changes.
 func (widget *Widget) directionChanged(previousDirection TextDirection) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.direction_changed
@@ -143927,6 +144951,7 @@ func (widget *Widget) directionChanged(previousDirection TextDirection) {
 	runtime.KeepAlive(previousDirection)
 }
 
+// dragBegin: signal emitted on the drag source when a drag is started.
 func (widget *Widget) dragBegin(context *gdk.DragContext) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.drag_begin
@@ -143942,6 +144967,8 @@ func (widget *Widget) dragBegin(context *gdk.DragContext) {
 	runtime.KeepAlive(context)
 }
 
+// dragDataDelete: signal emitted on the drag source when a drag with the action
+// GDK_ACTION_MOVE is successfully completed.
 func (widget *Widget) dragDataDelete(context *gdk.DragContext) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.drag_data_delete
@@ -143957,6 +144984,9 @@ func (widget *Widget) dragDataDelete(context *gdk.DragContext) {
 	runtime.KeepAlive(context)
 }
 
+// dragDataGet: signal emitted on the drag source when the drop site requests
+// the data which is dragged.
+//
 // The function takes the following parameters:
 //
 //   - context
@@ -143987,6 +145017,9 @@ func (widget *Widget) dragDataGet(context *gdk.DragContext, selectionData *Selec
 	runtime.KeepAlive(time_)
 }
 
+// dragDataReceived: signal emitted on the drop site when the dragged data has
+// been received.
+//
 // The function takes the following parameters:
 //
 //   - context
@@ -144025,6 +145058,9 @@ func (widget *Widget) dragDataReceived(context *gdk.DragContext, x, y int, selec
 	runtime.KeepAlive(time_)
 }
 
+// dragDrop: signal emitted on the drop site when the user drops the data onto
+// the widget.
+//
 // The function takes the following parameters:
 //
 //   - context
@@ -144064,6 +145100,7 @@ func (widget *Widget) dragDrop(context *gdk.DragContext, x, y int, time_ uint) b
 	return _ok
 }
 
+// dragEnd: signal emitted on the drag source when a drag is finished.
 func (widget *Widget) dragEnd(context *gdk.DragContext) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.drag_end
@@ -144079,6 +145116,8 @@ func (widget *Widget) dragEnd(context *gdk.DragContext) {
 	runtime.KeepAlive(context)
 }
 
+// dragFailed: signal emitted on the drag source when a drag has failed.
+//
 // The function takes the following parameters:
 //
 //   - context
@@ -144110,6 +145149,8 @@ func (widget *Widget) dragFailed(context *gdk.DragContext, result DragResult) bo
 	return _ok
 }
 
+// dragLeave: signal emitted on the drop site when the cursor leaves the widget.
+//
 // The function takes the following parameters:
 //
 //   - context
@@ -144132,6 +145173,9 @@ func (widget *Widget) dragLeave(context *gdk.DragContext, time_ uint) {
 	runtime.KeepAlive(time_)
 }
 
+// dragMotion: signal emitted on the drop site when the user moves the cursor
+// over the widget during a drag.
+//
 // The function takes the following parameters:
 //
 //   - context
@@ -144171,6 +145215,7 @@ func (widget *Widget) dragMotion(context *gdk.DragContext, x, y int, time_ uint)
 	return _ok
 }
 
+// Draw: signal emitted when a widget is supposed to render itself.
 func (widget *Widget) draw(cr *cairo.Context) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.draw
@@ -144195,6 +145240,8 @@ func (widget *Widget) draw(cr *cairo.Context) bool {
 	return _ok
 }
 
+// enterNotifyEvent: signal event will be emitted when the pointer enters the
+// widget’s window.
 func (widget *Widget) enterNotifyEvent(event *gdk.EventCrossing) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.enter_notify_event
@@ -144282,6 +145329,8 @@ func (widget *Widget) focus(direction DirectionType) bool {
 	return _ok
 }
 
+// focusInEvent: signal emitted when the keyboard focus enters the widget’s
+// window.
 func (widget *Widget) focusInEvent(event *gdk.EventFocus) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.focus_in_event
@@ -144306,6 +145355,8 @@ func (widget *Widget) focusInEvent(event *gdk.EventFocus) bool {
 	return _ok
 }
 
+// focusOutEvent: signal emitted when the keyboard focus leaves the widget’s
+// window.
 func (widget *Widget) focusOutEvent(event *gdk.EventFocus) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.focus_out_event
@@ -144607,6 +145658,8 @@ func (widget *Widget) requestMode() SizeRequestMode {
 	return _sizeRequestMode
 }
 
+// grabBrokenEvent: signal emitted when a pointer or keyboard grab on a window
+// belonging to widget gets broken.
 func (widget *Widget) grabBrokenEvent(event *gdk.EventGrabBroken) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.grab_broken_event
@@ -144653,6 +145706,9 @@ func (widget *Widget) grabFocus() {
 	runtime.KeepAlive(widget)
 }
 
+// grabNotify: signal emitted when a widget becomes shadowed by a GTK+ grab (not
+// a pointer or keyboard grab) on another widget, or when it becomes unshadowed
+// due to a grab being removed.
 func (widget *Widget) grabNotify(wasGrabbed bool) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.grab_notify
@@ -144684,6 +145740,7 @@ func (widget *Widget) hide() {
 	runtime.KeepAlive(widget)
 }
 
+// hierarchyChanged: signal emitted when the anchored state of a widget changes.
 func (widget *Widget) hierarchyChanged(previousToplevel Widgetter) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.hierarchy_changed
@@ -144699,6 +145756,7 @@ func (widget *Widget) hierarchyChanged(previousToplevel Widgetter) {
 	runtime.KeepAlive(previousToplevel)
 }
 
+// keyPressEvent: signal emitted when a key is pressed.
 func (widget *Widget) keyPressEvent(event *gdk.EventKey) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.key_press_event
@@ -144723,6 +145781,7 @@ func (widget *Widget) keyPressEvent(event *gdk.EventKey) bool {
 	return _ok
 }
 
+// keyReleaseEvent: signal is emitted when a key is released.
 func (widget *Widget) keyReleaseEvent(event *gdk.EventKey) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.key_release_event
@@ -144803,6 +145862,7 @@ func (widget *Widget) keynavFailed(direction DirectionType) bool {
 	return _ok
 }
 
+// leaveNotifyEvent will be emitted when the pointer leaves the widget’s window.
 func (widget *Widget) leaveNotifyEvent(event *gdk.EventCrossing) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.leave_notify_event
@@ -144841,6 +145901,7 @@ func (widget *Widget) _map() {
 	runtime.KeepAlive(widget)
 }
 
+// mapEvent: signal emitted when the widget’s window is mapped.
 func (widget *Widget) mapEvent(event *gdk.EventAny) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.map_event
@@ -144900,6 +145961,8 @@ func (widget *Widget) mnemonicActivate(groupCycling bool) bool {
 	return _ok
 }
 
+// motionNotifyEvent: signal emitted when the pointer moves over the widget’s
+// Window.
 func (widget *Widget) motionNotifyEvent(event *gdk.EventMotion) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.motion_notify_event
@@ -144924,6 +145987,7 @@ func (widget *Widget) motionNotifyEvent(event *gdk.EventMotion) bool {
 	return _ok
 }
 
+// moveFocus: signal emitted when a change of focus is requested.
 func (widget *Widget) moveFocus(direction DirectionType) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.move_focus
@@ -144939,6 +146003,7 @@ func (widget *Widget) moveFocus(direction DirectionType) {
 	runtime.KeepAlive(direction)
 }
 
+// parentSet: signal emitted when a new parent has been set on a widget.
 func (widget *Widget) parentSet(previousParent Widgetter) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.parent_set
@@ -144954,6 +146019,7 @@ func (widget *Widget) parentSet(previousParent Widgetter) {
 	runtime.KeepAlive(previousParent)
 }
 
+// popupMenu: signal emitted whenever a widget should pop up a context menu.
 func (widget *Widget) popupMenu() bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.popup_menu
@@ -144975,6 +146041,8 @@ func (widget *Widget) popupMenu() bool {
 	return _ok
 }
 
+// propertyNotifyEvent: signal will be emitted when a property on the widget’s
+// window has been changed or deleted.
 func (widget *Widget) propertyNotifyEvent(event *gdk.EventProperty) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.property_notify_event
@@ -145047,6 +146115,10 @@ func (widget *Widget) proximityOutEvent(event *gdk.EventProximity) bool {
 	return _ok
 }
 
+// queryTooltip: signal emitted when “has-tooltip” is TRUE and the hover timeout
+// has expired with the cursor hovering “above” widget; or emitted when widget
+// got focus in keyboard mode.
+//
 // The function takes the following parameters:
 //
 //   - x
@@ -145144,6 +146216,7 @@ func (widget *Widget) realize() {
 	runtime.KeepAlive(widget)
 }
 
+// screenChanged: signal emitted when the screen of a widget has changed.
 func (widget *Widget) screenChanged(previousScreen *gdk.Screen) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.screen_changed
@@ -145159,6 +146232,7 @@ func (widget *Widget) screenChanged(previousScreen *gdk.Screen) {
 	runtime.KeepAlive(previousScreen)
 }
 
+// scrollEvent: signal emitted when a button in the 4 to 7 range is pressed.
 func (widget *Widget) scrollEvent(event *gdk.EventScroll) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.scroll_event
@@ -145183,6 +146257,8 @@ func (widget *Widget) scrollEvent(event *gdk.EventScroll) bool {
 	return _ok
 }
 
+// selectionClearEvent: signal will be emitted when the the widget’s window has
+// lost ownership of a selection.
 func (widget *Widget) selectionClearEvent(event *gdk.EventSelection) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.selection_clear_event
@@ -145279,6 +146355,8 @@ func (widget *Widget) selectionReceived(selectionData *SelectionData, time_ uint
 	runtime.KeepAlive(time_)
 }
 
+// selectionRequestEvent: signal will be emitted when another client requests
+// ownership of the selection owned by the widget's window.
 func (widget *Widget) selectionRequestEvent(event *gdk.EventSelection) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.selection_request_event
@@ -145396,6 +146474,7 @@ func (widget *Widget) sizeAllocate(allocation *Allocation) {
 	runtime.KeepAlive(allocation)
 }
 
+// stateChanged: signal emitted when the widget state changes. Deprecated: 3.0.
 func (widget *Widget) stateChanged(previousState StateType) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.state_changed
@@ -145411,6 +146490,8 @@ func (widget *Widget) stateChanged(previousState StateType) {
 	runtime.KeepAlive(previousState)
 }
 
+// stateFlagsChanged: signal emitted when the widget state changes, see
+// gtk_widget_get_state_flags().
 func (widget *Widget) stateFlagsChanged(previousStateFlags StateFlags) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.state_flags_changed
@@ -145426,6 +146507,8 @@ func (widget *Widget) stateFlagsChanged(previousStateFlags StateFlags) {
 	runtime.KeepAlive(previousStateFlags)
 }
 
+// styleSet: signal emitted when a new style has been set on a widget.
+// Deprecated: 3.0.
 func (widget *Widget) styleSet(previousStyle *Style) {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.style_set
@@ -145441,6 +146524,7 @@ func (widget *Widget) styleSet(previousStyle *Style) {
 	runtime.KeepAlive(previousStyle)
 }
 
+// styleUpdated: signal emitted when the GtkStyleContext of a widget is changed.
 func (widget *Widget) styleUpdated() {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.style_updated
@@ -145453,6 +146537,7 @@ func (widget *Widget) styleUpdated() {
 	runtime.KeepAlive(widget)
 }
 
+// touchEvent: signal emitted when a touch event happens.
 func (widget *Widget) touchEvent(event *gdk.EventTouch) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.touch_event
@@ -145491,6 +146576,7 @@ func (widget *Widget) unmap() {
 	runtime.KeepAlive(widget)
 }
 
+// unmapEvent: signal will be emitted when the widget’s window is unmapped.
 func (widget *Widget) unmapEvent(event *gdk.EventAny) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.unmap_event
@@ -145530,6 +146616,8 @@ func (widget *Widget) unrealize() {
 	runtime.KeepAlive(widget)
 }
 
+// visibilityNotifyEvent: signal emitted when the widget’s window is obscured or
+// unobscured.
 func (widget *Widget) visibilityNotifyEvent(event *gdk.EventVisibility) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.visibility_notify_event
@@ -145554,6 +146642,8 @@ func (widget *Widget) visibilityNotifyEvent(event *gdk.EventVisibility) bool {
 	return _ok
 }
 
+// windowStateEvent: signal emitted when the state of the toplevel window
+// associated to the widget changes.
 func (widget *Widget) windowStateEvent(event *gdk.EventWindowState) bool {
 	gclass := (*C.GtkWidgetClass)(coreglib.PeekParentClass(widget))
 	fnarg := gclass.window_state_event
@@ -145713,10 +146803,16 @@ func marshalWidgetAccessible(p uintptr) (interface{}, error) {
 
 // WindowOverrides contains methods that are overridable.
 type WindowOverrides struct {
+	// ActivateDefault activates the default widget for the window.
 	ActivateDefault func()
-	ActivateFocus   func()
+	// ActivateFocus activates the current focused widget within the window.
+	ActivateFocus func()
+	// EnableDebugging class handler for the Window::enable-debugging keybinding
+	// signal. Since: 3.14.
 	EnableDebugging func(toggle bool) bool
-	KeysChanged     func()
+	// KeysChanged: signal gets emitted when the set of accelerators or
+	// mnemonics that are associated with window changes.
+	KeysChanged func()
 	// SetFocus: if focus is not the current focus widget, and is focusable,
 	// sets it as the focus widget for the window. If focus is NULL,
 	// unsets the focus widget for this window. To set the focus to a
@@ -148905,6 +150001,7 @@ func (window *Window) Unstick() {
 	runtime.KeepAlive(window)
 }
 
+// activateDefault activates the default widget for the window.
 func (window *Window) activateDefault() {
 	gclass := (*C.GtkWindowClass)(coreglib.PeekParentClass(window))
 	fnarg := gclass.activate_default
@@ -148917,6 +150014,7 @@ func (window *Window) activateDefault() {
 	runtime.KeepAlive(window)
 }
 
+// activateFocus activates the current focused widget within the window.
 func (window *Window) activateFocus() {
 	gclass := (*C.GtkWindowClass)(coreglib.PeekParentClass(window))
 	fnarg := gclass.activate_focus
@@ -148929,6 +150027,8 @@ func (window *Window) activateFocus() {
 	runtime.KeepAlive(window)
 }
 
+// enableDebugging class handler for the Window::enable-debugging keybinding
+// signal. Since: 3.14.
 func (window *Window) enableDebugging(toggle bool) bool {
 	gclass := (*C.GtkWindowClass)(coreglib.PeekParentClass(window))
 	fnarg := gclass.enable_debugging
@@ -148955,6 +150055,8 @@ func (window *Window) enableDebugging(toggle bool) bool {
 	return _ok
 }
 
+// keysChanged: signal gets emitted when the set of accelerators or mnemonics
+// that are associated with window changes.
 func (window *Window) keysChanged() {
 	gclass := (*C.GtkWindowClass)(coreglib.PeekParentClass(window))
 	fnarg := gclass.keys_changed
@@ -155672,29 +156774,6 @@ func (info *RecentInfo) Exists() bool {
 	return _ok
 }
 
-// Added gets the timestamp (seconds from system’s Epoch) when the resource was
-// added to the recently used resources list.
-//
-// The function returns the following values:
-//
-//   - glong: number of seconds elapsed from system’s Epoch when the resource
-//     was added to the list, or -1 on failure.
-func (info *RecentInfo) Added() int32 {
-	var _arg0 *C.GtkRecentInfo // out
-	var _cret C.time_t         // in
-
-	_arg0 = (*C.GtkRecentInfo)(gextras.StructNative(unsafe.Pointer(info)))
-
-	_cret = C.gtk_recent_info_get_added(_arg0)
-	runtime.KeepAlive(info)
-
-	var _glong int32 // out
-
-	_glong = int32(_cret)
-
-	return _glong
-}
-
 // Age gets the number of days elapsed since the last update of the resource
 // pointed by info.
 //
@@ -155716,56 +156795,6 @@ func (info *RecentInfo) Age() int {
 	_gint = int(_cret)
 
 	return _gint
-}
-
-// ApplicationInfo gets the data regarding the application that has registered
-// the resource pointed by info.
-//
-// If the command line contains any escape characters defined inside the storage
-// specification, they will be expanded.
-//
-// The function takes the following parameters:
-//
-//   - appName: name of the application that has registered this item.
-//
-// The function returns the following values:
-//
-//   - appExec: return location for the string containing the command line.
-//   - count: return location for the number of times this item was registered.
-//   - time_: return location for the timestamp this item was last registered
-//     for this application.
-//   - ok: TRUE if an application with app_name has registered this resource
-//     inside the recently used list, or FALSE otherwise. The app_exec string is
-//     owned by the RecentInfo and should not be modified or freed.
-func (info *RecentInfo) ApplicationInfo(appName string) (string, uint, int32, bool) {
-	var _arg0 *C.GtkRecentInfo // out
-	var _arg1 *C.gchar         // out
-	var _arg2 *C.gchar         // in
-	var _arg3 C.guint          // in
-	var _arg4 C.time_t         // in
-	var _cret C.gboolean       // in
-
-	_arg0 = (*C.GtkRecentInfo)(gextras.StructNative(unsafe.Pointer(info)))
-	_arg1 = (*C.gchar)(unsafe.Pointer(C.CString(appName)))
-	defer C.free(unsafe.Pointer(_arg1))
-
-	_cret = C.gtk_recent_info_get_application_info(_arg0, _arg1, &_arg2, &_arg3, &_arg4)
-	runtime.KeepAlive(info)
-	runtime.KeepAlive(appName)
-
-	var _appExec string // out
-	var _count uint     // out
-	var _time_ int32    // out
-	var _ok bool        // out
-
-	_appExec = C.GoString((*C.gchar)(unsafe.Pointer(_arg2)))
-	_count = uint(_arg3)
-	_time_ = int32(_arg4)
-	if _cret != 0 {
-		_ok = true
-	}
-
-	return _appExec, _count, _time_, _ok
 }
 
 // Applications retrieves the list of applications that have registered this
@@ -155970,29 +156999,6 @@ func (info *RecentInfo) MIMEType() string {
 	return _utf8
 }
 
-// Modified gets the timestamp (seconds from system’s Epoch) when the meta-data
-// for the resource was last modified.
-//
-// The function returns the following values:
-//
-//   - glong: number of seconds elapsed from system’s Epoch when the resource
-//     was last modified, or -1 on failure.
-func (info *RecentInfo) Modified() int32 {
-	var _arg0 *C.GtkRecentInfo // out
-	var _cret C.time_t         // in
-
-	_arg0 = (*C.GtkRecentInfo)(gextras.StructNative(unsafe.Pointer(info)))
-
-	_cret = C.gtk_recent_info_get_modified(_arg0)
-	runtime.KeepAlive(info)
-
-	var _glong int32 // out
-
-	_glong = int32(_cret)
-
-	return _glong
-}
-
 // PrivateHint gets the value of the “private” flag. Resources in the recently
 // used list that have this flag set to TRUE should only be displayed by the
 // applications that have registered them.
@@ -156089,29 +157095,6 @@ func (info *RecentInfo) URIDisplay() string {
 	}
 
 	return _utf8
-}
-
-// Visited gets the timestamp (seconds from system’s Epoch) when the meta-data
-// for the resource was last visited.
-//
-// The function returns the following values:
-//
-//   - glong: number of seconds elapsed from system’s Epoch when the resource
-//     was last visited, or -1 on failure.
-func (info *RecentInfo) Visited() int32 {
-	var _arg0 *C.GtkRecentInfo // out
-	var _cret C.time_t         // in
-
-	_arg0 = (*C.GtkRecentInfo)(gextras.StructNative(unsafe.Pointer(info)))
-
-	_cret = C.gtk_recent_info_get_visited(_arg0)
-	runtime.KeepAlive(info)
-
-	var _glong int32 // out
-
-	_glong = int32(_cret)
-
-	return _glong
 }
 
 // HasApplication checks whether an application registered this resource using

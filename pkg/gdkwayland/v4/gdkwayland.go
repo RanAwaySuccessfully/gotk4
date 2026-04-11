@@ -19,18 +19,26 @@ import (
 // #include <glib-object.h>
 // extern void callbackDelete(gpointer);
 // extern void _gotk4_gdkwayland4_WaylandToplevelExported(GdkToplevel*, char*, gpointer);
+// GType _gotk4_weak_gdk_wayland_device_get_type(void) { return gdk_wayland_device_get_type ? gdk_wayland_device_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_wayland_display_get_type(void) { return gdk_wayland_display_get_type ? gdk_wayland_display_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_wayland_gl_context_get_type(void) { return gdk_wayland_gl_context_get_type ? gdk_wayland_gl_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_wayland_monitor_get_type(void) { return gdk_wayland_monitor_get_type ? gdk_wayland_monitor_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_wayland_popup_get_type(void) { return gdk_wayland_popup_get_type ? gdk_wayland_popup_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_wayland_seat_get_type(void) { return gdk_wayland_seat_get_type ? gdk_wayland_seat_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_wayland_surface_get_type(void) { return gdk_wayland_surface_get_type ? gdk_wayland_surface_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_wayland_toplevel_get_type(void) { return gdk_wayland_toplevel_get_type ? gdk_wayland_toplevel_get_type() : (GType)NULL; };
 import "C"
 
 // GType values.
 var (
-	GTypeWaylandDevice    = coreglib.Type(C.gdk_wayland_device_get_type())
-	GTypeWaylandDisplay   = coreglib.Type(C.gdk_wayland_display_get_type())
-	GTypeWaylandGLContext = coreglib.Type(C.gdk_wayland_gl_context_get_type())
-	GTypeWaylandMonitor   = coreglib.Type(C.gdk_wayland_monitor_get_type())
-	GTypeWaylandPopup     = coreglib.Type(C.gdk_wayland_popup_get_type())
-	GTypeWaylandSeat      = coreglib.Type(C.gdk_wayland_seat_get_type())
-	GTypeWaylandSurface   = coreglib.Type(C.gdk_wayland_surface_get_type())
-	GTypeWaylandToplevel  = coreglib.Type(C.gdk_wayland_toplevel_get_type())
+	GTypeWaylandDevice    = coreglib.Type(C._gotk4_weak_gdk_wayland_device_get_type())
+	GTypeWaylandDisplay   = coreglib.Type(C._gotk4_weak_gdk_wayland_display_get_type())
+	GTypeWaylandGLContext = coreglib.Type(C._gotk4_weak_gdk_wayland_gl_context_get_type())
+	GTypeWaylandMonitor   = coreglib.Type(C._gotk4_weak_gdk_wayland_monitor_get_type())
+	GTypeWaylandPopup     = coreglib.Type(C._gotk4_weak_gdk_wayland_popup_get_type())
+	GTypeWaylandSeat      = coreglib.Type(C._gotk4_weak_gdk_wayland_seat_get_type())
+	GTypeWaylandSurface   = coreglib.Type(C._gotk4_weak_gdk_wayland_surface_get_type())
+	GTypeWaylandToplevel  = coreglib.Type(C._gotk4_weak_gdk_wayland_toplevel_get_type())
 )
 
 func init() {
@@ -167,6 +175,8 @@ func (display *WaylandDisplay) EglDisplay() unsafe.Pointer {
 // StartupNotificationID gets the startup notification ID for a Wayland display,
 // or NULL if no ID has been defined.
 //
+// Deprecated: since version 4.10.
+//
 // The function returns the following values:
 //
 //   - utf8 (optional): startup notification ID for display.
@@ -251,6 +261,8 @@ func (display *WaylandDisplay) SetCursorTheme(name string, size int) {
 // The startup ID is also what is used to signal that the startup
 // is complete (for example, when opening a window or when calling
 // gdk.Display.NotifyStartupComplete()).
+//
+// Deprecated: Use gdk.Toplevel.SetStartupID().
 //
 // The function takes the following parameters:
 //
@@ -448,6 +460,28 @@ func marshalWaylandToplevel(p uintptr) (interface{}, error) {
 	return wrapWaylandToplevel(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
 }
 
+// DropExportedHandle: destroy a handle that was obtained with
+// gdk_wayland_toplevel_export_handle().
+//
+// Note that this API depends on an unstable Wayland protocol, and thus may
+// require changes in the future.
+//
+// The function takes the following parameters:
+//
+//   - handle to drop.
+func (toplevel *WaylandToplevel) DropExportedHandle(handle string) {
+	var _arg0 *C.GdkToplevel // out
+	var _arg1 *C.char        // out
+
+	_arg0 = (*C.GdkToplevel)(unsafe.Pointer(coreglib.InternObject(toplevel).Native()))
+	_arg1 = (*C.char)(unsafe.Pointer(C.CString(handle)))
+	defer C.free(unsafe.Pointer(_arg1))
+
+	C.gdk_wayland_toplevel_drop_exported_handle(_arg0, _arg1)
+	runtime.KeepAlive(toplevel)
+	runtime.KeepAlive(handle)
+}
+
 // ExportHandle: asynchronously obtains a handle for a surface that can be
 // passed to other processes.
 //
@@ -462,6 +496,12 @@ func marshalWaylandToplevel(p uintptr) (interface{}, error) {
 // The main purpose for obtaining a handle is to mark a
 // surface from another surface as transient for this one, see
 // gdkwayland.WaylandToplevel.SetTransientForExported().
+//
+// Before 4.12, this API could not safely be used multiple times,
+// since there was no reference counting for handles. Starting with 4.12,
+// every call to this function obtains a new handle, and every call to
+// gdkwayland.WaylandToplevel.DropExportedHandle() drops just the handle that it
+// is given.
 //
 // Note that this API depends on an unstable Wayland protocol, and thus may
 // require changes in the future.
@@ -561,8 +601,15 @@ func (toplevel *WaylandToplevel) SetTransientForExported(parentHandleStr string)
 // It is an error to call this function on a surface that does not have a
 // handle.
 //
+// Since 4.12, this function does nothing. Use
+// gdkwayland.WaylandToplevel.DropExportedHandle() instead to drop a handle that
+// was obtained with gdkwayland.WaylandToplevel.ExportHandle().
+//
 // Note that this API depends on an unstable Wayland protocol, and thus may
 // require changes in the future.
+//
+// Deprecated: Use gdkwayland.WaylandToplevel.DropExportedHandle() instead,
+// this function does nothing.
 func (toplevel *WaylandToplevel) UnexportHandle() {
 	var _arg0 *C.GdkToplevel // out
 

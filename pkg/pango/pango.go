@@ -171,63 +171,116 @@ import (
 // void _gotk4_pango1_Renderer_virtual_prepare_run(void* fnptr, PangoRenderer* arg0, PangoLayoutRun* arg1) {
 //   ((void (*)(PangoRenderer*, PangoLayoutRun*))(fnptr))(arg0, arg1);
 // };
+// GType _gotk4_weak_pango_alignment_get_type(void) { return pango_alignment_get_type ? pango_alignment_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_attr_type_get_type(void) { return pango_attr_type_get_type ? pango_attr_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_baseline_shift_get_type(void) { return pango_baseline_shift_get_type ? pango_baseline_shift_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_bidi_type_get_type(void) { return pango_bidi_type_get_type ? pango_bidi_type_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_coverage_level_get_type(void) { return pango_coverage_level_get_type ? pango_coverage_level_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_direction_get_type(void) { return pango_direction_get_type ? pango_direction_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_ellipsize_mode_get_type(void) { return pango_ellipsize_mode_get_type ? pango_ellipsize_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_font_scale_get_type(void) { return pango_font_scale_get_type ? pango_font_scale_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_gravity_get_type(void) { return pango_gravity_get_type ? pango_gravity_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_gravity_hint_get_type(void) { return pango_gravity_hint_get_type ? pango_gravity_hint_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_layout_deserialize_error_get_type(void) { return pango_layout_deserialize_error_get_type ? pango_layout_deserialize_error_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_overline_get_type(void) { return pango_overline_get_type ? pango_overline_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_render_part_get_type(void) { return pango_render_part_get_type ? pango_render_part_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_script_get_type(void) { return pango_script_get_type ? pango_script_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_stretch_get_type(void) { return pango_stretch_get_type ? pango_stretch_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_style_get_type(void) { return pango_style_get_type ? pango_style_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_tab_align_get_type(void) { return pango_tab_align_get_type ? pango_tab_align_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_text_transform_get_type(void) { return pango_text_transform_get_type ? pango_text_transform_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_underline_get_type(void) { return pango_underline_get_type ? pango_underline_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_variant_get_type(void) { return pango_variant_get_type ? pango_variant_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_weight_get_type(void) { return pango_weight_get_type ? pango_weight_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_wrap_mode_get_type(void) { return pango_wrap_mode_get_type ? pango_wrap_mode_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_font_mask_get_type(void) { return pango_font_mask_get_type ? pango_font_mask_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_layout_deserialize_flags_get_type(void) { return pango_layout_deserialize_flags_get_type ? pango_layout_deserialize_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_layout_serialize_flags_get_type(void) { return pango_layout_serialize_flags_get_type ? pango_layout_serialize_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_shape_flags_get_type(void) { return pango_shape_flags_get_type ? pango_shape_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_show_flags_get_type(void) { return pango_show_flags_get_type ? pango_show_flags_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_context_get_type(void) { return pango_context_get_type ? pango_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_coverage_get_type(void) { return pango_coverage_get_type ? pango_coverage_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_font_get_type(void) { return pango_font_get_type ? pango_font_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_font_face_get_type(void) { return pango_font_face_get_type ? pango_font_face_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_font_family_get_type(void) { return pango_font_family_get_type ? pango_font_family_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_font_map_get_type(void) { return pango_font_map_get_type ? pango_font_map_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_fontset_get_type(void) { return pango_fontset_get_type ? pango_fontset_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_fontset_simple_get_type(void) { return pango_fontset_simple_get_type ? pango_fontset_simple_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_layout_get_type(void) { return pango_layout_get_type ? pango_layout_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_renderer_get_type(void) { return pango_renderer_get_type ? pango_renderer_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_attr_iterator_get_type(void) { return pango_attr_iterator_get_type ? pango_attr_iterator_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_attr_list_get_type(void) { return pango_attr_list_get_type ? pango_attr_list_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_attribute_get_type(void) { return pango_attribute_get_type ? pango_attribute_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_color_get_type(void) { return pango_color_get_type ? pango_color_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_font_description_get_type(void) { return pango_font_description_get_type ? pango_font_description_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_font_metrics_get_type(void) { return pango_font_metrics_get_type ? pango_font_metrics_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_glyph_item_get_type(void) { return pango_glyph_item_get_type ? pango_glyph_item_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_glyph_item_iter_get_type(void) { return pango_glyph_item_iter_get_type ? pango_glyph_item_iter_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_glyph_string_get_type(void) { return pango_glyph_string_get_type ? pango_glyph_string_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_item_get_type(void) { return pango_item_get_type ? pango_item_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_language_get_type(void) { return pango_language_get_type ? pango_language_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_layout_iter_get_type(void) { return pango_layout_iter_get_type ? pango_layout_iter_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_layout_line_get_type(void) { return pango_layout_line_get_type ? pango_layout_line_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_matrix_get_type(void) { return pango_matrix_get_type ? pango_matrix_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_script_iter_get_type(void) { return pango_script_iter_get_type ? pango_script_iter_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_tab_array_get_type(void) { return pango_tab_array_get_type ? pango_tab_array_get_type() : (GType)NULL; };
 import "C"
 
 // GType values.
 var (
-	GTypeAlignment              = coreglib.Type(C.pango_alignment_get_type())
-	GTypeAttrType               = coreglib.Type(C.pango_attr_type_get_type())
-	GTypeBaselineShift          = coreglib.Type(C.pango_baseline_shift_get_type())
-	GTypeBidiType               = coreglib.Type(C.pango_bidi_type_get_type())
-	GTypeCoverageLevel          = coreglib.Type(C.pango_coverage_level_get_type())
-	GTypeDirection              = coreglib.Type(C.pango_direction_get_type())
-	GTypeEllipsizeMode          = coreglib.Type(C.pango_ellipsize_mode_get_type())
-	GTypeFontScale              = coreglib.Type(C.pango_font_scale_get_type())
-	GTypeGravity                = coreglib.Type(C.pango_gravity_get_type())
-	GTypeGravityHint            = coreglib.Type(C.pango_gravity_hint_get_type())
-	GTypeLayoutDeserializeError = coreglib.Type(C.pango_layout_deserialize_error_get_type())
-	GTypeOverline               = coreglib.Type(C.pango_overline_get_type())
-	GTypeRenderPart             = coreglib.Type(C.pango_render_part_get_type())
-	GTypeScript                 = coreglib.Type(C.pango_script_get_type())
-	GTypeStretch                = coreglib.Type(C.pango_stretch_get_type())
-	GTypeStyle                  = coreglib.Type(C.pango_style_get_type())
-	GTypeTabAlign               = coreglib.Type(C.pango_tab_align_get_type())
-	GTypeTextTransform          = coreglib.Type(C.pango_text_transform_get_type())
-	GTypeUnderline              = coreglib.Type(C.pango_underline_get_type())
-	GTypeVariant                = coreglib.Type(C.pango_variant_get_type())
-	GTypeWeight                 = coreglib.Type(C.pango_weight_get_type())
-	GTypeWrapMode               = coreglib.Type(C.pango_wrap_mode_get_type())
-	GTypeFontMask               = coreglib.Type(C.pango_font_mask_get_type())
-	GTypeLayoutDeserializeFlags = coreglib.Type(C.pango_layout_deserialize_flags_get_type())
-	GTypeLayoutSerializeFlags   = coreglib.Type(C.pango_layout_serialize_flags_get_type())
-	GTypeShapeFlags             = coreglib.Type(C.pango_shape_flags_get_type())
-	GTypeShowFlags              = coreglib.Type(C.pango_show_flags_get_type())
-	GTypeContext                = coreglib.Type(C.pango_context_get_type())
-	GTypeCoverage               = coreglib.Type(C.pango_coverage_get_type())
-	GTypeFont                   = coreglib.Type(C.pango_font_get_type())
-	GTypeFontFace               = coreglib.Type(C.pango_font_face_get_type())
-	GTypeFontFamily             = coreglib.Type(C.pango_font_family_get_type())
-	GTypeFontMap                = coreglib.Type(C.pango_font_map_get_type())
-	GTypeFontset                = coreglib.Type(C.pango_fontset_get_type())
-	GTypeFontsetSimple          = coreglib.Type(C.pango_fontset_simple_get_type())
-	GTypeLayout                 = coreglib.Type(C.pango_layout_get_type())
-	GTypeRenderer               = coreglib.Type(C.pango_renderer_get_type())
-	GTypeAttrIterator           = coreglib.Type(C.pango_attr_iterator_get_type())
-	GTypeAttrList               = coreglib.Type(C.pango_attr_list_get_type())
-	GTypeAttribute              = coreglib.Type(C.pango_attribute_get_type())
-	GTypeColor                  = coreglib.Type(C.pango_color_get_type())
-	GTypeFontDescription        = coreglib.Type(C.pango_font_description_get_type())
-	GTypeFontMetrics            = coreglib.Type(C.pango_font_metrics_get_type())
-	GTypeGlyphItem              = coreglib.Type(C.pango_glyph_item_get_type())
-	GTypeGlyphItemIter          = coreglib.Type(C.pango_glyph_item_iter_get_type())
-	GTypeGlyphString            = coreglib.Type(C.pango_glyph_string_get_type())
-	GTypeItem                   = coreglib.Type(C.pango_item_get_type())
-	GTypeLanguage               = coreglib.Type(C.pango_language_get_type())
-	GTypeLayoutIter             = coreglib.Type(C.pango_layout_iter_get_type())
-	GTypeLayoutLine             = coreglib.Type(C.pango_layout_line_get_type())
-	GTypeMatrix                 = coreglib.Type(C.pango_matrix_get_type())
-	GTypeScriptIter             = coreglib.Type(C.pango_script_iter_get_type())
-	GTypeTabArray               = coreglib.Type(C.pango_tab_array_get_type())
+	GTypeAlignment              = coreglib.Type(C._gotk4_weak_pango_alignment_get_type())
+	GTypeAttrType               = coreglib.Type(C._gotk4_weak_pango_attr_type_get_type())
+	GTypeBaselineShift          = coreglib.Type(C._gotk4_weak_pango_baseline_shift_get_type())
+	GTypeBidiType               = coreglib.Type(C._gotk4_weak_pango_bidi_type_get_type())
+	GTypeCoverageLevel          = coreglib.Type(C._gotk4_weak_pango_coverage_level_get_type())
+	GTypeDirection              = coreglib.Type(C._gotk4_weak_pango_direction_get_type())
+	GTypeEllipsizeMode          = coreglib.Type(C._gotk4_weak_pango_ellipsize_mode_get_type())
+	GTypeFontScale              = coreglib.Type(C._gotk4_weak_pango_font_scale_get_type())
+	GTypeGravity                = coreglib.Type(C._gotk4_weak_pango_gravity_get_type())
+	GTypeGravityHint            = coreglib.Type(C._gotk4_weak_pango_gravity_hint_get_type())
+	GTypeLayoutDeserializeError = coreglib.Type(C._gotk4_weak_pango_layout_deserialize_error_get_type())
+	GTypeOverline               = coreglib.Type(C._gotk4_weak_pango_overline_get_type())
+	GTypeRenderPart             = coreglib.Type(C._gotk4_weak_pango_render_part_get_type())
+	GTypeScript                 = coreglib.Type(C._gotk4_weak_pango_script_get_type())
+	GTypeStretch                = coreglib.Type(C._gotk4_weak_pango_stretch_get_type())
+	GTypeStyle                  = coreglib.Type(C._gotk4_weak_pango_style_get_type())
+	GTypeTabAlign               = coreglib.Type(C._gotk4_weak_pango_tab_align_get_type())
+	GTypeTextTransform          = coreglib.Type(C._gotk4_weak_pango_text_transform_get_type())
+	GTypeUnderline              = coreglib.Type(C._gotk4_weak_pango_underline_get_type())
+	GTypeVariant                = coreglib.Type(C._gotk4_weak_pango_variant_get_type())
+	GTypeWeight                 = coreglib.Type(C._gotk4_weak_pango_weight_get_type())
+	GTypeWrapMode               = coreglib.Type(C._gotk4_weak_pango_wrap_mode_get_type())
+	GTypeFontMask               = coreglib.Type(C._gotk4_weak_pango_font_mask_get_type())
+	GTypeLayoutDeserializeFlags = coreglib.Type(C._gotk4_weak_pango_layout_deserialize_flags_get_type())
+	GTypeLayoutSerializeFlags   = coreglib.Type(C._gotk4_weak_pango_layout_serialize_flags_get_type())
+	GTypeShapeFlags             = coreglib.Type(C._gotk4_weak_pango_shape_flags_get_type())
+	GTypeShowFlags              = coreglib.Type(C._gotk4_weak_pango_show_flags_get_type())
+	GTypeContext                = coreglib.Type(C._gotk4_weak_pango_context_get_type())
+	GTypeCoverage               = coreglib.Type(C._gotk4_weak_pango_coverage_get_type())
+	GTypeFont                   = coreglib.Type(C._gotk4_weak_pango_font_get_type())
+	GTypeFontFace               = coreglib.Type(C._gotk4_weak_pango_font_face_get_type())
+	GTypeFontFamily             = coreglib.Type(C._gotk4_weak_pango_font_family_get_type())
+	GTypeFontMap                = coreglib.Type(C._gotk4_weak_pango_font_map_get_type())
+	GTypeFontset                = coreglib.Type(C._gotk4_weak_pango_fontset_get_type())
+	GTypeFontsetSimple          = coreglib.Type(C._gotk4_weak_pango_fontset_simple_get_type())
+	GTypeLayout                 = coreglib.Type(C._gotk4_weak_pango_layout_get_type())
+	GTypeRenderer               = coreglib.Type(C._gotk4_weak_pango_renderer_get_type())
+	GTypeAttrIterator           = coreglib.Type(C._gotk4_weak_pango_attr_iterator_get_type())
+	GTypeAttrList               = coreglib.Type(C._gotk4_weak_pango_attr_list_get_type())
+	GTypeAttribute              = coreglib.Type(C._gotk4_weak_pango_attribute_get_type())
+	GTypeColor                  = coreglib.Type(C._gotk4_weak_pango_color_get_type())
+	GTypeFontDescription        = coreglib.Type(C._gotk4_weak_pango_font_description_get_type())
+	GTypeFontMetrics            = coreglib.Type(C._gotk4_weak_pango_font_metrics_get_type())
+	GTypeGlyphItem              = coreglib.Type(C._gotk4_weak_pango_glyph_item_get_type())
+	GTypeGlyphItemIter          = coreglib.Type(C._gotk4_weak_pango_glyph_item_iter_get_type())
+	GTypeGlyphString            = coreglib.Type(C._gotk4_weak_pango_glyph_string_get_type())
+	GTypeItem                   = coreglib.Type(C._gotk4_weak_pango_item_get_type())
+	GTypeLanguage               = coreglib.Type(C._gotk4_weak_pango_language_get_type())
+	GTypeLayoutIter             = coreglib.Type(C._gotk4_weak_pango_layout_iter_get_type())
+	GTypeLayoutLine             = coreglib.Type(C._gotk4_weak_pango_layout_line_get_type())
+	GTypeMatrix                 = coreglib.Type(C._gotk4_weak_pango_matrix_get_type())
+	GTypeScriptIter             = coreglib.Type(C._gotk4_weak_pango_script_iter_get_type())
+	GTypeTabArray               = coreglib.Type(C._gotk4_weak_pango_tab_array_get_type())
 )
 
 func init() {
@@ -325,15 +378,15 @@ const VERSION_MAJOR = 1
 
 // VERSION_MICRO: micro component of the version of Pango available at
 // compile-time.
-const VERSION_MICRO = 12
+const VERSION_MICRO = 1
 
 // VERSION_MINOR: minor component of the version of Pango available at
 // compile-time.
-const VERSION_MINOR = 50
+const VERSION_MINOR = 52
 
 // VERSION_STRING: string literal containing the version of Pango available at
 // compile-time.
-const VERSION_STRING = "1.50.12"
+const VERSION_STRING = "1.52.1"
 
 // Glyph: PangoGlyph represents a single glyph in the output form of a string.
 type Glyph = uint32
@@ -8442,6 +8495,70 @@ func (fontmap *FontMap) LoadFontset(context *Context, desc *FontDescription, lan
 	}
 
 	return _fontset
+}
+
+// ReloadFont returns a new font that is like font, except that its size is
+// multiplied by scale, its backend-dependent configuration (e.g. cairo font
+// options) is replaced by the one in context, and its variations are replaced
+// by variations.
+//
+// The function takes the following parameters:
+//
+//   - font in fontmap.
+//   - scale factor to apply.
+//   - context (optional): PangoContext.
+//   - variations (optional): font variations to use.
+//
+// The function returns the following values:
+//
+//   - ret: modified font.
+func (fontmap *FontMap) ReloadFont(font Fonter, scale float64, context *Context, variations string) Fonter {
+	var _arg0 *C.PangoFontMap // out
+	var _arg1 *C.PangoFont    // out
+	var _arg2 C.double        // out
+	var _arg3 *C.PangoContext // out
+	var _arg4 *C.char         // out
+	var _cret *C.PangoFont    // in
+
+	_arg0 = (*C.PangoFontMap)(unsafe.Pointer(coreglib.InternObject(fontmap).Native()))
+	_arg1 = (*C.PangoFont)(unsafe.Pointer(coreglib.InternObject(font).Native()))
+	_arg2 = C.double(scale)
+	if context != nil {
+		_arg3 = (*C.PangoContext)(unsafe.Pointer(coreglib.InternObject(context).Native()))
+	}
+	if variations != "" {
+		_arg4 = (*C.char)(unsafe.Pointer(C.CString(variations)))
+		defer C.free(unsafe.Pointer(_arg4))
+	}
+
+	_cret = C.pango_font_map_reload_font(_arg0, _arg1, _arg2, _arg3, _arg4)
+	runtime.KeepAlive(fontmap)
+	runtime.KeepAlive(font)
+	runtime.KeepAlive(scale)
+	runtime.KeepAlive(context)
+	runtime.KeepAlive(variations)
+
+	var _ret Fonter // out
+
+	{
+		objptr := unsafe.Pointer(_cret)
+		if objptr == nil {
+			panic("object of type pango.Fonter is nil")
+		}
+
+		object := coreglib.AssumeOwnership(objptr)
+		casted := object.WalkCast(func(obj coreglib.Objector) bool {
+			_, ok := obj.(Fonter)
+			return ok
+		})
+		rv, ok := casted.(Fonter)
+		if !ok {
+			panic("no marshaler for " + object.TypeFromInstance().String() + " matching pango.Fonter")
+		}
+		_ret = rv
+	}
+
+	return _ret
 }
 
 // Changed forces a change in the context, which will cause any PangoContext

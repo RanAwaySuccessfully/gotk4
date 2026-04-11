@@ -235,6 +235,17 @@ func (f *GoFileGenerator) Generate() ([]byte, error) {
 		}
 	}
 
+	if len(f.header.Marshalers) > 0 {
+		for _, m := range f.header.Marshalers {
+			if !m.GLibType_C_HasOverride() {
+				continue
+			}
+
+			//fpen.Linef("// %s", m.GLibType_C_Weak())
+			fpen.Linef("// %s", m.GLibType_C_Func())
+		}
+	}
+
 	fpen.Words(`import "C"`)
 	fpen.EmptyLine()
 

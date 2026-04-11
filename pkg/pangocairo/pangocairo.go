@@ -22,12 +22,14 @@ import (
 // #include <pango/pangocairo.h>
 // extern void callbackDelete(gpointer);
 // extern void _gotk4_pangocairo1_ShapeRendererFunc(cairo_t*, PangoAttrShape*, gboolean, gpointer);
+// GType _gotk4_weak_pango_cairo_font_get_type(void) { return pango_cairo_font_get_type ? pango_cairo_font_get_type() : (GType)NULL; };
+// GType _gotk4_weak_pango_cairo_font_map_get_type(void) { return pango_cairo_font_map_get_type ? pango_cairo_font_map_get_type() : (GType)NULL; };
 import "C"
 
 // GType values.
 var (
-	GTypeFont    = coreglib.Type(C.pango_cairo_font_get_type())
-	GTypeFontMap = coreglib.Type(C.pango_cairo_font_map_get_type())
+	GTypeFont    = coreglib.Type(C._gotk4_weak_pango_cairo_font_get_type())
+	GTypeFontMap = coreglib.Type(C._gotk4_weak_pango_cairo_font_map_get_type())
 )
 
 func init() {

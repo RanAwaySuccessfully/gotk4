@@ -21,19 +21,28 @@ import (
 // #include <glib-object.h>
 // extern void _gotk4_gdkx114_X11Screen_ConnectWindowManagerChanged(gpointer, guintptr);
 // extern gboolean _gotk4_gdkx114_X11Display_ConnectXevent(gpointer, gpointer, guintptr);
+// GType _gotk4_weak_gdk_x11_app_launch_context_get_type(void) { return gdk_x11_app_launch_context_get_type ? gdk_x11_app_launch_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_device_manager_xi2_get_type(void) { return gdk_x11_device_manager_xi2_get_type ? gdk_x11_device_manager_xi2_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_device_xi2_get_type(void) { return gdk_x11_device_xi2_get_type ? gdk_x11_device_xi2_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_display_get_type(void) { return gdk_x11_display_get_type ? gdk_x11_display_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_drag_get_type(void) { return gdk_x11_drag_get_type ? gdk_x11_drag_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_gl_context_get_type(void) { return gdk_x11_gl_context_get_type ? gdk_x11_gl_context_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_monitor_get_type(void) { return gdk_x11_monitor_get_type ? gdk_x11_monitor_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_screen_get_type(void) { return gdk_x11_screen_get_type ? gdk_x11_screen_get_type() : (GType)NULL; };
+// GType _gotk4_weak_gdk_x11_surface_get_type(void) { return gdk_x11_surface_get_type ? gdk_x11_surface_get_type() : (GType)NULL; };
 import "C"
 
 // GType values.
 var (
-	GTypeX11AppLaunchContext = coreglib.Type(C.gdk_x11_app_launch_context_get_type())
-	GTypeX11DeviceManagerXI2 = coreglib.Type(C.gdk_x11_device_manager_xi2_get_type())
-	GTypeX11DeviceXI2        = coreglib.Type(C.gdk_x11_device_xi2_get_type())
-	GTypeX11Display          = coreglib.Type(C.gdk_x11_display_get_type())
-	GTypeX11Drag             = coreglib.Type(C.gdk_x11_drag_get_type())
-	GTypeX11GLContext        = coreglib.Type(C.gdk_x11_gl_context_get_type())
-	GTypeX11Monitor          = coreglib.Type(C.gdk_x11_monitor_get_type())
-	GTypeX11Screen           = coreglib.Type(C.gdk_x11_screen_get_type())
-	GTypeX11Surface          = coreglib.Type(C.gdk_x11_surface_get_type())
+	GTypeX11AppLaunchContext = coreglib.Type(C._gotk4_weak_gdk_x11_app_launch_context_get_type())
+	GTypeX11DeviceManagerXI2 = coreglib.Type(C._gotk4_weak_gdk_x11_device_manager_xi2_get_type())
+	GTypeX11DeviceXI2        = coreglib.Type(C._gotk4_weak_gdk_x11_device_xi2_get_type())
+	GTypeX11Display          = coreglib.Type(C._gotk4_weak_gdk_x11_display_get_type())
+	GTypeX11Drag             = coreglib.Type(C._gotk4_weak_gdk_x11_drag_get_type())
+	GTypeX11GLContext        = coreglib.Type(C._gotk4_weak_gdk_x11_gl_context_get_type())
+	GTypeX11Monitor          = coreglib.Type(C._gotk4_weak_gdk_x11_monitor_get_type())
+	GTypeX11Screen           = coreglib.Type(C._gotk4_weak_gdk_x11_screen_get_type())
+	GTypeX11Surface          = coreglib.Type(C._gotk4_weak_gdk_x11_surface_get_type())
 )
 
 func init() {
@@ -534,6 +543,8 @@ func (display *X11Display) Screen() *X11Screen {
 
 // StartupNotificationID gets the startup notification ID for a display.
 //
+// Deprecated: since version 4.10.
+//
 // The function returns the following values:
 //
 //   - utf8: startup notification ID for display.
@@ -634,6 +645,8 @@ func (display *X11Display) SetCursorTheme(theme string, size int) {
 // The startup ID is also what is used to signal that the startup
 // is complete (for example, when opening a window or when calling
 // gdk_display_notify_startup_complete()).
+//
+// Deprecated: Using gdk.Toplevel.SetStartupID() is sufficient.
 //
 // The function takes the following parameters:
 //
