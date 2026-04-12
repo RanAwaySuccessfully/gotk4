@@ -607,97 +607,97 @@ import (
 // void _gotk4_atk1_Value_virtual_set_value(void* fnptr, AtkValue* arg0, gdouble arg1) {
 //   ((void (*)(AtkValue*, gdouble))(fnptr))(arg0, arg1);
 // };
-// #pragma weak atk_coord_type_get_type
+// extern GType atk_coord_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_coord_type_get_type(void) { return atk_coord_type_get_type ? atk_coord_type_get_type() : (GType)NULL; };
-// #pragma weak atk_key_event_type_get_type
+// extern GType atk_key_event_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_key_event_type_get_type(void) { return atk_key_event_type_get_type ? atk_key_event_type_get_type() : (GType)NULL; };
-// #pragma weak atk_layer_get_type
+// extern GType atk_layer_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_layer_get_type(void) { return atk_layer_get_type ? atk_layer_get_type() : (GType)NULL; };
-// #pragma weak atk_live_get_type
+// extern GType atk_live_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_live_get_type(void) { return atk_live_get_type ? atk_live_get_type() : (GType)NULL; };
-// #pragma weak atk_relation_type_get_type
+// extern GType atk_relation_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_relation_type_get_type(void) { return atk_relation_type_get_type ? atk_relation_type_get_type() : (GType)NULL; };
-// #pragma weak atk_role_get_type
+// extern GType atk_role_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_role_get_type(void) { return atk_role_get_type ? atk_role_get_type() : (GType)NULL; };
-// #pragma weak atk_scroll_type_get_type
+// extern GType atk_scroll_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_scroll_type_get_type(void) { return atk_scroll_type_get_type ? atk_scroll_type_get_type() : (GType)NULL; };
-// #pragma weak atk_state_type_get_type
+// extern GType atk_state_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_state_type_get_type(void) { return atk_state_type_get_type ? atk_state_type_get_type() : (GType)NULL; };
-// #pragma weak atk_text_attribute_get_type
+// extern GType atk_text_attribute_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_text_attribute_get_type(void) { return atk_text_attribute_get_type ? atk_text_attribute_get_type() : (GType)NULL; };
-// #pragma weak atk_text_boundary_get_type
+// extern GType atk_text_boundary_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_text_boundary_get_type(void) { return atk_text_boundary_get_type ? atk_text_boundary_get_type() : (GType)NULL; };
-// #pragma weak atk_text_clip_type_get_type
+// extern GType atk_text_clip_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_text_clip_type_get_type(void) { return atk_text_clip_type_get_type ? atk_text_clip_type_get_type() : (GType)NULL; };
-// #pragma weak atk_text_granularity_get_type
+// extern GType atk_text_granularity_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_text_granularity_get_type(void) { return atk_text_granularity_get_type ? atk_text_granularity_get_type() : (GType)NULL; };
-// #pragma weak atk_value_type_get_type
+// extern GType atk_value_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_value_type_get_type(void) { return atk_value_type_get_type ? atk_value_type_get_type() : (GType)NULL; };
-// #pragma weak atk_hyperlink_state_flags_get_type
+// extern GType atk_hyperlink_state_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_hyperlink_state_flags_get_type(void) { return atk_hyperlink_state_flags_get_type ? atk_hyperlink_state_flags_get_type() : (GType)NULL; };
-// #pragma weak atk_action_get_type
+// extern GType atk_action_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_action_get_type(void) { return atk_action_get_type ? atk_action_get_type() : (GType)NULL; };
-// #pragma weak atk_component_get_type
+// extern GType atk_component_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_component_get_type(void) { return atk_component_get_type ? atk_component_get_type() : (GType)NULL; };
-// #pragma weak atk_document_get_type
+// extern GType atk_document_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_document_get_type(void) { return atk_document_get_type ? atk_document_get_type() : (GType)NULL; };
-// #pragma weak atk_editable_text_get_type
+// extern GType atk_editable_text_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_editable_text_get_type(void) { return atk_editable_text_get_type ? atk_editable_text_get_type() : (GType)NULL; };
-// #pragma weak atk_hyperlink_impl_get_type
+// extern GType atk_hyperlink_impl_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_hyperlink_impl_get_type(void) { return atk_hyperlink_impl_get_type ? atk_hyperlink_impl_get_type() : (GType)NULL; };
-// #pragma weak atk_hypertext_get_type
+// extern GType atk_hypertext_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_hypertext_get_type(void) { return atk_hypertext_get_type ? atk_hypertext_get_type() : (GType)NULL; };
-// #pragma weak atk_image_get_type
+// extern GType atk_image_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_image_get_type(void) { return atk_image_get_type ? atk_image_get_type() : (GType)NULL; };
-// #pragma weak atk_implementor_get_type
+// extern GType atk_implementor_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_implementor_get_type(void) { return atk_implementor_get_type ? atk_implementor_get_type() : (GType)NULL; };
-// #pragma weak atk_selection_get_type
+// extern GType atk_selection_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_selection_get_type(void) { return atk_selection_get_type ? atk_selection_get_type() : (GType)NULL; };
-// #pragma weak atk_streamable_content_get_type
+// extern GType atk_streamable_content_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_streamable_content_get_type(void) { return atk_streamable_content_get_type ? atk_streamable_content_get_type() : (GType)NULL; };
-// #pragma weak atk_table_get_type
+// extern GType atk_table_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_table_get_type(void) { return atk_table_get_type ? atk_table_get_type() : (GType)NULL; };
-// #pragma weak atk_table_cell_get_type
+// extern GType atk_table_cell_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_table_cell_get_type(void) { return atk_table_cell_get_type ? atk_table_cell_get_type() : (GType)NULL; };
-// #pragma weak atk_text_get_type
+// extern GType atk_text_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_text_get_type(void) { return atk_text_get_type ? atk_text_get_type() : (GType)NULL; };
-// #pragma weak atk_value_get_type
+// extern GType atk_value_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_value_get_type(void) { return atk_value_get_type ? atk_value_get_type() : (GType)NULL; };
-// #pragma weak atk_window_get_type
+// extern GType atk_window_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_window_get_type(void) { return atk_window_get_type ? atk_window_get_type() : (GType)NULL; };
-// #pragma weak atk_gobject_accessible_get_type
+// extern GType atk_gobject_accessible_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_gobject_accessible_get_type(void) { return atk_gobject_accessible_get_type ? atk_gobject_accessible_get_type() : (GType)NULL; };
-// #pragma weak atk_hyperlink_get_type
+// extern GType atk_hyperlink_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_hyperlink_get_type(void) { return atk_hyperlink_get_type ? atk_hyperlink_get_type() : (GType)NULL; };
-// #pragma weak atk_misc_get_type
+// extern GType atk_misc_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_misc_get_type(void) { return atk_misc_get_type ? atk_misc_get_type() : (GType)NULL; };
-// #pragma weak atk_no_op_object_get_type
+// extern GType atk_no_op_object_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_no_op_object_get_type(void) { return atk_no_op_object_get_type ? atk_no_op_object_get_type() : (GType)NULL; };
-// #pragma weak atk_no_op_object_factory_get_type
+// extern GType atk_no_op_object_factory_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_no_op_object_factory_get_type(void) { return atk_no_op_object_factory_get_type ? atk_no_op_object_factory_get_type() : (GType)NULL; };
-// #pragma weak atk_object_get_type
+// extern GType atk_object_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_object_get_type(void) { return atk_object_get_type ? atk_object_get_type() : (GType)NULL; };
-// #pragma weak atk_object_factory_get_type
+// extern GType atk_object_factory_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_object_factory_get_type(void) { return atk_object_factory_get_type ? atk_object_factory_get_type() : (GType)NULL; };
-// #pragma weak atk_plug_get_type
+// extern GType atk_plug_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_plug_get_type(void) { return atk_plug_get_type ? atk_plug_get_type() : (GType)NULL; };
-// #pragma weak atk_registry_get_type
+// extern GType atk_registry_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_registry_get_type(void) { return atk_registry_get_type ? atk_registry_get_type() : (GType)NULL; };
-// #pragma weak atk_relation_get_type
+// extern GType atk_relation_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_relation_get_type(void) { return atk_relation_get_type ? atk_relation_get_type() : (GType)NULL; };
-// #pragma weak atk_relation_set_get_type
+// extern GType atk_relation_set_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_relation_set_get_type(void) { return atk_relation_set_get_type ? atk_relation_set_get_type() : (GType)NULL; };
-// #pragma weak atk_socket_get_type
+// extern GType atk_socket_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_socket_get_type(void) { return atk_socket_get_type ? atk_socket_get_type() : (GType)NULL; };
-// #pragma weak atk_state_set_get_type
+// extern GType atk_state_set_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_state_set_get_type(void) { return atk_state_set_get_type ? atk_state_set_get_type() : (GType)NULL; };
-// #pragma weak atk_util_get_type
+// extern GType atk_util_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_util_get_type(void) { return atk_util_get_type ? atk_util_get_type() : (GType)NULL; };
-// #pragma weak atk_range_get_type
+// extern GType atk_range_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_range_get_type(void) { return atk_range_get_type ? atk_range_get_type() : (GType)NULL; };
-// #pragma weak atk_rectangle_get_type
+// extern GType atk_rectangle_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_rectangle_get_type(void) { return atk_rectangle_get_type ? atk_rectangle_get_type() : (GType)NULL; };
-// #pragma weak atk_text_range_get_type
+// extern GType atk_text_range_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_atk_text_range_get_type(void) { return atk_text_range_get_type ? atk_text_range_get_type() : (GType)NULL; };
 import "C"
 

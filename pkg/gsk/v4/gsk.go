@@ -27,115 +27,115 @@ import (
 // #include <gsk/gsk.h>
 // extern void _gotk4_gsk4_ParseErrorFunc(GskParseLocation*, GskParseLocation*, GError*, gpointer);
 // extern gboolean _gotk4_gsk4_PathForEachFunc(GskPathOperation, graphene_point_t*, gsize, float, gpointer);
-// #pragma weak gsk_blend_mode_get_type
+// extern GType gsk_blend_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_blend_mode_get_type(void) { return gsk_blend_mode_get_type ? gsk_blend_mode_get_type() : (GType)NULL; };
-// #pragma weak gsk_corner_get_type
+// extern GType gsk_corner_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_corner_get_type(void) { return gsk_corner_get_type ? gsk_corner_get_type() : (GType)NULL; };
-// #pragma weak gsk_fill_rule_get_type
+// extern GType gsk_fill_rule_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_fill_rule_get_type(void) { return gsk_fill_rule_get_type ? gsk_fill_rule_get_type() : (GType)NULL; };
-// #pragma weak gsk_gl_uniform_type_get_type
+// extern GType gsk_gl_uniform_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_gl_uniform_type_get_type(void) { return gsk_gl_uniform_type_get_type ? gsk_gl_uniform_type_get_type() : (GType)NULL; };
-// #pragma weak gsk_line_cap_get_type
+// extern GType gsk_line_cap_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_line_cap_get_type(void) { return gsk_line_cap_get_type ? gsk_line_cap_get_type() : (GType)NULL; };
-// #pragma weak gsk_line_join_get_type
+// extern GType gsk_line_join_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_line_join_get_type(void) { return gsk_line_join_get_type ? gsk_line_join_get_type() : (GType)NULL; };
-// #pragma weak gsk_mask_mode_get_type
+// extern GType gsk_mask_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_mask_mode_get_type(void) { return gsk_mask_mode_get_type ? gsk_mask_mode_get_type() : (GType)NULL; };
-// #pragma weak gsk_path_direction_get_type
+// extern GType gsk_path_direction_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_path_direction_get_type(void) { return gsk_path_direction_get_type ? gsk_path_direction_get_type() : (GType)NULL; };
-// #pragma weak gsk_path_operation_get_type
+// extern GType gsk_path_operation_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_path_operation_get_type(void) { return gsk_path_operation_get_type ? gsk_path_operation_get_type() : (GType)NULL; };
-// #pragma weak gsk_render_node_type_get_type
+// extern GType gsk_render_node_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_render_node_type_get_type(void) { return gsk_render_node_type_get_type ? gsk_render_node_type_get_type() : (GType)NULL; };
-// #pragma weak gsk_scaling_filter_get_type
+// extern GType gsk_scaling_filter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_scaling_filter_get_type(void) { return gsk_scaling_filter_get_type ? gsk_scaling_filter_get_type() : (GType)NULL; };
-// #pragma weak gsk_serialization_error_get_type
+// extern GType gsk_serialization_error_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_serialization_error_get_type(void) { return gsk_serialization_error_get_type ? gsk_serialization_error_get_type() : (GType)NULL; };
-// #pragma weak gsk_transform_category_get_type
+// extern GType gsk_transform_category_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_transform_category_get_type(void) { return gsk_transform_category_get_type ? gsk_transform_category_get_type() : (GType)NULL; };
-// #pragma weak gsk_path_foreach_flags_get_type
+// extern GType gsk_path_foreach_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_path_foreach_flags_get_type(void) { return gsk_path_foreach_flags_get_type ? gsk_path_foreach_flags_get_type() : (GType)NULL; };
-// #pragma weak gsk_blend_node_get_type
+// extern GType gsk_blend_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_blend_node_get_type(void) { return gsk_blend_node_get_type ? gsk_blend_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_blur_node_get_type
+// extern GType gsk_blur_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_blur_node_get_type(void) { return gsk_blur_node_get_type ? gsk_blur_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_border_node_get_type
+// extern GType gsk_border_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_border_node_get_type(void) { return gsk_border_node_get_type ? gsk_border_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_cairo_node_get_type
+// extern GType gsk_cairo_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_cairo_node_get_type(void) { return gsk_cairo_node_get_type ? gsk_cairo_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_cairo_renderer_get_type
+// extern GType gsk_cairo_renderer_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_cairo_renderer_get_type(void) { return gsk_cairo_renderer_get_type ? gsk_cairo_renderer_get_type() : (GType)NULL; };
-// #pragma weak gsk_clip_node_get_type
+// extern GType gsk_clip_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_clip_node_get_type(void) { return gsk_clip_node_get_type ? gsk_clip_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_color_matrix_node_get_type
+// extern GType gsk_color_matrix_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_color_matrix_node_get_type(void) { return gsk_color_matrix_node_get_type ? gsk_color_matrix_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_color_node_get_type
+// extern GType gsk_color_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_color_node_get_type(void) { return gsk_color_node_get_type ? gsk_color_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_conic_gradient_node_get_type
+// extern GType gsk_conic_gradient_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_conic_gradient_node_get_type(void) { return gsk_conic_gradient_node_get_type ? gsk_conic_gradient_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_container_node_get_type
+// extern GType gsk_container_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_container_node_get_type(void) { return gsk_container_node_get_type ? gsk_container_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_cross_fade_node_get_type
+// extern GType gsk_cross_fade_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_cross_fade_node_get_type(void) { return gsk_cross_fade_node_get_type ? gsk_cross_fade_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_debug_node_get_type
+// extern GType gsk_debug_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_debug_node_get_type(void) { return gsk_debug_node_get_type ? gsk_debug_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_fill_node_get_type
+// extern GType gsk_fill_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_fill_node_get_type(void) { return gsk_fill_node_get_type ? gsk_fill_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_gl_shader_get_type
+// extern GType gsk_gl_shader_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_gl_shader_get_type(void) { return gsk_gl_shader_get_type ? gsk_gl_shader_get_type() : (GType)NULL; };
-// #pragma weak gsk_gl_shader_node_get_type
+// extern GType gsk_gl_shader_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_gl_shader_node_get_type(void) { return gsk_gl_shader_node_get_type ? gsk_gl_shader_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_inset_shadow_node_get_type
+// extern GType gsk_inset_shadow_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_inset_shadow_node_get_type(void) { return gsk_inset_shadow_node_get_type ? gsk_inset_shadow_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_linear_gradient_node_get_type
+// extern GType gsk_linear_gradient_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_linear_gradient_node_get_type(void) { return gsk_linear_gradient_node_get_type ? gsk_linear_gradient_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_mask_node_get_type
+// extern GType gsk_mask_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_mask_node_get_type(void) { return gsk_mask_node_get_type ? gsk_mask_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_opacity_node_get_type
+// extern GType gsk_opacity_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_opacity_node_get_type(void) { return gsk_opacity_node_get_type ? gsk_opacity_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_outset_shadow_node_get_type
+// extern GType gsk_outset_shadow_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_outset_shadow_node_get_type(void) { return gsk_outset_shadow_node_get_type ? gsk_outset_shadow_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_radial_gradient_node_get_type
+// extern GType gsk_radial_gradient_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_radial_gradient_node_get_type(void) { return gsk_radial_gradient_node_get_type ? gsk_radial_gradient_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_render_node_get_type
+// extern GType gsk_render_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_render_node_get_type(void) { return gsk_render_node_get_type ? gsk_render_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_renderer_get_type
+// extern GType gsk_renderer_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_renderer_get_type(void) { return gsk_renderer_get_type ? gsk_renderer_get_type() : (GType)NULL; };
-// #pragma weak gsk_repeat_node_get_type
+// extern GType gsk_repeat_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_repeat_node_get_type(void) { return gsk_repeat_node_get_type ? gsk_repeat_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_repeating_linear_gradient_node_get_type
+// extern GType gsk_repeating_linear_gradient_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_repeating_linear_gradient_node_get_type(void) { return gsk_repeating_linear_gradient_node_get_type ? gsk_repeating_linear_gradient_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_repeating_radial_gradient_node_get_type
+// extern GType gsk_repeating_radial_gradient_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_repeating_radial_gradient_node_get_type(void) { return gsk_repeating_radial_gradient_node_get_type ? gsk_repeating_radial_gradient_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_rounded_clip_node_get_type
+// extern GType gsk_rounded_clip_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_rounded_clip_node_get_type(void) { return gsk_rounded_clip_node_get_type ? gsk_rounded_clip_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_shadow_node_get_type
+// extern GType gsk_shadow_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_shadow_node_get_type(void) { return gsk_shadow_node_get_type ? gsk_shadow_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_stroke_node_get_type
+// extern GType gsk_stroke_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_stroke_node_get_type(void) { return gsk_stroke_node_get_type ? gsk_stroke_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_subsurface_node_get_type
+// extern GType gsk_subsurface_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_subsurface_node_get_type(void) { return gsk_subsurface_node_get_type ? gsk_subsurface_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_text_node_get_type
+// extern GType gsk_text_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_text_node_get_type(void) { return gsk_text_node_get_type ? gsk_text_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_texture_node_get_type
+// extern GType gsk_texture_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_texture_node_get_type(void) { return gsk_texture_node_get_type ? gsk_texture_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_texture_scale_node_get_type
+// extern GType gsk_texture_scale_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_texture_scale_node_get_type(void) { return gsk_texture_scale_node_get_type ? gsk_texture_scale_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_transform_node_get_type
+// extern GType gsk_transform_node_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_transform_node_get_type(void) { return gsk_transform_node_get_type ? gsk_transform_node_get_type() : (GType)NULL; };
-// #pragma weak gsk_path_get_type
+// extern GType gsk_path_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_path_get_type(void) { return gsk_path_get_type ? gsk_path_get_type() : (GType)NULL; };
-// #pragma weak gsk_path_builder_get_type
+// extern GType gsk_path_builder_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_path_builder_get_type(void) { return gsk_path_builder_get_type ? gsk_path_builder_get_type() : (GType)NULL; };
-// #pragma weak gsk_path_measure_get_type
+// extern GType gsk_path_measure_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_path_measure_get_type(void) { return gsk_path_measure_get_type ? gsk_path_measure_get_type() : (GType)NULL; };
-// #pragma weak gsk_path_point_get_type
+// extern GType gsk_path_point_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_path_point_get_type(void) { return gsk_path_point_get_type ? gsk_path_point_get_type() : (GType)NULL; };
-// #pragma weak gsk_shader_args_builder_get_type
+// extern GType gsk_shader_args_builder_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_shader_args_builder_get_type(void) { return gsk_shader_args_builder_get_type ? gsk_shader_args_builder_get_type() : (GType)NULL; };
-// #pragma weak gsk_stroke_get_type
+// extern GType gsk_stroke_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_stroke_get_type(void) { return gsk_stroke_get_type ? gsk_stroke_get_type() : (GType)NULL; };
-// #pragma weak gsk_transform_get_type
+// extern GType gsk_transform_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gsk_transform_get_type(void) { return gsk_transform_get_type ? gsk_transform_get_type() : (GType)NULL; };
 import "C"
 

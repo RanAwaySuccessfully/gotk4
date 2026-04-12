@@ -21,23 +21,23 @@ import (
 // #include <glib-object.h>
 // extern void _gotk4_gdkx114_X11Screen_ConnectWindowManagerChanged(gpointer, guintptr);
 // extern gboolean _gotk4_gdkx114_X11Display_ConnectXevent(gpointer, gpointer, guintptr);
-// #pragma weak gdk_x11_app_launch_context_get_type
+// extern GType gdk_x11_app_launch_context_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gdk_x11_app_launch_context_get_type(void) { return gdk_x11_app_launch_context_get_type ? gdk_x11_app_launch_context_get_type() : (GType)NULL; };
-// #pragma weak gdk_x11_device_manager_xi2_get_type
+// extern GType gdk_x11_device_manager_xi2_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gdk_x11_device_manager_xi2_get_type(void) { return gdk_x11_device_manager_xi2_get_type ? gdk_x11_device_manager_xi2_get_type() : (GType)NULL; };
-// #pragma weak gdk_x11_device_xi2_get_type
+// extern GType gdk_x11_device_xi2_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gdk_x11_device_xi2_get_type(void) { return gdk_x11_device_xi2_get_type ? gdk_x11_device_xi2_get_type() : (GType)NULL; };
-// #pragma weak gdk_x11_display_get_type
+// extern GType gdk_x11_display_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gdk_x11_display_get_type(void) { return gdk_x11_display_get_type ? gdk_x11_display_get_type() : (GType)NULL; };
-// #pragma weak gdk_x11_drag_get_type
+// extern GType gdk_x11_drag_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gdk_x11_drag_get_type(void) { return gdk_x11_drag_get_type ? gdk_x11_drag_get_type() : (GType)NULL; };
-// #pragma weak gdk_x11_gl_context_get_type
+// extern GType gdk_x11_gl_context_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gdk_x11_gl_context_get_type(void) { return gdk_x11_gl_context_get_type ? gdk_x11_gl_context_get_type() : (GType)NULL; };
-// #pragma weak gdk_x11_monitor_get_type
+// extern GType gdk_x11_monitor_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gdk_x11_monitor_get_type(void) { return gdk_x11_monitor_get_type ? gdk_x11_monitor_get_type() : (GType)NULL; };
-// #pragma weak gdk_x11_screen_get_type
+// extern GType gdk_x11_screen_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gdk_x11_screen_get_type(void) { return gdk_x11_screen_get_type ? gdk_x11_screen_get_type() : (GType)NULL; };
-// #pragma weak gdk_x11_surface_get_type
+// extern GType gdk_x11_surface_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gdk_x11_surface_get_type(void) { return gdk_x11_surface_get_type ? gdk_x11_surface_get_type() : (GType)NULL; };
 import "C"
 

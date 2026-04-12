@@ -1519,853 +1519,853 @@ import (
 // void _gotk4_gtk4_Window_virtual_keys_changed(void* fnptr, GtkWindow* arg0) {
 //   ((void (*)(GtkWindow*))(fnptr))(arg0);
 // };
-// #pragma weak gtk_accessible_announcement_priority_get_type
+// extern GType gtk_accessible_announcement_priority_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_announcement_priority_get_type(void) { return gtk_accessible_announcement_priority_get_type ? gtk_accessible_announcement_priority_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_autocomplete_get_type
+// extern GType gtk_accessible_autocomplete_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_autocomplete_get_type(void) { return gtk_accessible_autocomplete_get_type ? gtk_accessible_autocomplete_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_invalid_state_get_type
+// extern GType gtk_accessible_invalid_state_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_invalid_state_get_type(void) { return gtk_accessible_invalid_state_get_type ? gtk_accessible_invalid_state_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_platform_state_get_type
+// extern GType gtk_accessible_platform_state_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_platform_state_get_type(void) { return gtk_accessible_platform_state_get_type ? gtk_accessible_platform_state_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_property_get_type
+// extern GType gtk_accessible_property_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_property_get_type(void) { return gtk_accessible_property_get_type ? gtk_accessible_property_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_relation_get_type
+// extern GType gtk_accessible_relation_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_relation_get_type(void) { return gtk_accessible_relation_get_type ? gtk_accessible_relation_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_role_get_type
+// extern GType gtk_accessible_role_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_role_get_type(void) { return gtk_accessible_role_get_type ? gtk_accessible_role_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_sort_get_type
+// extern GType gtk_accessible_sort_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_sort_get_type(void) { return gtk_accessible_sort_get_type ? gtk_accessible_sort_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_state_get_type
+// extern GType gtk_accessible_state_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_state_get_type(void) { return gtk_accessible_state_get_type ? gtk_accessible_state_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_text_content_change_get_type
+// extern GType gtk_accessible_text_content_change_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_text_content_change_get_type(void) { return gtk_accessible_text_content_change_get_type ? gtk_accessible_text_content_change_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_text_granularity_get_type
+// extern GType gtk_accessible_text_granularity_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_text_granularity_get_type(void) { return gtk_accessible_text_granularity_get_type ? gtk_accessible_text_granularity_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_tristate_get_type
+// extern GType gtk_accessible_tristate_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_tristate_get_type(void) { return gtk_accessible_tristate_get_type ? gtk_accessible_tristate_get_type() : (GType)NULL; };
-// #pragma weak gtk_align_get_type
+// extern GType gtk_align_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_align_get_type(void) { return gtk_align_get_type ? gtk_align_get_type() : (GType)NULL; };
-// #pragma weak gtk_arrow_type_get_type
+// extern GType gtk_arrow_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_arrow_type_get_type(void) { return gtk_arrow_type_get_type ? gtk_arrow_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_assistant_page_type_get_type
+// extern GType gtk_assistant_page_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_assistant_page_type_get_type(void) { return gtk_assistant_page_type_get_type ? gtk_assistant_page_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_baseline_position_get_type
+// extern GType gtk_baseline_position_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_baseline_position_get_type(void) { return gtk_baseline_position_get_type ? gtk_baseline_position_get_type() : (GType)NULL; };
-// #pragma weak gtk_border_style_get_type
+// extern GType gtk_border_style_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_border_style_get_type(void) { return gtk_border_style_get_type ? gtk_border_style_get_type() : (GType)NULL; };
-// #pragma weak gtk_builder_error_get_type
+// extern GType gtk_builder_error_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_builder_error_get_type(void) { return gtk_builder_error_get_type ? gtk_builder_error_get_type() : (GType)NULL; };
-// #pragma weak gtk_buttons_type_get_type
+// extern GType gtk_buttons_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_buttons_type_get_type(void) { return gtk_buttons_type_get_type ? gtk_buttons_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_accel_mode_get_type
+// extern GType gtk_cell_renderer_accel_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_accel_mode_get_type(void) { return gtk_cell_renderer_accel_mode_get_type ? gtk_cell_renderer_accel_mode_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_mode_get_type
+// extern GType gtk_cell_renderer_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_mode_get_type(void) { return gtk_cell_renderer_mode_get_type ? gtk_cell_renderer_mode_get_type() : (GType)NULL; };
-// #pragma weak gtk_collation_get_type
+// extern GType gtk_collation_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_collation_get_type(void) { return gtk_collation_get_type ? gtk_collation_get_type() : (GType)NULL; };
-// #pragma weak gtk_constraint_attribute_get_type
+// extern GType gtk_constraint_attribute_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_constraint_attribute_get_type(void) { return gtk_constraint_attribute_get_type ? gtk_constraint_attribute_get_type() : (GType)NULL; };
-// #pragma weak gtk_constraint_relation_get_type
+// extern GType gtk_constraint_relation_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_constraint_relation_get_type(void) { return gtk_constraint_relation_get_type ? gtk_constraint_relation_get_type() : (GType)NULL; };
-// #pragma weak gtk_constraint_strength_get_type
+// extern GType gtk_constraint_strength_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_constraint_strength_get_type(void) { return gtk_constraint_strength_get_type ? gtk_constraint_strength_get_type() : (GType)NULL; };
-// #pragma weak gtk_constraint_vfl_parser_error_get_type
+// extern GType gtk_constraint_vfl_parser_error_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_constraint_vfl_parser_error_get_type(void) { return gtk_constraint_vfl_parser_error_get_type ? gtk_constraint_vfl_parser_error_get_type() : (GType)NULL; };
-// #pragma weak gtk_content_fit_get_type
+// extern GType gtk_content_fit_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_content_fit_get_type(void) { return gtk_content_fit_get_type ? gtk_content_fit_get_type() : (GType)NULL; };
-// #pragma weak gtk_corner_type_get_type
+// extern GType gtk_corner_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_corner_type_get_type(void) { return gtk_corner_type_get_type ? gtk_corner_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_delete_type_get_type
+// extern GType gtk_delete_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_delete_type_get_type(void) { return gtk_delete_type_get_type ? gtk_delete_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_dialog_error_get_type
+// extern GType gtk_dialog_error_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_dialog_error_get_type(void) { return gtk_dialog_error_get_type ? gtk_dialog_error_get_type() : (GType)NULL; };
-// #pragma weak gtk_direction_type_get_type
+// extern GType gtk_direction_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_direction_type_get_type(void) { return gtk_direction_type_get_type ? gtk_direction_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_editable_properties_get_type
+// extern GType gtk_editable_properties_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_editable_properties_get_type(void) { return gtk_editable_properties_get_type ? gtk_editable_properties_get_type() : (GType)NULL; };
-// #pragma weak gtk_entry_icon_position_get_type
+// extern GType gtk_entry_icon_position_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_entry_icon_position_get_type(void) { return gtk_entry_icon_position_get_type ? gtk_entry_icon_position_get_type() : (GType)NULL; };
-// #pragma weak gtk_event_sequence_state_get_type
+// extern GType gtk_event_sequence_state_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_event_sequence_state_get_type(void) { return gtk_event_sequence_state_get_type ? gtk_event_sequence_state_get_type() : (GType)NULL; };
-// #pragma weak gtk_file_chooser_action_get_type
+// extern GType gtk_file_chooser_action_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_file_chooser_action_get_type(void) { return gtk_file_chooser_action_get_type ? gtk_file_chooser_action_get_type() : (GType)NULL; };
-// #pragma weak gtk_file_chooser_error_get_type
+// extern GType gtk_file_chooser_error_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_file_chooser_error_get_type(void) { return gtk_file_chooser_error_get_type ? gtk_file_chooser_error_get_type() : (GType)NULL; };
-// #pragma weak gtk_filter_change_get_type
+// extern GType gtk_filter_change_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_filter_change_get_type(void) { return gtk_filter_change_get_type ? gtk_filter_change_get_type() : (GType)NULL; };
-// #pragma weak gtk_filter_match_get_type
+// extern GType gtk_filter_match_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_filter_match_get_type(void) { return gtk_filter_match_get_type ? gtk_filter_match_get_type() : (GType)NULL; };
-// #pragma weak gtk_font_level_get_type
+// extern GType gtk_font_level_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_font_level_get_type(void) { return gtk_font_level_get_type ? gtk_font_level_get_type() : (GType)NULL; };
-// #pragma weak gtk_graphics_offload_enabled_get_type
+// extern GType gtk_graphics_offload_enabled_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_graphics_offload_enabled_get_type(void) { return gtk_graphics_offload_enabled_get_type ? gtk_graphics_offload_enabled_get_type() : (GType)NULL; };
-// #pragma weak gtk_icon_size_get_type
+// extern GType gtk_icon_size_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_icon_size_get_type(void) { return gtk_icon_size_get_type ? gtk_icon_size_get_type() : (GType)NULL; };
-// #pragma weak gtk_icon_theme_error_get_type
+// extern GType gtk_icon_theme_error_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_icon_theme_error_get_type(void) { return gtk_icon_theme_error_get_type ? gtk_icon_theme_error_get_type() : (GType)NULL; };
-// #pragma weak gtk_icon_view_drop_position_get_type
+// extern GType gtk_icon_view_drop_position_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_icon_view_drop_position_get_type(void) { return gtk_icon_view_drop_position_get_type ? gtk_icon_view_drop_position_get_type() : (GType)NULL; };
-// #pragma weak gtk_image_type_get_type
+// extern GType gtk_image_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_image_type_get_type(void) { return gtk_image_type_get_type ? gtk_image_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_input_purpose_get_type
+// extern GType gtk_input_purpose_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_input_purpose_get_type(void) { return gtk_input_purpose_get_type ? gtk_input_purpose_get_type() : (GType)NULL; };
-// #pragma weak gtk_inscription_overflow_get_type
+// extern GType gtk_inscription_overflow_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_inscription_overflow_get_type(void) { return gtk_inscription_overflow_get_type ? gtk_inscription_overflow_get_type() : (GType)NULL; };
-// #pragma weak gtk_justification_get_type
+// extern GType gtk_justification_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_justification_get_type(void) { return gtk_justification_get_type ? gtk_justification_get_type() : (GType)NULL; };
-// #pragma weak gtk_level_bar_mode_get_type
+// extern GType gtk_level_bar_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_level_bar_mode_get_type(void) { return gtk_level_bar_mode_get_type ? gtk_level_bar_mode_get_type() : (GType)NULL; };
-// #pragma weak gtk_license_get_type
+// extern GType gtk_license_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_license_get_type(void) { return gtk_license_get_type ? gtk_license_get_type() : (GType)NULL; };
-// #pragma weak gtk_list_tab_behavior_get_type
+// extern GType gtk_list_tab_behavior_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_list_tab_behavior_get_type(void) { return gtk_list_tab_behavior_get_type ? gtk_list_tab_behavior_get_type() : (GType)NULL; };
-// #pragma weak gtk_message_type_get_type
+// extern GType gtk_message_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_message_type_get_type(void) { return gtk_message_type_get_type ? gtk_message_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_movement_step_get_type
+// extern GType gtk_movement_step_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_movement_step_get_type(void) { return gtk_movement_step_get_type ? gtk_movement_step_get_type() : (GType)NULL; };
-// #pragma weak gtk_natural_wrap_mode_get_type
+// extern GType gtk_natural_wrap_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_natural_wrap_mode_get_type(void) { return gtk_natural_wrap_mode_get_type ? gtk_natural_wrap_mode_get_type() : (GType)NULL; };
-// #pragma weak gtk_notebook_tab_get_type
+// extern GType gtk_notebook_tab_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_notebook_tab_get_type(void) { return gtk_notebook_tab_get_type ? gtk_notebook_tab_get_type() : (GType)NULL; };
-// #pragma weak gtk_number_up_layout_get_type
+// extern GType gtk_number_up_layout_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_number_up_layout_get_type(void) { return gtk_number_up_layout_get_type ? gtk_number_up_layout_get_type() : (GType)NULL; };
-// #pragma weak gtk_ordering_get_type
+// extern GType gtk_ordering_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_ordering_get_type(void) { return gtk_ordering_get_type ? gtk_ordering_get_type() : (GType)NULL; };
-// #pragma weak gtk_orientation_get_type
+// extern GType gtk_orientation_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_orientation_get_type(void) { return gtk_orientation_get_type ? gtk_orientation_get_type() : (GType)NULL; };
-// #pragma weak gtk_overflow_get_type
+// extern GType gtk_overflow_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_overflow_get_type(void) { return gtk_overflow_get_type ? gtk_overflow_get_type() : (GType)NULL; };
-// #pragma weak gtk_pack_type_get_type
+// extern GType gtk_pack_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_pack_type_get_type(void) { return gtk_pack_type_get_type ? gtk_pack_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_pad_action_type_get_type
+// extern GType gtk_pad_action_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_pad_action_type_get_type(void) { return gtk_pad_action_type_get_type ? gtk_pad_action_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_page_orientation_get_type
+// extern GType gtk_page_orientation_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_page_orientation_get_type(void) { return gtk_page_orientation_get_type ? gtk_page_orientation_get_type() : (GType)NULL; };
-// #pragma weak gtk_page_set_get_type
+// extern GType gtk_page_set_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_page_set_get_type(void) { return gtk_page_set_get_type ? gtk_page_set_get_type() : (GType)NULL; };
-// #pragma weak gtk_pan_direction_get_type
+// extern GType gtk_pan_direction_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_pan_direction_get_type(void) { return gtk_pan_direction_get_type ? gtk_pan_direction_get_type() : (GType)NULL; };
-// #pragma weak gtk_policy_type_get_type
+// extern GType gtk_policy_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_policy_type_get_type(void) { return gtk_policy_type_get_type ? gtk_policy_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_position_type_get_type
+// extern GType gtk_position_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_position_type_get_type(void) { return gtk_position_type_get_type ? gtk_position_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_duplex_get_type
+// extern GType gtk_print_duplex_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_duplex_get_type(void) { return gtk_print_duplex_get_type ? gtk_print_duplex_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_error_get_type
+// extern GType gtk_print_error_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_error_get_type(void) { return gtk_print_error_get_type ? gtk_print_error_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_operation_action_get_type
+// extern GType gtk_print_operation_action_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_operation_action_get_type(void) { return gtk_print_operation_action_get_type ? gtk_print_operation_action_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_operation_result_get_type
+// extern GType gtk_print_operation_result_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_operation_result_get_type(void) { return gtk_print_operation_result_get_type ? gtk_print_operation_result_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_pages_get_type
+// extern GType gtk_print_pages_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_pages_get_type(void) { return gtk_print_pages_get_type ? gtk_print_pages_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_quality_get_type
+// extern GType gtk_print_quality_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_quality_get_type(void) { return gtk_print_quality_get_type ? gtk_print_quality_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_status_get_type
+// extern GType gtk_print_status_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_status_get_type(void) { return gtk_print_status_get_type ? gtk_print_status_get_type() : (GType)NULL; };
-// #pragma weak gtk_propagation_limit_get_type
+// extern GType gtk_propagation_limit_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_propagation_limit_get_type(void) { return gtk_propagation_limit_get_type ? gtk_propagation_limit_get_type() : (GType)NULL; };
-// #pragma weak gtk_propagation_phase_get_type
+// extern GType gtk_propagation_phase_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_propagation_phase_get_type(void) { return gtk_propagation_phase_get_type ? gtk_propagation_phase_get_type() : (GType)NULL; };
-// #pragma weak gtk_recent_manager_error_get_type
+// extern GType gtk_recent_manager_error_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_recent_manager_error_get_type(void) { return gtk_recent_manager_error_get_type ? gtk_recent_manager_error_get_type() : (GType)NULL; };
-// #pragma weak gtk_response_type_get_type
+// extern GType gtk_response_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_response_type_get_type(void) { return gtk_response_type_get_type ? gtk_response_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_revealer_transition_type_get_type
+// extern GType gtk_revealer_transition_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_revealer_transition_type_get_type(void) { return gtk_revealer_transition_type_get_type ? gtk_revealer_transition_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_scroll_step_get_type
+// extern GType gtk_scroll_step_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_scroll_step_get_type(void) { return gtk_scroll_step_get_type ? gtk_scroll_step_get_type() : (GType)NULL; };
-// #pragma weak gtk_scroll_type_get_type
+// extern GType gtk_scroll_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_scroll_type_get_type(void) { return gtk_scroll_type_get_type ? gtk_scroll_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_scrollable_policy_get_type
+// extern GType gtk_scrollable_policy_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_scrollable_policy_get_type(void) { return gtk_scrollable_policy_get_type ? gtk_scrollable_policy_get_type() : (GType)NULL; };
-// #pragma weak gtk_selection_mode_get_type
+// extern GType gtk_selection_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_selection_mode_get_type(void) { return gtk_selection_mode_get_type ? gtk_selection_mode_get_type() : (GType)NULL; };
-// #pragma weak gtk_sensitivity_type_get_type
+// extern GType gtk_sensitivity_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_sensitivity_type_get_type(void) { return gtk_sensitivity_type_get_type ? gtk_sensitivity_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcut_scope_get_type
+// extern GType gtk_shortcut_scope_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcut_scope_get_type(void) { return gtk_shortcut_scope_get_type ? gtk_shortcut_scope_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcut_type_get_type
+// extern GType gtk_shortcut_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcut_type_get_type(void) { return gtk_shortcut_type_get_type ? gtk_shortcut_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_size_group_mode_get_type
+// extern GType gtk_size_group_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_size_group_mode_get_type(void) { return gtk_size_group_mode_get_type ? gtk_size_group_mode_get_type() : (GType)NULL; };
-// #pragma weak gtk_size_request_mode_get_type
+// extern GType gtk_size_request_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_size_request_mode_get_type(void) { return gtk_size_request_mode_get_type ? gtk_size_request_mode_get_type() : (GType)NULL; };
-// #pragma weak gtk_sort_type_get_type
+// extern GType gtk_sort_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_sort_type_get_type(void) { return gtk_sort_type_get_type ? gtk_sort_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_sorter_change_get_type
+// extern GType gtk_sorter_change_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_sorter_change_get_type(void) { return gtk_sorter_change_get_type ? gtk_sorter_change_get_type() : (GType)NULL; };
-// #pragma weak gtk_sorter_order_get_type
+// extern GType gtk_sorter_order_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_sorter_order_get_type(void) { return gtk_sorter_order_get_type ? gtk_sorter_order_get_type() : (GType)NULL; };
-// #pragma weak gtk_spin_button_update_policy_get_type
+// extern GType gtk_spin_button_update_policy_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_spin_button_update_policy_get_type(void) { return gtk_spin_button_update_policy_get_type ? gtk_spin_button_update_policy_get_type() : (GType)NULL; };
-// #pragma weak gtk_spin_type_get_type
+// extern GType gtk_spin_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_spin_type_get_type(void) { return gtk_spin_type_get_type ? gtk_spin_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_stack_transition_type_get_type
+// extern GType gtk_stack_transition_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_stack_transition_type_get_type(void) { return gtk_stack_transition_type_get_type ? gtk_stack_transition_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_string_filter_match_mode_get_type
+// extern GType gtk_string_filter_match_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_string_filter_match_mode_get_type(void) { return gtk_string_filter_match_mode_get_type ? gtk_string_filter_match_mode_get_type() : (GType)NULL; };
-// #pragma weak gtk_symbolic_color_get_type
+// extern GType gtk_symbolic_color_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_symbolic_color_get_type(void) { return gtk_symbolic_color_get_type ? gtk_symbolic_color_get_type() : (GType)NULL; };
-// #pragma weak gtk_system_setting_get_type
+// extern GType gtk_system_setting_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_system_setting_get_type(void) { return gtk_system_setting_get_type ? gtk_system_setting_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_direction_get_type
+// extern GType gtk_text_direction_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_direction_get_type(void) { return gtk_text_direction_get_type ? gtk_text_direction_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_extend_selection_get_type
+// extern GType gtk_text_extend_selection_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_extend_selection_get_type(void) { return gtk_text_extend_selection_get_type ? gtk_text_extend_selection_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_view_layer_get_type
+// extern GType gtk_text_view_layer_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_view_layer_get_type(void) { return gtk_text_view_layer_get_type ? gtk_text_view_layer_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_window_type_get_type
+// extern GType gtk_text_window_type_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_window_type_get_type(void) { return gtk_text_window_type_get_type ? gtk_text_window_type_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_view_column_sizing_get_type
+// extern GType gtk_tree_view_column_sizing_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_view_column_sizing_get_type(void) { return gtk_tree_view_column_sizing_get_type ? gtk_tree_view_column_sizing_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_view_drop_position_get_type
+// extern GType gtk_tree_view_drop_position_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_view_drop_position_get_type(void) { return gtk_tree_view_drop_position_get_type ? gtk_tree_view_drop_position_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_view_grid_lines_get_type
+// extern GType gtk_tree_view_grid_lines_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_view_grid_lines_get_type(void) { return gtk_tree_view_grid_lines_get_type ? gtk_tree_view_grid_lines_get_type() : (GType)NULL; };
-// #pragma weak gtk_unit_get_type
+// extern GType gtk_unit_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_unit_get_type(void) { return gtk_unit_get_type ? gtk_unit_get_type() : (GType)NULL; };
-// #pragma weak gtk_wrap_mode_get_type
+// extern GType gtk_wrap_mode_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_wrap_mode_get_type(void) { return gtk_wrap_mode_get_type ? gtk_wrap_mode_get_type() : (GType)NULL; };
-// #pragma weak gtk_application_inhibit_flags_get_type
+// extern GType gtk_application_inhibit_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_application_inhibit_flags_get_type(void) { return gtk_application_inhibit_flags_get_type ? gtk_application_inhibit_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_builder_closure_flags_get_type
+// extern GType gtk_builder_closure_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_builder_closure_flags_get_type(void) { return gtk_builder_closure_flags_get_type ? gtk_builder_closure_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_state_get_type
+// extern GType gtk_cell_renderer_state_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_state_get_type(void) { return gtk_cell_renderer_state_get_type ? gtk_cell_renderer_state_get_type() : (GType)NULL; };
-// #pragma weak gtk_debug_flags_get_type
+// extern GType gtk_debug_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_debug_flags_get_type(void) { return gtk_debug_flags_get_type ? gtk_debug_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_dialog_flags_get_type
+// extern GType gtk_dialog_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_dialog_flags_get_type(void) { return gtk_dialog_flags_get_type ? gtk_dialog_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_event_controller_scroll_flags_get_type
+// extern GType gtk_event_controller_scroll_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_event_controller_scroll_flags_get_type(void) { return gtk_event_controller_scroll_flags_get_type ? gtk_event_controller_scroll_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_font_chooser_level_get_type
+// extern GType gtk_font_chooser_level_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_font_chooser_level_get_type(void) { return gtk_font_chooser_level_get_type ? gtk_font_chooser_level_get_type() : (GType)NULL; };
-// #pragma weak gtk_icon_lookup_flags_get_type
+// extern GType gtk_icon_lookup_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_icon_lookup_flags_get_type(void) { return gtk_icon_lookup_flags_get_type ? gtk_icon_lookup_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_input_hints_get_type
+// extern GType gtk_input_hints_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_input_hints_get_type(void) { return gtk_input_hints_get_type ? gtk_input_hints_get_type() : (GType)NULL; };
-// #pragma weak gtk_list_scroll_flags_get_type
+// extern GType gtk_list_scroll_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_list_scroll_flags_get_type(void) { return gtk_list_scroll_flags_get_type ? gtk_list_scroll_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_pick_flags_get_type
+// extern GType gtk_pick_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_pick_flags_get_type(void) { return gtk_pick_flags_get_type ? gtk_pick_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_popover_menu_flags_get_type
+// extern GType gtk_popover_menu_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_popover_menu_flags_get_type(void) { return gtk_popover_menu_flags_get_type ? gtk_popover_menu_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcut_action_flags_get_type
+// extern GType gtk_shortcut_action_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcut_action_flags_get_type(void) { return gtk_shortcut_action_flags_get_type ? gtk_shortcut_action_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_state_flags_get_type
+// extern GType gtk_state_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_state_flags_get_type(void) { return gtk_state_flags_get_type ? gtk_state_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_style_context_print_flags_get_type
+// extern GType gtk_style_context_print_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_style_context_print_flags_get_type(void) { return gtk_style_context_print_flags_get_type ? gtk_style_context_print_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_search_flags_get_type
+// extern GType gtk_text_search_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_search_flags_get_type(void) { return gtk_text_search_flags_get_type ? gtk_text_search_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_model_flags_get_type
+// extern GType gtk_tree_model_flags_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_model_flags_get_type(void) { return gtk_tree_model_flags_get_type ? gtk_tree_model_flags_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_get_type
+// extern GType gtk_accessible_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_get_type(void) { return gtk_accessible_get_type ? gtk_accessible_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_range_get_type
+// extern GType gtk_accessible_range_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_range_get_type(void) { return gtk_accessible_range_get_type ? gtk_accessible_range_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_text_get_type
+// extern GType gtk_accessible_text_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_text_get_type(void) { return gtk_accessible_text_get_type ? gtk_accessible_text_get_type() : (GType)NULL; };
-// #pragma weak gtk_actionable_get_type
+// extern GType gtk_actionable_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_actionable_get_type(void) { return gtk_actionable_get_type ? gtk_actionable_get_type() : (GType)NULL; };
-// #pragma weak gtk_app_chooser_get_type
+// extern GType gtk_app_chooser_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_app_chooser_get_type(void) { return gtk_app_chooser_get_type ? gtk_app_chooser_get_type() : (GType)NULL; };
-// #pragma weak gtk_buildable_get_type
+// extern GType gtk_buildable_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_buildable_get_type(void) { return gtk_buildable_get_type ? gtk_buildable_get_type() : (GType)NULL; };
-// #pragma weak gtk_builder_scope_get_type
+// extern GType gtk_builder_scope_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_builder_scope_get_type(void) { return gtk_builder_scope_get_type ? gtk_builder_scope_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_editable_get_type
+// extern GType gtk_cell_editable_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_editable_get_type(void) { return gtk_cell_editable_get_type ? gtk_cell_editable_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_layout_get_type
+// extern GType gtk_cell_layout_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_layout_get_type(void) { return gtk_cell_layout_get_type ? gtk_cell_layout_get_type() : (GType)NULL; };
-// #pragma weak gtk_color_chooser_get_type
+// extern GType gtk_color_chooser_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_color_chooser_get_type(void) { return gtk_color_chooser_get_type ? gtk_color_chooser_get_type() : (GType)NULL; };
-// #pragma weak gtk_constraint_target_get_type
+// extern GType gtk_constraint_target_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_constraint_target_get_type(void) { return gtk_constraint_target_get_type ? gtk_constraint_target_get_type() : (GType)NULL; };
-// #pragma weak gtk_editable_get_type
+// extern GType gtk_editable_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_editable_get_type(void) { return gtk_editable_get_type ? gtk_editable_get_type() : (GType)NULL; };
-// #pragma weak gtk_file_chooser_get_type
+// extern GType gtk_file_chooser_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_file_chooser_get_type(void) { return gtk_file_chooser_get_type ? gtk_file_chooser_get_type() : (GType)NULL; };
-// #pragma weak gtk_font_chooser_get_type
+// extern GType gtk_font_chooser_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_font_chooser_get_type(void) { return gtk_font_chooser_get_type ? gtk_font_chooser_get_type() : (GType)NULL; };
-// #pragma weak gtk_native_get_type
+// extern GType gtk_native_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_native_get_type(void) { return gtk_native_get_type ? gtk_native_get_type() : (GType)NULL; };
-// #pragma weak gtk_orientable_get_type
+// extern GType gtk_orientable_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_orientable_get_type(void) { return gtk_orientable_get_type ? gtk_orientable_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_operation_preview_get_type
+// extern GType gtk_print_operation_preview_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_operation_preview_get_type(void) { return gtk_print_operation_preview_get_type ? gtk_print_operation_preview_get_type() : (GType)NULL; };
-// #pragma weak gtk_root_get_type
+// extern GType gtk_root_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_root_get_type(void) { return gtk_root_get_type ? gtk_root_get_type() : (GType)NULL; };
-// #pragma weak gtk_scrollable_get_type
+// extern GType gtk_scrollable_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_scrollable_get_type(void) { return gtk_scrollable_get_type ? gtk_scrollable_get_type() : (GType)NULL; };
-// #pragma weak gtk_section_model_get_type
+// extern GType gtk_section_model_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_section_model_get_type(void) { return gtk_section_model_get_type ? gtk_section_model_get_type() : (GType)NULL; };
-// #pragma weak gtk_selection_model_get_type
+// extern GType gtk_selection_model_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_selection_model_get_type(void) { return gtk_selection_model_get_type ? gtk_selection_model_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcut_manager_get_type
+// extern GType gtk_shortcut_manager_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcut_manager_get_type(void) { return gtk_shortcut_manager_get_type ? gtk_shortcut_manager_get_type() : (GType)NULL; };
-// #pragma weak gtk_style_provider_get_type
+// extern GType gtk_style_provider_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_style_provider_get_type(void) { return gtk_style_provider_get_type ? gtk_style_provider_get_type() : (GType)NULL; };
-// #pragma weak gtk_symbolic_paintable_get_type
+// extern GType gtk_symbolic_paintable_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_symbolic_paintable_get_type(void) { return gtk_symbolic_paintable_get_type ? gtk_symbolic_paintable_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_drag_dest_get_type
+// extern GType gtk_tree_drag_dest_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_drag_dest_get_type(void) { return gtk_tree_drag_dest_get_type ? gtk_tree_drag_dest_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_drag_source_get_type
+// extern GType gtk_tree_drag_source_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_drag_source_get_type(void) { return gtk_tree_drag_source_get_type ? gtk_tree_drag_source_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_model_get_type
+// extern GType gtk_tree_model_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_model_get_type(void) { return gtk_tree_model_get_type ? gtk_tree_model_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_sortable_get_type
+// extern GType gtk_tree_sortable_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_sortable_get_type(void) { return gtk_tree_sortable_get_type ? gtk_tree_sortable_get_type() : (GType)NULL; };
-// #pragma weak gtk_at_context_get_type
+// extern GType gtk_at_context_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_at_context_get_type(void) { return gtk_at_context_get_type ? gtk_at_context_get_type() : (GType)NULL; };
-// #pragma weak gtk_about_dialog_get_type
+// extern GType gtk_about_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_about_dialog_get_type(void) { return gtk_about_dialog_get_type ? gtk_about_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_action_bar_get_type
+// extern GType gtk_action_bar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_action_bar_get_type(void) { return gtk_action_bar_get_type ? gtk_action_bar_get_type() : (GType)NULL; };
-// #pragma weak gtk_activate_action_get_type
+// extern GType gtk_activate_action_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_activate_action_get_type(void) { return gtk_activate_action_get_type ? gtk_activate_action_get_type() : (GType)NULL; };
-// #pragma weak gtk_adjustment_get_type
+// extern GType gtk_adjustment_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_adjustment_get_type(void) { return gtk_adjustment_get_type ? gtk_adjustment_get_type() : (GType)NULL; };
-// #pragma weak gtk_alert_dialog_get_type
+// extern GType gtk_alert_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_alert_dialog_get_type(void) { return gtk_alert_dialog_get_type ? gtk_alert_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_alternative_trigger_get_type
+// extern GType gtk_alternative_trigger_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_alternative_trigger_get_type(void) { return gtk_alternative_trigger_get_type ? gtk_alternative_trigger_get_type() : (GType)NULL; };
-// #pragma weak gtk_any_filter_get_type
+// extern GType gtk_any_filter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_any_filter_get_type(void) { return gtk_any_filter_get_type ? gtk_any_filter_get_type() : (GType)NULL; };
-// #pragma weak gtk_app_chooser_button_get_type
+// extern GType gtk_app_chooser_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_app_chooser_button_get_type(void) { return gtk_app_chooser_button_get_type ? gtk_app_chooser_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_app_chooser_dialog_get_type
+// extern GType gtk_app_chooser_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_app_chooser_dialog_get_type(void) { return gtk_app_chooser_dialog_get_type ? gtk_app_chooser_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_app_chooser_widget_get_type
+// extern GType gtk_app_chooser_widget_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_app_chooser_widget_get_type(void) { return gtk_app_chooser_widget_get_type ? gtk_app_chooser_widget_get_type() : (GType)NULL; };
-// #pragma weak gtk_application_get_type
+// extern GType gtk_application_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_application_get_type(void) { return gtk_application_get_type ? gtk_application_get_type() : (GType)NULL; };
-// #pragma weak gtk_application_window_get_type
+// extern GType gtk_application_window_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_application_window_get_type(void) { return gtk_application_window_get_type ? gtk_application_window_get_type() : (GType)NULL; };
-// #pragma weak gtk_aspect_frame_get_type
+// extern GType gtk_aspect_frame_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_aspect_frame_get_type(void) { return gtk_aspect_frame_get_type ? gtk_aspect_frame_get_type() : (GType)NULL; };
-// #pragma weak gtk_assistant_get_type
+// extern GType gtk_assistant_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_assistant_get_type(void) { return gtk_assistant_get_type ? gtk_assistant_get_type() : (GType)NULL; };
-// #pragma weak gtk_assistant_page_get_type
+// extern GType gtk_assistant_page_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_assistant_page_get_type(void) { return gtk_assistant_page_get_type ? gtk_assistant_page_get_type() : (GType)NULL; };
-// #pragma weak gtk_bin_layout_get_type
+// extern GType gtk_bin_layout_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_bin_layout_get_type(void) { return gtk_bin_layout_get_type ? gtk_bin_layout_get_type() : (GType)NULL; };
-// #pragma weak gtk_bookmark_list_get_type
+// extern GType gtk_bookmark_list_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_bookmark_list_get_type(void) { return gtk_bookmark_list_get_type ? gtk_bookmark_list_get_type() : (GType)NULL; };
-// #pragma weak gtk_bool_filter_get_type
+// extern GType gtk_bool_filter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_bool_filter_get_type(void) { return gtk_bool_filter_get_type ? gtk_bool_filter_get_type() : (GType)NULL; };
-// #pragma weak gtk_box_get_type
+// extern GType gtk_box_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_box_get_type(void) { return gtk_box_get_type ? gtk_box_get_type() : (GType)NULL; };
-// #pragma weak gtk_box_layout_get_type
+// extern GType gtk_box_layout_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_box_layout_get_type(void) { return gtk_box_layout_get_type ? gtk_box_layout_get_type() : (GType)NULL; };
-// #pragma weak gtk_builder_get_type
+// extern GType gtk_builder_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_builder_get_type(void) { return gtk_builder_get_type ? gtk_builder_get_type() : (GType)NULL; };
-// #pragma weak gtk_builder_cscope_get_type
+// extern GType gtk_builder_cscope_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_builder_cscope_get_type(void) { return gtk_builder_cscope_get_type ? gtk_builder_cscope_get_type() : (GType)NULL; };
-// #pragma weak gtk_builder_list_item_factory_get_type
+// extern GType gtk_builder_list_item_factory_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_builder_list_item_factory_get_type(void) { return gtk_builder_list_item_factory_get_type ? gtk_builder_list_item_factory_get_type() : (GType)NULL; };
-// #pragma weak gtk_button_get_type
+// extern GType gtk_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_button_get_type(void) { return gtk_button_get_type ? gtk_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_cclosure_expression_get_type
+// extern GType gtk_cclosure_expression_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cclosure_expression_get_type(void) { return gtk_cclosure_expression_get_type ? gtk_cclosure_expression_get_type() : (GType)NULL; };
-// #pragma weak gtk_calendar_get_type
+// extern GType gtk_calendar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_calendar_get_type(void) { return gtk_calendar_get_type ? gtk_calendar_get_type() : (GType)NULL; };
-// #pragma weak gtk_callback_action_get_type
+// extern GType gtk_callback_action_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_callback_action_get_type(void) { return gtk_callback_action_get_type ? gtk_callback_action_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_area_get_type
+// extern GType gtk_cell_area_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_area_get_type(void) { return gtk_cell_area_get_type ? gtk_cell_area_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_area_box_get_type
+// extern GType gtk_cell_area_box_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_area_box_get_type(void) { return gtk_cell_area_box_get_type ? gtk_cell_area_box_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_area_context_get_type
+// extern GType gtk_cell_area_context_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_area_context_get_type(void) { return gtk_cell_area_context_get_type ? gtk_cell_area_context_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_get_type
+// extern GType gtk_cell_renderer_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_get_type(void) { return gtk_cell_renderer_get_type ? gtk_cell_renderer_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_accel_get_type
+// extern GType gtk_cell_renderer_accel_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_accel_get_type(void) { return gtk_cell_renderer_accel_get_type ? gtk_cell_renderer_accel_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_combo_get_type
+// extern GType gtk_cell_renderer_combo_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_combo_get_type(void) { return gtk_cell_renderer_combo_get_type ? gtk_cell_renderer_combo_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_pixbuf_get_type
+// extern GType gtk_cell_renderer_pixbuf_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_pixbuf_get_type(void) { return gtk_cell_renderer_pixbuf_get_type ? gtk_cell_renderer_pixbuf_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_progress_get_type
+// extern GType gtk_cell_renderer_progress_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_progress_get_type(void) { return gtk_cell_renderer_progress_get_type ? gtk_cell_renderer_progress_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_spin_get_type
+// extern GType gtk_cell_renderer_spin_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_spin_get_type(void) { return gtk_cell_renderer_spin_get_type ? gtk_cell_renderer_spin_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_spinner_get_type
+// extern GType gtk_cell_renderer_spinner_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_spinner_get_type(void) { return gtk_cell_renderer_spinner_get_type ? gtk_cell_renderer_spinner_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_text_get_type
+// extern GType gtk_cell_renderer_text_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_text_get_type(void) { return gtk_cell_renderer_text_get_type ? gtk_cell_renderer_text_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_renderer_toggle_get_type
+// extern GType gtk_cell_renderer_toggle_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_renderer_toggle_get_type(void) { return gtk_cell_renderer_toggle_get_type ? gtk_cell_renderer_toggle_get_type() : (GType)NULL; };
-// #pragma weak gtk_cell_view_get_type
+// extern GType gtk_cell_view_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_cell_view_get_type(void) { return gtk_cell_view_get_type ? gtk_cell_view_get_type() : (GType)NULL; };
-// #pragma weak gtk_center_box_get_type
+// extern GType gtk_center_box_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_center_box_get_type(void) { return gtk_center_box_get_type ? gtk_center_box_get_type() : (GType)NULL; };
-// #pragma weak gtk_center_layout_get_type
+// extern GType gtk_center_layout_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_center_layout_get_type(void) { return gtk_center_layout_get_type ? gtk_center_layout_get_type() : (GType)NULL; };
-// #pragma weak gtk_check_button_get_type
+// extern GType gtk_check_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_check_button_get_type(void) { return gtk_check_button_get_type ? gtk_check_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_closure_expression_get_type
+// extern GType gtk_closure_expression_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_closure_expression_get_type(void) { return gtk_closure_expression_get_type ? gtk_closure_expression_get_type() : (GType)NULL; };
-// #pragma weak gtk_color_button_get_type
+// extern GType gtk_color_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_color_button_get_type(void) { return gtk_color_button_get_type ? gtk_color_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_color_chooser_dialog_get_type
+// extern GType gtk_color_chooser_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_color_chooser_dialog_get_type(void) { return gtk_color_chooser_dialog_get_type ? gtk_color_chooser_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_color_chooser_widget_get_type
+// extern GType gtk_color_chooser_widget_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_color_chooser_widget_get_type(void) { return gtk_color_chooser_widget_get_type ? gtk_color_chooser_widget_get_type() : (GType)NULL; };
-// #pragma weak gtk_color_dialog_get_type
+// extern GType gtk_color_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_color_dialog_get_type(void) { return gtk_color_dialog_get_type ? gtk_color_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_color_dialog_button_get_type
+// extern GType gtk_color_dialog_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_color_dialog_button_get_type(void) { return gtk_color_dialog_button_get_type ? gtk_color_dialog_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_column_view_get_type
+// extern GType gtk_column_view_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_column_view_get_type(void) { return gtk_column_view_get_type ? gtk_column_view_get_type() : (GType)NULL; };
-// #pragma weak gtk_column_view_cell_get_type
+// extern GType gtk_column_view_cell_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_column_view_cell_get_type(void) { return gtk_column_view_cell_get_type ? gtk_column_view_cell_get_type() : (GType)NULL; };
-// #pragma weak gtk_column_view_column_get_type
+// extern GType gtk_column_view_column_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_column_view_column_get_type(void) { return gtk_column_view_column_get_type ? gtk_column_view_column_get_type() : (GType)NULL; };
-// #pragma weak gtk_column_view_row_get_type
+// extern GType gtk_column_view_row_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_column_view_row_get_type(void) { return gtk_column_view_row_get_type ? gtk_column_view_row_get_type() : (GType)NULL; };
-// #pragma weak gtk_column_view_sorter_get_type
+// extern GType gtk_column_view_sorter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_column_view_sorter_get_type(void) { return gtk_column_view_sorter_get_type ? gtk_column_view_sorter_get_type() : (GType)NULL; };
-// #pragma weak gtk_combo_box_get_type
+// extern GType gtk_combo_box_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_combo_box_get_type(void) { return gtk_combo_box_get_type ? gtk_combo_box_get_type() : (GType)NULL; };
-// #pragma weak gtk_combo_box_text_get_type
+// extern GType gtk_combo_box_text_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_combo_box_text_get_type(void) { return gtk_combo_box_text_get_type ? gtk_combo_box_text_get_type() : (GType)NULL; };
-// #pragma weak gtk_constant_expression_get_type
+// extern GType gtk_constant_expression_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_constant_expression_get_type(void) { return gtk_constant_expression_get_type ? gtk_constant_expression_get_type() : (GType)NULL; };
-// #pragma weak gtk_constraint_get_type
+// extern GType gtk_constraint_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_constraint_get_type(void) { return gtk_constraint_get_type ? gtk_constraint_get_type() : (GType)NULL; };
-// #pragma weak gtk_constraint_guide_get_type
+// extern GType gtk_constraint_guide_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_constraint_guide_get_type(void) { return gtk_constraint_guide_get_type ? gtk_constraint_guide_get_type() : (GType)NULL; };
-// #pragma weak gtk_constraint_layout_get_type
+// extern GType gtk_constraint_layout_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_constraint_layout_get_type(void) { return gtk_constraint_layout_get_type ? gtk_constraint_layout_get_type() : (GType)NULL; };
-// #pragma weak gtk_constraint_layout_child_get_type
+// extern GType gtk_constraint_layout_child_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_constraint_layout_child_get_type(void) { return gtk_constraint_layout_child_get_type ? gtk_constraint_layout_child_get_type() : (GType)NULL; };
-// #pragma weak gtk_css_provider_get_type
+// extern GType gtk_css_provider_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_css_provider_get_type(void) { return gtk_css_provider_get_type ? gtk_css_provider_get_type() : (GType)NULL; };
-// #pragma weak gtk_custom_filter_get_type
+// extern GType gtk_custom_filter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_custom_filter_get_type(void) { return gtk_custom_filter_get_type ? gtk_custom_filter_get_type() : (GType)NULL; };
-// #pragma weak gtk_custom_layout_get_type
+// extern GType gtk_custom_layout_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_custom_layout_get_type(void) { return gtk_custom_layout_get_type ? gtk_custom_layout_get_type() : (GType)NULL; };
-// #pragma weak gtk_custom_sorter_get_type
+// extern GType gtk_custom_sorter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_custom_sorter_get_type(void) { return gtk_custom_sorter_get_type ? gtk_custom_sorter_get_type() : (GType)NULL; };
-// #pragma weak gtk_dialog_get_type
+// extern GType gtk_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_dialog_get_type(void) { return gtk_dialog_get_type ? gtk_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_directory_list_get_type
+// extern GType gtk_directory_list_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_directory_list_get_type(void) { return gtk_directory_list_get_type ? gtk_directory_list_get_type() : (GType)NULL; };
-// #pragma weak gtk_drag_icon_get_type
+// extern GType gtk_drag_icon_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_drag_icon_get_type(void) { return gtk_drag_icon_get_type ? gtk_drag_icon_get_type() : (GType)NULL; };
-// #pragma weak gtk_drag_source_get_type
+// extern GType gtk_drag_source_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_drag_source_get_type(void) { return gtk_drag_source_get_type ? gtk_drag_source_get_type() : (GType)NULL; };
-// #pragma weak gtk_drawing_area_get_type
+// extern GType gtk_drawing_area_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_drawing_area_get_type(void) { return gtk_drawing_area_get_type ? gtk_drawing_area_get_type() : (GType)NULL; };
-// #pragma weak gtk_drop_controller_motion_get_type
+// extern GType gtk_drop_controller_motion_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_drop_controller_motion_get_type(void) { return gtk_drop_controller_motion_get_type ? gtk_drop_controller_motion_get_type() : (GType)NULL; };
-// #pragma weak gtk_drop_down_get_type
+// extern GType gtk_drop_down_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_drop_down_get_type(void) { return gtk_drop_down_get_type ? gtk_drop_down_get_type() : (GType)NULL; };
-// #pragma weak gtk_drop_target_get_type
+// extern GType gtk_drop_target_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_drop_target_get_type(void) { return gtk_drop_target_get_type ? gtk_drop_target_get_type() : (GType)NULL; };
-// #pragma weak gtk_drop_target_async_get_type
+// extern GType gtk_drop_target_async_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_drop_target_async_get_type(void) { return gtk_drop_target_async_get_type ? gtk_drop_target_async_get_type() : (GType)NULL; };
-// #pragma weak gtk_editable_label_get_type
+// extern GType gtk_editable_label_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_editable_label_get_type(void) { return gtk_editable_label_get_type ? gtk_editable_label_get_type() : (GType)NULL; };
-// #pragma weak gtk_emoji_chooser_get_type
+// extern GType gtk_emoji_chooser_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_emoji_chooser_get_type(void) { return gtk_emoji_chooser_get_type ? gtk_emoji_chooser_get_type() : (GType)NULL; };
-// #pragma weak gtk_entry_get_type
+// extern GType gtk_entry_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_entry_get_type(void) { return gtk_entry_get_type ? gtk_entry_get_type() : (GType)NULL; };
-// #pragma weak gtk_entry_buffer_get_type
+// extern GType gtk_entry_buffer_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_entry_buffer_get_type(void) { return gtk_entry_buffer_get_type ? gtk_entry_buffer_get_type() : (GType)NULL; };
-// #pragma weak gtk_entry_completion_get_type
+// extern GType gtk_entry_completion_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_entry_completion_get_type(void) { return gtk_entry_completion_get_type ? gtk_entry_completion_get_type() : (GType)NULL; };
-// #pragma weak gtk_event_controller_get_type
+// extern GType gtk_event_controller_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_event_controller_get_type(void) { return gtk_event_controller_get_type ? gtk_event_controller_get_type() : (GType)NULL; };
-// #pragma weak gtk_event_controller_focus_get_type
+// extern GType gtk_event_controller_focus_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_event_controller_focus_get_type(void) { return gtk_event_controller_focus_get_type ? gtk_event_controller_focus_get_type() : (GType)NULL; };
-// #pragma weak gtk_event_controller_key_get_type
+// extern GType gtk_event_controller_key_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_event_controller_key_get_type(void) { return gtk_event_controller_key_get_type ? gtk_event_controller_key_get_type() : (GType)NULL; };
-// #pragma weak gtk_event_controller_legacy_get_type
+// extern GType gtk_event_controller_legacy_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_event_controller_legacy_get_type(void) { return gtk_event_controller_legacy_get_type ? gtk_event_controller_legacy_get_type() : (GType)NULL; };
-// #pragma weak gtk_event_controller_motion_get_type
+// extern GType gtk_event_controller_motion_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_event_controller_motion_get_type(void) { return gtk_event_controller_motion_get_type ? gtk_event_controller_motion_get_type() : (GType)NULL; };
-// #pragma weak gtk_event_controller_scroll_get_type
+// extern GType gtk_event_controller_scroll_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_event_controller_scroll_get_type(void) { return gtk_event_controller_scroll_get_type ? gtk_event_controller_scroll_get_type() : (GType)NULL; };
-// #pragma weak gtk_every_filter_get_type
+// extern GType gtk_every_filter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_every_filter_get_type(void) { return gtk_every_filter_get_type ? gtk_every_filter_get_type() : (GType)NULL; };
-// #pragma weak gtk_expander_get_type
+// extern GType gtk_expander_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_expander_get_type(void) { return gtk_expander_get_type ? gtk_expander_get_type() : (GType)NULL; };
-// #pragma weak gtk_expression_get_type
+// extern GType gtk_expression_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_expression_get_type(void) { return gtk_expression_get_type ? gtk_expression_get_type() : (GType)NULL; };
-// #pragma weak gtk_file_chooser_dialog_get_type
+// extern GType gtk_file_chooser_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_file_chooser_dialog_get_type(void) { return gtk_file_chooser_dialog_get_type ? gtk_file_chooser_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_file_chooser_native_get_type
+// extern GType gtk_file_chooser_native_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_file_chooser_native_get_type(void) { return gtk_file_chooser_native_get_type ? gtk_file_chooser_native_get_type() : (GType)NULL; };
-// #pragma weak gtk_file_chooser_widget_get_type
+// extern GType gtk_file_chooser_widget_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_file_chooser_widget_get_type(void) { return gtk_file_chooser_widget_get_type ? gtk_file_chooser_widget_get_type() : (GType)NULL; };
-// #pragma weak gtk_file_dialog_get_type
+// extern GType gtk_file_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_file_dialog_get_type(void) { return gtk_file_dialog_get_type ? gtk_file_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_file_filter_get_type
+// extern GType gtk_file_filter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_file_filter_get_type(void) { return gtk_file_filter_get_type ? gtk_file_filter_get_type() : (GType)NULL; };
-// #pragma weak gtk_file_launcher_get_type
+// extern GType gtk_file_launcher_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_file_launcher_get_type(void) { return gtk_file_launcher_get_type ? gtk_file_launcher_get_type() : (GType)NULL; };
-// #pragma weak gtk_filter_get_type
+// extern GType gtk_filter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_filter_get_type(void) { return gtk_filter_get_type ? gtk_filter_get_type() : (GType)NULL; };
-// #pragma weak gtk_filter_list_model_get_type
+// extern GType gtk_filter_list_model_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_filter_list_model_get_type(void) { return gtk_filter_list_model_get_type ? gtk_filter_list_model_get_type() : (GType)NULL; };
-// #pragma weak gtk_fixed_get_type
+// extern GType gtk_fixed_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_fixed_get_type(void) { return gtk_fixed_get_type ? gtk_fixed_get_type() : (GType)NULL; };
-// #pragma weak gtk_fixed_layout_get_type
+// extern GType gtk_fixed_layout_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_fixed_layout_get_type(void) { return gtk_fixed_layout_get_type ? gtk_fixed_layout_get_type() : (GType)NULL; };
-// #pragma weak gtk_fixed_layout_child_get_type
+// extern GType gtk_fixed_layout_child_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_fixed_layout_child_get_type(void) { return gtk_fixed_layout_child_get_type ? gtk_fixed_layout_child_get_type() : (GType)NULL; };
-// #pragma weak gtk_flatten_list_model_get_type
+// extern GType gtk_flatten_list_model_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_flatten_list_model_get_type(void) { return gtk_flatten_list_model_get_type ? gtk_flatten_list_model_get_type() : (GType)NULL; };
-// #pragma weak gtk_flow_box_get_type
+// extern GType gtk_flow_box_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_flow_box_get_type(void) { return gtk_flow_box_get_type ? gtk_flow_box_get_type() : (GType)NULL; };
-// #pragma weak gtk_flow_box_child_get_type
+// extern GType gtk_flow_box_child_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_flow_box_child_get_type(void) { return gtk_flow_box_child_get_type ? gtk_flow_box_child_get_type() : (GType)NULL; };
-// #pragma weak gtk_font_button_get_type
+// extern GType gtk_font_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_font_button_get_type(void) { return gtk_font_button_get_type ? gtk_font_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_font_chooser_dialog_get_type
+// extern GType gtk_font_chooser_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_font_chooser_dialog_get_type(void) { return gtk_font_chooser_dialog_get_type ? gtk_font_chooser_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_font_chooser_widget_get_type
+// extern GType gtk_font_chooser_widget_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_font_chooser_widget_get_type(void) { return gtk_font_chooser_widget_get_type ? gtk_font_chooser_widget_get_type() : (GType)NULL; };
-// #pragma weak gtk_font_dialog_get_type
+// extern GType gtk_font_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_font_dialog_get_type(void) { return gtk_font_dialog_get_type ? gtk_font_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_font_dialog_button_get_type
+// extern GType gtk_font_dialog_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_font_dialog_button_get_type(void) { return gtk_font_dialog_button_get_type ? gtk_font_dialog_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_frame_get_type
+// extern GType gtk_frame_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_frame_get_type(void) { return gtk_frame_get_type ? gtk_frame_get_type() : (GType)NULL; };
-// #pragma weak gtk_gl_area_get_type
+// extern GType gtk_gl_area_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gl_area_get_type(void) { return gtk_gl_area_get_type ? gtk_gl_area_get_type() : (GType)NULL; };
-// #pragma weak gtk_gesture_get_type
+// extern GType gtk_gesture_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gesture_get_type(void) { return gtk_gesture_get_type ? gtk_gesture_get_type() : (GType)NULL; };
-// #pragma weak gtk_gesture_click_get_type
+// extern GType gtk_gesture_click_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gesture_click_get_type(void) { return gtk_gesture_click_get_type ? gtk_gesture_click_get_type() : (GType)NULL; };
-// #pragma weak gtk_gesture_drag_get_type
+// extern GType gtk_gesture_drag_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gesture_drag_get_type(void) { return gtk_gesture_drag_get_type ? gtk_gesture_drag_get_type() : (GType)NULL; };
-// #pragma weak gtk_gesture_long_press_get_type
+// extern GType gtk_gesture_long_press_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gesture_long_press_get_type(void) { return gtk_gesture_long_press_get_type ? gtk_gesture_long_press_get_type() : (GType)NULL; };
-// #pragma weak gtk_gesture_pan_get_type
+// extern GType gtk_gesture_pan_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gesture_pan_get_type(void) { return gtk_gesture_pan_get_type ? gtk_gesture_pan_get_type() : (GType)NULL; };
-// #pragma weak gtk_gesture_rotate_get_type
+// extern GType gtk_gesture_rotate_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gesture_rotate_get_type(void) { return gtk_gesture_rotate_get_type ? gtk_gesture_rotate_get_type() : (GType)NULL; };
-// #pragma weak gtk_gesture_single_get_type
+// extern GType gtk_gesture_single_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gesture_single_get_type(void) { return gtk_gesture_single_get_type ? gtk_gesture_single_get_type() : (GType)NULL; };
-// #pragma weak gtk_gesture_stylus_get_type
+// extern GType gtk_gesture_stylus_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gesture_stylus_get_type(void) { return gtk_gesture_stylus_get_type ? gtk_gesture_stylus_get_type() : (GType)NULL; };
-// #pragma weak gtk_gesture_swipe_get_type
+// extern GType gtk_gesture_swipe_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gesture_swipe_get_type(void) { return gtk_gesture_swipe_get_type ? gtk_gesture_swipe_get_type() : (GType)NULL; };
-// #pragma weak gtk_gesture_zoom_get_type
+// extern GType gtk_gesture_zoom_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_gesture_zoom_get_type(void) { return gtk_gesture_zoom_get_type ? gtk_gesture_zoom_get_type() : (GType)NULL; };
-// #pragma weak gtk_graphics_offload_get_type
+// extern GType gtk_graphics_offload_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_graphics_offload_get_type(void) { return gtk_graphics_offload_get_type ? gtk_graphics_offload_get_type() : (GType)NULL; };
-// #pragma weak gtk_grid_get_type
+// extern GType gtk_grid_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_grid_get_type(void) { return gtk_grid_get_type ? gtk_grid_get_type() : (GType)NULL; };
-// #pragma weak gtk_grid_layout_get_type
+// extern GType gtk_grid_layout_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_grid_layout_get_type(void) { return gtk_grid_layout_get_type ? gtk_grid_layout_get_type() : (GType)NULL; };
-// #pragma weak gtk_grid_layout_child_get_type
+// extern GType gtk_grid_layout_child_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_grid_layout_child_get_type(void) { return gtk_grid_layout_child_get_type ? gtk_grid_layout_child_get_type() : (GType)NULL; };
-// #pragma weak gtk_grid_view_get_type
+// extern GType gtk_grid_view_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_grid_view_get_type(void) { return gtk_grid_view_get_type ? gtk_grid_view_get_type() : (GType)NULL; };
-// #pragma weak gtk_header_bar_get_type
+// extern GType gtk_header_bar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_header_bar_get_type(void) { return gtk_header_bar_get_type ? gtk_header_bar_get_type() : (GType)NULL; };
-// #pragma weak gtk_im_context_get_type
+// extern GType gtk_im_context_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_im_context_get_type(void) { return gtk_im_context_get_type ? gtk_im_context_get_type() : (GType)NULL; };
-// #pragma weak gtk_im_context_simple_get_type
+// extern GType gtk_im_context_simple_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_im_context_simple_get_type(void) { return gtk_im_context_simple_get_type ? gtk_im_context_simple_get_type() : (GType)NULL; };
-// #pragma weak gtk_im_multicontext_get_type
+// extern GType gtk_im_multicontext_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_im_multicontext_get_type(void) { return gtk_im_multicontext_get_type ? gtk_im_multicontext_get_type() : (GType)NULL; };
-// #pragma weak gtk_icon_paintable_get_type
+// extern GType gtk_icon_paintable_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_icon_paintable_get_type(void) { return gtk_icon_paintable_get_type ? gtk_icon_paintable_get_type() : (GType)NULL; };
-// #pragma weak gtk_icon_theme_get_type
+// extern GType gtk_icon_theme_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_icon_theme_get_type(void) { return gtk_icon_theme_get_type ? gtk_icon_theme_get_type() : (GType)NULL; };
-// #pragma weak gtk_icon_view_get_type
+// extern GType gtk_icon_view_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_icon_view_get_type(void) { return gtk_icon_view_get_type ? gtk_icon_view_get_type() : (GType)NULL; };
-// #pragma weak gtk_image_get_type
+// extern GType gtk_image_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_image_get_type(void) { return gtk_image_get_type ? gtk_image_get_type() : (GType)NULL; };
-// #pragma weak gtk_info_bar_get_type
+// extern GType gtk_info_bar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_info_bar_get_type(void) { return gtk_info_bar_get_type ? gtk_info_bar_get_type() : (GType)NULL; };
-// #pragma weak gtk_inscription_get_type
+// extern GType gtk_inscription_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_inscription_get_type(void) { return gtk_inscription_get_type ? gtk_inscription_get_type() : (GType)NULL; };
-// #pragma weak gtk_keyval_trigger_get_type
+// extern GType gtk_keyval_trigger_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_keyval_trigger_get_type(void) { return gtk_keyval_trigger_get_type ? gtk_keyval_trigger_get_type() : (GType)NULL; };
-// #pragma weak gtk_label_get_type
+// extern GType gtk_label_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_label_get_type(void) { return gtk_label_get_type ? gtk_label_get_type() : (GType)NULL; };
-// #pragma weak gtk_layout_child_get_type
+// extern GType gtk_layout_child_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_layout_child_get_type(void) { return gtk_layout_child_get_type ? gtk_layout_child_get_type() : (GType)NULL; };
-// #pragma weak gtk_layout_manager_get_type
+// extern GType gtk_layout_manager_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_layout_manager_get_type(void) { return gtk_layout_manager_get_type ? gtk_layout_manager_get_type() : (GType)NULL; };
-// #pragma weak gtk_level_bar_get_type
+// extern GType gtk_level_bar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_level_bar_get_type(void) { return gtk_level_bar_get_type ? gtk_level_bar_get_type() : (GType)NULL; };
-// #pragma weak gtk_link_button_get_type
+// extern GType gtk_link_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_link_button_get_type(void) { return gtk_link_button_get_type ? gtk_link_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_list_base_get_type
+// extern GType gtk_list_base_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_list_base_get_type(void) { return gtk_list_base_get_type ? gtk_list_base_get_type() : (GType)NULL; };
-// #pragma weak gtk_list_box_get_type
+// extern GType gtk_list_box_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_list_box_get_type(void) { return gtk_list_box_get_type ? gtk_list_box_get_type() : (GType)NULL; };
-// #pragma weak gtk_list_box_row_get_type
+// extern GType gtk_list_box_row_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_list_box_row_get_type(void) { return gtk_list_box_row_get_type ? gtk_list_box_row_get_type() : (GType)NULL; };
-// #pragma weak gtk_list_header_get_type
+// extern GType gtk_list_header_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_list_header_get_type(void) { return gtk_list_header_get_type ? gtk_list_header_get_type() : (GType)NULL; };
-// #pragma weak gtk_list_item_get_type
+// extern GType gtk_list_item_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_list_item_get_type(void) { return gtk_list_item_get_type ? gtk_list_item_get_type() : (GType)NULL; };
-// #pragma weak gtk_list_item_factory_get_type
+// extern GType gtk_list_item_factory_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_list_item_factory_get_type(void) { return gtk_list_item_factory_get_type ? gtk_list_item_factory_get_type() : (GType)NULL; };
-// #pragma weak gtk_list_store_get_type
+// extern GType gtk_list_store_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_list_store_get_type(void) { return gtk_list_store_get_type ? gtk_list_store_get_type() : (GType)NULL; };
-// #pragma weak gtk_list_view_get_type
+// extern GType gtk_list_view_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_list_view_get_type(void) { return gtk_list_view_get_type ? gtk_list_view_get_type() : (GType)NULL; };
-// #pragma weak gtk_lock_button_get_type
+// extern GType gtk_lock_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_lock_button_get_type(void) { return gtk_lock_button_get_type ? gtk_lock_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_map_list_model_get_type
+// extern GType gtk_map_list_model_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_map_list_model_get_type(void) { return gtk_map_list_model_get_type ? gtk_map_list_model_get_type() : (GType)NULL; };
-// #pragma weak gtk_media_controls_get_type
+// extern GType gtk_media_controls_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_media_controls_get_type(void) { return gtk_media_controls_get_type ? gtk_media_controls_get_type() : (GType)NULL; };
-// #pragma weak gtk_media_file_get_type
+// extern GType gtk_media_file_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_media_file_get_type(void) { return gtk_media_file_get_type ? gtk_media_file_get_type() : (GType)NULL; };
-// #pragma weak gtk_media_stream_get_type
+// extern GType gtk_media_stream_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_media_stream_get_type(void) { return gtk_media_stream_get_type ? gtk_media_stream_get_type() : (GType)NULL; };
-// #pragma weak gtk_menu_button_get_type
+// extern GType gtk_menu_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_menu_button_get_type(void) { return gtk_menu_button_get_type ? gtk_menu_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_message_dialog_get_type
+// extern GType gtk_message_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_message_dialog_get_type(void) { return gtk_message_dialog_get_type ? gtk_message_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_mnemonic_action_get_type
+// extern GType gtk_mnemonic_action_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_mnemonic_action_get_type(void) { return gtk_mnemonic_action_get_type ? gtk_mnemonic_action_get_type() : (GType)NULL; };
-// #pragma weak gtk_mnemonic_trigger_get_type
+// extern GType gtk_mnemonic_trigger_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_mnemonic_trigger_get_type(void) { return gtk_mnemonic_trigger_get_type ? gtk_mnemonic_trigger_get_type() : (GType)NULL; };
-// #pragma weak gtk_mount_operation_get_type
+// extern GType gtk_mount_operation_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_mount_operation_get_type(void) { return gtk_mount_operation_get_type ? gtk_mount_operation_get_type() : (GType)NULL; };
-// #pragma weak gtk_multi_filter_get_type
+// extern GType gtk_multi_filter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_multi_filter_get_type(void) { return gtk_multi_filter_get_type ? gtk_multi_filter_get_type() : (GType)NULL; };
-// #pragma weak gtk_multi_selection_get_type
+// extern GType gtk_multi_selection_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_multi_selection_get_type(void) { return gtk_multi_selection_get_type ? gtk_multi_selection_get_type() : (GType)NULL; };
-// #pragma weak gtk_multi_sorter_get_type
+// extern GType gtk_multi_sorter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_multi_sorter_get_type(void) { return gtk_multi_sorter_get_type ? gtk_multi_sorter_get_type() : (GType)NULL; };
-// #pragma weak gtk_named_action_get_type
+// extern GType gtk_named_action_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_named_action_get_type(void) { return gtk_named_action_get_type ? gtk_named_action_get_type() : (GType)NULL; };
-// #pragma weak gtk_native_dialog_get_type
+// extern GType gtk_native_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_native_dialog_get_type(void) { return gtk_native_dialog_get_type ? gtk_native_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_never_trigger_get_type
+// extern GType gtk_never_trigger_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_never_trigger_get_type(void) { return gtk_never_trigger_get_type ? gtk_never_trigger_get_type() : (GType)NULL; };
-// #pragma weak gtk_no_selection_get_type
+// extern GType gtk_no_selection_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_no_selection_get_type(void) { return gtk_no_selection_get_type ? gtk_no_selection_get_type() : (GType)NULL; };
-// #pragma weak gtk_notebook_get_type
+// extern GType gtk_notebook_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_notebook_get_type(void) { return gtk_notebook_get_type ? gtk_notebook_get_type() : (GType)NULL; };
-// #pragma weak gtk_notebook_page_get_type
+// extern GType gtk_notebook_page_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_notebook_page_get_type(void) { return gtk_notebook_page_get_type ? gtk_notebook_page_get_type() : (GType)NULL; };
-// #pragma weak gtk_nothing_action_get_type
+// extern GType gtk_nothing_action_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_nothing_action_get_type(void) { return gtk_nothing_action_get_type ? gtk_nothing_action_get_type() : (GType)NULL; };
-// #pragma weak gtk_numeric_sorter_get_type
+// extern GType gtk_numeric_sorter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_numeric_sorter_get_type(void) { return gtk_numeric_sorter_get_type ? gtk_numeric_sorter_get_type() : (GType)NULL; };
-// #pragma weak gtk_object_expression_get_type
+// extern GType gtk_object_expression_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_object_expression_get_type(void) { return gtk_object_expression_get_type ? gtk_object_expression_get_type() : (GType)NULL; };
-// #pragma weak gtk_overlay_get_type
+// extern GType gtk_overlay_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_overlay_get_type(void) { return gtk_overlay_get_type ? gtk_overlay_get_type() : (GType)NULL; };
-// #pragma weak gtk_overlay_layout_get_type
+// extern GType gtk_overlay_layout_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_overlay_layout_get_type(void) { return gtk_overlay_layout_get_type ? gtk_overlay_layout_get_type() : (GType)NULL; };
-// #pragma weak gtk_overlay_layout_child_get_type
+// extern GType gtk_overlay_layout_child_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_overlay_layout_child_get_type(void) { return gtk_overlay_layout_child_get_type ? gtk_overlay_layout_child_get_type() : (GType)NULL; };
-// #pragma weak gtk_pad_controller_get_type
+// extern GType gtk_pad_controller_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_pad_controller_get_type(void) { return gtk_pad_controller_get_type ? gtk_pad_controller_get_type() : (GType)NULL; };
-// #pragma weak gtk_page_setup_get_type
+// extern GType gtk_page_setup_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_page_setup_get_type(void) { return gtk_page_setup_get_type ? gtk_page_setup_get_type() : (GType)NULL; };
-// #pragma weak gtk_paned_get_type
+// extern GType gtk_paned_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_paned_get_type(void) { return gtk_paned_get_type ? gtk_paned_get_type() : (GType)NULL; };
-// #pragma weak gtk_password_entry_get_type
+// extern GType gtk_password_entry_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_password_entry_get_type(void) { return gtk_password_entry_get_type ? gtk_password_entry_get_type() : (GType)NULL; };
-// #pragma weak gtk_password_entry_buffer_get_type
+// extern GType gtk_password_entry_buffer_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_password_entry_buffer_get_type(void) { return gtk_password_entry_buffer_get_type ? gtk_password_entry_buffer_get_type() : (GType)NULL; };
-// #pragma weak gtk_picture_get_type
+// extern GType gtk_picture_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_picture_get_type(void) { return gtk_picture_get_type ? gtk_picture_get_type() : (GType)NULL; };
-// #pragma weak gtk_popover_get_type
+// extern GType gtk_popover_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_popover_get_type(void) { return gtk_popover_get_type ? gtk_popover_get_type() : (GType)NULL; };
-// #pragma weak gtk_popover_menu_get_type
+// extern GType gtk_popover_menu_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_popover_menu_get_type(void) { return gtk_popover_menu_get_type ? gtk_popover_menu_get_type() : (GType)NULL; };
-// #pragma weak gtk_popover_menu_bar_get_type
+// extern GType gtk_popover_menu_bar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_popover_menu_bar_get_type(void) { return gtk_popover_menu_bar_get_type ? gtk_popover_menu_bar_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_context_get_type
+// extern GType gtk_print_context_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_context_get_type(void) { return gtk_print_context_get_type ? gtk_print_context_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_dialog_get_type
+// extern GType gtk_print_dialog_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_dialog_get_type(void) { return gtk_print_dialog_get_type ? gtk_print_dialog_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_operation_get_type
+// extern GType gtk_print_operation_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_operation_get_type(void) { return gtk_print_operation_get_type ? gtk_print_operation_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_settings_get_type
+// extern GType gtk_print_settings_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_settings_get_type(void) { return gtk_print_settings_get_type ? gtk_print_settings_get_type() : (GType)NULL; };
-// #pragma weak gtk_progress_bar_get_type
+// extern GType gtk_progress_bar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_progress_bar_get_type(void) { return gtk_progress_bar_get_type ? gtk_progress_bar_get_type() : (GType)NULL; };
-// #pragma weak gtk_property_expression_get_type
+// extern GType gtk_property_expression_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_property_expression_get_type(void) { return gtk_property_expression_get_type ? gtk_property_expression_get_type() : (GType)NULL; };
-// #pragma weak gtk_range_get_type
+// extern GType gtk_range_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_range_get_type(void) { return gtk_range_get_type ? gtk_range_get_type() : (GType)NULL; };
-// #pragma weak gtk_recent_manager_get_type
+// extern GType gtk_recent_manager_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_recent_manager_get_type(void) { return gtk_recent_manager_get_type ? gtk_recent_manager_get_type() : (GType)NULL; };
-// #pragma weak gtk_revealer_get_type
+// extern GType gtk_revealer_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_revealer_get_type(void) { return gtk_revealer_get_type ? gtk_revealer_get_type() : (GType)NULL; };
-// #pragma weak gtk_scale_get_type
+// extern GType gtk_scale_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_scale_get_type(void) { return gtk_scale_get_type ? gtk_scale_get_type() : (GType)NULL; };
-// #pragma weak gtk_scale_button_get_type
+// extern GType gtk_scale_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_scale_button_get_type(void) { return gtk_scale_button_get_type ? gtk_scale_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_scrollbar_get_type
+// extern GType gtk_scrollbar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_scrollbar_get_type(void) { return gtk_scrollbar_get_type ? gtk_scrollbar_get_type() : (GType)NULL; };
-// #pragma weak gtk_scrolled_window_get_type
+// extern GType gtk_scrolled_window_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_scrolled_window_get_type(void) { return gtk_scrolled_window_get_type ? gtk_scrolled_window_get_type() : (GType)NULL; };
-// #pragma weak gtk_search_bar_get_type
+// extern GType gtk_search_bar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_search_bar_get_type(void) { return gtk_search_bar_get_type ? gtk_search_bar_get_type() : (GType)NULL; };
-// #pragma weak gtk_search_entry_get_type
+// extern GType gtk_search_entry_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_search_entry_get_type(void) { return gtk_search_entry_get_type ? gtk_search_entry_get_type() : (GType)NULL; };
-// #pragma weak gtk_selection_filter_model_get_type
+// extern GType gtk_selection_filter_model_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_selection_filter_model_get_type(void) { return gtk_selection_filter_model_get_type ? gtk_selection_filter_model_get_type() : (GType)NULL; };
-// #pragma weak gtk_separator_get_type
+// extern GType gtk_separator_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_separator_get_type(void) { return gtk_separator_get_type ? gtk_separator_get_type() : (GType)NULL; };
-// #pragma weak gtk_settings_get_type
+// extern GType gtk_settings_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_settings_get_type(void) { return gtk_settings_get_type ? gtk_settings_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcut_get_type
+// extern GType gtk_shortcut_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcut_get_type(void) { return gtk_shortcut_get_type ? gtk_shortcut_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcut_action_get_type
+// extern GType gtk_shortcut_action_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcut_action_get_type(void) { return gtk_shortcut_action_get_type ? gtk_shortcut_action_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcut_controller_get_type
+// extern GType gtk_shortcut_controller_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcut_controller_get_type(void) { return gtk_shortcut_controller_get_type ? gtk_shortcut_controller_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcut_label_get_type
+// extern GType gtk_shortcut_label_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcut_label_get_type(void) { return gtk_shortcut_label_get_type ? gtk_shortcut_label_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcut_trigger_get_type
+// extern GType gtk_shortcut_trigger_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcut_trigger_get_type(void) { return gtk_shortcut_trigger_get_type ? gtk_shortcut_trigger_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcuts_group_get_type
+// extern GType gtk_shortcuts_group_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcuts_group_get_type(void) { return gtk_shortcuts_group_get_type ? gtk_shortcuts_group_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcuts_section_get_type
+// extern GType gtk_shortcuts_section_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcuts_section_get_type(void) { return gtk_shortcuts_section_get_type ? gtk_shortcuts_section_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcuts_shortcut_get_type
+// extern GType gtk_shortcuts_shortcut_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcuts_shortcut_get_type(void) { return gtk_shortcuts_shortcut_get_type ? gtk_shortcuts_shortcut_get_type() : (GType)NULL; };
-// #pragma weak gtk_shortcuts_window_get_type
+// extern GType gtk_shortcuts_window_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_shortcuts_window_get_type(void) { return gtk_shortcuts_window_get_type ? gtk_shortcuts_window_get_type() : (GType)NULL; };
-// #pragma weak gtk_signal_action_get_type
+// extern GType gtk_signal_action_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_signal_action_get_type(void) { return gtk_signal_action_get_type ? gtk_signal_action_get_type() : (GType)NULL; };
-// #pragma weak gtk_signal_list_item_factory_get_type
+// extern GType gtk_signal_list_item_factory_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_signal_list_item_factory_get_type(void) { return gtk_signal_list_item_factory_get_type ? gtk_signal_list_item_factory_get_type() : (GType)NULL; };
-// #pragma weak gtk_single_selection_get_type
+// extern GType gtk_single_selection_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_single_selection_get_type(void) { return gtk_single_selection_get_type ? gtk_single_selection_get_type() : (GType)NULL; };
-// #pragma weak gtk_size_group_get_type
+// extern GType gtk_size_group_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_size_group_get_type(void) { return gtk_size_group_get_type ? gtk_size_group_get_type() : (GType)NULL; };
-// #pragma weak gtk_slice_list_model_get_type
+// extern GType gtk_slice_list_model_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_slice_list_model_get_type(void) { return gtk_slice_list_model_get_type ? gtk_slice_list_model_get_type() : (GType)NULL; };
-// #pragma weak gtk_snapshot_get_type
+// extern GType gtk_snapshot_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_snapshot_get_type(void) { return gtk_snapshot_get_type ? gtk_snapshot_get_type() : (GType)NULL; };
-// #pragma weak gtk_sort_list_model_get_type
+// extern GType gtk_sort_list_model_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_sort_list_model_get_type(void) { return gtk_sort_list_model_get_type ? gtk_sort_list_model_get_type() : (GType)NULL; };
-// #pragma weak gtk_sorter_get_type
+// extern GType gtk_sorter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_sorter_get_type(void) { return gtk_sorter_get_type ? gtk_sorter_get_type() : (GType)NULL; };
-// #pragma weak gtk_spin_button_get_type
+// extern GType gtk_spin_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_spin_button_get_type(void) { return gtk_spin_button_get_type ? gtk_spin_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_spinner_get_type
+// extern GType gtk_spinner_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_spinner_get_type(void) { return gtk_spinner_get_type ? gtk_spinner_get_type() : (GType)NULL; };
-// #pragma weak gtk_stack_get_type
+// extern GType gtk_stack_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_stack_get_type(void) { return gtk_stack_get_type ? gtk_stack_get_type() : (GType)NULL; };
-// #pragma weak gtk_stack_page_get_type
+// extern GType gtk_stack_page_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_stack_page_get_type(void) { return gtk_stack_page_get_type ? gtk_stack_page_get_type() : (GType)NULL; };
-// #pragma weak gtk_stack_sidebar_get_type
+// extern GType gtk_stack_sidebar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_stack_sidebar_get_type(void) { return gtk_stack_sidebar_get_type ? gtk_stack_sidebar_get_type() : (GType)NULL; };
-// #pragma weak gtk_stack_switcher_get_type
+// extern GType gtk_stack_switcher_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_stack_switcher_get_type(void) { return gtk_stack_switcher_get_type ? gtk_stack_switcher_get_type() : (GType)NULL; };
-// #pragma weak gtk_statusbar_get_type
+// extern GType gtk_statusbar_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_statusbar_get_type(void) { return gtk_statusbar_get_type ? gtk_statusbar_get_type() : (GType)NULL; };
-// #pragma weak gtk_string_filter_get_type
+// extern GType gtk_string_filter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_string_filter_get_type(void) { return gtk_string_filter_get_type ? gtk_string_filter_get_type() : (GType)NULL; };
-// #pragma weak gtk_string_list_get_type
+// extern GType gtk_string_list_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_string_list_get_type(void) { return gtk_string_list_get_type ? gtk_string_list_get_type() : (GType)NULL; };
-// #pragma weak gtk_string_object_get_type
+// extern GType gtk_string_object_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_string_object_get_type(void) { return gtk_string_object_get_type ? gtk_string_object_get_type() : (GType)NULL; };
-// #pragma weak gtk_string_sorter_get_type
+// extern GType gtk_string_sorter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_string_sorter_get_type(void) { return gtk_string_sorter_get_type ? gtk_string_sorter_get_type() : (GType)NULL; };
-// #pragma weak gtk_style_context_get_type
+// extern GType gtk_style_context_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_style_context_get_type(void) { return gtk_style_context_get_type ? gtk_style_context_get_type() : (GType)NULL; };
-// #pragma weak gtk_switch_get_type
+// extern GType gtk_switch_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_switch_get_type(void) { return gtk_switch_get_type ? gtk_switch_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_get_type
+// extern GType gtk_text_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_get_type(void) { return gtk_text_get_type ? gtk_text_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_buffer_get_type
+// extern GType gtk_text_buffer_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_buffer_get_type(void) { return gtk_text_buffer_get_type ? gtk_text_buffer_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_child_anchor_get_type
+// extern GType gtk_text_child_anchor_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_child_anchor_get_type(void) { return gtk_text_child_anchor_get_type ? gtk_text_child_anchor_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_mark_get_type
+// extern GType gtk_text_mark_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_mark_get_type(void) { return gtk_text_mark_get_type ? gtk_text_mark_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_tag_get_type
+// extern GType gtk_text_tag_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_tag_get_type(void) { return gtk_text_tag_get_type ? gtk_text_tag_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_tag_table_get_type
+// extern GType gtk_text_tag_table_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_tag_table_get_type(void) { return gtk_text_tag_table_get_type ? gtk_text_tag_table_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_view_get_type
+// extern GType gtk_text_view_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_view_get_type(void) { return gtk_text_view_get_type ? gtk_text_view_get_type() : (GType)NULL; };
-// #pragma weak gtk_toggle_button_get_type
+// extern GType gtk_toggle_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_toggle_button_get_type(void) { return gtk_toggle_button_get_type ? gtk_toggle_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_tooltip_get_type
+// extern GType gtk_tooltip_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tooltip_get_type(void) { return gtk_tooltip_get_type ? gtk_tooltip_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_expander_get_type
+// extern GType gtk_tree_expander_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_expander_get_type(void) { return gtk_tree_expander_get_type ? gtk_tree_expander_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_list_model_get_type
+// extern GType gtk_tree_list_model_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_list_model_get_type(void) { return gtk_tree_list_model_get_type ? gtk_tree_list_model_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_list_row_get_type
+// extern GType gtk_tree_list_row_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_list_row_get_type(void) { return gtk_tree_list_row_get_type ? gtk_tree_list_row_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_list_row_sorter_get_type
+// extern GType gtk_tree_list_row_sorter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_list_row_sorter_get_type(void) { return gtk_tree_list_row_sorter_get_type ? gtk_tree_list_row_sorter_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_model_filter_get_type
+// extern GType gtk_tree_model_filter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_model_filter_get_type(void) { return gtk_tree_model_filter_get_type ? gtk_tree_model_filter_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_model_sort_get_type
+// extern GType gtk_tree_model_sort_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_model_sort_get_type(void) { return gtk_tree_model_sort_get_type ? gtk_tree_model_sort_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_selection_get_type
+// extern GType gtk_tree_selection_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_selection_get_type(void) { return gtk_tree_selection_get_type ? gtk_tree_selection_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_store_get_type
+// extern GType gtk_tree_store_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_store_get_type(void) { return gtk_tree_store_get_type ? gtk_tree_store_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_view_get_type
+// extern GType gtk_tree_view_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_view_get_type(void) { return gtk_tree_view_get_type ? gtk_tree_view_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_view_column_get_type
+// extern GType gtk_tree_view_column_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_view_column_get_type(void) { return gtk_tree_view_column_get_type ? gtk_tree_view_column_get_type() : (GType)NULL; };
-// #pragma weak gtk_uri_launcher_get_type
+// extern GType gtk_uri_launcher_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_uri_launcher_get_type(void) { return gtk_uri_launcher_get_type ? gtk_uri_launcher_get_type() : (GType)NULL; };
-// #pragma weak gtk_video_get_type
+// extern GType gtk_video_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_video_get_type(void) { return gtk_video_get_type ? gtk_video_get_type() : (GType)NULL; };
-// #pragma weak gtk_viewport_get_type
+// extern GType gtk_viewport_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_viewport_get_type(void) { return gtk_viewport_get_type ? gtk_viewport_get_type() : (GType)NULL; };
-// #pragma weak gtk_volume_button_get_type
+// extern GType gtk_volume_button_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_volume_button_get_type(void) { return gtk_volume_button_get_type ? gtk_volume_button_get_type() : (GType)NULL; };
-// #pragma weak gtk_widget_get_type
+// extern GType gtk_widget_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_widget_get_type(void) { return gtk_widget_get_type ? gtk_widget_get_type() : (GType)NULL; };
-// #pragma weak gtk_widget_paintable_get_type
+// extern GType gtk_widget_paintable_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_widget_paintable_get_type(void) { return gtk_widget_paintable_get_type ? gtk_widget_paintable_get_type() : (GType)NULL; };
-// #pragma weak gtk_window_get_type
+// extern GType gtk_window_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_window_get_type(void) { return gtk_window_get_type ? gtk_window_get_type() : (GType)NULL; };
-// #pragma weak gtk_window_controls_get_type
+// extern GType gtk_window_controls_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_window_controls_get_type(void) { return gtk_window_controls_get_type ? gtk_window_controls_get_type() : (GType)NULL; };
-// #pragma weak gtk_window_group_get_type
+// extern GType gtk_window_group_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_window_group_get_type(void) { return gtk_window_group_get_type ? gtk_window_group_get_type() : (GType)NULL; };
-// #pragma weak gtk_window_handle_get_type
+// extern GType gtk_window_handle_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_window_handle_get_type(void) { return gtk_window_handle_get_type ? gtk_window_handle_get_type() : (GType)NULL; };
-// #pragma weak gtk_accessible_list_get_type
+// extern GType gtk_accessible_list_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_accessible_list_get_type(void) { return gtk_accessible_list_get_type ? gtk_accessible_list_get_type() : (GType)NULL; };
-// #pragma weak gtk_bitset_get_type
+// extern GType gtk_bitset_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_bitset_get_type(void) { return gtk_bitset_get_type ? gtk_bitset_get_type() : (GType)NULL; };
-// #pragma weak gtk_bitset_iter_get_type
+// extern GType gtk_bitset_iter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_bitset_iter_get_type(void) { return gtk_bitset_iter_get_type ? gtk_bitset_iter_get_type() : (GType)NULL; };
-// #pragma weak gtk_border_get_type
+// extern GType gtk_border_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_border_get_type(void) { return gtk_border_get_type ? gtk_border_get_type() : (GType)NULL; };
-// #pragma weak gtk_css_section_get_type
+// extern GType gtk_css_section_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_css_section_get_type(void) { return gtk_css_section_get_type ? gtk_css_section_get_type() : (GType)NULL; };
-// #pragma weak gtk_expression_watch_get_type
+// extern GType gtk_expression_watch_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_expression_watch_get_type(void) { return gtk_expression_watch_get_type ? gtk_expression_watch_get_type() : (GType)NULL; };
-// #pragma weak gtk_paper_size_get_type
+// extern GType gtk_paper_size_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_paper_size_get_type(void) { return gtk_paper_size_get_type ? gtk_paper_size_get_type() : (GType)NULL; };
-// #pragma weak gtk_print_setup_get_type
+// extern GType gtk_print_setup_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_print_setup_get_type(void) { return gtk_print_setup_get_type ? gtk_print_setup_get_type() : (GType)NULL; };
-// #pragma weak gtk_recent_info_get_type
+// extern GType gtk_recent_info_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_recent_info_get_type(void) { return gtk_recent_info_get_type ? gtk_recent_info_get_type() : (GType)NULL; };
-// #pragma weak gtk_requisition_get_type
+// extern GType gtk_requisition_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_requisition_get_type(void) { return gtk_requisition_get_type ? gtk_requisition_get_type() : (GType)NULL; };
-// #pragma weak gtk_scroll_info_get_type
+// extern GType gtk_scroll_info_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_scroll_info_get_type(void) { return gtk_scroll_info_get_type ? gtk_scroll_info_get_type() : (GType)NULL; };
-// #pragma weak gtk_text_iter_get_type
+// extern GType gtk_text_iter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_text_iter_get_type(void) { return gtk_text_iter_get_type ? gtk_text_iter_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_iter_get_type
+// extern GType gtk_tree_iter_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_iter_get_type(void) { return gtk_tree_iter_get_type ? gtk_tree_iter_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_path_get_type
+// extern GType gtk_tree_path_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_path_get_type(void) { return gtk_tree_path_get_type ? gtk_tree_path_get_type() : (GType)NULL; };
-// #pragma weak gtk_tree_row_reference_get_type
+// extern GType gtk_tree_row_reference_get_type(void) __attribute__((weak));
 // GType _gotk4_weak_gtk_tree_row_reference_get_type(void) { return gtk_tree_row_reference_get_type ? gtk_tree_row_reference_get_type() : (GType)NULL; };
 import "C"
 
