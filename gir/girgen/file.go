@@ -241,7 +241,7 @@ func (f *GoFileGenerator) Generate() ([]byte, error) {
 				continue
 			}
 
-			//fpen.Linef("// %s", m.GLibType_C_Weak())
+			fpen.Linef("// %s", m.GLibType_C_Weak())
 			fpen.Linef("// %s", m.GLibType_C_Func())
 		}
 	}

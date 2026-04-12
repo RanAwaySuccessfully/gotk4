@@ -57,7 +57,7 @@ func (m Marshaler) GLibType_C_HasOverride() bool {
 }
 
 func (m Marshaler) GLibType_C_Weak() string {
-	return fmt.Sprintf("extern GType %s(void) __attribute__((weak));", m.GLibGetType)
+	return fmt.Sprintf("#pragma weak %s", m.GLibGetType)
 }
 
 func (m Marshaler) GLibType_C_Func() string {
