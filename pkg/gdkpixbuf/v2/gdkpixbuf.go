@@ -50,17 +50,29 @@ import (
 // void _gotk4_gdkpixbuf2_PixbufLoader_virtual_size_prepared(void* fnptr, GdkPixbufLoader* arg0, int arg1, int arg2) {
 //   ((void (*)(GdkPixbufLoader*, int, int))(fnptr))(arg0, arg1, arg2);
 // };
+// #pragma weak gdk_colorspace_get_type
 // GType _gotk4_weak_gdk_colorspace_get_type(void) { return gdk_colorspace_get_type ? gdk_colorspace_get_type() : (GType)NULL; };
+// #pragma weak gdk_interp_type_get_type
 // GType _gotk4_weak_gdk_interp_type_get_type(void) { return gdk_interp_type_get_type ? gdk_interp_type_get_type() : (GType)NULL; };
+// #pragma weak gdk_pixbuf_alpha_mode_get_type
 // GType _gotk4_weak_gdk_pixbuf_alpha_mode_get_type(void) { return gdk_pixbuf_alpha_mode_get_type ? gdk_pixbuf_alpha_mode_get_type() : (GType)NULL; };
+// #pragma weak gdk_pixbuf_error_get_type
 // GType _gotk4_weak_gdk_pixbuf_error_get_type(void) { return gdk_pixbuf_error_get_type ? gdk_pixbuf_error_get_type() : (GType)NULL; };
+// #pragma weak gdk_pixbuf_rotation_get_type
 // GType _gotk4_weak_gdk_pixbuf_rotation_get_type(void) { return gdk_pixbuf_rotation_get_type ? gdk_pixbuf_rotation_get_type() : (GType)NULL; };
+// #pragma weak gdk_pixbuf_get_type
 // GType _gotk4_weak_gdk_pixbuf_get_type(void) { return gdk_pixbuf_get_type ? gdk_pixbuf_get_type() : (GType)NULL; };
+// #pragma weak gdk_pixbuf_animation_get_type
 // GType _gotk4_weak_gdk_pixbuf_animation_get_type(void) { return gdk_pixbuf_animation_get_type ? gdk_pixbuf_animation_get_type() : (GType)NULL; };
+// #pragma weak gdk_pixbuf_animation_iter_get_type
 // GType _gotk4_weak_gdk_pixbuf_animation_iter_get_type(void) { return gdk_pixbuf_animation_iter_get_type ? gdk_pixbuf_animation_iter_get_type() : (GType)NULL; };
+// #pragma weak gdk_pixbuf_loader_get_type
 // GType _gotk4_weak_gdk_pixbuf_loader_get_type(void) { return gdk_pixbuf_loader_get_type ? gdk_pixbuf_loader_get_type() : (GType)NULL; };
+// #pragma weak gdk_pixbuf_simple_anim_get_type
 // GType _gotk4_weak_gdk_pixbuf_simple_anim_get_type(void) { return gdk_pixbuf_simple_anim_get_type ? gdk_pixbuf_simple_anim_get_type() : (GType)NULL; };
+// #pragma weak gdk_pixbuf_simple_anim_iter_get_type
 // GType _gotk4_weak_gdk_pixbuf_simple_anim_iter_get_type(void) { return gdk_pixbuf_simple_anim_iter_get_type ? gdk_pixbuf_simple_anim_iter_get_type() : (GType)NULL; };
+// #pragma weak gdk_pixbuf_format_get_type
 // GType _gotk4_weak_gdk_pixbuf_format_get_type(void) { return gdk_pixbuf_format_get_type ? gdk_pixbuf_format_get_type() : (GType)NULL; };
 import "C"
 

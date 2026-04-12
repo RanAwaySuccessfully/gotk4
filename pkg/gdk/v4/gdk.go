@@ -111,93 +111,181 @@ import (
 // void _gotk4_gdk4_Paintable_virtual_snapshot(void* fnptr, GdkPaintable* arg0, GdkSnapshot* arg1, double arg2, double arg3) {
 //   ((void (*)(GdkPaintable*, GdkSnapshot*, double, double))(fnptr))(arg0, arg1, arg2, arg3);
 // };
+// #pragma weak gdk_axis_use_get_type
 // GType _gotk4_weak_gdk_axis_use_get_type(void) { return gdk_axis_use_get_type ? gdk_axis_use_get_type() : (GType)NULL; };
+// #pragma weak gdk_crossing_mode_get_type
 // GType _gotk4_weak_gdk_crossing_mode_get_type(void) { return gdk_crossing_mode_get_type ? gdk_crossing_mode_get_type() : (GType)NULL; };
+// #pragma weak gdk_device_pad_feature_get_type
 // GType _gotk4_weak_gdk_device_pad_feature_get_type(void) { return gdk_device_pad_feature_get_type ? gdk_device_pad_feature_get_type() : (GType)NULL; };
+// #pragma weak gdk_device_tool_type_get_type
 // GType _gotk4_weak_gdk_device_tool_type_get_type(void) { return gdk_device_tool_type_get_type ? gdk_device_tool_type_get_type() : (GType)NULL; };
+// #pragma weak gdk_dmabuf_error_get_type
 // GType _gotk4_weak_gdk_dmabuf_error_get_type(void) { return gdk_dmabuf_error_get_type ? gdk_dmabuf_error_get_type() : (GType)NULL; };
+// #pragma weak gdk_drag_cancel_reason_get_type
 // GType _gotk4_weak_gdk_drag_cancel_reason_get_type(void) { return gdk_drag_cancel_reason_get_type ? gdk_drag_cancel_reason_get_type() : (GType)NULL; };
+// #pragma weak gdk_event_type_get_type
 // GType _gotk4_weak_gdk_event_type_get_type(void) { return gdk_event_type_get_type ? gdk_event_type_get_type() : (GType)NULL; };
+// #pragma weak gdk_fullscreen_mode_get_type
 // GType _gotk4_weak_gdk_fullscreen_mode_get_type(void) { return gdk_fullscreen_mode_get_type ? gdk_fullscreen_mode_get_type() : (GType)NULL; };
+// #pragma weak gdk_gl_error_get_type
 // GType _gotk4_weak_gdk_gl_error_get_type(void) { return gdk_gl_error_get_type ? gdk_gl_error_get_type() : (GType)NULL; };
+// #pragma weak gdk_gravity_get_type
 // GType _gotk4_weak_gdk_gravity_get_type(void) { return gdk_gravity_get_type ? gdk_gravity_get_type() : (GType)NULL; };
+// #pragma weak gdk_input_source_get_type
 // GType _gotk4_weak_gdk_input_source_get_type(void) { return gdk_input_source_get_type ? gdk_input_source_get_type() : (GType)NULL; };
+// #pragma weak gdk_key_match_get_type
 // GType _gotk4_weak_gdk_key_match_get_type(void) { return gdk_key_match_get_type ? gdk_key_match_get_type() : (GType)NULL; };
+// #pragma weak gdk_memory_format_get_type
 // GType _gotk4_weak_gdk_memory_format_get_type(void) { return gdk_memory_format_get_type ? gdk_memory_format_get_type() : (GType)NULL; };
+// #pragma weak gdk_notify_type_get_type
 // GType _gotk4_weak_gdk_notify_type_get_type(void) { return gdk_notify_type_get_type ? gdk_notify_type_get_type() : (GType)NULL; };
+// #pragma weak gdk_scroll_direction_get_type
 // GType _gotk4_weak_gdk_scroll_direction_get_type(void) { return gdk_scroll_direction_get_type ? gdk_scroll_direction_get_type() : (GType)NULL; };
+// #pragma weak gdk_scroll_unit_get_type
 // GType _gotk4_weak_gdk_scroll_unit_get_type(void) { return gdk_scroll_unit_get_type ? gdk_scroll_unit_get_type() : (GType)NULL; };
+// #pragma weak gdk_subpixel_layout_get_type
 // GType _gotk4_weak_gdk_subpixel_layout_get_type(void) { return gdk_subpixel_layout_get_type ? gdk_subpixel_layout_get_type() : (GType)NULL; };
+// #pragma weak gdk_surface_edge_get_type
 // GType _gotk4_weak_gdk_surface_edge_get_type(void) { return gdk_surface_edge_get_type ? gdk_surface_edge_get_type() : (GType)NULL; };
+// #pragma weak gdk_texture_error_get_type
 // GType _gotk4_weak_gdk_texture_error_get_type(void) { return gdk_texture_error_get_type ? gdk_texture_error_get_type() : (GType)NULL; };
+// #pragma weak gdk_titlebar_gesture_get_type
 // GType _gotk4_weak_gdk_titlebar_gesture_get_type(void) { return gdk_titlebar_gesture_get_type ? gdk_titlebar_gesture_get_type() : (GType)NULL; };
+// #pragma weak gdk_touchpad_gesture_phase_get_type
 // GType _gotk4_weak_gdk_touchpad_gesture_phase_get_type(void) { return gdk_touchpad_gesture_phase_get_type ? gdk_touchpad_gesture_phase_get_type() : (GType)NULL; };
+// #pragma weak gdk_vulkan_error_get_type
 // GType _gotk4_weak_gdk_vulkan_error_get_type(void) { return gdk_vulkan_error_get_type ? gdk_vulkan_error_get_type() : (GType)NULL; };
+// #pragma weak gdk_anchor_hints_get_type
 // GType _gotk4_weak_gdk_anchor_hints_get_type(void) { return gdk_anchor_hints_get_type ? gdk_anchor_hints_get_type() : (GType)NULL; };
+// #pragma weak gdk_axis_flags_get_type
 // GType _gotk4_weak_gdk_axis_flags_get_type(void) { return gdk_axis_flags_get_type ? gdk_axis_flags_get_type() : (GType)NULL; };
+// #pragma weak gdk_drag_action_get_type
 // GType _gotk4_weak_gdk_drag_action_get_type(void) { return gdk_drag_action_get_type ? gdk_drag_action_get_type() : (GType)NULL; };
+// #pragma weak gdk_frame_clock_phase_get_type
 // GType _gotk4_weak_gdk_frame_clock_phase_get_type(void) { return gdk_frame_clock_phase_get_type ? gdk_frame_clock_phase_get_type() : (GType)NULL; };
+// #pragma weak gdk_gl_api_get_type
 // GType _gotk4_weak_gdk_gl_api_get_type(void) { return gdk_gl_api_get_type ? gdk_gl_api_get_type() : (GType)NULL; };
+// #pragma weak gdk_modifier_type_get_type
 // GType _gotk4_weak_gdk_modifier_type_get_type(void) { return gdk_modifier_type_get_type ? gdk_modifier_type_get_type() : (GType)NULL; };
+// #pragma weak gdk_paintable_flags_get_type
 // GType _gotk4_weak_gdk_paintable_flags_get_type(void) { return gdk_paintable_flags_get_type ? gdk_paintable_flags_get_type() : (GType)NULL; };
+// #pragma weak gdk_seat_capabilities_get_type
 // GType _gotk4_weak_gdk_seat_capabilities_get_type(void) { return gdk_seat_capabilities_get_type ? gdk_seat_capabilities_get_type() : (GType)NULL; };
+// #pragma weak gdk_toplevel_state_get_type
 // GType _gotk4_weak_gdk_toplevel_state_get_type(void) { return gdk_toplevel_state_get_type ? gdk_toplevel_state_get_type() : (GType)NULL; };
+// #pragma weak gdk_device_pad_get_type
 // GType _gotk4_weak_gdk_device_pad_get_type(void) { return gdk_device_pad_get_type ? gdk_device_pad_get_type() : (GType)NULL; };
+// #pragma weak gdk_drag_surface_get_type
 // GType _gotk4_weak_gdk_drag_surface_get_type(void) { return gdk_drag_surface_get_type ? gdk_drag_surface_get_type() : (GType)NULL; };
+// #pragma weak gdk_paintable_get_type
 // GType _gotk4_weak_gdk_paintable_get_type(void) { return gdk_paintable_get_type ? gdk_paintable_get_type() : (GType)NULL; };
+// #pragma weak gdk_popup_get_type
 // GType _gotk4_weak_gdk_popup_get_type(void) { return gdk_popup_get_type ? gdk_popup_get_type() : (GType)NULL; };
+// #pragma weak gdk_toplevel_get_type
 // GType _gotk4_weak_gdk_toplevel_get_type(void) { return gdk_toplevel_get_type ? gdk_toplevel_get_type() : (GType)NULL; };
+// #pragma weak gdk_app_launch_context_get_type
 // GType _gotk4_weak_gdk_app_launch_context_get_type(void) { return gdk_app_launch_context_get_type ? gdk_app_launch_context_get_type() : (GType)NULL; };
+// #pragma weak gdk_button_event_get_type
 // GType _gotk4_weak_gdk_button_event_get_type(void) { return gdk_button_event_get_type ? gdk_button_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_cairo_context_get_type
 // GType _gotk4_weak_gdk_cairo_context_get_type(void) { return gdk_cairo_context_get_type ? gdk_cairo_context_get_type() : (GType)NULL; };
+// #pragma weak gdk_clipboard_get_type
 // GType _gotk4_weak_gdk_clipboard_get_type(void) { return gdk_clipboard_get_type ? gdk_clipboard_get_type() : (GType)NULL; };
+// #pragma weak gdk_content_deserializer_get_type
 // GType _gotk4_weak_gdk_content_deserializer_get_type(void) { return gdk_content_deserializer_get_type ? gdk_content_deserializer_get_type() : (GType)NULL; };
+// #pragma weak gdk_content_provider_get_type
 // GType _gotk4_weak_gdk_content_provider_get_type(void) { return gdk_content_provider_get_type ? gdk_content_provider_get_type() : (GType)NULL; };
+// #pragma weak gdk_content_serializer_get_type
 // GType _gotk4_weak_gdk_content_serializer_get_type(void) { return gdk_content_serializer_get_type ? gdk_content_serializer_get_type() : (GType)NULL; };
+// #pragma weak gdk_crossing_event_get_type
 // GType _gotk4_weak_gdk_crossing_event_get_type(void) { return gdk_crossing_event_get_type ? gdk_crossing_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_cursor_get_type
 // GType _gotk4_weak_gdk_cursor_get_type(void) { return gdk_cursor_get_type ? gdk_cursor_get_type() : (GType)NULL; };
+// #pragma weak gdk_dnd_event_get_type
 // GType _gotk4_weak_gdk_dnd_event_get_type(void) { return gdk_dnd_event_get_type ? gdk_dnd_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_delete_event_get_type
 // GType _gotk4_weak_gdk_delete_event_get_type(void) { return gdk_delete_event_get_type ? gdk_delete_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_device_get_type
 // GType _gotk4_weak_gdk_device_get_type(void) { return gdk_device_get_type ? gdk_device_get_type() : (GType)NULL; };
+// #pragma weak gdk_device_tool_get_type
 // GType _gotk4_weak_gdk_device_tool_get_type(void) { return gdk_device_tool_get_type ? gdk_device_tool_get_type() : (GType)NULL; };
+// #pragma weak gdk_display_get_type
 // GType _gotk4_weak_gdk_display_get_type(void) { return gdk_display_get_type ? gdk_display_get_type() : (GType)NULL; };
+// #pragma weak gdk_display_manager_get_type
 // GType _gotk4_weak_gdk_display_manager_get_type(void) { return gdk_display_manager_get_type ? gdk_display_manager_get_type() : (GType)NULL; };
+// #pragma weak gdk_dmabuf_texture_get_type
 // GType _gotk4_weak_gdk_dmabuf_texture_get_type(void) { return gdk_dmabuf_texture_get_type ? gdk_dmabuf_texture_get_type() : (GType)NULL; };
+// #pragma weak gdk_dmabuf_texture_builder_get_type
 // GType _gotk4_weak_gdk_dmabuf_texture_builder_get_type(void) { return gdk_dmabuf_texture_builder_get_type ? gdk_dmabuf_texture_builder_get_type() : (GType)NULL; };
+// #pragma weak gdk_drag_get_type
 // GType _gotk4_weak_gdk_drag_get_type(void) { return gdk_drag_get_type ? gdk_drag_get_type() : (GType)NULL; };
+// #pragma weak gdk_draw_context_get_type
 // GType _gotk4_weak_gdk_draw_context_get_type(void) { return gdk_draw_context_get_type ? gdk_draw_context_get_type() : (GType)NULL; };
+// #pragma weak gdk_drop_get_type
 // GType _gotk4_weak_gdk_drop_get_type(void) { return gdk_drop_get_type ? gdk_drop_get_type() : (GType)NULL; };
+// #pragma weak gdk_event_get_type
 // GType _gotk4_weak_gdk_event_get_type(void) { return gdk_event_get_type ? gdk_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_focus_event_get_type
 // GType _gotk4_weak_gdk_focus_event_get_type(void) { return gdk_focus_event_get_type ? gdk_focus_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_frame_clock_get_type
 // GType _gotk4_weak_gdk_frame_clock_get_type(void) { return gdk_frame_clock_get_type ? gdk_frame_clock_get_type() : (GType)NULL; };
+// #pragma weak gdk_gl_context_get_type
 // GType _gotk4_weak_gdk_gl_context_get_type(void) { return gdk_gl_context_get_type ? gdk_gl_context_get_type() : (GType)NULL; };
+// #pragma weak gdk_gl_texture_get_type
 // GType _gotk4_weak_gdk_gl_texture_get_type(void) { return gdk_gl_texture_get_type ? gdk_gl_texture_get_type() : (GType)NULL; };
+// #pragma weak gdk_gl_texture_builder_get_type
 // GType _gotk4_weak_gdk_gl_texture_builder_get_type(void) { return gdk_gl_texture_builder_get_type ? gdk_gl_texture_builder_get_type() : (GType)NULL; };
+// #pragma weak gdk_grab_broken_event_get_type
 // GType _gotk4_weak_gdk_grab_broken_event_get_type(void) { return gdk_grab_broken_event_get_type ? gdk_grab_broken_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_key_event_get_type
 // GType _gotk4_weak_gdk_key_event_get_type(void) { return gdk_key_event_get_type ? gdk_key_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_memory_texture_get_type
 // GType _gotk4_weak_gdk_memory_texture_get_type(void) { return gdk_memory_texture_get_type ? gdk_memory_texture_get_type() : (GType)NULL; };
+// #pragma weak gdk_monitor_get_type
 // GType _gotk4_weak_gdk_monitor_get_type(void) { return gdk_monitor_get_type ? gdk_monitor_get_type() : (GType)NULL; };
+// #pragma weak gdk_motion_event_get_type
 // GType _gotk4_weak_gdk_motion_event_get_type(void) { return gdk_motion_event_get_type ? gdk_motion_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_pad_event_get_type
 // GType _gotk4_weak_gdk_pad_event_get_type(void) { return gdk_pad_event_get_type ? gdk_pad_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_proximity_event_get_type
 // GType _gotk4_weak_gdk_proximity_event_get_type(void) { return gdk_proximity_event_get_type ? gdk_proximity_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_scroll_event_get_type
 // GType _gotk4_weak_gdk_scroll_event_get_type(void) { return gdk_scroll_event_get_type ? gdk_scroll_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_seat_get_type
 // GType _gotk4_weak_gdk_seat_get_type(void) { return gdk_seat_get_type ? gdk_seat_get_type() : (GType)NULL; };
+// #pragma weak gdk_snapshot_get_type
 // GType _gotk4_weak_gdk_snapshot_get_type(void) { return gdk_snapshot_get_type ? gdk_snapshot_get_type() : (GType)NULL; };
+// #pragma weak gdk_surface_get_type
 // GType _gotk4_weak_gdk_surface_get_type(void) { return gdk_surface_get_type ? gdk_surface_get_type() : (GType)NULL; };
+// #pragma weak gdk_texture_get_type
 // GType _gotk4_weak_gdk_texture_get_type(void) { return gdk_texture_get_type ? gdk_texture_get_type() : (GType)NULL; };
+// #pragma weak gdk_touch_event_get_type
 // GType _gotk4_weak_gdk_touch_event_get_type(void) { return gdk_touch_event_get_type ? gdk_touch_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_touchpad_event_get_type
 // GType _gotk4_weak_gdk_touchpad_event_get_type(void) { return gdk_touchpad_event_get_type ? gdk_touchpad_event_get_type() : (GType)NULL; };
+// #pragma weak gdk_vulkan_context_get_type
 // GType _gotk4_weak_gdk_vulkan_context_get_type(void) { return gdk_vulkan_context_get_type ? gdk_vulkan_context_get_type() : (GType)NULL; };
+// #pragma weak gdk_content_formats_get_type
 // GType _gotk4_weak_gdk_content_formats_get_type(void) { return gdk_content_formats_get_type ? gdk_content_formats_get_type() : (GType)NULL; };
+// #pragma weak gdk_content_formats_builder_get_type
 // GType _gotk4_weak_gdk_content_formats_builder_get_type(void) { return gdk_content_formats_builder_get_type ? gdk_content_formats_builder_get_type() : (GType)NULL; };
+// #pragma weak gdk_dmabuf_formats_get_type
 // GType _gotk4_weak_gdk_dmabuf_formats_get_type(void) { return gdk_dmabuf_formats_get_type ? gdk_dmabuf_formats_get_type() : (GType)NULL; };
+// #pragma weak gdk_event_sequence_get_type
 // GType _gotk4_weak_gdk_event_sequence_get_type(void) { return gdk_event_sequence_get_type ? gdk_event_sequence_get_type() : (GType)NULL; };
+// #pragma weak gdk_file_list_get_type
 // GType _gotk4_weak_gdk_file_list_get_type(void) { return gdk_file_list_get_type ? gdk_file_list_get_type() : (GType)NULL; };
+// #pragma weak gdk_frame_timings_get_type
 // GType _gotk4_weak_gdk_frame_timings_get_type(void) { return gdk_frame_timings_get_type ? gdk_frame_timings_get_type() : (GType)NULL; };
+// #pragma weak gdk_popup_layout_get_type
 // GType _gotk4_weak_gdk_popup_layout_get_type(void) { return gdk_popup_layout_get_type ? gdk_popup_layout_get_type() : (GType)NULL; };
+// #pragma weak gdk_rgba_get_type
 // GType _gotk4_weak_gdk_rgba_get_type(void) { return gdk_rgba_get_type ? gdk_rgba_get_type() : (GType)NULL; };
+// #pragma weak gdk_rectangle_get_type
 // GType _gotk4_weak_gdk_rectangle_get_type(void) { return gdk_rectangle_get_type ? gdk_rectangle_get_type() : (GType)NULL; };
+// #pragma weak gdk_texture_downloader_get_type
 // GType _gotk4_weak_gdk_texture_downloader_get_type(void) { return gdk_texture_downloader_get_type ? gdk_texture_downloader_get_type() : (GType)NULL; };
+// #pragma weak gdk_toplevel_layout_get_type
 // GType _gotk4_weak_gdk_toplevel_layout_get_type(void) { return gdk_toplevel_layout_get_type ? gdk_toplevel_layout_get_type() : (GType)NULL; };
 import "C"
 

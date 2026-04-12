@@ -33,34 +33,63 @@ import (
 // extern gboolean _gotk4_glib2_SourceFunc(gpointer);
 // extern gboolean _gotk4_glib2_HRFunc(gpointer, gpointer, gpointer);
 // extern GLogWriterOutput _gotk4_glib2_LogWriterFunc(GLogLevelFlags, GLogField*, gsize, gpointer);
+// #pragma weak g_normalize_mode_get_type
 // GType _gotk4_weak_g_normalize_mode_get_type(void) { return g_normalize_mode_get_type ? g_normalize_mode_get_type() : (GType)NULL; };
+// #pragma weak g_unicode_break_type_get_type
 // GType _gotk4_weak_g_unicode_break_type_get_type(void) { return g_unicode_break_type_get_type ? g_unicode_break_type_get_type() : (GType)NULL; };
+// #pragma weak g_unicode_script_get_type
 // GType _gotk4_weak_g_unicode_script_get_type(void) { return g_unicode_script_get_type ? g_unicode_script_get_type() : (GType)NULL; };
+// #pragma weak g_unicode_type_get_type
 // GType _gotk4_weak_g_unicode_type_get_type(void) { return g_unicode_type_get_type ? g_unicode_type_get_type() : (GType)NULL; };
+// #pragma weak g_io_condition_get_type
 // GType _gotk4_weak_g_io_condition_get_type(void) { return g_io_condition_get_type ? g_io_condition_get_type() : (GType)NULL; };
+// #pragma weak g_bookmark_file_get_type
 // GType _gotk4_weak_g_bookmark_file_get_type(void) { return g_bookmark_file_get_type ? g_bookmark_file_get_type() : (GType)NULL; };
+// #pragma weak g_checksum_get_type
 // GType _gotk4_weak_g_checksum_get_type(void) { return g_checksum_get_type ? g_checksum_get_type() : (GType)NULL; };
+// #pragma weak g_date_time_get_type
 // GType _gotk4_weak_g_date_time_get_type(void) { return g_date_time_get_type ? g_date_time_get_type() : (GType)NULL; };
+// #pragma weak g_dir_get_type
 // GType _gotk4_weak_g_dir_get_type(void) { return g_dir_get_type ? g_dir_get_type() : (GType)NULL; };
+// #pragma weak g_hash_table_get_type
 // GType _gotk4_weak_g_hash_table_get_type(void) { return g_hash_table_get_type ? g_hash_table_get_type() : (GType)NULL; };
+// #pragma weak g_hmac_get_type
 // GType _gotk4_weak_g_hmac_get_type(void) { return g_hmac_get_type ? g_hmac_get_type() : (GType)NULL; };
+// #pragma weak g_io_channel_get_type
 // GType _gotk4_weak_g_io_channel_get_type(void) { return g_io_channel_get_type ? g_io_channel_get_type() : (GType)NULL; };
+// #pragma weak g_key_file_get_type
 // GType _gotk4_weak_g_key_file_get_type(void) { return g_key_file_get_type ? g_key_file_get_type() : (GType)NULL; };
+// #pragma weak g_main_context_get_type
 // GType _gotk4_weak_g_main_context_get_type(void) { return g_main_context_get_type ? g_main_context_get_type() : (GType)NULL; };
+// #pragma weak g_main_loop_get_type
 // GType _gotk4_weak_g_main_loop_get_type(void) { return g_main_loop_get_type ? g_main_loop_get_type() : (GType)NULL; };
+// #pragma weak g_mapped_file_get_type
 // GType _gotk4_weak_g_mapped_file_get_type(void) { return g_mapped_file_get_type ? g_mapped_file_get_type() : (GType)NULL; };
+// #pragma weak g_markup_parse_context_get_type
 // GType _gotk4_weak_g_markup_parse_context_get_type(void) { return g_markup_parse_context_get_type ? g_markup_parse_context_get_type() : (GType)NULL; };
+// #pragma weak g_match_info_get_type
 // GType _gotk4_weak_g_match_info_get_type(void) { return g_match_info_get_type ? g_match_info_get_type() : (GType)NULL; };
+// #pragma weak g_option_group_get_type
 // GType _gotk4_weak_g_option_group_get_type(void) { return g_option_group_get_type ? g_option_group_get_type() : (GType)NULL; };
+// #pragma weak g_pattern_spec_get_type
 // GType _gotk4_weak_g_pattern_spec_get_type(void) { return g_pattern_spec_get_type ? g_pattern_spec_get_type() : (GType)NULL; };
+// #pragma weak g_rand_get_type
 // GType _gotk4_weak_g_rand_get_type(void) { return g_rand_get_type ? g_rand_get_type() : (GType)NULL; };
+// #pragma weak g_regex_get_type
 // GType _gotk4_weak_g_regex_get_type(void) { return g_regex_get_type ? g_regex_get_type() : (GType)NULL; };
+// #pragma weak g_source_get_type
 // GType _gotk4_weak_g_source_get_type(void) { return g_source_get_type ? g_source_get_type() : (GType)NULL; };
+// #pragma weak g_time_zone_get_type
 // GType _gotk4_weak_g_time_zone_get_type(void) { return g_time_zone_get_type ? g_time_zone_get_type() : (GType)NULL; };
+// #pragma weak g_tree_get_type
 // GType _gotk4_weak_g_tree_get_type(void) { return g_tree_get_type ? g_tree_get_type() : (GType)NULL; };
+// #pragma weak g_uri_get_type
 // GType _gotk4_weak_g_uri_get_type(void) { return g_uri_get_type ? g_uri_get_type() : (GType)NULL; };
+// #pragma weak g_variant_builder_get_type
 // GType _gotk4_weak_g_variant_builder_get_type(void) { return g_variant_builder_get_type ? g_variant_builder_get_type() : (GType)NULL; };
+// #pragma weak g_variant_dict_get_type
 // GType _gotk4_weak_g_variant_dict_get_type(void) { return g_variant_dict_get_type ? g_variant_dict_get_type() : (GType)NULL; };
+// #pragma weak g_variant_type_get_gtype
 // GType _gotk4_weak_g_variant_type_get_gtype(void) { return g_variant_type_get_gtype ? g_variant_type_get_gtype() : (GType)NULL; };
 import "C"
 

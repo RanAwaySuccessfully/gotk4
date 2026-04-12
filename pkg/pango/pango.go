@@ -171,58 +171,111 @@ import (
 // void _gotk4_pango1_Renderer_virtual_prepare_run(void* fnptr, PangoRenderer* arg0, PangoLayoutRun* arg1) {
 //   ((void (*)(PangoRenderer*, PangoLayoutRun*))(fnptr))(arg0, arg1);
 // };
+// #pragma weak pango_alignment_get_type
 // GType _gotk4_weak_pango_alignment_get_type(void) { return pango_alignment_get_type ? pango_alignment_get_type() : (GType)NULL; };
+// #pragma weak pango_attr_type_get_type
 // GType _gotk4_weak_pango_attr_type_get_type(void) { return pango_attr_type_get_type ? pango_attr_type_get_type() : (GType)NULL; };
+// #pragma weak pango_baseline_shift_get_type
 // GType _gotk4_weak_pango_baseline_shift_get_type(void) { return pango_baseline_shift_get_type ? pango_baseline_shift_get_type() : (GType)NULL; };
+// #pragma weak pango_bidi_type_get_type
 // GType _gotk4_weak_pango_bidi_type_get_type(void) { return pango_bidi_type_get_type ? pango_bidi_type_get_type() : (GType)NULL; };
+// #pragma weak pango_coverage_level_get_type
 // GType _gotk4_weak_pango_coverage_level_get_type(void) { return pango_coverage_level_get_type ? pango_coverage_level_get_type() : (GType)NULL; };
+// #pragma weak pango_direction_get_type
 // GType _gotk4_weak_pango_direction_get_type(void) { return pango_direction_get_type ? pango_direction_get_type() : (GType)NULL; };
+// #pragma weak pango_ellipsize_mode_get_type
 // GType _gotk4_weak_pango_ellipsize_mode_get_type(void) { return pango_ellipsize_mode_get_type ? pango_ellipsize_mode_get_type() : (GType)NULL; };
+// #pragma weak pango_font_scale_get_type
 // GType _gotk4_weak_pango_font_scale_get_type(void) { return pango_font_scale_get_type ? pango_font_scale_get_type() : (GType)NULL; };
+// #pragma weak pango_gravity_get_type
 // GType _gotk4_weak_pango_gravity_get_type(void) { return pango_gravity_get_type ? pango_gravity_get_type() : (GType)NULL; };
+// #pragma weak pango_gravity_hint_get_type
 // GType _gotk4_weak_pango_gravity_hint_get_type(void) { return pango_gravity_hint_get_type ? pango_gravity_hint_get_type() : (GType)NULL; };
+// #pragma weak pango_layout_deserialize_error_get_type
 // GType _gotk4_weak_pango_layout_deserialize_error_get_type(void) { return pango_layout_deserialize_error_get_type ? pango_layout_deserialize_error_get_type() : (GType)NULL; };
+// #pragma weak pango_overline_get_type
 // GType _gotk4_weak_pango_overline_get_type(void) { return pango_overline_get_type ? pango_overline_get_type() : (GType)NULL; };
+// #pragma weak pango_render_part_get_type
 // GType _gotk4_weak_pango_render_part_get_type(void) { return pango_render_part_get_type ? pango_render_part_get_type() : (GType)NULL; };
+// #pragma weak pango_script_get_type
 // GType _gotk4_weak_pango_script_get_type(void) { return pango_script_get_type ? pango_script_get_type() : (GType)NULL; };
+// #pragma weak pango_stretch_get_type
 // GType _gotk4_weak_pango_stretch_get_type(void) { return pango_stretch_get_type ? pango_stretch_get_type() : (GType)NULL; };
+// #pragma weak pango_style_get_type
 // GType _gotk4_weak_pango_style_get_type(void) { return pango_style_get_type ? pango_style_get_type() : (GType)NULL; };
+// #pragma weak pango_tab_align_get_type
 // GType _gotk4_weak_pango_tab_align_get_type(void) { return pango_tab_align_get_type ? pango_tab_align_get_type() : (GType)NULL; };
+// #pragma weak pango_text_transform_get_type
 // GType _gotk4_weak_pango_text_transform_get_type(void) { return pango_text_transform_get_type ? pango_text_transform_get_type() : (GType)NULL; };
+// #pragma weak pango_underline_get_type
 // GType _gotk4_weak_pango_underline_get_type(void) { return pango_underline_get_type ? pango_underline_get_type() : (GType)NULL; };
+// #pragma weak pango_variant_get_type
 // GType _gotk4_weak_pango_variant_get_type(void) { return pango_variant_get_type ? pango_variant_get_type() : (GType)NULL; };
+// #pragma weak pango_weight_get_type
 // GType _gotk4_weak_pango_weight_get_type(void) { return pango_weight_get_type ? pango_weight_get_type() : (GType)NULL; };
+// #pragma weak pango_wrap_mode_get_type
 // GType _gotk4_weak_pango_wrap_mode_get_type(void) { return pango_wrap_mode_get_type ? pango_wrap_mode_get_type() : (GType)NULL; };
+// #pragma weak pango_font_mask_get_type
 // GType _gotk4_weak_pango_font_mask_get_type(void) { return pango_font_mask_get_type ? pango_font_mask_get_type() : (GType)NULL; };
+// #pragma weak pango_layout_deserialize_flags_get_type
 // GType _gotk4_weak_pango_layout_deserialize_flags_get_type(void) { return pango_layout_deserialize_flags_get_type ? pango_layout_deserialize_flags_get_type() : (GType)NULL; };
+// #pragma weak pango_layout_serialize_flags_get_type
 // GType _gotk4_weak_pango_layout_serialize_flags_get_type(void) { return pango_layout_serialize_flags_get_type ? pango_layout_serialize_flags_get_type() : (GType)NULL; };
+// #pragma weak pango_shape_flags_get_type
 // GType _gotk4_weak_pango_shape_flags_get_type(void) { return pango_shape_flags_get_type ? pango_shape_flags_get_type() : (GType)NULL; };
+// #pragma weak pango_show_flags_get_type
 // GType _gotk4_weak_pango_show_flags_get_type(void) { return pango_show_flags_get_type ? pango_show_flags_get_type() : (GType)NULL; };
+// #pragma weak pango_context_get_type
 // GType _gotk4_weak_pango_context_get_type(void) { return pango_context_get_type ? pango_context_get_type() : (GType)NULL; };
+// #pragma weak pango_coverage_get_type
 // GType _gotk4_weak_pango_coverage_get_type(void) { return pango_coverage_get_type ? pango_coverage_get_type() : (GType)NULL; };
+// #pragma weak pango_font_get_type
 // GType _gotk4_weak_pango_font_get_type(void) { return pango_font_get_type ? pango_font_get_type() : (GType)NULL; };
+// #pragma weak pango_font_face_get_type
 // GType _gotk4_weak_pango_font_face_get_type(void) { return pango_font_face_get_type ? pango_font_face_get_type() : (GType)NULL; };
+// #pragma weak pango_font_family_get_type
 // GType _gotk4_weak_pango_font_family_get_type(void) { return pango_font_family_get_type ? pango_font_family_get_type() : (GType)NULL; };
+// #pragma weak pango_font_map_get_type
 // GType _gotk4_weak_pango_font_map_get_type(void) { return pango_font_map_get_type ? pango_font_map_get_type() : (GType)NULL; };
+// #pragma weak pango_fontset_get_type
 // GType _gotk4_weak_pango_fontset_get_type(void) { return pango_fontset_get_type ? pango_fontset_get_type() : (GType)NULL; };
+// #pragma weak pango_fontset_simple_get_type
 // GType _gotk4_weak_pango_fontset_simple_get_type(void) { return pango_fontset_simple_get_type ? pango_fontset_simple_get_type() : (GType)NULL; };
+// #pragma weak pango_layout_get_type
 // GType _gotk4_weak_pango_layout_get_type(void) { return pango_layout_get_type ? pango_layout_get_type() : (GType)NULL; };
+// #pragma weak pango_renderer_get_type
 // GType _gotk4_weak_pango_renderer_get_type(void) { return pango_renderer_get_type ? pango_renderer_get_type() : (GType)NULL; };
+// #pragma weak pango_attr_iterator_get_type
 // GType _gotk4_weak_pango_attr_iterator_get_type(void) { return pango_attr_iterator_get_type ? pango_attr_iterator_get_type() : (GType)NULL; };
+// #pragma weak pango_attr_list_get_type
 // GType _gotk4_weak_pango_attr_list_get_type(void) { return pango_attr_list_get_type ? pango_attr_list_get_type() : (GType)NULL; };
+// #pragma weak pango_attribute_get_type
 // GType _gotk4_weak_pango_attribute_get_type(void) { return pango_attribute_get_type ? pango_attribute_get_type() : (GType)NULL; };
+// #pragma weak pango_color_get_type
 // GType _gotk4_weak_pango_color_get_type(void) { return pango_color_get_type ? pango_color_get_type() : (GType)NULL; };
+// #pragma weak pango_font_description_get_type
 // GType _gotk4_weak_pango_font_description_get_type(void) { return pango_font_description_get_type ? pango_font_description_get_type() : (GType)NULL; };
+// #pragma weak pango_font_metrics_get_type
 // GType _gotk4_weak_pango_font_metrics_get_type(void) { return pango_font_metrics_get_type ? pango_font_metrics_get_type() : (GType)NULL; };
+// #pragma weak pango_glyph_item_get_type
 // GType _gotk4_weak_pango_glyph_item_get_type(void) { return pango_glyph_item_get_type ? pango_glyph_item_get_type() : (GType)NULL; };
+// #pragma weak pango_glyph_item_iter_get_type
 // GType _gotk4_weak_pango_glyph_item_iter_get_type(void) { return pango_glyph_item_iter_get_type ? pango_glyph_item_iter_get_type() : (GType)NULL; };
+// #pragma weak pango_glyph_string_get_type
 // GType _gotk4_weak_pango_glyph_string_get_type(void) { return pango_glyph_string_get_type ? pango_glyph_string_get_type() : (GType)NULL; };
+// #pragma weak pango_item_get_type
 // GType _gotk4_weak_pango_item_get_type(void) { return pango_item_get_type ? pango_item_get_type() : (GType)NULL; };
+// #pragma weak pango_language_get_type
 // GType _gotk4_weak_pango_language_get_type(void) { return pango_language_get_type ? pango_language_get_type() : (GType)NULL; };
+// #pragma weak pango_layout_iter_get_type
 // GType _gotk4_weak_pango_layout_iter_get_type(void) { return pango_layout_iter_get_type ? pango_layout_iter_get_type() : (GType)NULL; };
+// #pragma weak pango_layout_line_get_type
 // GType _gotk4_weak_pango_layout_line_get_type(void) { return pango_layout_line_get_type ? pango_layout_line_get_type() : (GType)NULL; };
+// #pragma weak pango_matrix_get_type
 // GType _gotk4_weak_pango_matrix_get_type(void) { return pango_matrix_get_type ? pango_matrix_get_type() : (GType)NULL; };
+// #pragma weak pango_script_iter_get_type
 // GType _gotk4_weak_pango_script_iter_get_type(void) { return pango_script_iter_get_type ? pango_script_iter_get_type() : (GType)NULL; };
+// #pragma weak pango_tab_array_get_type
 // GType _gotk4_weak_pango_tab_array_get_type(void) { return pango_tab_array_get_type ? pango_tab_array_get_type() : (GType)NULL; };
 import "C"
 

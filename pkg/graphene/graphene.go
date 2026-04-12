@@ -17,22 +17,39 @@ import (
 // #include <stdlib.h>
 // #include <glib-object.h>
 // #include <graphene-gobject.h>
+// #pragma weak graphene_box_get_type
 // GType _gotk4_weak_graphene_box_get_type(void) { return graphene_box_get_type ? graphene_box_get_type() : (GType)NULL; };
+// #pragma weak graphene_euler_get_type
 // GType _gotk4_weak_graphene_euler_get_type(void) { return graphene_euler_get_type ? graphene_euler_get_type() : (GType)NULL; };
+// #pragma weak graphene_frustum_get_type
 // GType _gotk4_weak_graphene_frustum_get_type(void) { return graphene_frustum_get_type ? graphene_frustum_get_type() : (GType)NULL; };
+// #pragma weak graphene_matrix_get_type
 // GType _gotk4_weak_graphene_matrix_get_type(void) { return graphene_matrix_get_type ? graphene_matrix_get_type() : (GType)NULL; };
+// #pragma weak graphene_plane_get_type
 // GType _gotk4_weak_graphene_plane_get_type(void) { return graphene_plane_get_type ? graphene_plane_get_type() : (GType)NULL; };
+// #pragma weak graphene_point_get_type
 // GType _gotk4_weak_graphene_point_get_type(void) { return graphene_point_get_type ? graphene_point_get_type() : (GType)NULL; };
+// #pragma weak graphene_point3d_get_type
 // GType _gotk4_weak_graphene_point3d_get_type(void) { return graphene_point3d_get_type ? graphene_point3d_get_type() : (GType)NULL; };
+// #pragma weak graphene_quad_get_type
 // GType _gotk4_weak_graphene_quad_get_type(void) { return graphene_quad_get_type ? graphene_quad_get_type() : (GType)NULL; };
+// #pragma weak graphene_quaternion_get_type
 // GType _gotk4_weak_graphene_quaternion_get_type(void) { return graphene_quaternion_get_type ? graphene_quaternion_get_type() : (GType)NULL; };
+// #pragma weak graphene_ray_get_type
 // GType _gotk4_weak_graphene_ray_get_type(void) { return graphene_ray_get_type ? graphene_ray_get_type() : (GType)NULL; };
+// #pragma weak graphene_rect_get_type
 // GType _gotk4_weak_graphene_rect_get_type(void) { return graphene_rect_get_type ? graphene_rect_get_type() : (GType)NULL; };
+// #pragma weak graphene_size_get_type
 // GType _gotk4_weak_graphene_size_get_type(void) { return graphene_size_get_type ? graphene_size_get_type() : (GType)NULL; };
+// #pragma weak graphene_sphere_get_type
 // GType _gotk4_weak_graphene_sphere_get_type(void) { return graphene_sphere_get_type ? graphene_sphere_get_type() : (GType)NULL; };
+// #pragma weak graphene_triangle_get_type
 // GType _gotk4_weak_graphene_triangle_get_type(void) { return graphene_triangle_get_type ? graphene_triangle_get_type() : (GType)NULL; };
+// #pragma weak graphene_vec2_get_type
 // GType _gotk4_weak_graphene_vec2_get_type(void) { return graphene_vec2_get_type ? graphene_vec2_get_type() : (GType)NULL; };
+// #pragma weak graphene_vec3_get_type
 // GType _gotk4_weak_graphene_vec3_get_type(void) { return graphene_vec3_get_type ? graphene_vec3_get_type() : (GType)NULL; };
+// #pragma weak graphene_vec4_get_type
 // GType _gotk4_weak_graphene_vec4_get_type(void) { return graphene_vec4_get_type ? graphene_vec4_get_type() : (GType)NULL; };
 import "C"
 

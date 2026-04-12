@@ -22,7 +22,9 @@ import (
 // #include <pango/pangocairo.h>
 // extern void callbackDelete(gpointer);
 // extern void _gotk4_pangocairo1_ShapeRendererFunc(cairo_t*, PangoAttrShape*, gboolean, gpointer);
+// #pragma weak pango_cairo_font_get_type
 // GType _gotk4_weak_pango_cairo_font_get_type(void) { return pango_cairo_font_get_type ? pango_cairo_font_get_type() : (GType)NULL; };
+// #pragma weak pango_cairo_font_map_get_type
 // GType _gotk4_weak_pango_cairo_font_map_get_type(void) { return pango_cairo_font_map_get_type ? pango_cairo_font_map_get_type() : (GType)NULL; };
 import "C"
 

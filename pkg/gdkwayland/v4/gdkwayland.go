@@ -19,13 +19,21 @@ import (
 // #include <glib-object.h>
 // extern void callbackDelete(gpointer);
 // extern void _gotk4_gdkwayland4_WaylandToplevelExported(GdkToplevel*, char*, gpointer);
+// #pragma weak gdk_wayland_device_get_type
 // GType _gotk4_weak_gdk_wayland_device_get_type(void) { return gdk_wayland_device_get_type ? gdk_wayland_device_get_type() : (GType)NULL; };
+// #pragma weak gdk_wayland_display_get_type
 // GType _gotk4_weak_gdk_wayland_display_get_type(void) { return gdk_wayland_display_get_type ? gdk_wayland_display_get_type() : (GType)NULL; };
+// #pragma weak gdk_wayland_gl_context_get_type
 // GType _gotk4_weak_gdk_wayland_gl_context_get_type(void) { return gdk_wayland_gl_context_get_type ? gdk_wayland_gl_context_get_type() : (GType)NULL; };
+// #pragma weak gdk_wayland_monitor_get_type
 // GType _gotk4_weak_gdk_wayland_monitor_get_type(void) { return gdk_wayland_monitor_get_type ? gdk_wayland_monitor_get_type() : (GType)NULL; };
+// #pragma weak gdk_wayland_popup_get_type
 // GType _gotk4_weak_gdk_wayland_popup_get_type(void) { return gdk_wayland_popup_get_type ? gdk_wayland_popup_get_type() : (GType)NULL; };
+// #pragma weak gdk_wayland_seat_get_type
 // GType _gotk4_weak_gdk_wayland_seat_get_type(void) { return gdk_wayland_seat_get_type ? gdk_wayland_seat_get_type() : (GType)NULL; };
+// #pragma weak gdk_wayland_surface_get_type
 // GType _gotk4_weak_gdk_wayland_surface_get_type(void) { return gdk_wayland_surface_get_type ? gdk_wayland_surface_get_type() : (GType)NULL; };
+// #pragma weak gdk_wayland_toplevel_get_type
 // GType _gotk4_weak_gdk_wayland_toplevel_get_type(void) { return gdk_wayland_toplevel_get_type ? gdk_wayland_toplevel_get_type() : (GType)NULL; };
 import "C"
 
